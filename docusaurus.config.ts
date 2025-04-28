@@ -8,9 +8,9 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 const config: Config = {
   title: "V3 Docs",
   tagline: "Dinosaurs are cool",
-  url: process.env.URL,
-  organizationName: process.env.ORGANIZATION_NAME,
-  projectName: process.env.PROJECT_NAME,
+  url: "https://v3docs.github.io",
+  projectName: "v3docs",
+  organizationName: "v3-tecnologia",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
