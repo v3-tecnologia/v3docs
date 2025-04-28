@@ -15,7 +15,6 @@ const config: Config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-
   trailingSlash: false,
 
   presets: [
