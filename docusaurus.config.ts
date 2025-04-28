@@ -9,12 +9,13 @@ const config: Config = {
   title: "V3 Docs",
   tagline: "Dinosaurs are cool",
   url: process.env.URL,
+  organizationName: process.env.ORGANIZATION_NAME,
+  projectName: process.env.PROJECT_NAME,
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: process.env.ORGANIZATION_NAME,
-  projectName: process.env.PROJECT_NAME,
+
   trailingSlash: false,
 
   presets: [
