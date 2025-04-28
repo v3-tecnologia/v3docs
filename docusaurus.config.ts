@@ -11,7 +11,7 @@ const config: Config = {
   url: "https://v3docs.github.io",
   projectName: "v3docs",
   organizationName: "v3-tecnologia",
-  baseUrl: "/",
+  baseUrl: "/v3docs",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
