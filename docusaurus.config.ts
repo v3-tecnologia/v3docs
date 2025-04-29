@@ -66,11 +66,6 @@ const config: Config = {
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
-          label: "Petstore API",
-          position: "left",
-          to: "/docs/category/petstore-api",
-        },
-        {
           href: "https://github.com/facebook/docusaurus",
           label: "GitHub",
           position: "right",
@@ -232,25 +227,25 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   plugins: [
-    [
-      "docusaurus-plugin-openapi-docs",
-      {
-        id: "openapi",
-        docsPluginId: "classic",
-        config: {
-          petstore: {
-            specPath: "examples/petstore.yaml",
-            outputDir: "docs/petstore",
-            downloadUrl:
-              "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/petstore.yaml",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-          } satisfies OpenApiPlugin.Options,
-        } satisfies Plugin.PluginOptions,
-      },
-    ],
+    // [
+    //   "docusaurus-plugin-openapi-docs",
+    //   {
+    //     id: "openapi",
+    //     docsPluginId: "classic",
+    //     config: {
+    //       petstore: {
+    //         specPath: "examples/petstore.yaml",
+    //         outputDir: "docs/petstore",
+    //         downloadUrl:
+    //           "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/petstore.yaml",
+    //         sidebarOptions: {
+    //           groupPathsBy: "tag",
+    //           categoryLinkSource: "tag",
+    //         },
+    //       } satisfies OpenApiPlugin.Options,
+    //     } satisfies Plugin.PluginOptions,
+    //   },
+    // ],
   ],
 
   themes: ["docusaurus-theme-openapi-docs"],
