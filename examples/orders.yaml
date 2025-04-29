@@ -1,0 +1,227 @@
+basePath: /
+definitions:
+  health.HealthCheckResponse:
+    properties:
+      status:
+        type: string
+    type: object
+  httpserver.CreateOrderDTO:
+    properties:
+      orders:
+        items:
+          $ref: '#/definitions/model.OrderRequest'
+        minItems: 1
+        type: array
+    required:
+    - orders
+    type: object
+  model.Order:
+    properties:
+      account_id:
+        type: string
+      created_at:
+        type: string
+      device_id:
+        type: string
+      id:
+        type: string
+      order_id:
+        type: string
+      parameters:
+        items:
+          $ref: '#/definitions/model.OrderParameter'
+        type: array
+      status:
+        type: string
+      type:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  model.OrderParameter:
+    properties:
+      cam:
+        type: string
+      config:
+        type: string
+      end:
+        type: string
+      key:
+        type: string
+      module:
+        type: string
+      password:
+        type: string
+      ssid:
+        type: string
+      start:
+        type: string
+      type:
+        type: string
+      value:
+        type: string
+    type: object
+  model.OrderRequest:
+    properties:
+      parameters:
+        items:
+          $ref: '#/definitions/model.OrderParameter'
+        type: array
+      type:
+        type: string
+    type: object
+  model.OrderResponse:
+    properties:
+      asset:
+        type: string
+      created_at:
+        type: string
+      order_id:
+        type: string
+      status:
+        type: string
+      type:
+        type: string
+      updated_at:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: That is a template to create APIs in Go
+  title: Go Template API
+  version: 0.0.1
+paths:
+  /devices/{deviceId}/orders:
+    delete:
+      description: Delete multiple orders for a device. If ids are provided, only
+        those orders will be deleted
+      parameters:
+      - description: Device ID
+        in: path
+        name: deviceId
+        required: true
+        type: string
+      - description: Comma-separated order IDs
+        in: query
+        name: ids
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Order'
+        "400":
+          description: Bad Request
+          schema: {}
+      summary: Delete orders in batch
+      tags:
+      - orders
+    post:
+      consumes:
+      - application/json
+      description: Create new order for a device
+      parameters:
+      - description: Device ID
+        in: path
+        name: deviceId
+        required: true
+        type: string
+      - description: Orders
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/httpserver.CreateOrderDTO'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.OrderResponse'
+        "400":
+          description: Bad Request
+          schema: {}
+      summary: Create new order
+      tags:
+      - orders
+  /devices/{deviceId}/orders/{orderId}:
+    delete:
+      description: Delete a specific order
+      parameters:
+      - description: Device ID
+        in: path
+        name: deviceId
+        required: true
+        type: string
+      - description: Order ID
+        in: path
+        name: orderId
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.OrderResponse'
+        "400":
+          description: Bad Request
+          schema: {}
+      summary: Delete order
+      tags:
+      - orders
+    get:
+      description: Get a specific order
+      parameters:
+      - description: Device ID
+        in: path
+        name: deviceId
+        required: true
+        type: string
+      - description: Order ID
+        in: path
+        name: orderId
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.OrderResponse'
+        "400":
+          description: Bad Request
+          schema: {}
+      summary: Get order
+      tags:
+      - orders
+  /healthz:
+    get:
+      description: Check if application is alive
+      responses:
+        "200":
+          description: Application is alive
+          schema:
+            $ref: '#/definitions/health.HealthCheckResponse'
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: Check if application is alive
+      tags:
+      - health-check
+  /healthz/ready:
+    get:
+      description: Check if application is ready
+      responses:
+        "200":
+          description: Application is ready
+          schema:
+            $ref: '#/definitions/health.HealthCheckResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/health.HealthCheckResponse'
+      summary: Check if application is ready
+      tags:
+      - health-check
+swagger: "2.0"
