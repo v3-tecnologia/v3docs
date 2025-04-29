@@ -25,10 +25,10 @@ const sidebars: SidebarsConfig = {
       label: "Orders",
       link: {
         type: "generated-index",
-        title: "Orders",
+        title: "Orders API",
         description:
           "This is the orders API. It contains all the endpoints related to orders.",
-          slug: "category/orders-api",
+          slug: "/category/orders-api",
       },
       items: require("./docs/openapi/orders/sidebar")
     },
