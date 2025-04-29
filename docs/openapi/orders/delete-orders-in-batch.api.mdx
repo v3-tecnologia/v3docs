@@ -1,0 +1,71 @@
+---
+id: delete-orders-in-batch
+title: "Delete orders in batch"
+description: "Delete multiple orders for a device. If ids are provided, only those orders will be deleted"
+sidebar_label: "Delete orders in batch"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VcFu2zAM/RVBp63ImmzYofCtW4si2IANRXcqikKxmUabLLkinS4w/O8jbSdxWyVADzslEUW+R4rvpdEFYB5tRTZ4nekLcECgytqRrRyoEAuIqJYhKqMKWNscTtV8qWyBykRQVQxrW0AxUcG7jaJVwF3Sk3VOLYDTpGahJ7oy0ZT8PaLObptX0FJdzS/4opWDytCKv3tO4V89+FzKRHisbeSKGcUaJhrzFZRGZ42mTSV3kaL1D7ptJy9BvoayNB8QhAlz6qkyJm5BH2uImz0q96mPAdwJG6yCR0CJf5rN5OM56I9vXCMPnsCTRE+mJ/Kxr8pTrCCS7WuYPA+1p3tbJBC5UAShfm8oGe7ndCj5wHE3hkM541drtCUo8TXp3JRptsEv7UMyBD6N9wc2yfMyFLWDAxQRn7iJZBDxQGNIJqaH2B8kAmvj6lRkl6PD4jfktC+iTYxmM8BRjW/Dq6vi8GO/Bm3l7HNqB7+YQl2zbgDp+DK2fREyDyLSfjNQ857zCqxC0SlR9NzJmQWa6Wm/cjhtthptp0MaNw1xvdV7HZ1cn7qQG8dOQdnZ7GymRUTWL0O3RkzM5EKsW+VxBzcrQ8qy7SjewMrxWBQF1atBnf+co7JeXQXGJEuyJ/oqqJvtVb7AEaHSV5udzk4/dqvDPErjBXzQ/OCBg4tx0YWhXJzoGZ9mP8T/7JrDGxP8pSk3wzYliyGzbIYnuB1ULwPPRka5fzyZttxrmoVB+BVd28px73adF1s0CyeeujQO4Uizxyw0SbXT8+Ckg3509+hrE62AvpHAu+vB/9+r8X9GEnurQb8Zg2857UbV3vHdFRjupCPTh8/zHCoaJYpW2rEULi6/X95csu7+AQRZd6g=
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/orders/go-template-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete orders in batch"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/devices/{deviceId}/orders"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete multiple orders for a device. If ids are provided, only those orders will be deleted
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"deviceId","required":true,"schema":{"type":"string"}},{"description":"Comma-separated order IDs","in":"query","name":"ids","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"*/*":{"schema":{"properties":{"account_id":{"type":"string"},"created_at":{"type":"string"},"device_id":{"type":"string"},"id":{"type":"string"},"order_id":{"type":"string"},"parameters":{"items":{"properties":{"cam":{"type":"string"},"config":{"type":"string"},"end":{"type":"string"},"key":{"type":"string"},"module":{"type":"string"},"password":{"type":"string"},"ssid":{"type":"string"},"start":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}},"type":"object"},"type":"array"},"status":{"type":"string"},"type":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

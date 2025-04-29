@@ -66,6 +66,11 @@ const config: Config = {
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
+          label: "Order API",
+          position: "left",
+          to: "/docs/category/orders-api",
+        },
+        {
           href: "https://github.com/facebook/docusaurus",
           label: "GitHub",
           position: "right",
@@ -227,25 +232,23 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   plugins: [
-    // [
-    //   "docusaurus-plugin-openapi-docs",
-    //   {
-    //     id: "openapi",
-    //     docsPluginId: "classic",
-    //     config: {
-    //       petstore: {
-    //         specPath: "examples/petstore.yaml",
-    //         outputDir: "docs/petstore",
-    //         downloadUrl:
-    //           "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/petstore.yaml",
-    //         sidebarOptions: {
-    //           groupPathsBy: "tag",
-    //           categoryLinkSource: "tag",
-    //         },
-    //       } satisfies OpenApiPlugin.Options,
-    //     } satisfies Plugin.PluginOptions,
-    //   },
-    // ],
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "order-open-api",
+        docsPluginId: "classic",
+        config: {
+          petstore: {
+            specPath: "examples/orders.yaml",
+            outputDir: "docs/openapi/orders",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+        } satisfies Plugin.PluginOptions,
+      },
+    ],
   ],
 
   themes: ["docusaurus-theme-openapi-docs"],

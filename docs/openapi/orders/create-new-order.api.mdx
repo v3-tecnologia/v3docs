@@ -1,0 +1,71 @@
+---
+id: create-new-order
+title: "Create new order"
+description: "Create new order for a device"
+sidebar_label: "Create new order"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVU1v2zAM/SuCThuQNe6wQ+FbP4YipxZddgqCgrGZRJ1taZLcNjD83ydKcew6Souuh1QiKZri43tqeI4m00JZISue8muNYJFV+MKkzlGztdQMWI7PIkM+4Qo0lGhRG54umtHhGx/FZjcuUJBBgd26deWOuF1IMsudRePfWmjMeWp1jRNusi2WwNOG252iWGO1qDa8bZchGI29kvmOIjJZWawsLUGpQmRAn58+GaqhGaRSWirUVqChnb+OXwmLpTkOGF7tZFAGZaTKCRW1FpuoC6s8av+Du6i9lHldYNSlwJgXd5Go0xhxwmFB26gnGCKOZyjqmOdwhsvVE2a2T8JBa9i9kzR2tBTVLPT5fJynHQ7JokNveZSEAt9O4V0IHQ+ZT2iUrExA8ntyTv9i408T+p9T5gDCeK+zkPoR4m5/wcfTCNrafA7CWuWnv3cMhm/kjyQ57skV5OwhUPATfWlDRgsb8xY/R7GtzEkcpE/oNSLl06AOZtp0MtFOZYekQf3cSU6tCwqfFjKDYutypBfJRcJJKKiIh14sfr5CqQKTOvIvmrGCeUJ3fel53Fs8ffutZ22/7cjaW3qO9rZAzcE+MLI3vIXnwL8DXstxSLtsSWPXslNEyAiTIzLMt2CZME7CHc9UQdpuJQuzyC7vZ4aJit1KKkFYf5FbyeZdqAugYlyvQrbkLDk790Lk+l6CR3wv7uOHg48qGej2h4/M/qoWX+3UFeKeEppnwr3Zj8ti/5jQcKSDd6UfM5oMimuaFRj8rYu2JbMbDu0AXCypx1rAiu5MD5kwtHYoraEw+E7xXx72svKVDd+7aM2dpFW7AaaHITrU7cHcIlDbqJjgvg6f/DanJP3xI9a1k+7EZZahsu/GDgl4f/dr7oJX+3fVjTKd0fBC2ul+fanSt8Brj7c1vIBqU8OGYkNO+vsH7brUHQ==
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/orders/go-template-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create new order"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/devices/{deviceId}/orders"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create new order for a device
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"deviceId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"orders":{"items":{"properties":{"parameters":{"items":{"properties":{"cam":{"type":"string"},"config":{"type":"string"},"end":{"type":"string"},"key":{"type":"string"},"module":{"type":"string"},"password":{"type":"string"},"ssid":{"type":"string"},"start":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"minItems":1,"type":"array"}},"required":["orders"],"type":"object"}}},"description":"Orders","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"asset":{"type":"string"},"created_at":{"type":"string"},"order_id":{"type":"string"},"status":{"type":"string"},"type":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

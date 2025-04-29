@@ -1,0 +1,71 @@
+---
+id: get-order
+title: "Get order"
+description: "Get a specific order"
+sidebar_label: "Get order"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVE1r20AQ/SvLntpgIrX0EHRLSTGmh5bgnkIIY2lsbStrtzsjUyP03ztjSY1i5EBz0mo+376Zt60tkPLoAjtf28wukQ0YCpi7rcuNjwVGu7ABIuyRMZLNHtqznDs8uBzN6k4CnRoCcCnnWlLkrzi5V4VYIv5uXMTCZhwbXFjKS9yDzVrLx6CxxNHVO9t1i/Mm3xTJxR4nnP/Z4lGDKfiakNT/MU31c9b2q9TMfc1Ys3qvkiv9PFcN0QeM7PoaQIQ800xqRATG4gnm3acLPLli1kkM3NCsqzfMOJpQXO73L9H6zU/MWSxq+zTHwGcozL2QisSvU9H1RRh2uiT9jcgKy7I4pZeb2R3yaZdkcplN+r2gpB0XpEv6nKQdxtlJNGE8jGvXxEoTk8rnUJWeOLtJb1Krk3T11isaxQe54hMoLy+yLoGNI1lvxn2ohB3D3vRzMbffV2RcbZZeerLjSslZerMeQyVAPAqlr5Zep9cflOggOPZQa/NhGVVDo3BeQGif6bsktGEsjH84kcay6jpLvXc7EPcwCIokOptoa+BbjKMYhBYlSVPadgOEP2LVdWqWacaj2OV4gOhgo9dVXTvSs8xqCxXhK/Df3Q86e2+m8p+FPxihPiqDUDX6J8dfeJw+DyfNvwXA5Gl4Q/+Rre5RQksEnYNy0Xtv8xwDT/J067vpUi+/rEU+fwEbTsPm
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/orders/go-template-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get order"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/devices/{deviceId}/orders/{orderId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a specific order
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"deviceId","required":true,"schema":{"type":"string"}},{"description":"Order ID","in":"path","name":"orderId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"*/*":{"schema":{"properties":{"asset":{"type":"string"},"created_at":{"type":"string"},"order_id":{"type":"string"},"status":{"type":"string"},"type":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

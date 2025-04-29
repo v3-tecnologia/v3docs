@@ -1,0 +1,71 @@
+---
+id: delete-order
+title: "Delete order"
+description: "Delete a specific order"
+sidebar_label: "Delete order"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVE1r3DAQ/StCpyYssVt6CL6l7BKWFlrC9hRC0MqzsVqvpWrGSxfj/94ZfyRO6iwkJ8vz+fTmjRqdA9roAjlf6UwvoQQCZRQGsG7nrPIxh6gXOpho9uyLqLPb5r+0g7Og1ksOdGIIhgo+V5zCf3nnXudsifCndhFynVGsYaHRFrA3Oms0HYPEIkVXPei2Xbxs8l2QvNqjw/nGFncSjMFXCCj+T2kqnxdtv3JN6yuCisR7npzL56lqiD5AJNfXMIhAM824RgRDkN+beXd3gXuXzzqRDNU46+oNM4465K/3e0zUfvsLLLFFbJ/nGPhicnXDpALSaSravgiZBxFJfyPUzDILp/B5pwTRVycnHl6mk14amDSjRtqkT0uaYaItRyPEw6i8OpaSmJTemrLwSNlleplqGaardl4ACURjBSKjeX6XTWFIOWSFE+xDyQQp8qofjbr6sUblKnXtuSc5KoWfa682YygHsEeg9NXSi/Tio3AdGMfeVNJ80OOwSeP6PEPRPJF4YuOG+RD8pYTbs+ZlqHL7ZqDvdtgs5OhssmQD8Wwct4LJEaokpWm2BuFnLNtWzDzWeGQ7Hw8mOrOVS8uCO5QzD21nSoQTN/hwMyzcmZq+A7PwB6OpjsKjKWv54+NvOE7fiW753wNg8ka8o//IVnvHoQUYmYNw0XuvrIVAkzyRfztV93L1bbVZ8Sr9AypIyYU=
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/orders/go-template-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete order"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/devices/{deviceId}/orders/{orderId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a specific order
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"deviceId","required":true,"schema":{"type":"string"}},{"description":"Order ID","in":"path","name":"orderId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"*/*":{"schema":{"properties":{"asset":{"type":"string"},"created_at":{"type":"string"},"order_id":{"type":"string"},"status":{"type":"string"},"type":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
