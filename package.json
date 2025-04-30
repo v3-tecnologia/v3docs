@@ -1,6 +1,6 @@
 {
-  "name": "v-3-docs",
-  "version": "0.0.0",
+  "name": "v3-docs",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -12,7 +12,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "docs-all": "docusaurus gen-api-docs all --plugin-id management-open-api order-open-api",
+    "docs-all": "docusaurus gen-api-docs all --plugin-id management-open-api && docusaurus gen-api-docs all --plugin-id order-open-api",
+    "clean": "docusaurus clean-api-docs all --plugin-id management-open-api && docusaurus clean-api-docs all --plugin-id order-open-api",
     "typecheck": "tsc"
   },
   "dependencies": {
