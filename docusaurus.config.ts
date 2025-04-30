@@ -6,15 +6,15 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "V3 API Documentation",
+  title: "V3 Docs",
   tagline: "Dinosaurs are cool",
-  url: "https://docs.v3control.como",
+  url: "https://docs.v3control.com",
   projectName: "v3docs",
   organizationName: "v3-tecnologia",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/favicon.png",
   trailingSlash: false,
 
   presets: [
@@ -25,16 +25,14 @@ const config: Config = {
           sidebarPath: require.resolve("./sidebars.ts"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/v3-tecnologia",
           docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/v3-tecnologia",
           onInlineAuthors: "ignore",
           onUntruncatedBlogPosts: "ignore",
         },
@@ -48,14 +46,14 @@ const config: Config = {
   themeConfig: {
     docs: {
       sidebar: {
-        hideable: true,
+        hideable: false,
       },
     },
     navbar: {
-      title: "My Site",
+      title: "V3 Docs",
       logo: {
-        alt: "My Site Logo",
-        src: "img/logo.svg",
+        alt: "V3 Logo",
+        src: "img/logo.png",
       },
       items: [
         {
@@ -66,12 +64,12 @@ const config: Config = {
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
-          label: "Petstore API",
+          label: "API V3",
           position: "left",
           to: "/docs/category/petstore-api",
         },
         {
-          href: "https://github.com/facebook/docusaurus",
+          href: "https://github.com/v3-tecnologia",
           label: "GitHub",
           position: "right",
         },
@@ -84,43 +82,33 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "Tutorial",
+              label: "Conheça",
               to: "/docs/intro",
             },
           ],
         },
         {
-          title: "Community",
-          items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/docusaurus",
-            },
-          ],
+          title: "Comunidade",
         },
         {
-          title: "More",
+          title: "Mais",
           items: [
             {
               label: "Blog",
               to: "/blog",
             },
             {
+              label: "Site",
+              href: "https://www.v3.com.br",
+            },
+            {
               label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              href: "https://github.com/v3-tecnologia",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} V3 Tecnologia. Built with Docusaurus.`,
     },
     prism: {
       additionalLanguages: [
