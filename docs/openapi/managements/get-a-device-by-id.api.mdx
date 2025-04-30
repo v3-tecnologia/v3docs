@@ -1,0 +1,71 @@
+---
+id: get-a-device-by-id
+title: "Get a device by ID"
+description: "Get a device by ID"
+sidebar_label: "Get a device by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVMFu2zAM/RVBpw0IGm/oofAtWLaiWNcORbvLEASMzCTqZEmV5GCZ4Y8ZdtiH5MdG2lmaNO6A3XqyTD6Sj08Ua1lgVEH7pJ2VuTzHJEAUuNIKxWwtLsZyID0EKDFhiDL/Wj+JGHfYFqjZ4CEt6WwphP50QeeAD5UOWMg8hQoHMqolliDzWqa1b1E24QKDbJoJo6N3NmJkwNss489hzeuPlFQ5CrKJveC90QrYO7yPDKn3avjgPIaku4RQJVcSVE0DKrewusu5ozJzziBY2VAFjppzYpxSH4+YmIK2ixYSkLzFFNJxpaRZgZ6gFZgu3WFXX9gsdBQsktBzcUsJ+N+6JK7uLi+p6ackm53Jze5RJU5foMGXxmluENOhiLs7p7lR6hl9n40oUfcGlI7a7/X4pbM4tVU5oxR9gMo8Q6LyxQu75B4L206z0+OKV5T4g6ts8R9vpunyJVjwk5fdPpD0NmkNLB21JReY2s1Abz2Xww4wrHXRkDViWP1dFlUwDBgap8AsXUz5WXaWSX7n2s4dV2VSoJhUO7z73Ectx83vzS8nsBTn12K7HDY/V2iEd4EMpOgPCMKJdzd3Y1FAFEjXUKUq0HEGEU9YU50M6/UJLCywJBHE6PMFOZhpVyw7yU7etJNCNEtoFdlusd61eEC1ftS2H729r4Tf09Ab0O2GadWptzLudB7InEaHFGK92F7X3MZdME3D5ocKw5rsE56yoGHGnfFi1pHPdD1zMBH/wfDVzXYjvxb7+7uX49YIdi3bqa74j47fcN3t92ZCqCVCwe+KaHSOkVLo017I0cA1+/N0/v6WhvgPlr07KQ==
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a device by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/device/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a device by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"fleet_id":{"type":"integer"},"iccid":{"type":"string"},"id":{"type":"integer"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

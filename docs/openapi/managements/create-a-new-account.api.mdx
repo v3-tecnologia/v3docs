@@ -1,0 +1,71 @@
+---
+id: create-a-new-account
+title: "Create a new account"
+description: "Create a new account"
+sidebar_label: "Create a new account"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVc1uEzEQfhXL55BsCkhVbqWtEFKgVWm4VFU12Z0mLl7b2N60YbUPgzjwIHkxZnY3bZJtQEgcmkNij/3NfP7mJ6XMMKReuaiskSN57BEiChAG7wWkqS1MlD3p8VuBIb6z2VKOSplaE5EOaAnOaZUCwwd3gX2UMqRzzIFXzluHPioMDcx71PXdG5WxJYeHMZpZnMvR26Qnc2XW29c9GZcOiVKIXpmZrHrSQI47qGHyN1jVsFceKeLVLofW6fUjzE7vMI0EI9y2NEeNGuIEIshNp9EXWEcJzprQPPUgGfLPc+Jy0P8mYEejtIlxA7ELj6rRrwNagG7cbfP9wmahguAXCnUrLskB742N4tNkPJaPsk2t1QimlntHSdZR40vjtCWfomzM0G/WWIdPofcoXrjshSn+jIVtbw4OuhEnhhinGAJMNYpTE1Vc/kOBVo3rCLPA3bWeGNRPOca5pSdKZwOPEAfcn3LwNFQC+gV6xpWy8JoPB9qmoOeEGB0mh4msyBHHvHiaP6cPkDuNz7XDWt91Fjf0VubWricXpPyubn/Xz1z9Wv20AnPx/ky0Hb36sUAtnPVkoPx8By+sOL6YnIgMgiBavoiFp+UUAvY5QyoyQfkRDMwwJx3F0fkHOuDnNsGSftIfMjFWJ4da1Jb0nhG8RXZjBO+731ZAxIc4cBqUqWuVZS7bXGylizVnU1nyKyZeVxWbSXZPI//qmkvWKy4S3pGrOUJGLcPJ+4pL5tEwenXJgesKL5hAp3yq3hpBExVd/OPdzUI6P/t8SZen7Z9QbjPGeLjnaUzfI0kLWytUN19tK6UGMysoD3Te+OTPb/VmZug=
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a new account"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/account"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create a new account
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"correlation_id":{"maxLength":50,"minLength":3,"type":"string"},"name":{"maxLength":100,"minLength":3,"type":"string"}},"required":["correlation_id","name"],"type":"object"}}},"description":"Account Data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

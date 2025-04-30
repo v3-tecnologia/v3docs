@@ -1,0 +1,71 @@
+---
+id: create-a-new-device
+title: "Create a new device"
+description: "Create a new device"
+sidebar_label: "Create a new device"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVs1OGzEQfhXL55Rs0iLR3CigqhItiJJeEIoc72Rj6rW3tjeQrvZhUA99EF6sM/tDEjah5VRySOzx/Pmbb8YpeAxeOpUFZQ0f8SMHIgATzMAti2GhJPAed/AjBx8+2HjJRwWX1gQwgZYiy7SSgqz7N55cFNzLOaSCVpmzGbigwFe6ebApqsqJA2kTo+qYBQ/LDDD21FoNwvCyxyVZzcgxTFRMOqm4OwWThDkf7Uc9nirTbt/2Wgc+OGUSsp9pgNBYNocKc07A0amSsuN0uOl08H6LV5WCemI22N80299iltoY9MvvkM2tgYnJ0ylm/XzUqGNe1kVTDvCiV0/xXAOoRaO5XZvtk/DXjwHs9AZkwAAYYZM6xxVb2LEIgq9HDy6HKh2fWeNrKgyjAf1s4x6l8j8I1sFf1ulMROhGCgjWVqOF0LW7zat9IzFTnhEYTM3YJTqgvbGBfRmfnvJeJ8mygzkhruG15fSPvdbtpl0WTZft7qO/tkpHIdc7ksiz+JUVeYuEZO+Gw27EscGMJXgvphrYiQkqLF/QPmXtOojE05Boxj32egphbvGGPLM+0CwQNGZ4//FB8OAW4Miq4LnTdNbXVgo9R4PRQXQQ8RL9UMSL1dtxcifSTMMzrUrIdZuzhX6da9EjtVanNXNW+4YwK8EmT9a5aGa2fdmEJOQ64+2wAvLh98MvyyBlH89YM9Ee7hegWWYdCpABP4Vjlh1djI9ZLDzDq7s85A6XU+FhjzigAoHAPwsjEkixUuzw/BMeEKR1sGgv2htUzEY8U1GVzQii444XeiPXtRd6h3rDsAB3oZ9poaqZWBWyaIq9TgcqKkmKgq4wdrosSYx1dfh/4OqaOsIp4iDt0NMcREwIIzu+w5KyqPN5c0lxqwbKKX6HnWWvtTiUErLwrO46Uc/Pvl6i8rT5h0KVR6kTt/QU4feI48JW+FS9XckKroVJciwCntc+6fMHWdEe6w==
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a new device"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/device"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create a new device
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"maxLength":50,"minLength":3,"type":"string"},"fleet_id":{"type":"integer"},"iccid":{"maxLength":20,"minLength":19,"type":"string"},"imei":{"maxLength":15,"minLength":15,"type":"string"},"model":{"maxLength":50,"minLength":3,"type":"string"},"phone_number":{"maxLength":15,"minLength":10,"type":"string"}},"required":["certificate_id","fleet_id","iccid","imei","model","phone_number"],"type":"object"}}},"description":"Device Data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"fleet_id":{"type":"integer"},"iccid":{"type":"string"},"id":{"type":"integer"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

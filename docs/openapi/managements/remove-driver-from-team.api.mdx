@@ -1,0 +1,71 @@
+---
+id: remove-driver-from-team
+title: "Remove driver from team"
+description: "Remove a driver from a team"
+sidebar_label: "Remove driver from team"
+hide_title: true
+hide_table_of_contents: true
+api: eJydU8tu2zAQ/BWCpzYwLNXoIdDNqI3AQIsWRnwqcthIa5sIRTIkJdQV9DFFD/0Q/1h3JaZxHk3RnERS+5idme1khaH0ykVljSzkGmvbogBRedWiF1tva7pFhFpOpAMPNUb0QRZfu0epizFjtaBAxQ8O4p7OhlLopio6e7xtlMdKFtE3OJGh3GMNsuhkPLghykTcoZd9P3lc/5Iw/LU6A1z9Z4crjg7OmoCBA2Z5zp9np/IDL9XIR2KjtFTKRM45y87486RZiF6ZHfWieeT72exp/Y1x3pYYAlxrFEsTVTy8XLsfq0XYsQpyFErSMKTM3tLg1EGTSINexFEhszEm61TVZww+60a+eooJ6Ns7QRuvOTzTtgS9tyEW5/l5LpkpZbaWYTAwKBkYYXg4ytxpVcLx1/GnFViLi88i0Xv80aIWzjKNoNV38MKKD+vNQlQQBBJJTWw8Ha8h4JQwEQma6fsEBnZYExFi/mVFPxjp2Cyf5tN3kjA4glmDYWzJC8nDpw5Oij3A292T/A/bJzEjfouZ00D2o74DV12i+I8ME1kMRk+ZRfIlEch0cmDX8ZQbr/uen28b9Ad6p2MLXrELxt1SgyNIzi3ogC9gf7NOln8rTlfwWdDpEQx7rAXd8I2ON3gYV3RYu9e0vt/OVzROLPVXFLlHqIhI5mD8OS9LdPEkjReiP/X7YvlxebmkLfsN/rCdFQ==
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Remove driver from team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/driver/{id}/team/{teamId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Remove a driver from a team
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}},{"description":"Team ID","in":"path","name":"teamId","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Driver removed from team","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable Entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

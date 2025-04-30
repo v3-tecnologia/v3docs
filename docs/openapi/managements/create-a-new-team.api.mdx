@@ -1,0 +1,71 @@
+---
+id: create-a-new-team
+title: "Create a new team"
+description: "Create a new team"
+sidebar_label: "Create a new team"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVc1OGzEQfhXL55QstJVQbhRQVYkWRJNeEEIT75CYem3X9gLpah+m6qEPwot1Zn8gsKFVLxU5bGzvzDefv/nZSuYYVdA+aWflRO4HhIQChMUbkRAKOZIBv5UY0zuXr+SkksrZhDbxErw3WgH7jq8iA1QyqiUWwCsfnMeQNMbGVilX2nShc96llUcKpwlqgUHWI4INAU2D1dkUcHuEdpGWcvI2G8lC2377etQDxBS0XbC/hQKfeG1nf3Or29vpgBTxbJ3jgFAX4fwew82vUCXCIJDHIk5JN3EACeQ6fAolNvGidza2ouxk2/y3KQcthf8k9UBN1XK4gDSET7pVeuB0DaaFe3yfL3wsdBSsgNCXYkoAvLcuiU+zoyN5r+ncOYNgm8Q8kZlFNvjSOD0ncV+NAz6leUbx0ucvTPENJ3z2ZmdnGHFmibHCGGFuUBzapNPqHwq4bqETLCL3YTN4qNMKTEtH95PexURwHriN5bgbTBHDNQb2qGQZDL8ZG6fALMl8spvtZrImFI52+jDDDm+h8AafNko27Ite6D6da8Jre+n6YQiKLziYAnvNfe9+3f10Agvx/lh0rX/34xqN8C7QASXqOwThxP7p7EDkEAWxDGUqAy3nEHGLU6UT85UfwcICCxJU7J18oBd8+zZYtpVtbTMxVqqARt2O9KaR/ojp2kjfaNwVQcLbNPYGtG3KlfWuuow8ZIyV531VMflZMHXNxyR+oI/H2TmXbNBcJLwjnCVCTi3DKfyKK2bQcnk15ahNhZccfVA+9aj32FMKffqj7XotnRx/npLxvPucFS5nnwA3PK3pOZG0cI02TfM1Z5U0YBclyU/vW0z+/QbhLX3U
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a new team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/team"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create a new team
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"account_id":{"type":"integer"},"correlation_id":{"maxLength":50,"minLength":3,"type":"string"},"name":{"maxLength":100,"minLength":3,"type":"string"}},"required":["account_id","correlation_id","name"],"type":"object"}}},"description":"Team Data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"account_id":{"type":"integer"},"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

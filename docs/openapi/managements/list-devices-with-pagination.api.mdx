@@ -1,0 +1,71 @@
+---
+id: list-devices-with-pagination
+title: "List devices with pagination"
+description: "Get devices with pagination"
+sidebar_label: "List devices with pagination"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVc1u00AQfpWVTyBFjYuEVOVWQVVVFFpBywVV0cSeJFvWu2Z3HBosPwziwIP0xZhZh8RpnVS99WTv/H7z7c5MneQYMq9L0s4mo+QUSeW40BkG9VPTXJUw0xaidpCU4KFAQh+S0bf6geslzFDZqpigV69ynEJlaKQOX7OfFv2PCv2SD5ZD8JEDI59CNscCklGd0LIUubaEM/RJ0wx6MwT9C7vx04Eq4E5+0n2pxuK3P9/NIPEYSmcDBjF4k6by2cZw8YGDZI6dLIkWytLoLBI0vA1iUndylN6V6Em3AXOgKNWERXishopcwZGyscfMzaxuU66RTpwzCDZpGIB4TSUvjnXesQnktZ1FE4+szcdAjzORFl56nBZg2nDbRX8VsdJBka9Q6am64gByto7Up+vzc+bkIchmLXKTW8xIwudo8KVhmhpE2iZx/ST4OWXZDn53ehSoex0Kx+X3asq5szhuW6fXoDI7QFRl/sIuuY/ilQC8h2WsV1q/l7xNp/aqyRGY8bp9dhlIlF6DHrgie9vX6Gfs5C0Y9QX9gkfaiffOP6P3mzY2wUyGZdIO1YRnDA/QuWP+kxlSnKk058NwZcATKuZrJ2zljeiGxmVg5i7Q6Cg9ShMZVdpOnSQUPJAJnthg3RKOI7z7v/d/nMJCnV6o1Xy7/71Ao0rnWcC3/gu8curd5+v3KoegkJ9KRZXn3wkEPJB712SEto9gmduC61fHl2esEKRtsvQgPTiMd8gwC4hkrObvuQ77tsoW6HpD8BPLaHWThHc0LA3oOBgjYfWK1C7rQp5I6lpquvamaUTcboq4zHSAiUG+mCmYgHtg7Vl0vZi+43Kz77j5KjFJ4np7Xs4nVt8Tyf9vwA2CGzl4LRCYghu2niPkMoOYj9bxOMuwpI7XozffdJ/06ckV99Q/rGnY8g==
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List devices with pagination"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/device"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get devices with pagination
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"fleet_id":{"type":"integer"},"iccid":{"type":"string"},"id":{"type":"integer"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

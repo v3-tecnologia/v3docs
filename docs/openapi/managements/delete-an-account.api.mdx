@@ -1,0 +1,71 @@
+---
+id: delete-an-account
+title: "Delete an account"
+description: "Delete an account"
+sidebar_label: "Delete an account"
+hide_title: true
+hide_table_of_contents: true
+api: eJx9U01v2zAM/SuCTlsRxF6wQ+Fb0QRDgQ0biuU09MDabCxMllRKNpYZ+jHDDvsh+WMjYxf9CnoyRT2Rj4/Po24w1mRCMt7pSq/RYkIFTkFd+94lvdABCDrOUtTVj/HFg4sJpq7WjDSSCZBajh2/4ZNpOCa87w1ho6tEPS50rFvsQFejTvtwRLmEOySd842gY/AuYhTAqizlc7opYecHlA615wrMlqFnxZl8XvWIiYzbcYucF/rjavW67NYF8jXGCLcW1cYlk/Zv185TtQQ70UY/aMZDsGCt54G5hSh6lJF1qXQxg4rRNJnTEWl4kLYnK4jC+hps62OqzsvzUosoxt15aS1koBYy3PeFKsGaGg7/Dn+9wk59+qpmJQ9/BrQqeOIEWPMbSHl1eb1dqwaiQhamTz1xeAsRl8yJB7ci2RdwsMOOh1cX3674QphOzcplufygmUNgmh044Tav/JSHnjEdHyU9CZ4XlvBXKoIFdhX3OWozzio+Sr3QFVuMBRK55GIcZYot2Zwlfd8j7TnP4QBkZLOTi81xy7yhO7AR32D47np273v1zOwnWc5JcGKcAWwvJw5/4n76GfINo1qEht0uPKYLLowhPXkiRstPbbTefN5837B7/wOEFT6t
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete an account"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/account/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete an account
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Account ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Account removed","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable Entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

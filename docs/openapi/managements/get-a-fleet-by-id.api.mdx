@@ -1,0 +1,71 @@
+---
+id: get-a-fleet-by-id
+title: "Get a fleet by ID"
+description: "Get a fleet by ID"
+sidebar_label: "Get a fleet by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVEtu2zAQvQrBVQsYtlpkEWhnNI0RNE2KIO6mMIyxNLaZUiRDUkZdQYcpuuhBcrHMSHJi10qB7rIiOT++efOpZI4h88pFZY1M5QSjALHUSOdiKy7O5EA68FBgRB9k+q36y+G8MW3sFL8dxDXdDXnQS+V093hfKo+5TKMvcSBDtsYCZFrJuHWNlYm4Qi/resbWwVkTMLDB+yTh4/DL608UNLPkZCJrwTmtMmDt6C6wSbX3h/PWoY+qDZhZ71E3tnMC94whRK/MStYU2SNEzOcQj92j4rR6nDag23CHUL+yWKggOHOhluKWAvDb2CiuppeXlEkXa2GtRjBEwpPILu4wixw+R42vDdMBfU8l3JW+B09EKOYveZX6hXKULn9l5eiRsOwkOTn+8YoCn9vS5P/RsnUbL8KKB042wyhpMmgG15aykit6D9pJS+Wo0Y8qldckDOg3u0EtvWb9SNsM9NqGmJ4mp4nkIVNmadtxMBEyhtQ02T7ycYPw4c/DbyuwEJNr0U3mw68NauGsJwHx+RO8sOLDzfRM5BAEUhHKWHq6LiDgkBlVUTNbn8HACguiQIy/XJCCkbafJcNk+I4L5whmAQ0f3Qrp20gHSKtnYnuNu1pF/BFHTgNtKe4q5qbqONxxPJApdQ3Rw2SxuKo4h6nXdc3i+xL9luQzbjCvYMFp8UZUge9UmiXogP/A9+am24Vvxd7i7EXYCcFsZdPPJb/o+h237WKtZ2S1RshpgBhFqxhnGbq453LUavV+K00+3lL7PgLK5QrJ
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a fleet by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/fleet/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a fleet by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Fleet ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"team_id":{"type":"integer"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

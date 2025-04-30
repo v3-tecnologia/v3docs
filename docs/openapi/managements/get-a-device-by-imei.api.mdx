@@ -1,0 +1,71 @@
+---
+id: get-a-device-by-imei
+title: "Get a device by IMEI"
+description: "Get a device by IMEI"
+sidebar_label: "Get a device by IMEI"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVEtu2zAQvQrBVQsYsVpkEWgXNGkQNJ8iSLopAmNMjW2mFMmQlFFX0GGKLnoQX6wzkpLasVygu2wkcr6Pj8NXywKjCton7azM5RkmAaLApVYopitxfnl6LkfSQ4ASE4Yo86/1i5yTLroP1WzykBa0tpREO12ipl3Ax0oHLGSeQoUjGdUCS5B5LdPKc1xMQdu5bJp7Do7e2YiR/e+zjH/bba8/UU3lbEKb2AveG62AveOHyCH1RgsfnMeQdFcQquRKClWTgMrNre5qPiOZOmcQrGyoA2fNuDBOdDGAlkICkreYQNrtlDRTMJC0BNOV2z7VFzYLHQVzJPRM3FIB3luXxNXdxQUd+iXI5tnkpg+oEpcv0OBrwzQziGmbRE3XN8fAXq3UHn73ZvBcDSWUjo4/6PELZ3Fiq3JKJYYCKrMHROWLV3bJAxa2HWaHux2vqPBHV9niP95M09VLMOdXLztRkPQ2SQkWjo4l55hacaDHnstxFzDmWxnX/G3IGTEsn2SjCobjxsYpMAsXU36UHWWSn7u2M8fNGRsoxtbO8OYRjluo69/rX05gKc6uRa8R659LNMK7QAYi9gcE4cSHm7sTUUAUSLdRpSrQcgoRD5hanQzTdgkW5lgSF+L4M2sXI+2aZQfZwbt2YAhmCS0xvZrtkcgtsPVfkvfF91eX8HsaewO6FZuWobpn9Jny0ZOC5u2f6GLyOKCu+Ux3wTQNmx8rDCuy3/PkBQ1TPibrtY68piubgYn4D7BvbnqRfiu2ZX0Qbm8Eu5LtrFe8o+U3XD3JfnNPcQuEgt8bQelcx0qhTxtJO4PYbM7Z2ektDfcfMN9FCA==
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a device by IMEI"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/device/imei/{imei}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a device by IMEI
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device IMEI","in":"path","name":"imei","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"fleet_id":{"type":"integer"},"iccid":{"type":"string"},"id":{"type":"integer"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

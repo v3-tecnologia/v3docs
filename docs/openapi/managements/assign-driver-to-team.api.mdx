@@ -1,0 +1,71 @@
+---
+id: assign-driver-to-team
+title: "Assign driver to team"
+description: "Assign a driver to a team"
+sidebar_label: "Assign driver to team"
+hide_title: true
+hide_table_of_contents: true
+api: eJx9VMFu2zAM/RVBp63Iai/YofAta4qhh6FF1p6KYmBsNlEnW5okZ80Mf8ywwz4kP1ZSVltnKZqDQ0tP4uPjoztZoS+dskGZRhZy5r1aNQJE5dQGnQiG4oBQy4m04KDGgM7L4qb77+B8wJ/PCah4wUJYU9zQEXpTFcUOf7bKYSWL4FqcSF+usQZZdDJsbUQ1AVfoZN/fDmj04bOptgwpDW02gUOwVqsSOHN27zl9N7rLOmPRBYU+3kzcv1P215KMGd08Iyl1QprlPZaBgITcr/aKsGIOAQ6qipd6axo/5J/mOf+9KhZEsbFilZPGoyqPsqP9whIrH5xqVsyKcn2aTg+vv25IgxK9h6VGcdYEFbZv390PtwVYcW/l0HxWgvq9NhW30/gQPUBdLWQ2ILJOVX2WqHt0mydvtE4zKtOmBL2mo8VJfpJLbis3bPHS2rMHqK3GvVblPXvozjy1HUomfdCEWXTB7t/urxFYiy8XIim/+7NBLaxxtABa/QYnjDhdXM9FBV5QYteG1lG4BI/HRJ0EYgryKzSwwppEErPLc9rggoZk+XF+/FESBxaihui55O00My8TkwTZYzsy8JtDlpoc8CFkVgONEuWMcnZJ/Of2TGQRxyqeJGVZZ97uOq7r2um+52WS2tEE3VC4AafYE8P8qugP0vsOtMc3+L5bJIu/F+Mxf5VqWoSGHbcB3fIbhT9wO3wG+ltCrREqqoBpDBunQ7IPV3z85eDBpPeTpxOzskQbRlj2dD+27OXFtyvaX6YPSG0qhjn4xUNLz8jLxHrjqMa1TmpoVi3ZgPaHlPx7BOCDwHE=
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Assign driver to team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/driver/{id}/team"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Assign a driver to a team
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"team_id":{"type":"integer"}},"required":["team_id"],"type":"object"}}},"description":"Team Data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Driver assigned to team","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable Entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

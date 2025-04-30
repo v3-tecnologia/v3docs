@@ -1,0 +1,71 @@
+---
+id: get-a-team-by-id
+title: "Get a team by ID"
+description: "Get a team by ID"
+sidebar_label: "Get a team by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVMFu2zAM/RVBpw0IEm/oofAtWLegWNcORbLLEBSMzSTqFEuV6GCZ4Y8ZdtiH5MdG2t6aLO6A3XqyTD6Rj08kK51jzILxZFyhUz1BUqAIYaMWO3V5oQfaQ4ANEoao08/VX/ipIBuYkV8PtOZzwRf4z+R8DvhQmoC5TimUONAxW+MGdFpp2vkGVRCuMOi6ngs6eldEjAJ4nSTyOc54856DZo4vFSRe8N6aDMQ7uo8CqQ5y+OA8BjJtQMgyVxZ0x8R68kvYENA2sY4xkYIpVg0kIBDmd0Cn4clI2T2XtmDbcMelfBKzMlGJMsos1ZQDyH/hSF3Prq640i7WwjmLULBIf0xucY8ZSfgcLT43Tk9J3LZGD5/SPqF46fNnpniPRWxnydlpxmsO/I6bLv+Prq3beAQrGTkt06h5NngI146L0iukZi551lI9EveoMnnNtohh+3tQy2DFPbIuA7t2kdLz5DzRMmWmWDrJKIQgE0JNFx3yHjf89j/3P5zCjZrcqG4099+3aJV3gQ2s5jcIyqk3t7MLlUNUyE9QUhn4uICIQ9HTkBWtPkABK9ywAGr88ZIdwrRNlgyT4St5Ns80N9Co0e2QnoV0RLR6VLUP270T4VcaeQu8pKSjRJmqE7DTd6BTbhjWRpQSa1VJAbNg61rMDyWGHdvn0lvBwEJqknVoopz5WZZgI/6D3YvbbhO+VI9bs5dfZ4Rip5tOLuWPj19w127Ves6oNULOMyUkWsc4y9DTwZWTJqsPu2jydsqN+wtXZAjH
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a team by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/team/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a team by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Team ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"account_id":{"type":"integer"},"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

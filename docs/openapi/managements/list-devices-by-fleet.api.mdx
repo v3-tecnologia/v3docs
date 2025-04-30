@@ -1,0 +1,71 @@
+---
+id: list-devices-by-fleet
+title: "List devices by fleet"
+description: "Get devices by fleet ID"
+sidebar_label: "List devices by fleet"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVc1uEzEQfhXLJ5CqJiAhVXur6I8iCkWl5YKqyPFOEhev7Y69EWG1D4M48CB9MWa82zRN0iJuPa09/ubv8/jbRpYQNZqQjHeykKeQRAkLoyGKyVJMLZBhdCT3ZFCoKkiAURbfmg23kwec4X1QaU5rRx60y1FGJRkQbmuDUMoiYQ17Muo5VEoWjUzLwFDjEswAZdteMzoG7yJEBrwdDvnzOO/5BwqqPTm5xKcqBGu04tPBTWRIs5bDJKhyrIA+ACbTRVZ18hX56DGC9jNnuuCrmibeW1BOtpSKvaacAcamXMPEhMbNMgSBTsuxStuZkmE+djgtlO3CPW7vK5uFiYLZEmYqLikA751P4tPV2Rl1v1lkuzL5yQ3oxOFLsPDSaspD8ZjE1eXTFGn9BL9PelRgdjpUntrfeRLm3sHY1dWEQuwC1PaJIupQvrBL3kVxb1CIakkIxrzb9YpGxCI6ZcUXwAWgOEb0+B8Pq+1iJzVjbZCdfkh6wKQXc08tyxmkLCGkCoUcdIBBnoBB06tDS4CY83cCU6Nl7MB6rezcx1QcDA+GknXBuKnnArg+pbm+POPrLR3mcu/+3P32Aipxei56Mbn7tQArgkcyEPE/FQov3l9cHYlSRQF0W3WqkZYTFWGfqTfJMosflVMzqIgPcfh5RAdcaZdsuD/cf5MHisqsVCanl74zE7cFVW5U2zww/YwA97eZ4EcaBKtMFqTMUtMzu6K+f130Le61l2hjEhnUNNzbFdq2ZfNtDbgk+zVPKBo14XZZ4U3kNV3fVNkIz9T86qKX9dfi5B/13o+kW8r8IGre0fI7LNd+FO01QeegSn6XVEp3eqg1hLTmtzWU7frMnR5f0tD/BVrbWjI=
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List devices by fleet"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/device/fleet/{fleetId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get devices by fleet ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Fleet ID","in":"path","name":"fleetId","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"items":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"fleet_id":{"type":"integer"},"iccid":{"type":"string"},"id":{"type":"integer"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"},"type":"array"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

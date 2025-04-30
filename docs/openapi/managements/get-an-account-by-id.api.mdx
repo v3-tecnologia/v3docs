@@ -1,0 +1,71 @@
+---
+id: get-an-account-by-id
+title: "Get an account by ID"
+description: "Get an account by ID"
+sidebar_label: "Get an account by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVMFu2zAM/RVBpw0oEm/oofCtWLeiWNcORbvLEBSMzSTqFEmV6GKZ4Y8ZdtiH5MdG2m5TL8mA3XqyTJHU4+Mja11iKqIJZLzTuT5FUuAUFIWvHKnpSp2d6AMdIMISCWPS+df6r5jj3rn1NGIJQAs+O47hP1PyOeJ9ZSKWOqdY4YFOxQKXoPNa0yq0Xo5wjlE3zUS8U/AuYRKHt1kmn+Gjlx85aeE5yJHcQgjWFCC347skLvWzN0L0ASOZLmHhY0Tb+t4yuA2GRNG4uW44c0QgLG+BtsPJSFk7gh7AdumGUL+IWZmkpHJlZuqaE8i/86Qubs7PuZI+19R7i+CYhCeTn95hQZK+RIsvDdOAvqcWPrZ+B57K7mG8CuULY3yHRWyH2eH2ixec+ANPQfkfqmy6fARzmSrdz5xm+fOoLTzXpedI7fTxOOV63HuMa1M2bE4YHx4nsopWPMbWF2AXPlF+lB1lWmbJuJnvVO8ICoHVamkwwS3K9e/1L69wqU4vVT+A658PaFXwkQ3M6Q+Iyqt3VzcnqoSkkBtRURX5OIWEI2HVkBXGPoGDOS6ZBnX8+YwvBGn3WDbKRm+keYFhLqHlpN8Ue7bPAGy94Xeff981wu80DhZ4JYm+hKG653LD9oHOWUFMk5AmF3UttdxE2zRivq8wrtg+EbFFA1MpT1agSXLmJs3AJvwHyFdX/ep7rQabcifK3ghupVt1V/LHx2+46jZpM2GvBULJcyY4ugtOjIGehWwJr3kuq9P31yzmP7qUCRQ=
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get an account by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/account/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get an account by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Account ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

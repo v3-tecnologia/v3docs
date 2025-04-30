@@ -1,0 +1,71 @@
+---
+id: delete-a-fleet
+title: "Delete a fleet"
+description: "Delete a fleet"
+sidebar_label: "Delete a fleet"
+hide_title: true
+hide_table_of_contents: true
+api: eJx9UsGO0zAQ/RXLJ1hVTag4rHKraEErgUArekJ7mHWmjYVje20nokT+GMSBD+mPMZNkRZeu9uTx+HnmzZs3yBqjCton7ays5AYNJhQg9gYxyYX0EKClVIiy+jb8h37PIHGzIZzmu4fUUGzpB910TXHAh04HrGWVQocLGVWDLchqkOnoR5RNeMAgc75jdPTORowMWJUlH8+1DNi6Hrm+cvTfJgZeFVd8XHSIKWh7oAY5L+Tb1eqy6M764BTGCPcGxdYmnY4v185TtQQH1kVOatEAJFXjaFhqwEKOApImlSxGSDHoOlMyYugfJe2C4ffCOAWmcTFV1+V1KVkObfeO2zIRUEyEej6lvvZGKzj9Of12Alvx4bOYNTz96tEI7wIlwOifEIQT7253G1FDFEiidKkLFN5DxCVxoqENy/UJLBywpcHF+ssNPTDTqVm5LJdvJHHwRLMFy9zmZV8Y5wnN4Z+Wl8h5TQl/pMIbICdRh1GVYVbvUeCFrMhUJAzLxOlhYPa7YHLm9EOH4Uh5CnsImrc5uVaPm6W97MFEfIHcq9vZr6/FmbmfZTgnwbJVejAd3yj8jsfJ/PmOUA1CTe5mFtPDWin06ewLWyufW2ez/bj9uiW//gWEIjWe
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a fleet"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/fleet/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a fleet
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Fleet ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Fleet removed","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable Entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

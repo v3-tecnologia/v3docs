@@ -1,0 +1,71 @@
+---
+id: list-accounts-with-pagination
+title: "List accounts with pagination"
+description: "Get accounts with pagination"
+sidebar_label: "List accounts with pagination"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVc1O20AQfpXVnlopIqZSJZQbahFCpQW10EsVRRN7kixd77q7Y0qw/DBVDzwIL9YZ2yFJMUHcONnz/+03O7OVzjCmwRRkvNMjfYykIE196Siq34YWqoC5cdCYB7qAADkShqhHP6r/Ys9hjsqV+RSDepPhDEpLI7X/luOM2H+VGJYsOE7BIidGlmK6wBz0qNK0LERvHOEcg67rQW+FaG5xM38yUDncyE+yq9RE4nbXGw90wFh4FzGKw7skkc82hrNPnCT1HORIrFAU1qQNQcOrKC7VRo0i+AIDmTZhBtRoDWEeH5tTHwLaJtXEZBsQIwXj5rrmwgGBMJsAPQ4nI4ftCboG26bbPsl3USsTFYUSlZmpC04gsvOkvlyenvJBu1xT7y2Ck56sVH56hSlJ+gwtvjZMW/Q9dHh1IXrwlPYJxssie2WM9523U0AIsBS5Ga5eBtaz0GsmT2AnDxf0KQfJ0uvQA1d07/tG6YSDggOrvmG45qVxFIIPL5iuus1NMJd1pLu9pXmMeUctPDdAz5GatUULFoYrD94CTcV2i5XBinFofQp24SONDpKDRMs6MG7m28l0BKkgau775iEOG4D3d/d/vcJcHZ+pbofc/7lGqwofWMF9v4WgvPrw9fKjyiAq5MtSUhn4dwoR96TzhqwQ9xkcs5szA+rw/IQNgrQtluwle/tNFxlmDg0d3Y47NXHn6t5CXa05fm7ld90kvKFhYYHXqwyFUFZ1vG4xL/yJqqrkWJfB1rWo24XcvBkmwtQiN2cGNuIOYDvek15QP3G5flZ4Aktx0c0r8rKaz7wwzxRfPTRrBGMRghEITMGYvRcIGU+L8NEGHqYpFrQR9eji15vX+vjoggfrHzfMpJk=
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List accounts with pagination"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/account"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get accounts with pagination
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

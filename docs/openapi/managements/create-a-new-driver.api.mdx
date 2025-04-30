@@ -1,0 +1,71 @@
+---
+id: create-a-new-driver
+title: "Create a new driver"
+description: "Create a new driver"
+sidebar_label: "Create a new driver"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVc1u00AQfpXVnkPiBpCq3EpbIaRCq9JwqapqYk+TLevdZXedJlh+GNQDD9IXY8Z2QhKnICQOzSFZj/eb+eabn5Qyw5B65aKyRo7ksUeIKEAYfBCZV3P0sic9fiswxHc2W8pRKVNrIprIR3BOqxQYPbgP7KKUIZ1hDnxy3jr0UWFoYN6jru/eqowtOSzO0EzjTI7eJj2ZK7N6fN2TcemQGIXolZnKqicN5LiDOkj+Bqsa9sojRbze5dA6vVnD7OQe00gwwm0rc1KLIU4ggtz0GX2BdZDgrAlNpsPkgH/2Scsx/5t+HYnSJsYtxC48qka+DmgOunG3zfcLm4UKgjMU6k5ckQN+NjaKT+OzM7lWbWKtRjC12jtCsowaXxqnLfkUVWNKfb7RYh0+hX5G8cJlL0zxPRa2vRkOuxHHhhinGAJMNIpTE1Vc/kODVo3rCNPAw9XuC5qmHOPMUobS2RDJoQOeTjlYb5SAng6MKmXhNb8baJuCnhFgdJgcJrIiPxzx8vfyOV1A7jTuG4aVuqsabqitzJ1drS1IOavOcB/VST79fHq0AnPx/ly08/z0Y45aOOvJQNX5Dl5YcXw5PhEZBEG0fBELT8cJBOxzfVRkgvIjGJhiTiqKo4sP9ILTbYIl/aR/wMRYnBxqSVvS+9fvFteN9fvM9bb6ERdx4DQoU/cpi1y2hdgsFQvOlrLkFMZeVxWbSXNPy/76hrvVK+4PfiJPM4SMoFy5r7hkFg2fV1cct27uguN3OqfqrRBHaYou/vHuZhNdnH++osuT9u8ntxljPDzwIqbvkaSDrfWp5662lVKDmRZUBHrf+OTPL2mlZEE=
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a new driver"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/driver"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create a new driver
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"correlation_id":{"maxLength":50,"minLength":3,"type":"string"},"name":{"maxLength":100,"minLength":3,"type":"string"}},"required":["correlation_id","name"],"type":"object"}}},"description":"Driver Data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

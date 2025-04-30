@@ -1,0 +1,71 @@
+---
+id: delete-a-team
+title: "Delete a team"
+description: "Delete a team"
+sidebar_label: "Delete a team"
+hide_title: true
+hide_table_of_contents: true
+api: eJx9Uk1v2zAM/SuCTmsRxF6wQ+FbsARFgQ0biuY09MDKbCxMllRJNpYZ+jHDDvsh+WMjbRf9SNGTKOqJfHx8g6wxqqB90s7KSm7QYEIBIiG0ciE9BGgpE6KsfgyvwDeEEVcbgmm+ekgNxZY+0E3XFAd86HTAWlYpdLiQUTXYgqwGmQ5+RNmEewwy51tGR+9sxMiAVVny8UbHgK3rkcsrR99tYtx5cc7HSYOYgrZ7qp/zQn5arU5r7qwPTmGMcGdQbG3S6fB+7TxVS7BnVeQoFdEnnRpHo1J9FnFUjxSpZMGIYtB1plzE0D/K2QXDz4VxCkzjYqouyotSshba3jtuyjRAMQ3q+JL42hut4Pjv+NcJbMXlNzELePzToxHeBUqA0b8hCCc+X+82ooYokCTpUhcovIOIS+JEIxsW6ytY2GNLY4v19yt6YKZTs3JZLj9K4uCJZguWuc2bfu2ZFyyHJyFPgPOKEv5KhTdAJqL6oybDLN0s7kJWZCdShTXi7DAw9V0wOXP6ocNwoDyFPQTNi5zsqsel0k7uwUR8h9qH69mpZ+LJ1W/ym5Ng2SQ9mI5vFP7Ew+T6fEuoBqEmWzOJ6WGtFPr07AubKj93zWb7ZXuzJaf+B0Q2Me0=
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/team/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a team
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Team ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Team removed","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable Entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

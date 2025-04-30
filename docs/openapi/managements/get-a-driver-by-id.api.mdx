@@ -1,0 +1,71 @@
+---
+id: get-a-driver-by-id
+title: "Get a driver by ID"
+description: "Get a driver by ID"
+sidebar_label: "Get a driver by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVM1u2zAMfhVBpw0oGm/oofAtWLegWNcORbPLEBSMzSTqFEmV6GCZ4YcZdtiD5MVK2m6bLNmA3Xqy/ImkPn78qXWJqYgmkPFO53qEpECV0awwqulanZ/pIx0gwhIJY9L51/oPj7POtjU0AgSgBZ8du/CfKfkc8b4yEUudU6zwSKdigUvQea1pHVorRzjHqJtmItYpeJcwicHbLJPP7ptXHzlo4dnJkdxCCNYUILeDuyQm9dYbIfqAkUwXsPAxom1tb5ncM4dE0bi5bjhyRCAsb4H23clIWgecVmC7cLtUvwisTFKSuTIzdcMB5N95UpfjiwvOpI819d4iOBbhCfLTOyxIwpdo8aVx2pHvqYSPpT/Ap7J/UbwK5QtT/AAi2El2sv/iJQf+4CtX/kdXNl08grkMle4mTnP386AtPKel50jt7PE05XrQGQxqUzaMJoyrx3GsohWDgfUF2IVPlJ9mp5mWSTJu5ruedwSFkGo7aZv7sOW4+b355RUu1ehK9eO3+blCq4KPDLCiPyAqr95dj89UCUkhl6GiKvJxCgmPRVNDVvT6BA7muGQR1PDzOV8I0+6x7Dg7fiOlC0xzCa0i/Z44uHh2qNbP2h627utF+J0GwQIvI+ksUafuZXzS+Ujn3DqskOgleF1LGuNom0bg+wrjmvGJdFk0MJXMZPWZJGcuzwxswn8wfHXd77zXantDHuTYg+DWuu3qSv74+A3X3QZtJmy1QCiZutDoLoZFgYG2XPYartnup9H7G27iB8u4BMI=
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a driver by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/driver/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a driver by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

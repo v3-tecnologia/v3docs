@@ -1,0 +1,71 @@
+---
+id: delete-a-driver
+title: "Delete a driver"
+description: "Delete a driver"
+sidebar_label: "Delete a driver"
+hide_title: true
+hide_table_of_contents: true
+api: eJx9U8GO0zAQ/RXLJ1hVTag4rHKraIVWAoFW9IT2MOvMNhaO7bWdiBL5YxAHPqQ/xkwSli6t9pTJ+MXvzZuXQdYYVdA+aWdlJTdoMKEAUQfdY5AL6SFAS70QZfV1+B8+osTNhoCaGx5SQ7WlT+hN11QHfOx0wFpWKXS4kFE12IKsBpkOfkTZhHviyvmO0dE7GzEyYFWW/LjIGbB1PTKBcnSBTYy8Kq74cUYRU9B2Tww5L+Tb1er81p31wSmMEe4Niq1NOh1evjtPtyXYszNyNoxGILcaR+MSA5s5ekiuVLKYMMWg60zdiKH/a2sXDAMK4xSYxsVUXZfXpWRHtH1wTMxSQLEUYn0ufu2NVnD8ffzlBLbi/Scx23j82aMR3rFdYPQPCMKJd7e7jaghCiRbutQFKu8h4pI00diGDfsIFvbY0uhi/fmGDljpRFYuy+UbSRo8yWzBsrZ53+fpeaZz+GfnBei8qoTfU+ENUJyIY/RlmA18MnkhK4oWecNOcX8YeIBdMDlz+7HDcKA+lT0EzSudwqvH9dJuHsBEfEHeq9s5ta/FacYvapybYDkwPZiO36j8hofpH8h3hGoQapLOMqaDtVLo08knHLB8mp/N9sP2y5ZS+wdCljn6
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a driver"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/driver/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a driver
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Driver removed","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable Entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: list-teams-by-account
+title: "List teams by account"
+description: "Get teams by account ID"
+sidebar_label: "List teams by account"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVMFO3DAQ/RXLp1ZC7LZSJZQbKgitSktFoZcKodlkdtfUic14grqN8jFVD/0QfoyZJIVddqHqjVOc8fPzm+eZaWyBKScX2YXKZvYI2TBCmcx0aSDPQ12xmRzYHRuBoERGSjb71jw6tr+KdBqJwAtZV3JG/gamSSEhwuvaERY2Y6pxx6Z8gSXYrLG8jAp2FeMcybbthaJTDFXCpIC347F+1u8++SCkeZBDFesuxOhdDro7ukoKaVbucIxlxxUpRCR2PfMg8NIV24QoPxH6jnQdk5hcNe8ghMBYXAJv0rNTG7YcugHf063n9FXDxiWjFhk3M2dCoP9VYPPp/PhYUh64piF4hErcug+F6RXmrPQFenxpmp6yuC+VLXpq/4TjdSxemOPb8h0CQARLQSjm3bY6nogVVIE3X5BukMwhUaD/KO2252aYa4da7WIrDSQ9uwiSsJ0jd20sfZnZkW6PhqofNff92Qokdff3bV6TV/TIhxz8IiTO9sZ7Y6ud6apZUAGqD3LV1xXc2ljo5N7+uf0dDJbm6MQM7Xz76wa9iYEkIMb/BDLBvD89PzAFJIPyWjXXJMspJNxV6x17dfEjVDDHUvww+58nsqFK+8vGu+PdN2p4FJkldOYM4+fYpc2xZh+pbR6cfmYMDq/J+INH0YPMOi1EdakZvB2s37EP92QP80+MUxsV1jSa3Tn5ttXwdY20lPiF1ig5mGrCOmld0rU84Qx8wmdUvzodRutrs/9PzX/Lslrarilq/ZPld1yuDez2QsALhEK6VOX0+8KPkVdObpRmu1p7R4dnUvp3XL4y4Q==
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List teams by account"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/team/account/{accountId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get teams by account ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Account ID","in":"path","name":"accountId","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"items":{"properties":{"account_id":{"type":"integer"},"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"},"type":"array"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

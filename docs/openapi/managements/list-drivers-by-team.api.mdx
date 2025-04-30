@@ -1,0 +1,71 @@
+---
+id: list-drivers-by-team
+title: "List drivers by team"
+description: "Get drivers by team ID"
+sidebar_label: "List drivers by team"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVM1O20AQfpXVnloJkbRSJeQbKghFpaWioZcKoYk9JEvX3mV2jJpafpiqhz5IXowZ24QAAak3Tt6dnZ9vPs83jS0w5eQiu1DZzB4hm4LcDVIys6VhhNJMDuyOjUBQIovdZj+aR1HTtZvTawReyLmSALlpjkkhd8Lr2hEWNmOqccemfIEl2KyxvIzq6SrGOZJt23P1TjFUCZM6vB+P9fOw6sknSZoHCapYXyFG73LQ19FVUpdmo4ZjLLtckUJEYtdnzgMR+i7owhUbYBKTq+a2lRKEwFhcAD8NZ6c9bgm6Ad+ne4j5u5qNS0YpMO7STCWB3qvA5svZ8bG0NOSaheARKmFjbQqzK8xZ0xfo8bVhekDf+l/ezcEWPLV/hvE6Fq+M8W39DgYggqV4qM+HbXM6ESqoAm++IYmwzCFRoP8Y3bbPzTBX7dlenlYkInpcBGnZzpE7iYrsMjvqHUaqu1HTq6+V59RV7+Vbk1fPkQ85+EVInO2N98ZWdeeqy9ALo2LIFV03bpsN7XdgV/9Wf4PB0hydmEGsqz836E0MJAah/TeQCebj6dmBKSAZlH9Vc01ynEHCXSXesVcOP0MFcyyFDbP/dSIPirQvNt4d775TuqPALKGjZtgsxy492Vb2Edjmnubnl9vwJxl/8Sh6kCWmQ6gcNQOra9p37FAlG/aaUKYEqkvTaF9n5NtWzdc10lLs5zqb5GCmrerudEnP8uMuwSd8AfCb02FlvjXTl8HezWK1tJ0Sar3J8Scu71dwey6eC4RC+lAg/eN+nmPkjbAnw9huztrR4VSG/RaE+x8Q
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List drivers by team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/driver/team/{teamId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get drivers by team ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Team ID","in":"path","name":"teamId","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"items":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"},"type":"array"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: create-a-new-fleet
+title: "Create a new fleet"
+description: "Create a new fleet"
+sidebar_label: "Create a new fleet"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVc1O3DAQfhXL5y0baCuhvVGgVSVaEGV7QQjNJsOuqWO79gTYRnmYqoc+CC/WmSTLLuy2VaUeyCGxx56/b76Z1LrAlEcTyHinR3o/IhAqUA5v1ZVFJD3QEb9WmOiNL+Z6VOvcO0JHsoQQrMlBlIfXSSzUOuUzLEFWIfqAkQymTi1GtO3dS1OIpIS7I3RTmunR62ygS+MW25cDTfOAHFCiaNxUNwPtoMQnWtvZ39UIoez99WeGw59i1E3TpWYi8vH50wB7j0sLFw/W/eQac2IDbOExfm8FMnUABHrVOMUKW28peJc6PHaybflswl+c/zeU1xDJOx+XQOvqZDqQ15RuwHbmHsf7WcTKJCUZKnOlztiA7J0n9XF8dKQfQJt4bxFcC/sTHAVFi88tps2kWRLxX6g20JX9TTmqUDyzcmyQiOzVzs66x7HjiHNMCSYW1aEjQ/N/YG/TmSaYJmnBbuJwo5VIM88J6uCTjKAA0t96uBhJCeMNRtGpdRWtHA2tz8HO+P5oN9vNdMNmxN/pcnod3kEZLG7qkwW2i/Iu9w9VzYQT7sovZiDkkt/aCNhr073/ef/DKyzVu2PVt/399xu0KvjIAq7TN4jKq/3T8YEqICkOMVZURV5OIOGWeDYkweoP4GCKJeOp9k7e84Gk3jnLtrKtbSGE4FRCC26fwMZR/ijUlVG++XbPAsI7GgYLxrV8FbjrviIrJRPkRVDXEv842qYRMYMf+bdxfiGkjUZoIjs2NEMouDekhF9wLjF00bw4E7ctxytxv0agZrDQ2MtzDPTHu6tkOjn+dMaXJ/2PrPSF6ES4lWHN75HmhW/RaduvldXagptWXAE+72zK8wvfaHub
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a new fleet"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/fleet"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create a new fleet
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"correlation_id":{"maxLength":50,"minLength":3,"type":"string"},"name":{"maxLength":100,"minLength":3,"type":"string"},"team_id":{"type":"integer"}},"required":["correlation_id","name","team_id"],"type":"object"}}},"description":"Fleet Data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"team_id":{"type":"integer"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

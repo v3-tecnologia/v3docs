@@ -1,0 +1,71 @@
+---
+id: list-drivers-with-pagination
+title: "List drivers with pagination"
+description: "Get drivers with pagination"
+sidebar_label: "List drivers with pagination"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVc1O20AQfpXVnlopIqZSJZQbahFCpQW10EuFook9SZaud93dMSVYfpiqBx6EF+uMbYhTTBA3TvbO/3yz822lM4xpMAUZ7/REHyKpLJgrDFH9NrRUBSyMg0Y70gUEyJFYqSc/qv9cT2GBypX5DIN6k+EcSksTtfuW/Yzof5UYVnxwHIKPHBj5FNMl5qAnlaZVIXLjCBcYdF2PBjNEc4P9+MlI5XAtP8m2VFPx257vYqQDxsK7iFEM3iWJfDZrOPnEQVLPTo5EC0VhTdoANL6MYlL1chTBFxjItAEzoEZqCPP4WJ36ENA2oaYm65UYKRi30DUnDgiE2RTosTsZaXbA6QpsG26zk+8iViYqCiUqM1dnHEDOzpP6cn58zI12sWbeWwQnM7kX+dklpiThM7T42mragO9hwvcXYqCe0j6BeFlkrwzxoX47AYQAKzk3yzWIwHoXBtXkCez04YI+ZSBRBg0GyhXZ+6FVOmKn4MCqbxiYcNRBCD68YLvqNjbBQuhIt7SleYuZopae8dcLpIa1aMmHcWfAHNDkazmsDFZ0Y+tTsEsfabKX7CVayMC4uW/30hGkUk9z2/st7Dfl3d3e/fUKc3V4ojoGuftzhVYVPrCAp34DQXn14ev5R5VBVMhXpaQy8O8MIu7I3A1Zge0zOMY25/7V/ukRK6TSNlmyk+zsNjPkMnNowOgY7tjEbby9UXS1BvgZuu8mSXhN48ICU6sshABWdaD2URfwRFJV0tN5sHUt4paLm+fCRJhZ5MHMwUbcUtaWp2Swpp+4Wr8ovHylmOjmAXlZzmcel2eS378x6wou5BCMlMAQXLD1EiFjvASP1nE/TbGgntejO1/3r/ThwRnv1D+oK6JT
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List drivers with pagination"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/driver"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get drivers with pagination
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
