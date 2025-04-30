@@ -1,13 +1,12 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+.heroTitle {
+  margin: 0 !important;
 }
 
 @media screen and (max-width: 996px) {
@@ -31,7 +30,8 @@
 
 .introText img {
   display: block;
-  margin: 0 auto 3rem;
+  margin: 0 auto 4rem;
+  margin-top: 2rem;
   height: auto;
 }
 
