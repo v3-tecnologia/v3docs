@@ -12,7 +12,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "docs-all": "docusaurus gen-api-docs all",
+    "docs-all": "docusaurus gen-api-docs all --plugin-id management-open-api order-open-api",
     "typecheck": "tsc"
   },
   "dependencies": {
