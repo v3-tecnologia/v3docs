@@ -48,7 +48,7 @@ Além desta documentação, oferecemos:
 
 ## Próximos Passos
 
-Recomendamos começar pelo [Guia de Início Rápido](/docs/quickstart) para configurar seu ambiente e fazer sua primeira chamada à API.
+Recomendamos começar pela [documentação](/docs/intro) para configurar seu ambiente e fazer sua primeira chamada à API.
 
 Estamos constantemente melhorando nossa documentação. Se você encontrar algo que possa ser melhorado ou tiver sugestões, por favor, entre em contato conosco.
 
