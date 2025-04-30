@@ -1,80 +1,258 @@
 basePath: /
 definitions:
-  health.HealthCheckResponse:
-    properties:
-      status:
-        type: string
-    type: object
-  httpserver.CreateOrderDTO:
-    properties:
-      orders:
-        items:
-          $ref: '#/definitions/model.OrderRequest'
-        minItems: 1
-        type: array
-    required:
-    - orders
-    type: object
-  model.Order:
+  dto.CreateOrderDto:
     properties:
       account_id:
         type: string
-      created_at:
-        type: string
       device_id:
         type: string
-      id:
-        type: string
-      order_id:
-        type: string
+      orders:
+        items:
+          $ref: '#/definitions/dto.OrderDto'
+        type: array
+    required:
+    - account_id
+    - device_id
+    - orders
+    type: object
+  dto.OrderDto:
+    properties:
       parameters:
         items:
-          $ref: '#/definitions/model.OrderParameter'
+          oneOf:
+            - $ref: '#/definitions/dto.ParameterDto'
+              title: ParameterDto
+            - $ref: '#/definitions/factory.AddWifi'
+              title: AddWifi
+            - $ref: '#/definitions/factory.AddWifiBatch'
+              title: AddWifiBatch
+            - $ref: '#/definitions/factory.DeleteWifi'
+              title: DeleteWifi
+            - $ref: '#/definitions/factory.DeleteWifiBatch'
+              title: DeleteWifiBatch
+            - $ref: '#/definitions/factory.DemandImage'
+              title: DemandImage
+            - $ref: '#/definitions/factory.DemandVideo'
+              title: DemandVideo
+            - $ref: '#/definitions/factory.GetDeviceState'
+              title: GetDeviceState
+            - $ref: '#/definitions/factory.Inertial'
+              title: Inertial
+            - $ref: '#/definitions/factory.Reboot'
+              title: Reboot
+            - $ref: '#/definitions/factory.SpeedTelemetry'
+              title: SpeedTelemetry
+            - $ref: '#/definitions/factory.Telemetry'
+              title: Telemetry
+            - $ref: '#/definitions/factory.Tracking'
+              title: Tracking
         type: array
-      status:
-        type: string
       type:
         type: string
-      updated_at:
-        type: string
+    required:
+    - parameters
+    - type
     type: object
-  model.OrderParameter:
+  dto.ParameterDto:
+    name: ParameterDto
     properties:
-      cam:
-        type: string
-      config:
-        type: string
-      end:
-        type: string
       key:
         type: string
       module:
-        type: string
-      password:
-        type: string
-      ssid:
-        type: string
-      start:
         type: string
       type:
         type: string
       value:
         type: string
+    required:
+    - key
+    - module
+    - type
+    - value
     type: object
-  model.OrderRequest:
+  factory.AddWifi:
     properties:
+      deviceID:
+        type: string
       parameters:
         items:
-          $ref: '#/definitions/model.OrderParameter'
+          $ref: '#/definitions/model.AddWifiBatch'
         type: array
-      type:
+    type: object
+  factory.AddWifiBatch:
+    properties:
+      deviceID:
+        type: string
+      parameters:
+        items:
+          $ref: '#/definitions/model.AddWifiBatch'
+        type: array
+    type: object
+  factory.DeleteWifi:
+    properties:
+      deviceID:
+        type: string
+      parameters:
+        items:
+          $ref: '#/definitions/model.DeleteWifiBatch'
+        type: array
+    type: object
+  factory.DeleteWifiBatch:
+    properties:
+      deviceID:
+        type: string
+      parameters:
+        items:
+          $ref: '#/definitions/model.DeleteWifiBatch'
+        type: array
+    type: object
+  factory.DemandImage:
+    properties:
+      deviceID:
+        type: string
+      parameters:
+        items:
+          $ref: '#/definitions/model.DemandImage'
+        type: array
+    type: object
+  factory.DemandVideo:
+    properties:
+      deviceID:
+        type: string
+      parameters:
+        items:
+          $ref: '#/definitions/model.DemandVideo'
+        type: array
+    type: object
+  factory.GetDeviceState:
+    properties:
+      deviceID:
+        type: string
+      parameters:
+        items:
+          $ref: '#/definitions/model.DeviceState'
+        type: array
+    type: object
+  factory.Inertial:
+    properties:
+      deviceID:
+        type: string
+      parameters:
+        items:
+          $ref: '#/definitions/model.Inertial'
+        type: array
+    type: object
+  factory.Reboot:
+    properties:
+      deviceID:
+        type: string
+      parameters:
+        items:
+          $ref: '#/definitions/model.Reboot'
+        type: array
+    type: object
+  factory.SpeedTelemetry:
+    properties:
+      deviceID:
+        type: string
+      parameters:
+        items:
+          $ref: '#/definitions/model.Telemetry'
+        type: array
+    type: object
+  factory.Telemetry:
+    properties:
+      deviceID:
+        type: string
+      parameters:
+        items:
+          $ref: '#/definitions/model.Telemetry'
+        type: array
+    type: object
+  factory.Tracking:
+    properties:
+      deviceID:
+        type: string
+      parameters:
+        items:
+          $ref: '#/definitions/model.Tracking'
+        type: array
+    type: object
+  health.HealthCheckResponse:
+    properties:
+      status:
         type: string
     type: object
-  model.OrderResponse:
+  model.AddWifiBatch:
     properties:
-      asset:
+      password:
         type: string
+      ssid:
+        type: string
+    type: object
+  model.Cam:
+    enum:
+    - road
+    - driver
+    type: string
+    x-enum-varnames:
+    - RoadCam
+    - DriverCam
+  model.DeleteWifiBatch:
+    properties:
+      ssid:
+        type: string
+    type: object
+  model.DemandImage:
+    properties:
+      cam:
+        $ref: '#/definitions/model.Cam'
+      end:
+        type: string
+      start:
+        type: string
+    type: object
+  model.DemandVideo:
+    properties:
+      cam:
+        $ref: '#/definitions/model.Cam'
+      end:
+        type: string
+      start:
+        type: string
+    type: object
+  model.DeviceState:
+    type: object
+  model.Inertial:
+    properties:
+      state:
+        $ref: '#/definitions/model.State'
+    type: object
+  model.Reboot:
+    type: object
+  model.State:
+    enum:
+    - "on"
+    - "off"
+    type: string
+    x-enum-varnames:
+    - "ON"
+    - "OFF"
+  model.Telemetry:
+    properties:
+      state:
+        $ref: '#/definitions/model.State'
+    type: object
+  model.Tracking:
+    properties:
+      state:
+        $ref: '#/definitions/model.State'
+    type: object
+  service.OrderResponse:
+    properties:
       created_at:
+        type: string
+      deleted_at:
         type: string
       order_id:
         type: string
@@ -110,42 +288,54 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/model.Order'
+            $ref: '#/definitions/service.OrderResponse'
         "400":
           description: Bad Request
           schema: {}
+      security:
+      - ApiKeyAuth: []
       summary: Delete orders in batch
       tags:
-      - orders
+      - Orders
     post:
       consumes:
       - application/json
       description: Create new order for a device
       parameters:
-      - description: Device ID
-        in: path
-        name: deviceId
-        required: true
-        type: string
-      - description: Orders
-        in: body
-        name: payload
-        required: true
-        schema:
-          $ref: '#/definitions/httpserver.CreateOrderDTO'
+        - description: Device ID
+          in: path
+          name: deviceId
+          required: true
+          type: string
+        - description: Create Order payload
+          in: body
+          name: payload
+          required: true
+          schema:
+            $ref: '#/definitions/dto.CreateOrderDto'
       produces:
       - application/json
       responses:
         "201":
-          description: Created
+          description: Order created successfully
           schema:
-            $ref: '#/definitions/model.OrderResponse'
+            items:
+              $ref: '#/definitions/service.OrderResponse'
+            type: array
         "400":
-          description: Bad Request
+          description: Invalid request payload
           schema: {}
+        "401":
+          description: Unauthorized
+          schema: {}
+        "500":
+          description: Internal server error
+          schema: {}
+      security:
+      - ApiKeyAuth: []
       summary: Create new order
       tags:
-      - orders
+      - Orders
   /devices/{deviceId}/orders/{orderId}:
     delete:
       description: Delete a specific order
@@ -164,13 +354,15 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/model.OrderResponse'
+            $ref: '#/definitions/service.OrderResponse'
         "400":
           description: Bad Request
           schema: {}
+      security:
+      - ApiKeyAuth: []
       summary: Delete order
       tags:
-      - orders
+      - Orders
     get:
       description: Get a specific order
       parameters:
@@ -188,13 +380,47 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/model.OrderResponse'
+            $ref: '#/definitions/service.OrderResponse'
         "400":
           description: Bad Request
           schema: {}
+      security:
+      - ApiKeyAuth: []
       summary: Get order
       tags:
-      - orders
+      - Orders
+  /devices/{deviceId}/orders/internal:
+    post:
+      consumes:
+      - application/json
+      description: Create new order for a device
+      parameters:
+      - description: Device ID
+        in: path
+        name: deviceId
+        required: true
+        type: string
+      - description: Orders
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreateOrderDto'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/service.OrderResponse'
+        "400":
+          description: Bad Request
+          schema: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Create new order internal
+      tags:
+      - Orders
   /healthz:
     get:
       description: Check if application is alive
@@ -208,7 +434,7 @@ paths:
           schema: {}
       summary: Check if application is alive
       tags:
-      - health-check
+      - Health Check
   /healthz/ready:
     get:
       description: Check if application is ready
@@ -223,5 +449,11 @@ paths:
             $ref: '#/definitions/health.HealthCheckResponse'
       summary: Check if application is ready
       tags:
-      - health-check
+      - Health Check
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    required: true
+    type: apiKey
 swagger: "2.0"
