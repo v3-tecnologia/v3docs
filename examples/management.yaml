@@ -1,0 +1,1316 @@
+basePath: /
+definitions:
+  health.HealthCheckResponse:
+    properties:
+      status:
+        type: string
+    type: object
+  httpserver.AssignToTeamDTO:
+    properties:
+      team_id:
+        type: integer
+    required:
+    - team_id
+    type: object
+  httpserver.CreateAccountDTO:
+    properties:
+      correlation_id:
+        maxLength: 50
+        minLength: 3
+        type: string
+      name:
+        maxLength: 100
+        minLength: 3
+        type: string
+    required:
+    - correlation_id
+    - name
+    type: object
+  httpserver.CreateDeviceDTO:
+    properties:
+      automatic_recognition:
+        type: boolean
+      certificate_id:
+        maxLength: 50
+        minLength: 3
+        type: string
+      fleet_id:
+        type: integer
+      iccid:
+        maxLength: 20
+        minLength: 19
+        type: string
+      imei:
+        maxLength: 15
+        minLength: 15
+        type: string
+      model:
+        maxLength: 50
+        minLength: 3
+        type: string
+      phone_number:
+        maxLength: 15
+        minLength: 10
+        type: string
+    required:
+    - certificate_id
+    - fleet_id
+    - iccid
+    - imei
+    - model
+    - phone_number
+    type: object
+  httpserver.CreateDriverDTO:
+    properties:
+      correlation_id:
+        maxLength: 50
+        minLength: 3
+        type: string
+      name:
+        maxLength: 100
+        minLength: 3
+        type: string
+    required:
+    - correlation_id
+    - name
+    type: object
+  httpserver.CreateFleetDTO:
+    properties:
+      correlation_id:
+        maxLength: 50
+        minLength: 3
+        type: string
+      name:
+        maxLength: 100
+        minLength: 3
+        type: string
+      team_id:
+        type: integer
+    required:
+    - correlation_id
+    - name
+    - team_id
+    type: object
+  httpserver.CreateTeamDTO:
+    properties:
+      account_id:
+        type: integer
+      correlation_id:
+        maxLength: 50
+        minLength: 3
+        type: string
+      name:
+        maxLength: 100
+        minLength: 3
+        type: string
+    required:
+    - account_id
+    - correlation_id
+    - name
+    type: object
+  httpserver.UpdateAccountDTO:
+    properties:
+      correlation_id:
+        maxLength: 50
+        minLength: 3
+        type: string
+      name:
+        maxLength: 100
+        minLength: 3
+        type: string
+    required:
+    - correlation_id
+    - name
+    type: object
+  httpserver.UpdateDeviceDTO:
+    properties:
+      automatic_recognition:
+        type: boolean
+      certificate_id:
+        maxLength: 50
+        minLength: 3
+        type: string
+      fleet_id:
+        type: integer
+      iccid:
+        maxLength: 20
+        minLength: 19
+        type: string
+      imei:
+        maxLength: 15
+        minLength: 15
+        type: string
+      model:
+        maxLength: 50
+        minLength: 3
+        type: string
+      phone_number:
+        maxLength: 15
+        minLength: 10
+        type: string
+    required:
+    - certificate_id
+    - fleet_id
+    - iccid
+    - imei
+    - model
+    - phone_number
+    type: object
+  httpserver.UpdateDriverDTO:
+    properties:
+      correlation_id:
+        maxLength: 50
+        minLength: 3
+        type: string
+      name:
+        maxLength: 100
+        minLength: 3
+        type: string
+    required:
+    - correlation_id
+    - name
+    type: object
+  httpserver.UpdateFleetDTO:
+    properties:
+      correlation_id:
+        maxLength: 50
+        minLength: 3
+        type: string
+      name:
+        maxLength: 100
+        minLength: 3
+        type: string
+      team_id:
+        type: integer
+    required:
+    - correlation_id
+    - name
+    - team_id
+    type: object
+  httpserver.UpdateTeamDTO:
+    properties:
+      account_id:
+        type: integer
+      correlation_id:
+        maxLength: 50
+        minLength: 3
+        type: string
+      name:
+        maxLength: 100
+        minLength: 3
+        type: string
+    required:
+    - account_id
+    - correlation_id
+    - name
+    type: object
+  model.Account:
+    properties:
+      correlation_id:
+        type: string
+      created_at:
+        $ref: '#/definitions/types.CustomTime'
+      deleted_at:
+        $ref: '#/definitions/types.CustomTime'
+      id:
+        type: integer
+      name:
+        type: string
+      ulid:
+        type: string
+      updated_at:
+        $ref: '#/definitions/types.CustomTime'
+    type: object
+  model.Device:
+    properties:
+      automatic_recognition:
+        type: boolean
+      certificate_id:
+        type: string
+      created_at:
+        $ref: '#/definitions/types.CustomTime'
+      deleted_at:
+        $ref: '#/definitions/types.CustomTime'
+      fleet_id:
+        type: integer
+      iccid:
+        type: string
+      id:
+        type: integer
+      imei:
+        type: string
+      model:
+        type: string
+      phone_number:
+        type: string
+      ulid:
+        type: string
+      updated_at:
+        $ref: '#/definitions/types.CustomTime'
+    type: object
+  model.Driver:
+    properties:
+      correlation_id:
+        type: string
+      created_at:
+        $ref: '#/definitions/types.CustomTime'
+      deleted_at:
+        $ref: '#/definitions/types.CustomTime'
+      id:
+        type: integer
+      name:
+        type: string
+      ulid:
+        type: string
+      updated_at:
+        $ref: '#/definitions/types.CustomTime'
+    type: object
+  model.Fleet:
+    properties:
+      correlation_id:
+        type: string
+      created_at:
+        $ref: '#/definitions/types.CustomTime'
+      deleted_at:
+        $ref: '#/definitions/types.CustomTime'
+      id:
+        type: integer
+      name:
+        type: string
+      team_id:
+        type: integer
+      ulid:
+        type: string
+      updated_at:
+        $ref: '#/definitions/types.CustomTime'
+    type: object
+  model.Team:
+    properties:
+      account_id:
+        type: integer
+      correlation_id:
+        type: string
+      created_at:
+        $ref: '#/definitions/types.CustomTime'
+      deleted_at:
+        $ref: '#/definitions/types.CustomTime'
+      id:
+        type: integer
+      name:
+        type: string
+      ulid:
+        type: string
+      updated_at:
+        $ref: '#/definitions/types.CustomTime'
+    type: object
+  service.PaginatedAccounts:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/model.Account'
+        type: array
+      page:
+        type: integer
+      page_size:
+        type: integer
+      total_items:
+        type: integer
+      total_pages:
+        type: integer
+    type: object
+  service.PaginatedDevices:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/model.Device'
+        type: array
+      page:
+        type: integer
+      page_size:
+        type: integer
+      total_items:
+        type: integer
+      total_pages:
+        type: integer
+    type: object
+  service.PaginatedDrivers:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/model.Driver'
+        type: array
+      page:
+        type: integer
+      page_size:
+        type: integer
+      total_items:
+        type: integer
+      total_pages:
+        type: integer
+    type: object
+  service.PaginatedFleets:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/model.Fleet'
+        type: array
+      page:
+        type: integer
+      page_size:
+        type: integer
+      total_items:
+        type: integer
+      total_pages:
+        type: integer
+    type: object
+  service.PaginatedTeams:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/model.Team'
+        type: array
+      page:
+        type: integer
+      page_size:
+        type: integer
+      total_items:
+        type: integer
+      total_pages:
+        type: integer
+    type: object
+  types.CustomTime:
+    properties:
+      time:
+        type: string
+      valid:
+        description: Valid is true if Time is not NULL
+        type: boolean
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: Aplicação em GO responsável por realizar o CRUD das estruturas base.
+  title: Management API
+  version: 0.0.1
+paths:
+  /account:
+    get:
+      description: Get accounts with pagination
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Page size (default: 10, max: 100)'
+        in: query
+        name: page_size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/service.PaginatedAccounts'
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: List accounts with pagination
+      tags:
+      - account
+    post:
+      consumes:
+      - application/json
+      description: Create a new account
+      parameters:
+      - description: Account Data
+        in: body
+        name: account
+        required: true
+        schema:
+          $ref: '#/definitions/httpserver.CreateAccountDTO'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Account'
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Create a new account
+      tags:
+      - account
+  /account/{id}:
+    delete:
+      description: Delete an account
+      parameters:
+      - description: Account ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: Account removed
+          schema:
+            type: string
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Delete an account
+      tags:
+      - account
+    get:
+      description: Get an account by ID
+      parameters:
+      - description: Account ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Account'
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Get an account by ID
+      tags:
+      - account
+    put:
+      consumes:
+      - application/json
+      description: Update an account
+      parameters:
+      - description: Account ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Account Data
+        in: body
+        name: account
+        required: true
+        schema:
+          $ref: '#/definitions/httpserver.UpdateAccountDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Account'
+        "404":
+          description: Not Found
+          schema: {}
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Update an account
+      tags:
+      - account
+  /account/ulid/{ulid}:
+    get:
+      description: Get an account by ULID
+      parameters:
+      - description: Account ULID
+        in: path
+        name: ulid
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Account'
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Get an account by ULID
+      tags:
+      - account
+  /device:
+    get:
+      description: Get devices with pagination
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Page size (default: 10, max: 100)'
+        in: query
+        name: page_size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/service.PaginatedDevices'
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: List devices with pagination
+      tags:
+      - device
+    post:
+      consumes:
+      - application/json
+      description: Create a new device
+      parameters:
+      - description: Device Data
+        in: body
+        name: device
+        required: true
+        schema:
+          $ref: '#/definitions/httpserver.CreateDeviceDTO'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Device'
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Create a new device
+      tags:
+      - device
+  /device/{id}:
+    delete:
+      description: Delete a device
+      parameters:
+      - description: Device ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: Device removed
+          schema:
+            type: string
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Delete a device
+      tags:
+      - device
+    get:
+      description: Get a device by ID
+      parameters:
+      - description: Device ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Device'
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Get a device by ID
+      tags:
+      - device
+    put:
+      consumes:
+      - application/json
+      description: Update a device
+      parameters:
+      - description: Device ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Device Data
+        in: body
+        name: device
+        required: true
+        schema:
+          $ref: '#/definitions/httpserver.UpdateDeviceDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Device'
+        "404":
+          description: Not Found
+          schema: {}
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Update a device
+      tags:
+      - device
+  /device/fleet/{fleetId}:
+    get:
+      description: Get devices by fleet ID
+      parameters:
+      - description: Fleet ID
+        in: path
+        name: fleetId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Device'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: List devices by fleet
+      tags:
+      - device
+  /device/imei/{imei}:
+    get:
+      description: Get a device by IMEI
+      parameters:
+      - description: Device IMEI
+        in: path
+        name: imei
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Device'
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Get a device by IMEI
+      tags:
+      - device
+  /device/ulid/{ulid}:
+    get:
+      description: Get a device by ULID
+      parameters:
+      - description: Device ULID
+        in: path
+        name: ulid
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Device'
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Get a device by ULID
+      tags:
+      - device
+  /driver:
+    get:
+      description: Get drivers with pagination
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Page size (default: 10, max: 100)'
+        in: query
+        name: page_size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/service.PaginatedDrivers'
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: List drivers with pagination
+      tags:
+      - driver
+    post:
+      consumes:
+      - application/json
+      description: Create a new driver
+      parameters:
+      - description: Driver Data
+        in: body
+        name: driver
+        required: true
+        schema:
+          $ref: '#/definitions/httpserver.CreateDriverDTO'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Driver'
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Create a new driver
+      tags:
+      - driver
+  /driver/{id}:
+    delete:
+      description: Delete a driver
+      parameters:
+      - description: Driver ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: Driver removed
+          schema:
+            type: string
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Delete a driver
+      tags:
+      - driver
+    get:
+      description: Get a driver by ID
+      parameters:
+      - description: Driver ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Driver'
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Get a driver by ID
+      tags:
+      - driver
+    put:
+      consumes:
+      - application/json
+      description: Update a driver
+      parameters:
+      - description: Driver ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Driver Data
+        in: body
+        name: driver
+        required: true
+        schema:
+          $ref: '#/definitions/httpserver.UpdateDriverDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Driver'
+        "404":
+          description: Not Found
+          schema: {}
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Update a driver
+      tags:
+      - driver
+  /driver/{id}/team:
+    post:
+      consumes:
+      - application/json
+      description: Assign a driver to a team
+      parameters:
+      - description: Driver ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Team Data
+        in: body
+        name: team
+        required: true
+        schema:
+          $ref: '#/definitions/httpserver.AssignToTeamDTO'
+      responses:
+        "200":
+          description: Driver assigned to team
+          schema:
+            type: string
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Assign driver to team
+      tags:
+      - driver
+  /driver/{id}/team/{teamId}:
+    delete:
+      description: Remove a driver from a team
+      parameters:
+      - description: Driver ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Team ID
+        in: path
+        name: teamId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: Driver removed from team
+          schema:
+            type: string
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Remove driver from team
+      tags:
+      - driver
+  /driver/team/{teamId}:
+    get:
+      description: Get drivers by team ID
+      parameters:
+      - description: Team ID
+        in: path
+        name: teamId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Driver'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: List drivers by team
+      tags:
+      - driver
+  /driver/ulid/{ulid}:
+    get:
+      description: Get a driver by ULID
+      parameters:
+      - description: Driver ULID
+        in: path
+        name: ulid
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Driver'
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Get a driver by ULID
+      tags:
+      - driver
+  /fleet:
+    get:
+      description: Get fleets with pagination
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Page size (default: 10, max: 100)'
+        in: query
+        name: page_size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/service.PaginatedFleets'
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: List fleets with pagination
+      tags:
+      - fleet
+    post:
+      consumes:
+      - application/json
+      description: Create a new fleet
+      parameters:
+      - description: Fleet Data
+        in: body
+        name: fleet
+        required: true
+        schema:
+          $ref: '#/definitions/httpserver.CreateFleetDTO'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Fleet'
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Create a new fleet
+      tags:
+      - fleet
+  /fleet/{id}:
+    delete:
+      description: Delete a fleet
+      parameters:
+      - description: Fleet ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: Fleet removed
+          schema:
+            type: string
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Delete a fleet
+      tags:
+      - fleet
+    get:
+      description: Get a fleet by ID
+      parameters:
+      - description: Fleet ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Fleet'
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Get a fleet by ID
+      tags:
+      - fleet
+    put:
+      consumes:
+      - application/json
+      description: Update a fleet
+      parameters:
+      - description: Fleet ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Fleet Data
+        in: body
+        name: fleet
+        required: true
+        schema:
+          $ref: '#/definitions/httpserver.UpdateFleetDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Fleet'
+        "404":
+          description: Not Found
+          schema: {}
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Update a fleet
+      tags:
+      - fleet
+  /fleet/team/{teamId}:
+    get:
+      description: Get fleets by team ID
+      parameters:
+      - description: Team ID
+        in: path
+        name: teamId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Fleet'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: List fleets by team
+      tags:
+      - fleet
+  /fleet/ulid/{ulid}:
+    get:
+      description: Get a fleet by ULID
+      parameters:
+      - description: Fleet ULID
+        in: path
+        name: ulid
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Fleet'
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Get a fleet by ULID
+      tags:
+      - fleet
+  /healthz:
+    get:
+      description: Check if application is alive
+      responses:
+        "200":
+          description: Application is alive
+          schema:
+            $ref: '#/definitions/health.HealthCheckResponse'
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: Check if application is alive
+      tags:
+      - health-check
+  /healthz/ready:
+    get:
+      description: Check if application is ready
+      responses:
+        "200":
+          description: Application is ready
+          schema:
+            $ref: '#/definitions/health.HealthCheckResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/health.HealthCheckResponse'
+      summary: Check if application is ready
+      tags:
+      - health-check
+  /team:
+    get:
+      description: Get teams with pagination
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Page size (default: 10, max: 100)'
+        in: query
+        name: page_size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/service.PaginatedTeams'
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: List teams with pagination
+      tags:
+      - team
+    post:
+      consumes:
+      - application/json
+      description: Create a new team
+      parameters:
+      - description: Team Data
+        in: body
+        name: team
+        required: true
+        schema:
+          $ref: '#/definitions/httpserver.CreateTeamDTO'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Team'
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Create a new team
+      tags:
+      - team
+  /team/{id}:
+    delete:
+      description: Delete a team
+      parameters:
+      - description: Team ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: Team removed
+          schema:
+            type: string
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Delete a team
+      tags:
+      - team
+    get:
+      description: Get a team by ID
+      parameters:
+      - description: Team ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Team'
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Get a team by ID
+      tags:
+      - team
+    put:
+      consumes:
+      - application/json
+      description: Update a team
+      parameters:
+      - description: Team ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Team Data
+        in: body
+        name: team
+        required: true
+        schema:
+          $ref: '#/definitions/httpserver.UpdateTeamDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Team'
+        "404":
+          description: Not Found
+          schema: {}
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Update a team
+      tags:
+      - team
+  /team/account/{accountId}:
+    get:
+      description: Get teams by account ID
+      parameters:
+      - description: Account ID
+        in: path
+        name: accountId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Team'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: List teams by account
+      tags:
+      - team
+  /team/ulid/{ulid}:
+    get:
+      description: Get a team by ULID
+      parameters:
+      - description: Team ULID
+        in: path
+        name: ulid
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Team'
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Get a team by ULID
+      tags:
+      - team
+swagger: "2.0"

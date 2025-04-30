@@ -32,6 +32,18 @@ const sidebars: SidebarsConfig = {
       },
       items: require("./docs/openapi/orders/sidebar")
     },
+    {
+      type: "category",
+      label: "Management",
+      link: {
+        type: "generated-index",
+        title: "Management API",
+        description:
+          "This is the management API. It contains all the endpoints related to management.",
+          slug: "/category/management-api",
+      },
+      items: require("./docs/openapi/managements/sidebar")
+    }
   ],
   // But you can create a sidebar manually
   /*

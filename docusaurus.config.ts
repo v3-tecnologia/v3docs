@@ -2,6 +2,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
+import sidebar from "./docs/openapi/orders/sidebar";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -52,10 +53,10 @@ const config: Config = {
       },
     },
     navbar: {
-      title: "My Site",
+      title: "V3 Tecnologia",
       logo: {
-        alt: "My Site Logo",
-        src: "img/logo.svg",
+        alt: "V3 Logo",
+        src: "img/logo.png",
       },
       items: [
         {
@@ -238,7 +239,7 @@ const config: Config = {
         id: "order-open-api",
         docsPluginId: "classic",
         config: {
-          petstore: {
+          order: {
             specPath: "examples/orders.yaml",
             outputDir: "docs/openapi/orders",
             sidebarOptions: {
@@ -249,6 +250,23 @@ const config: Config = {
         } satisfies Plugin.PluginOptions,
       },
     ],
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "management-open-api",
+        docsPluginId: "classic",
+        config: {
+          management: {
+            specPath: "examples/management.yaml",
+            outputDir: "docs/openapi/managements",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+        } satisfies Plugin.PluginOptions,
+      }
+    ]
   ],
 
   themes: ["docusaurus-theme-openapi-docs"],
