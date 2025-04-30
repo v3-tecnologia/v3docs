@@ -6,9 +6,9 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "V3 Docs",
+  title: "V3 API Documentation",
   tagline: "Dinosaurs are cool",
-  url: "https://v3docs.github.io",
+  url: "https://docs.v3control.como",
   projectName: "v3docs",
   organizationName: "v3-tecnologia",
   baseUrl: "/",
