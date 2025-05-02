@@ -1,11 +1,11 @@
 ---
 id: remove-driver-from-team
 title: "Remove driver from team"
-description: "Handles HTTP DELETE requests to remove a driver from a specific team."
+description: "RemoveFromTeam handles the HTTP request to remove a driver from a team."
 sidebar_label: "Remove driver from team"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVE1v00AQ/SurPUFVxaFw8q0iEa1URBUSLtDDxp4kK9a7y+46NFj+MYgDP6R/jDe2o6YfKqJnLvZ4PTvz5s2baWRJsQjaJ+2szOWZsqWhKM7m80sxmV5M51MR6FtNMUWRHOzKbUkoUQa9pSBWwVX4ip4KvdKFSKSq0Rc7vcYB39jQ3vN8IhC7c+jsKBazC+FVUBUlCnEkPimjS5WQfenSBk6xu1EoYw4jfaSw1QUxGk9h5ULV/eyQKYPkM0p1sJFh1UVBMYoKD7Um4awoXOUNcbXCBcQXFAKMvcd3jcxd8W9OTkRMKtWRr62UNnWgkTyWt5Bl/rm5x99kXywcNR94lTawLa7gS5ewmU8dqJR5CjUdy1hsqFIyb2Ta+c7LJlpTkG17fD/+vKfv8ejM7fk/Zrhi7+idjRTZ4WQ85tejVfXNL/umczKkKhxC2cR3jrIjfj1IFlPQdo1cqEeC1ofxF9YHx51SS0NiapNOu6djt320pNbchQGgRDHozMahcGRAm6nrFzjKZdarJ2t02WYMPmt6vlr4RGhq39A6GHbPtq8j5Ld01yNoRjJR2q4co2BcqmBcgHC3klNvdKFuft/8coIq8e6DGNi9+bklI7xjFqHzHyoIJ97OFhNRYhQwXqGGamEuVexkBg4Ms/deWQizAg/i9PIcPxhon2w8Go9eSWDwLqZKWcY2SGHWz+nhlA4Nu4O3ueX4/+j/ffQHQSe6Tpk3CiMI8ju9NIPMPsseKZzzbtgH1vNhNqGiDZrFjk3DrV4E07Z8DKLDDucwtyponoR+v+huKiDplTKRnmjgi9kw9i/F4Rp6FPRwqCzPGbir+QvmV9r1a6pbPc9JfbuhnpF4YKm9gueGVAkimYP+5yk66tPBNV4K7eHM96rFpvkDDw1WtA==
+api: eJztVMtOGzEU/ZUrrwqKEkq7yg41aRuVCpSGFbAwMzfE6ow9tT0pdDQfU3XRD+HHeu54EAlESGVZdTUe+/g+zj0+jco5ZN5U0TirxmrOpVvze+/KBeuSVtrmBQeKK6aPi8Upef5Wc4gUHZYCJU25N2v2tMQl/EXcG17YWSS+qTiL6XKPmU0IETtMtw50Nj+mSntdcmQf6NWFMvmF6lAXSnAz/O4h4AJRAFq5XPAhFRV44/KA1rowuY7prBx0UTJdFJs1fGG/NhlLBxX7pfNld9h1owskmnOsvQ1o5fDggE4+UYg61oG+m7jCZqizjENALSHoayaz7O47BNNCIplwj1nW2/HeHh7Sma28k0N9VTBNbTTxdjuDJfbe+ccJZhOE8Pi1XZcERH/Sl05LbYowVAP1QIkanzePJjy5nwSARjYqHVdYW1zBn8mxlikbz7kaR1/zQIUMdGo1blS8rTqUjXzNXrXt4HH8RZrt7uhpoH+X4VLQoXIWMxcApiKfnV0lTeZJi5IMqTKHUDbKnf3RvnyeJAvRG3uNXOhHYUpP4+8a2/Ox2xQt6muZQl+gQjNJxIiZc4EhdfMCR2M1SgIdNSZvR1L8qEl8tcAEyPZ+oLUvBD5avwlQ+JW7GWauVEKUsUsnVUhdOpO6UMJ2J0dVYTJ99/vulyMu6cMJ9eze/VxzQZUTFqGwH9qTo3fzswnleKd49L6GkLG80oFFZuCgEPY+awudluCBjk5nOJBCU7KD4cHwtUINlQux1FZq66WQnGbLPPqBbdXbPHD835z+BXPqn1zkmziqCg2TgDw6RTf9QzhXiQyAx50d9boY9+4Bna8gJwE2jYjxzBdtK9sYv7/FPpZr7Y10kRzQdB3h0S11EfgZib2a98a0R5tGubPoflNbcQL0WMsfll/5NhlpZ44vSf3goS9I3LPUXgK5Yp2DSOEgHR5h9lXcuCa21W660mR6PF1M4YV/APv4yoY=
 sidebar_class_name: "delete api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,9 +36,11 @@ import Heading from "@theme/Heading";
 
 
 
-Handles HTTP DELETE requests to remove a driver from a specific team.
-Expects the driver ID and team ID as URL parameters. Validates both IDs and calls the driverService to perform the removal.
-Returns a success message on completion or an error message with HTTP 422 status on failure.
+RemoveFromTeam handles the HTTP request to remove a driver from a team.
+It expects the driver ID and team ID as URL parameters ("id" and "teamId").
+The method parses these parameters, validates them, and calls the driverService to perform the removal.
+Returns a 200 OK status with a success message if the operation is successful.
+Returns a 422 Unprocessable Entity status with an error message if the IDs are invalid or if the removal fails.
 
 <Heading
   id={"request"}

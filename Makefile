@@ -28,3 +28,8 @@ build-order: clean-order doc-order
 
 build-management: clean-management doc-management
 	npm run docusaurus build
+
+build-run: build serve
+
+serve:
+	npm run docusaurus serve

@@ -1,11 +1,11 @@
 ---
 id: get-an-account-by-id
 title: "Get an account by ID"
-description: "Get an account by ID"
+description: "FindOne handles HTTP requests to retrieve a single account by its ID."
 sidebar_label: "Get an account by ID"
 hide_title: true
 hide_table_of_contents: true
-api: eJzNVMFu2zAM/RVBpw0okmzrybdi3YJiXTsU7S5FUDA2k6iTJVWig2aGP2bYYR+SHyvpOG2yJAN268kyRT6Rj3ysdYEpjyaQ8U5neoikwCnIc185UuOFOjvVRzpAhBIJY9LZbf1XzEnn3HoasQSgGZ8dx/CfKfgc8aEyEQudUazwSKd8hiXorNa0CK2XI5xi1E0zEu8UvEuYxOH9YCCf7UcvvzBo7jnIkdxCCNbkILf9+yQu9cYbIfqAkcwKMLeGo+44r5fnE0XjproR0BjRtkgHXSICYXEHtAtORoreEzQHu4LbLuS7mJVJSnhRZqKuGUD+nSd1cXN+znV2WGPvLYJjip5NfnyPOQl8gRZfW05b9D03eD0Ye/LhbsLhzlT20EUoXlk/9ljEdjw43n3xgoE/s4KK/5joZoVHMBVFriWoWTos05nnuvQUqVUuSzHT/U7R/doUDZsTxvlazVW04tGff0jgirF/7OW+1CJD4ya+FQxnBblk1Q7alvjbJJd/lr+9wlINL1Wn3eWvOVoVfGQDU/oTovLq49XNqSogKeQ+VFRFPo4hYU9INWSFsK/gYIols6BOvp3xhSS6emzQG/TeSe+CT1RCS0m3ZA4srq1k6xd6D/l3TSN8pH6wwNtMxksIqjsqb3UXw94ZDxDTNONs5KKupZabaJtGzA8VxgXbRzJr0cBYypPtaZKcuUcTsAn/keSbq25rvlVbS3Zvlp0R3EK3w13JHx9/4GK1hJsRe80QChah5LG6YGAMtBGyM3fN5lQNP13zLD8BGHweAQ==
+api: eJztVcFuEzEQ/ZWRTyBFSSg95VaRtkQtTVUaLm1VObuTrItjL/ZsIKz2YxAHPqQ/xsxmkya0AXErEqf1jsdvxjPznkuVYkyCycl4p3rqyLh06BAy7VKLEd5eXp5DwE8FRopAntcUDM4RNETjppYXSeILRzBegGGfQb997QYEuQ6RAShDuFYmvVZi0TMkDDAJflbvNMgwujhtwVxbk2riQ4ZawAlAoq1dQjRB3mOYmwQlkQlSkm3uSdhJbRj0wTCIqwFbjMZxYu5dGuGzoYxT39/bg5HLg08wRj3mWxw6MrSASJqKWAfXDjAEH2AmPlN8wF/dmIM4TzDhnx1huvtwxh5H4vEH7KGDWCSSTwNFRXBblwcujl5B73W7MDxpMNuqpdbVjap3Vf7S1oMGYdBnTyOWXFPGa8dn+M+kvJZmmICp6lEosKVikuFMq16paJHXXo5wikFV1Y14y125xeLA2chnO+jwhEETz4ccya7Oc2sSLbuduygu5UYMbkaOgcwSMLGGT91yXg/hI0+em6pKQENAWyPtdAnIo5TeanoMTkYu/cShemAeX+SDmKXbUhcwE7hkgFX3z0anp3zPBmvsvUXtuERrkx/fYUICn6LF55bTVvnWDV4NxhP5cDf17s4UdtdGnj6zfjxhERtz9nHENYn/YqKrJR7pqTByRUHF1GGaZp7vpaZINXOZij3VaWjeKU1asTmy1q3YXAQrHp3568jyMfZf2omfKaGhcRNfE4az0olkVQ/aFvnrJO9/3H/3gDM4HjY6Fe+/zdFCzjLEZLHmqw7g4c3FqM9KE4F1ORQsQrwc64iiMSyRVgr2TjsWrRlXAQ7OB7whiS6Dddvd9ivpXe4jzXRdkkZkjpFE+Dbei1qOtpItH8r7/y36Z9+ihleEX6iTW80PjiiAzHDZTPuVaoDYu8cc50nOeGBkoyxl3EbBVpWYuSlhwfYbkYNgpEDLB87UxWIaTbSN+Js5enHRPGwvYesdfDLLxqjdQtX6U8gfLz/iYvlOVjfslaFOWSclj+UGA2NOG0ceSUO1Sfzjw0uWm5+FXUcK
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,7 +36,11 @@ import Heading from "@theme/Heading";
 
 
 
-Get an account by ID
+FindOne handles HTTP requests to retrieve a single account by its ID.
+It parses the "id" parameter from the request URL, validates it, and calls the accountService to fetch the account.
+If the ID is invalid, it responds with a 422 Unprocessable Entity status and an error message.
+If the account is not found, it responds with a 404 Not Found status and an error message.
+On success, it returns the account data with a 200 OK status.
 
 <Heading
   id={"request"}

@@ -1,11 +1,11 @@
 ---
 id: get-a-device-by-id
 title: "Get a device by ID"
-description: "FindOne handles HTTP GET requests to retrieve a device by its ID."
+description: "FindOne handles HTTP GET requests to retrieve a single device by ID."
 sidebar_label: "Get a device by ID"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVc1u20YQfpXBnhpAkBQ3J92MKnGEuFHgWLnEhrEih+Kmy112d6hGIfgwQQ55EL9YZpa0Isdyi95SoCcu5+ebn535tlU5xiyYmox3aqZeGJcvHUKpXW4xwsvLyzdw9vwSAv7ZYKQI5PlMweAWQUOOW5MhrHdgWLeYj6/cgqDWIbIzlQhXyuRXSiS6QsIARfBV0gyIsLo4H8FWW5NrYidDI+DgkGlre4g+xlsMKRTHL5Cy8kAlQYv0v5iDYQiX4EaMxVFi7V0e4S9DJSf87OQEVq4OPsMY9doiPHdkaAeRNDUxhdYOMAQfoBKbzQH+UC7HcJ6g8I17JMr0Gbxmixdi8Q/QSwexySSdAYqa4A4rB26MvkM+mU5h+WqAHKuR2nc2qtn79ofrnPcAizkbGhHUmko+O3bhP5PzWe7BBMzVjEKDIxWzEiutZq2iXZ2sHOEGg+q6a7GWSvl2xYCTkc/9mMtXDJp5dnIkWl3X1mRatJMPUUzagxh8EzUGMj2gbshXbJrdBMz8xpkec5/K2nuL2qmOI4hXIcB4w3V8t4k8nG6TTAKyNr/R9DASGenAEac0Og+reidiuXhpEpgCLhngbhBer87Puegfk+z2Ir/+gBkJfI4Wf7acCotI95u4v3Oemyx7pL+PelRojjpUnss/qqlL7/DGNdWaIY4ZNPaRJJo6/8ku+YhEZMwJDyPuSeJf7EzX45HeyMoPO654N5kGSs9lqQ1SYgbe9Zma9CwyaU3esTQyj96RRROsGEy2v0Ymp7X/OM58pWTNjSu8BJWcdCY5pdk9TP00pXj79faLB6zgbDmwYLz9vEULNZMc7581n3QAD79drOZMZBGY8kPDFMfHtY4oFMb8a6Vdv2vHlFhxD+D0zYIVkmgfbDqejp+mQfGRKp0aMpDYGdK9hyiR3b1U2++t/f+B+889cMMuEX6kSW21SeyfJrcdRvy96nHYeMZrzeNb8pSIvG1lxlbBdp2I+T7CjuXXwgDBSHf6R9OkTvHqFNpG/Jvx+eVieC2fwOHbejTHQajdTiXGaeSPj3/grn97u2u2KlHnwnmcRq845VbVdODygAy6w13n2WWC+QbwlF30
+api: eJzdVc1u00AQfpXVnkCKkgA95VYRWgKlqUrCpa2izXocb1nvmt1x1GD5YRAHHqQvxoxt2qRNkbhVnDye/99vK5lA1MEUaLyTI3lkXDJ1IDLlEgtRvJ/NzsTxu5kI8K2EiFGgJxqDgTUIJaJxKwsigbXRIJYbMRn3L90ERaFCJHvMgFgiDT5v6Pn5CYtUDggh9oRW1rZanYsIoflSmBRQZ1uy3qWjrDh6GdyOUaJQCePEh8/TU5H6kCvsy568DyRHF9WDSset6WRMioYZhcKMaEcm9GcSorloEyCRIwwl9GTUGeRKjiqJm6LRcggrCLKur1g7Ft5R1azwejjkz27M6Udyqj0ZOWSpKgprtGLp4DqySrUVowi+gICmdahK9FSX0YsA2q+caX3epbL03oJysqYIbJWyY1hQHfc6kebmVo1KAJImC4WPI6HhDuwxWivbutut6guzhaGJUJOEScWMHPC/8yhO5ycnVPTDJOs7ll9eg0Z2n4CF55ZTagFwt4l3M6e90fqJ/j5pkYPZa5B7Kn+vpMi8g4Ur8yW52KdQ2ieSKIvkmQ15D4d5B8ODxxFPyfGRL13yDzdTt/5QrfjkuxuXdJsEA5mnsuQKsEEGuvWRHLT4MahMUhOXsecPWJTBssJg/SYS6Cz9TV/7XPKZG5d6Dso5Kc05Nbu7nfphk+Ltr9ufXkAujqeiw4bbH2uwovCBGNTQ7yoIL96ez8cEYVEQvoaSwI3IpYrAEIYGLbfrk3JqBTn1QByeTUjAibbBhv1h/1WzKD5irpqGdCB2DEgYvQ3O8kGq1X1r/y/s79YM4QYHhVWmAcZmqFU3/QvZeiDlEW08TTajBjK/qrj982DrmtlUfNgQ/4qPIxi15Inwe2Ii07RVqbIR/tLZF+fdQ/JSbD87e3PsmMptZHOMJf8R+RU27bNUX5FWBiphOKA0WsGh1lDglsmjO6m3z4DGSrf3G73yvfs=
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,11 +36,9 @@ import Heading from "@theme/Heading";
 
 
 
-FindOne handles HTTP GET requests to retrieve a device by its ID.
-It parses the "id" parameter from the request URL, validates it, and calls the deviceService to fetch the device.
-If the ID is invalid, it responds with a 422 Unprocessable Entity status and an error message.
-If the device is not found, it responds with a 404 Not Found status and an error message.
-On success, it returns the device data with a 200 OK status.
+FindOne handles HTTP GET requests to retrieve a single device by ID.
+It parses the ID from the URL parameters, calls the device service to fetch the device,
+and returns the device data in JSON format.
 
 <Heading
   id={"request"}
