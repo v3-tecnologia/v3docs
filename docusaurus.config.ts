@@ -254,6 +254,23 @@ const config: Config = {
           } satisfies OpenApiPlugin.Options,
         } satisfies Plugin.PluginOptions,
       }
+    ],
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "auth-open-api",
+        docsPluginId: "classic",
+        config: {
+          management: {
+            specPath: "examples/auth.yaml",
+            outputDir: "docs/openapi/auth",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+        } satisfies Plugin.PluginOptions,
+      }
     ]
   ],
 
