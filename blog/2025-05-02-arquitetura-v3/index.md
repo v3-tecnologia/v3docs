@@ -2,7 +2,7 @@
 slug: arquitetura-v3
 title: Por dentro da arquitetura da API V3
 authors: [adriano]
-tags: [v3-tecnologia, tech]
+tags: [v3-tecnologia, engenharia]
 ---
 
 # Construindo uma API moderna, escalável e segura com Go e Kubernetes

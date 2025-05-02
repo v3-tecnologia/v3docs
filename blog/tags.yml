@@ -1,4 +1,9 @@
 v3-tecnologia:
   label: V3 Tecnologia
   permalink: /v3-tecnologia
-  description: V3 Tecnologia tag description
+  description: V3 Tecnologia tag
+
+engenharia:
+  label: Engenharia de Software
+  permalink: /engenharia-de-software
+  description: Engenharia de Software tag
