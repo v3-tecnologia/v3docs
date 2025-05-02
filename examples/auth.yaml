@@ -1,0 +1,101 @@
+basePath: /
+definitions:
+  auth.VerifyResponse:
+    properties:
+      claims: {}
+      message:
+        type: string
+      valid:
+        type: boolean
+    type: object
+  keycloak.TokenPayload:
+    properties:
+      access_token:
+        type: string
+      expires_in:
+        type: integer
+      refresh_expires_in:
+        type: integer
+      scope:
+        type: string
+      token_type:
+        type: string
+    type: object
+  response.StandardError:
+    properties:
+      error:
+        type: string
+      error_description:
+        type: string
+    type: object
+host: localhost:9999
+info:
+  contact: {}
+  description: Serviço em Go que atua como proxy para autenticação e verificação de
+    tokens do Keycloak, oferecendo endpoints simplificados para obtenção e validação
+    de tokens JWT
+  title: github.com/v3-tecnologia/auth-api
+  version: 0.0.1
+paths:
+  /auth/token:
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      description: |-
+        Token handles the generation of an authentication token using Keycloak credentials.
+        It receives a Fiber context, extracts the necessary configuration from the AuthHandler,
+        and calls the keycloak.GenerateToken function. If token generation fails, it returns
+        an error response with the appropriate status code and error message. On success,
+        it returns the generated token as a JSON response.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/keycloak.TokenPayload'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.StandardError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.StandardError'
+      summary: Generate token from Keycloak
+      tags:
+      - Auth
+  /auth/verify:
+    post:
+      consumes:
+      - application/json
+      description: |-
+        Verify handles the verification of an authentication token using the configured Keycloak settings.
+        It calls the verifier's VerifyToken method with the current configuration and returns a JSON response
+        indicating whether the token is valid along with its claims. If verification fails, it responds with
+        the appropriate error status and message.
+      parameters:
+      - description: Bearer token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/auth.VerifyResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.StandardError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.StandardError'
+      summary: Verify Auth token
+      tags:
+      - Auth
+swagger: "2.0"
