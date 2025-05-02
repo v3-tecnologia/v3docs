@@ -4,7 +4,7 @@ const sidebar: SidebarsConfig = {
   apisidebar: [
     {
       type: "doc",
-      id: "openapi/orders/go-template-api",
+      id: "openapi/orders/orders-api",
     },
     {
       type: "category",
