@@ -90,6 +90,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "openapi/managements/get-a-device-by-ulid",
+          label: "Get a device by ULID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "openapi/managements/list-devices-with-pagination",
           label: "List devices with pagination",
           className: "api-method get",
@@ -182,30 +188,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "openapi/managements/list-fleets-by-team",
           label: "List fleets by team",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "openapi/managements/get-a-fleet-by-ulid",
-          label: "Get a fleet by ULID",
-          className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Health Check",
-      items: [
-        {
-          type: "doc",
-          id: "openapi/managements/check-if-application-is-alive",
-          label: "Check if application is alive",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "openapi/managements/check-if-application-is-ready",
-          label: "Check if application is ready",
           className: "api-method get",
         },
       ],

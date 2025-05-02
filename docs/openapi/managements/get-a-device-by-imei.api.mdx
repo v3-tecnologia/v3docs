@@ -1,11 +1,11 @@
 ---
 id: get-a-device-by-imei
 title: "Get a device by IMEI"
-description: "FindByIMEI handles HTTP requests to retrieve a device by its IMEI."
+description: "FindByIMEI handles HTTP GET requests to find a device by its IMEI."
 sidebar_label: "Get a device by IMEI"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVUtz0zAQ/is7OsFMJgnQU26FPgj0NSXl0nYyiryOVWTJSHIgePxjGA78kP4xdm2nJG3KTG89cEnkfT+/rUSCQXldRO2sGIkDbZO3y/Hx/hgyaRODAd5PJmfg8WuJIQaIjt7Ra1wgSEhwoRXCbAmaeKzWv7LjCPg9eqlYPMOGDIX0MseIHlLv8obe2QTlbCSFHihpTKvS2Q3om39ymlJga6zelaXwOJTS2w0dGSiuD59OT4gZCmcDgk4hdaVN+jBO10V1AOtiy+tRBp1GEuCbjhmZ2RnuQIgylmSTvEkL6L3zkGMIco590RN3eQUxuqzuVXOv9cMFIFHNpELGjN6WlOhL56jpiyuhPSZiFH2JPRFUhrkUo0rEZcFygSpu56Kur1m4TSsw//VwyH+bbk8/ks2mqjYyVxaF0Uoyd3ATWKRac1F4V6CPujUoy+hyElVTj8rNrW5t3kUyc86gtKImD6yVsmGc6mRLtCTikbjJVMaHnqLmEmxRWkjTmtvM6jOTuWdcI+7phAysenhycXRESd8Psr4judkNqsjmEzT43GJKDWLcLKKm9s3RM1cr9Uh9H9XgudqmkDtKfyunyJzFqS3zGZnYJlCaR4Ioi+SZNXkLhWm0zg89npDhA0aAJ+xM3dqLcs5b3625oN0kJMgcpSXmGBtwoGUfiUGLNwPuyqDi35qYDG4r2Ci9YbnB4k0goJm5733lcsHbrm3q2DeHRojKznv3MthtIr39ffvLAeZweLpCvtufCzRQEGDRGhr9Q3pw8O78Yg8SQkmCXl8SfNJzJkMDZlFHw1U7lpbgLadSwO4ZQxcH2job9of9V828uBBz2dSlA7NDjBsnoYO9jWCrvzX+f2ueemu6meYEBoWRukHhZnSqbtQuRetO9FanZdT80yBl1C8WqCru9oU3dc1kKotfEv2aV9JrOeMB4EOmA79pllNpAv6jjS/Ou+v1Ejbv3dZwO6K0S9GAQMlf9PyCy9U9rK9JLkOZMBBRKC1rVyks4prSgw2t1xfwcH9CW/8HKdkNxQ==
+api: eJzdVUtv1DAQ/isjn0Ba7S7Q094KfVDoS2WXS1utnGSycUlsYzurLlF+DOLAD+kfYyZJH2lTJG4Vl8Qez+ObGc/nSiToY6dsUEaLmdhTOnm/OTjaPYBM6iRHDx/n81PY352Dw+8l+uAhGEhJDyQkuFYxQrQBRXI2G1/ogwB4HZyMWTXDRgypM0WzW5wdgpVOFhjQ+RGQT6ew1ezceXT8H11ogkBhQ+l0T0Hp1LhCMmZaw6cvJ8fQSsZiJO69i9l59SjBndYDYyJVxSIrQ0ZrTUa0UwUq2nGyymEiZsGVOBI+zrCQYlaJsLGs54NTeiXq+pKVvTXao+fzt9Mp//phTz6Tz9jogDrwqbQ2V3GTweTKs0r1IIR1xqILqnUoy2A42XjpMDYrrVqfd0giY3KUWtQUga1SdoxLlQygJRWHdJosZXgaKSguwYDRWuatu35WX1kMinpDNQKVwpwc8F6bAMeLw0NK+jHI+k5koiuMA7tPMMeXhinNEUO/iIrat0LHpyqOn6nvsxZ8r4YMCkPpD57YzGhc6rKIyMWQQpk/A6K0yQtr8oCEZVvTracRj8nxnil18g8zU7f+glzx1HdjLmg2iQkyQ2mJFYaGHGjYZ2LSMsmEuzKp+FvTIRPPLW2ULme9yfqdJxaKzPU4NoXgaWf24dgMjUiOg48eZbDdIL35ffPLABawfwIdRdz8XGMO1jgSUF1/SAcGPpwtdiCRHohdXUlsR8tIemQyCyrkXLUjqeUKCyoFbJ8ydTHQNth0PB2/ae6L8aGQTV06MtvH0GPpjvZ6YKv7Gv8X9N9ds0AgJjaXqiHGpptV1/1z0ToSo1u2nzV/6m1GJWSFquIGLFxe1yxmlBuSX/KUOCUj7gm/Lcrzmq5XKnOPf6nsq7PuQXkN/SdoEG4nlHojmrkseUfLb7i5faLqS9LLUCbMDQSlPdqOY7ThgdGToakfzgT1lQbxDxDuwA4=
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,9 +36,9 @@ import Heading from "@theme/Heading";
 
 
 
-FindByIMEI handles HTTP requests to retrieve a device by its IMEI.
-It extracts the IMEI parameter from the request context, calls the device service to find the device,
-and returns the device as a JSON response if found. If the device is not found, it responds with a 404 status and an error message.
+FindByIMEI handles HTTP GET requests to find a device by its IMEI.
+It extracts the IMEI from the URL parameters, queries the device service,
+and returns the device information in JSON format.
 
 <Heading
   id={"request"}

@@ -5,7 +5,7 @@ description: "Delete handles HTTP DELETE requests to remove a driver resource by
 sidebar_label: "Delete a driver"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVMFy0zAQ/ZUdnaCTSULhlFuHZCBDmXZKc2p7UOxNrMGWjCSHBo8/huHAh/THeGs5pdBOr1w4WV6t3nt6u6tW5Rwyb+ponFUzNeeSI1OhbV5yoPeXl+c0X5wuLhfk+UvDIQaKDuvK7Zg05d7s2OM/uMZnTOs9GaQs5+Nru4xUax8AEwuma2XyayURXYHC08a7qt8ZgGl1cTqinS5NriMOmTgiyKBMl2WCSGSf2O9MxuNBKsAKlwvdpk9azsngsO2ByPl0UnJxQ9poU4YRsEVy7Wwe6KuJBW7y5viYVrb2LuMQ9LpkWtho4p5C1LEJvRRtib0HZiU5WwbrmaXQZHJm05T3PANDbLzFSTqeTunswwEpEQKqqgGfdARY5/L9WI3UvUNBza7av+uT/F7OkWgkUOtYYG1xBH8mx1r8NJ5zNYu+4ZEKWcGVVrNWxX3dZ9nIW/aq624kO/EHSYBQ+TzJmWouBJkDgI2SeTQ5ks8jihC9sVswdN1IwdrHqE95/Tx2l9Ci3oozgyyFK6QWAGZvP/cewpWZmqSOmbQm7xAN6JyDrY0vJWGyex1Q2bW7HWeuUmKIsRsnvKJEZ6IEpH9qP6lLk+m7n3c/HKpI784OVbz7vuOSaiduof++aU+O3l6s5pTrQGhy36AnsFzrwFJs3LoUvz5qi36qcHM6OV9iQ4Qmsul4On6loKF2IVbairah3MMIHMZQ/aWz/e3m/8H+94M9jEbk2zipS43xRVH7PmyHhr1S94WcYZTRjAVqLvG2lY5Z+bLrJAxf/R5xLHfaG7lVeixMf0PMwkaXgZ/phxcXwyvxkh6+KU9qHILayoDC/kb+sPzM+/TmdDfIKljnkC4y0sYJ3KvjgyMy0N3DeU0NiFfiF4/3QBc=
+api: eJztVMFy0zAQ/ZUdnaCTSULhlFuHZCBDmXZKc2p7UOxNrEGWjCSHBo8/huHAh/TH+tZ2S2k7vXLhZHm1eu/p7a4alXPMgqmS8U7N1JwtJ6ZCu9xypI/n56c0XxwvzhcU+FvNMUVKHuvS75g05cHsOOA/+jpkTOs9GaQs5+NLt0xU6RABkwqmS2XySyURXYIi0Cb4stsZgGl1djyinbYm1wmHTBoRZFCmre0herIvHHYm4/EgFWCFz4Vu0yUt52Rw2HVA5EN/UnJxQ9poY+MI2GBNdXARd3h3eEgrVwWfcYx6bZkWLpm0p5h0qiN9N6mAEuIQAFdK0pZBeOIo1pkc2tT2nuIR+OF0SiefnkCVFfDhWuVdhGs+34/VSN2bE9Xsonlcmt7q5RyJRgKVTgXWDkfwZ3KsxUoTOFezFGoeqZgVXGo1a1TaV12WS7zloNr2SrJ7/igJECqfZzn7cgtB5gHgkmQeTA7k84QipmDcFgxtO1Lw9inqc2a/jN32aElvxZlBlsIV+uoDs7OfOw/hykxN+maZNCZvEY1omjtb62AlYbJ7G9Ffa389znypxBDjNl54RYnORAlI/9Z+VFmT6ZvfN788qkgfTu6qePNzx5YqL26h9X7oQJ7en63mlOtI6O9QoyewXOvIUmzc2opfn7VDP5W4OR2dLrEhQnuy6Xg6fqOgofIxldqJtqHcQ/ffTaB6pLP54+b/mf6nMz1MReLrNKmsxuSinl0LNkOvXqj7Gs4wxejDAuWWeNNIs6yCbVsJw9KwRxzLnQ5GrtW/E6a7IsZgo23kF1rh1dnwQLymh8/JsxqHoHYym3C+lj8sv/K+f27aK2QVrHNIFxn9xhHcq9KDIzLL7cNR7XsPD8QtQYY8uw==
 sidebar_class_name: "delete api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -38,7 +38,7 @@ import Heading from "@theme/Heading";
 
 Delete handles HTTP DELETE requests to remove a driver resource by its ID.
 It parses the "id" parameter from the request URL, validates it, and calls the driverService.Delete method.
-If the ID is invalid or the deletion fails, it responds with a 422 Unprocessable Entity status and an error message.
+If the ID is invalid or the deletion fails, it returns a 422 Unprocessable Entity status with an error message.
 On successful deletion, it returns a 200 OK status with an empty response body.
 
 <Heading

@@ -1,11 +1,11 @@
 ---
 id: list-fleets-with-pagination
 title: "List fleets with pagination"
-description: "FindAll handles HTTP GET requests to retrieve a list of fleets."
+description: "FindAll handles HTTP GET requests to retrieve a list of fleets with optional pagination and filtering by ULID."
 sidebar_label: "List fleets with pagination"
 hide_title: true
 hide_table_of_contents: true
-api: eJzNVc1O20AQfpXVnlopSkKrXnKLWqCotKA29IJQNLHHydL1rrs7TglWHqbqoQ/Ci3XGTkgAE4TUAyfv/H874/m20inGJJiCjHd6oA+MS4fWqhm41GJUH0ejU3W4P1IBf5YYKSryfKZgcI4KlDWRlM9UZhEpdnVHFxAgR8IQ9eC8upf+FKaoXJlPMKhXKWZQWhqovdccZ8TONcKCBccpWCzYnaWYzDAHPag0LQrRG0c4xaCXy05rhWiucTt/v6NyuJJDf1epscTtrnfR0QFj4V3EKA5v+n353MVw8omTJJ6DHIkVisKaBMTau4ziUm3VKIIvMJBpEqZAtdYQ5vGhOfEhoK1TjU26BTHySNxUL7lwQCBMx0APw8nIZVuC5mCbdHdv8l3UyvDUQ4nKZGrECUR2ntSXs+Njvugq18R7i+BkJmuVn1xiQpI+RYsvDdOd9t1OeP1DtOAhhHz8WFRpHxlHWaQvbBxtzVgpIARYiFxvXutFN4vSaiZPYMe3f+9jDpKl1aEFrujete3ZEQcFB1Z9wzBnRtkPwYdnrN6yyU0wFa7SB8Jhmjec6Wvmuf16yrLcmGYs9GqOE3qoqzX0VgYrpt78bWTGnPirbuJzLTRhXOabjXUEiYCp92Ab/7DGdvP35o9XmKvDE7Xilpvfc7Sq8IEVPPJrCMqr91/PPqgUomIaDiWVgY8TiCikS4as9OwzOG5szpdXw9MjNgjQpli/2+/u1QP0kXKoO7HivmMh8YbB1S9DM8XTMa5umr6Hudo09z+8FatJE15Rr7DAvCwLIy2tVl0/19l6KjPGLYqqklufBbtcirrh8fqpMREmFnlwGdiIO5DveIZaIf3AxeY14t0sxUXXj8/zaj7xMD1RfP0+bRBciBCMQOAWXLD3DCHlPZJ+NIHDJMGCtqIerMRy+5fn+fHK/QPYHcIU
+api: eJzNVc1u00AQfpXVnkCKkhTEJbeI/lARaAUpl6qKJvY42bL2mt1xaGrlYRAHHqQvxoydNGnjpCoH1JM9M7vf/O18U+oYQ+RNTsZluqePTRb3rVVTyGKLQX0YDs/VydFQefxRYKCgyPE/eYMzVKCsCaRcohKLyMafhqbKVWBgVQ4Tk4EIiuFUYiyhN9lEjefqYnB62NYtnYOHFFkfdO+yfBTNOUxQZUU6Rq9exZhAYamnDl7zPSN2DsnPWcgYgkX2hyyFaIop6F6paZ6L3mSEE/R6sWg1egjmFjfxuy2Vwo38dPe5Gsm9Z/o7ljpVyUsh64rscFFYEzehB5IaMvhVS3sMucsCBrG/6Xbl89Dh2UfGiBxHlJFYIc+tiaqmdK6DHCk3XOTe5ejJ1IAxUKU1hGnYNkfOe7QV1IhD3Y6QHXsEwngEtH2djKTZcGkGtoZ7mMk3USvDL9AXqEyihgwgcuZIfb4YDDjRJdbYOYuQSQNWKje+xogEPkaLLy2mB+W7fz6rp9AQDyGko123CrujHUUev7B2NBVjqQDvYS5yNdaNia6nsNFMjsCO7l/vrgOC0nigIVzRvWuas1O+5IX0vqKfMV0dee/8M0ZvUWMTTIQIa57QPOHMjVPH5dcTliVjmrLQqfhW2KHyVnNn4a2YOrO3gel27G7akUu10ITJEldPbEYQSTDVHGzG369iu/tz99spTNXJmVpyy92vGTKVO88KbvkteOXU+y8XhyqGoHgl+IIKz79jCCiMToas1OwTZFzYlJNX/fNTNkigtbNuu9s+qBroAqVQVWLJegNZKJvbZL1E9KOYy3Vx///eWj4Mwhvq5BaYwGW+pAPlskmXOlk1ccppiqIspUgX3i4Woq4Jv1p7JsDYIvc5ARtwT6J7VmJjSN9xvt6MPMqFHNHVYnqezyeW5BPOV7vyHyPYsTb3OF1uz7W/KxG8EYdc8is+OEWIGUbqX9/pRxHmtHFra2IXmxPJz4sZ4S+wgSjJ
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,7 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-FindAll handles HTTP GET requests to retrieve a list of fleets.
+FindAll handles HTTP GET requests to retrieve a list of fleets with optional pagination and filtering by ULID.
 
 <Heading
   id={"request"}
@@ -47,7 +47,7 @@ FindAll handles HTTP GET requests to retrieve a list of fleets.
 </Heading>
 
 <ParamsDetails
-  parameters={[{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}}]}
+  parameters={[{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}},{"description":"Fleet ULID to filter","in":"query","name":"ulid","schema":{"type":"string"}}]}
 >
   
 </ParamsDetails>

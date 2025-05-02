@@ -34,30 +34,6 @@ const sidebar: SidebarsConfig = {
           label: "Get order",
           className: "api-method get",
         },
-        {
-          type: "doc",
-          id: "openapi/orders/create-new-order-internal",
-          label: "Create new order internal",
-          className: "api-method post",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Health Check",
-      items: [
-        {
-          type: "doc",
-          id: "openapi/orders/check-if-application-is-alive",
-          label: "Check if application is alive",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "openapi/orders/check-if-application-is-ready",
-          label: "Check if application is ready",
-          className: "api-method get",
-        },
       ],
     },
   ],

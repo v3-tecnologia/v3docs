@@ -1,11 +1,11 @@
 ---
 id: delete-a-fleet
 title: "Delete a fleet"
-description: "Delete handles HTTP DELETE requests to remove a fleet entity by its ID."
+description: "Delete handles HTTP DELETE requests to remove a fleet resource by its ID."
 sidebar_label: "Delete a fleet"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVMFy0zAQ/ZUdnaCTSULhlFuHBMhQpp3SnNoeFHsTa7AlI8mhweOPYTjwIf0x3lpuKW2nJ46cvNqV3r59u+tW5Rwyb+ponFUzNeeSI1OhbV5yoA/n56c0Xxwvzhfk+WvDIQaKDnbldkyaNiVzJLbRxD2t92QQX87Hl3YZqdY+ACMWTJfK5JdKPLoCvqeNd1UfGVBpdXY8op0uTa4jHpk4InCgTJdlgugzfWa/MxkLhTwxvQtJzk1/XM7JAMH2aCNAIUmonc0DfTOxSEW9OTykla29yzgEvS6ZFn0RgDmxFJpM/JumTHkgzgAUG28HXQ6nUzr5mDC1Ja5qaJBSBaa1y/djNVJ3NQc1u2gfyP2ul285xz0j51rHArbFC5xMDlsEMp5zNYu+4ZEKWcGVVrNWxX3d37KRt+xV113J7ZQ+yAUQlM9TKVMDBT9zeG+jXDyYHMjnUYYQvbFbJOi6kYJwj0GfUvJ57C6hRb0VXRIrhQIgVeFQrEr97QWEJjM16bs8aU3ewRkwCLeSNr6U+GT3OmBk1u56nLlKiRrGbpxkFR46Ex5I+Tfzo7o0mb75dfPToYP0/uS2gzc/dlxS7TwcGKTv2pOjt2erOeU6EEbWN5gFmGsdWBqNmktR65O2essV6qaj0yUCQjQlm46n41cKHGoXYqWtcBt6PSzesFHqAc32j5T/V/Sfr+gw5pGv46QuNTYRLeqnqh2m70LdtmWGpcRkFWiguNtW2r/yZdeJG0L5Pfwwd9obIZ223vQFYK43ugz8THdfnA37/pLu/RyeZDg4tZVVg5KNnGB+4X36eXRXuFWwzvF3EBYpcATd6njviaxmd3/10jRh338Dod0Wdw==
+api: eJztVMtu2zAQ/JUFT21g2G7ak29B7bZGUyRIk1OcAy2tLaIUqZKUG9fQxxQ99EPyY52VlPfjXqAnUeRydjg7uzuVc8yCqZLxTk3UlC0npkK73HKkT6enxzSdHc5OZxT4e80xRUoe69JvmDStLHPCb/R1yJiWWzKImE+HCzdPVOkQgZIKpoUy+ULJji6RIdAq+LI96XHp7ORwQBttTa4TLpk0ILCgTFvbQbS5vnLYmIyHPVFgFT6XbKs2Zj4lg7uuxRkARLhV3uWRfphUdA96t79PZ64KPuMY9dIyzVwyadvm0444BB8AjcM132LnkhIy0UobG1twbaN/LoOAybV7aLfPjv1DFu7IUawz4bKq7U2W58jvj8d09PmGalmB99Ln26EaqBt1o5qc7x6U9kNbqvkUcUb+K50KrB1u4M/kWEspTOBcTVKoeaBiVnCp1WSn0rZqo1ziNQfVNBcSLeRQYAkALfk8lbIzi+BnHvddksC90Z58HmWIKRi3RoKmGSjI+Bj0qcq9jN10aEmvRZeOlcIDOvMAstWcWwGhyUSNWquNdiZvsCmVupa0DlbOR5u3ERVY+sth5kslahi38pJVeOhMeCDlfeYHlTWZvvpz9dujcPTxqK9vvPq1YUsVbBIYxv2pA3l6f3I2pVxHQnOEOtUBy6WOLIXGm62o9UU7mKrEu+ngeI4DIdolGw/HwzcKHCofU6mdcOtr3fdO373qAc3drZT/x8E/PQ76lkp8mUaV1eh62KF18K53+rm6tsAEAwAuLmAW2d7txGpnwTaNbKMkYYt9LDc6GBGpmzCmFQw9tMLb+QUnvTrpZ8trujOInmTYb2onbY3K1fKH5TfedoOquUBUwTrHJBIW3cEBNKvSnSsyBpq7bd45F7PlLwLPYj8=
 sidebar_class_name: "delete api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,10 +36,11 @@ import Heading from "@theme/Heading";
 
 
 
-Delete handles HTTP DELETE requests to remove a fleet entity by its ID.
-It parses the "id" parameter from the request URL, validates it, and calls the fleetService to delete the fleet.
-If the ID is invalid, it responds with HTTP 422 Unprocessable Entity.
-On successful deletion, it returns HTTP 200 OK with an empty response body.
+Delete handles HTTP DELETE requests to remove a fleet resource by its ID.
+It parses the "id" parameter from the request URL, validates it, and calls the fleetService.Delete method.
+If the ID is invalid, it responds with HTTP 422 Unprocessable Entity and an error message.
+If the deletion fails, it also responds with HTTP 422 and the error message from the service.
+On successful deletion, it responds with HTTP 200 OK and an empty body.
 
 <Heading
   id={"request"}

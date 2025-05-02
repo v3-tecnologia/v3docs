@@ -5,7 +5,7 @@ description: "Delete handles HTTP DELETE requests to remove a device by its ID."
 sidebar_label: "Delete a device"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVE1v00AQ/SujPUEVJaFwyq0iEUQUtSrNifawsSfxCnvX7K5Dg+UfgzjwQ/rHeGM7TdpUvSNx8np2Pt6+eTO1Sjkk3pTROKsmaso5R6ZM2zTnQB+vry9pOjufXc/I8/eKQwwUHc6F2zBpSnljEqbllgxu5tPhjZ1HKrUPiI4Z7xzmU1p5V7SmxdW5eOgClXwY0EbnJtURASYOCJUp0Xl+GP6FvXyGPToEZi6VUqvWCckNgm2baIAswBcrbwMAvjs9pYUtvUs4BL3MmWY2mrilEHWsAv0wMUNNYu+dR2Y4rXmfOpWKoIZW2uShza3z4J4UOMwlUY+S7R8e+mfc2AtLoUoE0qrKH4o8gX46HtPFpyOgRQn0nkPpbADzLt0O1UDtCVWTr/VRV/smwNGIodQxw9kiBH8mxVnaazynahJ9xQMVkowLrSa1ituy9bKR1+xV09yKd1c/iAOAyufZmp1SpEDikMBG8TwZncjnqESI3tg1KjTNQIHY46zPtfLl3E2XLeq1MNPDUnhCpyLkbOnnlkOwMlGjTnSj2qQNrNK1Ha2Vz8VhtHkboNOluxsmrlBCiLErJ3UFiU4ECYo+xn5W5ibR93/ufzt0kT5c7Lp4/2vDOZWQjGdI+Kf25Oj91WJKqQ6EmfMVNIHjUgeWZuPVufD1WVsIrMDL6exyjgsB2hUbD8fDNwoYShdioa1g69vdT9FueNUTnPWezf/r4F9dB/1ARb6LozLXGHpIoVVv3cv8q3po/wQLABLOoBSx17XobOHzphEz2uy3sOO40d4Iad2KMS2BmKAVOOAXVPTqqt8tr+lwEz2LsTdqK2ONDlbyh+M33nabqrmFV8Y6xSoSGN3FGdgr40GIrIHmcMo72WK3/AX7LmTz
+api: eJztVMFy0zAQ/ZUdnaCTSULhlFuHZCADTDulPdEeFHsTa5AlI8mhweOPYTjwIf0x3toODaTTKxdOller3bdv326jco5ZMFUy3qmZmrPlxFRol1uO9Pbq6oLmi/eLqwUF/lJzTJGSx7n0WyZNOW9NxrTakcHNcj6+cctElQ4Rr1PBe4flnNbBl51pCCReukS2EEe01dbkOuGRSaMbh/SUaWsPY3zkIJ/xABEvC58LmIrD2odycMUlSgGOS051cBEgX52e0rWrgs84Rr2yTAuXTNpRTDrVkb6aVJB2xCH4gMBw2jCZdRcRyA1QuQ7hjYPDcLFPRWttbBzTQ77T6ZTO3x1FLyukDBwr7yITHsY6E0RjNVIPXKjZp+aoKQOHcDRiqHQqcHZ4gj+T4yykmsC5mqVQ80jFrOBSq1mj0q7qvFziDQfVtrfi3aOI4gC48nk0Z99oSZB5BHBJPE8mJ/I5ShFTMG6DDG07UiD9OOpjXXg6dttHS3ojzAywFEro+4+YXR+44xCszNSkl8ukMXkLa4Rs9rTWwYrDZPsyQmErfzfOfKmEEOPWXvIKEp0JEiT9E/tZZU2m73/e//DoJb053/fy/vuWLVVQRmCI5JsO5On15fWcch0JSg81lIHjSkeWZqNqK3x90A5CK1E5nV0scSFA+2TT8XT8QgFD5WMqtRNsQ7sH/e9nT/2Fs3lg8/80/6NpHuYh8V2aVFZjZtHJTnzNoNJP6nf3ZphfKLBAo8XeNCKT62DbVswgN+xgx3Grg5F6+w1hutoxAGttIz8hgmeXw2p4ToeL5FGMg1E7mUpwVMsfjp951y+a9hZeBescm0Rg9BdnqLxKB09kitvDIe1Vh9XwCwLaOUE=
 sidebar_class_name: "delete api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -37,10 +37,10 @@ import Heading from "@theme/Heading";
 
 
 Delete handles HTTP DELETE requests to remove a device by its ID.
-It parses the device ID from the URL parameters, validates it, and calls the deviceService.Delete method.
-If the ID is invalid, it returns a 422 Unprocessable Entity status with an error message.
-If the deletion fails, it also returns a 422 status with the error message from the service.
-On successful deletion, it returns a 200 OK status with an empty response body.
+It parses the device ID from the request parameters, validates it,
+and calls the deviceService.Delete method to perform the deletion.
+Returns a 422 Unprocessable Entity status with an error message if the ID is invalid
+or if the deletion fails. Returns a 200 OK status with an empty response on success.
 
 <Heading
   id={"request"}
