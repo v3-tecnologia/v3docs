@@ -1,11 +1,11 @@
 ---
 id: get-an-account-by-ulid
 title: "Get an account by ULID"
-description: "Get an account by ULID"
+description: "FindByULID handles HTTP requests to retrieve an account by its ULID."
 sidebar_label: "Get an account by ULID"
 hide_title: true
 hide_table_of_contents: true
-api: eJzNVM1uEzEQfhXLJ5CqZEE9VHurKFQVoUVVwwVF1WR3krg4tmvPVoTVPgziwIPkxZjZ3dCmSZC49bJrz5+/+ean1iWmIppAxjud63MkBU5BUfjKkZqu1Hh0caaPdIAISySMSedf62dep715b2tEFoAWfHbsxbfKmpJvEe8rE7HUOcUKj3QqFrgEndeaVkHsEkXj5rppJmKcgncJk+jfZpn8tt+9+sgxC+8IHYkWQrCmANEO75KY1E+eCNEHjGS6gIWPEW1re8vYdiFw5IhAWN4C7bqTkbz2OD2A7cJtQ/0iYmWSksSVmakbDiB350ldjkcjzqSPNfXeIjgm4a/IT++wIAlfosWXhmmLPsPVmGMUeVf7PXgqe4DxKpQvjPE9EpEdZ8e7L15y4A88COV/dGXTxSOYy2DpfvA0tz9P28JzXnqO1A4gz1Ouh73FUDgc1vJtWJswPmxms4pWDIfWF2AXPlF+kp1kWkbKuJnvmt8RFIKubamtWW7Brn+vf3mFS3V+pfo5XP98QKuCjyxgan9AVF69ux6fqRKSQq5HRVXk4xQSDoRcQ1aI+wQO5rhkNtTp5wtWCNLusWyQDd5IDQPDXEJLTb8xDm6iLbj1I9GHPfoCEn6nYbDA60laTViqe1ofiT/arKq8/TNnwqBY1LUkNo62aUR8X2FcsXwiDRgNTCVX2YwmyZkLNwOb8B94X1332/C1erZA9wLuheBWuu35Sm58/IarzYJtJmy3QCh5/gRLp+LgGOiJ005DNk/b7fz9DTf5H7sEE2E=
+api: eJztVc1O20AQfpXVnlopStKWU260FEqhBEHSC0FoYo/jpetdd3edEiw/TNVDH4QX64zt0PxRqYdKHHqArOdv5+/7tpQx+sipPChr5EAeKhO/XYxPjw9ECibW6MWH0ehcOPxaoA9eBEvn4BTOUYAREEW2MEFMF0KRlh27E3McBN4FBxE7pCgmstAqnkiRg4MMAzqROJvVujYyqULaERFo3fi0kS/RzVWEfG9Cua2qOhNDKXI6hTNrTiKGAAK8+Hg5PBPfVEibKl73+2J4IlQiEjKLOdNkzU95YWxotMI6rhCdo4ONosL5DhVJ9/ncmtivxN3r74kz8jus/aD+ax0z9B5m2JUd+Vi8l4OrcqPx+20G3EGyVSzjltDZkBd9cQvpi/ulHMZyEFyBHemjFDOQg1KGRc52nqZjZrKqrtmYc/XoWU/V88/6vcMTihlZE9AE1kKeaxUBa3u3nk3KlStyZ3N0QTUBI63I64bS2r6dgzqHuo70pIlDCBjfQNgOHhRXvcNpDroJt17IZxbzALktPOIRBVgO9Gx8ekp1trGm1moEQy16FNnpLUaBw8eo8bnltNY+RbOaoWN5sxk78qFpwtOTKfRTijx+ZvPYIWEZAW77xkcE/sVGV028ADMG5RKFkqBDSE0t1SVnGGrwEhYHstcyRY972Cv5f0VaTyy1xHXhNBv25m88McHU3nUjm0lGozKJrXFDyRE38vWdTRqoc334+fDDCszE0bClG//wfY5a5MQohBmt7oE4Sby7GB8Q13lBBOoKokE6TsHXbBNU0Ny3T2CIfzJqhtg/PyYFJ9pc1u/2u694hLn1IYO6My3ZHGHYoPeWmNbSLX/3+f/L8Q9fjhYCgVrTyzXQ48Bg5T0r28W8km0isrN8KAb1L61dStNli7Lk3Rg7XVUspua5BcmvGcJOwZTXhd8l5flMq5+A9viHkb+4aN+il2Lj+dqZcCsEs5A1axT8RccvuFg+b9U12aUIMfEb59KoKDjmYcVpC9LVKmCP3o+IJn4BZcALqw==
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,7 +36,10 @@ import Heading from "@theme/Heading";
 
 
 
-Get an account by ULID
+FindByULID handles HTTP requests to retrieve an account by its ULID.
+It extracts the "ulid" parameter from the request path, calls the accountService to find the account,
+and returns the account data as JSON with HTTP 200 OK if found.
+If the account is not found or an error occurs, it responds with HTTP 404 Not Found and an error message.
 
 <Heading
   id={"request"}
@@ -62,7 +65,7 @@ Get an account by ULID
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"client_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"tenant_id":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
 >
   
 </StatusCodes>

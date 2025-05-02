@@ -5,7 +5,7 @@ description: "Delete multiple orders for a device. If ids are provided, only tho
 sidebar_label: "Delete orders in batch"
 hide_title: true
 hide_table_of_contents: true
-api: eJy1VcFu2zAM/RVBp63ImmzYofCtW4si2IANRXcqikKxmUabLLkinS4w/O8jbSdxWyVADzslEUW+R4rvpdEFYB5tRTZ4nekLcECgytqRrRyoEAuIqJYhKqMKWNscTtV8qWyBykRQVQxrW0AxUcG7jaJVwF3Sk3VOLYDTpGahJ7oy0ZT8PaLObptX0FJdzS/4opWDytCKv3tO4V89+FzKRHisbeSKGcUaJhrzFZRGZ42mTSV3kaL1D7ptJy9BvoayNB8QhAlz6qkyJm5BH2uImz0q96mPAdwJG6yCR0CJf5rN5OM56I9vXCMPnsCTRE+mJ/Kxr8pTrCCS7WuYPA+1p3tbJBC5UAShfm8oGe7ndCj5wHE3hkM541drtCUo8TXp3JRptsEv7UMyBD6N9wc2yfMyFLWDAxQRn7iJZBDxQGNIJqaH2B8kAmvj6lRkl6PD4jfktC+iTYxmM8BRjW/Dq6vi8GO/Bm3l7HNqB7+YQl2zbgDp+DK2fREyDyLSfjNQ857zCqxC0SlR9NzJmQWa6Wm/cjhtthptp0MaNw1xvdV7HZ1cn7qQG8dOQdnZ7GymRUTWL0O3RkzM5EKsW+VxBzcrQ8qy7SjewMrxWBQF1atBnf+co7JeXQXGJEuyJ/oqqJvtVb7AEaHSV5udzk4/dqvDPErjBXzQ/OCBg4tx0YWhXJzoGZ9mP8T/7JrDGxP8pSk3wzYliyGzbIYnuB1ULwPPRka5fzyZttxrmoVB+BVd28px73adF1s0CyeeujQO4Uizxyw0SbXT8+Ckg3509+hrE62AvpHAu+vB/9+r8X9GEnurQb8Zg2857UbV3vHdFRjupCPTh8/zHCoaJYpW2rEULi6/X95csu7+AQRZd6g=
+api: eJy1VMFu2zAM/RVBp63ImmzYofAtW4Ii6IAOXXYKgkKxmUabbKkSnS0z/O8jLTtxWzfADrs0rkjxPT0+spIZhNRrh9oWMpEzMIAg8tKgdgaE9Rn4ILbWCyUy2OsULsViK3QWhPIgnLd7nUE2ErYwB4E7G46XfmljxAboGtfM5Eg65VVO3z7IZFW9gObqYjGjRM0HTuGOvgu6Qv9F8AWX8fBYak8VE/QljGRId5ArmVQSD45zA3pdPMi6Hj0H+WzzXL0LwEyIU6RKmKEDfSzBH06o9E55DmDNbIKzRYDA8Q+TCf88Bb29oRqpLRAK5OjF+IJ/TlVJRQcedayRemBu9woHEEeylfO1cPOie50NBgMqLMNgKB4MBEqXvU7neFHazQ9IkU747OOQDJ9UJu6odRDwvB51LBIgLb3GQ+OVqdM3cJiWZIlktWbdUT2wjeRt4zZJJ2Stnc0ar7BEjeE4X46jecK46lxUj6NJubng950jS284fWxsqgx5GZOrydVEMlzH5huzjI3qc6qifXagqOzJPxy0Xv9RjQYvrduKp5pKjZy62NrGBaSPSlmfpud9IZc7hULTAAqE3BnqjkArom3E9OsiCF2Ia0twqNFw/Wsrll0qJVCEnxyrTS4nl++50Y7em6uCwVv27TZo55mKbhSmPJNP+FSnXv7n/dGqhfAbx/QYUpz9yT2r2lav2j3BjU16K8MeTcJd5byq2qgA372paz6Oc99sJR3UxnCLtsoEOPPYc8tkkOpP6nG3U/bKlJzRmGuvvGbQfyTw5q6101vR356D2J3TikMfvON0lKpeU27rYiYTw9M0BYe9izyydX/kZvMv8+WcMlQ7Didnc4lR98E1B6k8n5QIzH95iw9eqao4N9TBLj+GXr1xHM+2EwW/t67/ApVXX1g=
 sidebar_class_name: "delete api-method"
 info_path: docs/openapi/orders/go-template-api
 custom_edit_url: null
@@ -62,7 +62,7 @@ Delete multiple orders for a device. If ids are provided, only those orders will
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK","content":{"*/*":{"schema":{"properties":{"account_id":{"type":"string"},"created_at":{"type":"string"},"device_id":{"type":"string"},"id":{"type":"string"},"order_id":{"type":"string"},"parameters":{"items":{"properties":{"cam":{"type":"string"},"config":{"type":"string"},"end":{"type":"string"},"key":{"type":"string"},"module":{"type":"string"},"password":{"type":"string"},"ssid":{"type":"string"},"start":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}},"type":"object"},"type":"array"},"status":{"type":"string"},"type":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"*/*":{"schema":{}}}}}}
+  responses={{"200":{"description":"OK","content":{"*/*":{"schema":{"properties":{"created_at":{"type":"string"},"deleted_at":{"type":"string"},"order_id":{"type":"string"},"status":{"type":"string"},"type":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"*/*":{"schema":{}}}}}}
 >
   
 </StatusCodes>

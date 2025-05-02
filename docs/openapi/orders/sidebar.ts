@@ -8,7 +8,7 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "orders",
+      label: "Orders",
       items: [
         {
           type: "doc",
@@ -34,11 +34,17 @@ const sidebar: SidebarsConfig = {
           label: "Get order",
           className: "api-method get",
         },
+        {
+          type: "doc",
+          id: "openapi/orders/create-new-order-internal",
+          label: "Create new order internal",
+          className: "api-method post",
+        },
       ],
     },
     {
       type: "category",
-      label: "health-check",
+      label: "Health Check",
       items: [
         {
           type: "doc",

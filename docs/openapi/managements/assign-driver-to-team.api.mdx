@@ -1,11 +1,11 @@
 ---
 id: assign-driver-to-team
 title: "Assign driver to team"
-description: "Assign a driver to a team"
+description: "AssignToTeam handles the HTTP request to assign a driver to a team."
 sidebar_label: "Assign driver to team"
 hide_title: true
 hide_table_of_contents: true
-api: eJx9VMFu2zAM/RVBp63Iai/YofAta4qhh6FF1p6KYmBsNlEnW5okZ80Mf8ywwz4kP1ZSVltnKZqDQ0tP4uPjoztZoS+dskGZRhZy5r1aNQJE5dQGnQiG4oBQy4m04KDGgM7L4qb77+B8wJ/PCah4wUJYU9zQEXpTFcUOf7bKYSWL4FqcSF+usQZZdDJsbUQ1AVfoZN/fDmj04bOptgwpDW02gUOwVqsSOHN27zl9N7rLOmPRBYU+3kzcv1P215KMGd08Iyl1QprlPZaBgITcr/aKsGIOAQ6qipd6axo/5J/mOf+9KhZEsbFilZPGoyqPsqP9whIrH5xqVsyKcn2aTg+vv25IgxK9h6VGcdYEFbZv390PtwVYcW/l0HxWgvq9NhW30/gQPUBdLWQ2ILJOVX2WqHt0mydvtE4zKtOmBL2mo8VJfpJLbis3bPHS2rMHqK3GvVblPXvozjy1HUomfdCEWXTB7t/urxFYiy8XIim/+7NBLaxxtABa/QYnjDhdXM9FBV5QYteG1lG4BI/HRJ0EYgryKzSwwppEErPLc9rggoZk+XF+/FESBxaihui55O00My8TkwTZYzsy8JtDlpoc8CFkVgONEuWMcnZJ/Of2TGQRxyqeJGVZZ97uOq7r2um+52WS2tEE3VC4AafYE8P8qugP0vsOtMc3+L5bJIu/F+Mxf5VqWoSGHbcB3fIbhT9wO3wG+ltCrREqqoBpDBunQ7IPV3z85eDBpPeTpxOzskQbRlj2dD+27OXFtyvaX6YPSG0qhjn4xUNLz8jLxHrjqMa1TmpoVi3ZgPaHlPx7BOCDwHE=
+api: eJztVM1y0zAQfhWNTtAJSSiccgtNB8oA7aTJKe0wir1NVGzJSHLa4vHDMBx4kL4Y38pO65BOzxzIIVH299vdb7eSKfnE6SJoa+RIjr3XKzOzM1K5WCuTZuRFWJP4MJudCUffS/JBBCtUNBRKpE5vyEWRCPDqX5iTIOi2oCQ0rq3FyQROMJpPP4lCOZVTgBQpohG7tkFzMkGkKiihTdRt0y5teofwM4jgvLap2KhMw7LFqE1Rhh4H962k6wk1gzSiW+Nkdtq7MAwiUVm2g9eT2+iEuLKC3JV1edQ+YgSUKYXSGa7q4/npF6TzhTWekaQ6UUGblfBlkpD3wnKtgpzDI4dArUjc6LBughaFs4XTKKXptA8qlF4kNqW+7MmHfnk5WlR/zWyy7S8MNQsKFdZ4G7jgn07x5kZoR6kcBVdST/pkTbmSo0qGuyJamUArcrKuLxtrtO0dusYmiYXSBH4CaBYrs2Zw7Tl91YnFRZALmnyMjP5+RfanknQRLR4skbq1tMtr8AeGsNytNjJzAnbsVRWDNgOI+Q+HQ/55slnNFCnl6XJ2BOtUeTA42C2sReWDw0gZFXK9PTzcDz836AHPWy0zEscm6HD3fOy6iRbUimfb4uNONBTncVofIgcw1ZEcNPQcVDqtBy10puqWG6XL2GqweeNB66W97Sc2lzxVntf0cbLHtyovMtqZ1LBmCl3Z7dRVwpj3ZjCOJLj/ff/LCsrF+9Mt8+9/bigTBSjuCKv5QzlhxdF0PsE+e4HErsTC4LlUPhIb/WEI8rMyWIi4+eOzEyi4nibZsD/sv5bAwH3IVaRcS+1mkzsnqO3HDtoOf/+ft3/zvLXrFeg2DIpM4Yhh3JHIVUv7hWxgw3gUD1qcNEi95uWAuqqYUnOX1TWL0ReH27XAc6OQeMks48up42aC6lcq8/QMVV5M2+PyUnQP7JNQW6EyvOsYWsn/8PxGd80Bri9htSaVogKG0SiOmmSvZuz+6Lh3Y+ve1mOMZhehY8vXpO4ei7PT8xn0y/Z05+gwpE7d8LnEd8RlY73xSEZZJTNlViVmBn2Tkj9/ADiR1Gg=
 sidebar_class_name: "post api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,7 +36,11 @@ import Heading from "@theme/Heading";
 
 
 
-Assign a driver to a team
+AssignToTeam handles the HTTP request to assign a driver to a team.
+It expects the driver ID as a URL parameter and the team assignment data in the request body.
+The method validates the input, parses the request body into an AssignToTeamDTO,
+and calls the driver service to perform the assignment.
+Returns a JSON response indicating success or an error message with the appropriate HTTP status code.
 
 <Heading
   id={"request"}

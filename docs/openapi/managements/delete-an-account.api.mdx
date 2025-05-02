@@ -1,11 +1,11 @@
 ---
 id: delete-an-account
 title: "Delete an account"
-description: "Delete an account"
+description: "Delete handles HTTP DELETE requests to remove an account by its ID."
 sidebar_label: "Delete an account"
 hide_title: true
 hide_table_of_contents: true
-api: eJx9U01v2zAM/SuCTlsRxF6wQ+Fb0QRDgQ0biuU09MDabCxMllRKNpYZ+jHDDvsh+WMjYxf9CnoyRT2Rj4/Po24w1mRCMt7pSq/RYkIFTkFd+94lvdABCDrOUtTVj/HFg4sJpq7WjDSSCZBajh2/4ZNpOCa87w1ho6tEPS50rFvsQFejTvtwRLmEOySd842gY/AuYhTAqizlc7opYecHlA615wrMlqFnxZl8XvWIiYzbcYucF/rjavW67NYF8jXGCLcW1cYlk/Zv185TtQQ70UY/aMZDsGCt54G5hSh6lJF1qXQxg4rRNJnTEWl4kLYnK4jC+hps62OqzsvzUosoxt15aS1koBYy3PeFKsGaGg7/Dn+9wk59+qpmJQ9/BrQqeOIEWPMbSHl1eb1dqwaiQhamTz1xeAsRl8yJB7ci2RdwsMOOh1cX3674QphOzcplufygmUNgmh044Tav/JSHnjEdHyU9CZ4XlvBXKoIFdhX3OWozzio+Sr3QFVuMBRK55GIcZYot2Zwlfd8j7TnP4QBkZLOTi81xy7yhO7AR32D47np273v1zOwnWc5JcGKcAWwvJw5/4n76GfINo1qEht0uPKYLLowhPXkiRstPbbTefN5837B7/wOEFT6t
+api: eJztVE1v2zAM/SuETlsRJFm3U27FEmzBOrTomlPTg2IpsTBZ8iQ5a2b4xww77If0j/XRdpt+3wfsZJmiHh/5SNZC6ZgFUybjnZiIqbY6acqlU1ZH+nx+fkrT2fHsfEZB/6h0TJGSx7nwW03SkcwyX7lEqx0Z3M2nw6WbJypliHifck1LYdRSsEUWwA60Dr5obxZnxwPaSmuUTHA2aQBERZm0tnvag3/TYWsyPezJASX3iuOsW6/5lAxeuxZpABjQi6V3KtJPk/IuiQ+Hh7RwZfCZjlGurKaZSybt2ojIQ4fgA6BxudF7bMUhURpaS2NjCy5t9C9FYDB+9gBtn3DsE1m6E0exypjLurJ3UV4ifzge08mXO6pFCd4rr3ZDMRB3dY1iclE/kvOoV2c+hadhSylTjrPDG/wZhTMLa4JWYpJCpQciZrkupJjUIu3K1sslvdFBNM0lezM9iMsOIMaf54N2TcIRMg8El9j1YHTAnycxYgrGbRCiaQYCpXwK+5x6r2M3HVqSG67NLS+BJLoWAmhbed2WEXWZiFHfcqPaqAZmVuy2tFWw7DHavo9QYuWvhpkvBNfEuLXnyMxFZswFYR8VpbQmk9d/r/94CEifTnqd4/XvrbZUol2CRgP/koE8fTxbTEnJSBi4UKUq4LiSUbPgyNtyxb5Kh+YqkDsdnc5xwUS7YOPhePhOgEPpYyqkY2694v0M7SdXPGJa7yv6fxv8c9ugn6akr9KotBIjjy5oG7fuW/xC7IWfYP7Rvjm6hC/qmntsEWzTsBkChx3sOG5lMFymbsWYtmQYnzWy16/0z5uzfrW8pQeb6FmWvVE6nmqoV/Efjt/1rttUzSW8ci0VVhHz6C4ArMt07wlvgeb+jHcdi9VyA9yAX6Y=
 sidebar_class_name: "delete api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,7 +36,11 @@ import Heading from "@theme/Heading";
 
 
 
-Delete an account
+Delete handles HTTP DELETE requests to remove an account by its ID.
+It parses the "id" parameter from the URL, validates it, and calls the accountService.Delete method.
+If the ID is invalid, it responds with HTTP 422 Unprocessable Entity and an error message.
+If the deletion fails, it also responds with HTTP 422 and the error message from the service.
+On successful deletion, it responds with HTTP 200 OK and an empty body.
 
 <Heading
   id={"request"}

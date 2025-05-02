@@ -1,11 +1,11 @@
 ---
 id: list-fleets-by-team
 title: "List fleets by team"
-description: "Get fleets by team ID"
+description: "FindByTeam handles HTTP requests to retrieve fleets associated with a specific team."
 sidebar_label: "List fleets by team"
 hide_title: true
 hide_table_of_contents: true
-api: eJzNVM1OG0EMfpXRnFoJkbRSJbQ3VBCKSktFQy9VhJxdJxk6uzN4vKjpah+m6qEPwoth7y4QICD1xmlm/Df2589ubIEpJxfZhcpm9gjZLDwiJzNfG0YozeTA7tgIBCUyUrLZj+aR0/TOzOkzAq/kXomDvDTGpJA34WXtCAubMdW4Y1O+whJs1lheR7V0FeMSybbtTK1TDFXCpAbvx2M9Hv568kmC5kGcKlYtxOhdDqodXSQ1aTb+cIxlFytSiEjs+sh5IELfOZ27YiOZxOSqpW3lC0JgLM6Bn7qz0xq3OF2B78M9zPm7io1LRiEwbmGmEkDfVWDz5ez4WEoaYs1D8AiVoHEnCvMLzFnDF+jxteX0AL67Xt7yYEs+yozz57xq/0w76li8snZsA2MQABGsxUJtPmwj8UQqpgq8+YZ0hWQOiQL9B6/bPjbDUgfTdqNrZXxkVldBKrZLee/0I5nZUacfKfCjph/MVrSp+7uf7Jq8Go58yMGvQuJsb7w3tjqSrlqEfmYqhlxz65i4Wc5+l+r1v+u/wWBpjk7MMMfXf67QmxhIBAL6byATzMfTswNTQDIonaq5JrnOIeGuwu7YK4KfoYIlloKF2f86EYVm2n823h3vvlOwo6RZQgfMsHSOXXq8x+yjXJt7jJ/dekMXGX/xKHqQ7aYEVISaAdJbyHs2y5EN+07wUvTUomm0qDPybaviyxppLfKZ0pIczLVO3aku6V2atgCf8IV035wOq/Stmb6c6y0Nq7XthqDWl1x/4vp+NbczsVwhFDJ5mkiv3M9zjLzh9oSH7SbPjg6nwvMbnpEmDw==
+api: eJztVc1OGzEQfpWRT60UJfT3kBstP01LAYXQC0HI8U6yprv21p5NSVf7MFUPfRBerDO7CQQIlXrj0JPtmfH8fJ75XKkEowm2IOud6qs965J3ixHqHFLtkgwjfBiNjiHgtxIjRSDPewoW5wjTDJFFOkZvrCZM4LulFDTEAo2dWgPEjrpjNyDAK5aJMYyVSAfJWEGhg86RMIB1QCnC6fCgI9LIcS2xZ9COdfT2dYd3CZSiEMMm9AmGuTU4dpzUFMmkt6oIUx+a48zO0bWJwBCpDE6S+HhydMiFxMK7iG3aa3e9g1gagzF2xo79cBIYAm9yFunZ2gVdFMEXQapvgYqkqYxgfIJgp42NxIbBDliuyc11ZhPwYexY2xaHwelsGcAbU4bYVR11g01U/bPq3jONWpdsZuVYaEp57/gCn1p4+SyPZgMmqk+hxI6KJsVcq36laFGIpQSfYVB1fS7WLRpRDF5ubclyN+rRJ3ZqPF9yJFouPrNGi7Z3GcWkWothCfPGlyCEgWzr2fgQMGsuXdhkLZnIXeVmquYQAaWbLjQ9vE5WatxwqQH2Yc5fGrwZeoFAXmTEDuTsPMHh6cEBl7T0NfE+Q+0YjRuRn1xy14r7BDN8ajndge/mLVd9sCEf6YyLx26V2SPPURbJE3uOTWAsBToEvWALsXmzqYkHq4ET9mDm2ZW5+4e+rlvfpGcymGpPGEPx+PCspp4rVjM+d9qR7Ktewyg9Ab5XtYNZszY2sdvJLkMmhr35q8gUN/FXXeNzJRNp3dS3I+NIG0mtacT1arabTK9/X//ygDnsH61I7frnHDMomFJ4mDL7QzO3wPvh6Q4kzKpM5aFkLuTtREcUviFLmQD4WTtmuJyhgO3jASsk0TbYVner+0KwLnykXDe4LDnnwEZasedk0VCeupdrdQvx/2/myXwzy7EhvKJekWn+TmTipSWrZQ+fqSZd1dIHL/3lB8MdmnIjiEVVSRudhqyuRcyPGBYsPxce4Kwn0lnyidkoe56Sqc4i/qVBng2Xf9dzuP3rNua6mnu3UA3rlHLi7Vdc3P6F9TlbpqgTpjpJpFVuM/YFrV17MPj1+mDv746YWP4AZIkwUA==
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,7 +36,11 @@ import Heading from "@theme/Heading";
 
 
 
-Get fleets by team ID
+FindByTeam handles HTTP requests to retrieve fleets associated with a specific team.
+It expects a "teamId" parameter in the URL, parses it as an int64, and uses the fleetService
+to fetch the fleets for the given team. Returns a JSON response with the fleets on success,
+or an error message with the appropriate HTTP status code if the team ID is invalid or
+if an internal error occurs.
 
 <Heading
   id={"request"}

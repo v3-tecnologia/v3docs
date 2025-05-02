@@ -8,7 +8,7 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "account",
+      label: "Account",
       items: [
         {
           type: "doc",
@@ -50,14 +50,8 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "device",
+      label: "Device",
       items: [
-        {
-          type: "doc",
-          id: "openapi/managements/list-devices-with-pagination",
-          label: "List devices with pagination",
-          className: "api-method get",
-        },
         {
           type: "doc",
           id: "openapi/managements/create-a-new-device",
@@ -96,22 +90,16 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "openapi/managements/get-a-device-by-ulid",
-          label: "Get a device by ULID",
+          id: "openapi/managements/list-devices-with-pagination",
+          label: "List devices with pagination",
           className: "api-method get",
         },
       ],
     },
     {
       type: "category",
-      label: "driver",
+      label: "Driver",
       items: [
-        {
-          type: "doc",
-          id: "openapi/managements/list-drivers-with-pagination",
-          label: "List drivers with pagination",
-          className: "api-method get",
-        },
         {
           type: "doc",
           id: "openapi/managements/create-a-new-driver",
@@ -150,21 +138,15 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "openapi/managements/list-drivers-by-team",
-          label: "List drivers by team",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "openapi/managements/get-a-driver-by-ulid",
-          label: "Get a driver by ULID",
+          id: "openapi/managements/list-drivers-with-pagination",
+          label: "List drivers with pagination",
           className: "api-method get",
         },
       ],
     },
     {
       type: "category",
-      label: "fleet",
+      label: "Fleet",
       items: [
         {
           type: "doc",
@@ -212,7 +194,7 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "health-check",
+      label: "Health Check",
       items: [
         {
           type: "doc",
@@ -230,7 +212,7 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "team",
+      label: "Team",
       items: [
         {
           type: "doc",
@@ -266,12 +248,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "openapi/managements/list-teams-by-account",
           label: "List teams by account",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "openapi/managements/get-a-team-by-ulid",
-          label: "Get a team by ULID",
           className: "api-method get",
         },
       ],

@@ -1,11 +1,11 @@
 ---
 id: get-a-team-by-id
 title: "Get a team by ID"
-description: "Get a team by ID"
+description: "FindOne handles HTTP GET requests to retrieve a team by its ID."
 sidebar_label: "Get a team by ID"
 hide_title: true
 hide_table_of_contents: true
-api: eJzNVMFu2zAM/RVBpw0IEm/oofAtWLegWNcORbLLEBSMzSTqFEuV6GCZ4Y8ZdtiH5MdG2t6aLO6A3XqyTD6Rj08kK51jzILxZFyhUz1BUqAIYaMWO3V5oQfaQ4ANEoao08/VX/ipIBuYkV8PtOZzwRf4z+R8DvhQmoC5TimUONAxW+MGdFpp2vkGVRCuMOi6ngs6eldEjAJ4nSTyOc54856DZo4vFSRe8N6aDMQ7uo8CqQ5y+OA8BjJtQMgyVxZ0x8R68kvYENA2sY4xkYIpVg0kIBDmd0Cn4clI2T2XtmDbcMelfBKzMlGJMsos1ZQDyH/hSF3Prq640i7WwjmLULBIf0xucY8ZSfgcLT43Tk9J3LZGD5/SPqF46fNnpniPRWxnydlpxmsO/I6bLv+Prq3beAQrGTkt06h5NngI146L0iukZi551lI9EveoMnnNtohh+3tQy2DFPbIuA7t2kdLz5DzRMmWmWDrJKIQgE0JNFx3yHjf89j/3P5zCjZrcqG4099+3aJV3gQ2s5jcIyqk3t7MLlUNUyE9QUhn4uICIQ9HTkBWtPkABK9ywAGr88ZIdwrRNlgyT4St5Ns80N9Co0e2QnoV0RLR6VLUP270T4VcaeQu8pKSjRJmqE7DTd6BTbhjWRpQSa1VJAbNg61rMDyWGHdvn0lvBwEJqknVoopz5WZZgI/6D3YvbbhO+VI9bs5dfZ4Rip5tOLuWPj19w127Ves6oNULOMyUkWsc4y9DTwZWTJqsPu2jydsqN+wtXZAjH
+api: eJztVc1u00AQfpXRnkCKklB6yq0ibYlamqokXNqq2tiTeIu9a3bHocHywyAOPEhfjBk7fyUpEid64OT17Mw3v99sqWIMkTc5GWdVT50YGw8tQqJtnGKA96PRJZwej8DjlwIDBSDHZ/IG5wgaCHUGkwUYvhn02zd2QJBrH9iUEoQbZeIbJRKdIaGHqXdZfTO+Om/BXKcm1sTKhlrALiHSadqYCvJH9HMToficIkXJ+kIcTeu/QR8Mm9saqsU4HF3InY0DfDWUcIiHBwcwtrl3EYagJynCsSVDCwikqQgbqDoXBrOOYOoK+wxc9xAuWONENDYYQwuhiMTF0ooKbzeZAKepVxAH3S4Mz1a2qqXW9Qmqd13+1pKRmA/6rGbkN9eU8NmyAf+ZmM/SG+MxVj3yBbZUiBLMtOqVihZ5rWUJZ+hVVd2KtiTEHRIFDkU+Tz0Ozxg0cmxkSW51nqcm0nLbuQ+iUm754Mrm6Mk0gDqKuDB0x4Ht8S+w3mNaYz3VCTxTdlareOSZiO807cKTkbT3GNX9303lk4ilqVIZMFMYMcCqyRfj83POdIk1cS5FbblIa5Gb3GNEAh9jii8tpudK3IzGnniK9JmKF3n8wiq+RyIyJt+uxzUb/2JqqwaP9EwoV3NMMTeYhInjpNQMqeYlc62nOsLgTmniimWBd9KKqIVP5bozfxt4eU3cQztymRKSGTt14lDi0ZHEUw/RdthHdXiPPx9/OMAMTofLVRMev88xhdx5FnAxv2kPDt5djfu8RALwEvYFLxc+TnRAWR+8zVIp1Qdt9Qwzzh+OLgd8IYE2zrrtbvuNdC13gTJdF2O5Qk6RthZ5vWieBFpuivr/efgnz8OSCYQP1MlTzc+AcFZmr1yO6LUSFFbtMSV5/BLuskjLUmZk7NOqEjH3yC9Yfivs9UaybR4cU2fOgz/VacA/DMCrq+Vb8xo279Le+JZCbReq3hWF/PHxMy6ad6u6Za0EdcxbS4JoLo64SDltmezQuNrmKc8er4ZfiDsAtA==
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,7 +36,11 @@ import Heading from "@theme/Heading";
 
 
 
-Get a team by ID
+FindOne handles HTTP GET requests to retrieve a team by its ID.
+It parses the "id" parameter from the URL, validates it, and calls the teamService to fetch the team.
+If the ID is invalid, it responds with a 422 Unprocessable Entity status.
+If the team is not found, it responds with a 404 Not Found status.
+On success, it returns the team data with a 200 OK status.
 
 <Heading
   id={"request"}

@@ -1,11 +1,11 @@
 ---
 id: delete-a-team
 title: "Delete a team"
-description: "Delete a team"
+description: "Delete handles HTTP DELETE requests to remove a team by its ID."
 sidebar_label: "Delete a team"
 hide_title: true
 hide_table_of_contents: true
-api: eJx9Uk1v2zAM/SuCTmsRxF6wQ+FbsARFgQ0biuY09MDKbCxMllRJNpYZ+jHDDvsh+WMjbRf9SNGTKOqJfHx8g6wxqqB90s7KSm7QYEIBIiG0ciE9BGgpE6KsfgyvwDeEEVcbgmm+ekgNxZY+0E3XFAd86HTAWlYpdLiQUTXYgqwGmQ5+RNmEewwy51tGR+9sxMiAVVny8UbHgK3rkcsrR99tYtx5cc7HSYOYgrZ7qp/zQn5arU5r7qwPTmGMcGdQbG3S6fB+7TxVS7BnVeQoFdEnnRpHo1J9FnFUjxSpZMGIYtB1plzE0D/K2QXDz4VxCkzjYqouyotSshba3jtuyjRAMQ3q+JL42hut4Pjv+NcJbMXlNzELePzToxHeBUqA0b8hCCc+X+82ooYokCTpUhcovIOIS+JEIxsW6ytY2GNLY4v19yt6YKZTs3JZLj9K4uCJZguWuc2bfu2ZFyyHJyFPgPOKEv5KhTdAJqL6oybDLN0s7kJWZCdShTXi7DAw9V0wOXP6ocNwoDyFPQTNi5zsqsel0k7uwUR8h9qH69mpZ+LJ1W/ym5Ng2SQ9mI5vFP7Ew+T6fEuoBqEmWzOJ6WGtFPr07AubKj93zWb7ZXuzJaf+B0Q2Me0=
+api: eJztVEFu2zAQ/MqCpzYwbDftybegNlqjKRKk9inJgZbWFlGJVEnKjSvoMUUPfYg/1llJqRMnyL1AT6LI3dnh7CxrlXJIvCmjcVZN1JRzjkyZtmnOgT4uFpc0nZ3PFjPy/K3iEANFh3XhtkyaIuuCVjsy2J9Phzd2HqnUPiA3Ztwdz6e09q5oN5ZX53KuC1TxYUBbnZtUR4SbOCBUpUTn+SH5C/utSXjY80Ja5lIps25DAG2QaluYATDALFbeBlB7d3pKS1t6l3AIepUzzWw0cUch6lgF+m5ihorE3jsPZARt+ACdSkWIQmtt8tBi6zy4owIPsSTrEdjh2qG/xo29sBSqRCitq/xvkSPqp+MxXXx6QrQowd5zKJ0NTCuX7oZqoA5yqsl1fdTPRdcAhBn5LXXMsLZIwJ9JsZa2Gs+pmkRf8UCFJONCq0mt4q5so2zkDXvVNLcS3VUPEgCa8nmmYucPgU8c0m2UuJPRiXyeFAjRG7sBftMMFER9ivlcG1/Gbjq0qDeiSktKgX7nHyC2wnOrHhSZqJGYbVSbtMGedOtezsrncjzavg1w58rdDRNXKJHC2LWTmsJCJ8ICBR/zPitzk+j97/0vh+7Rh4v77u1/bjmnElbxDOv+0J4cvb9aTinVgTBlvoIXsFzpwNJk3DgXrT5rC2MVuDWdXc5xIES7YuPhePhGgUPpQiy0FW59o/vp6cZVHbGsDzr+H/9/b/z7IYp8F0dlrjHmsEDr2ro397Xq2z7BwMO4Gfwhu3Ut7lr6vGlkG+31O+xjudXeiGTdg2Ja+TA1ayjAL7jn1VX/lrymw7vzLL9+U1sZY3Svkj8sv/Kue5eaW0RlrFM8PEKiOziDcmV8kCJj3zyc686seEv+AFBiWr4=
 sidebar_class_name: "delete api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,7 +36,11 @@ import Heading from "@theme/Heading";
 
 
 
-Delete a team
+Delete handles HTTP DELETE requests to remove a team by its ID.
+It parses the team ID from the URL parameters, validates it, and calls the teamService.Delete method.
+If the ID is invalid, it returns a 422 Unprocessable Entity status with an error message.
+If the deletion fails, it also returns a 422 status with the error message from the service.
+On successful deletion, it returns a 200 OK status with an empty response body.
 
 <Heading
   id={"request"}

@@ -1,11 +1,11 @@
 ---
 id: list-teams-by-account
 title: "List teams by account"
-description: "Get teams by account ID"
+description: "FindByAccount handles HTTP requests to retrieve all teams associated with a specific account."
 sidebar_label: "List teams by account"
 hide_title: true
 hide_table_of_contents: true
-api: eJzNVMFO3DAQ/RXLp1ZC7LZSJZQbKgitSktFoZcKodlkdtfUic14grqN8jFVD/0QfoyZJIVddqHqjVOc8fPzm+eZaWyBKScX2YXKZvYI2TBCmcx0aSDPQ12xmRzYHRuBoERGSjb71jw6tr+KdBqJwAtZV3JG/gamSSEhwuvaERY2Y6pxx6Z8gSXYrLG8jAp2FeMcybbthaJTDFXCpIC347F+1u8++SCkeZBDFesuxOhdDro7ukoKaVbucIxlxxUpRCR2PfMg8NIV24QoPxH6jnQdk5hcNe8ghMBYXAJv0rNTG7YcugHf063n9FXDxiWjFhk3M2dCoP9VYPPp/PhYUh64piF4hErcug+F6RXmrPQFenxpmp6yuC+VLXpq/4TjdSxemOPb8h0CQARLQSjm3bY6nogVVIE3X5BukMwhUaD/KO2252aYa4da7WIrDSQ9uwiSsJ0jd20sfZnZkW6PhqofNff92Qokdff3bV6TV/TIhxz8IiTO9sZ7Y6ud6apZUAGqD3LV1xXc2ljo5N7+uf0dDJbm6MQM7Xz76wa9iYEkIMb/BDLBvD89PzAFJIPyWjXXJMspJNxV6x17dfEjVDDHUvww+58nsqFK+8vGu+PdN2p4FJkldOYM4+fYpc2xZh+pbR6cfmYMDq/J+INH0YPMOi1EdakZvB2s37EP92QP80+MUxsV1jSa3Tn5ttXwdY20lPiF1ig5mGrCOmld0rU84Qx8wmdUvzodRutrs/9PzX/Lslrarilq/ZPld1yuDez2QsALhEK6VOX0+8KPkVdObpRmu1p7R4dnUvp3XL4y4Q==
+api: eJztVc1uGzkMfhVCpy5g2On25+Bbts2mbtOmSOxe4qCgZ2hbrSxNJY4bd+CHWexhHyQvVnJm7MSJs0BvOfQ0Gor69JEiP1Ymp5RFW7AN3vTN39bnf60OsyyUnmGOPneU4M1w+BEifSspcQIOsuZoaUmAzgETLhJgSiGzyJTDd8tzQEgFZXZqM8AGrjv2Awa6ErOgoIexaXcG+dhAgREXxBTBeuA5wejspKPWJAwsywV6xnp++bwjq1xJlNGLFd6en34AjBFXYx+mLaEJueBn1s+UsOK1fITghhAMpvVO+w+D12DlLr9EZ/OOXhopFcHnqY5p7M8ZuUwjX8SQUUo4cXTk2fKqhmroUfTogGIMEUKWlTFBXkbl0WYN3cPQg/b8OcUlxSMF6ZqO2eYmmf5FdefNDrfsxdOqpUCey9rLGfnbJllM+og2Um76HEvqmJTNaYGmXxleFeqsAcwomvX6Ur2VouRfHf48ONDP7t2n7wQ0C3LIs+5iUTiboe72viR1qW7dYZkWNZbkr6DItkFuCX62+T4iih8juRp01yex5rV2iaSl9xn5PjxbTcOeQ/Uz34/pk5q1EDRFYKcwFAD994Hhw+jkREJusSYhOEIv2dqawuSL1LfC5+TosXF6KMVNqezhU7oHMl4W+SPL+L54W0OtDeKhPi/21fGm76BpPKg77xdKe91gM860Q81QFMhIA0nPzoMEbGbEdRtLX/ZNTwWq11Z9r9r251pcUn1/0+ZldOrdWz5LoneTcNXNwsJoY1o/DXq/0sNM6dX1tqMKNdvr/67/DUALOD5tBSdd/7MkB4Wok/SMsz9QZApenY1eQy4SKwofS9FVWU4wkYqP6JvTJL5HjzNaSDrg8ONANpRoc9lB96D7VPNdhMQLrHPTqs+JTbxR5NVGac0dttVNon+PoMc5gtpOYrriXuFQ5oyKgFZo1db1hdGoxfXmkfs3s0eqdi7FoW5VpaU1im69VrO8aVyJ/VL1IVqNqJlyto5O2meKLtH/lMyTs3as/QE7w3Av540k+JWpBanUP1l+pdXOsFxfivOcMBeFVDrNvuBTwbdO3pOF9e2+Pz4aiuz8BHr3Sn4=
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,7 +36,11 @@ import Heading from "@theme/Heading";
 
 
 
-Get teams by account ID
+FindByAccount handles HTTP requests to retrieve all teams associated with a specific account.
+It expects an "accountId" parameter in the URL, parses it as an int64, and returns a JSON array
+of teams belonging to the specified account. If the account ID is invalid, it responds with
+StatusUnprocessableEntity. If an internal error occurs during retrieval, it responds with
+StatusInternalServerError.
 
 <Heading
   id={"request"}
