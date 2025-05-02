@@ -1,0 +1,71 @@
+---
+id: create-new-order
+title: "Create new order"
+description: "Create new order for a device"
+sidebar_label: "Create new order"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWN9v2zYQ/lcEPm2AU7vDBhR+c+O1MAbMQeJuD4FR0NI5ZiuTGkkl8QT9770jJYvVj85F667I9pLI5PG74x15dx8LloCJtcisUJJN2aUGbiGS8BApnYCOtkpHPErgXsTARizjmu/BgjZselu0Fs+dVLSYo6CggYzbHX5LXIK/PMgiwRENf+VCQ8KmVucwYibewZ6zacHsISNZY7WQd6ws114YjH2pkgNJxEpakJY+eZalIuakfvzOkA1FAJVplYG2AoyTjWOVS/tWJD1qRpVxQ7POFw5GWNibLnrol0BISVhunaessClhXtWCc6sa17RGP8Z+D4deo/YqyQmzZ8oP9Ezc8zTvmynDmNw6lUcFFVy9eF3DM7V5B7FF2GZ7syT5U2xFZw9V7Oe9Rg04r+1hYx4wDr0IxvQGruyaWg9wrfmhV6KzmZfcxrunsaM5pGjVmSJ0bpPPFYdz2b3nMlns+R2cweaY7+kfyHxP91UrTmk10eIedHBDK9QRe7wg0Yt7rinjUPJm17jmEmFGbO6W0fca9YMcOJGWa3suP/0hEuhmvv/91PjpNVhfX28sVuiv4qovMWchSTdPz3Ef3QaDqGFhxxK83Z4YsOXvOL589Qqj9IU+v4aNUvZf9/VNBpCsMA8irj48aY//R3apefze63lim1x3ZAab0VbLGeyuWtLTaHb1hxBBix829Mf2vQtYus6/hwAtHfnJ+CH1FeNjwuL0mkxJ453+0+S5j16I5CFih5dEJo9jMGabpymd7ZNJzFBd87BveV+loT1R0zQ47fwxxHXoBOWmd2qQVuRZMmzOCeeIZH6eTLpOXEgkHSKJKg4YRORUD9bgPRF6I3lud0qLv+HzEX/pNxcPsORpZEBjqxCB1kp/JjSFAOJcC3twzHGWid/gMENL8eeaCLHld/6uHo81XpydSohxK+PqFRHvKRv7S2DGRc29y3F1F0gJmeh5fK5TEh+nKubpDjGmLyYvJoyU1bbckI3+8IUWFZ7p74AjbENoZ5Vj3T57CH8df4fkjgj54rph+r8+8n3m2W3I3JvcFRD2ZrDm6bdF+6XCkehGsObOzUg7N1ZMuTnkYXZuxFpqGk7XiHh+cQRaf3uob7vM9dx1q+265GADvjn+HjBPd4MvqVRJvwfsr7Cm0wq4ui3kVtUPbDymZNWpjqsdt5EwEY+wLGUpVUqrqhoXza4WJhIyek1E7khbVLSqRVGALhba5NEmzybPnrvOBjMOskBSXuWP9jska1kSPAP+45tltVULj3aMhmC+oopFGa+oEuVt5UJKi9PgmbLpGygnklxRbLiBNzotSxrGdKUpS68pX2jBN7RnehcVhr7xmG55auATxv9wXWXGH6Pw+bTX5jppykOQn/DT57aj3S6YVUJuUt+lV3mxCt/ypt1yRAfKr5hhx5LZT8qGpedqebNC4U31TIsZltZo/kDpH/86U5VzgasibqxgKZd3OT2STJnHpGLAq9rSlAn/Ill9uAfVPme0y47fCP117XffkqLwRQgDWsv7qcEVx1rnpYW7UmX5AeBx+fo=
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/orders/go-template-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create new order"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/devices/{deviceId}/orders"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create new order for a device
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"deviceId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"account_id":{"type":"string"},"device_id":{"type":"string"},"orders":{"items":{"properties":{"parameters":{"items":{"oneOf":[{"title":"ParameterDto","name":"ParameterDto","properties":{"key":{"type":"string"},"module":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}},"required":["key","module","type","value"],"type":"object"},{"title":"AddWifi","properties":{"deviceID":{"type":"string"},"parameters":{"items":{"properties":{"password":{"type":"string"},"ssid":{"type":"string"}},"type":"object"},"type":"array"}},"type":"object"},{"title":"AddWifiBatch","properties":{"deviceID":{"type":"string"},"parameters":{"items":{"properties":{"password":{"type":"string"},"ssid":{"type":"string"}},"type":"object"},"type":"array"}},"type":"object"},{"title":"DeleteWifi","properties":{"deviceID":{"type":"string"},"parameters":{"items":{"properties":{"ssid":{"type":"string"}},"type":"object"},"type":"array"}},"type":"object"},{"title":"DeleteWifiBatch","properties":{"deviceID":{"type":"string"},"parameters":{"items":{"properties":{"ssid":{"type":"string"}},"type":"object"},"type":"array"}},"type":"object"},{"title":"DemandImage","properties":{"deviceID":{"type":"string"},"parameters":{"items":{"properties":{"cam":{"enum":["road","driver"],"type":"string","x-enum-varnames":["RoadCam","DriverCam"]},"end":{"type":"string"},"start":{"type":"string"}},"type":"object"},"type":"array"}},"type":"object"},{"title":"DemandVideo","properties":{"deviceID":{"type":"string"},"parameters":{"items":{"properties":{"cam":{"enum":["road","driver"],"type":"string","x-enum-varnames":["RoadCam","DriverCam"]},"end":{"type":"string"},"start":{"type":"string"}},"type":"object"},"type":"array"}},"type":"object"},{"title":"GetDeviceState","properties":{"deviceID":{"type":"string"},"parameters":{"items":{"type":"object"},"type":"array"}},"type":"object"},{"title":"Inertial","properties":{"deviceID":{"type":"string"},"parameters":{"items":{"properties":{"state":{"enum":["on","off"],"type":"string","x-enum-varnames":["ON","OFF"]}},"type":"object"},"type":"array"}},"type":"object"},{"title":"Reboot","properties":{"deviceID":{"type":"string"},"parameters":{"items":{"type":"object"},"type":"array"}},"type":"object"},{"title":"SpeedTelemetry","properties":{"deviceID":{"type":"string"},"parameters":{"items":{"properties":{"state":{"enum":["on","off"],"type":"string","x-enum-varnames":["ON","OFF"]}},"type":"object"},"type":"array"}},"type":"object"},{"title":"Telemetry","properties":{"deviceID":{"type":"string"},"parameters":{"items":{"properties":{"state":{"enum":["on","off"],"type":"string","x-enum-varnames":["ON","OFF"]}},"type":"object"},"type":"array"}},"type":"object"},{"title":"Tracking","properties":{"deviceID":{"type":"string"},"parameters":{"items":{"properties":{"state":{"enum":["on","off"],"type":"string","x-enum-varnames":["ON","OFF"]}},"type":"object"},"type":"array"}},"type":"object"}]},"type":"array"},"type":{"type":"string"}},"required":["parameters","type"],"type":"object"},"type":"array"}},"required":["account_id","device_id","orders"],"type":"object"}}},"description":"Create Order payload","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Order created successfully","content":{"application/json":{"schema":{"items":{"properties":{"created_at":{"type":"string"},"deleted_at":{"type":"string"},"order_id":{"type":"string"},"status":{"type":"string"},"type":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"}}}},"400":{"description":"Invalid request payload","content":{"application/json":{"schema":{}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

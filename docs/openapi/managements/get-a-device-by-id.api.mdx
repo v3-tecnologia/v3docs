@@ -1,0 +1,75 @@
+---
+id: get-a-device-by-id
+title: "Get a device by ID"
+description: "FindOne handles HTTP GET requests to retrieve a device by its ID."
+sidebar_label: "Get a device by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVc1u20YQfpXBnhpAkBQ3J92MKnGEuFHgWLnEhrEih+Kmy112d6hGIfgwQQ55EL9YZpa0Isdyi95SoCcu5+ebn535tlU5xiyYmox3aqZeGJcvHUKpXW4xwsvLyzdw9vwSAv7ZYKQI5PlMweAWQUOOW5MhrHdgWLeYj6/cgqDWIbIzlQhXyuRXSiS6QsIARfBV0gyIsLo4H8FWW5NrYidDI+DgkGlre4g+xlsMKRTHL5Cy8kAlQYv0v5iDYQiX4EaMxVFi7V0e4S9DJSf87OQEVq4OPsMY9doiPHdkaAeRNDUxhdYOMAQfoBKbzQH+UC7HcJ6g8I17JMr0Gbxmixdi8Q/QSwexySSdAYqa4A4rB26MvkM+mU5h+WqAHKuR2nc2qtn79ofrnPcAizkbGhHUmko+O3bhP5PzWe7BBMzVjEKDIxWzEiutZq2iXZ2sHOEGg+q6a7GWSvl2xYCTkc/9mMtXDJp5dnIkWl3X1mRatJMPUUzagxh8EzUGMj2gbshXbJrdBMz8xpkec5/K2nuL2qmOI4hXIcB4w3V8t4k8nG6TTAKyNr/R9DASGenAEac0Og+reidiuXhpEpgCLhngbhBer87Puegfk+z2Ir/+gBkJfI4Wf7acCotI95u4v3Oemyx7pL+PelRojjpUnss/qqlL7/DGNdWaIY4ZNPaRJJo6/8ku+YhEZMwJDyPuSeJf7EzX45HeyMoPO654N5kGSs9lqQ1SYgbe9Zma9CwyaU3esTQyj96RRROsGEy2v0Ymp7X/OM58pWTNjSu8BJWcdCY5pdk9TP00pXj79faLB6zgbDmwYLz9vEULNZMc7581n3QAD79drOZMZBGY8kPDFMfHtY4oFMb8a6Vdv2vHlFhxD+D0zYIVkmgfbDqejp+mQfGRKp0aMpDYGdK9hyiR3b1U2++t/f+B+889cMMuEX6kSW21SeyfJrcdRvy96nHYeMZrzeNb8pSIvG1lxlbBdp2I+T7CjuXXwgDBSHf6R9OkTvHqFNpG/Jvx+eVieC2fwOHbejTHQajdTiXGaeSPj3/grn97u2u2KlHnwnmcRq845VbVdODygAy6w13n2WWC+QbwlF30
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a device by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/device/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindOne handles HTTP GET requests to retrieve a device by its ID.
+It parses the "id" parameter from the request URL, validates it, and calls the deviceService to fetch the device.
+If the ID is invalid, it responds with a 422 Unprocessable Entity status and an error message.
+If the device is not found, it responds with a 404 Not Found status and an error message.
+On success, it returns the device data with a 200 OK status.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"fleet_id":{"type":"integer"},"iccid":{"type":"string"},"id":{"type":"integer"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

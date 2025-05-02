@@ -1,0 +1,75 @@
+---
+id: get-a-team-by-id
+title: "Get a team by ID"
+description: "FindOne handles HTTP GET requests to retrieve a team by its ID."
+sidebar_label: "Get a team by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVc1u00AQfpXRnkCKklB6yq0ibYlamqokXNqq2tiTeIu9a3bHocHywyAOPEhfjBk7fyUpEid64OT17Mw3v99sqWIMkTc5GWdVT50YGw8tQqJtnGKA96PRJZwej8DjlwIDBSDHZ/IG5wgaCHUGkwUYvhn02zd2QJBrH9iUEoQbZeIbJRKdIaGHqXdZfTO+Om/BXKcm1sTKhlrALiHSadqYCvJH9HMToficIkXJ+kIcTeu/QR8Mm9saqsU4HF3InY0DfDWUcIiHBwcwtrl3EYagJynCsSVDCwikqQgbqDoXBrOOYOoK+wxc9xAuWONENDYYQwuhiMTF0ooKbzeZAKepVxAH3S4Mz1a2qqXW9Qmqd13+1pKRmA/6rGbkN9eU8NmyAf+ZmM/SG+MxVj3yBbZUiBLMtOqVihZ5rWUJZ+hVVd2KtiTEHRIFDkU+Tz0Ozxg0cmxkSW51nqcm0nLbuQ+iUm754Mrm6Mk0gDqKuDB0x4Ht8S+w3mNaYz3VCTxTdlareOSZiO807cKTkbT3GNX9303lk4ilqVIZMFMYMcCqyRfj83POdIk1cS5FbblIa5Gb3GNEAh9jii8tpudK3IzGnniK9JmKF3n8wiq+RyIyJt+uxzUb/2JqqwaP9EwoV3NMMTeYhInjpNQMqeYlc62nOsLgTmniimWBd9KKqIVP5bozfxt4eU3cQztymRKSGTt14lDi0ZHEUw/RdthHdXiPPx9/OMAMTofLVRMev88xhdx5FnAxv2kPDt5djfu8RALwEvYFLxc+TnRAWR+8zVIp1Qdt9Qwzzh+OLgd8IYE2zrrtbvuNdC13gTJdF2O5Qk6RthZ5vWieBFpuivr/efgnz8OSCYQP1MlTzc+AcFZmr1yO6LUSFFbtMSV5/BLuskjLUmZk7NOqEjH3yC9Yfivs9UaybR4cU2fOgz/VacA/DMCrq+Vb8xo279Le+JZCbReq3hWF/PHxMy6ad6u6Za0EdcxbS4JoLo64SDltmezQuNrmKc8er4ZfiDsAtA==
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a team by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/team/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindOne handles HTTP GET requests to retrieve a team by its ID.
+It parses the "id" parameter from the URL, validates it, and calls the teamService to fetch the team.
+If the ID is invalid, it responds with a 422 Unprocessable Entity status.
+If the team is not found, it responds with a 404 Not Found status.
+On success, it returns the team data with a 200 OK status.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Team ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"account_id":{"type":"integer"},"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

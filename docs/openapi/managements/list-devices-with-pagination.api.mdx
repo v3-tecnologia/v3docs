@@ -1,0 +1,75 @@
+---
+id: list-devices-with-pagination
+title: "List devices with pagination"
+description: "FindAll handles HTTP GET requests to retrieve device records."
+sidebar_label: "List devices with pagination"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVs1uGzcQfpUBTy0gyFKLXnwzmjR168ZGIvcSG8Jod6RlyiW35KxiRdDDFD30QfxineHqL/baQW5B0dMuyZn5Zj7OD9empFRE27AN3pyan6wvz5yDCn3pKMHPk8kVvHo5gUh/tpQ4AQf552hpSVDS0hYk6yLEMg1v/DlDapsmRBEM2SY6mFvHFK1fwGwFZLmiCDemdba8MRD039Zk5V8Q4goajFiTaKQBzFoGHxhmgStItm4do6fQJrcStCtcWI+KAjbtgKmEpUUx2uCCxKgEsl1Mk/1IvTAfxCkJZo5iXxyfwzirjUcDiS01VLBdUoacVAQ13oknNaBz4YPAqW1Q2+rFeDQSsTfEbfQJEH55e/k6Gwk+ERTBM1qvXAgNqqkBiI2OyaR0oAeKUX5qSklN23kW3t6Agli/RKFvK229RKFEd2qhKNqYhmZgDiGa03frBzd9paZ9W8/kNr7Zxn4K429Fz+p5ZkkWXkzIUoOUVSoqqtGcrg2vGt1X8AVFs9kMehEyL0f2hVLhT39Gz0Hlu3oe73ZgdrwmFfhuNNLPpz5c/ipGlHXyrKfYNM4WOWdO3icVWR9hNDE0FNl2BkvkvGuZ6vT4GFsOtVgqppr/C287yL2nsxAcoTcbcUC15opLU1seySTWusgikTQRpsiPkdgqLz1KOQseB/17Tg7JE45tTp+JGNC1ltLr64sL4eShk5v9Vpi9l4RX8yU5+tp8mjsi/pTEfUpIOhXFE/w+qSGtp1ehDhJ+70lTBU/TrnR6BVr3hBNtU35ll9xH8XYDY8RVjldLv5e8Q6X2HnNgdNN9+TwloFZ6BXrc1b0f+gr9fNcE31JcSkt7qb3wC2p/09lmXGizNC9yPzbSY6SBVkH4Nwvi3FO5ksXJtmFri8qAXYtto9PDk+X3SQbILNwNi1AbbVXWz4MC5glQqD+5wI5DOMvu3f9z/3cAquHV5W5u3P8l0wdkuMmG3PpHlCYPP765fgElJpCZEFsZN/I7w0Ta+NmyU9p+Qy/c1hI/nF2dy4E62oGNhqPhON9hSFxjJmPbfy+sTJndQMqjsdkPWvPA6fWB4P/fDv+lt8O28Jju+KRxgpv7V8wdsauBd2ZXA5LelWSRbq3XmoPX0W02ut1N9vz4sAlnjqSQ5ugSPZNGzzxMep36g1aH94nE1qqIyc+RL8P8zFPlM+C7F8vBg1tdRKsuCAW3Il0RljozhI9O8awoqOEjrUc9anPcgqSYpAf+C1qbEWY=
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List devices with pagination"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/devices"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindAll handles HTTP GET requests to retrieve device records.
+It supports optional filtering by either "ulid" or "imei" query parameters, but not both simultaneously.
+Pagination is supported via "page" and "page_size" query parameters, with defaults of 1 and 10, respectively.
+The maximum allowed page size is 100.
+Returns a JSON response containing the paginated devices or an error message if the request is invalid or an internal error occurs.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"fleet_id":{"type":"integer"},"iccid":{"type":"string"},"id":{"type":"integer"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

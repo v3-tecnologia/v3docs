@@ -1,0 +1,78 @@
+---
+id: list-teams-with-pagination
+title: "List teams with pagination"
+description: "FindAll handles HTTP GET requests to retrieve teams with optional filtering and pagination."
+sidebar_label: "List teams with pagination"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVs1yGzcMfhUMT82MRlba5qKbU6eppm7iceVebI+Hu4uVmHLJDYlVLGv0MJkc+iB+sQLclSVba7u5pTM5aUmA+PkAfMJKFRjzYGoy3qmx+tW44tBamGtXWIzw23R6Am/fTCHgxwYjRSDP3xQMLhAIdRXhk6E5+GRBWyiNJQzGzYBNQK1nxmkRDS/chCA2de0Dm9mqZUtAtoABLlRjTXGhwMu3znPfOJrIBfsOSzYWdIX8LA4gawicJ8g8O4+maixph76JdimeylbQeomgA0Id/MIUWAzAkKTQBMcC+Hk0gte6gNM2QcAQfGATJ3eRg4mQe0fBW4sFLIzm6Dgx5MB+KLDU7HsML1+khFvJVTQ3D8SjAVT6Wj5GL/byaUO+y58d3ou2RMrnXI0Wbwbs7HhytHmzi9OzDztlmBwNYKHZG2fINWD4ofSh0tRadf6/QNcVlzGxhpHzJWhuneSLzZxu9Gp+XgfDim07RdLUCKTcegmzBDlUGCNDFyUQMC5Fx781FzpdcDTSX0k5DtVAbeFT4/PVg0bm8iG4psq4r3aLxO+MyFMF+ODYBB+laHyKjFal1XilaFnLvbidYVDr9aDXg9T5sSo/4Sr1x9P+LgcqYKy9ixhF4cfRSH7ux/D+dzYivYmORMpYW5Onrj34EEVlteND6oCBTGuQS59uDWEV98Vdp1yZoi888RoC2uTqvk4kGeukElC640rTvnkyAkbPo1T3/Uz/atuBWzk0CKaEKRuQs5DAu7PjYwais5V5b1E7qdnmymcfMCcxX6DFby2mxyBuG6YnnsY+gnhTF98Y4n35dhc6BL2Ucxq+XgS2s9IrJk/aXt018GMKYqVXoSdcuXvVN2qTDQH9iWHBpPJGeOgrpm/d2iY9E7pSU2ZJxTPOBDb3jL6aISVOozkfDoREhR+Sr5bfmmBFcrD4KTJpZv56mPtKCU8YV3rxJaHoXEJJjb4b/WGK7Paf2y8esIK376Ejl9vPC7TA/8l8wQW/0QE8/HJ6dgSFjsB/iKFhGufPTEcU1iVDVhD7QzuGteLU4fBkwgIJtHU2Go6GL1P5fKRKJxw68juWP4qdtWG7H6gHIa+2yH7fSr5vJf+braQjFMJrOqit5g1AeFlmd9VN97mibvjnPB9yXq1kus6CXa/lul0Y0k5jos64vGpcahvxiRF5Yt/pjehvXG7XHs6qERWVtpyv8/nMBvSM880itI3gUg5cl0xY5vySteeoC2ZrwaN9eJjnWNPOqz3iXe8yKxMFE/u/IaZ74g==
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List teams with pagination"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/team"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindAll handles HTTP GET requests to retrieve teams with optional filtering and pagination.
+It supports filtering by either "ulid" or "accountId" query parameters, but not both simultaneously.
+If both filters are provided, it returns a 400 Bad Request error.
+Pagination is controlled via "page" (default: 1) and "page_size" (default: 10, max: 100) query parameters.
+If "ulid" is provided, it fetches teams by ULID.
+If "accountId" is provided, it fetches teams by account ID, validating the format.
+If no filters are provided, it returns a paginated list of all teams.
+Returns appropriate HTTP status codes and error messages for invalid input or internal errors.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"account_id":{"type":"integer"},"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

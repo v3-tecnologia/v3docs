@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkv3_docs=self.webpackChunkv3_docs||[]).push([[8121],{68070:e=>{e.exports=JSON.parse('{"tags":[{"label":"V3 Tecnologia","permalink":"/blog/tags/v3-tecnologia","description":"V3 Tecnologia tag description","count":1}]}')}}]);

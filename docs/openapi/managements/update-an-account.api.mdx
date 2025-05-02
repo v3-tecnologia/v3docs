@@ -1,0 +1,75 @@
+---
+id: update-an-account
+title: "Update an account"
+description: "Update handles HTTP PUT requests to update an existing account by its ID."
+sidebar_label: "Update an account"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVs1u2zAMfhVBpw3IkvRnl9y6ttuKdV0RJLu0RSHbTKJOljxJzpIZfphhhz1IX2ykbOenbjt02KGH9ZDKFEl9/EiRKngCLrYy89JoPuDjLBEe2EzoRIFj70ejc3Y+HjELX3Nw3jFvWF7pCM1gIZ2XespEHJtcexYtmUSlk6PupT7xLBPWoRc/g5XGyRGbWJMG2Xh4SioiBQ/WddhcKEmuK4v6SBaZZNm51IioPnnbYe4IAEkya+YygYShkuiyIfjc6kq5Mkwao0ttNHN5HIPDY42lWESG9pmVFBpYi0ILLjPaAZOTBhqSxCZCKkdGGygutXRMG88m+JV0eYev4+KDi+IOywcrMlBTkiQTfoZrjTb4JRNcU/zSQsIH3ubQ4S6eQSr4oOB+mQUt7WEKlpflVaWNbL1BskglNripPS0xMCXjgL134+j8YsMXBQ3WS3CVmbWggu41gkBJKhanoKeIbvC63+Gp1M3nXqcB4rzFHPCywb9ltdP/k1m5GevFXQy106uVmYluIPZohnb303qE+W8RGE6pEhpC3e336d+2h08f0O5vuVMSrWraWsy0mW2rWKAivRa+7dzLitiWUSjMdiCfScywKCl0KuAROmB1kZ6NT0/5is/IGAVChzzcoZgIVvDcMG3Rt7oE6+Jr4cFsioczk6uHNqqm8Yxiv0dCsv3+fvvEM3T8lrrREyq6dre723Y31kgA9UsRKWDH2ku/fKJnQi+m1A+bm0q3GpvkzCTUAnMf+iY1Cd6rG2uvkEmJYgd23vTS3CrS6M33HA6FyCy6sUk5NUE6drhuhMcLkWYK7mtsTcZWLXedQaknpmmhIqbQ2o0mRHr76/anYZCyd5+aWXH7Yw6KZWF4YMa/C8sMOxyOj3AmOYawbI5DCZeRcEBjAmkkgPyj0GIKKVLJDs5PcIOirQ7rd/vdHQKWGedTEXitQY9Xk7imi99BujEI/o/2fzXa6yvoYeF7mRI4v6lZUFEWdfle8HU+BlhuWJozTB5tFAWlfmxVWZIYebA4sC+uqHMgwoiqgd4LMlw0rNSJUA4eSeuLYT3mXrKtZ8W9KGuh0HR3MfCcvnD5BZbVs6O8Qq0ZiARbKuGoNg6r016NyHxt2LrxZaexQCiQ+Ud1N+8+1iHqRvXjJTUJmVjxjaY4/gaMJgQfum+QFVwJPc3x2uB+5ZL+fgOsBMUi
+sidebar_class_name: "put api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update an account"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/account/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update handles HTTP PUT requests to update an existing account by its ID.
+It parses the account ID from the URL parameters, validates the request body,
+and updates the account using the provided data. Returns the updated account
+on success, or an appropriate error response if validation fails or the account
+is not found.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Account ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"correlation_id":{"maxLength":50,"minLength":3,"type":"string"},"name":{"maxLength":100,"minLength":3,"type":"string"}},"required":["correlation_id","name"],"type":"object"}}},"description":"Account Data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"client_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"tenant_id":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

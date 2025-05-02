@@ -1,0 +1,78 @@
+---
+id: list-drivers-with-pagination
+title: "List drivers with pagination"
+description: "FindAll handles HTTP GET requests to retrieve driver records with optional filtering and pagination."
+sidebar_label: "List drivers with pagination"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVs1uGzcQfpUBTy0gyOv+XHxz6zQV6jaGa/diGwZXO5KYcsktyVWtCHqYoIc+iF+s33BXlhxvnOQWFDntkhzOzzczH2etKo7TYJpkvFNH6ifjqmNraaFdZTnSzxcXZ/TyxQUF/qvlmCIlj/8UDC+ZqmCWHLCe+lBF+tukBfmsSluaGZs4GDcn6KJGz43TcjS+dpNEsW0aH6BvJ1auiKEBCq9Va011rcjLf2JdT2QFD8IKmoKuGXfiiMo2kfOJSg/L0dStTdqxb6NdiZlZd9CZiKQDUxP80lRcjcgkCaQNDgf0XVHQD7qi8y5M4hB8gIqzB7fJRJp6l4K3litaGg3XEBXDMQmwW9xG84YHXc3gVDzT8DGSn9FhvnZYwIvY8DQBSrsaXTvZ1VTrO4RTC25MojRfKYoxIaoHfODTo4BmnKYLpK1LTBRIL08nJx0We0h+xD2RpcnJiJYatgABMoTk0MyHWqdOo/Mfg22feoBmDaBFHBoV1puCovOtZAMFTTAQ7eouJp1aQR01msHKWaGaYwQqUVwh47J/+DaohbwBf6T+snAcq5HapUEdXa3fqfgzAdi1dYm6+6rPzxEdfo17Rs5zJrFwUIGl5AOrCLhqrY7WKq0a2Rezcw5qsxkNWsgp3NNfjCTF8lM8ZyrX0/P2bkZKKsi7yFEEvikK+Tz24dUvUCLlyy7JKbC2ZpoL++B1FJH1ng3JA4dkOoVIft41iev49Bi9H9hmVbem2nMxJmlrtYHhwJL/W52eXk9Ggh24lPP6NJI/unSDiELLZGZ0AQWyFh747fL0FIH2ukrvLWsnOdlu+fI1Wk3UV2z5c/PpEXwPGd4WxIA/rX0P4m1TfWaID8Xbb+gQ9ErWubkGEdj1wuBx8knb24cCfZ+AaBkUGHBX9r4faqXJlmB+5yCv3wvhmU/ork2nO+m50JE6yTyo0MWgqIUH/mrOKbNWWmBx0BOlkEA22JFYG6wcHiy/jWDG0t+Np75WQgbGzXzXly7pqfiTq30/hOPs3v2/9/944ppevqKeQe7f4hEiPMzYQNbf6ECefjy/PKFKR8LDGFpwNX5LHVmoNZlkBbZftQO2NeKn47MJDsTRzlgxLsaHOYc+plpnMHqGO5X3YPvm5AdyNyaod5xe7wD+MqV8mVL+f1NKT0CJ79JBYzUmAuFxafN1zwVXassFaPMFukm21mvpxctgNxvZ7maIPOaYqEsUgTqaaRv5mXZ6ZgQadOpPXu0mIQTWiojKg8+n2fzAUPQB49vZaOfBjSyQmlI46eoG0gvWFdhV8OguHk+n3KS9W0+4erNPxSAVvAX/AQVulX0=
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List drivers with pagination"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/drivers"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindAll handles HTTP GET requests to retrieve driver records with optional filtering and pagination.
+It supports filtering by either "ulid" or "teamId" query parameters, but not both simultaneously.
+If both filters are provided, it returns a 400 Bad Request error.
+Pagination is controlled via "page" and "page_size" query parameters, with defaults of 1 and 10 respectively,
+and a maximum page size of 100. If "ulid" is provided, it fetches drivers by ULID.
+If "teamId" is provided, it fetches drivers by team ID, validating the format.
+If no filters are provided, it returns a paginated list of all drivers.
+Returns appropriate HTTP status codes and error messages for invalid input or internal errors.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

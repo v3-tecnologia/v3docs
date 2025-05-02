@@ -1,0 +1,75 @@
+---
+id: assign-driver-to-team
+title: "Assign driver to team"
+description: "AssignToTeam handles the HTTP request to assign a driver to a team."
+sidebar_label: "Assign driver to team"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVM1y0zAQfhWNTtAJSSiccgtNB8oA7aTJKe0wir1NVGzJSHLa4vHDMBx4kL4Y38pO65BOzxzIIVH299vdb7eSKfnE6SJoa+RIjr3XKzOzM1K5WCuTZuRFWJP4MJudCUffS/JBBCtUNBRKpE5vyEWRCPDqX5iTIOi2oCQ0rq3FyQROMJpPP4lCOZVTgBQpohG7tkFzMkGkKiihTdRt0y5teofwM4jgvLap2KhMw7LFqE1Rhh4H962k6wk1gzSiW+Nkdtq7MAwiUVm2g9eT2+iEuLKC3JV1edQ+YgSUKYXSGa7q4/npF6TzhTWekaQ6UUGblfBlkpD3wnKtgpzDI4dArUjc6LBughaFs4XTKKXptA8qlF4kNqW+7MmHfnk5WlR/zWyy7S8MNQsKFdZ4G7jgn07x5kZoR6kcBVdST/pkTbmSo0qGuyJamUArcrKuLxtrtO0dusYmiYXSBH4CaBYrs2Zw7Tl91YnFRZALmnyMjP5+RfanknQRLR4skbq1tMtr8AeGsNytNjJzAnbsVRWDNgOI+Q+HQ/55slnNFCnl6XJ2BOtUeTA42C2sReWDw0gZFXK9PTzcDz836AHPWy0zEscm6HD3fOy6iRbUimfb4uNONBTncVofIgcw1ZEcNPQcVDqtBy10puqWG6XL2GqweeNB66W97Sc2lzxVntf0cbLHtyovMtqZ1LBmCl3Z7dRVwpj3ZjCOJLj/ff/LCsrF+9Mt8+9/bigTBSjuCKv5QzlhxdF0PsE+e4HErsTC4LlUPhIb/WEI8rMyWIi4+eOzEyi4nibZsD/sv5bAwH3IVaRcS+1mkzsnqO3HDtoOf/+ft3/zvLXrFeg2DIpM4Yhh3JHIVUv7hWxgw3gUD1qcNEi95uWAuqqYUnOX1TWL0ReH27XAc6OQeMks48up42aC6lcq8/QMVV5M2+PyUnQP7JNQW6EyvOsYWsn/8PxGd80Bri9htSaVogKG0SiOmmSvZuz+6Lh3Y+ve1mOMZhehY8vXpO4ei7PT8xn0y/Z05+gwpE7d8LnEd8RlY73xSEZZJTNlViVmBn2Tkj9/ADiR1Gg=
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Assign driver to team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/driver/{id}/team"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+AssignToTeam handles the HTTP request to assign a driver to a team.
+It expects the driver ID as a URL parameter and the team assignment data in the request body.
+The method validates the input, parses the request body into an AssignToTeamDTO,
+and calls the driver service to perform the assignment.
+Returns a JSON response indicating success or an error message with the appropriate HTTP status code.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"team_id":{"type":"integer"}},"required":["team_id"],"type":"object"}}},"description":"Team Data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Driver assigned to team","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable Entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

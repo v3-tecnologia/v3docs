@@ -1,0 +1,71 @@
+---
+id: delete-order
+title: "Delete order"
+description: "Delete a specific order"
+sidebar_label: "Delete order"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVF1P2zAU/SuWnzZUkWzaA8pbERVCTNrE2BOqkOvcEm9p7Nk3aF2U/7577YRmkCKNl9a53z7nXHeyhKC9cWhsIwt5ATUgCCWCA222RgvrS/ByIZ3yakc+H2Rx171IezQaxNUFBRo2OIUVnRtKoa8yuq9Ksnj41RoPpSzQt7CQQVewU7LoJO4dxwb0pnmQfb943uQLT3K0R5zzP1usOTg42wQI7P+Y5/z3rO011dS2QWiQvSfZCf8dqjpvHXg0qYb2oBDKe4UzHRdUmwE+6o63uDflrDOgwjbMupJhxtG68vg4T4nSbn6ARrKw7dMcDOeqFDeELAR8HY8+FQmgW29wH9WydOYa9suWCCvu1ow7qgcWUiI1SLKQuCpbRrUwRFFyHC+zJJ+QdaOO+iziRJaB9V5yQ/84qrP1NSdmtdWqrmzA4iw/yyU3Huf6xvMmyqbTdUlbFagk+0Fd7LTe/FERjZcaG2BUsVIE1jRbG/VASCnNSEX2p5DeVgqFCbRtCDtXE08CrUgCEsuvV0GYRlxaaocGa65/acXtGEoB5OErp2r5aX76gSl3dN+darj5MP2w1eMq/zNFd+Dyle0f7ofwGzNqTxixthjlbqDpbtjyQNHFZOETU2wcN5RIYEo4pes2KsB3X/c9m0ldngVDx0fljdrwpfmxMYHPhPZW1QFeucG7m4GY92L6Js2OP3LW7BlHVbf8RcefxODkzYoP0VsGmLxXb+g/otWvKXSQI2ORvEutweEkj7ewn27Rxerz6nZFEWrQ9UGiXGIxHrjm7CTPJZ8a8y8jMpvSdWkB+v4pPrmOZjztWYpmYNb0fPwFZ3A1XQ==
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/orders/go-template-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete order"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/devices/{deviceId}/orders/{orderId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a specific order
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"deviceId","required":true,"schema":{"type":"string"}},{"description":"Order ID","in":"path","name":"orderId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"*/*":{"schema":{"properties":{"created_at":{"type":"string"},"deleted_at":{"type":"string"},"order_id":{"type":"string"},"status":{"type":"string"},"type":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

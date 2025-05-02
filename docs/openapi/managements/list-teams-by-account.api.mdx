@@ -1,0 +1,75 @@
+---
+id: list-teams-by-account
+title: "List teams by account"
+description: "FindByAccount handles HTTP requests to retrieve all teams associated with a specific account."
+sidebar_label: "List teams by account"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVc1uGzkMfhVCpy5g2On25+Bbts2mbtOmSOxe4qCgZ2hbrSxNJY4bd+CHWexhHyQvVnJm7MSJs0BvOfQ0Gor69JEiP1Ymp5RFW7AN3vTN39bnf60OsyyUnmGOPneU4M1w+BEifSspcQIOsuZoaUmAzgETLhJgSiGzyJTDd8tzQEgFZXZqM8AGrjv2Awa6ErOgoIexaXcG+dhAgREXxBTBeuA5wejspKPWJAwsywV6xnp++bwjq1xJlNGLFd6en34AjBFXYx+mLaEJueBn1s+UsOK1fITghhAMpvVO+w+D12DlLr9EZ/OOXhopFcHnqY5p7M8ZuUwjX8SQUUo4cXTk2fKqhmroUfTogGIMEUKWlTFBXkbl0WYN3cPQg/b8OcUlxSMF6ZqO2eYmmf5FdefNDrfsxdOqpUCey9rLGfnbJllM+og2Um76HEvqmJTNaYGmXxleFeqsAcwomvX6Ur2VouRfHf48ONDP7t2n7wQ0C3LIs+5iUTiboe72viR1qW7dYZkWNZbkr6DItkFuCX62+T4iih8juRp01yex5rV2iaSl9xn5PjxbTcOeQ/Uz34/pk5q1EDRFYKcwFAD994Hhw+jkREJusSYhOEIv2dqawuSL1LfC5+TosXF6KMVNqezhU7oHMl4W+SPL+L54W0OtDeKhPi/21fGm76BpPKg77xdKe91gM860Q81QFMhIA0nPzoMEbGbEdRtLX/ZNTwWq11Z9r9r251pcUn1/0+ZldOrdWz5LoneTcNXNwsJoY1o/DXq/0sNM6dX1tqMKNdvr/67/DUALOD5tBSdd/7MkB4Wok/SMsz9QZApenY1eQy4SKwofS9FVWU4wkYqP6JvTJL5HjzNaSDrg8ONANpRoc9lB96D7VPNdhMQLrHPTqs+JTbxR5NVGac0dttVNon+PoMc5gtpOYrriXuFQ5oyKgFZo1db1hdGoxfXmkfs3s0eqdi7FoW5VpaU1im69VrO8aVyJ/VL1IVqNqJlyto5O2meKLtH/lMyTs3as/QE7w3Av540k+JWpBanUP1l+pdXOsFxfivOcMBeFVDrNvuBTwbdO3pOF9e2+Pz4aiuz8BHr3Sn4=
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List teams by account"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/team/account/{accountId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindByAccount handles HTTP requests to retrieve all teams associated with a specific account.
+It expects an "accountId" parameter in the URL, parses it as an int64, and returns a JSON array
+of teams belonging to the specified account. If the account ID is invalid, it responds with
+StatusUnprocessableEntity. If an internal error occurs during retrieval, it responds with
+StatusInternalServerError.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Account ID","in":"path","name":"accountId","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"items":{"properties":{"account_id":{"type":"integer"},"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"},"type":"array"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

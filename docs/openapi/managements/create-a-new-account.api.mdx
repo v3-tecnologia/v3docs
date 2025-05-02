@@ -1,0 +1,75 @@
+---
+id: create-a-new-account
+title: "Create a new account"
+description: "Create handles the HTTP request for creating a new account."
+sidebar_label: "Create a new account"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVc1SE0EQfpWuOccQQC/cECilCoWC4AUoqrPbSQZnZ9aZXn5M5WEsDz4IL2b37gYCC1rqhYMcwmxP/37d/c3M5JSyaEu2wZsNsxUJmWCKPneUgKcE74fDA4j0paLEMA4RMtWxfgIInq4AsyxUnvunfpehxJhau4XJKOQ3YD0H0W/cbzYW28P9Hlyis7nIGhvry4p7p17CQ06OJnc3TdDgwYWJzUC8qbSNfUTx0mbUh90xpCrLKKVx5cSPZUmDq+iXnFC+MIMry9OmvrXBKiRGrlIf9j1QjCH2oDZPZfB5OvX3yq/X1kAzxFYRCgmIE+qbnmmrfitFm42ZyYJn8qxHLEtns7qIlYukaM9MyqZUoJ7KGEqKbCk1ZjGSq3XPba6SAq/3yE94ajbeDHqmsH7xud4zfFOSNC9xlLaYec94LOiR1ergd2bzJnsbSSKePM6hdXp2ZxZGF5SxmIndwyFq+wvbyGiWnXKsqI6imKamVEFe/z01hhr0bwF0Vqxa7DrwdOHtqjQZnCN3nbNt0O0Y1cPcreaTisHKDEr9YMcwFAf67QPDx+O9PXMH6igER+jrZjzCWVF29NJyegCfbDlNKC5PYCcf6SY+35nKPXdR5i+sH09IVCbk0I147CVjpSUcOYIdz5Zv/mC4541rxknSzWz3S3exIJ4GKdGUIbF4LFF326y0DCeSJNxIUe1mpopOL1cu15Pw1yhc97NQmLn40ZCH99S1c41F6egpKlrAu2jxEtzWj8OC9DDTsrrUUFd5++P2ewAq4N1+S7Dp9tslOSiFTGXxnP2KEQJsHR5vQ44JJK1YCY/LcYSpJlqBUBM0H9AL9RYCI2we7MqFVtsEG/QH/VVNTMEpsMa0Tbp95x68YOZRskvs/f9d/Nd3sV0VpmteKR1aXy+1zuOsHdoTg/dzPdVxFtFspv0+jm4+V7EgF+VdPTnT3Y5Wt0m/xNWUMBfm0Sn/TDfasaZ3r4YauKaCShPo7Nm8t7AQ+KnkX+oub9zB/tFQlEftS1+EXG0iXumTJ78bRg6hnqWapWrZzDj0k0pAkfvGp/79BDruUZI=
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a new account"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/account"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create handles the HTTP request for creating a new account.
+It parses the request body into a CreateAccountDTO, validates the input,
+and delegates the creation logic to the accountService. If successful,
+it returns the created account with HTTP 201 status. On error, it responds
+with HTTP 422 and an error message.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"correlation_id":{"maxLength":50,"minLength":3,"type":"string"},"name":{"maxLength":100,"minLength":3,"type":"string"}},"required":["correlation_id","name"],"type":"object"}}},"description":"Account Data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"client_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"tenant_id":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

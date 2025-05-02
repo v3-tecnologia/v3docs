@@ -1,0 +1,75 @@
+---
+id: create-a-new-device
+title: "Create a new device"
+description: "Create handles the HTTP POST request to create a new device."
+sidebar_label: "Create a new device"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVs1S3EYQfpWuOSvLgs0h3IhxJVThQNlLLuCiZqVeaezRjDLT4idb+zCuHPIgvFi6RxK7oIXElUN8MIdl1NP/3V/3LFWBMQ+mIeOdOlBvAmpCqLQrLEagCuGX2ewMzk4/zCDg7y1GAvKQd3waHN5Agdcmx8mlOyZodIi94MA+98UdGMdSGjr9R0ngaHaawbW2pmBSJ2Jc01J26dg8a7VYPtwkg+wjWF+aXFwQamf5A4bkABwvILZ5jjEuWstqDLET1Aa3oQOLXgpuDFVddHvTXYikqY0TOHWAIfiQQZKOjXdFvHRr5td7eyD+6Z4RaranS5yoTPUh/8QRq4Olyr0jdCRH3TTW5CmEnU9Rcr1UMa+w1nJqgm8wkMGYeFvyNbPmVwFzX3IYphOguwa5SHPvLWqnVpnKRWohivHKFMJT69sTdCVV6mB/mqnauOHzVTYoiBSMK0V+YRGpl+wvuVJYYpBbk+cjpXuPle7+uEWrqdE8Edvdfyy2v0Ws9lzzr4+hqbzDK9fWc/b6ZavTkfiqK5oJyIFePM3nRoKGbPTRDd4+Mf/xwYCff8Kc2ABbeIyxrvvhSJNWm9YptJjckZ6LXStwZ8q/bSAVV/6PBhvlv4fVlaaxJeJkbRVKuB+H9puQwTBeORlgFjBjBfLtPMGv5ycnKhs5uRrlXDJu8Vvz6V9ibYym5yR6lD2Po3+Eyoihtc840TbFN1bkLRSh8XgeWzx37LHsBT23CG8dGbr7CvisOtWkyyhDogOwYL1GqjxHqBofSWaBljGjdroNw4TIqwmDSC1VG6zc7Vy/irw/5v52kvtarViNGHy/Xh1vb3XdWHwBqZK4MTaHzG+22vShs9a3XeOsv/t+WRMet8lmK7qFHxabziVxo+l2mPJ4/9f9nx6whp9P+yUa779co4WGFybPC2v+0AE8vHl/fgSFjsChh5ZXNR/nOqZlykWSJKh32vF6rblQcHh2zBeS0c7YdDKd7KbG5vzXOlXNaenG4SWz+UJRT3zdWNDfHz7/7eHTI5HwlnYaq03aHanhlz0oLlTxAJtK0MKU5VJqfR7saiVkzlrgd9PFR5kcwQhW5Ys1VagLaUVG0We8k3J1hfthJnbToGnF/gjFq2yQOOT0NPQi7yagpe7MPO9fcgIRpgZ9Iyubfw8UH3xqpDQDE22prHZlyznh+06n/P0NUpjyDw==
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a new device"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/device"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create handles the HTTP POST request to create a new device.
+It parses the request body into a CreateDeviceDTO, validates the input,
+and delegates the creation logic to the deviceService. If successful,
+it returns the created device with HTTP 201 status. On error, it responds
+with HTTP 422 and an error message.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"maxLength":50,"minLength":3,"type":"string"},"fleet_id":{"type":"integer"},"iccid":{"maxLength":20,"minLength":19,"type":"string"},"imei":{"maxLength":15,"minLength":15,"type":"string"},"model":{"maxLength":50,"minLength":3,"type":"string"},"phone_number":{"maxLength":15,"minLength":10,"type":"string"}},"required":["certificate_id","fleet_id","iccid","imei","model","phone_number"],"type":"object"}}},"description":"Device Data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"fleet_id":{"type":"integer"},"iccid":{"type":"string"},"id":{"type":"integer"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,73 @@
+---
+id: get-a-device-by-imei
+title: "Get a device by IMEI"
+description: "FindByIMEI handles HTTP requests to retrieve a device by its IMEI."
+sidebar_label: "Get a device by IMEI"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVUtz0zAQ/is7OsFMJgnQU26FPgj0NSXl0nYyiryOVWTJSHIgePxjGA78kP4xdm2nJG3KTG89cEnkfT+/rUSCQXldRO2sGIkDbZO3y/Hx/hgyaRODAd5PJmfg8WuJIQaIjt7Ra1wgSEhwoRXCbAmaeKzWv7LjCPg9eqlYPMOGDIX0MseIHlLv8obe2QTlbCSFHihpTKvS2Q3om39ymlJga6zelaXwOJTS2w0dGSiuD59OT4gZCmcDgk4hdaVN+jBO10V1AOtiy+tRBp1GEuCbjhmZ2RnuQIgylmSTvEkL6L3zkGMIco590RN3eQUxuqzuVXOv9cMFIFHNpELGjN6WlOhL56jpiyuhPSZiFH2JPRFUhrkUo0rEZcFygSpu56Kur1m4TSsw//VwyH+bbk8/ks2mqjYyVxaF0Uoyd3ATWKRac1F4V6CPujUoy+hyElVTj8rNrW5t3kUyc86gtKImD6yVsmGc6mRLtCTikbjJVMaHnqLmEmxRWkjTmtvM6jOTuWdcI+7phAysenhycXRESd8Psr4judkNqsjmEzT43GJKDWLcLKKm9s3RM1cr9Uh9H9XgudqmkDtKfyunyJzFqS3zGZnYJlCaR4Ioi+SZNXkLhWm0zg89npDhA0aAJ+xM3dqLcs5b3625oN0kJMgcpSXmGBtwoGUfiUGLNwPuyqDi35qYDG4r2Ci9YbnB4k0goJm5733lcsHbrm3q2DeHRojKznv3MthtIr39ffvLAeZweLpCvtufCzRQEGDRGhr9Q3pw8O78Yg8SQkmCXl8SfNJzJkMDZlFHw1U7lpbgLadSwO4ZQxcH2job9of9V828uBBz2dSlA7NDjBsnoYO9jWCrvzX+f2ueemu6meYEBoWRukHhZnSqbtQuRetO9FanZdT80yBl1C8WqCru9oU3dc1kKotfEv2aV9JrOeMB4EOmA79pllNpAv6jjS/Ou+v1Ejbv3dZwO6K0S9GAQMlf9PyCy9U9rK9JLkOZMBBRKC1rVyks4prSgw2t1xfwcH9CW/8HKdkNxQ==
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a device by IMEI"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/device/imei/{imei}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindByIMEI handles HTTP requests to retrieve a device by its IMEI.
+It extracts the IMEI parameter from the request context, calls the device service to find the device,
+and returns the device as a JSON response if found. If the device is not found, it responds with a 404 status and an error message.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device IMEI","in":"path","name":"imei","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"fleet_id":{"type":"integer"},"iccid":{"type":"string"},"id":{"type":"integer"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

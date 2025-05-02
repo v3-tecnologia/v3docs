@@ -1,0 +1,74 @@
+---
+id: update-a-fleet
+title: "Update a fleet"
+description: "Update handles HTTP PUT requests to update an existing fleet entity."
+sidebar_label: "Update a fleet"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVs1uGzcQfpUBTy2gSoqTXnRz4qR169qGKvViG8FodyQx5ZJbkqvKXehhghzyIH6xznBXP/GqCQzkkEN9kMnh/H4cfrO1yilkXpdRO6tGalrmGAmWaHNDAX6eTK7hejoBT39VFGKA6KBqdNACrXWI2i5gbogikI063vdv7XmEEn1gB3FJ7eH5Gcy9K5JkOr4QBSwokg89WKHR4rPRb2PBzOX3vVvLqbQhD91VQeLKvvRupXPKgVWwD2OKlbeNamOWtyYY4Jffry5vrbMQqiyjwKGdl0KwZC+l11IXec/Cgk9xIVXmECLGKkDmcgK2naM2lae+6ql9EWp0Uz/C8k1bN+tp2ZcYl7y2bME7nfNaStWecjWKvqKeCtmSClSjWsX7MmnZSAvyarO5a7QZmJeMi6hkjg9tlCXnb3SGEnjwLkj0+sCX1EY+agqNmfdkku5bToIlBa4vyC44u9GPw54qtN1un/e2iYToGXC12eb/idWz4ZfNImHRxuvUdgjEzeME24h7D3c77272jrLIDtjDMezPuCM6KKdooXQ2NHicDIfy71P7q1/Z7qsB3AEj8ySN+RZj1zzqBt+OUXol3VT/EDFo7nguDvQcJuxA9tZFuJxeXKgdXjPnDKFNiD+CUAA09K3ldLxf9j34lC7rqcr8x3W0PPENlX5EIrIXwxfdiJfs+I2rbP6Elm3dnZx03U0tAyDkiDND8Dpx+hM9S/a4EE5sHqI8WabJpcuFBquYmFOIQg0SNQ9qnW9YGMivtlxaeSPng9XzwBw8c+t+5golNCghx3sqfL3GojR07OVtb2tHurv9rk+G0mV27raEipmU2OGT01Txw8eHDw6ogJ+uoOWQh/crMlDyxOAnbfQ/6MHBq/H0jMdRAE7RVzyPeDnDkEYGwynJqt/Q8nwpGFI4vT7nA6m8CTbsD/vPpMVKF2KBCd+2gHY+YzPS1KM0D2bC/5P8aZO8fW2R1nFQGuSBLbwgPVi3vXqjtpiPmiG05NsRcV3L3U692WxEzCV7ns83d0IRnMhMrls+DnR6UdxzczSBPnN1343bgfU9HHxDHM2wFaKVJ8rgV7Lj5Z9033xjbO5Ya0mYMwVKFs3BqybWDxMx3xt2Hvamt7U4ZZTL+Fndw0fOnca6s/ZLpWC8Wejxb5nG/JtydKn0RLJJViuDdlHxXfF541L+/gUD56/O
+sidebar_class_name: "put api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update a fleet"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/fleet/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update handles HTTP PUT requests to update an existing fleet entity.
+It parses the fleet ID from the URL parameters, validates the request body,
+and updates the fleet using the provided data. Returns the updated fleet as JSON
+on success, or an appropriate error message and status code on failure.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Fleet ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"correlation_id":{"maxLength":50,"minLength":3,"type":"string"},"name":{"maxLength":100,"minLength":3,"type":"string"},"team_id":{"type":"integer"}},"required":["correlation_id","name","team_id"],"type":"object"}}},"description":"Fleet Data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"team_id":{"type":"integer"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

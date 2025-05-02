@@ -1,0 +1,74 @@
+---
+id: delete-a-driver
+title: "Delete a driver"
+description: "Delete handles HTTP DELETE requests to remove a driver resource by its ID."
+sidebar_label: "Delete a driver"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVMFy0zAQ/ZUdnaCTSULhlFuHZCBDmXZKc2p7UOxNrMGWjCSHBo8/huHAh/THeGs5pdBOr1w4WV6t3nt6u6tW5Rwyb+ponFUzNeeSI1OhbV5yoPeXl+c0X5wuLhfk+UvDIQaKDuvK7Zg05d7s2OM/uMZnTOs9GaQs5+Nru4xUax8AEwuma2XyayURXYHC08a7qt8ZgGl1cTqinS5NriMOmTgiyKBMl2WCSGSf2O9MxuNBKsAKlwvdpk9azsngsO2ByPl0UnJxQ9poU4YRsEVy7Wwe6KuJBW7y5viYVrb2LuMQ9LpkWtho4p5C1LEJvRRtib0HZiU5WwbrmaXQZHJm05T3PANDbLzFSTqeTunswwEpEQKqqgGfdARY5/L9WI3UvUNBza7av+uT/F7OkWgkUOtYYG1xBH8mx1r8NJ5zNYu+4ZEKWcGVVrNWxX3dZ9nIW/aq624kO/EHSYBQ+TzJmWouBJkDgI2SeTQ5ks8jihC9sVswdN1IwdrHqE95/Tx2l9Ci3oozgyyFK6QWAGZvP/cewpWZmqSOmbQm7xAN6JyDrY0vJWGyex1Q2bW7HWeuUmKIsRsnvKJEZ6IEpH9qP6lLk+m7n3c/HKpI784OVbz7vuOSaiduof++aU+O3l6s5pTrQGhy36AnsFzrwFJs3LoUvz5qi36qcHM6OV9iQ4Qmsul4On6loKF2IVbairah3MMIHMZQ/aWz/e3m/8H+94M9jEbk2zipS43xRVH7PmyHhr1S94WcYZTRjAVqLvG2lY5Z+bLrJAxf/R5xLHfaG7lVeixMf0PMwkaXgZ/phxcXwyvxkh6+KU9qHILayoDC/kb+sPzM+/TmdDfIKljnkC4y0sYJ3KvjgyMy0N3DeU0NiFfiF4/3QBc=
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a driver"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/driver/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete handles HTTP DELETE requests to remove a driver resource by its ID.
+It parses the "id" parameter from the request URL, validates it, and calls the driverService.Delete method.
+If the ID is invalid or the deletion fails, it responds with a 422 Unprocessable Entity status and an error message.
+On successful deletion, it returns a 200 OK status with an empty response body.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Driver removed","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable Entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

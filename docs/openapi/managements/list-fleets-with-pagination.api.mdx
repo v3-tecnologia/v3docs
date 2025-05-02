@@ -1,0 +1,71 @@
+---
+id: list-fleets-with-pagination
+title: "List fleets with pagination"
+description: "FindAll handles HTTP GET requests to retrieve a list of fleets."
+sidebar_label: "List fleets with pagination"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVc1O20AQfpXVnlopSkKrXnKLWqCotKA29IJQNLHHydL1rrs7TglWHqbqoQ/Ci3XGTkgAE4TUAyfv/H874/m20inGJJiCjHd6oA+MS4fWqhm41GJUH0ejU3W4P1IBf5YYKSryfKZgcI4KlDWRlM9UZhEpdnVHFxAgR8IQ9eC8upf+FKaoXJlPMKhXKWZQWhqovdccZ8TONcKCBccpWCzYnaWYzDAHPag0LQrRG0c4xaCXy05rhWiucTt/v6NyuJJDf1epscTtrnfR0QFj4V3EKA5v+n353MVw8omTJJ6DHIkVisKaBMTau4ziUm3VKIIvMJBpEqZAtdYQ5vGhOfEhoK1TjU26BTHySNxUL7lwQCBMx0APw8nIZVuC5mCbdHdv8l3UyvDUQ4nKZGrECUR2ntSXs+Njvugq18R7i+BkJmuVn1xiQpI+RYsvDdOd9t1OeP1DtOAhhHz8WFRpHxlHWaQvbBxtzVgpIARYiFxvXutFN4vSaiZPYMe3f+9jDpKl1aEFrujete3ZEQcFB1Z9wzBnRtkPwYdnrN6yyU0wFa7SB8Jhmjec6Wvmuf16yrLcmGYs9GqOE3qoqzX0VgYrpt78bWTGnPirbuJzLTRhXOabjXUEiYCp92Ab/7DGdvP35o9XmKvDE7Xilpvfc7Sq8IEVPPJrCMqr91/PPqgUomIaDiWVgY8TiCikS4as9OwzOG5szpdXw9MjNgjQpli/2+/u1QP0kXKoO7HivmMh8YbB1S9DM8XTMa5umr6Hudo09z+8FatJE15Rr7DAvCwLIy2tVl0/19l6KjPGLYqqklufBbtcirrh8fqpMREmFnlwGdiIO5DveIZaIf3AxeY14t0sxUXXj8/zaj7xMD1RfP0+bRBciBCMQOAWXLD3DCHlPZJ+NIHDJMGCtqIerMRy+5fn+fHK/QPYHcIU
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List fleets with pagination"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/fleet"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindAll handles HTTP GET requests to retrieve a list of fleets.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"team_id":{"type":"integer"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

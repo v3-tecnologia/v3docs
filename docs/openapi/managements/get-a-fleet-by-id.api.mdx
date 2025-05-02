@@ -1,0 +1,76 @@
+---
+id: get-a-fleet-by-id
+title: "Get a fleet by ID"
+description: "Get a fleet by ID"
+sidebar_label: "Get a fleet by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVc1OGzEQfpWRT60UJSnllBtqgEZQgijphSDk7M5mTR17a3vTpqt9mKqHPggv1hnvEgIJlXqjUk/rHc98nr9vphIp+sSpIihrxEAcYwAJmUb6zlYwGk7NkTLp2CDk0qQaPby/vDyH48NLcPilRB88BEvn4BQukYy9MnONLQaaoMKKoRQpjobdqRkFKKTzhBRyhKlQ6VSwRC4woIPM2UW8aeFhcnHagaXUKpWBjFToAHkCidS6gYgvfUS3VAmyLxmGJI83iXUOfWFNSj41euxAFi9HQ1AEZyJ0h3Ch1fXwVYW8iXN/bw8mpnA2Qe/ljOI6jBE9wDRxEpKxATJbmuex+vtwRkpHrEQAYwO+TBi4tQilMxshAQUsN+z3+n0Yn3RFR6yz5cXgqnpSwqNoOxqSnuL/QoaczoYs6E+ldObUKoepGARXYkf4JMeFFINKhFURtUzAOTpR19eszaFQwViBnODP4yfHJwSaWDIygW9lUWiVSL7t3XpWqTbeoGwW6IJqAGONdNS9IecefPDUUWYuakJ2SKVPb2TYNg+Kw9phFMu67eonFnO5OHJQGVwSwH35zianpxRJizWzVqM0lIS1yM5uMQkMn6LGl+bTo/StS3hf+h3+BJSLm+esSv1MOcoifWHl2CFhGRFu+8U1A/+iZesGL8g5E65hmCBmEAdzS1GJOf13GqYNRC+yt1eptCahp8F0T9TSab7vLd96GmEz+62b2IVgjimT2YYNJsiEPYo9tun4QXTw7tfdTwu4gONxO2P83Y8laiisIwGl87t0YOHdxWRIA8QDjVBX0mSh40x65PFBA0xzsj5II+e4oAzAwfmILtjR5rF+t999w3UrrA8LGdPRTpCtFSGeeFo95PX/Pvkn9klLnoDfQq/QktYG05ybtWqb+kpECNIdEI2pYXPqCxZXFXfVxOm6ZjGl2K1Ifs2Md4ojbFaUitESVzKpPf6hY15dtMvpNWxssp0etkJpViIOmJL/6PgZV82mq69JK0eZ0kRjL5qLA8pRETZMtrhfb3KbWpPmyW9eNiNw
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a fleet by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/fleet/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a fleet by ID
+FindOne handles HTTP GET requests to retrieve a single fleet entity by its ID.
+It parses the "id" parameter from the request URL, validates it, and calls the fleetService to fetch the corresponding fleet.
+If the ID is invalid, it responds with HTTP 422 Unprocessable Entity.
+If the fleet is not found, it responds with HTTP 404 Not Found.
+On success, it returns the fleet data with HTTP 200 OK.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Fleet ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"team_id":{"type":"integer"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

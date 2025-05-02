@@ -1,0 +1,71 @@
+---
+id: delete-orders-in-batch
+title: "Delete orders in batch"
+description: "Delete multiple orders for a device. If ids are provided, only those orders will be deleted"
+sidebar_label: "Delete orders in batch"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VMFu2zAM/RVBp63ImmzYofAtW4Ii6IAOXXYKgkKxmUabbKkSnS0z/O8jLTtxWzfADrs0rkjxPT0+spIZhNRrh9oWMpEzMIAg8tKgdgaE9Rn4ILbWCyUy2OsULsViK3QWhPIgnLd7nUE2ErYwB4E7G46XfmljxAboGtfM5Eg65VVO3z7IZFW9gObqYjGjRM0HTuGOvgu6Qv9F8AWX8fBYak8VE/QljGRId5ArmVQSD45zA3pdPMi6Hj0H+WzzXL0LwEyIU6RKmKEDfSzBH06o9E55DmDNbIKzRYDA8Q+TCf88Bb29oRqpLRAK5OjF+IJ/TlVJRQcedayRemBu9woHEEeylfO1cPOie50NBgMqLMNgKB4MBEqXvU7neFHazQ9IkU747OOQDJ9UJu6odRDwvB51LBIgLb3GQ+OVqdM3cJiWZIlktWbdUT2wjeRt4zZJJ2Stnc0ar7BEjeE4X46jecK46lxUj6NJubng950jS284fWxsqgx5GZOrydVEMlzH5huzjI3qc6qifXagqOzJPxy0Xv9RjQYvrduKp5pKjZy62NrGBaSPSlmfpud9IZc7hULTAAqE3BnqjkArom3E9OsiCF2Ia0twqNFw/Wsrll0qJVCEnxyrTS4nl++50Y7em6uCwVv27TZo55mKbhSmPJNP+FSnXv7n/dGqhfAbx/QYUpz9yT2r2lav2j3BjU16K8MeTcJd5byq2qgA372paz6Oc99sJR3UxnCLtsoEOPPYc8tkkOpP6nG3U/bKlJzRmGuvvGbQfyTw5q6101vR356D2J3TikMfvON0lKpeU27rYiYTw9M0BYe9izyydX/kZvMv8+WcMlQ7Didnc4lR98E1B6k8n5QIzH95iw9eqao4N9TBLj+GXr1xHM+2EwW/t67/ApVXX1g=
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/orders/go-template-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete orders in batch"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/devices/{deviceId}/orders"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete multiple orders for a device. If ids are provided, only those orders will be deleted
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"deviceId","required":true,"schema":{"type":"string"}},{"description":"Comma-separated order IDs","in":"query","name":"ids","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"*/*":{"schema":{"properties":{"created_at":{"type":"string"},"deleted_at":{"type":"string"},"order_id":{"type":"string"},"status":{"type":"string"},"type":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

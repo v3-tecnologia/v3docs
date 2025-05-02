@@ -1,0 +1,75 @@
+---
+id: delete-a-device
+title: "Delete a device"
+description: "Delete handles HTTP DELETE requests to remove a device by its ID."
+sidebar_label: "Delete a device"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVE1v00AQ/SujPUEVJaFwyq0iEUQUtSrNifawsSfxCnvX7K5Dg+UfgzjwQ/rHeGM7TdpUvSNx8np2Pt6+eTO1Sjkk3pTROKsmaso5R6ZM2zTnQB+vry9pOjufXc/I8/eKQwwUHc6F2zBpSnljEqbllgxu5tPhjZ1HKrUPiI4Z7xzmU1p5V7SmxdW5eOgClXwY0EbnJtURASYOCJUp0Xl+GP6FvXyGPToEZi6VUqvWCckNgm2baIAswBcrbwMAvjs9pYUtvUs4BL3MmWY2mrilEHWsAv0wMUNNYu+dR2Y4rXmfOpWKoIZW2uShza3z4J4UOMwlUY+S7R8e+mfc2AtLoUoE0qrKH4o8gX46HtPFpyOgRQn0nkPpbADzLt0O1UDtCVWTr/VRV/smwNGIodQxw9kiBH8mxVnaazynahJ9xQMVkowLrSa1ituy9bKR1+xV09yKd1c/iAOAyufZmp1SpEDikMBG8TwZncjnqESI3tg1KjTNQIHY46zPtfLl3E2XLeq1MNPDUnhCpyLkbOnnlkOwMlGjTnSj2qQNrNK1Ha2Vz8VhtHkboNOluxsmrlBCiLErJ3UFiU4ECYo+xn5W5ibR93/ufzt0kT5c7Lp4/2vDOZWQjGdI+Kf25Oj91WJKqQ6EmfMVNIHjUgeWZuPVufD1WVsIrMDL6exyjgsB2hUbD8fDNwoYShdioa1g69vdT9FueNUTnPWezf/r4F9dB/1ARb6LozLXGHpIoVVv3cv8q3po/wQLABLOoBSx17XobOHzphEz2uy3sOO40d4Iad2KMS2BmKAVOOAXVPTqqt8tr+lwEz2LsTdqK2ONDlbyh+M33nabqrmFV8Y6xSoSGN3FGdgr40GIrIHmcMo72WK3/AX7LmTz
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a device"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/device/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete handles HTTP DELETE requests to remove a device by its ID.
+It parses the device ID from the URL parameters, validates it, and calls the deviceService.Delete method.
+If the ID is invalid, it returns a 422 Unprocessable Entity status with an error message.
+If the deletion fails, it also returns a 422 status with the error message from the service.
+On successful deletion, it returns a 200 OK status with an empty response body.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Device removed","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable Entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

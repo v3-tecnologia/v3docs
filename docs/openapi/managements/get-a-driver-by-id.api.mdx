@@ -1,0 +1,75 @@
+---
+id: get-a-driver-by-id
+title: "Get a driver by ID"
+description: "FindOne handles HTTP GET requests to retrieve a single driver by its ID."
+sidebar_label: "Get a driver by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVc1u2zAMfhVCpw0IkqzrKbdiabugXVN0zS5tUSg2E6tTJE+is2WGH2bYYQ/SFxtpO036N2C3DtjJMkV9/ETyo0qVYkyCycl4pwbqwLh07BAy7VKLEd6fn5/C4f45BPxSYKQI5HlNweASQUM0bm4R0mCWGGC6AsMuo2H30o0Ich0iY1CGcKlMeqnEohdI7DoLflHvTM6OO7DU1qSa2NlQBzg2JNra5miD/RHD0iQo4WdISba1JcFm9f9oCIYhXA3XYSymGnPv0ghfDWXMd3dnByYuDz7BGPWUqe87MrSCSJqKWIfWDjAEH2AhPnPc4LfX5BjOE8x84Z6J0t+FE/Y4EI9taAF5iD12EItE+LRYVAS3fXXgzOg19E6/D+OjFrOrOuoupVENLsoH5Rw2AKMhOxox5JoyXjs+wn8m5bVU1gRM1YBCgR0VkwwXWg1KRau89nKEcwyqqq7EW67KZRUHJiOf+zHHRwyaeD7kSHZ1nluTaNnt3URxKbdicClyDGQawMSHgLb2vWZyGw6RO87NVcXIAblR0mtNj4+TkWs9cahuiMdUP4lZyik3BzODcwZYl/dkcnzMN2mxpt5b1I6TcGfy0xtMSOBTtPjSON1L310J16V/gk9hn8l4kacvLONPWMTGsnsc8U6Hf9GVVYNHei6ialWkuPtZaJnna6k5Uq09VtNA9Rqd9kqTVmyNPKrWciyCFYfe8m1k/U/9t27iF0qEZNzMNy3vSCfCqW6kbep7NcXbX7c/PeACDsftoIm3P5ZoIecxwmKw5rsO4OHd2WTIoyICj+lQ8BDh5VRHlCHBI85Kuj5ox0NnwTmAvdMRbwjRJli/2+++kcrlPtJC1wlpx8QhEk+ezYyvx8k9quUmtf+fkH/uCWm1RPiNernV/FCI6qVzy7bFL1SDw84DljW3b8ZdIvaylB6bBFtVYuYKhxXbr2QCBCPpaZ4lU6eKpTPTNuIf2ufVWfsevYbt1+tJjq1Ru5WqJ04hf7z8jKvmdauu2CtDnTJ1odFs7HGqcto68mgYVNta597lAfMbAUMoQw==
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a driver by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/driver/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindOne handles HTTP GET requests to retrieve a single driver by its ID.
+It parses the "id" parameter from the URL, validates it, and calls the driverService to fetch the driver.
+If the ID is invalid, it responds with a 422 Unprocessable Entity status and an error message.
+If the driver is not found, it responds with a 404 Not Found status and the error message.
+On success, it returns the driver data with a 200 OK status.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

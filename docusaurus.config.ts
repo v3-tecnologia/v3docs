@@ -2,6 +2,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
+import sidebar from "./docs/openapi/orders/sidebar";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -66,7 +67,7 @@ const config: Config = {
         {
           label: "API V3",
           position: "left",
-          to: "/docs/category/petstore-api",
+          to: "/docs/category/orders-api",
         },
         {
           href: "https://github.com/v3-tecnologia",
@@ -223,14 +224,12 @@ const config: Config = {
     [
       "docusaurus-plugin-openapi-docs",
       {
-        id: "openapi",
+        id: "order-open-api",
         docsPluginId: "classic",
         config: {
-          petstore: {
-            specPath: "examples/petstore.yaml",
-            outputDir: "docs/petstore",
-            downloadUrl:
-              "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/petstore.yaml",
+          order: {
+            specPath: "examples/orders.yaml",
+            outputDir: "docs/openapi/orders",
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",
@@ -239,6 +238,23 @@ const config: Config = {
         } satisfies Plugin.PluginOptions,
       },
     ],
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "management-open-api",
+        docsPluginId: "classic",
+        config: {
+          management: {
+            specPath: "examples/management.yaml",
+            outputDir: "docs/openapi/managements",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+        } satisfies Plugin.PluginOptions,
+      }
+    ]
   ],
 
   themes: ["docusaurus-theme-openapi-docs"],

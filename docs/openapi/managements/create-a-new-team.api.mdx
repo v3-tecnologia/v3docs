@@ -1,0 +1,75 @@
+---
+id: create-a-new-team
+title: "Create a new team"
+description: "Create handles the HTTP request for creating a new team."
+sidebar_label: "Create a new team"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVc1SGzEMfhWNz2kSoL3kRoFpmaENQ0MvwDDOrpKYeu2trQ1JM3mYTg99EF6s0v5AmoV22kOHQzkE2yt9kj5Ln1cqxZgEk5PxTg3UQUBNCDPtUosRaIbwdjQ6hYCfC4wEEx8gERvjpqDB4S0Q6qx76Y4Jch1i7dTYj326BOPIs3GFPWLzw9GwA3NtTcoHlYNxeUGdS8eBIUWL0/svVTjvwPqpSYCh5FSifsAwNwl24XgCsUgSjHFSWAYxxAlQEdwGAqalD9wamlU17fZ3IJKmInZh6ABD8KEDpW/MvUvjpXswfrm7C5Kbrg0h42h6il3VUXWxr7lWNVipxDtCR7LUeW5NUqbfu4nC8ErFZIaZllUefI6BDMbSNkl84ejapLKjZY58H0wdTjGodYdhQ0BbYtU2mV6coJvSTA1e9TsqM67Z7nUagEiBr0r8nc5wy2un/zu3dVWdCcgRLzZzbCVUR7i6x/DjG0yIMRjk5y6THoBDTVptwlMosIwn7MeKFL4j+fdYk1Yp/COqW2zWPXWtqQ1PpmK65VS2fLuej3IMhpuVGQAzgREDyN55gvfnJyfqntOx9xa1Ky9mi2Yh2eJzy+kpiptubOVT2CcYL/L0mTH+yImcsVS0I547zlgUSo8twpEjQ8s/aOB1BU16GmUOZYBk0jKkmef6VO4jMVyuZYxVT5SOt5EFEoN4rFQRrHzpzfci69jYL7qJz9SaQSTY2YOEHS10llvcnpN+eywanpvb3ODduIlvtFAnUl9LBPbLcu++333zgBm8Gda6G+++ztFCzhrLM2bNFx3Aw8HZ+SGkOgJnGQrWdl6OdSz1l7mUfNU77ViRM+YT9k+P+YMUXwXrd/vdHUlMiMp0SW6ddP3kPTxmaivTDUX//z7+zftYDwnhgnq51caV4yz9uKo79kJR3dEzaWTer1Zyu+fBrtdyzGwFflwvrmSkg5Ehkh3jzFCnLCnS4p9wKVdUXdaLkUQtFaCQ6K3xWncaj32mJqdf2m7O2unww4iNx/Vzn/lUfIK+ldeMfweKF75snlKcyrOVstpNC2aEv1eY8vcDWXtL/w==
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/managements/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a new team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/team"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create handles the HTTP request for creating a new team.
+It parses the request body into a CreateTeamDTO, validates the input,
+and delegates the creation logic to the teamService. If successful,
+it returns the created team with HTTP 201 status. On error, it responds
+with HTTP 422 and an error message.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"account_id":{"type":"integer"},"correlation_id":{"maxLength":50,"minLength":3,"type":"string"},"name":{"maxLength":100,"minLength":3,"type":"string"}},"required":["account_id","correlation_id","name"],"type":"object"}}},"description":"Team Data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"account_id":{"type":"integer"},"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
