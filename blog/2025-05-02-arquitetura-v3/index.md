@@ -1,11 +1,11 @@
 ---
 slug: arquitetura-v3
-title: Por dentro da arquitetura da API V3
+title: Por dentro da arquitetura da V3
 authors: [adriano]
 tags: [v3-tecnologia, engenharia]
 ---
 
-# Construindo uma API moderna, escalável e segura com Go e Kubernetes
+## Construindo uma Plataforma moderna, escalável e segura
 
 Quando projetamos a V3, tínhamos um objetivo claro: entregar uma plataforma de visão computacional robusta, segura e escalável — não apenas uma API funcional. Para isso, investimos em uma arquitetura moderna, desenhada para evoluir junto com nossos clientes, com foco em isolamento, performance e conformidade legal.
 
