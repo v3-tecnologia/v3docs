@@ -38,42 +38,14 @@ info:
   version: 0.0.1
 paths:
   /auth/token:
-    post:
-      consumes:
-      - application/x-www-form-urlencoded
-      description: |-
-        Token handles the generation of an authentication token using Keycloak credentials.
-        It receives a Fiber context, extracts the necessary configuration from the AuthHandler,
-        and calls the keycloak.GenerateToken function. If token generation fails, it returns
-        an error response with the appropriate status code and error message. On success,
-        it returns the generated token as a JSON response.
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/keycloak.TokenPayload'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/response.StandardError'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/response.StandardError'
-      summary: Generate token from Keycloak
-      tags:
-      - Auth
-  /auth/verify:
-    post:
+    get:
       consumes:
       - application/json
       description: |-
-        Verify handles the verification of an authentication token using the configured Keycloak settings.
-        It calls the verifier's VerifyToken method with the current configuration and returns a JSON response
-        indicating whether the token is valid along with its claims. If verification fails, it responds with
-        the appropriate error status and message.
+        This endpoint allows clients to validate an existing authentication token.
+        When a token is sent, the system checks whether it is still valid and trusted.
+        On success, it returns a JSON response with token details (claims).
+        If the token is invalid, expired, or malformed, a structured error is returned.
       parameters:
       - description: Bearer token
         in: header
@@ -95,7 +67,34 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/response.StandardError'
-      summary: Verify auth token
+      summary: Validate an Authentication Token
+      tags:
+      - Auth
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      description: |-
+        This endpoint allows clients to authenticate and receive an access token.
+        The token can be used to securely access other protected endpoints in our platform.
+        To obtain a token, provide your client credentials via form data.
+        On success, a JSON payload with the access token and related metadata will be returned.
+        In case of invalid credentials or an internal error, a structured error response is returned.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/keycloak.TokenPayload'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.StandardError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.StandardError'
+      summary: Request an Authentication Token
       tags:
       - Auth
 swagger: "2.0"
