@@ -28,13 +28,13 @@ definitions:
       error_description:
         type: string
     type: object
-host: localhost:9999
+host: v3sandbox.com
 info:
   contact: {}
   description: Serviço em Go que atua como proxy para autenticação e verificação de
     tokens do Keycloak, oferecendo endpoints simplificados para obtenção e validação
     de tokens JWT
-  title: github.com/v3-tecnologia/auth-api
+  title: Auth API
   version: 0.0.1
 paths:
   /auth/token:
@@ -95,7 +95,7 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/response.StandardError'
-      summary: Verify Auth token
+      summary: Verify auth token
       tags:
       - Auth
 swagger: "2.0"
