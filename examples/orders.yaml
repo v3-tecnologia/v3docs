@@ -263,11 +263,11 @@ definitions:
       updated_at:
         type: string
     type: object
-host: localhost:8080
+host: v3sandbox.com
 info:
   contact: {}
-  description: That is a template to create APIs in Go
-  title: Go Template API
+  description: Aplicação em GO responsável por realizar a gestão de ordens para os dispositivos.
+  title: Orders API
   version: 0.0.1
 paths:
   /devices/{deviceId}/orders:
