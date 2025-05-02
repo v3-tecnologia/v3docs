@@ -25,3 +25,6 @@ build: clear clean doc
 
 build-order: clean-order doc-order
 	npm run docusaurus build
+
+build-management: clean-management doc-management
+	npm run docusaurus build
