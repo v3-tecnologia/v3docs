@@ -1,0 +1,75 @@
+---
+id: generate-token-from-keycloak
+title: "Generate token from Keycloak"
+description: "Token handles the generation of an authentication token using Keycloak credentials."
+sidebar_label: "Generate token from Keycloak"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVs1y2zYQfpUdnGnJ6c9FN6dNXSUztad2pgdZo1kBSxExCdALUJZGw6fJIQ/iF+ssSCm0JbeZnnLojcRid7/99g87ZShotnW03qmJuvX35KBAZ0oKEAuCFTliFDH4HNABNrEgF63uDmPSaIJ1K/hAW116vAfNZOQOlmF056YRmDTZNQVA+M0uiUF7F2kTM6BNZNSxc+ZIUwjIW5HndtX0nnP2Vbpw0cTi94SOszuHzoDGsuyU73vvo8sOMnXB5I3TYmQE07xHO4gpR1uGDKxAjA27IFaBmD0DU6i9CwSPNhbJBdY1+5otRoIQMTYBtDcEAqTTqQT/ikZw5SA0WsLJ7txX80NOyfR4UHh5f3P1x8HlSGWK6aGhEN96s1WTnUqMuSifWNdlz/94c/b4+HiWe67OGi7JCR4jl4IuqEL5itua1ET55SfSUWVKYiCOloJIV4wuLro7uxflcCkySLJsbyZEtm6l2kzp0pKLC2uOFX9JIpj++g96gTRTfFX3phOf0G8CscPqBN6Pe8kJrRpDePR8Auz1XnKk1XZZsCyUzoZUDaN/GdEA4cDtvH1uLnJD6aDLeMrFD+fnx/CuPoiH09n/FOTKMNnPk4upAhepzAal8JUV2tSWKSzsUGxdpBWxSvByplAsvvXe656C9l2JHUmSzqECj1PwvH7bxONPp5h6iwb+7Lrmv1OW+vg0VyJZPHP5rXB/PgV36qKUSQk3xGtieJc8f0/A5RBXQWpfJq+aZ6qiWHijJqr2ieUaY6EmaixrYdxlP1MhBSR6O9VwKfLx+seAziz9ZqR9pdp5pqzL/X6yoZZ42+wFRcKMffrigSq49PDQEGBsELSvPNTsN1uokVGWUreTnr48ffZAsCa2+eHfUDdpAxh/2FIZ+JxkMTnjgZypvXUxQLBVXSZd40Nn3S8juYNlLK05svv+r1sZHzaWQqGQBRfXU5Up4aGL5Xx0PnqTJpEPscKUhG6Mqf3G6vdBWnd7mOoFJ4NN8P+6/o7Wdd89QtO4LtG6tKqk+Hd9k8yUJEP1A0+aqZAemszUbrfEQB+5bFs5fmiIt2oym2dqjWxxKUU1m7eZKggNceqre9rKsuxq4ey2W0prLBtB8e8vhDbbm7jQmur4inIaOu2w76+vbqTUl/2zpPJGdAaWs+GPwG7bvwGfortA
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/auth/auth-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Generate token from Keycloak"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/auth/token"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Token handles the generation of an authentication token using Keycloak credentials.
+It receives a Fiber context, extracts the necessary configuration from the AuthHandler,
+and calls the keycloak.GenerateToken function. If token generation fails, it returns
+an error response with the appropriate status code and error message. On success,
+it returns the generated token as a JSON response.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/x-www-form-urlencoded":{"schema":{"type":"object","properties":{"grant_type":{"description":"Grant type","type":"string"},"client_id":{"description":"Client ID","type":"string"},"client_secret":{"description":"Client Secret","type":"string"},"username":{"description":"Username","type":"string"},"password":{"description":"Password","type":"string"}},"required":["grant_type","client_id","client_secret","username","password"]}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"access_token":{"type":"string"},"expires_in":{"type":"integer"},"refresh_expires_in":{"type":"integer"},"refresh_token":{"type":"string"},"scope":{"type":"string"},"token_type":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

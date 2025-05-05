@@ -18,9 +18,15 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "openapi/auth/request-an-authentication-token",
-          label: "Request an Authentication Token",
+          id: "openapi/auth/generate-token-from-keycloak",
+          label: "Generate token from Keycloak",
           className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "openapi/auth/refresh-an-authentication-token",
+          label: "Refresh an Authentication Token",
+          className: "api-method put",
         },
       ],
     },

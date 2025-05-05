@@ -1,0 +1,77 @@
+---
+id: refresh-an-authentication-token
+title: "Refresh an Authentication Token"
+description: "This endpoint allows clients to refresh an existing authentication token."
+sidebar_label: "Refresh an Authentication Token"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVslyGzcQ/ZUunEeknOXCm5ykXLSrIpclxQdJJTeBpgYWBhgBPVzCmq/xwR+iH0s1ZkhzU6LKyQffBtPo5b1e0CtlKOloa7bBq5G6LG0C8qYO1jOgc2GeQDtLnhNwgEjTSKkE9EALm9j6e8CGS/JsNYoR4PBAfnDjP5bkAbsj2ASJPBfAJUFaJqYKdEn6IcG8JC4pguV8i61zMENnDaA3wLFJTGZw4889pEZrSqmQu5G4iT4BwtuL8z8hUqqDTwRzy2X24mneOzfEaF0a3PjxNIs2MVmfPRVAi9pGMgWECBW6aYiVnBASx0ZzE8kAxRiiaHWuc1CXW5R0ZguoY5hZQ9nTWth5nFkEMQ0GGfcg9ThqXLqAZhcG5ju9EWElkkMmAxUxii2YC2sT2g5t7EFjIgjTNUzQkYxkCl0SoOjBeqbo0XXgjgLeMLuNXBUq0mNDiV8Hs1SjldLBM3mWT6xr11fDcHEyn89PBPRJEx15HQwZuZR0SRXKFy9rUiMVJp9JsypUHUNNkS0lkd5H9HzX3VntVesbkYHIRlA1iYWBTz3ld5mtT6pY208crb9XbaG6er6z5tDib1kE49//RS+RjsTP6l504iP6O5Ed6v+Vc7RTMYdW2o54KVY1ut5mZxvXfqz7vm/bXUMcG8o/ulRn4n86PT2M8fyd2D6e6s8p+N3M7mayq+Jv6A/46Zow3dltsVToPcVt/l5673lPSYeung4kWWdTbofk7xZrm3n85RhTr9HAh65FRpsGlOliU5KpuZkD/5/Q3J/HmRTJ3U5ALwfz6hDMlZchH6L9m8wOmn5uHlTt94To12PpGa8H3wXFGUX4I3v+ngKXn3ifpMvPGi7VbaEq4jIYNVJ1kwclcqlGaii5Ga6ZTxmPqK1UE53Ih7OfE3ozCYuBDpVqbwtl/TSspzZqgdsWewwJMfbpawCq4E2Ax4YAuUHQoQryxi2WUGNEef671//p69OXAAQzina6OZv+uU1gAryjpXYBHwoIU4qkyZuwWTcSJFvVLuuakDrrYcLkN5al7A7svv14KXPSshMGhSs4ez9WhRIeOiyng9PBK8lGHRJXmHPgsZL7H75tNGe7i8xlz+he7jYV8mNZ+rEsvXRZ6tubacHD2qH1Uoy5PVd9G18rKQ3Vv0DS7WVILP9XqwkmuoqubeX3Y0NxqUbXt4WaYbQ4kbK/vm0LVRIairnzH2gpG0lXqieX3X4wQ9dIFP+9n7XF2sSZ1lTzM8p5Krbbg+n9lfTipN8Jq2BEZctwsX2QqNv2H13ofDA=
+sidebar_class_name: "put api-method"
+info_path: docs/openapi/auth/auth-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Refresh an Authentication Token"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/auth/token"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint allows clients to refresh an existing authentication token.
+When a token is sent, the system checks whether it is still valid and trusted.
+On success, it returns a JSON response with the new token details.
+If the token is invalid, expired, or malformed, a structured error is returned.
+To refresh a token, provide the refresh token via form data.
+On success, a JSON payload with the new access token and related metadata will be returned.
+In case of invalid credentials or an internal error, a structured error response is returned.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/x-www-form-urlencoded":{"schema":{"type":"object","properties":{"grant_type":{"description":"Grant type: must be `refresh_token`","type":"string"},"client_id":{"description":"Client ID","type":"string"},"client_secret":{"description":"Client Secret","type":"string"},"refresh_token":{"description":"Valid refresh token","type":"string"}},"required":["grant_type","client_id","client_secret","refresh_token"]}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"access_token":{"type":"string"},"expires_in":{"type":"integer"},"refresh_expires_in":{"type":"integer"},"refresh_token":{"type":"string"},"scope":{"type":"string"},"token_type":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request: invalid or missing form data","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"401":{"description":"Unauthorized: invalid or expired refresh token","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
