@@ -47,6 +47,32 @@ paths:
         and calls the keycloak.GenerateToken function. If token generation fails, it returns
         an error response with the appropriate status code and error message. On success,
         it returns the generated token as a JSON response.
+      parameters:
+      - description: Grant type
+        in: formData
+        name: grant_type
+        required: true
+        type: string
+      - description: Client ID
+        in: formData
+        name: client_id
+        required: true
+        type: string
+      - description: Client Secret
+        in: formData
+        name: client_secret
+        required: true
+        type: string
+      - description: Username
+        in: formData
+        name: username
+        required: true
+        type: string
+      - description: Password
+        in: formData
+        name: password
+        required: true
+        type: string
       produces:
       - application/json
       responses:
