@@ -5,7 +5,7 @@ description: "Token handles the generation of an authentication token using Keyc
 sidebar_label: "Generate token from Keycloak"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVM1u2zAMfhVCZ8PJ/i69dcDWpQWWYu2wQ1sEjE3Ham3Jk+QsgZGn2aEP0hcbKbtpsgbYsFMPuyTyR4r8+FFkp3LymdNN0NaoI3Vp78hAiSavyEMoCRZkyKGYwRaABrBl2ASd9WCIN1qvzQLOaJ1VFu8gc5SLD1Y+vTaTAI4y0ksOifBRz8lBZk2gVUiAfxxmoU9m2M17dGuxF3rRDpkLZ+vocMzJP0V2Lrk2fIAMq6q/fDdkT096ytQXU7QmkyApTIqB7U5NBerKJ6CFYmid8RIVyDnrGPGNNZ7ghw5lTIFN42zjNAcHHzC0nonmjDOR/k4t/BeUwtSAbzMph4k+hd/VlPKBD4oupxfTz9uUqUrU49mro069Ho/lb79b0zN2i0qaIFamVw19Gd16cemUz0qqUU5CnVzQfUCM3GaRgHyHdUMc0gfHnVSbRNGq0UxhpnfNmnMtyIndUcHmcvYnP59ZgQ5kiLlnPfzMLPYesfNbygIjgr09pMN7zOELfW/Jh38XJPbvsBJime2l/Fu67w7RnTA/Z7CCC3JLnoUPMfNLIi4gLjj6lZKJUzeJqimUNme3xkaVG2T8SI1kHYz6V8S9jgXJvU61rhL7aPnG83jM7SrNbK02HEqbwgoTqZdHn4+cb18iUUY/3FugGk4scGuBpw152moLXP5qDQ06lGXU76KH+4ef7A2cXhfbbx7NSM1DbrfbKeFFRrKQDIP801h+rR68rllzuZtb30e3c46+jYyVzp/FPf12yXUHHSqRUMSC4/MJQ6JDX8s4HaevpB2iXI2xCQZr8X/cVMMeiGvukab6TZPu6X38X9MvaE0P0yMyjZoKeQ1yq+Pj74YhuVLSDDUsPBmmUmaI8a6bo6evrtpsBOZn7taM83GJTH8uj+rqhuOVhDmvU5kr1k9eGnNuZA75WbaS/9nG2OwO7fn04pIn+xfxFNs8
+api: eJztVs1y2zYQfpUdnGnJ6c9FN6dNXSUztad2pgdZo1kBSxExCdALUJZGw6fJIQ/iF+ssSCm0JbeZnnLojcRid7/99g87ZShotnW03qmJuvX35KBAZ0oKEAuCFTliFDH4HNABNrEgF63uDmPSaIJ1K/hAW116vAfNZOQOlmF056YRmDTZNQVA+M0uiUF7F2kTM6BNZNSxc+ZIUwjIW5HndtX0nnP2Vbpw0cTi94SOszuHzoDGsuyU73vvo8sOMnXB5I3TYmQE07xHO4gpR1uGDKxAjA27IFaBmD0DU6i9CwSPNhbJBdY1+5otRoIQMTYBtDcEAqTTqQT/ikZw5SA0WsLJ7txX80NOyfR4UHh5f3P1x8HlSGWK6aGhEN96s1WTnUqMuSifWNdlz/94c/b4+HiWe67OGi7JCR4jl4IuqEL5itua1ET55SfSUWVKYiCOloJIV4wuLro7uxflcCkySLJsbyZEtm6l2kzp0pKLC2uOFX9JIpj++g96gTRTfFX3phOf0G8CscPqBN6Pe8kJrRpDePR8Auz1XnKk1XZZsCyUzoZUDaN/GdEA4cDtvH1uLnJD6aDLeMrFD+fnx/CuPoiH09n/FOTKMNnPk4upAhepzAal8JUV2tSWKSzsUGxdpBWxSvByplAsvvXe656C9l2JHUmSzqECj1PwvH7bxONPp5h6iwb+7Lrmv1OW+vg0VyJZPHP5rXB/PgV36qKUSQk3xGtieJc8f0/A5RBXQWpfJq+aZ6qiWHijJqr2ieUaY6EmaixrYdxlP1MhBSR6O9VwKfLx+seAziz9ZqR9pdp5pqzL/X6yoZZ42+wFRcKMffrigSq49PDQEGBsELSvPNTsN1uokVGWUreTnr48ffZAsCa2+eHfUDdpAxh/2FIZ+JxkMTnjgZypvXUxQLBVXSZd40Nn3S8juYNlLK05svv+r1sZHzaWQqGQBRfXU5Up4aGL5Xx0PnqTJpEPscKUhG6Mqf3G6vdBWnd7mOoFJ4NN8P+6/o7Wdd89QtO4LtG6tKqk+Hd9k8yUJEP1A0+aqZAemszUbrfEQB+5bFs5fmiIt2oym2dqjWxxKUU1m7eZKggNceqre9rKsuxq4ey2W0prLBtB8e8vhDbbm7jQmur4inIaOu2w76+vbqTUl/2zpPJGdAaWs+GPwG7bvwGfortA
 sidebar_class_name: "post api-method"
 info_path: docs/openapi/auth/auth-api
 custom_edit_url: null
@@ -42,6 +42,14 @@ and calls the keycloak.GenerateToken function. If token generation fails, it ret
 an error response with the appropriate status code and error message. On success,
 it returns the generated token as a JSON response.
 
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
 <ParamsDetails
   parameters={undefined}
 >
@@ -50,7 +58,7 @@ it returns the generated token as a JSON response.
 
 <RequestSchema
   title={"Body"}
-  body={undefined}
+  body={{"content":{"application/x-www-form-urlencoded":{"schema":{"type":"object","properties":{"grant_type":{"description":"Grant type","type":"string"},"client_id":{"description":"Client ID","type":"string"},"client_secret":{"description":"Client Secret","type":"string"},"username":{"description":"Username","type":"string"},"password":{"description":"Password","type":"string"}},"required":["grant_type","client_id","client_secret","username","password"]}}},"required":true}}
 >
   
 </RequestSchema>
@@ -58,7 +66,7 @@ it returns the generated token as a JSON response.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"access_token":{"type":"string"},"expires_in":{"type":"integer"},"refresh_expires_in":{"type":"integer"},"scope":{"type":"string"},"token_type":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"access_token":{"type":"string"},"expires_in":{"type":"integer"},"refresh_expires_in":{"type":"integer"},"refresh_token":{"type":"string"},"scope":{"type":"string"},"token_type":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}}}}
 >
   
 </StatusCodes>

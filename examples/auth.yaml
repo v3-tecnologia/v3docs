@@ -16,6 +16,8 @@ definitions:
         type: integer
       refresh_expires_in:
         type: integer
+      refresh_token:
+        type: string
       scope:
         type: string
       token_type:
@@ -38,9 +40,41 @@ info:
   version: 0.0.1
 paths:
   /auth/token:
+    get:
+      consumes:
+        - application/json
+      description: |-
+        This endpoint allows clients to validate an existing authentication token.
+        When a token is sent, the system checks whether it is still valid and trusted.
+        On success, it returns a JSON response with token details (claims).
+        If the token is invalid, expired, or malformed, a structured error is returned.
+      parameters:
+        - description: Bearer token
+          in: header
+          name: Authorization
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/auth.VerifyResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.StandardError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.StandardError'
+      summary: Validate an Authentication Token
+      tags:
+        - Auth
     post:
       consumes:
-      - application/x-www-form-urlencoded
+        - application/x-www-form-urlencoded
       description: |-
         Token handles the generation of an authentication token using Keycloak credentials.
         It receives a Fiber context, extracts the necessary configuration from the AuthHandler,
@@ -48,33 +82,33 @@ paths:
         an error response with the appropriate status code and error message. On success,
         it returns the generated token as a JSON response.
       parameters:
-      - description: Grant type
-        in: formData
-        name: grant_type
-        required: true
-        type: string
-      - description: Client ID
-        in: formData
-        name: client_id
-        required: true
-        type: string
-      - description: Client Secret
-        in: formData
-        name: client_secret
-        required: true
-        type: string
-      - description: Username
-        in: formData
-        name: username
-        required: true
-        type: string
-      - description: Password
-        in: formData
-        name: password
-        required: true
-        type: string
+        - description: Grant type
+          in: formData
+          name: grant_type
+          required: true
+          type: string
+        - description: Client ID
+          in: formData
+          name: client_id
+          required: true
+          type: string
+        - description: Client Secret
+          in: formData
+          name: client_secret
+          required: true
+          type: string
+        - description: Username
+          in: formData
+          name: username
+          required: true
+          type: string
+        - description: Password
+          in: formData
+          name: password
+          required: true
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: OK
@@ -90,38 +124,59 @@ paths:
             $ref: '#/definitions/response.StandardError'
       summary: Generate token from Keycloak
       tags:
-      - Auth
-  /auth/verify:
-    post:
+        - Auth
+    put:
       consumes:
-      - application/json
+        - application/x-www-form-urlencoded
       description: |-
-        Verify handles the verification of an authentication token using the configured Keycloak settings.
-        It calls the verifier's VerifyToken method with the current configuration and returns a JSON response
-        indicating whether the token is valid along with its claims. If verification fails, it responds with
-        the appropriate error status and message.
+        This endpoint allows clients to refresh an existing authentication token.
+        When a token is sent, the system checks whether it is still valid and trusted.
+        On success, it returns a JSON response with the new token details.
+        If the token is invalid, expired, or malformed, a structured error is returned.
+        To refresh a token, provide the refresh token via form data.
+        On success, a JSON payload with the new access token and related metadata will be returned.
+        In case of invalid credentials or an internal error, a structured error response is returned.
       parameters:
-      - description: Bearer token
-        in: header
-        name: Authorization
-        required: true
-        type: string
+        - description: 'Grant type: must be `refresh_token`'
+          in: formData
+          name: grant_type
+          required: true
+          type: string
+        - description: Client ID
+          in: formData
+          name: client_id
+          required: true
+          type: string
+        - description: Client Secret
+          in: formData
+          name: client_secret
+          required: true
+          type: string
+        - description: Valid refresh token
+          in: formData
+          name: refresh_token
+          required: true
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/auth.VerifyResponse'
+            $ref: '#/definitions/keycloak.TokenPayload'
+        "400":
+          description: 'Bad Request: invalid or missing form data'
+          schema:
+            $ref: '#/definitions/response.StandardError'
         "401":
-          description: Unauthorized
+          description: 'Unauthorized: invalid or expired refresh token'
           schema:
             $ref: '#/definitions/response.StandardError'
         "500":
           description: Internal Server Error
           schema:
             $ref: '#/definitions/response.StandardError'
-      summary: Verify auth token
+      summary: Refresh an Authentication Token
       tags:
-      - Auth
+        - Auth
 swagger: "2.0"

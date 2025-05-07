@@ -7,3 +7,13 @@ diogo:
   socials:
     x: diogocezar
     github: diogocezar
+
+adriano:
+  name: Adriano Santos
+  title: Tech Lead @ V3 Tecnologia
+  url: https://github.com/sleipnir
+  image_url: https://github.com/sleipnir.png
+  page: true
+  socials:
+    github: sleipnir
+    linkedin: https://www.linkedin.com/in/adriano-santos-67367217/
