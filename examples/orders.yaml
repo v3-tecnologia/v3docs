@@ -1,6 +1,6 @@
 basePath: /
 definitions:
-  dto.AddWifiDto:
+  dto.AddWifiDTO:
     properties:
       parameters:
         description: 'Array of WiFi configuration parameters **Example**: [{"ssid":
@@ -25,7 +25,7 @@ definitions:
     required:
     - orders
     type: object
-  dto.DeleteWifiDto:
+  dto.DeleteWifiDTO:
     properties:
       parameters:
         description: 'Array of WiFi deletion parameters **Example**: [{"ssid": "MyWifi"}]'
@@ -37,7 +37,19 @@ definitions:
         - $ref: '#/definitions/model.OrderType'
         description: Type of the order (it must be **DELETE_WIFI**)
     type: object
-  dto.DriverInertialDto:
+  dto.DeviceStateDTO:
+    properties:
+      parameters:
+        description: 'Array of device state parameters **Example**: [{"active": true}]'
+        items:
+          $ref: '#/definitions/model.DeviceState'
+        type: array
+      type:
+        allOf:
+        - $ref: '#/definitions/model.OrderType'
+        description: Type of the order (it must be **DEVICE_STATE**)
+    type: object
+  dto.DriverInertialDTO:
     properties:
       parameters:
         description: 'Array of driver inertial parameters **Example**: [{"active":
@@ -50,7 +62,7 @@ definitions:
         - $ref: '#/definitions/model.OrderType'
         description: Type of the order (it must be DRIVER_COACH_INERTIAL)
     type: object
-  dto.DriverTelemetryDto:
+  dto.DriverTelemetryDTO:
     properties:
       parameters:
         description: 'Array of driver telemetry parameters **Example**: [{"active":
@@ -62,18 +74,6 @@ definitions:
         allOf:
         - $ref: '#/definitions/model.OrderType'
         description: Type of the order (it must be DRIVER_COACH_TELEMETRY)
-    type: object
-  dto.GetDeviceStateDto:
-    properties:
-      parameters:
-        description: 'Array of device state parameters **Example**: [{"active": true}]'
-        items:
-          $ref: '#/definitions/model.DeviceState'
-        type: array
-      type:
-        allOf:
-        - $ref: '#/definitions/model.OrderType'
-        description: Type of the order (it must be **DEVICE_STATE**)
     type: object
   dto.OrderDTO:
     properties:
@@ -111,7 +111,7 @@ definitions:
     - parameters
     - type
     type: object
-  dto.RebootDto:
+  dto.RebootDTO:
     properties:
       parameters:
         description: 'Array of reboot parameters **Example**: [{"active": true}]'
@@ -123,7 +123,7 @@ definitions:
         - $ref: '#/definitions/model.OrderType'
         description: Type of the order (it must be REBOOT)
     type: object
-  dto.RequestImageDto:
+  dto.RequestImageDTO:
     properties:
       parameters:
         description: 'Array of image request parameters **Example**: [{"start": "2024-03-20T10:00:00Z",
@@ -136,7 +136,7 @@ definitions:
         - $ref: '#/definitions/model.OrderType'
         description: Type of the order (it must be REQUEST_IMAGE)
     type: object
-  dto.RequestVideoDto:
+  dto.RequestVideoDTO:
     properties:
       parameters:
         description: 'Array of video request parameters **Example**: [{"start": "2024-03-20T10:00:00Z",
@@ -149,7 +149,7 @@ definitions:
         - $ref: '#/definitions/model.OrderType'
         description: Type of the order (it must be REQUEST_VIDEO)
     type: object
-  dto.TrackingDto:
+  dto.TrackingDTO:
     properties:
       parameters:
         description: 'Array of tracking parameters **Example**: [{"active": true}]'
@@ -377,55 +377,55 @@ paths:
         name: payload
         required: true
         schema:
-          $ref: '#/definitions/dto.AddWifiDto'
+          $ref: '#/definitions/dto.AddWifiDTO'
       - description: Delete Wifi
         in: body
         name: payload
         required: true
         schema:
-          $ref: '#/definitions/dto.DeleteWifiDto'
+          $ref: '#/definitions/dto.DeleteWifiDTO'
       - description: Device State
         in: body
         name: payload
         required: true
         schema:
-          $ref: '#/definitions/dto.GetDeviceStateDto'
+          $ref: '#/definitions/dto.DeviceStateDTO'
       - description: Request Image
         in: body
         name: payload
         required: true
         schema:
-          $ref: '#/definitions/dto.RequestImageDto'
+          $ref: '#/definitions/dto.RequestImageDTO'
       - description: Request Video
         in: body
         name: payload
         required: true
         schema:
-          $ref: '#/definitions/dto.RequestVideoDto'
+          $ref: '#/definitions/dto.RequestVideoDTO'
       - description: Reboot
         in: body
         name: payload
         required: true
         schema:
-          $ref: '#/definitions/dto.RebootDto'
+          $ref: '#/definitions/dto.RebootDTO'
       - description: Driver Coach Inertial
         in: body
         name: payload
         required: true
         schema:
-          $ref: '#/definitions/dto.DriverInertialDto'
+          $ref: '#/definitions/dto.DriverInertialDTO'
       - description: Driver Coach Telemetry
         in: body
         name: payload
         required: true
         schema:
-          $ref: '#/definitions/dto.DriverTelemetryDto'
+          $ref: '#/definitions/dto.DriverTelemetryDTO'
       - description: Driver Coach Tracking
         in: body
         name: payload
         required: true
         schema:
-          $ref: '#/definitions/dto.TrackingDto'
+          $ref: '#/definitions/dto.TrackingDTO'
       produces:
       - application/json
       responses:
