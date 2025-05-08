@@ -29,11 +29,14 @@ clear:
 build: clear clean doc
 	npm run docusaurus build
 
-build-order: clean-order doc-order build
+build-order: clean-order doc-order
+	npm run docusaurus build
 
-build-management: clean-management doc-management build
+build-management: clean-management doc-management
+	npm run docusaurus build
 
-build-auth: clean-auth doc-auth build
+build-auth: clean-auth doc-auth
+	npm run docusaurus build
 
 build-run: build serve
 

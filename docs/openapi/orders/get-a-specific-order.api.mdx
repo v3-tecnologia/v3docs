@@ -1,0 +1,71 @@
+---
+id: get-a-specific-order
+title: "Get a specific order"
+description: "Retrieve an order by its ID for a specific device"
+sidebar_label: "Get a specific order"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vs1u4zYQfhWCpxbwxunPyTfFUlxhE2sra7MogoVBS2Obu7KokpQRV9DDFD30QfJiO0PJtZIo201Q9CSK88tvht+w5hmYVMvSSlXwCY/Bagl7YKJgSmeg2erApDUs9NlaaSaYKSGVa5myDPYyBT7ipdBiBxa04ZPb+pFD32mhOSpK2iiF3eK6QBP8a52EGe5o+L2SGjI+sbqCETfpFnaCT2puDyXpGkyt2PCmGT0OErlMn4vhzvHCEB9J2ZSqMGBI/uP5OX2GwuoOsoyZKk3BmHWV5weMlqrCQmHJTpRlLlNBduNPhozrXvBSqxK0lW2oVIOwkC2FHUhshCnk8FUxAbqU2aB0o1VVkgSKaofV4tPo+tqbE3DTaH4Zzjge/KHViN+9Ie03e6EJUDNshs4fxJR49g1oCoq9ITJhh3B+2Dw1lxZ25ikkn+EwaLxTWZXDoKjdGBDsRV4NSf6x4Wr1CVJ7csKF1uJA/0ZVOkXs/6VExgpbmT7MfnAVJAHh9S6OpsFi4daXXnjlFotgnpAsmPvh/Ftr8EKfPUyOWXm+v/wQXoao1jo7/d2E02C5SLwkwN84+PV9sEiW4bU36//fhH4QnXqABBdRRFH9OLwJ4uU08qa/LMN5ECehd/V4P8GY10ES//ZEEHvTt5T0iIfzJIjnaPttmPxXJ4pi32XzP5wL61Llz1zXqsye77OnDdvQ3s9DTHUhMhYj+YGxLyCmpvVoxcaB6+jOUCXwwm4Vpsw3YN0AQLqd8HHLPWZcH1m9GTvuxZ2OgxvUNqD3x1lR6ZwMx/ufjCiylbo7S9WOE/saSCst7WFBybQs4JXyLRy8ioLVLdFvQaDfE9VfgNBIyYn6DAU/3V9n6BCTxVo5kkUIREoQOM7sY+U5RO7/vv9LMdixWcS6SXD/5x5yViqifJHLPwSNww1CSpoZuHlZGEaMxpRhmUQrI63cK3NGyUhLXNXByLx31JeERBv2/Oz87AfHiMrYnXCV6E41A9sfvA5L/ijt+lTVVw3xDioLd3Zc5gLRpf6j8tRdfW+72WJQe9Kb222JafM4aLF8WzwEmdT1Shh4r/OmoW3sQI1UfvuReFhLsSJE6M0gDa2xpdYiN/CVs30XdzP8e9Z/Wgymfyx/QdO4432OSzdOTk8P9554TQK9Z8cr4h/RaogCukYmLFqph0+J0vbsntzUpn8RZ0GC/f0FlFU2Xg==
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/orders/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a specific order"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/devices/{deviceId}/orders/{orderId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieve an order by its ID for a specific device
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"deviceId","required":true,"schema":{"type":"string"}},{"description":"Order ID","in":"path","name":"orderId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Order retrieved successfully","content":{"application/json":{"schema":{"properties":{"created_at":{"type":"string"},"deleted_at":{"type":"string"},"device_id":{"type":"string"},"group":{"enum":["COMMAND","CONFIG"],"type":"string","x-enum-varnames":["COMMAND","CONFIG"]},"id":{"type":"integer"},"metadata":{"type":"string"},"parameters":{"items":{"properties":{"key":{"type":"string"},"module":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}},"type":"object"},"type":"array"},"sourced_created_at":{"type":"string"},"status":{"enum":["DELETED","PROCESSED","FAILED","SENT","PENDING"],"type":"string","x-enum-varnames":["DELETED","PROCESSED","FAILED","SENT","PENDING"]},"type":{"enum":["ADD_WIFI","DELETE_WIFI","DEVICE_STATE","REQUEST_IMAGE","REQUEST_VIDEO","CONFIG","REBOOT","DRIVER_COACH_INERTIAL","DRIVER_COACH_TELEMETRY","DRIVER_COACH_TRACKING","INTERNAL"],"type":"string","x-enum-varnames":["ADD_WIFI","DELETE_WIFI","DEVICE_STATE","REQUEST_IMAGE","REQUEST_VIDEO","ORDER_CONFIG","REBOOT","DRIVER_COACH_INERTIAL","DRIVER_COACH_TELEMETRY","DRIVER_COACH_TRACKING","INTERNAL"]},"ulid":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
