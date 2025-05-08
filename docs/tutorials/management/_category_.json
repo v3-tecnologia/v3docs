@@ -1,8 +1,7 @@
 {
-    "label": "Management Tutorials",
-    "position": 2,
-    "link": {
-      "type": "generated-index"
-    }
+  "label": "Management Tutorials",
+  "position": 2,
+  "link": {
+    "type": "generated-index"
   }
-  
+}
