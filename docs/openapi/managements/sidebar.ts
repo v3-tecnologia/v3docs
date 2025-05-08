@@ -8,48 +8,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Account",
-      items: [
-        {
-          type: "doc",
-          id: "openapi/managements/list-accounts-with-pagination",
-          label: "List accounts with pagination",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "openapi/managements/create-a-new-account",
-          label: "Create a new account",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "openapi/managements/delete-an-account",
-          label: "Delete an account",
-          className: "api-method delete",
-        },
-        {
-          type: "doc",
-          id: "openapi/managements/get-an-account-by-id",
-          label: "Get an account by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "openapi/managements/update-an-account",
-          label: "Update an account",
-          className: "api-method put",
-        },
-        {
-          type: "doc",
-          id: "openapi/managements/get-an-account-by-ulid",
-          label: "Get an account by ULID",
-          className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Device",
       items: [
         {
