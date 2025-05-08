@@ -58,12 +58,15 @@ const config: Config = {
       },
       items: [
         {
-          type: "doc",
-          docId: "intro",
           position: "left",
           label: "Tutorial",
+          to: "/docs/tutorials/intro"
         },
-        { to: "/blog", label: "Blog", position: "left" },
+        { 
+          position: "left",
+          label: "Blog", 
+          to: "/blog", 
+        },
         {
           label: "API V3",
           position: "left",
@@ -84,7 +87,7 @@ const config: Config = {
           items: [
             {
               label: "Conheça",
-              to: "/docs/intro",
+              to: "/docs/tutorials/intro",
             },
           ],
         },
