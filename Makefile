@@ -1,7 +1,7 @@
 # Vars
 
 # Tasks
-clean: clean-order clean-management clean-auth
+clean: clean-order clean-management clean-auth clean-event
 
 clean-order:
 	npm run docusaurus clean-api-docs all -- --plugin-id order-open-api
@@ -12,7 +12,10 @@ clean-management:
 clean-auth:
 	npm run docusaurus clean-api-docs all -- --plugin-id auth-open-api
 
-doc: doc-order doc-management doc-auth
+clean-event:
+	npm run docusaurus clean-api-docs all -- --plugin-id event-open-api
+
+doc: doc-order doc-management doc-auth doc-event
 
 doc-order:
 	npm run docusaurus gen-api-docs all -- --plugin-id order-open-api
@@ -22,6 +25,9 @@ doc-management:
 
 doc-auth:
 	npm run docusaurus gen-api-docs all -- --plugin-id auth-open-api
+
+doc-event:
+	npm run docusaurus gen-api-docs all -- --plugin-id event-open-api
 
 clear:
 	npm run docusaurus clear
@@ -36,6 +42,9 @@ build-management: clean-management doc-management
 	npm run docusaurus build
 
 build-auth: clean-auth doc-auth
+	npm run docusaurus build
+
+build-event: clean-event doc-event
 	npm run docusaurus build
 
 build-run: build serve

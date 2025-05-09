@@ -274,6 +274,23 @@ const config: Config = {
           } satisfies OpenApiPlugin.Options,
         } satisfies Plugin.PluginOptions,
       }
+    ],
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "event-open-api",
+        docsPluginId: "classic",
+        config: {
+          event: {
+            specPath: "examples/event.yaml",
+            outputDir: "docs/openapi/event",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+        } satisfies Plugin.PluginOptions,
+      }
     ]
   ],
 
