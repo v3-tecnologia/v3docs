@@ -43,4 +43,9 @@ Gerenciamento de motoristas.
 Controle de frotas.
 [Saiba mais](/docs/tutorials/management/fleet/create.md)
 
+## Event API
+
+Essa é a nossa api para gerenciamento de **Event**
+[Saiba mais](/docs/tutorials/event/intro.md)
+
 Cada seção deste guia apresenta exemplos de requisições, explicações dos parâmetros e boas práticas recomendadas para cada endpoint.
