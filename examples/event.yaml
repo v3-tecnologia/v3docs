@@ -1,0 +1,302 @@
+basePath: /
+definitions:
+  dto.CreateEventConnectionDTO:
+    properties:
+      cell_id:
+        type: integer
+      connection_type:
+        type: integer
+      iccid:
+        type: string
+      location_area_code:
+        type: integer
+      mcc:
+        type: integer
+      mnc:
+        type: integer
+      signal_strength:
+        type: integer
+      timing_advance:
+        type: integer
+    type: object
+  dto.CreateEventDTO:
+    properties:
+      correlation_id:
+        type: string
+      device_id:
+        type: integer
+      event_type:
+        type: integer
+      hardware_event_type:
+        type: integer
+      hardware_model:
+        type: string
+      hook_delivered_at:
+        type: string
+      payload:
+        $ref: '#/definitions/dto.CreateEventPayloadDTO'
+      sourced_created_at:
+        type: string
+      tenant_delivered_at:
+        type: string
+    required:
+    - correlation_id
+    - device_id
+    - event_type
+    - hardware_event_type
+    - hardware_model
+    - hook_delivered_at
+    - payload
+    - sourced_created_at
+    - tenant_delivered_at
+    type: object
+  dto.CreateEventDeviceMetadataDTO:
+    properties:
+      details:
+        type: string
+      firmware_version:
+        type: string
+      pid:
+        $ref: '#/definitions/dto.CreateEventPIDDTO'
+      version:
+        $ref: '#/definitions/dto.CreateEventVersionDTO'
+    type: object
+  dto.CreateEventGPSDTO:
+    properties:
+      altitude:
+        type: number
+      gps_heading:
+        type: number
+      hdop:
+        type: number
+      is_fixed:
+        type: boolean
+      latitude:
+        type: number
+      longitude:
+        type: number
+      satellites:
+        type: integer
+      speed:
+        type: number
+      vdop:
+        type: number
+    type: object
+  dto.CreateEventMediaDTO:
+    properties:
+      bucket_name:
+        type: string
+      cam_channel:
+        type: string
+      content_type:
+        type: string
+      file_size:
+        type: integer
+      media_type:
+        type: string
+      metadata:
+        additionalProperties:
+          type: string
+        type: object
+      object_name:
+        type: string
+      ulid:
+        type: string
+    type: object
+  dto.CreateEventPIDDTO:
+    properties:
+      main:
+        type: string
+      sub:
+        type: string
+    type: object
+  dto.CreateEventPayloadDTO:
+    properties:
+      connection:
+        $ref: '#/definitions/dto.CreateEventConnectionDTO'
+      gps:
+        $ref: '#/definitions/dto.CreateEventGPSDTO'
+      media:
+        $ref: '#/definitions/dto.CreateEventMediaDTO'
+      message_type:
+        type: integer
+      metadata:
+        $ref: '#/definitions/dto.CreateEventDeviceMetadataDTO'
+      sequence_number:
+        type: integer
+      timestamps:
+        $ref: '#/definitions/dto.CreateEventTimestampsDTO'
+      vehicle:
+        $ref: '#/definitions/dto.CreateEventVehicleDTO'
+    required:
+    - connection
+    - gps
+    - media
+    - message_type
+    - metadata
+    - sequence_number
+    - timestamps
+    - vehicle
+    type: object
+  dto.CreateEventTimestampsDTO:
+    properties:
+      event_date:
+        type: string
+      event_time:
+        type: string
+      last_timestamp_of_fix:
+        type: integer
+      process_timestamp:
+        type: integer
+      received_timestamp:
+        type: integer
+      time_since_boot:
+        type: integer
+      timestamp:
+        type: integer
+      ttl_timestamp:
+        type: integer
+    type: object
+  dto.CreateEventVehicleDTO:
+    properties:
+      backup_battery_voltage:
+        type: number
+      is_ignition_on:
+        type: boolean
+      is_vehicle_battery_connected:
+        type: boolean
+      odometer:
+        type: number
+      vehicle_battery_voltage:
+        type: number
+    type: object
+  dto.CreateEventVersionDTO:
+    properties:
+      major:
+        type: integer
+      minor:
+        type: integer
+      patch:
+        type: integer
+    type: object
+  dto.EventResponseDTO:
+    properties:
+      correlation_id:
+        type: string
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      device_id:
+        type: integer
+      event_type:
+        type: integer
+      firmware_version:
+        type: string
+      hardware_event_type:
+        type: integer
+      hardware_model:
+        type: string
+      hook_delivered_at:
+        type: string
+      id:
+        type: integer
+      is_ignition_on:
+        type: boolean
+      media_id:
+        type: integer
+      odometer:
+        type: number
+      sourced_created_at:
+        type: string
+      tenant_delivered_at:
+        type: string
+      ulid:
+        type: string
+      updated_at:
+        type: string
+    type: object
+host: v3sandbox.com
+info:
+  contact: {}
+  description: This is an API to handle device events
+  title: Event API
+  version: 0.0.1
+paths:
+  /event:
+    post:
+      consumes:
+      - application/json
+      description: Creates a new event based on the provided payload
+      parameters:
+      - description: Event payload
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreateEventDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Event successfully created
+          schema:
+            $ref: '#/definitions/dto.EventResponseDTO'
+        "400":
+          description: Bad request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "422":
+          description: Unprocessable entity
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Create a new event
+      tags:
+      - Event
+  /event/{ulid}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves an event using the provided ULID
+      parameters:
+      - description: Event ULID
+        in: path
+        name: ulid
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Event found
+          schema:
+            $ref: '#/definitions/dto.EventResponseDTO'
+        "204":
+          description: No content
+          schema:
+            type: string
+        "400":
+          description: Bad request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "422":
+          description: Unprocessable entity
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get an event by ULID
+      tags:
+      - Event
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Bearer Token
+    type: apiKey
+swagger: "2.0"
