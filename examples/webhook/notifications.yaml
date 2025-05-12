@@ -153,7 +153,7 @@ paths:
       consumes:
       - application/json
       parameters:
-      - name: Signature-Header
+      - name: X-V3-Signature
         in: header
         description: HMAC Header to validate
         required: true
