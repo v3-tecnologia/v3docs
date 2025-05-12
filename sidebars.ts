@@ -68,6 +68,17 @@ const sidebars: SidebarsConfig = {
       },
       items: require("./docs/openapi/event/sidebar")
     },
+    {
+      type: "category",
+      label: "Notifications",
+      link: {
+        type: "generated-index",
+        title: "Notifications Webhook",
+        description: "This is the notifications Webhook. It contains how to implement a HTTP POST to listen Notifications",
+        slug: "category/notifications-webhook",
+      },
+      items: require("./docs/webhook/notifications/sidebar")
+    }
   ],
   // But you can create a sidebar manually
   /*

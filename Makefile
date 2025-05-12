@@ -15,7 +15,10 @@ clean-auth:
 clean-event:
 	npm run docusaurus clean-api-docs all -- --plugin-id event-open-api
 
-doc: doc-order doc-management doc-auth doc-event
+clean-notifications:
+	npm run docusaurus clean-api-docs all -- --plugin-id notifications-open-webhook
+
+doc: doc-order doc-management doc-auth doc-event doc-notifications
 
 doc-order:
 	npm run docusaurus gen-api-docs all -- --plugin-id order-open-api
@@ -28,6 +31,9 @@ doc-auth:
 
 doc-event:
 	npm run docusaurus gen-api-docs all -- --plugin-id event-open-api
+
+doc-notifications:
+	npm run docusaurus gen-api-docs all -- --plugin-id notifications-open-webhook
 
 clear:
 	npm run docusaurus clear
@@ -47,7 +53,10 @@ build-auth: clean-auth doc-auth
 build-event: clean-event doc-event
 	npm run docusaurus build
 
+build-notifications: clean-notifications doc-notifications
+	npm run docusaurus build
+
 build-run: build serve
 
-serve:
+run:
 	npm run docusaurus serve
