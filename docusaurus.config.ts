@@ -291,6 +291,23 @@ const config: Config = {
           } satisfies OpenApiPlugin.Options,
         } satisfies Plugin.PluginOptions,
       }
+    ],
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "notifications-open-webhook",
+        docsPluginId: "classic",
+        config: {
+          notifications: {
+            specPath: "examples/webhook/notifications.yaml",
+            outputDir: "docs/webhook/notifications",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+        } satisfies Plugin.PluginOptions,
+      }
     ]
   ],
 

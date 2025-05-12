@@ -1,0 +1,181 @@
+basePath: /
+definitions:
+  main.EventResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  model.Group:
+    enum:
+    - COMMAND
+    - CONFIG
+    type: string
+    x-enum-varnames:
+    - COMMAND
+    - CONFIG
+  model.Order:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      device_id:
+        type: string
+      group:
+        $ref: '#/definitions/model.Group'
+      id:
+        type: integer
+      metadata:
+        type: string
+      parameters:
+        items:
+          $ref: '#/definitions/model.Parameter'
+        type: array
+      sourced_created_at:
+        type: string
+      status:
+        $ref: '#/definitions/model.Status'
+      type:
+        $ref: '#/definitions/model.OrderType'
+      ulid:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  model.OrderType:
+    enum:
+    - ADD_WIFI
+    - DELETE_WIFI
+    - DEVICE_STATE
+    - REQUEST_IMAGE
+    - REQUEST_VIDEO
+    - CONFIG
+    - REBOOT
+    - DRIVER_COACH_INERTIAL
+    - DRIVER_COACH_TELEMETRY
+    - DRIVER_COACH_TRACKING
+    - INTERNAL
+    type: string
+    x-enum-varnames:
+    - ADD_WIFI
+    - DELETE_WIFI
+    - DEVICE_STATE
+    - REQUEST_IMAGE
+    - REQUEST_VIDEO
+    - ORDER_CONFIG
+    - REBOOT
+    - DRIVER_COACH_INERTIAL
+    - DRIVER_COACH_TELEMETRY
+    - DRIVER_COACH_TRACKING
+    - INTERNAL
+  model.Parameter:
+    properties:
+      key:
+        type: string
+      module:
+        type: string
+      type:
+        type: string
+      value:
+        type: string
+    type: object
+  model.Status:
+    enum:
+    - DELETED
+    - PROCESSED
+    - FAILED
+    - SENT
+    - PENDING
+    type: string
+    x-enum-varnames:
+    - DELETED
+    - PROCESSED
+    - FAILED
+    - SENT
+    - PENDING
+  dto.EventResponseDTO:
+    properties:
+      correlation_id:
+        type: string
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      device_id:
+        type: integer
+      event_type:
+        type: integer
+      firmware_version:
+        type: string
+      hardware_event_type:
+        type: integer
+      hardware_model:
+        type: string
+      hook_delivered_at:
+        type: string
+      id:
+        type: integer
+      is_ignition_on:
+        type: boolean
+      media_id:
+        type: integer
+      odometer:
+        type: number
+      sourced_created_at:
+        type: string
+      tenant_delivered_at:
+        type: string
+      ulid:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  main.Data:
+    properties:
+      data:
+        items:
+          oneOf:
+            - $ref: '#/definitions/model.Order'
+              title: "Order"
+            - $ref: '#/definitions/dto.EventResponseDTO'
+              title: "Event"
+        type: object
+    type: object
+host: yourcompany.com
+info:
+  contact: {}
+  description: That is a webhook service for notifications.
+  title: notification-service
+  version: 0.0.1
+paths:
+  /webhook:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - name: Signature-Header
+        in: header
+        description: HMAC Header to validate
+        required: true
+        schema:
+          type: string
+      - description: Data
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/main.Data'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Event message received!
+          schema:
+            $ref: '#/definitions/main.EventResponse'
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: Post to receive event notification
+      tags:
+      - Event
+swagger: "2.0"
