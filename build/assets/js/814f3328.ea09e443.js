@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkv_3_docs=self.webpackChunkv_3_docs||[]).push([[7472],{55513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Bem vindo","permalink":"/blog/bem-vindo","unlisted":false,"date":"2025-04-30T00:00:00.000Z"}]}')}}]);
