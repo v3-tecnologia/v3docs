@@ -56,7 +56,10 @@ build-event: clean-event doc-event
 build-notifications: clean-notifications doc-notifications
 	npm run docusaurus build
 
-build-run: build serve
+build-run: build run
+
+just-build:
+	npm run docusaurus build
 
 run:
 	npm run docusaurus serve
