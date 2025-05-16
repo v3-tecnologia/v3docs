@@ -1,0 +1,23 @@
+---
+sidebar_position: 1
+---
+
+# Quem somos?
+
+## Introdução à V3
+
+Bem-vindo à primeira etapa de nossa jornada de conhecimento sobre a V3. Neste capítulo inicial, apresentaremos nossa empresa, tecnologias, público-alvo e valores que norteiam nossa atuação no mercado.
+
+## Nossa História e Atuação
+
+Criada em 2018, estamos moldando o futuro da mobilidade inteligente com soluções avançadas de videotelemetria, que integram visão computacional e inteligência artificial para transformar a gestão de frotas.
+
+Nosso nome, **V3**, representa **Veículo, Vídeo & Visão**, destacando nosso compromisso com a integração tecnológica para melhorar a segurança e eficiência na mobilidade veicular.
+
+Oferecemos um ecossistema **completo** que vai desde o hardware e firmware, passando pelo armazenamento até a visualização dos dados em interface web ou integração por API. Assim, Provedores de Telemetria Veicular podem oferecer soluções de telemetria de ativos e videotelemetria avançada para atender às necessidades de seus clientes frotistas de forma completa.
+
+## Continuando nossa jornada
+
+Nas próximas seções, você conhecerá em detalhes como utilizamos tecnologias de ponta como inteligência artificial e visão computacional para criar soluções inovadoras, entenderá nosso modelo de negócios B2B e os valores fundamentais que guiam nossas decisões e ações.
+
+Conheça mais detalhes em nosso site: [v3.com.br](https://v3.com.br)
