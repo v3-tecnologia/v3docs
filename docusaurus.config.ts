@@ -7,7 +7,7 @@ import sidebar from "./docs/openapi/orders/sidebar";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "V3 Docs",
+  title: "Docs",
   tagline: "Dinosaurs are cool",
   url: "https://docs.v3control.com",
   projectName: "v3docs",
@@ -24,16 +24,10 @@ const config: Config = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.ts"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/v3-tecnologia",
-          docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
+          docItemComponent: "@theme/ApiItem",
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/v3-tecnologia",
           onInlineAuthors: "ignore",
           onUntruncatedBlogPosts: "ignore",
         },
@@ -51,24 +45,24 @@ const config: Config = {
       },
     },
     navbar: {
-      title: "V3 Docs",
+      title: "Home",
       logo: {
-        alt: "V3 Logo",
+        alt: "Logo",
         src: "img/logo.png",
       },
       items: [
         {
           position: "left",
-          label: "Tutorial",
-          to: "/docs/tutorials/intro"
-        },
-        { 
-          position: "left",
-          label: "Blog", 
-          to: "/blog", 
+          label: "Blog",
+          to: "/blog",
         },
         {
-          label: "API V3",
+          position: "left",
+          label: "Tutoriais",
+          to: "/docs/tutorials/intro",
+        },
+        {
+          label: "API",
           position: "left",
           to: "/docs/category/orders-api",
         },
@@ -256,7 +250,7 @@ const config: Config = {
             },
           } satisfies OpenApiPlugin.Options,
         } satisfies Plugin.PluginOptions,
-      }
+      },
     ],
     [
       "docusaurus-plugin-openapi-docs",
@@ -273,7 +267,7 @@ const config: Config = {
             },
           } satisfies OpenApiPlugin.Options,
         } satisfies Plugin.PluginOptions,
-      }
+      },
     ],
     [
       "docusaurus-plugin-openapi-docs",
@@ -290,7 +284,7 @@ const config: Config = {
             },
           } satisfies OpenApiPlugin.Options,
         } satisfies Plugin.PluginOptions,
-      }
+      },
     ],
     [
       "docusaurus-plugin-openapi-docs",
@@ -307,8 +301,8 @@ const config: Config = {
             },
           } satisfies OpenApiPlugin.Options,
         } satisfies Plugin.PluginOptions,
-      }
-    ]
+      },
+    ],
   ],
 
   themes: ["docusaurus-theme-openapi-docs"],
