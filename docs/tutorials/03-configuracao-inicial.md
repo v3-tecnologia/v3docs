@@ -1,5 +1,5 @@
 ---
-sidebar_position: 0
+sidebar_position: 3
 ---
 
 # Configuração Inicial
@@ -187,7 +187,7 @@ Após o preenchimento dos dados cadastrais, você receberá:
 - Nome que identificará sua empresa na plataforma V3
 - Criado pelo time V3 com base no nome da sua empresa
 - Utilizado para acessar os ambientes da plataforma
-- Exemplo: Se sua empresa se chamar `Google`, seu `Tenant Name` será `google` e sua URL de acesso ao ambiente de homologação será `google.v3sandbox.com`
+- Exemplo: Se sua empresa se chamar `suaempresa`, seu `Tenant Name` será `suaempresa` e sua URL de acesso ao ambiente de homologação será `suaempresa.v3sandbox.com`
 
 #### Client ID
 - Identificador único da sua aplicação na plataforma
