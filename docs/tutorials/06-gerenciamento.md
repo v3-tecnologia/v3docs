@@ -16,7 +16,7 @@ A camada de Gerenciamento é um componente fundamental da V3, responsável pela 
 O sistema segue uma estrutura hierárquica clara, com relacionamentos específicos entre as entidades:
 
 ```
-Account
+Tenant
   └── Teams
        ├── Drivers (Muitos para Muitos)
        └── Fleets
@@ -68,10 +68,3 @@ Account
 - **ICCID**: Identificador do cartão SIM
 - **Reconhecimento Automático**: Configuração para reconhecimento automático
 - **Relacionamentos**: Pertence a uma frota específica
-
-## Características do Sistema
-
-- **Auditoria**: Todas as entidades possuem campos de auditoria (created_at, updated_at, deleted_at)
-- **Soft Delete**: Sistema utiliza deleted_at para manter histórico
-- **Integridade**: Relações mantidas com integridade referencial (ON DELETE CASCADE)
-- **Segurança**: Identificadores externos são ULIDs para maior segurança e escalabilidade.
