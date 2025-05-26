@@ -50,126 +50,104 @@ Estas informações são essenciais para:
 - Definição de permissões
 - Configuração de redes wifi e APNs
 
-### Estrutura JSON
+### Estrutura de Dados
 
-```json
-{
-    "tenant_name": "Nome do seu tenant na plataforma V3",
-    "account": {
-       "company_name": "Nome completo da empresa",
-       "document_number": "CNPJ da empresa",
-       "document_type": "CNPJ",
-       "contact_info": [
-          {
-             "name": "Nome do departamento",
-             "email": "Email de contato",
-             "phone": "Telefone de contato",
-             "website": "Website da empresa"
-          }
-       ],
-       "addresses": [
-          {
-             "type": "billing",
-             "address": "Endereço completo",
-             "city": "Cidade",
-             "state": "Estado",
-             "country": "País",
-             "postal_code": "CEP"
-          },
-          {
-             "type": "shipping",
-             "address": "Endereço completo",
-             "city": "Cidade",
-             "state": "Estado",
-             "country": "País",
-             "postal_code": "CEP"
-          }
-       ],
-       "users": [
-          {
-             "name": "Nome do usuário",
-             "email": "Email do usuário",
-             "password": "Senha inicial",
-             "role": "TENANT|TENANT_ADMIN",
-          }
-       ]
-    },
-    "devices": {
-       "profiles": [
-          {
-             "name": "Nome do perfil",
-             "default": true,
-             "firmware_version": "Versão do firmware",
-             "firmware_provider": "Fornecedor do firmware",
-             "hardware_model": "Modelo do hardware",
-             "hardware_version": "Versão do hardware",
-             "hardware_provider": "Fornecedor do hardware",
-             "features": [
-                {
-                   "name": "Nome da feature",
-                   "enabled": true,
-                   "params": {}
-                }
-             ],
-             "default_apns": [
-                {
-                   "name": "Nome do APN",
-                   "numeric": "Código numérico",
-                   "type": "Tipo do APN",
-                   "mcc": "Código MCC",
-                   "mnc": "Código MNC",
-                   "apn": "Nome do APN",
-                   "user": "Usuário",
-                   "password": "Senha"
-                }
-             ],
-             "default_networks": [
-                {
-                   "type": "Tipo de rede",
-                   "ssid": "Nome da rede",
-                   "pre_shared_key": "Senha da rede"
-                }
-             ]
-          }
-       ],
-       "equipments": [
-          {
-             "imei": "Número IMEI do dispositivo",
-             "profile": "Nome do perfil",
-             "vehicle": {
-                "license_plate": "Placa do veículo",
-                "serial_number": "Número de série",
-                "chassis": "Número do chassi",
-                "odometer": "Quilometragem",
-                "fipe_code": "Código FIPE",
-                "fuel_type": "Tipo de combustível",
-                "manufacture_year": "Ano de fabricação",
-                "model_year": "Ano do modelo"
-             },
-             "custom_apns": [
-                {
-                   "name": "Nome do APN personalizado",
-                   "numeric": "Código numérico",
-                   "type": "Tipo do APN",
-                   "mcc": "Código MCC",
-                   "mnc": "Código MNC",
-                   "apn": "Nome do APN",
-                   "user": "Usuário",
-                   "password": "Senha"
-                }
-             ],
-             "custom_networks": [
-                {
-                   "type": "Tipo de rede",
-                   "ssid": "Nome da rede",
-                   "pre_shared_key": "Senha da rede"
-                }
-             ]
-          }
-       ]
-    }
-}
-```
+#### Informações do Tenant
+- **Nome do Tenant** (`tenant_name`): Nome do seu tenant na plataforma V3
+
+#### Informações da Empresa
+- **Nome da Empresa** (`company_name`): Nome completo da empresa
+- **Número do Documento** (`document_number`): CNPJ da empresa
+- **Tipo do Documento** (`document_type`): CNPJ
+
+##### Informações de Contato
+- **Nome do Departamento** (`name`): Nome do departamento
+- **Email** (`email`): Email de contato
+- **Telefone** (`phone`): Telefone de contato
+- **Website** (`website`): Website da empresa
+
+##### Endereços
+###### Endereço de Cobrança
+- **Tipo** (`type`): billing
+- **Endereço** (`address`): Endereço completo
+- **Cidade** (`city`): Cidade
+- **Estado** (`state`): Estado
+- **País** (`country`): País
+- **CEP** (`postal_code`): CEP
+
+###### Endereço de Entrega
+- **Tipo** (`type`): shipping
+- **Endereço** (`address`): Endereço completo
+- **Cidade** (`city`): Cidade
+- **Estado** (`state`): Estado
+- **País** (`country`): País
+- **CEP** (`postal_code`): CEP
+
+##### Usuários
+- **Nome** (`name`): Nome do usuário
+- **Email** (`email`): Email do usuário
+- **Senha** (`password`): Senha inicial
+- **Função** (`role`): TENANT ou TENANT_ADMIN
+
+#### Dispositivos
+
+##### Perfis
+- **Nome do Perfil** (`name`): Nome do perfil
+- **Perfil Padrão** (`default`): true/false
+- **Versão do Firmware** (`firmware_version`): Versão do firmware
+- **Fornecedor do Firmware** (`firmware_provider`): Fornecedor do firmware
+- **Modelo do Hardware** (`hardware_model`): Modelo do hardware
+- **Versão do Hardware** (`hardware_version`): Versão do hardware
+- **Fornecedor do Hardware** (`hardware_provider`): Fornecedor do hardware
+
+###### Features
+- **Nome da Feature** (`name`): Nome da feature
+- **Habilitada** (`enabled`): true/false
+- **Parâmetros** (`params`): Parâmetros específicos da feature
+
+###### APNs Padrão
+- **Nome do APN** (`name`): Nome do APN
+- **Código Numérico** (`numeric`): Código numérico
+- **Tipo do APN** (`type`): Tipo do APN
+- **Código MCC** (`mcc`): Código MCC
+- **Código MNC** (`mnc`): Código MNC
+- **Nome do APN** (`apn`): Nome do APN
+- **Usuário** (`user`): Usuário
+- **Senha** (`password`): Senha
+
+###### Redes Padrão
+- **Tipo de Rede** (`type`): Tipo de rede
+- **Nome da Rede** (`ssid`): Nome da rede
+- **Senha da Rede** (`pre_shared_key`): Senha da rede
+
+##### Equipamentos
+- **IMEI** (`imei`): Número IMEI do dispositivo
+- **Perfil** (`profile`): Nome do perfil
+
+###### Informações do Veículo
+- **Placa** (`license_plate`): Placa do veículo
+- **Número de Série** (`serial_number`): Número de série
+- **Chassi** (`chassis`): Número do chassi
+- **Quilometragem** (`odometer`): Quilometragem
+- **Código FIPE** (`fipe_code`): Código FIPE
+- **Tipo de Combustível** (`fuel_type`): Tipo de combustível
+- **Ano de Fabricação** (`manufacture_year`): Ano de fabricação
+- **Ano do Modelo** (`model_year`): Ano do modelo
+
+###### APNs Personalizados
+- **Nome do APN** (`name`): Nome do APN personalizado
+- **Código Numérico** (`numeric`): Código numérico
+- **Tipo do APN** (`type`): Tipo do APN
+- **Código MCC** (`mcc`): Código MCC
+- **Código MNC** (`mnc`): Código MNC
+- **Nome do APN** (`apn`): Nome do APN
+- **Usuário** (`user`): Usuário
+- **Senha** (`password`): Senha
+
+###### Redes Personalizadas
+- **Tipo de Rede** (`type`): Tipo de rede
+- **Nome da Rede** (`ssid`): Nome da rede
+- **Senha da Rede** (`pre_shared_key`): Senha da rede
 
 ## Setup Inicial
 
