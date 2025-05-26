@@ -1,0 +1,227 @@
+---
+sidebar_position: 5
+---
+
+# 🛠️ Manual de Instalação
+
+---
+
+## 👋 Boas-Vindas
+
+Seja bem-vindo ao Manual de Instalação do V3HW. Este documento tem como objetivo garantir que o processo de instalação seja realizado de forma correta, segura e eficiente.
+
+⚠️ **Atenção:** A instalação fora dos padrões pode comprometer a qualidade dos dados, impactar diretamente a prestação dos serviços e gerar prejuízos para sua empresa e seus clientes.
+
+Siga rigorosamente este manual para garantir a qualidade do serviço e o melhor desempenho da tecnologia.
+
+---
+
+## 🧠 Estrutura do Manual
+
+1. [Conhecendo o V3HW](#-conhecendo-o-v3hw)
+2. [Materiais Necessários](#-materiais-necessários)
+3. [Passo a Passo de Instalação](#-passo-a-passo-de-instalação)
+4. [Validação na Plataforma](#-validação-na-plataforma)
+5. [Recomendações Finais](#-recomendações-finais)
+6. [Suporte Técnico](#-suporte-técnico)
+
+---
+
+## 🔍 Conhecendo o V3HW
+
+### Itens que acompanham o V3HW:
+
+- 📷 **DashCam**
+- 🔌 **Chicote de alimentação**
+- 🔋 **Bateria de backup**
+- 🧲 **Base removível** (Definida conforme o tipo de veículo: leve, médio ou pesado)
+- 🔑 **Chave de abertura lateral**
+- 🗝️ **Chave de remoção de SIM Card e reset**
+
+> ℹ️ Caso o equipamento seja adquirido de fornecedores externos, verifique se todos os itens estão presentes.
+
+---
+
+### 🎥 Componentes da Câmera
+
+- **QR Code e IMEI:** Identificação do equipamento.
+- **Superfícies de Fixação:** Encaixe da base no para-brisa.
+- **Conectores:**  
+  - Alimentação  
+  - Bateria
+- **LED de Boot:** Indica quando o equipamento está ligado.
+- **Câmera Interna:** Voltada para o interior do veículo (identificação do condutor).
+- **Câmera Externa:** Voltada para a frente do veículo.
+
+> 🚨 **Importante:** Remova a película de proteção da câmera externa antes de finalizar a instalação.
+
+---
+
+### 🔌 Chicote de Alimentação
+
+- **Conector do Hardware**
+- **Cabo T15:** Pós-chave
+- **Cabo T30:** Positivo direto (bateria)
+- **Cabo GND:** Terra
+- **Derivação do chicote**
+
+---
+
+### 🔋 Bateria
+
+- **Módulo de Bateria**
+- **Conector da bateria para o chicote**
+
+---
+
+## 🧰 Materiais Necessários
+
+- ✅ Multímetro
+- ✅ Etiquetas de lacre de segurança
+- ✅ Abraçadeiras de nylon
+- ✅ Fita isolante
+- ✅ Álcool isopropílico 70% (incluso no kit)
+
+---
+
+## 🚦 Passo a Passo de Instalação
+
+---
+
+### 1️⃣ Identificação dos Pontos Elétricos
+
+⚠️ **Nunca confie apenas na cor dos fios. Utilize sempre o multímetro para confirmar!**
+
+---
+
+#### 🔋 **T30 – Positivo Direto**
+
+- Localize um ponto na caixa de fusíveis que seja alimentação direta da bateria.
+- Verifique com o multímetro:
+  - A tensão deve estar presente **constantemente**, mesmo com a ignição desligada.
+  - Aguarde alguns minutos após desligar a ignição para confirmar que **não é uma linha temporizada**.
+- ⚠️ Ponto incorreto pode gerar falhas de funcionamento ou perda de dados.
+
+---
+
+#### 🔑 **T15 – Pós-Chave**
+
+- Encontre na caixa de fusíveis um ponto que:
+  - Mostre **0V com a ignição desligada**.
+  - Mostre **12V ou 24V (dependendo do veículo) com a ignição ligada**.
+- Verifique se não há influência de acessórios, portas abertas ou temporizadores.
+
+---
+
+#### ⚫ **GND – Aterramento**
+
+- Utilize pontos metálicos da estrutura (carcaça) do veículo.
+- Verifique a continuidade com o multímetro.
+- **Uso obrigatório do terminal olhal**.
+- 🚫 **Nunca utilize fios já aterrados.** Isso evita problemas como terra flutuante, que podem causar queima do equipamento e problemas elétricos.
+
+---
+
+### 2️⃣ Posicionamento do Equipamento
+
+- O **Computador de Bordo (CB)** deve ser instalado no **painel do veículo**, nunca no assoalho ou embaixo de bancos.
+- Escolha uma superfície:
+  - **Lisa e limpa** (usar álcool isopropílico 70%).
+  - **Fora de exposição direta a calor ou água.**
+  - **Distante de módulos eletrônicos.**
+  - Com boa aderência para fita dupla face e cintas.
+
+- 📐 O CB deve ser instalado na **horizontal**, com a etiqueta virada para cima.
+
+---
+
+### 3️⃣ Conexão dos Fios
+
+- Faça a ligação dos cabos T30, T15 e GND.
+- Utilize fita isolante para cobrir individualmente os fios descascados.
+- Organize os chicotes com abraçadeiras para evitar riscos de mau contato ou curto.
+
+---
+
+### 4️⃣ Instalação da Bateria de Backup
+
+- Posicione a bateria próxima aos pontos de alimentação.
+- Fixe-a em local seguro, protegido, sem incidência de calor (❌ Não instalar no teto ou painel superior).
+- Utilize a fita dupla face após limpeza da superfície com álcool isopropílico.
+
+---
+
+### 5️⃣ Passagem dos Chicotes
+
+- Passe os cabos da alimentação e da bateria até a região do para-brisa (próximo ao retrovisor).
+- Utilize os acabamentos da coluna A ou teto.
+- ⚠️ Atenção redobrada com veículos que possuem **AirBag na coluna A**.
+- O chicote não deve:
+  - Bloquear travas.
+  - Ficar exposto.
+  - Cruzar com antenas (para evitar interferências).
+
+---
+
+### 6️⃣ Fixação no Para-brisa
+
+- Limpe bem o vidro com álcool isopropílico.
+- Encaixe a base na câmera:
+  1. Deslize até o encaixe total.
+- Fixe a base no para-brisa:
+  1. Pressione por 15 segundos.
+  2. Retire o equipamento da base e pressione novamente por mais 15 segundos.
+  3. Encaixe novamente o equipamento na base.
+
+- Ajuste a **câmera externa** para pegar a visão completa da via, semelhante ao que o motorista enxerga.
+  - 🚚 Veículos pesados exigem um ajuste diferente dos veículos leves.
+
+---
+
+### 7️⃣ Ligação Final e Processo de Boot
+
+- Conecte o chicote de alimentação no V3HW.
+- O **LED vermelho acende fixo**, indicando alimentação correta.
+- Ligue a ignição (pós-chave T15):
+  - Confirme que o LED azul pisca e o vermelho permanece aceso.
+- Após 15 segundos, desligue a ignição:
+  - O LED vermelho deve continuar aceso (alimentação pelo T30 e bateria de backup).
+- Conecte o chicote da bateria de backup.
+
+---
+
+## 🌐 Validação na Plataforma
+
+1. Acesse [https://web.v3.com.br](https://web.v3.com.br)
+2. Faça login.
+3. Localize o veículo instalado.
+4. Dê partida no veículo e valide:
+   - **LED vermelho fixo**
+   - **LED azul piscando**
+   - Evento de ignição registrado corretamente.
+   - Localização GPS coerente.
+   - Registro da imagem interna e externa.
+
+---
+
+## 🎯 Recomendações Finais
+
+- Aplique **etiquetas de lacre de segurança**:
+  - Na conexão do chicote com o equipamento.
+  - Nos pontos de abertura lateral.
+- Faça um checklist do veículo:
+  - Verifique se tudo funciona normalmente após a instalação.
+- Faça acabamento dos fios:
+  - Utilize fita isolante e abraçadeiras para garantir organização e segurança.
+
+---
+
+## 🆘 Suporte Técnico
+
+Se restar alguma dúvida ou encontrar dificuldades, entre em contato com nosso suporte:
+
+- 📧 **E-mail:** suporte@v3tecnologia.com.br
+
+---
+
+> 🔥 Instalação correta = Dados confiáveis + Cliente satisfeito + Menos dor de cabeça!

@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Tutoriais V3
+# 📚 Introdução
 
 ## Bem-vindo à plataforma V3
 
