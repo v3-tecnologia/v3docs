@@ -1,11 +1,11 @@
 ---
 id: get-a-device-by-id
 title: "Get a device by ID"
-description: "FindOne handles HTTP GET requests to retrieve a single device by ID."
+description: "FindOne handles HTTP requests to retrieve a single device by its ID."
 sidebar_label: "Get a device by ID"
 hide_title: true
 hide_table_of_contents: true
-api: eJzdVc1u00AQfpXVnkCKkgA95VYRWgKlqUrCpa2izXocb1nvmt1x1GD5YRAHHqQvxoxt2qRNkbhVnDye/99vK5lA1MEUaLyTI3lkXDJ1IDLlEgtRvJ/NzsTxu5kI8K2EiFGgJxqDgTUIJaJxKwsigbXRIJYbMRn3L90ERaFCJHvMgFgiDT5v6Pn5CYtUDggh9oRW1rZanYsIoflSmBRQZ1uy3qWjrDh6GdyOUaJQCePEh8/TU5H6kCvsy568DyRHF9WDSset6WRMioYZhcKMaEcm9GcSorloEyCRIwwl9GTUGeRKjiqJm6LRcggrCLKur1g7Ft5R1azwejjkz27M6Udyqj0ZOWSpKgprtGLp4DqySrUVowi+gICmdahK9FSX0YsA2q+caX3epbL03oJysqYIbJWyY1hQHfc6kebmVo1KAJImC4WPI6HhDuwxWivbutut6guzhaGJUJOEScWMHPC/8yhO5ycnVPTDJOs7ll9eg0Z2n4CF55ZTagFwt4l3M6e90fqJ/j5pkYPZa5B7Kn+vpMi8g4Ur8yW52KdQ2ieSKIvkmQ15D4d5B8ODxxFPyfGRL13yDzdTt/5QrfjkuxuXdJsEA5mnsuQKsEEGuvWRHLT4MahMUhOXsecPWJTBssJg/SYS6Cz9TV/7XPKZG5d6Dso5Kc05Nbu7nfphk+Ltr9ufXkAujqeiw4bbH2uwovCBGNTQ7yoIL96ez8cEYVEQvoaSwI3IpYrAEIYGLbfrk3JqBTn1QByeTUjAibbBhv1h/1WzKD5irpqGdCB2DEgYvQ3O8kGq1X1r/y/s79YM4QYHhVWmAcZmqFU3/QvZeiDlEW08TTajBjK/qrj982DrmtlUfNgQ/4qPIxi15Inwe2Ii07RVqbIR/tLZF+fdQ/JSbD87e3PsmMptZHOMJf8R+RU27bNUX5FWBiphOKA0WsGh1lDglsmjO6m3z4DGSrf3G73yvfs=
+api: eJztVMtu2zAQ/BWCpxYwbDfNybegTlIjbR2k8SkJDJpaW0wpUiUpN66gjyl66IfkxzqUlFhunAC99dCTqH3MDpezW/KEvHQqD8oaPuInyiRTQywVJtHk2fvLy3Pm6GtBPngWLM7BKVoTE8wrs9LEElorSWyxYQohk3H/2kwCy4XzyA8psWuukmseLSKjQI4tnc1qTwvMZhcfemwttEpEQJIKPYb6TAqtG4imxmdydSnQWFKQaccViy7r/8mYKUCYGq4HrEi5cMaD8eHBAZuZ3FlJ3osFyB+boMIGIT63xndg2lsBytjAlrYwT8CGh+wTfCfR10WYGuYLGUvsZHRQcU3BvqmQAuZgOGTTs20+7/HHTnk+uir/eKFxAzEZI1BFQy5CirNBCv5UgnPsq3KU8FFwBfW4lyllgo9KHjZ5HWUCrcjxqrqJ0U1pHwNAJ352a07PACotkkyIXpHnWkkRvYNbH0PKTg30NycXVAMoimAzhMq5I2lXRjWYj1QW1moShleo4Ajvn8xF6Pg99GZW0Z2QphfcS00U5rj/nmuiVVLuuLZ5z2ZkpPYmZBZM9nry1BqamyJbAGJfQKGfIVHkyfNXh7+12MUtyQBLtEGAT5/qUZF/8WJVgxfEKgquVRiHMiDC1IIwX1GodQmljfigUfGgVEkFq8dUPki1cDoGDNZvPQZ4Ye/60mY8ikyZpY1FIychI6f6RbvUj2qK97/uf1pGGTudPgzF/Y81aZZbBwOm+rtwzLJ3F7MxBskzLBBXYMRwXIhmgDDTOrbrozBiRRl6wI7OJ3BEok2xYX/Yf1O/mfUhE3VD2hE6pYC53K61etR2qJbb1v7fmP/CxmzHI9BdGORaqHqd1GIsW9Ve8QYJwSPMIBSZ4uGjvSyjbGZOV1U0o79uAzuOa+FUvHOzhVV9f0zDUmhPLyji1UW7fl+z7rLey7E1CrOJ6hS6iH84fqFNs8yrG0SlJJK4UUCjcRyhWXnopDyZ76o7vqfHl9gZvwEZ6Lqk
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,9 +36,11 @@ import Heading from "@theme/Heading";
 
 
 
-FindOne handles HTTP GET requests to retrieve a single device by ID.
-It parses the ID from the URL parameters, calls the device service to fetch the device,
-and returns the device data in JSON format.
+FindOne handles HTTP requests to retrieve a single device by its ID.
+It parses the "id" parameter from the request URL, validates it, and calls the deviceService to fetch the device.
+If the ID is invalid, it returns a 422 Unprocessable Entity response.
+If the device is not found, it returns a 404 Not Found response.
+On success, it returns the device data with a 200 OK response.
 
 <Heading
   id={"request"}
@@ -64,7 +66,7 @@ and returns the device data in JSON format.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"fleet_id":{"type":"integer"},"iccid":{"type":"string"},"id":{"type":"integer"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"fleet_id":{"type":"integer"},"iccid":{"type":"string"},"id":{"type":"integer"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
 >
   
 </StatusCodes>

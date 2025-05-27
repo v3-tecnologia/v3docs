@@ -1,11 +1,11 @@
 ---
 id: get-a-fleet-by-id
 title: "Get a fleet by ID"
-description: "FindOne handles HTTP GET requests to retrieve a single fleet entity by its ID."
+description: "FindOne handles HTTP requests to retrieve a single fleet by its ID."
 sidebar_label: "Get a fleet by ID"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVc1uEzEQfpWRTyBFSSg95VZRKBGlqUrDhVaVszvJGrz2Ys+GhtU+DOLAg/TFmPFu25S2SNwQ4rTe8fib/28alWPMgqnIeKcm6pVx+cwhFNrlFiO8Pj09hoOXpxDwc42RIpDnMwWDawQN0biVRVhaRAJ0ZGgDiw0YVpzuD8/clKDSITISFQhnyuRnSiS6RMIAy+DLdDM/ORzAWluTa2JlQwNgDyDT1nZPk4V3GNYmQ/FhiZQV6SbzIWCsvMvZl05PDC/T5XQfDMO5BD1gXOh1I3wxVHAEuzs7MHdV8BnGqBcczMsujEia6pjc0A4wBB+gFJ0V3uJ3gbMJ5wmWvnaPGBnvwhFrvBKNbWTBuAN9m5LYBcu2Zg5inYl/PTjVwW2l5TrxvbGd8Rhmb3orQzVQN/mOavKh+bXiCWG6z3pG/itNBZ8dv+A/k/NZam8C5mpCocaBilmBpVaTRtGmSlqOcIVBte25aEvsXHJRYF/kc9fk7A2DZp4fOZJbXVXWZFpuRx+jqDRbNrg0FQYyHWCqtk26F+zcrQ+Re9KtVMvIAbmJ8gtN95+TkbAeeJQa5L6r70Us9ZXIwSzhlAGu6300PzzkSHqshfcWteMk3Ij84iNmJPA5WvzbfLqTvpsSXpf+AX8IdXnx2KvaPlKOusr/snI8IBEZD+l9izdT+wct23Z4pFcycN2EKZ4MnsHCc1Rqxf+DbtImapRmeNSYvGWhTP31oNbByv1o/TwyVyz85TDzpZIZM27pu2lwpDPxKPXYtuN7ycGrH1ffPWAJB7OelOLVtzVaqJhyeE6s+aoDeHhxMt+HXEdgjg818wsfFzqi0Adzi5VkvdWOCarkDMDe8ZQvxNHO2Hg4Hj6TulU+UqlTOnoGOWB20T1P8WZIRHPH0+Y2r//Xz7+4fvpZI7ykUWU1bxlhBentpp+BDyoBse6Ep577u+A2EnHTSBPOg21bEXMPhA3Lz4UggpF0dRvNpNTxaC21jfibBnty0u+yp7C1+B70sBdqt1GJj2r54+Mn3HSLsT1nrQJ1zgQoXnQXe5ypirae3KOKdpsKuLmZfn4CB4JJsA==
+api: eJztVM1u00AQfpXRnkCKklB6yq0ibYkKpCrNqa2qjT2Jt6x3ze44NFh+GMSBB+mLMWOndUJ/JE5cOHk9P998O/vNVCrFmARTkPFOjdSRcenUIWTapRYjvD8/P4WAX0uMFIE8nykYXCFoiMYtLcLCIhLM12A4YjLuX7oJQaFD5HTKEC6VSS+VWHSOhAEWweeNZ4MLs7MPPVhpa1JNnGSoB1weEm1tC9GU+IxhZRIUEgukJOs8UnLR/E7GYBjANWA9RhK+ZXCR6e7v7cHMFcEnGKOeM/NDR4bWHBIL7yJ2MO2VGMl5goUv3SOs4T58Yt+R+LYBpg5imUiFnYwOlK+o4ZuhjFH2hkOYnnTpqqceuhTV6KL683EahMmY44z8F5oyPjvO4D+T8llaagKmakShxJ6KSYa5VqNK0bpoohzhEoOq6yuJbitHCWA28tktOT1h0MRzkiPx6qKwJtHiHdxECam2anBzCwxkWsDEh4C2ib1mch2HyBJyS1UzckB+8vRa05PuFC2+4N4BfbjYfUOeSCDU+fVzWaV9hmRZpM+TFNTW4uc3mBBbxMYCedzMB8X8RU/rFo/0UhTRSkDx07FIMs981ZL/e60URmrQiGxQmbRmY+SJuVdSGaz4B6u3kWdr7m/7ic+ViMC4hW+fy5FOhFHT+W3iBw3Bu193Pz1gDsfTe83e/VihhcIHNvDIfdcBPLw7m41Z5xF4tkPJA8DHuW71zQNnpVkftdNLzLkDcHA6YYcQbYsN+8P+G+l74SPlumnHRuLHLH/dLZxmEnaYVl1f/6+yf7zKNmNBeEuDwmreWDJLIsNqI9cL1QBx7IhHj6WY8YuLuapEL7Ng61rM3NqwZjsfVzoYuXC7HU1zeZ6ChbYRX9DCq7PNXnwNW0v0SYYbo3ZrUaW2pfzx8Quu2yVbX3FUhjrltSEsWscBd6qgrZRHU11vT+3x4Tlvit8wPZOw
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,11 +36,11 @@ import Heading from "@theme/Heading";
 
 
 
-FindOne handles HTTP GET requests to retrieve a single fleet entity by its ID.
-It parses the "id" parameter from the URL, validates it, and calls the fleetService to fetch the corresponding fleet.
-If the ID is invalid, it responds with a 422 Unprocessable Entity status and an error message.
-If the fleet is not found, it responds with a 404 Not Found status and the error message from the service.
-On success, it returns the fleet entity with a 200 OK status.
+FindOne handles HTTP requests to retrieve a single fleet by its ID.
+It parses the "id" parameter from the request URL, validates it, and calls the fleetService to fetch the fleet.
+If the ID is invalid, it returns a 422 Unprocessable Entity response.
+If the fleet is not found, it returns a 404 Not Found response.
+On success, it returns the fleet data with a 200 OK response.
 
 <Heading
   id={"request"}
@@ -66,7 +66,7 @@ On success, it returns the fleet entity with a 200 OK status.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"id":{"type":"integer"},"name":{"type":"string"},"team_id":{"type":"integer"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"integer"},"name":{"type":"string"},"team_id":{"type":"integer"},"ulid":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
 >
   
 </StatusCodes>

@@ -82,26 +82,7 @@ definitions:
           Parameters contains the specific data needed for the order type.
           The structure of each parameter depends on the order type.
           For example, ADD_WIFI parameters would contain ssid and password...
-        items:
-          oneOf:
-            - $ref: '#/definitions/model.AddWifi'
-              title: AddWifi
-            - $ref: '#/definitions/model.DeleteWifi'
-              title: DeleteWifi
-            - $ref: '#/definitions/model.DeviceState'
-              title: DeviceState
-            - $ref: '#/definitions/model.RequestImage'
-              title: RequestImage
-            - $ref: '#/definitions/model.RequestVideo'
-              title: RequestVideo
-            - $ref: '#/definitions/model.Reboot'
-              title: Reboot
-            - $ref: '#/definitions/model.DriverInertial'
-              title: DriverInertial
-            - $ref: '#/definitions/model.DriverTelemetry'
-              title: DriverTelemetry
-            - $ref: '#/definitions/model.Tracking'
-              title: Tracking
+        items: {}
         type: array
       type:
         allOf:
@@ -161,6 +142,34 @@ definitions:
         - $ref: '#/definitions/model.OrderType'
         description: Type of the order (it must be DRIVER_COACH_TRACKING)
     type: object
+  mapper.Meta:
+    properties:
+      requestId:
+        type: string
+      timestamp:
+        type: string
+    type: object
+  mapper.OrderResponse:
+    properties:
+      createdAt:
+        type: string
+      deletedAt:
+        type: string
+      deviceId:
+        type: string
+      id:
+        type: integer
+      meta:
+        $ref: '#/definitions/mapper.Meta'
+      sourceCreatedAt:
+        type: string
+      status:
+        type: string
+      ulid:
+        type: string
+      updatedAt:
+        type: string
+    type: object
   model.AddWifi:
     properties:
       password:
@@ -196,43 +205,6 @@ definitions:
       active:
         type: boolean
     type: object
-  model.Group:
-    enum:
-    - COMMAND
-    - CONFIG
-    type: string
-    x-enum-varnames:
-    - COMMAND
-    - CONFIG
-  model.Order:
-    properties:
-      created_at:
-        type: string
-      deleted_at:
-        type: string
-      device_id:
-        type: string
-      group:
-        $ref: '#/definitions/model.Group'
-      id:
-        type: integer
-      metadata:
-        type: string
-      parameters:
-        items:
-          $ref: '#/definitions/model.Parameter'
-        type: array
-      sourced_created_at:
-        type: string
-      status:
-        $ref: '#/definitions/model.Status'
-      type:
-        $ref: '#/definitions/model.OrderType'
-      ulid:
-        type: string
-      updated_at:
-        type: string
-    type: object
   model.OrderType:
     enum:
     - ADD_WIFI
@@ -259,17 +231,6 @@ definitions:
     - DRIVER_COACH_TELEMETRY
     - DRIVER_COACH_TRACKING
     - INTERNAL
-  model.Parameter:
-    properties:
-      key:
-        type: string
-      module:
-        type: string
-      type:
-        type: string
-      value:
-        type: string
-    type: object
   model.Reboot:
     type: object
   model.RequestImage:
@@ -288,20 +249,6 @@ definitions:
       start:
         type: string
     type: object
-  model.Status:
-    enum:
-    - DELETED
-    - PROCESSED
-    - FAILED
-    - SENT
-    - PENDING
-    type: string
-    x-enum-varnames:
-    - DELETED
-    - PROCESSED
-    - FAILED
-    - SENT
-    - PENDING
   model.Tracking:
     properties:
       active:
@@ -336,10 +283,12 @@ paths:
       produces:
       - application/json
       responses:
-        "200":
-          description: Orders deleted successfully
+        "202":
+          description: Order sended to deleted
           schema:
-            $ref: '#/definitions/model.Order'
+            items:
+              $ref: '#/definitions/mapper.OrderResponse'
+            type: array
         "400":
           description: Bad Request
           schema: {}
@@ -433,7 +382,7 @@ paths:
           description: Order created successfully
           schema:
             items:
-              $ref: '#/definitions/model.Order'
+              $ref: '#/definitions/mapper.OrderResponse'
             type: array
         "400":
           description: Invalid request payload
@@ -470,10 +419,12 @@ paths:
       produces:
       - application/json
       responses:
-        "200":
-          description: Order deleted successfully
+        "202":
+          description: Order sended to deleted
           schema:
-            $ref: '#/definitions/model.Order'
+            items:
+              $ref: '#/definitions/mapper.OrderResponse'
+            type: array
         "400":
           description: Bad Request
           schema: {}
@@ -501,7 +452,7 @@ paths:
         "200":
           description: Order retrieved successfully
           schema:
-            $ref: '#/definitions/model.Order'
+            $ref: '#/definitions/mapper.OrderResponse'
         "400":
           description: Bad Request
           schema: {}

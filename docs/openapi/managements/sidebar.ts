@@ -36,12 +36,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "openapi/managements/list-devices-by-fleet",
-          label: "List devices by fleet",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
           id: "openapi/managements/get-a-device-by-imei",
           label: "Get a device by IMEI",
           className: "api-method get",
@@ -58,6 +52,12 @@ const sidebar: SidebarsConfig = {
           label: "List devices with pagination",
           className: "api-method get",
         },
+        {
+          type: "doc",
+          id: "openapi/managements/get-devices-by-fleet-id",
+          label: "Get devices by fleet ID",
+          className: "api-method get",
+        },
       ],
     },
     {
@@ -68,6 +68,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "openapi/managements/create-a-new-driver",
           label: "Create a new driver",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "openapi/managements/assign-driver-to-team",
+          label: "Assign driver to team",
           className: "api-method post",
         },
         {
@@ -90,9 +96,9 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "openapi/managements/assign-driver-to-team",
-          label: "Assign driver to team",
-          className: "api-method post",
+          id: "openapi/managements/list-drivers-with-pagination",
+          label: "List drivers with pagination",
+          className: "api-method get",
         },
         {
           type: "doc",
@@ -100,24 +106,12 @@ const sidebar: SidebarsConfig = {
           label: "Remove driver from team",
           className: "api-method delete",
         },
-        {
-          type: "doc",
-          id: "openapi/managements/list-drivers-with-pagination",
-          label: "List drivers with pagination",
-          className: "api-method get",
-        },
       ],
     },
     {
       type: "category",
       label: "Fleet",
       items: [
-        {
-          type: "doc",
-          id: "openapi/managements/list-fleets-with-pagination",
-          label: "List fleets with pagination",
-          className: "api-method get",
-        },
         {
           type: "doc",
           id: "openapi/managements/create-a-new-fleet",
@@ -144,8 +138,20 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "openapi/managements/list-fleets-by-team",
-          label: "List fleets by team",
+          id: "openapi/managements/get-a-fleet-by-ulid",
+          label: "Get a fleet by ULID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "openapi/managements/list-fleets-with-pagination",
+          label: "List fleets with pagination",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "openapi/managements/get-fleets-by-team-id",
+          label: "Get fleets by team ID",
           className: "api-method get",
         },
       ],
@@ -154,12 +160,6 @@ const sidebar: SidebarsConfig = {
       type: "category",
       label: "Team",
       items: [
-        {
-          type: "doc",
-          id: "openapi/managements/list-teams-with-pagination",
-          label: "List teams with pagination",
-          className: "api-method get",
-        },
         {
           type: "doc",
           id: "openapi/managements/create-a-new-team",
@@ -186,8 +186,20 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "openapi/managements/list-teams-by-account",
-          label: "List teams by account",
+          id: "openapi/managements/list-teams-with-pagination",
+          label: "List teams with pagination",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "openapi/managements/get-drivers-by-team-id",
+          label: "Get drivers by team ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "openapi/managements/get-teams-by-account-id",
+          label: "Get teams by account ID",
           className: "api-method get",
         },
       ],
