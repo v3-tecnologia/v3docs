@@ -1,67 +1,50 @@
 basePath: /
 definitions:
-  httpserver.AssignToTeamDTO:
-    properties:
-      team_id:
-        type: integer
-    required:
-    - team_id
-    type: object
-  httpserver.CreateAccountDTO:
-    properties:
-      correlation_id:
-        maxLength: 50
-        minLength: 3
-        type: string
-      name:
-        maxLength: 100
-        minLength: 3
-        type: string
-    required:
-    - correlation_id
-    - name
-    type: object
-  httpserver.CreateDeviceDTO:
+  dto.CreateDeviceDTO:
     properties:
       automatic_recognition:
+        description: 'Flag indicating if the device has automatic recognition enabled
+          **Example**: true'
         type: boolean
-      certificate_id:
-        maxLength: 50
-        minLength: 3
-        type: string
       fleet_id:
+        description: 'ID of the fleet that owns the device **Example**: 1'
         type: integer
       iccid:
+        description: 'ICCID of the SIM card **Example**: "89550311000000000123"'
         maxLength: 20
         minLength: 19
         type: string
       imei:
+        description: 'IMEI number of the device **Example**: "123456789012345"'
         maxLength: 15
         minLength: 15
         type: string
       model:
+        description: 'Model of the device **Example**: "GPS Tracker Pro"'
         maxLength: 50
         minLength: 3
         type: string
       phone_number:
+        description: 'Phone number associated with the device **Example**: "+5511999999999"'
         maxLength: 15
         minLength: 10
         type: string
     required:
-    - certificate_id
     - fleet_id
     - iccid
     - imei
     - model
     - phone_number
     type: object
-  httpserver.CreateDriverDTO:
+  dto.CreateDriverDTO:
     properties:
       correlation_id:
+        description: 'Unique identifier for request tracking **Example**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
       name:
+        description: 'Name of the driver **Example**: "John Doe"'
         maxLength: 100
         minLength: 3
         type: string
@@ -69,32 +52,38 @@ definitions:
     - correlation_id
     - name
     type: object
-  httpserver.CreateFleetDTO:
+  dto.CreateFleetDTO:
     properties:
       correlation_id:
+        description: 'Unique identifier for request tracking **Example**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
       name:
+        description: 'Name of the fleet **Example**: "Main Fleet"'
         maxLength: 100
         minLength: 3
         type: string
       team_id:
+        description: 'ID of the team that owns the fleet **Example**: 1'
         type: integer
     required:
     - correlation_id
     - name
     - team_id
     type: object
-  httpserver.CreateTeamDTO:
+  dto.CreateTeamDTO:
     properties:
       account_id:
+        description: 'ID of the account that owns the team **Example**: 1'
         type: integer
       correlation_id:
+        description: 'Unique identifier for request tracking **Example**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
       name:
+        description: 'Name of the team **Example**: "Development Team"'
         maxLength: 100
         minLength: 3
         type: string
@@ -103,61 +92,51 @@ definitions:
     - correlation_id
     - name
     type: object
-  httpserver.UpdateAccountDTO:
-    properties:
-      correlation_id:
-        maxLength: 50
-        minLength: 3
-        type: string
-      name:
-        maxLength: 100
-        minLength: 3
-        type: string
-    required:
-    - correlation_id
-    - name
-    type: object
-  httpserver.UpdateDeviceDTO:
+  dto.UpdateDeviceDTO:
     properties:
       automatic_recognition:
+        description: 'Flag indicating if the device has automatic recognition enabled
+          **Example**: true'
         type: boolean
-      certificate_id:
-        maxLength: 50
-        minLength: 3
-        type: string
       fleet_id:
+        description: 'ID of the fleet that owns the device **Example**: 1'
         type: integer
       iccid:
+        description: 'ICCID of the SIM card **Example**: "89550311000000000123"'
         maxLength: 20
         minLength: 19
         type: string
       imei:
+        description: 'IMEI number of the device **Example**: "123456789012345"'
         maxLength: 15
         minLength: 15
         type: string
       model:
+        description: 'Model of the device **Example**: "GPS Tracker Pro X"'
         maxLength: 50
         minLength: 3
         type: string
       phone_number:
+        description: 'Phone number associated with the device **Example**: "+5511999999999"'
         maxLength: 15
         minLength: 10
         type: string
     required:
-    - certificate_id
     - fleet_id
     - iccid
     - imei
     - model
     - phone_number
     type: object
-  httpserver.UpdateDriverDTO:
+  dto.UpdateDriverDTO:
     properties:
       correlation_id:
+        description: 'Unique identifier for request tracking **Example**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
       name:
+        description: 'Name of the driver **Example**: "John Doe Updated"'
         maxLength: 100
         minLength: 3
         type: string
@@ -165,32 +144,38 @@ definitions:
     - correlation_id
     - name
     type: object
-  httpserver.UpdateFleetDTO:
+  dto.UpdateFleetDTO:
     properties:
       correlation_id:
+        description: 'Unique identifier for request tracking **Example**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
       name:
+        description: 'Name of the fleet **Example**: "Updated Fleet"'
         maxLength: 100
         minLength: 3
         type: string
       team_id:
+        description: 'ID of the team that owns the fleet **Example**: 1'
         type: integer
     required:
     - correlation_id
     - name
     - team_id
     type: object
-  httpserver.UpdateTeamDTO:
+  dto.UpdateTeamDTO:
     properties:
       account_id:
+        description: 'ID of the account that owns the team **Example**: 1'
         type: integer
       correlation_id:
+        description: 'Unique identifier for request tracking **Example**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
       name:
+        description: 'Name of the team **Example**: "Updated Development Team"'
         maxLength: 100
         minLength: 3
         type: string
@@ -198,38 +183,15 @@ definitions:
     - account_id
     - correlation_id
     - name
-    type: object
-  model.Account:
-    properties:
-      client_id:
-        type: string
-      correlation_id:
-        type: string
-      created_at:
-        $ref: '#/definitions/types.CustomTime'
-      deleted_at:
-        $ref: '#/definitions/types.CustomTime'
-      id:
-        type: integer
-      name:
-        type: string
-      tenant_id:
-        type: string
-      ulid:
-        type: string
-      updated_at:
-        $ref: '#/definitions/types.CustomTime'
     type: object
   model.Device:
     properties:
       automatic_recognition:
         type: boolean
-      certificate_id:
-        type: string
       created_at:
-        $ref: '#/definitions/types.CustomTime'
+        type: string
       deleted_at:
-        $ref: '#/definitions/types.CustomTime'
+        type: string
       fleet_id:
         type: integer
       iccid:
@@ -245,16 +207,16 @@ definitions:
       ulid:
         type: string
       updated_at:
-        $ref: '#/definitions/types.CustomTime'
+        type: string
     type: object
   model.Driver:
     properties:
       correlation_id:
         type: string
       created_at:
-        $ref: '#/definitions/types.CustomTime'
+        type: string
       deleted_at:
-        $ref: '#/definitions/types.CustomTime'
+        type: string
       id:
         type: integer
       name:
@@ -262,16 +224,16 @@ definitions:
       ulid:
         type: string
       updated_at:
-        $ref: '#/definitions/types.CustomTime'
+        type: string
     type: object
   model.Fleet:
     properties:
       correlation_id:
         type: string
       created_at:
-        $ref: '#/definitions/types.CustomTime'
+        type: string
       deleted_at:
-        $ref: '#/definitions/types.CustomTime'
+        type: string
       id:
         type: integer
       name:
@@ -281,7 +243,7 @@ definitions:
       ulid:
         type: string
       updated_at:
-        $ref: '#/definitions/types.CustomTime'
+        type: string
     type: object
   model.Team:
     properties:
@@ -290,9 +252,9 @@ definitions:
       correlation_id:
         type: string
       created_at:
-        $ref: '#/definitions/types.CustomTime'
+        type: string
       deleted_at:
-        $ref: '#/definitions/types.CustomTime'
+        type: string
       id:
         type: integer
       name:
@@ -300,22 +262,22 @@ definitions:
       ulid:
         type: string
       updated_at:
-        $ref: '#/definitions/types.CustomTime'
+        type: string
     type: object
-  service.PaginatedAccounts:
+  model.TeamDriver:
     properties:
-      data:
-        items:
-          $ref: '#/definitions/model.Account'
-        type: array
-      page:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      driver_id:
         type: integer
-      page_size:
+      id:
         type: integer
-      total_items:
+      team_id:
         type: integer
-      total_pages:
-        type: integer
+      ulid:
+        type: string
     type: object
   service.PaginatedDevices:
     properties:
@@ -377,14 +339,6 @@ definitions:
       total_pages:
         type: integer
     type: object
-  types.CustomTime:
-    properties:
-      time:
-        type: string
-      valid:
-        description: Valid is true if Time is not NULL
-        type: boolean
-    type: object
 host: v3sandbox.com
 info:
   contact: {}
@@ -397,17 +351,18 @@ paths:
       consumes:
       - application/json
       description: |-
-        Create handles HTTP POST requests to create a new device.
-        It validates the request body against CreateDeviceDTO schema,
-        rocesses the device creation through deviceService,
-        and returns the created device.
+        Create handles the HTTP request to create a new device.
+        It parses the request body into a CreateDeviceDTO, validates the input,
+        and calls the device service to create the device. On success, it returns
+        the created device with HTTP 201 status. On error, it returns an appropriate
+        HTTP error status and message.
       parameters:
       - description: Device Data
         in: body
         name: device
         required: true
         schema:
-          $ref: '#/definitions/httpserver.CreateDeviceDTO'
+          $ref: '#/definitions/dto.CreateDeviceDTO'
       produces:
       - application/json
       responses:
@@ -424,11 +379,10 @@ paths:
   /device/{id}:
     delete:
       description: |-
-        Delete handles HTTP DELETE requests to remove a device by its ID.
-        It parses the device ID from the request parameters, validates it,
-        and calls the deviceService.Delete method to perform the deletion.
-        Returns a 422 Unprocessable Entity status with an error message if the ID is invalid
-        or if the deletion fails. Returns a 200 OK status with an empty response on success.
+        Delete handles HTTP DELETE requests to remove a device resource by its ID.
+        It parses the "id" parameter from the request URL, validates it, and calls the deviceService.Delete method.
+        If the ID is invalid or the deletion fails, it returns a 422 Unprocessable Entity status with an error message.
+        On successful deletion, it returns a 200 OK status with an empty response body.
       parameters:
       - description: Device ID
         in: path
@@ -448,9 +402,11 @@ paths:
       - Device
     get:
       description: |-
-        FindOne handles HTTP GET requests to retrieve a single device by ID.
-        It parses the ID from the URL parameters, calls the device service to fetch the device,
-        and returns the device data in JSON format.
+        FindOne handles HTTP requests to retrieve a single device by its ID.
+        It parses the "id" parameter from the request URL, validates it, and calls the deviceService to fetch the device.
+        If the ID is invalid, it returns a 422 Unprocessable Entity response.
+        If the device is not found, it returns a 404 Not Found response.
+        On success, it returns the device data with a 200 OK response.
       parameters:
       - description: Device ID
         in: path
@@ -474,11 +430,11 @@ paths:
       consumes:
       - application/json
       description: |-
-        Update handles HTTP PUT requests to update an existing device by its ID.
+        Update handles the HTTP PUT request to update an existing device entity.
         It parses the device ID from the URL parameters, validates the request body,
-        and updates the device using the provided data. Returns the updated device
-        on success, or an appropriate error response if validation fails, the ID is
-        invalid, or the device is not found.
+        and updates the device using the provided service. Returns appropriate HTTP
+        status codes and error messages for invalid input, validation errors, or if
+        the device is not found.
       parameters:
       - description: Device ID
         in: path
@@ -490,7 +446,7 @@ paths:
         name: device
         required: true
         schema:
-          $ref: '#/definitions/httpserver.UpdateDeviceDTO'
+          $ref: '#/definitions/dto.UpdateDeviceDTO'
       produces:
       - application/json
       responses:
@@ -507,39 +463,14 @@ paths:
       summary: Update a device
       tags:
       - Device
-  /device/fleet/{fleetId}:
-    get:
-      description: |-
-        FindByFleet handles HTTP requests to retrieve devices associated with a specific fleet.
-        t expects a fleet ID parameter in the URL path, converts it to int64, and uses the device service
-        to fetch the corresponding devices.
-      parameters:
-      - description: Fleet ID
-        in: path
-        name: fleetId
-        required: true
-        type: integer
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            items:
-              $ref: '#/definitions/model.Device'
-            type: array
-        "500":
-          description: Internal Server Error
-          schema: {}
-      summary: List devices by fleet
-      tags:
-      - Device
   /device/imei/{imei}:
     get:
       description: |-
-        FindByIMEI handles HTTP GET requests to find a device by its IMEI.
-        It extracts the IMEI from the URL parameters, queries the device service,
-        and returns the device information in JSON format.
+        FindByIMEI handles HTTP requests to retrieve a single device by its IMEI.
+        It parses the "imei" parameter from the request URL, validates it, and calls the deviceService to fetch the device.
+        If the IMEI is invalid, it returns a 422 Unprocessable Entity response.
+        If the device is not found, it returns a 404 Not Found response.
+        On success, it returns the device data with a 200 OK response.
       parameters:
       - description: Device IMEI
         in: path
@@ -562,9 +493,11 @@ paths:
   /device/ulid/{ulid}:
     get:
       description: |-
-        FindByULID handles HTTP GET requests to retrieve a single device by ULID.
-        It extracts the ULID from the URL parameters, calls the device service to fetch the device,
-        and returns the device data in JSON format.
+        FindByULID handles HTTP requests to retrieve a single device by its ULID.
+        It parses the "ulid" parameter from the request URL, validates it, and calls the deviceService to fetch the device.
+        If the ULID is invalid, it returns a 422 Unprocessable Entity response.
+        If the device is not found, it returns a 404 Not Found response.
+        On success, it returns the device data with a 200 OK response.
       parameters:
       - description: Device ULID
         in: path
@@ -587,8 +520,11 @@ paths:
   /devices:
     get:
       description: |-
-        FindAll handles HTTP requests to retrieve device records with optional filtering and pagination.
-        It supports filtering by ULID or IMEI (mutually exclusive) and pagination parameters.
+        FindAll handles HTTP GET requests to retrieve device records with optional filtering and pagination.
+        It supports filtering by either "ulid" or "fleetId" query parameters, but not both simultaneously.
+        If both filters are provided, it returns a 400 Bad Request error.
+        Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
+        Returns a JSON response containing the paginated devices or an error message.
       parameters:
       - description: 'Page number (default: 1)'
         in: query
@@ -611,6 +547,32 @@ paths:
       summary: List devices with pagination
       tags:
       - Device
+  /devices/fleets/{fleetId}:
+    get:
+      description: |-
+        FindByFleet handles HTTP GET requests to retrieve device records associated with a specific fleet.
+        It expects the fleet ID as a URL parameter, validates it, and returns a paginated list of devices
+        belonging to that fleet. Returns appropriate HTTP status codes and error messages for invalid
+        fleet IDs or if no devices are found.
+      parameters:
+      - description: Fleet ID
+        in: path
+        name: fleetId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/service.PaginatedDevices'
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Get devices by fleet ID
+      tags:
+      - Device
   /driver:
     post:
       consumes:
@@ -627,7 +589,7 @@ paths:
         name: driver
         required: true
         schema:
-          $ref: '#/definitions/httpserver.CreateDriverDTO'
+          $ref: '#/definitions/dto.CreateDriverDTO'
       produces:
       - application/json
       responses:
@@ -639,6 +601,38 @@ paths:
           description: Unprocessable Entity
           schema: {}
       summary: Create a new driver
+      tags:
+      - Driver
+  /driver/{driverId}/team/{teamId}:
+    post:
+      consumes:
+      - application/json
+      description: |-
+        AssignToTeam handles the HTTP request to assign a driver to a team.
+        It expects the driver ID as a URL parameter and the team assignment data in the request body.
+        The method validates the driver ID, parses and validates the request body, and delegates the assignment
+        operation to the driver service. Returns appropriate HTTP status codes and messages based on the outcome.
+      parameters:
+      - description: Driver ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Team Data
+        in: body
+        name: team
+        required: true
+        schema:
+          $ref: '#/definitions/model.TeamDriver'
+      responses:
+        "200":
+          description: Driver assigned to team
+          schema:
+            type: string
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Assign driver to team
       tags:
       - Driver
   /driver/{id}:
@@ -711,7 +705,7 @@ paths:
         name: driver
         required: true
         schema:
-          $ref: '#/definitions/httpserver.UpdateDriverDTO'
+          $ref: '#/definitions/dto.UpdateDriverDTO'
       produces:
       - application/json
       responses:
@@ -726,68 +720,6 @@ paths:
           description: Unprocessable Entity
           schema: {}
       summary: Update a driver
-      tags:
-      - Driver
-  /driver/{id}/team:
-    post:
-      consumes:
-      - application/json
-      description: |-
-        AssignToTeam handles the HTTP request to assign a driver to a team.
-        It expects the driver ID as a URL parameter and the team assignment data in the request body.
-        The method validates the driver ID, parses and validates the request body, and delegates the assignment
-        operation to the driver service. Returns appropriate HTTP status codes and messages based on the outcome.
-      parameters:
-      - description: Driver ID
-        in: path
-        name: id
-        required: true
-        type: integer
-      - description: Team Data
-        in: body
-        name: team
-        required: true
-        schema:
-          $ref: '#/definitions/httpserver.AssignToTeamDTO'
-      responses:
-        "200":
-          description: Driver assigned to team
-          schema:
-            type: string
-        "422":
-          description: Unprocessable Entity
-          schema: {}
-      summary: Assign driver to team
-      tags:
-      - Driver
-  /driver/{id}/team/{teamId}:
-    delete:
-      description: |-
-        RemoveFromTeam handles the HTTP request to remove a driver from a team.
-        It expects the driver ID and team ID as URL parameters ("id" and "teamId").
-        The method parses these parameters, validates them, and calls the driverService to perform the removal.
-        Returns a 200 OK status with a success message if the operation is successful.
-        Returns a 422 Unprocessable Entity status with an error message if the IDs are invalid or if the removal fails.
-      parameters:
-      - description: Driver ID
-        in: path
-        name: id
-        required: true
-        type: integer
-      - description: Team ID
-        in: path
-        name: teamId
-        required: true
-        type: integer
-      responses:
-        "200":
-          description: Driver removed from team
-          schema:
-            type: string
-        "422":
-          description: Unprocessable Entity
-          schema: {}
-      summary: Remove driver from team
       tags:
       - Driver
   /drivers:
@@ -820,52 +752,53 @@ paths:
       summary: List drivers with pagination
       tags:
       - Driver
-  /fleet:
-    get:
-      description: FindAll handles HTTP GET requests to retrieve a list of fleets
-        with optional pagination and filtering by ULID.
+  /drivers/{driverId}/teams/{teamId}:
+    delete:
+      description: |-
+        RemoveFromTeam handles the HTTP request to remove a driver from a team.
+        It expects the driver ID and team ID as URL parameters ("id" and "teamId").
+        The method parses these parameters, validates them, and calls the driverService to perform the removal.
+        Returns a 200 OK status with a success message if the operation is successful.
+        Returns a 422 Unprocessable Entity status with an error message if the IDs are invalid or if the removal fails.
       parameters:
-      - description: 'Page number (default: 1)'
-        in: query
-        name: page
+      - description: Driver ID
+        in: path
+        name: id
+        required: true
         type: integer
-      - description: 'Page size (default: 10, max: 100)'
-        in: query
-        name: page_size
+      - description: Team ID
+        in: path
+        name: teamId
+        required: true
         type: integer
-      - description: Fleet ULID to filter
-        in: query
-        name: ulid
-        type: string
-      produces:
-      - application/json
       responses:
         "200":
-          description: OK
+          description: Driver removed from team
           schema:
-            $ref: '#/definitions/service.PaginatedFleets'
-        "500":
-          description: Internal Server Error
+            type: string
+        "422":
+          description: Unprocessable Entity
           schema: {}
-      summary: List fleets with pagination
+      summary: Remove driver from team
       tags:
-      - Fleet
+      - Driver
+  /fleet:
     post:
       consumes:
       - application/json
       description: |-
         Create handles the HTTP request to create a new fleet.
         It parses the request body into a CreateFleetDTO, validates the input,
-        and calls the fleetService to create the fleet. If successful, it returns
+        and calls the fleet service to create the fleet. On success, it returns
         the created fleet with HTTP 201 status. On error, it returns an appropriate
-        HTTP status and error message.
+        HTTP error status and message.
       parameters:
       - description: Fleet Data
         in: body
         name: fleet
         required: true
         schema:
-          $ref: '#/definitions/httpserver.CreateFleetDTO'
+          $ref: '#/definitions/dto.CreateFleetDTO'
       produces:
       - application/json
       responses:
@@ -884,9 +817,8 @@ paths:
       description: |-
         Delete handles HTTP DELETE requests to remove a fleet resource by its ID.
         It parses the "id" parameter from the request URL, validates it, and calls the fleetService.Delete method.
-        If the ID is invalid, it responds with HTTP 422 Unprocessable Entity and an error message.
-        If the deletion fails, it also responds with HTTP 422 and the error message from the service.
-        On successful deletion, it responds with HTTP 200 OK and an empty body.
+        If the ID is invalid or the deletion fails, it returns a 422 Unprocessable Entity status with an error message.
+        On successful deletion, it returns a 200 OK status with an empty response body.
       parameters:
       - description: Fleet ID
         in: path
@@ -906,11 +838,11 @@ paths:
       - Fleet
     get:
       description: |-
-        FindOne handles HTTP GET requests to retrieve a single fleet entity by its ID.
-        It parses the "id" parameter from the URL, validates it, and calls the fleetService to fetch the corresponding fleet.
-        If the ID is invalid, it responds with a 422 Unprocessable Entity status and an error message.
-        If the fleet is not found, it responds with a 404 Not Found status and the error message from the service.
-        On success, it returns the fleet entity with a 200 OK status.
+        FindOne handles HTTP requests to retrieve a single fleet by its ID.
+        It parses the "id" parameter from the request URL, validates it, and calls the fleetService to fetch the fleet.
+        If the ID is invalid, it returns a 422 Unprocessable Entity response.
+        If the fleet is not found, it returns a 404 Not Found response.
+        On success, it returns the fleet data with a 200 OK response.
       parameters:
       - description: Fleet ID
         in: path
@@ -934,7 +866,7 @@ paths:
       consumes:
       - application/json
       description: |-
-        Update handles HTTP PUT requests to update an existing fleet entity.
+        Update handles the HTTP PUT request to update an existing fleet entity.
         It parses the fleet ID from the URL parameters, validates the request body,
         and updates the fleet using the provided service. Returns appropriate HTTP
         status codes and error messages for invalid input, validation errors, or if
@@ -950,7 +882,7 @@ paths:
         name: fleet
         required: true
         schema:
-          $ref: '#/definitions/httpserver.UpdateFleetDTO'
+          $ref: '#/definitions/dto.UpdateFleetDTO'
       produces:
       - application/json
       responses:
@@ -967,52 +899,41 @@ paths:
       summary: Update a fleet
       tags:
       - Fleet
-  /fleet/team/{teamId}:
+  /fleet/ulid/{ulid}:
     get:
       description: |-
-        FindByTeam handles HTTP requests to retrieve fleets associated with a specific team.
-        It expects a "teamId" parameter in the URL, parses it as an int64, and uses the fleetService
-        to fetch the fleets for the given team. Returns a JSON response with the fleets on success,
-        or an error message with the appropriate HTTP status code if the team ID is invalid or
-        if an internal error occurs.
+        FindByULID handles HTTP requests to retrieve a single fleet by its ULID.
+        It parses the "ulid" parameter from the request URL, validates it, and calls the fleetService to fetch the fleet.
+        If the ULID is invalid, it returns a 422 Unprocessable Entity response.
+        If the fleet is not found, it returns a 404 Not Found response.
+        On success, it returns the fleet data with a 200 OK response.
       parameters:
-      - description: Team ID
+      - description: Fleet ULID
         in: path
-        name: teamId
+        name: ulid
         required: true
-        type: integer
+        type: string
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            items:
-              $ref: '#/definitions/model.Fleet'
-            type: array
-        "500":
-          description: Internal Server Error
+            $ref: '#/definitions/model.Fleet'
+        "404":
+          description: Not Found
           schema: {}
-      summary: List fleets by team
+      summary: Get a fleet by ULID
       tags:
       - Fleet
-  /team:
+  /fleets:
     get:
       description: |-
-        FindAll handles HTTP GET requests to retrieve teams with optional filtering and pagination.
-        It supports filtering by either "ulid" or "accountId" query parameters, but not both simultaneously.
+        FindAll handles HTTP GET requests to retrieve fleet records with optional filtering and pagination.
+        It supports filtering by either "ulid" or "teamId" query parameters, but not both simultaneously.
         If both filters are provided, it returns a 400 Bad Request error.
-        Pagination is controlled via "page" and "page_size" query parameters, with defaults of 1 and 10, respectively.
-        The maximum allowed page size is 100.
-        Depending on the filter, it delegates to the appropriate teamService method:
-
-        - FindByULID if "ulid" is provided
-
-        - FindByAccount if "accountId" is provided (expects a valid int64)
-
-        - FindAll for paginated results if no filter is provided
-
-        Returns a JSON response with the paginated teams or an error message with the appropriate HTTP status code.
+        Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
+        Returns a JSON response containing the paginated fleets or an error message.
       parameters:
       - description: 'Page number (default: 1)'
         in: query
@@ -1028,29 +949,56 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/service.PaginatedTeams'
+            $ref: '#/definitions/service.PaginatedFleets'
         "500":
           description: Internal Server Error
           schema: {}
-      summary: List teams with pagination
+      summary: List fleets with pagination
       tags:
-      - Team
+      - Fleet
+  /fleets/teams/{teamId}:
+    get:
+      description: |-
+        FindByTeam handles HTTP GET requests to retrieve fleet records associated with a specific team.
+        It expects the team ID as a URL parameter, validates it, and returns a paginated list of fleets
+        belonging to that team. Returns appropriate HTTP status codes and error messages for invalid
+        team IDs or if no fleets are found.
+      parameters:
+      - description: Team ID
+        in: path
+        name: teamId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/service.PaginatedFleets'
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Get fleets by team ID
+      tags:
+      - Fleet
+  /team:
     post:
       consumes:
       - application/json
       description: |-
         Create handles the HTTP request to create a new team.
         It parses the request body into a CreateTeamDTO, validates the input,
-        and delegates the creation logic to the teamService. If successful,
-        it returns the created team with HTTP 201 status. On error, it responds
-        with HTTP 422 and an error message.
+        and calls the team service to create the team. On success, it returns
+        the created team with HTTP 201 status. On error, it returns an appropriate
+        HTTP error status and message.
       parameters:
       - description: Team Data
         in: body
         name: team
         required: true
         schema:
-          $ref: '#/definitions/httpserver.CreateTeamDTO'
+          $ref: '#/definitions/dto.CreateTeamDTO'
       produces:
       - application/json
       responses:
@@ -1067,10 +1015,9 @@ paths:
   /team/{id}:
     delete:
       description: |-
-        Delete handles HTTP DELETE requests to remove a team by its ID.
+        Delete handles HTTP DELETE requests to remove a team resource by its ID.
         It parses the "id" parameter from the request URL, validates it, and calls the teamService.Delete method.
-        If the ID is invalid, it returns a 422 Unprocessable Entity with an error message.
-        If the deletion fails, it also returns a 422 status with the error message.
+        If the ID is invalid or the deletion fails, it returns a 422 Unprocessable Entity status with an error message.
         On successful deletion, it returns a 200 OK status with an empty response body.
       parameters:
       - description: Team ID
@@ -1091,11 +1038,11 @@ paths:
       - Team
     get:
       description: |-
-        FindOne handles HTTP GET requests to retrieve a team by its ID.
+        FindOne handles HTTP requests to retrieve a single team by its ID.
         It parses the "id" parameter from the request URL, validates it, and calls the teamService to fetch the team.
-        If the ID is invalid, it responds with a 422 Unprocessable Entity status and an error message.
-        If the team is not found, it responds with a 404 Not Found status and an error message.
-        On success, it returns the team data with a 200 OK status.
+        If the ID is invalid, it returns a 422 Unprocessable Entity response.
+        If the team is not found, it returns a 404 Not Found response.
+        On success, it returns the team data with a 200 OK response.
       parameters:
       - description: Team ID
         in: path
@@ -1119,10 +1066,11 @@ paths:
       consumes:
       - application/json
       description: |-
-        Update handles the HTTP PUT request to update an existing team.
+        Update handles the HTTP PUT request to update an existing team entity.
         It parses the team ID from the URL parameters, validates the request body,
-        and updates the team using the provided service. Returns the updated team
-        as JSON on success, or an appropriate error message and status code on failure.
+        and updates the team using the provided service. Returns appropriate HTTP
+        status codes and error messages for invalid input, validation errors, or if
+        the team is not found.
       parameters:
       - description: Team ID
         in: path
@@ -1134,7 +1082,7 @@ paths:
         name: team
         required: true
         schema:
-          $ref: '#/definitions/httpserver.UpdateTeamDTO'
+          $ref: '#/definitions/dto.UpdateTeamDTO'
       produces:
       - application/json
       responses:
@@ -1151,14 +1099,69 @@ paths:
       summary: Update a team
       tags:
       - Team
-  /team/account/{accountId}:
+  /teams:
     get:
       description: |-
-        FindByAccount handles HTTP requests to retrieve teams associated with a specific account.
-        It expects an "accountId" parameter in the URL path, parses it as an int64, and uses the teamService
-        to fetch the corresponding teams. If the account ID is invalid, it returns a 422 Unprocessable Entity error.
-        On service errors, it returns a 500 Internal Server Error. On success, it responds with the list of teams
-        and a 200 OK status.
+        FindAll handles HTTP GET requests to retrieve team records with optional filtering and pagination.
+        It supports filtering by either "ulid" or "accountId" query parameters, but not both simultaneously.
+        If both filters are provided, it returns a 400 Bad Request error.
+        Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
+        Returns a JSON response containing the paginated teams or an error message.
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Page size (default: 10, max: 100)'
+        in: query
+        name: page_size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/service.PaginatedTeams'
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: List teams with pagination
+      tags:
+      - Team
+  /teams/{teamId}/drivers:
+    get:
+      description: |-
+        FindDrivers handles HTTP GET requests to retrieve driver records associated with a specific team.
+        It expects the team ID as a URL parameter, validates it, and returns a paginated list of drivers
+        belonging to that team. Returns appropriate HTTP status codes and error messages for invalid
+        team IDs or if no drivers are found.
+      parameters:
+      - description: Team ID
+        in: path
+        name: teamId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/service.PaginatedDrivers'
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Get drivers by team ID
+      tags:
+      - Team
+  /teams/accounts/{accountId}:
+    get:
+      description: |-
+        FindByAccount handles HTTP GET requests to retrieve team records associated with a specific account.
+        It expects the account ID as a URL parameter, validates it, and returns a paginated list of teams
+        belonging to that account. Returns appropriate HTTP status codes and error messages for invalid
+        account IDs or if no teams are found.
       parameters:
       - description: Account ID
         in: path
@@ -1171,13 +1174,11 @@ paths:
         "200":
           description: OK
           schema:
-            items:
-              $ref: '#/definitions/model.Team'
-            type: array
-        "500":
-          description: Internal Server Error
+            $ref: '#/definitions/service.PaginatedTeams'
+        "422":
+          description: Unprocessable Entity
           schema: {}
-      summary: List teams by account
+      summary: Get teams by account ID
       tags:
       - Team
 swagger: "2.0"

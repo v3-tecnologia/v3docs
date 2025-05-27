@@ -1,11 +1,11 @@
 ---
 id: get-a-device-by-imei
 title: "Get a device by IMEI"
-description: "FindByIMEI handles HTTP GET requests to find a device by its IMEI."
+description: "FindByIMEI handles HTTP requests to retrieve a single device by its IMEI."
 sidebar_label: "Get a device by IMEI"
 hide_title: true
 hide_table_of_contents: true
-api: eJzdVUtv1DAQ/isjn0Ba7S7Q094KfVDoS2WXS1utnGSycUlsYzurLlF+DOLAD+kfYyZJH2lTJG4Vl8Qez+ObGc/nSiToY6dsUEaLmdhTOnm/OTjaPYBM6iRHDx/n81PY352Dw+8l+uAhGEhJDyQkuFYxQrQBRXI2G1/ogwB4HZyMWTXDRgypM0WzW5wdgpVOFhjQ+RGQT6ew1ezceXT8H11ogkBhQ+l0T0Hp1LhCMmZaw6cvJ8fQSsZiJO69i9l59SjBndYDYyJVxSIrQ0ZrTUa0UwUq2nGyymEiZsGVOBI+zrCQYlaJsLGs54NTeiXq+pKVvTXao+fzt9Mp//phTz6Tz9jogDrwqbQ2V3GTweTKs0r1IIR1xqILqnUoy2A42XjpMDYrrVqfd0giY3KUWtQUga1SdoxLlQygJRWHdJosZXgaKSguwYDRWuatu35WX1kMinpDNQKVwpwc8F6bAMeLw0NK+jHI+k5koiuMA7tPMMeXhinNEUO/iIrat0LHpyqOn6nvsxZ8r4YMCkPpD57YzGhc6rKIyMWQQpk/A6K0yQtr8oCEZVvTracRj8nxnil18g8zU7f+glzx1HdjLmg2iQkyQ2mJFYaGHGjYZ2LSMsmEuzKp+FvTIRPPLW2ULme9yfqdJxaKzPU4NoXgaWf24dgMjUiOg48eZbDdIL35ffPLABawfwIdRdz8XGMO1jgSUF1/SAcGPpwtdiCRHohdXUlsR8tIemQyCyrkXLUjqeUKCyoFbJ8ydTHQNth0PB2/ae6L8aGQTV06MtvH0GPpjvZ6YKv7Gv8X9N9ds0AgJjaXqiHGpptV1/1z0ToSo1u2nzV/6m1GJWSFquIGLFxe1yxmlBuSX/KUOCUj7gm/Lcrzmq5XKnOPf6nsq7PuQXkN/SdoEG4nlHojmrkseUfLb7i5faLqS9LLUCbMDQSlPdqOY7ThgdGToakfzgT1lQbxDxDuwA4=
+api: eJztVM1uEzEQfhXLJ5CiJJSeciv0h6qUVKU5tVXkeCdZF6+92LOhYbUPgzjwIH0xZnY3zYamlbhx4JJ45+ebz+NvppQJRB1MjsY7OZLHxiXvVqfnR6ciVS6xEMWHq6sLEeBrARGjQE9nDAaWIJSIxi0siASWRoOYrYShEM7u37hTFLkKkRAwBXEjTQbmRrJNZYAQxDz4rPa14GJy+bEnlsqaRCGlGewJ4iC0srYBaep8hlCXIypzQJ12XFx2Xn/XVzAE4mrAHqEx8SK4SLz39/bExOXBa4hRzegKRw4Nrigk5t7FDlB7N4JyHsXcF+4J2HBffCLfMfu6CGMnYqG5xFZGB5UuqsQ3gynB7A2HYny2yZc9+dirKEfX5R9PddhA8EUp1LApV5jS2VESfXHD6Yu7awIkcoShgJ6MOoVMyVEpcZVzXKTndAtZVbcc3FSP7CdG/LdddnxGmNo7BIfsVXlujVbsHdxFDik7JajFOQQ0DaAq0GcUqqcBtF8402A+Mpl5b0E5WVGFACSCZKpwB9MecbLwgntuAXBqko7TEOMFBPYarbdcm7xnM7iVuxIyT0x2evLUO5i6IpsRxK6Awj5DosiT569O/tbiZ3egkSxsIw0+fapHUf7Fi1UNHqoFa64VmSRlkA5TT4TlArCWJkltJAeNkAfcoEHJvxU5I03oWrRFsBw3WL6NNMwzf9/XPpOsNePmnmszNaWZWv2w3Rsc1Ewffj389AIycTJej8fDjyVYkftABprv7yoIL95fTg5ppKKgZRIKGjY6zlQzSjTdlrt2rpxaQEatEAcXPDhMtCk27A/7b+qn8xEzVfelHaUTQJrQzZprh26LbLnp8f81+k+t0XZgEO5xkFtl6gVT67JsdXwtGyTZW2/NUf1PKk1JDBxQliylSbBVxWZqdViRnY5LFQxfvtnRpm4EDcpc2QgvaOTVZbuYX4vtVb6TbmtUbsWaVbbgLzp+gdV61Ve3FJeCSnjhEJXGdUCdy7GT9GT8q+50nxxd0Ur5DVLCyNk=
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -36,9 +36,11 @@ import Heading from "@theme/Heading";
 
 
 
-FindByIMEI handles HTTP GET requests to find a device by its IMEI.
-It extracts the IMEI from the URL parameters, queries the device service,
-and returns the device information in JSON format.
+FindByIMEI handles HTTP requests to retrieve a single device by its IMEI.
+It parses the "imei" parameter from the request URL, validates it, and calls the deviceService to fetch the device.
+If the IMEI is invalid, it returns a 422 Unprocessable Entity response.
+If the device is not found, it returns a 404 Not Found response.
+On success, it returns the device data with a 200 OK response.
 
 <Heading
   id={"request"}
@@ -64,7 +66,7 @@ and returns the device information in JSON format.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"created_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"deleted_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"},"fleet_id":{"type":"integer"},"iccid":{"type":"string"},"id":{"type":"integer"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"properties":{"time":{"type":"string"},"valid":{"description":"Valid is true if Time is not NULL","type":"boolean"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"fleet_id":{"type":"integer"},"iccid":{"type":"string"},"id":{"type":"integer"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
 >
   
 </StatusCodes>

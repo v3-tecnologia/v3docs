@@ -5,7 +5,7 @@ description: "AssignToTeam handles the HTTP request to assign a driver to a team
 sidebar_label: "Assign driver to team"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVMtuEzEU/RXLK6hCEgqr7EpbQSVQq5Cu0go5M5fEZcYebE9IGc3HIBZ8SH+Mc+1JO2mqbtnQReq5Pvd5jm8jc/KZ01XQ1siJPPJeL83MzkiVYqVMXpAXYUXiw2x2IRx9r8kHEaxQESiUyJ1ek4smEeA1vDJnQdCmoiwk1w5xdgIngC6nH0WlnCopwIoUEcSuXdCSTBC5CkpoE++2aRc2v0X4GUxwXtlcrFWhgaRHiQacwMPK0Xcx/ViDeJ9TQcv7+4cSroytyCkeDHfXS+DJrXVGQzGlUDuDNFXlbOU0oqRB+aBC7UVm866IkrxXS3wslKdc2NSYrUNmSxrKgbyfiJeTefOIlZNtYwBqNlQqrHA2cMGXznHmxrSjXE6Cq2kgfbaiUslJI8NtFVEm0JKcbNvrhMYY3mEKDMksLk3gI3opdBbbHt14Tt/0YnGf5IImHyODtC/I/lSSfkXzeyRSd0i7uIFCAARyt9uovRPwv9dVDOora3zKfzge878nh5WIxKyZO0REsF6XB6OD3ca6qnxw2iy5KuR6e3i4H/7SYAYZ07koSJyaoMPt87HbFC2oJXPb1ceTSCJmOq0PUQNgdSJHSWajRuftqCudJbfVRu0KRo3WbzyktbCbIUQkmVXma/rA7OlGlVVBO0yNW5bQV7tlXWVc8x4HR1EEd3/ufltBpXh/LrrB3/1aUyEq62DAw/qpnLDieHp5ghfrBRK7Gm9CJaGzsDEfLkF+UgYPIL7to4szXHA/Kdl4OB6+lqiB51CqKLlO2mkf9ZZMN4+danv6/b/A/tUC6x5QoE0YVYXCmgKhUapNJ+y5TOkBnsSVFbmEbFcsf1w3DQe/dEXbshl9OmynOY5rhdoWrCPejTq+PYj5qyo8PSOGF9NufbwU/RX6ZKmdURl+zRh5zV84fqPbtGLba6BWpHJ0wGWki+OU7NWM3R8c97ZoO9h6HGUZVaGH5X3R9tfBxfnnGe4X3XIuQQKsTv3ghYjfWJeN/cY1GG2NLJRZ1uAI9ykl//0F8DO+rg==
+api: eJztVc1y0zAQfhWNTsCEJBROuYW2A52BoRPSU8swir1NBLZkJDm0ePwwDAcepC/Gt5LdOk3plQs5ONL+/3y7amROPnO6CtoaOZNz7/XaLO2SVCk2yuQFeRE2JN4ul6fC0beafBDBChUFhRK501tykSQCtMYX5iQIuqooC0m1kzg5ghKEzhbvRKWcKimAChdRiFU7oyWZIHIVlNAm8nq3K5tfw/wSJChvbC62qtCQpHuORuzAg8rWd2WGtkaRn1NB61v+XQgXxlbkFBeGsxs48OS2OqOxWFConYGbqnK2chpWUqF8UKH2IrN5F0RJ3qs1LivlKRc2JWbrkNmSxnIkbyvi5ey8udeVoz4xCGomVCpscDZQwU3nOHNi2lEuZ8HVNJI+21Cp5KyR4bqKUibQmpxs209JGmV4jSqwSGbBNIGPyKXQWUx78sWz+2Zgi/MkFzT5qOYIKeefVRj48cFps5btSHJlH2PHrD4j+geCHMm/0Rkpf1Wqix1O74zVEsWuvgCYoMT4hkWOkD8C7PaK2TLBV9b4lPbBdMp/D/Yo4QctZsjAIowNivts8my3nvfj5LBeHRzsmz8zKH3GKFoVJI5N0OH6cdttshbUmiHVxSfR+zQ7jCLrQ4QewDSTk9SPSZP+T/J2wglMGv7iBkkGfo/Q2hWsNNm+9AD4yl6NAWXJ2GLULO7wdXylyqqg+3jpc96FyYB6h45pAsN00Ptp3+oBnrS5tD2YVcY12evxPGL75vfNLyuoFG8+iK6xNz+3VIjKOhCwL34oJ6w4XJwdYRF5gUxcjVFXaX55XlF/zkm+VwZzHVfW/PQEDC5QcjYdT8cvODCuc6niJHUTm9bsYHd2UNmJdjCW//fyv9rL3YAGugqTqlDYvrxlGPtNNzjnHVQhPOtHRyaoMilND8/dhscN4k3Dzs5c0bZMRt4OS/gcx61CrCvGFT8BOs46MH6pCk+PgOPJoltXT8XwpXgw9I6oDG8PtKDmG45f6Tq9JO0nSG1I5ciIw0iMw+Ts+ZLV7xT3Hot21GvMs4yqMJDl/dQO18/ph49L8FfdG1SiKaA69Z0XML4xLhvzjWs30hpZKLOu0TPwk0v+/QGQkQ1q
 sidebar_class_name: "post api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"post"}
-  path={"/driver/{id}/team"}
+  path={"/driver/{driverId}/team/{teamId}"}
   context={"endpoint"}
 >
   
@@ -57,7 +57,7 @@ operation to the driver service. Returns appropriate HTTP status codes and messa
 
 <RequestSchema
   title={"Body"}
-  body={{"content":{"application/json":{"schema":{"properties":{"team_id":{"type":"integer"}},"required":["team_id"],"type":"object"}}},"description":"Team Data","required":true}}
+  body={{"content":{"application/json":{"schema":{"properties":{"created_at":{"type":"string"},"deleted_at":{"type":"string"},"driver_id":{"type":"integer"},"id":{"type":"integer"},"team_id":{"type":"integer"},"ulid":{"type":"string"}},"type":"object"}}},"description":"Team Data","required":true}}
 >
   
 </RequestSchema>

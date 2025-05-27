@@ -5,7 +5,7 @@ description: "Delete handles HTTP DELETE requests to remove a fleet resource by 
 sidebar_label: "Delete a fleet"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVMtu2zAQ/JUFT21g2G7ak29B7bZGUyRIk1OcAy2tLaIUqZKUG9fQxxQ99EPyY52VlPfjXqAnUeRydjg7uzuVc8yCqZLxTk3UlC0npkK73HKkT6enxzSdHc5OZxT4e80xRUoe69JvmDStLHPCb/R1yJiWWzKImE+HCzdPVOkQgZIKpoUy+ULJji6RIdAq+LI96XHp7ORwQBttTa4TLpk0ILCgTFvbQbS5vnLYmIyHPVFgFT6XbKs2Zj4lg7uuxRkARLhV3uWRfphUdA96t79PZ64KPuMY9dIyzVwyadvm0444BB8AjcM132LnkhIy0UobG1twbaN/LoOAybV7aLfPjv1DFu7IUawz4bKq7U2W58jvj8d09PmGalmB99Ln26EaqBt1o5qc7x6U9kNbqvkUcUb+K50KrB1u4M/kWEspTOBcTVKoeaBiVnCp1WSn0rZqo1ziNQfVNBcSLeRQYAkALfk8lbIzi+BnHvddksC90Z58HmWIKRi3RoKmGSjI+Bj0qcq9jN10aEmvRZeOlcIDOvMAstWcWwGhyUSNWquNdiZvsCmVupa0DlbOR5u3ERVY+sth5kslahi38pJVeOhMeCDlfeYHlTWZvvpz9dujcPTxqK9vvPq1YUsVbBIYxv2pA3l6f3I2pVxHQnOEOtUBy6WOLIXGm62o9UU7mKrEu+ngeI4DIdolGw/HwzcKHCofU6mdcOtr3fdO373qAc3drZT/x8E/PQ76lkp8mUaV1eh62KF18K53+rm6tsAEAwAuLmAW2d7txGpnwTaNbKMkYYt9LDc6GBGpmzCmFQw9tMLb+QUnvTrpZ8trujOInmTYb2onbY3K1fKH5TfedoOquUBUwTrHJBIW3cEBNKvSnSsyBpq7bd45F7PlLwLPYj8=
+api: eJztVMFy0zAQ/ZUdnaCTSULhlFuHBMhQpp3SnNoeFHsTa5AlI8mhweOPYTjwIf0x3tpuKW2nVy6cLK9Wb5/evlWjco5ZMFUy3qmZmrPlxFRol1uO9OH8/JTmi+PF+YICf605pkjJY136HZOmjWVO+I2+DhnTek8GGcv5+NItE1U6RKCkgulSmfxSSUSXqBBoE3zZ7Qy4tDo7HtFOW5PrhEMmjQgsKNPW9hBdrc8cdibj8UAUWIXPpdqmy1nOyeCs63DIhy6YSy7uRxttbBwBGkVTHVzEDd4cHtLKVcFnHKNeW6aFSybtKSad6kjfTCpAhDgEwJWStGUUPHEU60wObWp7V+IB+OF0SicfH0GVFfAhWuVdhGg+34/VSN1pE9XsonnQmHed0Ms58oz8VzoVWDucwJ/JsRYhTeBczVKoeaRiVnCp1axRaV91WS7xloNq2yvJ7stHSQBP+TxVsm+14Gce512SxIPJgXweVYgpGLdFgbYdKSj7GPQpqZ/Hbnu0pLeiS89K4QJ96wHZac+dgNBkpiadUSaNyVsEIwxzK2kdrOxPdq8jrLX21+PMl0rUMG7jparw0JnwQMm/mR9V1mT65tfNT48O0vuT2w7e/NixpQruCAzbfdeBPL09W80p15Fg7VDDD1iudWRpNO5sRa1P2sFLJe5NR6dLbAjRvth0PB2/UuBQ+ZhK7YTb0OvB+cPsqQc0mz9S/h/mfzjMw0Akvk6TymrMLJrZ+a8ZfHqhbhs4w/jCgwVaLeGmEaOsgm1bCUPQsEccy50ORm7Vvw+muyEmYKNt5Gd88OJseBle0r1n5EmGQ1A7GUroXssfll943z8z7RWyCtY53hFh0W8cQbsq3TsiQ9zeH9Led3gZfgN2JTdn
 sidebar_class_name: "delete api-method"
 info_path: docs/openapi/managements/management-api
 custom_edit_url: null
@@ -38,9 +38,8 @@ import Heading from "@theme/Heading";
 
 Delete handles HTTP DELETE requests to remove a fleet resource by its ID.
 It parses the "id" parameter from the request URL, validates it, and calls the fleetService.Delete method.
-If the ID is invalid, it responds with HTTP 422 Unprocessable Entity and an error message.
-If the deletion fails, it also responds with HTTP 422 and the error message from the service.
-On successful deletion, it responds with HTTP 200 OK and an empty body.
+If the ID is invalid or the deletion fails, it returns a 422 Unprocessable Entity status with an error message.
+On successful deletion, it returns a 200 OK status with an empty response body.
 
 <Heading
   id={"request"}
