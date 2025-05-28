@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:is([data-theme="dark"] *));
@@ -13,6 +14,11 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-footer-background-color: #292629;
+
+  font-family: "Exo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 @theme {
@@ -41,6 +47,13 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Exo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
 .navbar__logo {
   height: 25px;
   width: 45px;
@@ -54,4 +67,17 @@
 .footer__link-item, .navbar__link {
   display: flex;
   align-items: center;
+}
+
+ol, ul, menu {
+  list-style: disc;
+}
+
+.menu__list {
+  list-style: none;
+}
+
+.table-of-contents ul, 
+.table-of-contents li {
+    list-style: none;
 }
