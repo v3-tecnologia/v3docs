@@ -6,6 +6,9 @@ import styles from "./index.module.css";
 export default function Home(): ReactNode {
   return (
     <Layout description="Bem-vindo ao V3 Docs - A documentação oficial da V3">
+      <div className="bg-primary-darkest">
+        <span className="text-primary">Testeee</span>
+      </div>
       <main>
         <div className="container">
           <div className="row">
