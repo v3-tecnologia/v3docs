@@ -1,1 +1,121 @@
-"use strict";(self.webpackChunkv3_docs=self.webpackChunkv3_docs||[]).push([[4583],{30623:(e,o,s)=>{s.r(o),s.d(o,{default:()=>r});var a=s(36668);const i={heroBanner:"heroBanner_qdFl",heroTitle:"heroTitle_qg2I",buttons:"buttons_AeoN",introText:"introText_PBmw"};var n=s(74848);function r(){return(0,n.jsx)(a.A,{description:"Bem-vindo ao portal do desenvolvedor que quer integrar com a V3",children:(0,n.jsx)("main",{children:(0,n.jsx)("div",{className:"container",children:(0,n.jsx)("div",{className:"row",children:(0,n.jsx)("div",{className:"col col--12",children:(0,n.jsxs)("div",{className:i.introText,children:[(0,n.jsx)("img",{src:"/img/logo-destaque.png",alt:"V3 Logo"}),(0,n.jsx)("h2",{children:"Bem-vindo ao portal do desenvolvedor que quer integrar com a V3"}),(0,n.jsx)("p",{children:"Este \xe9 o ambiente de desenvolvimento da V3, onde voc\xea encontrar\xe1 todas as informa\xe7\xf5es necess\xe1rias para integrar e utilizar nossos servi\xe7os."}),(0,n.jsx)("p",{children:"Nosso portal est\xe1 organizado em tr\xeas principais se\xe7\xf5es:"}),(0,n.jsxs)("ul",{children:[(0,n.jsxs)("li",{children:[(0,n.jsxs)("strong",{children:[(0,n.jsx)("a",{href:"/blog",children:"Blog"})," -"]})," ","\xc9 o espa\xe7o onde nosso time de tecnologia compartilha conhecimentos sobre as tecnologias que utilizamos, tend\xeancias de mercado, inova\xe7\xf5es que estamos acompanhando, e como solucionamos os desafios t\xe9cnicos da V3, incluindo projetos experimentais e provas de conceito."]}),(0,n.jsxs)("li",{children:[(0,n.jsxs)("strong",{children:[(0,n.jsx)("a",{href:"/docs/documentation/intro",children:"Documenta\xe7\xe3o"})," -"]})," ","Guia estruturado em m\xf3dulos sequenciais para compreender e implementar o ecossistema V3. A jornada inclui: conhecendo a V3, nossa solu\xe7\xe3o, configura\xe7\xe3o inicial, autentica\xe7\xe3o e tokens, permissionamento, gest\xe3o de dispositivos, webhooks e integra\xe7\xf5es, e ferramentas operacionais para sua opera\xe7\xe3o di\xe1ria."]}),(0,n.jsxs)("li",{children:[(0,n.jsxs)("strong",{children:[(0,n.jsx)("a",{href:"docs/category/orders-api",children:"API"})," -"]})," ","Documenta\xe7\xe3o t\xe9cnica detalhada de todas as APIs dispon\xedveis para integra\xe7\xe3o com a V3, incluindo autentica\xe7\xe3o, gerenciamento de pedidos, eventos e recursos administrativos. Cada endpoint \xe9 apresentado com exemplos pr\xe1ticos, par\xe2metros necess\xe1rios e respostas esperadas."]})]}),(0,n.jsx)("p",{children:"Nossa API foi projetada para ser intuitiva, segura e escal\xe1vel, permitindo que voc\xea desenvolva solu\xe7\xf5es robustas e eficientes. Explore nossa documenta\xe7\xe3o e descubra como a V3 pode impulsionar seus projetos."}),(0,n.jsx)("h2",{children:"Ficou com alguma d\xfavida?"}),(0,n.jsxs)("p",{children:["Entre em contato conosco atrav\xe9s do e-mail:"," ",(0,n.jsx)("a",{href:"mailto:suporte@v3.com.br",children:"suporte@v3.com.br"})]})]})})})})})})}}}]);
+"use strict";
+(self.webpackChunkv3_docs = self.webpackChunkv3_docs || []).push([
+  [4583],
+  {
+    30623: (e, o, s) => {
+      s.r(o), s.d(o, { default: () => r });
+      var a = s(36668);
+      const i = {
+        heroBanner: "heroBanner_qdFl",
+        heroTitle: "heroTitle_qg2I",
+        buttons: "buttons_AeoN",
+        introText: "introText_PBmw",
+      };
+      var n = s(74848);
+      function r() {
+        return (0, n.jsx)(a.A, {
+          description:
+            "Bem-vindo ao portal do desenvolvedor que quer integrar com a V3",
+          children: (0, n.jsx)("main", {
+            children: (0, n.jsx)("div", {
+              className: "container",
+              children: (0, n.jsx)("div", {
+                className: "row",
+                children: (0, n.jsx)("div", {
+                  className: "col col--12",
+                  children: (0, n.jsxs)("div", {
+                    className: i.introText,
+                    children: [
+                      (0, n.jsx)("img", {
+                        src: "/img/logo-destaque.png",
+                        alt: "V3 Logo",
+                      }),
+                      (0, n.jsx)("h2", {
+                        children:
+                          "Bem-vindo ao portal do desenvolvedor que quer integrar com a V3",
+                      }),
+                      (0, n.jsx)("p", {
+                        children:
+                          "Este \xe9 o ambiente de desenvolvimento da V3, onde voc\xea encontrar\xe1 todas as informa\xe7\xf5es necess\xe1rias para integrar e utilizar nossos servi\xe7os.",
+                      }),
+                      (0, n.jsx)("p", {
+                        children:
+                          "Nosso portal est\xe1 organizado em tr\xeas principais se\xe7\xf5es:",
+                      }),
+                      (0, n.jsxs)("ul", {
+                        children: [
+                          (0, n.jsxs)("li", {
+                            children: [
+                              (0, n.jsxs)("strong", {
+                                children: [
+                                  (0, n.jsx)("a", {
+                                    href: "/blog",
+                                    children: "Blog",
+                                  }),
+                                  " -",
+                                ],
+                              }),
+                              " ",
+                              "\xc9 o espa\xe7o onde nosso time de tecnologia compartilha conhecimentos sobre as tecnologias que utilizamos, tend\xeancias de mercado, inova\xe7\xf5es que estamos acompanhando, e como solucionamos os desafios t\xe9cnicos da V3, incluindo projetos experimentais e provas de conceito.",
+                            ],
+                          }),
+                          (0, n.jsxs)("li", {
+                            children: [
+                              (0, n.jsxs)("strong", {
+                                children: [
+                                  (0, n.jsx)("a", {
+                                    href: "/docs/docs/intro",
+                                    children: "Documenta\xe7\xe3o",
+                                  }),
+                                  " -",
+                                ],
+                              }),
+                              " ",
+                              "Guia estruturado em m\xf3dulos sequenciais para compreender e implementar o ecossistema V3. A jornada inclui: conhecendo a V3, nossa solu\xe7\xe3o, configura\xe7\xe3o inicial, autentica\xe7\xe3o e tokens, permissionamento, gest\xe3o de dispositivos, webhooks e integra\xe7\xf5es, e ferramentas operacionais para sua opera\xe7\xe3o di\xe1ria.",
+                            ],
+                          }),
+                          (0, n.jsxs)("li", {
+                            children: [
+                              (0, n.jsxs)("strong", {
+                                children: [
+                                  (0, n.jsx)("a", {
+                                    href: "docs/category/orders-api",
+                                    children: "API",
+                                  }),
+                                  " -",
+                                ],
+                              }),
+                              " ",
+                              "Documenta\xe7\xe3o t\xe9cnica detalhada de todas as APIs dispon\xedveis para integra\xe7\xe3o com a V3, incluindo autentica\xe7\xe3o, gerenciamento de pedidos, eventos e recursos administrativos. Cada endpoint \xe9 apresentado com exemplos pr\xe1ticos, par\xe2metros necess\xe1rios e respostas esperadas.",
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, n.jsx)("p", {
+                        children:
+                          "Nossa API foi projetada para ser intuitiva, segura e escal\xe1vel, permitindo que voc\xea desenvolva solu\xe7\xf5es robustas e eficientes. Explore nossa documenta\xe7\xe3o e descubra como a V3 pode impulsionar seus projetos.",
+                      }),
+                      (0, n.jsx)("h2", {
+                        children: "Ficou com alguma d\xfavida?",
+                      }),
+                      (0, n.jsxs)("p", {
+                        children: [
+                          "Entre em contato conosco atrav\xe9s do e-mail:",
+                          " ",
+                          (0, n.jsx)("a", {
+                            href: "mailto:suporte@v3.com.br",
+                            children: "suporte@v3.com.br",
+                          }),
+                        ],
+                      }),
+                    ],
+                  }),
+                }),
+              }),
+            }),
+          }),
+        });
+      }
+    },
+  },
+]);

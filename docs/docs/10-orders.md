@@ -6,6 +6,10 @@ sidebar_position: 10
 
 O Sistema de Orders é uma ferramenta que permite enviar comandos e configurações para dispositivos em campo de forma simples e eficiente. É como um "controle remoto" que permite gerenciar e monitorar seus dispositivos remotamente.
 
+## 🔌 Link da API
+
+Caso queira acessar diretamente a documentação da API de Orders, [clique aqui](/docs/category/orders-api).
+
 ## 🎯 Para que serve?
 
 - 📤 Enviar comandos para dispositivos (como reiniciar, solicitar imagens ou vídeos)

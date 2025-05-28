@@ -6,6 +6,10 @@ sidebar_position: 13
 
 Este documento descreve o sistema de notificações via webhook, uma solução que permite a comunicação em tempo real entre diferentes sistemas através de notificações HTTP. O sistema foi projetado para ser seguro, confiável e fácil de integrar.
 
+## 🔌 Link da API
+
+Caso queira acessar diretamente a documentação da API de Notificações, [clique aqui](/docs/category/notifications-webhook).
+
 ## 🤔 O que são Webhooks?
 
 Webhooks são uma forma de comunicação entre sistemas onde um sistema (o remetente) envia automaticamente uma notificação HTTP para outro sistema (o destinatário) quando um evento específico ocorre. É como um "callback" na web - quando algo acontece no sistema remetente, ele "chama" o sistema destinatário para informar sobre o evento.

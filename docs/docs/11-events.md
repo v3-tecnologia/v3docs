@@ -6,6 +6,10 @@ sidebar_position: 11
 
 O Contexto de events é o coração do sistema de video-telemetria da V3. Ela é responsável por gerenciar todos os eventos que acontecem com os dispositivos em campo, como posição GPS, dados do acelerômetro, identificação do condutor e comportamentos inadequados.
 
+## 🔌 Link da API
+
+Caso queira acessar diretamente a documentação da API de Eventos, [clique aqui](/docs/category/events-api).
+
 ## ❓ O que são Events?
 
 Events são registros de tudo o que acontece com um dispositivo em campo. Eles podem ser classificados em três categorias principais:

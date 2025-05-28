@@ -13,14 +13,6 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-footer-background-color: #292629;
-
-  ol, ul, menu {
-    list-style: disc;
-  }
-
-  .menu__list {
-    list-style: none;
-  }
 }
 
 @theme {
@@ -62,4 +54,17 @@
 .footer__link-item, .navbar__link {
   display: flex;
   align-items: center;
+}
+
+ol, ul, menu {
+  list-style: disc;
+}
+
+.menu__list {
+  list-style: none;
+}
+
+.table-of-contents ul, 
+.table-of-contents li {
+    list-style: none;
 }

@@ -35,7 +35,7 @@ export default function Home(): ReactNode {
                   </li>
                   <li>
                     <strong>
-                      <a href="/docs/documentation/intro">Documentação</a> -
+                      <a href="/docs/docs/intro">Documentação</a> -
                     </strong>{" "}
                     Guia estruturado em módulos sequenciais para compreender e
                     implementar o ecossistema V3. A jornada inclui: conhecendo a

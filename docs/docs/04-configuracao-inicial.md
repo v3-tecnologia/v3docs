@@ -39,6 +39,8 @@ A V3 disponibiliza uma ferramenta customizada para configuração de dispositivo
 
 Você deverá receber essa ferramenta durante o processo de onboarding, enviada pelo nosso time de suporte.
 
+Para ver um passo a passo de como utilizar esta ferramenta, acesse [Ferramenta de Configuração](./06-ferramenta-de-configuracao.md).
+
 ## 📝 Dados Cadastrais
 
 Para iniciar o processo de configuração, é necessário fornecer informações detalhadas sobre sua empresa, dispositivos e usuários.
@@ -149,6 +151,8 @@ Estas informações são essenciais para:
 - **Nome da Rede** (`ssid`): Nome da rede
 - **Senha da Rede** (`pre_shared_key`): Senha da rede
 
+> Não se preocupe, nosso time de suporte irá acompanhar a coleta e inclusão destes dados!
+
 ## ⚙️ Setup Inicial
 
 Após o preenchimento dos dados cadastrais, você receberá:
@@ -200,3 +204,5 @@ Estas credenciais são essenciais para:
 - 📡 Configuração de webhooks
 - 🔐 Autenticação de dispositivos
 - 🔑 Acesso à API
+
+> Entre em contato com o nosso time de suporte para obter as suas credenciais de acesso, via [Suporte](mailto:suporte@v3.com.br)

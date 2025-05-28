@@ -1,1 +1,11 @@
-"use strict";(self.webpackChunkv3_docs=self.webpackChunkv3_docs||[]).push([[8737],{41718:o=>{o.exports=JSON.parse('{"categoryGeneratedIndex":{"title":"\ud83e\udde9 Solu\xe7\xe3o V3","slug":"/category/-solu\xe7\xe3o-v3","permalink":"/docs/category/-solu\xe7\xe3o-v3","sidebar":"documentationSidebar","navigation":{"previous":{"title":"\ud83c\udfaf Miss\xe3o, Vis\xe3o e Valores","permalink":"/docs/documentation/conhecendo-a-v3/02.04-missao-visao-valores"},"next":{"title":"\ud83c\udfd7\ufe0f Introdu\xe7\xe3o","permalink":"/docs/documentation/solucao-v3/introducao"}}}}')}}]);
+"use strict";
+(self.webpackChunkv3_docs = self.webpackChunkv3_docs || []).push([
+  [8737],
+  {
+    41718: (o) => {
+      o.exports = JSON.parse(
+        '{"categoryGeneratedIndex":{"title":"\ud83e\udde9 Solu\xe7\xe3o V3","slug":"/category/-solu\xe7\xe3o-v3","permalink":"/docs/category/-solu\xe7\xe3o-v3","sidebar":"docsSidebar","navigation":{"previous":{"title":"\ud83c\udfaf Miss\xe3o, Vis\xe3o e Valores","permalink":"/docs/docs/conhecendo-a-v3/02.04-missao-visao-valores"},"next":{"title":"\ud83c\udfd7\ufe0f Introdu\xe7\xe3o","permalink":"/docs/docs/solucao-v3/introducao"}}}}'
+      );
+    },
+  },
+]);

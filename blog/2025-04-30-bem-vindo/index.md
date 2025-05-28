@@ -1,55 +1,56 @@
 ---
 slug: bem-vindo
-title: Bem vindo
+title: Bem vindo ao Portal do Desenvolvedor V3
 authors: [diogo]
 tags: [v3-tecnologia]
 ---
 
-# Introdução à Documentação da API V3
+# Bem-vindo ao Portal do Desenvolvedor V3
 
-Bem-vindo à documentação oficial da API V3! Este é o seu guia completo para entender e utilizar todos os recursos disponíveis em nossa plataforma.
+É com grande satisfação que apresentamos o novo Portal do Desenvolvedor V3! Este portal foi construído com carinho para proporcionar a melhor experiência possível aos desenvolvedores que querem fazer parte do ecossistema V3.
 
-## O que é a API V3?
+## Tecnologias Utilizadas
 
-A API V3 é a mais recente versão da nossa interface de programação, desenvolvida com foco em:
+Nossa documentação foi desenvolvida utilizando:
 
-- **Simplicidade**: Interface intuitiva e fácil de usar
-- **Performance**: Respostas rápidas e eficientes
-- **Segurança**: Implementação das melhores práticas de segurança
-- **Escalabilidade**: Preparada para crescer com suas necessidades
+- **[Docusaurus](https://docusaurus.io/)**: Um framework moderno para criar documentação estática, desenvolvido pelo Meta Open Source. O Docusaurus oferece:
+  - **MDX**: Permite escrever documentação em Markdown com suporte a componentes React
+  - **Versionamento**: Suporte nativo para múltiplas versões da documentação
+  - **Internacionalização**: Preparado para traduções em diferentes idiomas
+  - **Busca Inteligente**: Integração com mecanismos de busca para facilitar a navegação
+  - **Tema Escuro**: Suporte automático para modo claro e escuro
+  - **Responsividade**: Layout adaptável para todos os dispositivos
 
-## Estrutura da Documentação
+- **GitHub Pages**: Hospedagem confiável e de alta performance para nossa documentação
 
-Nossa documentação está organizada em seções que cobrem todos os aspectos da API:
+## Propósito da Documentação
 
-1. **Guia de Início Rápido**: Comece a integrar em minutos
-2. **Referência da API**: Detalhes completos de todos os endpoints
-3. **Exemplos de Código**: Implementações práticas em várias linguagens
-4. **Boas Práticas**: Recomendações para uso eficiente
-5. **FAQ**: Respostas para dúvidas comuns
-   
-## Primeiros Passos
+Nossa documentação foi cuidadosamente estruturada para fornecer um guia completo sobre a V3. Ao navegar progressivamente pela aba Documentação você trilhará um caminho de entendimento sobre o que é a V3 e como seu time pode se integrar com a nossa solução.
 
-Para começar a usar a API V3, você precisará:
+## Nossa Equipe
 
-1. Criar uma conta na plataforma
-2. Obter suas credenciais de API
-3. Configurar seu ambiente de desenvolvimento
-4. Fazer sua primeira chamada à API
+Este portal é fruto do trabalho dedicado de nossa equipe:
 
-## Recursos Adicionais
+- **Ana Novaes** ([@anaclaudianovaes](https://github.com/anaclaudianovaes)) - Responsável pelo comercial da V3
+- **Enio Amarantes** ([@EnioAmarantes](https://github.com/EnioAmarantes)) - Desenvolvedor Cloud e FW
+- **Keven Lucas** ([@kevenmiano](https://github.com/kevenmiano)) - Desenvolvedor Cloud e DevOps
+- **Matheus Maroca** ([@MatheusMaroca](https://github.com/MatheusMaroca)) - Responsável pelo suporte
+- **Renascienza** ([@Renascienza](https://github.com/Renascienza)) - Desenvolvedor FW
+- **Sergio Imperatriz** ([@sjimperatriz](https://github.com/sjimperatriz)) - CTO
+- **Sleipnir** ([@sleipnir](https://github.com/sleipnir)) - Tech Lead
 
-Além desta documentação, oferecemos:
+Agradecemos a todos que contribuíram para a construção deste portal, compartilhando seu conhecimento e expertise para criar uma documentação completa e acessível.
 
-- **Suporte Técnico**: Nossa equipe está pronta para ajudar
-- **Fórum da Comunidade**: Compartilhe experiências com outros desenvolvedores
-- **Status da API**: Monitore a disponibilidade dos serviços
-- **Changelog**: Acompanhe as atualizações e novidades
+## Faça Parte do Nosso Time!
 
-## Próximos Passos
+Estamos sempre em busca de talentos para crescer junto conosco! Conheça nossas oportunidades:
 
-Recomendamos começar pela [documentação](/docs/documentation/intro) para configurar seu ambiente e fazer sua primeira chamada à API.
+- **Vagas Abertas**: Confira nossas posições disponíveis em [join-our-team](https://github.com/v3-tecnologia/join-our-team)
+- **Descrições das Posições**: Entenda melhor cada papel em nossa equipe em [job-descriptions](https://github.com/v3-tecnologia/job-descriptions)
+- **Desafio Técnico**: Conheça nosso processo seletivo em [challenge](https://github.com/v3-tecnologia/challenge)
+
+---
 
 Estamos constantemente melhorando nossa documentação. Se você encontrar algo que possa ser melhorado ou tiver sugestões, por favor, entre em contato conosco.
 
-Boa codificação! 🚀 
+Bora V3! 🚀

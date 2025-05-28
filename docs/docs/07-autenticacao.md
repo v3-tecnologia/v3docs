@@ -6,6 +6,10 @@ sidebar_position: 7
 
 Este documento fornece um guia entender e implementar a autenticação em nosso sistema. Utilizamos OAuth 2.0 com OpenID Connect para autenticação e autorização seguras.
 
+## 🔌 Link da API
+
+Caso queira acessar diretamente a documentação da API de Autenticação, [clique aqui](/docs/category/auth-api).
+
 ## Conceitos Principais
 
 ### OAuth 2.0
@@ -24,7 +28,7 @@ OpenID Connect é uma camada simples de identidade construída sobre o OAuth 2.0
 
 ### 1. Obtendo um Access Token
 
-Você já deve estar em posse das suas credenciais assim como ficou documentado em **Configuração Inicial**.
+Você já deve estar em posse das suas credenciais assim como ficou documentado em [Configuração Inicial](./04-configuracao-inicial.md).
 
 Para obter um token de acesso, você precisa fazer uma requisição POST com os seguintes parâmetros:
 

@@ -1,1 +1,413 @@
-"use strict";(self.webpackChunkv3_docs=self.webpackChunkv3_docs||[]).push([[6658],{19138:(e,o,s)=>{s.r(o),s.d(o,{assets:()=>t,contentTitle:()=>d,default:()=>m,frontMatter:()=>r,metadata:()=>a,toc:()=>c});const a=JSON.parse('{"id":"documentation/vision","title":"\ud83d\udc41\ufe0f Vision","description":"O contexto de vis\xe3o se prop\xf5e a ser a central de processamento dos eventos que chegam at\xe9 a V3CLOUD, para infer\xeancia de vis\xe3o computacional.","source":"@site/docs/documentation/12-vision.md","sourceDirName":"documentation","slug":"/documentation/vision","permalink":"/docs/documentation/vision","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":12,"frontMatter":{"sidebar_position":12},"sidebar":"documentationSidebar","previous":{"title":"\ud83d\udcc5 Events","permalink":"/docs/documentation/events"},"next":{"title":"\ud83e\ude9d Webhooks","permalink":"/docs/documentation/webhooks"}}');var n=s(74848),i=s(28453);const r={sidebar_position:12},d="\ud83d\udc41\ufe0f Vision",t={},c=[{value:"\ud83d\udd04 Fase 1 - Consolida\xe7\xe3o",id:"-fase-1---consolida\xe7\xe3o",level:2},{value:"\ud83d\udee0\ufe0f Fase 2 - Prepara\xe7\xe3o",id:"\ufe0f-fase-2---prepara\xe7\xe3o",level:2},{value:"\u2699\ufe0f Fase 3 - Pipeline",id:"\ufe0f-fase-3---pipeline",level:2},{value:"\ud83d\udd0c API de Vis\xe3o",id:"-api-de-vis\xe3o",level:2},{value:"\ud83d\udce1 Como consumir os dados de vis\xe3o?",id:"-como-consumir-os-dados-de-vis\xe3o",level:2},{value:"\ud83d\udd04 Fluxo de Exemplo (Ponta a Ponta)",id:"-fluxo-de-exemplo-ponta-a-ponta",level:2}];function l(e){const o={code:"code",h1:"h1",h2:"h2",header:"header",li:"li",ol:"ol",p:"p",strong:"strong",ul:"ul",...(0,i.R)(),...e.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(o.header,{children:(0,n.jsx)(o.h1,{id:"\ufe0f-vision",children:"\ud83d\udc41\ufe0f Vision"})}),"\n",(0,n.jsx)(o.p,{children:"O contexto de vis\xe3o se prop\xf5e a ser a central de processamento dos eventos que chegam at\xe9 a V3CLOUD, para infer\xeancia de vis\xe3o computacional."}),"\n",(0,n.jsx)(o.p,{children:'Vis\xe3o computacional \xe9 uma \xe1rea da intelig\xeancia artificial que permite que computadores "enxerguem", ou seja, interpretem e extraiam informa\xe7\xf5es de imagens e v\xeddeos, simulando a vis\xe3o humana.'}),"\n",(0,n.jsx)(o.p,{children:"Nossa solu\xe7\xe3o foi projetada para atuar como um motor de processamento para os eventos que chegam at\xe9 a Cloud."}),"\n",(0,n.jsx)(o.p,{children:"Todos os eventos que chegam s\xe3o monitorados por um agente que possui algumas fases:"}),"\n",(0,n.jsx)(o.h2,{id:"-fase-1---consolida\xe7\xe3o",children:"\ud83d\udd04 Fase 1 - Consolida\xe7\xe3o"}),"\n",(0,n.jsx)(o.p,{children:"\xc9 o momento no qual se analisa qual o tipo do evento, pois o motor precisa descartar eventos que n\xe3o possuem um contexto de vis\xe3o. Por exemplo, um evento de posi\xe7\xe3o que n\xe3o tenha uma media associada, n\xe3o precisa seguir no fluxo."}),"\n",(0,n.jsx)(o.p,{children:"Na sequ\xeancia, aguarda-se at\xe9 que a media esteja dispon\xedvel."}),"\n",(0,n.jsx)(o.h2,{id:"\ufe0f-fase-2---prepara\xe7\xe3o",children:"\ud83d\udee0\ufe0f Fase 2 - Prepara\xe7\xe3o"}),"\n",(0,n.jsx)(o.p,{children:"\xc9 neste momento que o fluxo coleta todos os dados necess\xe1rio para preparar um contrato com todas as informa\xe7\xf5es."}),"\n",(0,n.jsx)(o.p,{children:"Resgata-se neste momento:"}),"\n",(0,n.jsxs)(o.ol,{children:["\n",(0,n.jsxs)(o.li,{children:["\ud83d\udccb ",(0,n.jsx)(o.strong,{children:"Pol\xedtica de Processamento de Vis\xe3o"})," - \xc9 a defini\xe7\xe3o de quais devem ser as infer\xeancia de vis\xe3o computacional para um Tenant, Time, Frota ou Dispositivo. Isso permite que se tenham heran\xe7as de configura\xe7\xf5es de acordo com a granuridade desejada;"]}),"\n",(0,n.jsxs)(o.li,{children:["\ud83d\udcca ",(0,n.jsx)(o.strong,{children:"Informa\xe7\xf5es consolidadas"})," - Todos os dados do evento que originaram a media a ser analisada;"]}),"\n",(0,n.jsxs)(o.li,{children:["\ud83d\udc65 ",(0,n.jsx)(o.strong,{children:"Informa\xe7\xf5es de gerenciamento"})," - Detalhes sobre Drivers, Teams ou Devices, que podem ajudar a compor a tarefa de vis\xe3o computacional. Por exemplo, posso precisar dos dados de todos os drivers que poderiam estar dirigindo o ve\xedculo, para buscar estes dados em uma base de treinamento."]}),"\n",(0,n.jsxs)(o.li,{children:["\ud83c\udfaf ",(0,n.jsx)(o.strong,{children:"Dados de treinamento"})," - \xc9 uma cole\xe7\xe3o de dados treinados para as situa\xe7\xf5es de vis\xe3o computacional. Por exemplo, podemos ter todos os motoristas treinados para que possam ser comparados com um evento que acabou de chegar."]}),"\n"]}),"\n",(0,n.jsx)(o.h2,{id:"\ufe0f-fase-3---pipeline",children:"\u2699\ufe0f Fase 3 - Pipeline"}),"\n",(0,n.jsx)(o.p,{children:"\xc9 neste momento que o motor de vis\xe3o computacional \xe9 executado de fato. Com base em um contrato que cont\xe9m todas as informa\xe7\xf5es necess\xe1rias para o processamento este m\xf3dulo ser\xe1 o respons\xe1vel por:"}),"\n",(0,n.jsxs)(o.ol,{children:["\n",(0,n.jsxs)(o.li,{children:["\u2705 ",(0,n.jsx)(o.strong,{children:"Validar a entrada"})," - Verifica se todos os dados est\xe3o em conformidade para seguir o processamento;"]}),"\n",(0,n.jsxs)(o.li,{children:["\ud83d\uddbc\ufe0f ",(0,n.jsx)(o.strong,{children:"Prepara\xe7\xe3o"})," - Realiza uma s\xe9rie de pr\xe9-processamentos para o evento em quest\xe3o. Por exemplo, fazer o CROP de uma face espec\xedfica na media ou gerar um thumbnail que ser\xe1 disponibilizado."]}),"\n",(0,n.jsxs)(o.li,{children:["\ud83e\udd16 ",(0,n.jsx)(o.strong,{children:"Processamento"})," - \xc9 o momento em que o o motor de vis\xe3o computacional \xe9 acionado. Ele pode ser composto por um ou mais subm\xf3dulos que realiza\xe7\xe3o a infer\xeancia do que est\xe1 na media. De acordo com a pol\xedtica de processamento um ou mais subm\xf3dulos podem ser acionados para uma mesma media."]}),"\n",(0,n.jsxs)(o.li,{children:["\ud83d\udcdd ",(0,n.jsx)(o.strong,{children:"Resultado"})," - \xc9 o momento em que se consolida o resultado gerado, salvando as informa\xe7\xf5es e as tornando dispon\xedveis para os Clientes."]}),"\n"]}),"\n",(0,n.jsx)(o.h2,{id:"-api-de-vis\xe3o",children:"\ud83d\udd0c API de Vis\xe3o"}),"\n",(0,n.jsx)(o.p,{children:"A API do m\xf3dulo de vis\xe3o computacional \xe9 bastante direta e oferece apenas recursos para:"}),"\n",(0,n.jsxs)(o.ol,{children:["\n",(0,n.jsxs)(o.li,{children:["\ud83d\udcda ",(0,n.jsx)(o.strong,{children:"Treinamento dos datasets"}),"\n",(0,n.jsxs)(o.ul,{children:["\n",(0,n.jsx)(o.li,{children:"\ud83d\ude97 Motoristas"}),"\n"]}),"\n"]}),"\n",(0,n.jsxs)(o.li,{children:["\ud83d\udce5 ",(0,n.jsx)(o.strong,{children:"Recupera\xe7\xe3o das media"})," (de eventos ou transformadas pelo fluxo de vision)","\n",(0,n.jsxs)(o.ul,{children:["\n",(0,n.jsx)(o.li,{children:"\ud83d\uddbc\ufe0f Thumbnails"}),"\n",(0,n.jsx)(o.li,{children:"\ud83c\udfa5 V\xeddeos"}),"\n",(0,n.jsx)(o.li,{children:"\ud83d\udcf8 Imagens"}),"\n"]}),"\n"]}),"\n"]}),"\n",(0,n.jsx)(o.h2,{id:"-como-consumir-os-dados-de-vis\xe3o",children:"\ud83d\udce1 Como consumir os dados de vis\xe3o?"}),"\n",(0,n.jsx)(o.p,{children:"Para os eventos de Vision, todas as infer\xeancias ser\xe3o retornadas atrav\xe9s de Webhooks."}),"\n",(0,n.jsx)(o.h2,{id:"-fluxo-de-exemplo-ponta-a-ponta",children:"\ud83d\udd04 Fluxo de Exemplo (Ponta a Ponta)"}),"\n",(0,n.jsx)(o.p,{children:"Setup: Um dispositivo com a pol\xedtica de reconhecimento facial de motorista ativada para que o motor de vis\xe3o processe a identifica\xe7\xe3o e retorne quem foi o motorista que estava dirigindo."}),"\n",(0,n.jsxs)(o.ol,{children:["\n",(0,n.jsxs)(o.li,{children:["\ud83d\ude97 No autom\xf3vel, um evento de ",(0,n.jsx)(o.code,{children:"IGNITION_ON"})," (igni\xe7\xe3o ligado) foi disparado;"]}),"\n",(0,n.jsx)(o.li,{children:'\ud83d\udcf8 Este evento "carrega" uma foto com o motorista dirigindo o ve\xedculo;'}),"\n",(0,n.jsxs)(o.li,{children:["\u2601\ufe0f Este evento chega at\xe9 a ",(0,n.jsx)(o.strong,{children:"V3CLOUD"})," pelo contexto de ",(0,n.jsx)(o.code,{children:"Events"}),";"]}),"\n",(0,n.jsxs)(o.li,{children:["\ud83d\udd04 O contexto de ",(0,n.jsx)(o.code,{children:"Events"})," publica este evento para o contexto de ",(0,n.jsx)(o.code,{children:"Vision"}),";"]}),"\n",(0,n.jsxs)(o.li,{children:["\ud83d\udccb Processa-se a ",(0,n.jsx)(o.strong,{children:"Fase 1 - Consolida\xe7\xe3o"}),";"]}),"\n",(0,n.jsxs)(o.li,{children:["\ud83d\udee0\ufe0f Processa-se a ",(0,n.jsx)(o.strong,{children:"Fase 2 - Prepara\xe7\xe3o"}),";"]}),"\n",(0,n.jsxs)(o.li,{children:["\u2699\ufe0f Processa-se a ",(0,n.jsx)(o.strong,{children:"Fase 3 - Pipeline"}),";"]}),"\n",(0,n.jsx)(o.li,{children:"\ud83d\udc64 Neste momento, t\xeam-se a a infer\xeancia de quem \xe9 o motorista (caso ele esteja treinado);"}),"\n",(0,n.jsx)(o.li,{children:"\ud83d\udce2 Publica-se uma mensagem via Webhook para o cliente, avisando que o Evento X teve uma infer\xeancia de vis\xe3o computacional de reconhecimento do Driver X."}),"\n"]})]})}function m(e={}){const{wrapper:o}={...(0,i.R)(),...e.components};return o?(0,n.jsx)(o,{...e,children:(0,n.jsx)(l,{...e})}):l(e)}},28453:(e,o,s)=>{s.d(o,{R:()=>r,x:()=>d});var a=s(96540);const n={},i=a.createContext(n);function r(e){const o=a.useContext(i);return a.useMemo((function(){return"function"==typeof e?e(o):{...o,...e}}),[o,e])}function d(e){let o;return o=e.disableParentContext?"function"==typeof e.components?e.components(n):e.components||n:r(e.components),a.createElement(i.Provider,{value:o},e.children)}}}]);
+"use strict";
+(self.webpackChunkv3_docs = self.webpackChunkv3_docs || []).push([
+  [6658],
+  {
+    19138: (e, o, s) => {
+      s.r(o),
+        s.d(o, {
+          assets: () => t,
+          contentTitle: () => d,
+          default: () => m,
+          frontMatter: () => r,
+          metadata: () => a,
+          toc: () => c,
+        });
+      const a = JSON.parse(
+        '{"id":"docs/vision","title":"\ud83d\udc41\ufe0f Vision","description":"O contexto de vis\xe3o se prop\xf5e a ser a central de processamento dos eventos que chegam at\xe9 a V3CLOUD, para infer\xeancia de vis\xe3o computacional.","source":"@site/docs/docs/12-vision.md","sourceDirName":"docs","slug":"/docs/vision","permalink":"/docs/docs/vision","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":12,"frontMatter":{"sidebar_position":12},"sidebar":"docsSidebar","previous":{"title":"\ud83d\udcc5 Events","permalink":"/docs/docs/events"},"next":{"title":"\ud83e\ude9d Webhooks","permalink":"/docs/docs/webhooks"}}'
+      );
+      var n = s(74848),
+        i = s(28453);
+      const r = { sidebar_position: 12 },
+        d = "\ud83d\udc41\ufe0f Vision",
+        t = {},
+        c = [
+          {
+            value: "\ud83d\udd04 Fase 1 - Consolida\xe7\xe3o",
+            id: "-fase-1---consolida\xe7\xe3o",
+            level: 2,
+          },
+          {
+            value: "\ud83d\udee0\ufe0f Fase 2 - Prepara\xe7\xe3o",
+            id: "\ufe0f-fase-2---prepara\xe7\xe3o",
+            level: 2,
+          },
+          {
+            value: "\u2699\ufe0f Fase 3 - Pipeline",
+            id: "\ufe0f-fase-3---pipeline",
+            level: 2,
+          },
+          {
+            value: "\ud83d\udd0c API de Vis\xe3o",
+            id: "-api-de-vis\xe3o",
+            level: 2,
+          },
+          {
+            value: "\ud83d\udce1 Como consumir os dados de vis\xe3o?",
+            id: "-como-consumir-os-dados-de-vis\xe3o",
+            level: 2,
+          },
+          {
+            value: "\ud83d\udd04 Fluxo de Exemplo (Ponta a Ponta)",
+            id: "-fluxo-de-exemplo-ponta-a-ponta",
+            level: 2,
+          },
+        ];
+      function l(e) {
+        const o = {
+          code: "code",
+          h1: "h1",
+          h2: "h2",
+          header: "header",
+          li: "li",
+          ol: "ol",
+          p: "p",
+          strong: "strong",
+          ul: "ul",
+          ...(0, i.R)(),
+          ...e.components,
+        };
+        return (0, n.jsxs)(n.Fragment, {
+          children: [
+            (0, n.jsx)(o.header, {
+              children: (0, n.jsx)(o.h1, {
+                id: "\ufe0f-vision",
+                children: "\ud83d\udc41\ufe0f Vision",
+              }),
+            }),
+            "\n",
+            (0, n.jsx)(o.p, {
+              children:
+                "O contexto de vis\xe3o se prop\xf5e a ser a central de processamento dos eventos que chegam at\xe9 a V3CLOUD, para infer\xeancia de vis\xe3o computacional.",
+            }),
+            "\n",
+            (0, n.jsx)(o.p, {
+              children:
+                'Vis\xe3o computacional \xe9 uma \xe1rea da intelig\xeancia artificial que permite que computadores "enxerguem", ou seja, interpretem e extraiam informa\xe7\xf5es de imagens e v\xeddeos, simulando a vis\xe3o humana.',
+            }),
+            "\n",
+            (0, n.jsx)(o.p, {
+              children:
+                "Nossa solu\xe7\xe3o foi projetada para atuar como um motor de processamento para os eventos que chegam at\xe9 a Cloud.",
+            }),
+            "\n",
+            (0, n.jsx)(o.p, {
+              children:
+                "Todos os eventos que chegam s\xe3o monitorados por um agente que possui algumas fases:",
+            }),
+            "\n",
+            (0, n.jsx)(o.h2, {
+              id: "-fase-1---consolida\xe7\xe3o",
+              children: "\ud83d\udd04 Fase 1 - Consolida\xe7\xe3o",
+            }),
+            "\n",
+            (0, n.jsx)(o.p, {
+              children:
+                "\xc9 o momento no qual se analisa qual o tipo do evento, pois o motor precisa descartar eventos que n\xe3o possuem um contexto de vis\xe3o. Por exemplo, um evento de posi\xe7\xe3o que n\xe3o tenha uma media associada, n\xe3o precisa seguir no fluxo.",
+            }),
+            "\n",
+            (0, n.jsx)(o.p, {
+              children:
+                "Na sequ\xeancia, aguarda-se at\xe9 que a media esteja dispon\xedvel.",
+            }),
+            "\n",
+            (0, n.jsx)(o.h2, {
+              id: "\ufe0f-fase-2---prepara\xe7\xe3o",
+              children: "\ud83d\udee0\ufe0f Fase 2 - Prepara\xe7\xe3o",
+            }),
+            "\n",
+            (0, n.jsx)(o.p, {
+              children:
+                "\xc9 neste momento que o fluxo coleta todos os dados necess\xe1rio para preparar um contrato com todas as informa\xe7\xf5es.",
+            }),
+            "\n",
+            (0, n.jsx)(o.p, { children: "Resgata-se neste momento:" }),
+            "\n",
+            (0, n.jsxs)(o.ol, {
+              children: [
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\ud83d\udccb ",
+                    (0, n.jsx)(o.strong, {
+                      children: "Pol\xedtica de Processamento de Vis\xe3o",
+                    }),
+                    " - \xc9 a defini\xe7\xe3o de quais devem ser as infer\xeancia de vis\xe3o computacional para um Tenant, Time, Frota ou Dispositivo. Isso permite que se tenham heran\xe7as de configura\xe7\xf5es de acordo com a granuridade desejada;",
+                  ],
+                }),
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\ud83d\udcca ",
+                    (0, n.jsx)(o.strong, {
+                      children: "Informa\xe7\xf5es consolidadas",
+                    }),
+                    " - Todos os dados do evento que originaram a media a ser analisada;",
+                  ],
+                }),
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\ud83d\udc65 ",
+                    (0, n.jsx)(o.strong, {
+                      children: "Informa\xe7\xf5es de gerenciamento",
+                    }),
+                    " - Detalhes sobre Drivers, Teams ou Devices, que podem ajudar a compor a tarefa de vis\xe3o computacional. Por exemplo, posso precisar dos dados de todos os drivers que poderiam estar dirigindo o ve\xedculo, para buscar estes dados em uma base de treinamento.",
+                  ],
+                }),
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\ud83c\udfaf ",
+                    (0, n.jsx)(o.strong, { children: "Dados de treinamento" }),
+                    " - \xc9 uma cole\xe7\xe3o de dados treinados para as situa\xe7\xf5es de vis\xe3o computacional. Por exemplo, podemos ter todos os motoristas treinados para que possam ser comparados com um evento que acabou de chegar.",
+                  ],
+                }),
+                "\n",
+              ],
+            }),
+            "\n",
+            (0, n.jsx)(o.h2, {
+              id: "\ufe0f-fase-3---pipeline",
+              children: "\u2699\ufe0f Fase 3 - Pipeline",
+            }),
+            "\n",
+            (0, n.jsx)(o.p, {
+              children:
+                "\xc9 neste momento que o motor de vis\xe3o computacional \xe9 executado de fato. Com base em um contrato que cont\xe9m todas as informa\xe7\xf5es necess\xe1rias para o processamento este m\xf3dulo ser\xe1 o respons\xe1vel por:",
+            }),
+            "\n",
+            (0, n.jsxs)(o.ol, {
+              children: [
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\u2705 ",
+                    (0, n.jsx)(o.strong, { children: "Validar a entrada" }),
+                    " - Verifica se todos os dados est\xe3o em conformidade para seguir o processamento;",
+                  ],
+                }),
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\ud83d\uddbc\ufe0f ",
+                    (0, n.jsx)(o.strong, { children: "Prepara\xe7\xe3o" }),
+                    " - Realiza uma s\xe9rie de pr\xe9-processamentos para o evento em quest\xe3o. Por exemplo, fazer o CROP de uma face espec\xedfica na media ou gerar um thumbnail que ser\xe1 disponibilizado.",
+                  ],
+                }),
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\ud83e\udd16 ",
+                    (0, n.jsx)(o.strong, { children: "Processamento" }),
+                    " - \xc9 o momento em que o o motor de vis\xe3o computacional \xe9 acionado. Ele pode ser composto por um ou mais subm\xf3dulos que realiza\xe7\xe3o a infer\xeancia do que est\xe1 na media. De acordo com a pol\xedtica de processamento um ou mais subm\xf3dulos podem ser acionados para uma mesma media.",
+                  ],
+                }),
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\ud83d\udcdd ",
+                    (0, n.jsx)(o.strong, { children: "Resultado" }),
+                    " - \xc9 o momento em que se consolida o resultado gerado, salvando as informa\xe7\xf5es e as tornando dispon\xedveis para os Clientes.",
+                  ],
+                }),
+                "\n",
+              ],
+            }),
+            "\n",
+            (0, n.jsx)(o.h2, {
+              id: "-api-de-vis\xe3o",
+              children: "\ud83d\udd0c API de Vis\xe3o",
+            }),
+            "\n",
+            (0, n.jsx)(o.p, {
+              children:
+                "A API do m\xf3dulo de vis\xe3o computacional \xe9 bastante direta e oferece apenas recursos para:",
+            }),
+            "\n",
+            (0, n.jsxs)(o.ol, {
+              children: [
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\ud83d\udcda ",
+                    (0, n.jsx)(o.strong, {
+                      children: "Treinamento dos datasets",
+                    }),
+                    "\n",
+                    (0, n.jsxs)(o.ul, {
+                      children: [
+                        "\n",
+                        (0, n.jsx)(o.li, {
+                          children: "\ud83d\ude97 Motoristas",
+                        }),
+                        "\n",
+                      ],
+                    }),
+                    "\n",
+                  ],
+                }),
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\ud83d\udce5 ",
+                    (0, n.jsx)(o.strong, {
+                      children: "Recupera\xe7\xe3o das media",
+                    }),
+                    " (de eventos ou transformadas pelo fluxo de vision)",
+                    "\n",
+                    (0, n.jsxs)(o.ul, {
+                      children: [
+                        "\n",
+                        (0, n.jsx)(o.li, {
+                          children: "\ud83d\uddbc\ufe0f Thumbnails",
+                        }),
+                        "\n",
+                        (0, n.jsx)(o.li, {
+                          children: "\ud83c\udfa5 V\xeddeos",
+                        }),
+                        "\n",
+                        (0, n.jsx)(o.li, { children: "\ud83d\udcf8 Imagens" }),
+                        "\n",
+                      ],
+                    }),
+                    "\n",
+                  ],
+                }),
+                "\n",
+              ],
+            }),
+            "\n",
+            (0, n.jsx)(o.h2, {
+              id: "-como-consumir-os-dados-de-vis\xe3o",
+              children: "\ud83d\udce1 Como consumir os dados de vis\xe3o?",
+            }),
+            "\n",
+            (0, n.jsx)(o.p, {
+              children:
+                "Para os eventos de Vision, todas as infer\xeancias ser\xe3o retornadas atrav\xe9s de Webhooks.",
+            }),
+            "\n",
+            (0, n.jsx)(o.h2, {
+              id: "-fluxo-de-exemplo-ponta-a-ponta",
+              children: "\ud83d\udd04 Fluxo de Exemplo (Ponta a Ponta)",
+            }),
+            "\n",
+            (0, n.jsx)(o.p, {
+              children:
+                "Setup: Um dispositivo com a pol\xedtica de reconhecimento facial de motorista ativada para que o motor de vis\xe3o processe a identifica\xe7\xe3o e retorne quem foi o motorista que estava dirigindo.",
+            }),
+            "\n",
+            (0, n.jsxs)(o.ol, {
+              children: [
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\ud83d\ude97 No autom\xf3vel, um evento de ",
+                    (0, n.jsx)(o.code, { children: "IGNITION_ON" }),
+                    " (igni\xe7\xe3o ligado) foi disparado;",
+                  ],
+                }),
+                "\n",
+                (0, n.jsx)(o.li, {
+                  children:
+                    '\ud83d\udcf8 Este evento "carrega" uma foto com o motorista dirigindo o ve\xedculo;',
+                }),
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\u2601\ufe0f Este evento chega at\xe9 a ",
+                    (0, n.jsx)(o.strong, { children: "V3CLOUD" }),
+                    " pelo contexto de ",
+                    (0, n.jsx)(o.code, { children: "Events" }),
+                    ";",
+                  ],
+                }),
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\ud83d\udd04 O contexto de ",
+                    (0, n.jsx)(o.code, { children: "Events" }),
+                    " publica este evento para o contexto de ",
+                    (0, n.jsx)(o.code, { children: "Vision" }),
+                    ";",
+                  ],
+                }),
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\ud83d\udccb Processa-se a ",
+                    (0, n.jsx)(o.strong, {
+                      children: "Fase 1 - Consolida\xe7\xe3o",
+                    }),
+                    ";",
+                  ],
+                }),
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\ud83d\udee0\ufe0f Processa-se a ",
+                    (0, n.jsx)(o.strong, {
+                      children: "Fase 2 - Prepara\xe7\xe3o",
+                    }),
+                    ";",
+                  ],
+                }),
+                "\n",
+                (0, n.jsxs)(o.li, {
+                  children: [
+                    "\u2699\ufe0f Processa-se a ",
+                    (0, n.jsx)(o.strong, { children: "Fase 3 - Pipeline" }),
+                    ";",
+                  ],
+                }),
+                "\n",
+                (0, n.jsx)(o.li, {
+                  children:
+                    "\ud83d\udc64 Neste momento, t\xeam-se a a infer\xeancia de quem \xe9 o motorista (caso ele esteja treinado);",
+                }),
+                "\n",
+                (0, n.jsx)(o.li, {
+                  children:
+                    "\ud83d\udce2 Publica-se uma mensagem via Webhook para o cliente, avisando que o Evento X teve uma infer\xeancia de vis\xe3o computacional de reconhecimento do Driver X.",
+                }),
+                "\n",
+              ],
+            }),
+          ],
+        });
+      }
+      function m(e = {}) {
+        const { wrapper: o } = { ...(0, i.R)(), ...e.components };
+        return o
+          ? (0, n.jsx)(o, { ...e, children: (0, n.jsx)(l, { ...e }) })
+          : l(e);
+      }
+    },
+    28453: (e, o, s) => {
+      s.d(o, { R: () => r, x: () => d });
+      var a = s(96540);
+      const n = {},
+        i = a.createContext(n);
+      function r(e) {
+        const o = a.useContext(i);
+        return a.useMemo(
+          function () {
+            return "function" == typeof e ? e(o) : { ...o, ...e };
+          },
+          [o, e]
+        );
+      }
+      function d(e) {
+        let o;
+        return (
+          (o = e.disableParentContext
+            ? "function" == typeof e.components
+              ? e.components(n)
+              : e.components || n
+            : r(e.components)),
+          a.createElement(i.Provider, { value: o }, e.children)
+        );
+      }
+    },
+  },
+]);

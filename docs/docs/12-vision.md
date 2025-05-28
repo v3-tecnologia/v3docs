@@ -12,6 +12,10 @@ Nossa solução foi projetada para atuar como um motor de processamento para os 
 
 Todos os eventos que chegam são monitorados por um agente que possui algumas fases:
 
+## 🔌 Link da API
+
+Caso queira acessar diretamente a documentação da API de Visão, [clique aqui](/docs/category/vision-api).
+
 ## 🔄 Fase 1 - Consolidação
 
 É o momento no qual se analisa qual o tipo do evento, pois o motor precisa descartar eventos que não possuem um contexto de visão. Por exemplo, um evento de posição que não tenha uma media associada, não precisa seguir no fluxo.

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 # ⚙️ Gerenciamento
@@ -10,6 +10,10 @@ A camada de Gerenciamento é um componente fundamental da V3, responsável pela 
 - 👥 Times
 - 🚗 Frotas
 - 📱 Dispositivos
+
+## 🔌 Link da API
+
+Caso queira acessar diretamente a documentação da API de Gerenciamento, [clique aqui](/docs/category/management-api).
 
 ## 📊 Hierarquia e Relacionamentos
 
