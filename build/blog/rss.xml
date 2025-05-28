@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>Docs Blog</title>
-        <link>https://docs.v3control.com/blog</link>
-        <description>Docs Blog</description>
+        <title>V3 Docs Blog</title>
+        <link>https://developer.v3control.com/blog</link>
+        <description>V3 Docs Blog</description>
         <lastBuildDate>Fri, 02 May 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
             <title><![CDATA[Por dentro da arquitetura da V3]]></title>
-            <link>https://docs.v3control.com/blog/arquitetura-v3</link>
-            <guid>https://docs.v3control.com/blog/arquitetura-v3</guid>
+            <link>https://developer.v3control.com/blog/arquitetura-v3</link>
+            <guid>https://developer.v3control.com/blog/arquitetura-v3</guid>
             <pubDate>Fri, 02 May 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[Construindo uma Plataforma moderna, escalável e segura]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="construindo-uma-plataforma-moderna-escalável-e-segura">Construindo uma Plataforma moderna, escalável e segura<a href="https://docs.v3control.com/blog/arquitetura-v3#construindo-uma-plataforma-moderna-escal%C3%A1vel-e-segura" class="hash-link" aria-label="Direct link to Construindo uma Plataforma moderna, escalável e segura" title="Direct link to Construindo uma Plataforma moderna, escalável e segura">​</a></h2>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="construindo-uma-plataforma-moderna-escalável-e-segura">Construindo uma Plataforma moderna, escalável e segura<a href="https://developer.v3control.com/blog/arquitetura-v3#construindo-uma-plataforma-moderna-escal%C3%A1vel-e-segura" class="hash-link" aria-label="Direct link to Construindo uma Plataforma moderna, escalável e segura" title="Direct link to Construindo uma Plataforma moderna, escalável e segura">​</a></h2>
 <p>Quando projetamos a V3, tínhamos um objetivo claro: entregar uma plataforma de visão computacional robusta, segura e escalável — não apenas uma API funcional. Para isso, investimos em uma arquitetura moderna, desenhada para evoluir junto com nossos clientes, com foco em isolamento, performance e conformidade legal.</p>
 <p>Neste post, queremos compartilhar com você — desenvolvedor, integrador ou arquiteto de sistemas — como estruturamos os fundamentos da V3 sob uma ótica técnica.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="multi-tenant-de-verdade">Multi-tenant de verdade<a href="https://docs.v3control.com/blog/arquitetura-v3#multi-tenant-de-verdade" class="hash-link" aria-label="Direct link to Multi-tenant de verdade" title="Direct link to Multi-tenant de verdade">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="multi-tenant-de-verdade">Multi-tenant de verdade<a href="https://developer.v3control.com/blog/arquitetura-v3#multi-tenant-de-verdade" class="hash-link" aria-label="Direct link to Multi-tenant de verdade" title="Direct link to Multi-tenant de verdade">​</a></h2>
 <p>Cada cliente da V3 é provisionado em seu próprio <strong>tenant isolado</strong>, o que significa:</p>
 <ul>
 <li>Ambientes segregados lógica e computacionalmente.</li>
@@ -25,7 +25,7 @@
 <li>Possibilidade de aplicar políticas de segurança, escalabilidade e retenção de forma granular.</li>
 </ul>
 <p>Essa abordagem evita o acoplamento excessivo entre contas e nos permite garantir níveis de segurança e privacidade superiores, especialmente em conformidade com a <strong>LGPD</strong>.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="escalabilidade-nativa-com-kubernetes">Escalabilidade nativa com Kubernetes<a href="https://docs.v3control.com/blog/arquitetura-v3#escalabilidade-nativa-com-kubernetes" class="hash-link" aria-label="Direct link to Escalabilidade nativa com Kubernetes" title="Direct link to Escalabilidade nativa com Kubernetes">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="escalabilidade-nativa-com-kubernetes">Escalabilidade nativa com Kubernetes<a href="https://developer.v3control.com/blog/arquitetura-v3#escalabilidade-nativa-com-kubernetes" class="hash-link" aria-label="Direct link to Escalabilidade nativa com Kubernetes" title="Direct link to Escalabilidade nativa com Kubernetes">​</a></h2>
 <p>Toda a plataforma roda em uma infraestrutura orquestrada com <strong>Kubernetes</strong>, que nos permite:</p>
 <ul>
 <li>Autoescalar componentes críticos com base em carga e volume de eventos.</li>
@@ -34,7 +34,7 @@
 <li>Executar rotinas de manutenção e upgrades com zero downtime.</li>
 </ul>
 <p>A combinação de tenants isolados com Kubernetes resulta em uma operação previsível, onde cada cliente pode escalar sem afetar o desempenho do outro.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="go-para-o-núcleo-da-performance">Go para o núcleo da performance<a href="https://docs.v3control.com/blog/arquitetura-v3#go-para-o-n%C3%BAcleo-da-performance" class="hash-link" aria-label="Direct link to Go para o núcleo da performance" title="Direct link to Go para o núcleo da performance">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="go-para-o-núcleo-da-performance">Go para o núcleo da performance<a href="https://developer.v3control.com/blog/arquitetura-v3#go-para-o-n%C3%BAcleo-da-performance" class="hash-link" aria-label="Direct link to Go para o núcleo da performance" title="Direct link to Go para o núcleo da performance">​</a></h2>
 <p>Grande parte dos nossos microserviços — especialmente aqueles responsáveis por ingestão de eventos e gestão de dispositivos — é escrita em <strong>Go</strong>. A escolha se deu por:</p>
 <ul>
 <li>Baixa latência e ótimo gerenciamento de concorrência.</li>
@@ -42,7 +42,7 @@
 <li>Compilação estática, que facilita distribuições confiáveis em múltiplos clusters.</li>
 </ul>
 <p>Go é a espinha dorsal das partes que precisam de eficiência máxima em I/O e rede.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conformidade-com-lgpd-desde-a-fundação">Conformidade com LGPD desde a fundação<a href="https://docs.v3control.com/blog/arquitetura-v3#conformidade-com-lgpd-desde-a-funda%C3%A7%C3%A3o" class="hash-link" aria-label="Direct link to Conformidade com LGPD desde a fundação" title="Direct link to Conformidade com LGPD desde a fundação">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conformidade-com-lgpd-desde-a-fundação">Conformidade com LGPD desde a fundação<a href="https://developer.v3control.com/blog/arquitetura-v3#conformidade-com-lgpd-desde-a-funda%C3%A7%C3%A3o" class="hash-link" aria-label="Direct link to Conformidade com LGPD desde a fundação" title="Direct link to Conformidade com LGPD desde a fundação">​</a></h2>
 <p>Desde o início, a V3 foi projetada com <strong>privacy-by-design</strong>. Isso inclui:</p>
 <ul>
 <li>Dados anonimizados quando não essenciais.</li>
@@ -51,12 +51,12 @@
 <li>Auditoria de acessos sensíveis e APIs que expõem metadados de compliance.</li>
 </ul>
 <p>Não é apenas uma questão de estar em conformidade — tratamos a LGPD como um princípio de engenharia.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="observabilidade-e-automação-contínua">Observabilidade e automação contínua<a href="https://docs.v3control.com/blog/arquitetura-v3#observabilidade-e-automa%C3%A7%C3%A3o-cont%C3%ADnua" class="hash-link" aria-label="Direct link to Observabilidade e automação contínua" title="Direct link to Observabilidade e automação contínua">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="observabilidade-e-automação-contínua">Observabilidade e automação contínua<a href="https://developer.v3control.com/blog/arquitetura-v3#observabilidade-e-automa%C3%A7%C3%A3o-cont%C3%ADnua" class="hash-link" aria-label="Direct link to Observabilidade e automação contínua" title="Direct link to Observabilidade e automação contínua">​</a></h2>
 <p>Nossa arquitetura foi desenhada para oferecer visibilidade de ponta a ponta em cada tenant, serviço e fluxo de dados. Adotamos padrões modernos de observabilidade distribuída, com rastreamento de requisições, coleta de métricas e logs estruturados desde o início — tudo com base em OpenTelemetry.</p>
 <p>Cada evento gerado, erro capturado ou requisição processada carrega contexto rico que facilita tanto o diagnóstico em tempo real quanto auditorias retroativas. Esse nível de rastreabilidade é essencial para garantir confiabilidade em ambientes multi-tenant.</p>
 <p>Do ponto de vista de engenharia, seguimos práticas modernas como GitOps para automação de infraestrutura e controle de versionamento, além de pipelines de integração e deploy contínuos que garantem entregas seguras e frequentes, com validações automatizadas, testes em múltiplos ambientes e rollback simplificado.</p>
 <p>Essa combinação entre observabilidade padronizada e automação robusta nos permite operar com agilidade, mantendo altos padrões de qualidade e segurança.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusão">Conclusão<a href="https://docs.v3control.com/blog/arquitetura-v3#conclus%C3%A3o" class="hash-link" aria-label="Direct link to Conclusão" title="Direct link to Conclusão">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusão">Conclusão<a href="https://developer.v3control.com/blog/arquitetura-v3#conclus%C3%A3o" class="hash-link" aria-label="Direct link to Conclusão" title="Direct link to Conclusão">​</a></h2>
 <p>A API V3 não é apenas uma interface. É o ponto de entrada para uma plataforma pensada com cuidado, desde a escolha da linguagem até o provisionamento automatizado e compliance legal.</p>
 <p>Nosso objetivo não é apenas facilitar a integração de visão computacional e telemetria, mas fornecer um ecossistema de dados confiável, elástico e seguro para qualquer escala de operação.</p>
 <p>Se você quer conhecer mais detalhes ou está considerando uma integração mais profunda, <a href="http://docs.v3control.com/" target="_blank" rel="noopener noreferrer">visite nossa documentação</a>.</p>
@@ -68,12 +68,12 @@
         </item>
         <item>
             <title><![CDATA[Bem vindo]]></title>
-            <link>https://docs.v3control.com/blog/bem-vindo</link>
-            <guid>https://docs.v3control.com/blog/bem-vindo</guid>
+            <link>https://developer.v3control.com/blog/bem-vindo</link>
+            <guid>https://developer.v3control.com/blog/bem-vindo</guid>
             <pubDate>Wed, 30 Apr 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[Bem-vindo à documentação oficial da API V3! Este é o seu guia completo para entender e utilizar todos os recursos disponíveis em nossa plataforma.]]></description>
             <content:encoded><![CDATA[<p>Bem-vindo à documentação oficial da API V3! Este é o seu guia completo para entender e utilizar todos os recursos disponíveis em nossa plataforma.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="o-que-é-a-api-v3">O que é a API V3?<a href="https://docs.v3control.com/blog/bem-vindo#o-que-%C3%A9-a-api-v3" class="hash-link" aria-label="Direct link to O que é a API V3?" title="Direct link to O que é a API V3?">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="o-que-é-a-api-v3">O que é a API V3?<a href="https://developer.v3control.com/blog/bem-vindo#o-que-%C3%A9-a-api-v3" class="hash-link" aria-label="Direct link to O que é a API V3?" title="Direct link to O que é a API V3?">​</a></h2>
 <p>A API V3 é a mais recente versão da nossa interface de programação, desenvolvida com foco em:</p>
 <ul>
 <li><strong>Simplicidade</strong>: Interface intuitiva e fácil de usar</li>
@@ -81,7 +81,7 @@
 <li><strong>Segurança</strong>: Implementação das melhores práticas de segurança</li>
 <li><strong>Escalabilidade</strong>: Preparada para crescer com suas necessidades</li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="estrutura-da-documentação">Estrutura da Documentação<a href="https://docs.v3control.com/blog/bem-vindo#estrutura-da-documenta%C3%A7%C3%A3o" class="hash-link" aria-label="Direct link to Estrutura da Documentação" title="Direct link to Estrutura da Documentação">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="estrutura-da-documentação">Estrutura da Documentação<a href="https://developer.v3control.com/blog/bem-vindo#estrutura-da-documenta%C3%A7%C3%A3o" class="hash-link" aria-label="Direct link to Estrutura da Documentação" title="Direct link to Estrutura da Documentação">​</a></h2>
 <p>Nossa documentação está organizada em seções que cobrem todos os aspectos da API:</p>
 <ol>
 <li><strong>Guia de Início Rápido</strong>: Comece a integrar em minutos</li>
@@ -90,7 +90,7 @@
 <li><strong>Boas Práticas</strong>: Recomendações para uso eficiente</li>
 <li><strong>FAQ</strong>: Respostas para dúvidas comuns</li>
 </ol>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="primeiros-passos">Primeiros Passos<a href="https://docs.v3control.com/blog/bem-vindo#primeiros-passos" class="hash-link" aria-label="Direct link to Primeiros Passos" title="Direct link to Primeiros Passos">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="primeiros-passos">Primeiros Passos<a href="https://developer.v3control.com/blog/bem-vindo#primeiros-passos" class="hash-link" aria-label="Direct link to Primeiros Passos" title="Direct link to Primeiros Passos">​</a></h2>
 <p>Para começar a usar a API V3, você precisará:</p>
 <ol>
 <li>Criar uma conta na plataforma</li>
@@ -98,7 +98,7 @@
 <li>Configurar seu ambiente de desenvolvimento</li>
 <li>Fazer sua primeira chamada à API</li>
 </ol>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="recursos-adicionais">Recursos Adicionais<a href="https://docs.v3control.com/blog/bem-vindo#recursos-adicionais" class="hash-link" aria-label="Direct link to Recursos Adicionais" title="Direct link to Recursos Adicionais">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="recursos-adicionais">Recursos Adicionais<a href="https://developer.v3control.com/blog/bem-vindo#recursos-adicionais" class="hash-link" aria-label="Direct link to Recursos Adicionais" title="Direct link to Recursos Adicionais">​</a></h2>
 <p>Além desta documentação, oferecemos:</p>
 <ul>
 <li><strong>Suporte Técnico</strong>: Nossa equipe está pronta para ajudar</li>
@@ -106,8 +106,8 @@
 <li><strong>Status da API</strong>: Monitore a disponibilidade dos serviços</li>
 <li><strong>Changelog</strong>: Acompanhe as atualizações e novidades</li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="próximos-passos">Próximos Passos<a href="https://docs.v3control.com/blog/bem-vindo#pr%C3%B3ximos-passos" class="hash-link" aria-label="Direct link to Próximos Passos" title="Direct link to Próximos Passos">​</a></h2>
-<p>Recomendamos começar pela <a href="https://docs.v3control.com/docs/tutorials/intro">documentação</a> para configurar seu ambiente e fazer sua primeira chamada à API.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="próximos-passos">Próximos Passos<a href="https://developer.v3control.com/blog/bem-vindo#pr%C3%B3ximos-passos" class="hash-link" aria-label="Direct link to Próximos Passos" title="Direct link to Próximos Passos">​</a></h2>
+<p>Recomendamos começar pela <a href="https://developer.v3control.com/docs/documentation/intro">documentação</a> para configurar seu ambiente e fazer sua primeira chamada à API.</p>
 <p>Estamos constantemente melhorando nossa documentação. Se você encontrar algo que possa ser melhorado ou tiver sugestões, por favor, entre em contato conosco.</p>
 <p>Boa codificação! 🚀</p>]]></content:encoded>
             <category>V3 Tecnologia</category>

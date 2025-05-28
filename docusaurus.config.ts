@@ -2,14 +2,11 @@ import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
-import sidebar from "./docs/openapi/orders/sidebar";
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "Docs",
-  tagline: "Dinosaurs are cool",
-  url: "https://docs.v3control.com",
+  title: "V3 Docs",
+  tagline: "Bem-vindo ao portal do desenvolvedor que quer integrar com a V3",
+  url: "https://developer.v3control.com",
   projectName: "v3docs",
   organizationName: "v3-tecnologia",
   baseUrl: "/",
@@ -58,8 +55,8 @@ const config: Config = {
         },
         {
           position: "left",
-          label: "Tutoriais",
-          to: "/docs/tutorials/intro",
+          label: "Documentação",
+          to: "/docs/documentation/intro",
         },
         {
           label: "API",
@@ -81,7 +78,7 @@ const config: Config = {
           items: [
             {
               label: "Conheça",
-              to: "/docs/tutorials/intro",
+              to: "/docs/documentation/intro",
             },
           ],
         },
