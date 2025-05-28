@@ -218,6 +218,7 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   plugins: [
+    "./src/plugins/tailwind-config.js",
     [
       "docusaurus-plugin-openapi-docs",
       {
@@ -304,7 +305,6 @@ const config: Config = {
       },
     ],
   ],
-
   themes: ["docusaurus-theme-openapi-docs"],
 };
 
