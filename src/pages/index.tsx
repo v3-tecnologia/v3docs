@@ -5,14 +5,17 @@ import styles from "./index.module.css";
 
 export default function Home(): ReactNode {
   return (
-    <Layout description="Bem-vindo ao V3 Docs - A documentação oficial da V3">
+    <Layout description="Bem-vindo ao portal do desenvolvedor que quer integrar com a V3">
       <main>
         <div className="container">
           <div className="row">
             <div className="col col--12">
               <div className={styles.introText}>
                 <img src="/img/logo-destaque.png" alt="V3 Logo" />
-                <h2>Bem-vindo ao portal do desenvolvedor da V3</h2>
+                <h2>
+                  Bem-vindo ao portal do desenvolvedor que quer integrar com a
+                  V3
+                </h2>
                 <p>
                   Este é o ambiente de desenvolvimento da V3, onde você
                   encontrará todas as informações necessárias para integrar e
@@ -32,7 +35,7 @@ export default function Home(): ReactNode {
                   </li>
                   <li>
                     <strong>
-                      <a href="/docs/tutorials/intro">Tutoriais</a> -
+                      <a href="/docs/documentation/intro">Documentação</a> -
                     </strong>{" "}
                     Guia estruturado em módulos sequenciais para compreender e
                     implementar o ecossistema V3. A jornada inclui: conhecendo a
