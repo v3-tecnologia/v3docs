@@ -13,6 +13,14 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-footer-background-color: #292629;
+
+  ol, ul, menu {
+    list-style: disc;
+  }
+
+  .menu__list {
+    list-style: none;
+  }
 }
 
 @theme {

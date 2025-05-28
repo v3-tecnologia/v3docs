@@ -56,7 +56,7 @@ const config: Config = {
         {
           position: "left",
           label: "Documentação",
-          to: "/docs/documentation/intro",
+          to: "/docs/documentation",
         },
         {
           label: "API",

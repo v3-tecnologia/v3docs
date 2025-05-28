@@ -1,5 +1,5 @@
 ---
-sidebar_position: 0
+sidebar_position: 1
 ---
 
 # 🏗️ Introdução
@@ -9,6 +9,8 @@ sidebar_position: 0
 A V3 oferece uma solução dividida em módulos que se integram para formar um ecossistema completo de videotelemetria. Cada módulo abriga uma etapa específica do nosso processo, desde a captura de dados até a visualização e integração.
 
 ## 🏛️ Arquitetura Modular
+
+![Solução V3](/img/solucao_v3.png)
 
 Nossa arquitetura é composta por três módulos principais:
 
@@ -22,11 +24,3 @@ Nossa arquitetura é composta por três módulos principais:
   - 🔌 **V3API**: Conjunto de APIs documentadas neste portal que permitem obter as informações já processadas e organizadas geradas pelos dispositivos.
   - 🌐 **V3WEB**: Aplicação web desktop WhiteLabel que oferece funcionalidades básicas sem a necessidade de consumir, processar e exibir os dados. Solução ideal para empresas em estágio inicial sem time de desenvolvimento próprio. Permite customização da aparência conforme a identidade visual da sua empresa ou dos seus clientes.
   - 📱 **V3APP**: Aplicação para dispositivos Android e iOS que oferece os mesmos recursos disponíveis na plataforma desktop web.
-
-A imagem a seguir ilustra a visão geral desta arquitetura e como os módulos se relacionam:
-
-![Solução V3](/img/solucao_v3.png)
-
-## 🚀 Próximas Seções
-
-Nas próximas seções, exploraremos em detalhes cada um destes módulos, suas funcionalidades específicas e como eles se integram para formar uma solução completa e eficiente.
