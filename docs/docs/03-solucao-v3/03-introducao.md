@@ -10,7 +10,7 @@ A V3 oferece uma solução dividida em módulos que se integram para formar um e
 
 ## 🏛️ Arquitetura Modular
 
-![Solução V3](/img/solucao_v3.png)
+![Solução V3](/img/docs/solucao-v3/solucao-v3.png)
 
 Nossa arquitetura é composta por três módulos principais:
 

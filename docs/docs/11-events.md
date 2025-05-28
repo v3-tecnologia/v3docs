@@ -8,7 +8,7 @@ O Contexto de events é o coração do sistema de video-telemetria da V3. Ela é
 
 ## 🔌 Link da API
 
-Caso queira acessar diretamente a documentação da API de Eventos, [clique aqui](/docs/category/events-api).
+Caso queira acessar diretamente a documentação da API de Eventos, [clique aqui](/docs/category/event-api).
 
 ## ❓ O que são Events?
 

@@ -11,7 +11,11 @@ export default function Home(): ReactNode {
           <div className="row">
             <div className="col col--12">
               <div className={styles.introText}>
-                <img src="/img/logo-destaque.png" alt="V3 Logo" />
+                <img
+                  className="h-80 w-80"
+                  src="/img/shared/logo/logo-v3.svg"
+                  alt="V3 Logo"
+                />
                 <h2>
                   Bem-vindo ao portal do desenvolvedor que quer integrar com a
                   V3

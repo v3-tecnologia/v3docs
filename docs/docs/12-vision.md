@@ -14,7 +14,7 @@ Todos os eventos que chegam são monitorados por um agente que possui algumas fa
 
 ## 🔌 Link da API
 
-Caso queira acessar diretamente a documentação da API de Visão, [clique aqui](/docs/category/vision-api).
+Caso queira acessar diretamente a documentação da API de Visão, [clique aqui](#).
 
 ## 🔄 Fase 1 - Consolidação
 

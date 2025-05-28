@@ -9,58 +9,61 @@
   <a href="#requirements">Pré-requisitos</a> • 
   <a href="#get-started">Como Executar</a> • 
   <a href="#contribute">Como Contribuir</a> • 
-  <a href="#informações-úteis">Informações Úteis</a>
+  <a href="#project-structure">Estrutura do Projeto</a> • 
+  <a href="#useful-info">Informações Úteis</a>
 </p>
 
 <p align="center">
-<b>Este é um repositório para a documentação das APIs de acesso externo da V3 Tecnologia</b>
+<b>Este é o portal de documentação oficial da V3 Tecnologia, desenvolvido para fornecer uma experiência completa e intuitiva para desenvolvedores que desejam integrar com nossas APIs.</b>
 </p>
 
 <h2 id="tech-stack">💻 Tech Stack</h2>
 
 Este projeto utiliza as seguintes tecnologias:
 
-- [Docusaurus](https://docusaurus.io/pt-BR/) para renderizar
-- [Docusaurus OpenApi Docs](https://www.npmjs.com/package/docusaurus-plugin-openapi-docs) plugin para renderizar a partir do yaml
+- **[Docusaurus](https://docusaurus.io/)**: Framework moderno para documentação estática, oferecendo:
+  - Suporte a MDX para conteúdo dinâmico
+  - Versionamento de documentação
+  - Internacionalização
+  - Busca inteligente
+  - Tema escuro
+  - Layout responsivo
+- **[GitHub Pages](https://pages.github.com/)**: Hospedagem da documentação
+- **[Docusaurus API Docs](https://www.npmjs.com/package/docusaurus-plugin-api-docs)**: Plugin para renderização de documentação OpenAPI/Swagger
 
 <h2 id="requirements">❗ Pré-requisitos</h2>
 
 Para executar este projeto, você precisará ter instalado em sua máquina:
 
-Um dos gerenciadores de pacotes abaixo:
-- [Node](https://nodejs.org/en/download/) Versão 18 ou superior
+- [Node.js](https://nodejs.org/en/download/) Versão 18 ou superior
+- [Git](https://git-scm.com/downloads) para controle de versão
 
 <h2 id="get-started">🚀 Como executar?</h2>
 
-0. Clonar repositório:
-
+1. Clone o repositório:
 ```bash
 git clone git@github.com:v3-tecnologia/v3docs.git
 cd v3docs
 ```
 
-1. Baixar dependências da aplicação:
-
+2. Instale as dependências:
 ```bash
-npm init
+npm install
 ```
 
-2. Fazer o build and run:
-
+3. Execute o projeto:
 ```bash
 make build-run
 ```
 
-`
-Verifique o arquivo [Makefile](/Makefile) para os demais comandos
-`
-
 A aplicação estará disponível em `http://localhost:3000`
+
+> 💡 Verifique o arquivo [Makefile](/Makefile) para mais comandos disponíveis
 
 <h2 id="contribute">📫 Como contribuir</h2>
 
 1. Faça um fork do projeto
-2. Crie uma branch para sua feature
+2. Crie uma branch para sua feature:
    ```bash
    git checkout -b feature/nome-da-feature
    ```
@@ -71,7 +74,7 @@ A aplicação estará disponível em `http://localhost:3000`
    - `test:` para adição ou modificação de testes
    - `refactor:` para refatoração de código
    
-4. Faça commit das suas alterações seguindo o padrão:
+4. Faça commit das suas alterações:
    ```bash
    git commit -m "feat: adiciona nova funcionalidade"
    ```
@@ -81,52 +84,79 @@ A aplicação estará disponível em `http://localhost:3000`
    git push origin feature/nome-da-feature
    ```
    
-6. Abra um Pull Request explicando o problema resolvido ou feature implementada, e aguarde a revisão
+6. Abra um Pull Request explicando as alterações realizadas
+7. Aguarde a revisão e aprovação
 
-7. O build é feito de forma manual, portanto é preciso fazer o build e subir em um PR
-
-# Estrutura do Projeto
-
-O projeto segue uma arquitetura limpa:
+<h2 id="project-structure">📁 Estrutura do Projeto</h2>
 
 ```
-blog/                   # Postagens do Blog
-build/                  # Arquivos estáticos de build
-docs/
-  ├── openapi/
-    ├── auth/           # Documentação Gerada via plugin da Auth API
-    ├── managements/    # Documentação Gerada via plugin da Auth API
-    ├── orders/         # Documentação Gerada via plugin da Auth API
-  ├── tutorials/
-    ├── auth/           # Tutoriais da Auth API
-    ├── management/     # Tutoriais da Management API
-    ├── order/          # Tutoriais da Order API
-examples/               # Arquivos .yaml gerados nas respectivas API
-src/                    # Source do Docusaurus
-static/                 # Medias para utilizar na documentação
+.
+├── blog/                   # Postagens do Blog
+│   ├── authors.yml        # Configuração dos autores
+│   ├── tags.yml          # Configuração das tags
+│   └── YYYY-MM-DD-*      # Posts do blog
+├── docs/
+│   ├── docs/             # Documentação geral
+│   │   ├── 02-conhecendo-a-v3/    # Introdução à V3
+│   │   ├── 03-solucao-v3/         # Detalhes da solução
+│   │   ├── 04-configuracao-inicial.md
+│   │   ├── 05-manual-de-instalacao/
+│   │   ├── 06-ferramenta-de-configuracao.md
+│   │   ├── 07-autenticacao.md
+│   │   ├── 08-permissionamento.md
+│   │   ├── 09-gerenciamento.md
+│   │   ├── 10-orders.md
+│   │   ├── 11-events.md
+│   │   ├── 12-vision.md
+│   │   └── 13-webhooks.md
+│   ├── openapi/          # Documentação OpenAPI
+│   └── webhook/          # Documentação de Webhooks
+├── examples/             # Exemplos e especificações
+│   ├── auth.yaml        # Especificação da Auth API
+│   ├── management.yaml  # Especificação da Management API
+│   ├── orders.yaml      # Especificação da Orders API
+│   ├── event.yaml       # Especificação de Eventos
+│   └── webhook/         # Exemplos de Webhooks
+├── src/                  # Código fonte do Docusaurus
+├── static/              # Arquivos estáticos (imagens, etc.)
+├── docusaurus.config.ts # Configuração principal
+├── sidebars.ts         # Configuração da barra lateral
+└── Makefile            # Comandos de build e execução
 ```
 
-## Informações úteis
+<h2 id="useful-info">ℹ️ Informações Úteis</h2>
 
-Em geral temos dois arquivos importantes para incluir novas features
+### Configuração Principal
 
-1. [docusaurus.config.ts](/docusaurus.config.ts)
-2. [sidebars.ts](/sidebars.ts)
+Os arquivos principais de configuração são:
 
-Em [docusaurus.config.ts](/docusaurus.config.ts) temos as configurações da NavBar e suas opções e organização.
+1. **[docusaurus.config.ts](/docusaurus.config.ts)**
+   - Configurações gerais do Docusaurus
+   - Configuração da NavBar
+   - Plugins e temas
+   - Configurações de internacionalização
 
-Em [sidebars.ts](/sidebars.ts) temos as configurações da barra lateral, caso for adicionar uma nova API é importante acrescentar essa configuração, conforme os exemplos dentro deste arquivo
+2. **[sidebars.ts](/sidebars.ts)**
+   - Configuração da barra lateral
+   - Organização da documentação
+   - Links e categorias
 
-### Das APIs
-Os arquivos .yaml dentro do diretório examples/ são renderizados diretamente na pasta docs/openapi
+### Documentação de APIs
 
-### Dos tutoriais
-Cada pasta possui um arquivo de configuração _category_.json
-contendo o seguinte conteúdo:
+Os arquivos `.yaml` no diretório `examples/` são automaticamente renderizados na pasta `docs/api/`. Para adicionar uma nova API:
 
-``` json
+1. Adicione o arquivo `.yaml` em `examples/`
+2. Configure o plugin no `docusaurus.config.ts`
+3. Atualize o `sidebars.ts` com a nova seção
+
+### Tutoriais
+
+Para adicionar um novo tutorial:
+
+1. Crie um arquivo `_category_.json` no diretório do tutorial:
+```json
 {
-    "label": "Auth Tutorials",
+    "label": "Nome do Tutorial",
     "position": 1,
     "link": {
         "type": "generated-index"
@@ -134,28 +164,26 @@ contendo o seguinte conteúdo:
 }
 ```
 
-a configuração de position é relativa a posição na sidebar, deve-se ter atenção ao adicionar um novo diretório de tutoriais
-
-Dentro de um arquivo .md de tutorial podese usar o cabeçalho conforme abaixo:
-
-``` md
+2. Crie os arquivos `.md` com o cabeçalho:
+```markdown
 ---
 sidebar_position: 1
 ---
 ```
 
-Utilizado para travar o tutorial em uma determinada posição, quando não informado, é gerado automaticamente pelo Docusaurus
+### Blog Posts
 
-### Dos blogs
+Para criar um novo post no blog:
 
-Para os blogs é importante ter informado o cabeçalho:
-``` md
+1. Crie um arquivo em `blog/YYYY-MM-DD-titulo.md`
+2. Adicione o cabeçalho:
+```markdown
 ---
-slug: bem-vindo
-title: Bem vindo
+slug: titulo
+title: Título do Post
 authors: [author]
 tags: [tag]
 ---
 ```
 
-Essas configurações como [author] e [tag] são configuradas nos arquivos [authors.yml](/blog/authors.yml) e [tags.yml](/blog/tags.yml)
+3. Configure os autores em `blog/authors.yml` e tags em `blog/tags.yml`

@@ -12,7 +12,7 @@ const config: Config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.png",
+  favicon: "img/shared/favicon.png",
   trailingSlash: false,
 
   presets: [
@@ -45,7 +45,7 @@ const config: Config = {
       title: "Home",
       logo: {
         alt: "Logo",
-        src: "img/logo.png",
+        src: "img/shared/logo/logo-v3.svg",
       },
       items: [
         {
@@ -78,7 +78,7 @@ const config: Config = {
           items: [
             {
               label: "Conheça",
-              to: "/docs/docs/intro",
+              to: "/docs/docs",
             },
           ],
         },

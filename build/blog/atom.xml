@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://developer.v3control.com/blog"/>
     <subtitle>V3 Docs Blog</subtitle>
-    <icon>https://developer.v3control.com/img/favicon.png</icon>
+    <icon>https://developer.v3control.com/img/shared/favicon.png</icon>
     <entry>
         <title type="html"><![CDATA[Por dentro da arquitetura da V3]]></title>
         <id>https://developer.v3control.com/blog/arquitetura-v3</id>
@@ -70,49 +70,54 @@
         <category label="Engenharia de Software" term="Engenharia de Software"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Bem vindo]]></title>
+        <title type="html"><![CDATA[Bem vindo ao Portal do Desenvolvedor V3]]></title>
         <id>https://developer.v3control.com/blog/bem-vindo</id>
         <link href="https://developer.v3control.com/blog/bem-vindo"/>
         <updated>2025-04-30T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Bem-vindo à documentação oficial da API V3! Este é o seu guia completo para entender e utilizar todos os recursos disponíveis em nossa plataforma.]]></summary>
-        <content type="html"><![CDATA[<p>Bem-vindo à documentação oficial da API V3! Este é o seu guia completo para entender e utilizar todos os recursos disponíveis em nossa plataforma.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="o-que-é-a-api-v3">O que é a API V3?<a href="https://developer.v3control.com/blog/bem-vindo#o-que-%C3%A9-a-api-v3" class="hash-link" aria-label="Direct link to O que é a API V3?" title="Direct link to O que é a API V3?">​</a></h2>
-<p>A API V3 é a mais recente versão da nossa interface de programação, desenvolvida com foco em:</p>
+        <summary type="html"><![CDATA[É com grande satisfação que apresentamos o novo Portal do Desenvolvedor V3! Este portal foi construído com carinho para proporcionar a melhor experiência possível aos desenvolvedores que querem fazer parte do ecossistema V3.]]></summary>
+        <content type="html"><![CDATA[<p>É com grande satisfação que apresentamos o novo Portal do Desenvolvedor V3! Este portal foi construído com carinho para proporcionar a melhor experiência possível aos desenvolvedores que querem fazer parte do ecossistema V3.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tecnologias-utilizadas">Tecnologias Utilizadas<a href="https://developer.v3control.com/blog/bem-vindo#tecnologias-utilizadas" class="hash-link" aria-label="Direct link to Tecnologias Utilizadas" title="Direct link to Tecnologias Utilizadas">​</a></h2>
+<p>Nossa documentação foi desenvolvida utilizando:</p>
 <ul>
-<li><strong>Simplicidade</strong>: Interface intuitiva e fácil de usar</li>
-<li><strong>Performance</strong>: Respostas rápidas e eficientes</li>
-<li><strong>Segurança</strong>: Implementação das melhores práticas de segurança</li>
-<li><strong>Escalabilidade</strong>: Preparada para crescer com suas necessidades</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="estrutura-da-documentação">Estrutura da Documentação<a href="https://developer.v3control.com/blog/bem-vindo#estrutura-da-documenta%C3%A7%C3%A3o" class="hash-link" aria-label="Direct link to Estrutura da Documentação" title="Direct link to Estrutura da Documentação">​</a></h2>
-<p>Nossa documentação está organizada em seções que cobrem todos os aspectos da API:</p>
-<ol>
-<li><strong>Guia de Início Rápido</strong>: Comece a integrar em minutos</li>
-<li><strong>Referência da API</strong>: Detalhes completos de todos os endpoints</li>
-<li><strong>Exemplos de Código</strong>: Implementações práticas em várias linguagens</li>
-<li><strong>Boas Práticas</strong>: Recomendações para uso eficiente</li>
-<li><strong>FAQ</strong>: Respostas para dúvidas comuns</li>
-</ol>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="primeiros-passos">Primeiros Passos<a href="https://developer.v3control.com/blog/bem-vindo#primeiros-passos" class="hash-link" aria-label="Direct link to Primeiros Passos" title="Direct link to Primeiros Passos">​</a></h2>
-<p>Para começar a usar a API V3, você precisará:</p>
-<ol>
-<li>Criar uma conta na plataforma</li>
-<li>Obter suas credenciais de API</li>
-<li>Configurar seu ambiente de desenvolvimento</li>
-<li>Fazer sua primeira chamada à API</li>
-</ol>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="recursos-adicionais">Recursos Adicionais<a href="https://developer.v3control.com/blog/bem-vindo#recursos-adicionais" class="hash-link" aria-label="Direct link to Recursos Adicionais" title="Direct link to Recursos Adicionais">​</a></h2>
-<p>Além desta documentação, oferecemos:</p>
+<li>
+<p><strong><a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a></strong>: Um framework moderno para criar documentação estática, desenvolvido pelo Meta Open Source. O Docusaurus oferece:</p>
 <ul>
-<li><strong>Suporte Técnico</strong>: Nossa equipe está pronta para ajudar</li>
-<li><strong>Fórum da Comunidade</strong>: Compartilhe experiências com outros desenvolvedores</li>
-<li><strong>Status da API</strong>: Monitore a disponibilidade dos serviços</li>
-<li><strong>Changelog</strong>: Acompanhe as atualizações e novidades</li>
+<li><strong>MDX</strong>: Permite escrever documentação em Markdown com suporte a componentes React</li>
+<li><strong>Versionamento</strong>: Suporte nativo para múltiplas versões da documentação</li>
+<li><strong>Internacionalização</strong>: Preparado para traduções em diferentes idiomas</li>
+<li><strong>Busca Inteligente</strong>: Integração com mecanismos de busca para facilitar a navegação</li>
+<li><strong>Tema Escuro</strong>: Suporte automático para modo claro e escuro</li>
+<li><strong>Responsividade</strong>: Layout adaptável para todos os dispositivos</li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="próximos-passos">Próximos Passos<a href="https://developer.v3control.com/blog/bem-vindo#pr%C3%B3ximos-passos" class="hash-link" aria-label="Direct link to Próximos Passos" title="Direct link to Próximos Passos">​</a></h2>
-<p>Recomendamos começar pela <a href="https://developer.v3control.com/docs/docs/intro">documentação</a> para configurar seu ambiente e fazer sua primeira chamada à API.</p>
+</li>
+<li>
+<p><strong>GitHub Pages</strong>: Hospedagem confiável e de alta performance para nossa documentação</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="propósito-da-documentação">Propósito da Documentação<a href="https://developer.v3control.com/blog/bem-vindo#prop%C3%B3sito-da-documenta%C3%A7%C3%A3o" class="hash-link" aria-label="Direct link to Propósito da Documentação" title="Direct link to Propósito da Documentação">​</a></h2>
+<p>Nossa documentação foi cuidadosamente estruturada para fornecer um guia completo sobre a V3. Ao navegar progressivamente pela aba Documentação você trilhará um caminho de entendimento sobre o que é a V3 e como seu time pode se integrar com a nossa solução.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="nossa-equipe">Nossa Equipe<a href="https://developer.v3control.com/blog/bem-vindo#nossa-equipe" class="hash-link" aria-label="Direct link to Nossa Equipe" title="Direct link to Nossa Equipe">​</a></h2>
+<p>Este portal é fruto do trabalho dedicado de nossa equipe:</p>
+<ul>
+<li><strong>Ana Novaes</strong> (<a href="https://github.com/anaclaudianovaes" target="_blank" rel="noopener noreferrer">@anaclaudianovaes</a>) - Responsável pelo comercial da V3</li>
+<li><strong>Enio Amarantes</strong> (<a href="https://github.com/EnioAmarantes" target="_blank" rel="noopener noreferrer">@EnioAmarantes</a>) - Desenvolvedor Cloud e FW</li>
+<li><strong>Keven Lucas</strong> (<a href="https://github.com/kevenmiano" target="_blank" rel="noopener noreferrer">@kevenmiano</a>) - Desenvolvedor Cloud e DevOps</li>
+<li><strong>Matheus Maroca</strong> (<a href="https://github.com/MatheusMaroca" target="_blank" rel="noopener noreferrer">@MatheusMaroca</a>) - Responsável pelo suporte</li>
+<li><strong>Renascienza</strong> (<a href="https://github.com/Renascienza" target="_blank" rel="noopener noreferrer">@Renascienza</a>) - Desenvolvedor FW</li>
+<li><strong>Sergio Imperatriz</strong> (<a href="https://github.com/sjimperatriz" target="_blank" rel="noopener noreferrer">@sjimperatriz</a>) - CTO</li>
+<li><strong>Sleipnir</strong> (<a href="https://github.com/sleipnir" target="_blank" rel="noopener noreferrer">@sleipnir</a>) - Tech Lead</li>
+</ul>
+<p>Agradecemos a todos que contribuíram para a construção deste portal, compartilhando seu conhecimento e expertise para criar uma documentação completa e acessível.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="faça-parte-do-nosso-time">Faça Parte do Nosso Time!<a href="https://developer.v3control.com/blog/bem-vindo#fa%C3%A7a-parte-do-nosso-time" class="hash-link" aria-label="Direct link to Faça Parte do Nosso Time!" title="Direct link to Faça Parte do Nosso Time!">​</a></h2>
+<p>Estamos sempre em busca de talentos para crescer junto conosco! Conheça nossas oportunidades:</p>
+<ul>
+<li><strong>Vagas Abertas</strong>: Confira nossas posições disponíveis em <a href="https://github.com/v3-tecnologia/join-our-team" target="_blank" rel="noopener noreferrer">join-our-team</a></li>
+<li><strong>Descrições das Posições</strong>: Entenda melhor cada papel em nossa equipe em <a href="https://github.com/v3-tecnologia/job-descriptions" target="_blank" rel="noopener noreferrer">job-descriptions</a></li>
+<li><strong>Desafio Técnico</strong>: Conheça nosso processo seletivo em <a href="https://github.com/v3-tecnologia/challenge" target="_blank" rel="noopener noreferrer">challenge</a></li>
+</ul>
+<hr>
 <p>Estamos constantemente melhorando nossa documentação. Se você encontrar algo que possa ser melhorado ou tiver sugestões, por favor, entre em contato conosco.</p>
-<p>Boa codificação! 🚀</p>]]></content>
+<p>Bora V3! 🚀</p>]]></content>
         <author>
             <name>Diogo Cezar</name>
             <uri>https://github.com/diogocezar</uri>
