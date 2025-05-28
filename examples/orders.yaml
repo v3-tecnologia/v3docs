@@ -82,7 +82,26 @@ definitions:
           Parameters contains the specific data needed for the order type.
           The structure of each parameter depends on the order type.
           For example, ADD_WIFI parameters would contain ssid and password...
-        items: {}
+        items:
+          oneOf:
+            - $ref: '#/definitions/model.AddWifi'
+              title: AddWifi
+            - $ref: '#/definitions/model.DeleteWifi'
+              title: DeleteWifi
+            - $ref: '#/definitions/model.DeviceState'
+              title: DeviceState
+            - $ref: '#/definitions/model.RequestImage'
+              title: RequestImage
+            - $ref: '#/definitions/model.RequestVideo'
+              title: RequestVideo
+            - $ref: '#/definitions/model.Reboot'
+              title: Reboot
+            - $ref: '#/definitions/model.DriverInertial'
+              title: DriverInertial
+            - $ref: '#/definitions/model.DriverTelemetry'
+              title: DriverTelemetry
+            - $ref: '#/definitions/model.Tracking'
+              title: Tracking
         type: array
       type:
         allOf:
