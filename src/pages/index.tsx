@@ -1,11 +1,9 @@
 import type { ReactNode } from "react";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 
 import styles from "./index.module.css";
 
 export default function Home(): ReactNode {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout description="Bem-vindo ao V3 Docs - A documentação oficial da V3">
       <main>
