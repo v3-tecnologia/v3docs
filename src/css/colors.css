@@ -7,7 +7,7 @@
   --ifm-color-primary-darkest: #292629;
   --ifm-color-primary-light: #f6ba39;
   --ifm-color-primary-lighter: #f6ba39;
-  --ifm-color-primary-lightest: #f6ba39;
+  --ifm-color-primary-lightest: #fff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-footer-background-color: #292629;
 }
@@ -19,7 +19,7 @@
   --ifm-color-primary-darkest: #292629;
   --ifm-color-primary-light: #f6ba39;
   --ifm-color-primary-lighter: #f6ba39;
-  --ifm-color-primary-lightest: #f6ba39;
+  --ifm-color-primary-lightest: #fff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -32,7 +32,7 @@
   --color-primary-darkest: #292629;
   --color-primary-light: #f6ba39;
   --color-primary-lighter: #f6ba39;
-  --color-primary-lightest: #f6ba39;
+  --color-primary-lightest: #fff;
   --color-text-primary: #292629;
 }
 
@@ -43,6 +43,6 @@
   --color-primary-darkest: #292629;
   --color-primary-light: #f6ba39;
   --color-primary-lighter: #f6ba39;
-  --color-primary-lightest: #f6ba39;
+  --color-primary-lightest: #fff;
   --color-text-primary: #292629;
 }

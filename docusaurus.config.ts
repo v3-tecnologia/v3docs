@@ -36,6 +36,11 @@ const config: Config = {
   ],
 
   themeConfig: {
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     docs: {
       sidebar: {
         hideable: false,
@@ -71,10 +76,9 @@ const config: Config = {
       ],
     },
     footer: {
-      style: "light",
       links: [
         {
-          title: "Docs",
+          title: "DOCS",
           items: [
             {
               label: "Conheça",
@@ -83,10 +87,10 @@ const config: Config = {
           ],
         },
         {
-          title: "Comunidade",
+          title: "COMUNIDADE",
         },
         {
-          title: "Mais",
+          title: "MAIS SOBRE A V3",
           items: [
             {
               label: "Blog",
@@ -103,7 +107,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} V3 Tecnologia. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} V3 Tecnologia.`,
     },
     prism: {
       additionalLanguages: [

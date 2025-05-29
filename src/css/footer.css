@@ -1,5 +1,9 @@
 .footer {
-  background-color: var(--ifm-color-primary-darkest);
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+.footer__title {
+  text-align: center;
 }
 
 .footer__link-item, .navbar__link {
