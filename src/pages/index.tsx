@@ -8,9 +8,9 @@ export default function Home(): ReactNode {
   return (
     <Layout>
       <main>
-        <div className="container !mt-15">
-          <section className="flex flex-row gap-8">
-            <div className="w-[45%]">
+        <div className="container !mt-5 lg:!mt-20">
+          <section className="flex flex-col lg:flex-row gap-8">
+            <div className="w-full lg:w-[45%]">
               <Title>Bem vindo ao portal do desenvolvedor V3</Title>
               <Paragraph className="!mt-10">
                 Este é o ambiente de desenvolvimento da V3, onde você encontrará
@@ -21,7 +21,7 @@ export default function Home(): ReactNode {
                 Nosso portal está organizado em três seções:
               </Paragraph>
             </div>
-            <div className="w-[55%] flex items-center justify-center">
+            <div className="w-full lg:w-[55%] flex items-center justify-center">
               <img
                 src="/img/home/top.svg"
                 alt="V3 Logo"
@@ -29,7 +29,7 @@ export default function Home(): ReactNode {
               />
             </div>
           </section>
-          <section className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center !mt-15">
+          <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center !mt-15">
             <Card
               title="Blog"
               bgColor="bg-white"
@@ -82,8 +82,8 @@ export default function Home(): ReactNode {
               </Paragraph>
             </div>
           </section>
-          <section className="flex flex-row gap-8 !mt-10 items-center">
-            <div className="w-[35%]">
+          <section className="flex flex-col lg:flex-row gap-8 !mt-10 items-center">
+            <div className="w-[80%] lg:w-[35%]">
               <CardSuport title="Ficou com alguma dúvida?">
                 Entre em contato conosco através do e-mail{" "}
                 <a href="mailto:suporte@v3.com.br">suporte@v3.com.br</a>
