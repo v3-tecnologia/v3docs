@@ -25,7 +25,7 @@ export const Card = ({
 }: CardProps) => {
   const cardContent = (
     <div
-      className={`relative rounded-3xl shadow-lg p-7 pt-8 transition-colors duration-200 ${bgColor} ${textColor} ${className}  lg:min-h-[350px] flex flex-col group hover:bg-primary hover:text-white cursor-pointer`}
+      className={`relative rounded-3xl shadow-lg p-7 pt-8 transition-colors duration-200 ${bgColor} ${textColor} ${className}  lg:!min-h-[300px] flex flex-col group hover:bg-primary hover:text-white cursor-pointer`}
       style={{ boxShadow: "0 4px 24px 0 rgba(0,0,0,0.08)" }}
     >
       <div className="absolute top-5 right-7">
@@ -80,8 +80,10 @@ export const CardSuport = ({
       className={`relative rounded-3xl shadow-lg p-7 pt-8 ${className} min-h-[200px] flex flex-col`}
       style={{ boxShadow: "0 4px 24px 0 rgba(0,0,0,0.08)" }}
     >
-      <div className="font-bold text-4xl text-primary mb-2 mt-2">{title}</div>
-      <div className="text-xl leading-snug mt-5 text-primary-dark">
+      <div className="!font-bold !text-4xl !text-primary !mb-2 !mt-2">
+        {title}
+      </div>
+      <div className="!text-xl/12 !leading-snug !mt-5 !text-primary-dark">
         {children}
       </div>
     </div>

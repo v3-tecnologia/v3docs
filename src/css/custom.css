@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
 @import "./navbar.css";
 @import "./footer.css";
 @import "./lists.css";
@@ -8,6 +10,5 @@
 @import "./scrollbar.css";
 @import "./selection.css";
 @import "./internal.css";
-@import "tailwindcss";
 
 @custom-variant dark (&:is([data-theme="dark"] *));
