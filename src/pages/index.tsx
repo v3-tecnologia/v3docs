@@ -1,78 +1,102 @@
 import type { ReactNode } from "react";
 import Layout from "@theme/Layout";
-
-import styles from "./index.module.css";
+import { Title, SubTitle } from "../components/Headers";
+import { Paragraph } from "../components/Paragraph";
+import { Card, CardSuport } from "../components/Card";
 
 export default function Home(): ReactNode {
   return (
-    <Layout description="Bem-vindo ao portal do desenvolvedor que quer integrar com a V3">
+    <Layout>
       <main>
-        <div className="container">
-          <div className="row">
-            <div className="col col--12">
-              <div className={styles.introText}>
-                <img
-                  className="h-80 w-80"
-                  src="/img/shared/logo/logo-v3.svg"
-                  alt="V3 Logo"
-                />
-                <h2>
-                  Bem-vindo ao portal do desenvolvedor que quer integrar com a
-                  V3
-                </h2>
-                <p>
-                  Este é o ambiente de desenvolvimento da V3, onde você
-                  encontrará todas as informações necessárias para integrar e
-                  utilizar nossos serviços.
-                </p>
-                <p>Nosso portal está organizado em três principais seções:</p>
-                <ul>
-                  <li>
-                    <strong>
-                      <a href="/blog">Blog</a> -
-                    </strong>{" "}
-                    É o espaço onde nosso time de tecnologia compartilha
-                    conhecimentos sobre as tecnologias que utilizamos,
-                    tendências de mercado, inovações que estamos acompanhando, e
-                    como solucionamos os desafios técnicos da V3, incluindo
-                    projetos experimentais e provas de conceito.
-                  </li>
-                  <li>
-                    <strong>
-                      <a href="/docs/docs/intro">Documentação</a> -
-                    </strong>{" "}
-                    Guia estruturado em módulos sequenciais para compreender e
-                    implementar o ecossistema V3. A jornada inclui: conhecendo a
-                    V3, nossa solução, configuração inicial, autenticação e
-                    tokens, permissionamento, gestão de dispositivos, webhooks e
-                    integrações, e ferramentas operacionais para sua operação
-                    diária.
-                  </li>
-                  <li>
-                    <strong>
-                      <a href="docs/category/orders-api">API</a> -
-                    </strong>{" "}
-                    Documentação técnica detalhada de todas as APIs disponíveis
-                    para integração com a V3, incluindo autenticação,
-                    gerenciamento de pedidos, eventos e recursos
-                    administrativos. Cada endpoint é apresentado com exemplos
-                    práticos, parâmetros necessários e respostas esperadas.
-                  </li>
-                </ul>
-                <p>
-                  Nossa API foi projetada para ser intuitiva, segura e
-                  escalável, permitindo que você desenvolva soluções robustas e
-                  eficientes. Explore nossa documentação e descubra como a V3
-                  pode impulsionar seus projetos.
-                </p>
-                <h2>Ficou com alguma dúvida?</h2>
-                <p>
-                  Entre em contato conosco através do e-mail:{" "}
-                  <a href="mailto:suporte@v3.com.br">suporte@v3.com.br</a>
-                </p>
-              </div>
+        <div className="container !mt-15">
+          <section className="flex flex-row gap-8">
+            <div className="w-[45%]">
+              <Title>Bem vindo ao portal do desenvolvedor V3</Title>
+              <Paragraph className="!mt-10">
+                Este é o ambiente de desenvolvimento da V3, onde você encontrará
+                todas as informações necessárias para integrar e utilizar nossos
+                serviços.
+              </Paragraph>
+              <Paragraph className="!mt-10 !text-2xl" variant="bold">
+                Nosso portal está organizado em três seções:
+              </Paragraph>
             </div>
-          </div>
+            <div className="w-[55%] flex items-center justify-center">
+              <img
+                src="/img/home/top.svg"
+                alt="V3 Logo"
+                className="w-full h-auto"
+              />
+            </div>
+          </section>
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center !mt-15">
+            <Card
+              title="Blog"
+              bgColor="bg-white"
+              textColor="text-black"
+              href="/blog"
+            >
+              É o espaço onde nosso time de tecnologia compartilha conhecimentos
+              sobre as tecnologias que utilizamos, tendências de mercado,
+              inovações que estamos acompanhando, e como solucionamos os
+              desafios técnicos da V3, incluindo projetos experimentais e provas
+              de conceito.
+            </Card>
+
+            <Card
+              title="Documentação"
+              bgColor="bg-white"
+              textColor="text-black"
+              href="/docs/docs"
+            >
+              Guia estruturado em módulos sequenciais para compreender e
+              implementar o ecossistema V3. A jornada inclui: conhecendo a V3,
+              nossa solução, configuração inicial, autenticação e tokens,
+              permissionamento, gestão de dispositivos, webhooks e integrações,
+              e ferramentas operacionais para sua operação diária.
+            </Card>
+
+            <Card
+              title="API"
+              bgColor="bg-white"
+              textColor="text-black"
+              href="docs/category/orders-api"
+            >
+              Nossa API foi projetada para ser intuitiva, segura e escalável,
+              permitindo que você desenvolva soluções robustas e eficientes.
+              Explore nossa documentação e descubra como a V3 pode impulsionar
+              seus projetos.
+            </Card>
+          </section>
+          <section className="flex flex-row gap-8 !mt-35 justify-center">
+            <div className="text-center max-w-[80%]">
+              <SubTitle>
+                Explore nossa documentação e descubra como a V3 pode impulsionar
+                seus projetos.
+              </SubTitle>
+              <Paragraph className="!mt-10">
+                Nossa API foi projetada para ser intuitiva, segura e escalável,
+                permitindo que você desenvolva soluções robustas e eficientes.
+                Explore nossa documentação e descubra como a V3 pode impulsionar
+                seus projetos.
+              </Paragraph>
+            </div>
+          </section>
+          <section className="flex flex-row gap-8 !mt-10 items-center">
+            <div className="w-[35%]">
+              <CardSuport title="Ficou com alguma dúvida?">
+                Entre em contato conosco através do e-mail{" "}
+                <a href="mailto:suporte@v3.com.br">suporte@v3.com.br</a>
+              </CardSuport>
+            </div>
+            <div className="w-[65%] flex items-center justify-center">
+              <img
+                src="/img/home/bottom.svg"
+                alt="V3 Logo"
+                className="w-full h-auto"
+              />
+            </div>
+          </section>
         </div>
       </main>
     </Layout>

@@ -1,4 +1,3 @@
-@import "tailwindcss";
 @import "./navbar.css";
 @import "./footer.css";
 @import "./lists.css";
@@ -8,5 +7,6 @@
 @import "./hacks.css";
 @import "./scrollbar.css";
 @import "./selection.css";
+@import "tailwindcss";
 
 @custom-variant dark (&:is([data-theme="dark"] *));
