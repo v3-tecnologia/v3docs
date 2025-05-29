@@ -5,3 +5,23 @@ article {
 aside {
   border-right: none!important;
 }
+
+.menu__link{
+  padding: 10px 15px;
+  border-radius: 15px;
+}
+
+.menu__list-item-collapsible{
+  border-radius: 15px;
+}
+
+.menu__link--active:not(.menu__link--sublist){
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.theme-doc-sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

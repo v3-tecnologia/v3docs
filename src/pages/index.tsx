@@ -13,12 +13,12 @@ export default function Home(): ReactNode {
             <section className="flex flex-col lg:flex-row gap-8">
               <div className="!w-full lg:!w-[55%]">
                 <Title>Bem vindo ao portal do desenvolvedor V3</Title>
-                <Paragraph className="!mt-12">
+                <Paragraph className="!mt-4 md:!mt-12">
                   Este é o ambiente de desenvolvimento da V3, onde você
                   encontrará todas as informações necessárias para integrar e
                   utilizar nossos serviços.
                 </Paragraph>
-                <Paragraph className="!mt-20 !text-2xl" variant="bold">
+                <Paragraph className="!mt-4 lg:!mt-20 !text-2xl" variant="bold">
                   Nosso portal está organizado em três seções:
                 </Paragraph>
               </div>
@@ -26,7 +26,7 @@ export default function Home(): ReactNode {
                 <img
                   src="/img/home/top.svg"
                   alt="V3 Logo"
-                  className="!w-full !h-auto"
+                  className="!w-full !h-[380px]"
                 />
               </div>
             </section>
@@ -69,7 +69,7 @@ export default function Home(): ReactNode {
                 Payloads e muito mais.
               </Card>
             </section>
-            <section className="flex flex-row gap-8 !mt-35 justify-center">
+            <section className="flex flex-row gap-8 !mt-15 md:!mt-35 justify-center">
               <div className="text-center max-w-[80%]">
                 <SubTitle>
                   Explore nossa documentação e descubra como a V3 pode
