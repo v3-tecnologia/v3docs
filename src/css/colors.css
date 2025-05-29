@@ -10,6 +10,7 @@
   --ifm-color-primary-lightest: #fff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-footer-background-color: #292629;
+  --ifm-color-divider: #E9EAEB;
 }
 
 [data-theme='dark'] {

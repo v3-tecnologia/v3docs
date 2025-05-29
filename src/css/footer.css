@@ -1,5 +1,24 @@
 .footer {
+  margin-top: 0rem;
+  padding-top: 7rem;
   background-color: var(--ifm-color-primary-lightest);
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/img/shared/footer/decoration.svg');
+  background-repeat: no-repeat;
+  background-position: 50px 0px;
+  background-size: 300px;
+  opacity: 0.6;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .footer__title {
@@ -9,4 +28,15 @@
 .footer__link-item, .navbar__link {
   display: flex;
   align-items: center;
+}
+
+.footer__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__links {
+  border-bottom: 1px solid var(--ifm-color-divider);
+  padding-bottom: 2rem;
 }
