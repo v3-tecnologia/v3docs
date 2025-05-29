@@ -9,13 +9,13 @@
   content: '';
   position: absolute;
   top: -50px;
-  left: 15%;
+  left: 5%;
   right: 0;
   bottom: 0;
   background-image: url('/img/shared/footer/decoration.svg');
   background-repeat: no-repeat;
   background-position:  0vw 0px;
-  background-size: 400px;
+  background-size: 230px;
   opacity: 0.25;
   z-index: 0;
   pointer-events: none;
