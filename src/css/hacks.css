@@ -2,3 +2,17 @@
 .table-of-contents li {
     list-style: none;
 }
+
+.breadcrumbs__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+}
+
+.breadcrumbs{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+}
