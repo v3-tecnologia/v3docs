@@ -258,6 +258,8 @@ definitions:
         $ref: '#/definitions/model.Cam'
       start:
         type: string
+    required:
+    - cam
     type: object
   model.RequestVideo:
     properties:
@@ -267,6 +269,8 @@ definitions:
         type: string
       start:
         type: string
+    required:
+    - cam
     type: object
   model.Tracking:
     properties:
@@ -397,8 +401,8 @@ paths:
       produces:
       - application/json
       responses:
-        "201":
-          description: Order created successfully
+        "202":
+          description: Order sended to created
           schema:
             items:
               $ref: '#/definitions/mapper.OrderResponse'
