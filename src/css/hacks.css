@@ -17,3 +17,6 @@
     flex-direction: row;
 }
 
+.theme-doc-breadcrumbs{
+    margin-bottom: 40px!important;
+}
