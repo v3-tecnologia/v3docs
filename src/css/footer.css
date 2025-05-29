@@ -47,12 +47,20 @@
 }
 
 .footer__item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex!important;
+  align-items: center!important;
+  justify-content: center!important;
+}
+
+.footer__item > svg {
+  display: inline;
 }
 
 .footer__links {
   border-bottom: 1px solid var(--ifm-color-divider);
   padding-bottom: 2rem;
+}
+
+.footer__link-item {
+  display: inline!important;
 }
