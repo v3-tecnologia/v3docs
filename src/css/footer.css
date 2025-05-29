@@ -1,0 +1,8 @@
+.footer {
+  background-color: var(--ifm-color-primary-darkest);
+}
+
+.footer__link-item, .navbar__link {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,9 @@
+:root{
+  --ifm-navbar-height: 100px;
+}
+
+.navbar__logo {
+  height: 50px;
+  width: 80px;
+  margin-right: 10px;
+}

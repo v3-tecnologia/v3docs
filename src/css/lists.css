@@ -1,0 +1,7 @@
+ol, ul, menu {
+  list-style: disc;
+}
+
+.menu__list {
+  list-style: none;
+}
