@@ -68,6 +68,18 @@ const sidebars: SidebarsConfig = {
       },
       items: require("./docs/webhook/notifications/sidebar"),
     },
+    {
+      type: "category",
+      label: "Vision",
+      link: {
+        type: "generated-index",
+        title: "Vision API",
+        description:
+          "This is the vision API. It contains all the endpoints related to vision.",
+        slug: "/category/vision-api",
+      },
+      items: require("./docs/openapi/vision/sidebar"),
+    },
   ],
   // But you can create a sidebar manually
   /*

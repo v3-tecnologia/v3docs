@@ -331,6 +331,23 @@ const config: Config = {
         } satisfies Plugin.PluginOptions,
       },
     ],
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "vision-open-api",
+        docsPluginId: "classic",
+        config: {
+          vision: {
+            specPath: "examples/vision.yaml",
+            outputDir: "docs/openapi/vision",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+        } satisfies Plugin.PluginOptions,
+      }
+    ],
   ],
   themes: ["docusaurus-theme-openapi-docs"],
 };
