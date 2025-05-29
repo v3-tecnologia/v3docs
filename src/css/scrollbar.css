@@ -1,0 +1,19 @@
+::-webkit-scrollbar {
+  width: .25rem
+}
+
+::-webkit-scrollbar-thumb,::-webkit-scrollbar-track {
+  border-radius: .25rem
+}
+
+::-webkit-scrollbar {
+  width: .7rem
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ifm-color-primary-darkest)
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-primary)
+}

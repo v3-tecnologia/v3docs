@@ -36,6 +36,11 @@ const config: Config = {
   ],
 
   themeConfig: {
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     docs: {
       sidebar: {
         hideable: false,
@@ -71,27 +76,48 @@ const config: Config = {
       ],
     },
     footer: {
-      style: "dark",
       links: [
         {
-          title: "Docs",
+          title: "DEVELOPER",
           items: [
             {
-              label: "Conheça",
-              to: "/docs/docs",
+              label: "Home",
+              to: "/",
             },
-          ],
-        },
-        {
-          title: "Comunidade",
-        },
-        {
-          title: "Mais",
-          items: [
             {
               label: "Blog",
               to: "/blog",
             },
+            {
+              label: "Documentação",
+              to: "/docs/docs",
+            },
+            {
+              label: "API",
+              to: "docs/category/orders-api",
+            },
+          ],
+        },
+        {
+          title: "TRABALHE CONOSCO",
+          items: [
+            {
+              label: "Vagas Abertas",
+              to: "https://github.com/v3-tecnologia/join-our-team",
+            },
+            {
+              label: "Descrições das Vagas",
+              to: "https://github.com/v3-tecnologia/job-descriptions",
+            },
+            {
+              label: "Desafio Técnico V3",
+              to: "https://github.com/v3-tecnologia/challenge",
+            },
+          ],
+        },
+        {
+          title: "MAIS SOBRE A V3",
+          items: [
             {
               label: "Site",
               href: "https://www.v3.com.br",
@@ -100,10 +126,14 @@ const config: Config = {
               label: "GitHub",
               href: "https://github.com/v3-tecnologia",
             },
+            {
+              label: "LinkedIn",
+              href: "https://www.linkedin.com/company/v3-tecnologia",
+            },
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} V3 Tecnologia. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} V3 Tecnologia.`,
     },
     prism: {
       additionalLanguages: [

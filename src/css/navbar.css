@@ -1,0 +1,49 @@
+:root{
+  --ifm-navbar-height: 100px;
+}
+
+.navbar{
+  margin: 0px;
+  padding: 0px 35px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-sidebar__brand{
+  margin: 0px;
+  padding: 0px 35px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 996px) {
+  .navbar__item{
+    display: none!important;
+  }
+}
+
+
+.navbar__logo {
+  height: 50px;
+  width: 80px;
+  margin-right: 0;
+}
+
+.navbar__item, .navbar__title{
+  font-size: 1.2rem;
+}
+
+.navbar__title, .navbar__item, .navbar__brand{
+  margin: 0px;
+  padding: 0px;
+}
+
+.navbar__items{
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: left;
+  gap: 35px;
+}
+
+.navbar__link{
+  padding: 0px;
+}

@@ -1,0 +1,9 @@
+::-moz-selection {
+  background-color: var(--ifm-color-primary)!important;
+  color: var(--ifm-color-primary-lightest)!important
+}
+
+::selection {
+  background-color: var(--ifm-color-primary)!important;
+  color: var(--ifm-color-primary-lightest)!important
+}
