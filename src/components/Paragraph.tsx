@@ -18,8 +18,8 @@ export const Paragraph = ({
   };
 
   return (
-    <div className={`${baseStyles} ${variantStyles[variant]} ${className}`}>
+    <p className={`${baseStyles} ${variantStyles[variant]} ${className}`}>
       {children}
-    </div>
+    </p>
   );
 };

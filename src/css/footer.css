@@ -42,8 +42,15 @@
 }
 
 .footer__link-item, .navbar__link {
-  display: flex;
-  align-items: center;
+  display: flex!important;
+  align-items: center!important;
+}
+
+@media (max-width: 996px) {
+  .footer__link-item, .navbar__link {
+    display: flex!important;
+    align-items: center!important;
+  }
 }
 
 .footer__item {
@@ -59,8 +66,4 @@
 .footer__links {
   border-bottom: 1px solid var(--ifm-color-divider);
   padding-bottom: 2rem;
-}
-
-.footer__link-item {
-  display: inline!important;
 }
