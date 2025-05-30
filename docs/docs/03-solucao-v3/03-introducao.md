@@ -22,5 +22,5 @@ Nossa arquitetura é composta por três módulos principais:
 
 - **V3VIEW**: Camada de disponibilização das informações, que pode ser acessada de três formas diferentes:
   - **V3API**: Conjunto de APIs documentadas neste portal que permitem obter as informações já processadas e organizadas geradas pelos dispositivos.
-  - **V3WEB**: Aplicação web desktop WhiteLabel que oferece funcionalidades básicas sem a necessidade de consumir, processar e exibir os dados. Solução ideal para empresas em estágio inicial sem time de desenvolvimento próprio. Permite customização da aparência conforme a identidade visual da sua empresa ou dos seus clientes.
+  - **V3WEB**: Aplicação web desktop WhiteLabel que oferece funcionalidades básicas sem a necessidade de consumir, processar e exibir os dados. Solução ideal para empresas sem time de desenvolvimento próprio, inclusive para empresas em estágio inicial. Permite customização da aparência conforme a identidade visual da sua empresa ou dos seus clientes.
   - **V3APP**: Aplicação para dispositivos Android e iOS que oferece os mesmos recursos disponíveis na plataforma desktop web.
