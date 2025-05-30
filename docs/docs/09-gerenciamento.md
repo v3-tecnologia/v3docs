@@ -67,7 +67,6 @@ O sistema segue uma estrutura hierárquica clara, com relacionamentos específic
 - **Identificação**:  ID único e ULID para identificação externa
 - **IMEI**:  Identificador único do dispositivo
 - **Modelo**:  Modelo do dispositivo
-- **Certificado**:  ID do certificado de segurança
 - **Número de Telefone**:  Número do chip associado
 - **ICCID**:  Identificador do cartão SIM
 - **Reconhecimento Automático**:  Configuração para reconhecimento automático
