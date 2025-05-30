@@ -253,8 +253,8 @@ const config: Config = {
         docsPluginId: "classic",
         config: {
           order: {
-            specPath: "examples/orders.yaml",
-            outputDir: "docs/openapi/orders",
+            specPath: "examples/order.yaml",
+            outputDir: "docs/openapi/order",
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",
@@ -271,7 +271,7 @@ const config: Config = {
         config: {
           management: {
             specPath: "examples/management.yaml",
-            outputDir: "docs/openapi/managements",
+            outputDir: "docs/openapi/management",
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",
