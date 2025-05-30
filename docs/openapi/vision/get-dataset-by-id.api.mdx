@@ -1,0 +1,71 @@
+---
+id: get-dataset-by-id
+title: "Get dataset by ID"
+description: "Retrieves a dataset by its ID."
+sidebar_label: "Get dataset by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVsFuGzcQ/RWCpwYQJKdJL7qpdhAYLdAgtXNJjILaHWkn4ZJbkqtGXey/981yZcnWugV86cUXicuZ4bx5nOFMp0uKReAmsXd6qT9SCkw7isqo0iQTKan1XnGK6vpqrme6McHUlChEvfzcPbK+Gi2ur6DJstOYVGHtYIMvLrEO9GfLgUq9TKGlmY5FRbXRy06nfSNaERDcVvf9nSjHxrtIUeQ/XlzI37TPMCIvVWyLgmLctNbu4a/wLpFLYmmaxnJhxHLxNYp5d+K+Cb6hkDg7k+gHm7JkMTD2w4k8Qx8B+/VXKpLuZxrMTBwlEVNMfyD88yhxCteQmrqZ4uDMycSO7L2d4uba7YzlUo0AVGP21pvy+aRQCD6cbxe+pMnQSvDBdtDhRLUsjvhNCGafWYvRbKdOOA/2/+X49TnHt860qfKB/6YXYp9N7NunC9v5pDa+dS/sPpPdn6afBrzheNRUpLCjoDJFLww/g2FsRirawGk/9MRVw7/QfoVXAZ930sWS2Uq7PKR01HcD2soDk95SGvqqqOvF2HTjouOy13KyXE9utm2worLYvYnGlWv/fV74WouDg//f5Xpy3KcoutyMKzIlhWM7/plMwNXf+G/k9JH9wXCIld3G52t0yRQpX9LDPLqpSH3iiA81pM73lDMKA0RUCcIC2RSQZ7gV6cogVlXtGhWNnNtBFtGdCmJp3Bg0Pr25/PW326uZImfWVpQRYtMiV9UuewEmCuQKmn9xl49lMrZsmGyp/EYZ5MCGC4ZzBjJreSt2QGWSMtb6v+L96cDqB63QYJBQoFchlICgxaEP9VAGahN8rbhGTsZBZ8cl+ThTkevWQmUIrjZuBASINxVARW/bNAIEfbx1iBYO5XgjmE/IIbdlR6f8oBx4JyLAFkYvrW9LHL2yEhgiGMwOuqRq7zj5kAkFFqB1SWa3xMnKDY/3tfpwjU3JrnyVF/OL+WupicbHhCDk5sdMeQ9OTsbBYb57kAfd8eH47xlyTDRJlkVjDXITTofk7sY6+KwPdQD1JUoXOV4BlUi6bg3JbbB9L9uo7iB1h+XOBEbWUJ5MOcoaFbYxNtK/4P3h4ziRvlIPBthJmIcicTJaYrpq5QvLbyiZYcDt76A1VprgyIIVRtImnZicPa796Zvw/t0NdM1YvMfClMNmh4WcPgnnUV1nBPLbz56w6Lpc9X1/r59FT1rcvyVj4BIAnsJ/AOm0SFg=
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/vision/vision-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get dataset by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/datasets/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves a dataset by its ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Dataset ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Dataset retrieved successfully","content":{"application/json":{"schema":{"properties":{"data":{"additionalProperties":true,"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"400":{"description":"Invalid request payload","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Dataset not found","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
