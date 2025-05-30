@@ -8,7 +8,7 @@ O Sistema de Orders é uma ferramenta que permite enviar comandos e configuraç�
 
 ## Link da API
 
-Caso queira acessar diretamente a documentação da API de Orders, [clique aqui](/docs/category/orders-api).
+Caso queira acessar diretamente a documentação da API de Orders, [clique aqui](/docs/category/order-api).
 
 ## Para que serve?
 

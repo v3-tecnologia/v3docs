@@ -1,0 +1,75 @@
+---
+id: list-fleets-with-pagination
+title: "List fleets with pagination"
+description: "FindAll handles HTTP GET requests to retrieve fleet records with optional filtering and pagination."
+sidebar_label: "List fleets with pagination"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVc1yEzEMfhWNTzCTScPfJbcCpZS/dko50U7GWSuJi9debG1omsnDMBx4kL4YkjdpUrpNp1eG01qWLX369pM8VwZTEW1FNnjVV2+sN7vOwUR74zDB25OTI9jfO4GI32tMlIACrylanCKMHCKxWYRoEvywNIGQI2kHI+sIo/Vj4FBQ6bH1WlzdU39AkOqqCpHDrY8NZ4AcASOcqtpZc6ogyJpQlwdiMYA440hRl8h3UgeGNYEPBMPAmZMta0faY6iTm0maUeNoUiTQEaGKYWoNmg5YAU519OyA570evNQGjpsqAWMMkUMcXcMGm6AInmJwDg1MrWZoXBUyMCmwMQbJXmIr1EyOwZFmjCnfcLa0sqwqZ9FwsuNrOO8+H35idKkKPmFOq60XjpieFZUMItOfhCXtG8hQYkqMo6s6ap1d9b/O//rPXBiCr8sh0/1oCasPTx7zPSv+XAAbnkOwKbWxlYoJllr154pmlexbTzjGqBaLTmsGoWMzfq8Dpb6QRW9bqkzj9nxnHbUiKMmBp72efG5iOHzPQYQ+9CTezHWR/+fOeZIj840crI0KI9kmoNGUdy1hmW67WfIRXQ41sGYDYiJRs1pw4ojymwaaWt0GHW5x3wh6XfeKppYL0ieDu25JQ7XeqitzN0iJ2uyE4TkWpNYbOkY9EztLozXn+k+2uimQdoNreu86IFFaD9wGt5C9F21COOBLUabSZ4xTlvyeNMsDtLFoYpMeSzOpN9J4iiXI/TUJTKwasy0V04SNnaYxRcA5XdOAdXTi25k+S9z+w3DRLUKpRMjWj0KjKW70QtBkeWwWsJvBXf2++hUAS9g/XI2Hq59TdMCzlDe0s5c6QoBXx19eg9EJeJbFmqcKL4c65bFAlpyQ9lF7Zrbk6mH36IAdArRJ1uv2uk/yHwyJSp2pWHbnB8vTcTl38khbD3b1F+b5mt3/z8q/86wse47wgnYqxwHyFBFtz5f6/6qW+mdpT1hBsjOfi/6+RLdYyHYz8/OzZJMecumqP9Iu4RYNbXmyWjF9w9n65ZpqV8sRlR+qh+W85xG7J/nqLVsjOBMjWoHAFJzx6QlqwyNN+Ggu7hYFVrRx69Z0WmxOH+4knn5/AAPDawI=
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List fleets with pagination"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/fleets"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindAll handles HTTP GET requests to retrieve fleet records with optional filtering and pagination.
+It supports filtering by either "ulid" or "teamId" query parameters, but not both simultaneously.
+If both filters are provided, it returns a 400 Bad Request error.
+Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
+Returns a JSON response containing the paginated fleets or an error message.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"integer"},"name":{"type":"string"},"team_id":{"type":"integer"},"ulid":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

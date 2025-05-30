@@ -1,0 +1,71 @@
+---
+id: get-media-by-id
+title: "Get media by ID"
+description: "Retrieves media by its ID."
+sidebar_label: "Get media by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVsFuGzcQ/RWCpxYQJKdJL7qpdhEYbdEgtXNJjYLaHUmTcMktyVWjLvbf+4ZcW4q1zsGXXnyRuOQM582bGc70uqZYBW4Te6eX+j2lwLSnqBqq2aj1QXGK6vpqrme6NcE0lChEvfzYP9L8LctfX0GO5bs1aYe1gwa+uMY60N8dB6r1MoWOZjpWO2qMXvY6HVqRijDutnoY7kQ4tt5FinL+w8WF/E1ZDCPiWsWuqijGTWftAdYq7xK5JHqmbS1XRvQWn6Io9yfG2+BbComLqdqkvGvqmkXB2Hcn5wX4CNevP1GV9DDTYGXiKvGXYvoLzp/7iFu4walp2ikGzoxM7Mjemylmrt3eWK7VCEC15mC9qZ9PCoXgw/l25WuadK0GH2yzDCdqZHHEb0Iwh8JajGY7dcO5s/8vx6/OOb51pks7H/hfeiH22cS+eaqsnU9q4zv3wu0zuf1x+mHA640nTUUKewqqUPTC8DMYxmakqgucDrkbrlr+hQ4rvAn4vJMOlsxWGmVJaH2Xoe48AOktpdxORVYvcqdd9FwPWu6UwJQG2wUr54v962hcvfZf5pVvtFx9b/kPCUzx+NR+X1rwjkxN4diEfyITEPQb/5mcPvKeFbOX7Da+BNAlU6USnq8z6GZH6gNHfKicNF9SyaWoTFQJhxXyKCDDEA/pxqBU7bo1ahnZtsdZRFeqiKVhY7j48Pry199vr2aKnFlbEYaLbYcsVftiBZgokKto/qe7fHwGq2rDZGvlN8og+huuGMYZyKzlregBlUnKWOv/iQ+3A6vPUqHFAKFAr4IrAU6LQR+aXABqE3yjuEE2xiyz55p8nKnITWchkp1rjBsBAeLNDqCit10aAYI+3jp4C4NyvRHMJ+SQ27KjU35QCLyXI8AWRi+t72pcvbLiGDzIaveypBrvOPlQCAUWoHVJ5rXEyUqEx3it3l1jU7KrhPJifjF/JdXQ+pjghER+zJS34ORhAMwz3VdZ0B8fjG9PjGOKSZosWmuQlTCX07of0/+jzmqQXaJWkdo7gJHtvl+bSLfBDoNso5yDFBqWexMYyUJlCOUoa1TVxthI3wD63ftx/PxencyqkwjvK8PJHIlRqpMvLD+jTvIsO9xBaiwvQVEOVpg/23SicvaWDqevwNufbyBrxoo9VqNcNrtfyO2TcB4Vc0Egv8PsCY2+L6U+DA/y5ehJjYcHZHRcHMDL9x/DhT0B
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/vision/vision-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get media by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/media/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves media by its ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Media ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Media retrieved successfully","content":{"application/json":{"schema":{"properties":{"data":{"additionalProperties":true,"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"400":{"description":"Invalid request payload","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Media not found","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

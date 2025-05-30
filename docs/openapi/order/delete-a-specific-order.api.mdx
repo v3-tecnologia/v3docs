@@ -1,0 +1,72 @@
+---
+id: delete-a-specific-order
+title: "Delete a specific order"
+description: "Deletes a single order identified by its ID for a given device."
+sidebar_label: "Delete a specific order"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVcFu2zAM/RVBpw0IkqzbKbd0LYZiAzp03anrQZGZhK0taZLs1TP8McMO+5D+2EjZWY3GKdCedopNkSL93uNLIzMI2qOLaI1cyBPIIUIQSgQ0mxyE9Rl4gRmYiGuETKxqgTGIsxOxtp7yNliBERlUqGH6zVxuMQjrwCu+UdALeg8V+IAruk6ZTPzAPBeUUShDt+a18FDYCkTc9u2mciKd8qqgUXyQi6tmb0ruRjNQInLAqbilZ0Ml9NYNc5ZRxMP3Ej1kchF9CRMZ9BYKJReNjLXj3BA9fahs28njJufpyw/1SIM+s8U1JwdnTYDA50fzI/4ZaxvAZAR2tIQsM8KNtDWRAOMS5VyOOkE8uwlc1wz6YoQiNXCemYjYtdMeFN20jCOzTWTf5+BpD+nYIQ7DSENuwHOc+FP7YzBeEOKBuyIWdKgKN8rRLmJXN6Aj5wdbeg3vn/w0ui+WYfSozHF8jtJlB28cm6MPKO9VTRmc824+36f3WGXiokPgGZS23Y1RbXgdOo3I64Tw1mZJ8sxe2htS6ULOOsLCrNkx186SZCnSS7el7AC+2q1Y6XMunFVvA23pyt5NtS0kizaALj3G+guP05G4dPgR6mXJzZpuP7ageKp/G3IMypOSL+0tGPkAUCpMGKJZ26RLAkFpBiEJbYjWMmFy/+f+txVQiA/nol+g+18VkImQAxHzOf5UyYoIVM7MOh8xQbCLCBtEhlQVMGJlA7tLxJjDbtmCWH4+o2AyqdR2Pp1P3zCrVBTJpnjK/qs6g2R/dKDJEXVnWfLR5M0Dtf+Pp/YURLiLM5crYo2FzrQ3vW6u+kUPlL0Y2GgnHQ7ufI9ksSVwuKRpVirAV5+3LYdJ276mOD1WyqNaMdJs4Rj4mdS6VnmAJwB7ddFb6msxdPrR8XeyMjUzqPKS3+jxlkQ2+CdI9v6SAQb/Ai/ov0OrvabUfkEYi+50qTW4OKjb84B2uOMnp59OL09pdf4CiQ2pAw==
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/order/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a specific order"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/devices/{deviceId}/orders/{orderId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes a single order identified by its ID for a given device.
+This operation is irreversible and will permanently remove the order.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"deviceId","required":true,"schema":{"type":"string"}},{"description":"Order ID","in":"path","name":"orderId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"202":{"description":"Order sended to deleted","content":{"application/json":{"schema":{"items":{"properties":{"createdAt":{"type":"string"},"deletedAt":{"type":"string"},"deviceId":{"type":"string"},"id":{"type":"integer"},"meta":{"properties":{"requestId":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"},"sourceCreatedAt":{"type":"string"},"status":{"type":"string"},"ulid":{"type":"string"},"updatedAt":{"type":"string"}},"type":"object"},"type":"array"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

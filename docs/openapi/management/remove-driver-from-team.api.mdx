@@ -1,0 +1,75 @@
+---
+id: remove-driver-from-team
+title: "Remove driver from team"
+description: "RemoveFromTeam handles the HTTP request to remove a driver from a team."
+sidebar_label: "Remove driver from team"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVMtuEzEU/ZUrr2gVJaGwyq4iASKKWoV01XThztwkFjP2YHtCSzQfg1jwIf0xzh1P1aStKtElYjV37HPfx2ercg6ZN1U0zqqRmnHpNvzeu3LOuqS1tnnBgeKa6eN8fkaev9UcIkUHU6CkKfdmw56WcMJfhF9/YaeR+LriLCbnDjMdEyK2mNYOdD47oUp7XXJkH+jVQpl8oVrUQgluit8DBJwjCkBrlws+pKIC7zj3aKMLk+uY7speGyXTRbFbwxf2G5OxdFCxXzpftpdtN7pAohnH2tuAVo6GQzr9RCHqWAf6buIah6HOMg4BtYSgV0xm2fo7BNMyRDLhDrOs9+O9PTqic1t5J5f6qmCa2GjizX4GS+y98w8TTMcI4fFr2y4JiO6mK52W2hShr3rqfiRqdLF9sOHx3SYANHJQ6biGbeGCP5PDli0bz7kaRV9zT4UM49RqtFXxpmpRNvKKvWqa3sP487Tbp6Onhf5dhktBh8pZ7FwA2Ip8nuwqcTJPXJRkSJU5hLJRfA4Hh/J5lCxEb+wKudCPwpYex39qbc/HblK0qFeyha5AhWYSiREz5wJLaveFGY3UIBE0DLbJmObNQHrAQZpbA2wAfe8WW/tC3AabNwFMv3LX/cyVSgZm7NJJNVKfzqQ+lLLf0XFVmEzf/r795YhL+nBK3ZRvf264oMrJNMG0H9qTo3ez8zHleK94/L4GoWFe6cBCN8yikCl+1hZ8LTEPOj6b4kIKTcmG/WH/tUINlQux1FZq6yiRFGdPRLrF7dW7vZ/1f5H6F0Sqe3qRr+OgKjTEAvRoGb3tHsSF6h4E0KO7JyGe8ibkrFMT8H0NWonDdiukPPdF08gxaOBvcA5zo72RbpIimrYzPMKlLgI/Q7VXs06oDmhXOJ8svjvUVpQBvdbyB/Mr3yRhbcXyJanvNfUFibspNZdArlnnUCGZQbo8BgequOMmMtbsqtR4cjKZT6CNfwCHVtEq
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Remove driver from team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/drivers/{driverId}/teams/{teamId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+RemoveFromTeam handles the HTTP request to remove a driver from a team.
+It expects the driver ID and team ID as URL parameters ("id" and "teamId").
+The method parses these parameters, validates them, and calls the driverService to perform the removal.
+Returns a 200 OK status with a success message if the operation is successful.
+Returns a 422 Unprocessable Entity status with an error message if the IDs are invalid or if the removal fails.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}},{"description":"Team ID","in":"path","name":"teamId","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Driver removed from team","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable Entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

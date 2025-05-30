@@ -1,0 +1,490 @@
+basePath: /
+definitions:
+  dto.AddWifiDTO:
+    properties:
+      parameters:
+        description: 'Array of WiFi configuration parameters **Example**: [{"ssid":
+          "MyWifi", "password": "123456"}]'
+        items:
+          $ref: '#/definitions/model.AddWifi'
+        type: array
+      type:
+        allOf:
+        - $ref: '#/definitions/model.OrderType'
+        description: Type of the order (it must be **ADD_WIFI**)
+    type: object
+  dto.CreateOrderDTO:
+    properties:
+      orders:
+        description: |-
+          Orders is an array of individual order requests to be created.
+          Each order in the array will be processed independently.
+        items:
+          $ref: '#/definitions/dto.OrderDTO'
+        type: array
+    required:
+    - Order
+    type: object
+  dto.DeleteWifiDTO:
+    properties:
+      parameters:
+        description: 'Array of WiFi deletion parameters **Example**: [{"ssid": "MyWifi"}]'
+        items:
+          $ref: '#/definitions/model.DeleteWifi'
+        type: array
+      type:
+        allOf:
+        - $ref: '#/definitions/model.OrderType'
+        description: Type of the order (it must be **DELETE_WIFI**)
+    type: object
+  dto.DeviceStateDTO:
+    properties:
+      parameters:
+        description: 'Array of device state parameters **Example**: [{"active": true}]'
+        items:
+          $ref: '#/definitions/model.DeviceState'
+        type: array
+      type:
+        allOf:
+        - $ref: '#/definitions/model.OrderType'
+        description: Type of the order (it must be **DEVICE_STATE**)
+    type: object
+  dto.DriverInertialDTO:
+    properties:
+      parameters:
+        description: 'Array of driver inertial parameters **Example**: [{"active":
+          true}]'
+        items:
+          $ref: '#/definitions/model.DriverInertial'
+        type: array
+      type:
+        allOf:
+        - $ref: '#/definitions/model.OrderType'
+        description: Type of the order (it must be DRIVER_COACH_INERTIAL)
+    type: object
+  dto.DriverTelemetryDTO:
+    properties:
+      parameters:
+        description: 'Array of driver telemetry parameters **Example**: [{"active":
+          true}]'
+        items:
+          $ref: '#/definitions/model.DriverTelemetry'
+        type: array
+      type:
+        allOf:
+        - $ref: '#/definitions/model.OrderType'
+        description: Type of the order (it must be DRIVER_COACH_TELEMETRY)
+    type: object
+  dto.OrderDTO:
+    properties:
+      parameters:
+        description: |-
+          Parameters contains the specific data needed for the order type.
+          The structure of each parameter depends on the order type.
+          For example, ADD_WIFI parameters would contain ssid and password...
+        items:
+          oneOf:
+            - $ref: '#/definitions/model.AddWifi'
+              title: AddWifi
+            - $ref: '#/definitions/model.DeleteWifi'
+              title: DeleteWifi
+            - $ref: '#/definitions/model.DeviceState'
+              title: DeviceState
+            - $ref: '#/definitions/model.RequestImage'
+              title: RequestImage
+            - $ref: '#/definitions/model.RequestVideo'
+              title: RequestVideo
+            - $ref: '#/definitions/model.Reboot'
+              title: Reboot
+            - $ref: '#/definitions/model.DriverInertial'
+              title: DriverInertial
+            - $ref: '#/definitions/model.DriverTelemetry'
+              title: DriverTelemetry
+            - $ref: '#/definitions/model.Tracking'
+              title: Tracking
+        type: array
+      type:
+        allOf:
+        - $ref: '#/definitions/model.OrderType'
+        description: Type specifies the kind of order being requested.
+    required:
+    - parameters
+    - type
+    type: object
+  dto.RebootDTO:
+    properties:
+      parameters:
+        description: 'Array of reboot parameters **Example**: [{"active": true}]'
+        items:
+          $ref: '#/definitions/model.Reboot'
+        type: array
+      type:
+        allOf:
+        - $ref: '#/definitions/model.OrderType'
+        description: Type of the order (it must be REBOOT)
+    type: object
+  dto.RequestImageDTO:
+    properties:
+      parameters:
+        description: 'Array of image request parameters **Example**: [{"start": "2024-03-20T10:00:00Z",
+          "cam": "1"}]'
+        items:
+          $ref: '#/definitions/model.RequestImage'
+        type: array
+      type:
+        allOf:
+        - $ref: '#/definitions/model.OrderType'
+        description: Type of the order (it must be REQUEST_IMAGE)
+    type: object
+  dto.RequestVideoDTO:
+    properties:
+      parameters:
+        description: 'Array of video request parameters **Example**: [{"start": "2024-03-20T10:00:00Z",
+          "end": "2024-03-20T11:00:00Z", "cam": "1"}]'
+        items:
+          $ref: '#/definitions/model.RequestVideo'
+        type: array
+      type:
+        allOf:
+        - $ref: '#/definitions/model.OrderType'
+        description: Type of the order (it must be REQUEST_VIDEO)
+    type: object
+  dto.TrackingDTO:
+    properties:
+      parameters:
+        description: 'Array of tracking parameters **Example**: [{"active": true}]'
+        items:
+          $ref: '#/definitions/model.Tracking'
+        type: array
+      type:
+        allOf:
+        - $ref: '#/definitions/model.OrderType'
+        description: Type of the order (it must be DRIVER_COACH_TRACKING)
+    type: object
+  mapper.Meta:
+    properties:
+      requestId:
+        type: string
+      timestamp:
+        type: string
+    type: object
+  mapper.OrderResponse:
+    properties:
+      createdAt:
+        type: string
+      deletedAt:
+        type: string
+      deviceId:
+        type: string
+      id:
+        type: integer
+      meta:
+        $ref: '#/definitions/mapper.Meta'
+      sourceCreatedAt:
+        type: string
+      status:
+        type: string
+      ulid:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  model.AddWifi:
+    properties:
+      password:
+        description: Password for the Wi-Fi network
+        type: string
+      ssid:
+        description: SSID of the Wi-Fi network
+        type: string
+    type: object
+  model.Cam:
+    enum:
+    - "1"
+    - "0"
+    type: string
+    x-enum-varnames:
+    - RoadCam
+    - DriverCam
+  model.DeleteWifi:
+    properties:
+      ssid:
+        description: Indicates the SSID of the Wi-Fi network to be deleted
+        type: string
+    type: object
+  model.DeviceState:
+    type: object
+  model.DriverInertial:
+    properties:
+      active:
+        type: boolean
+    type: object
+  model.DriverTelemetry:
+    properties:
+      active:
+        type: boolean
+    type: object
+  model.OrderType:
+    enum:
+    - ADD_WIFI
+    - DELETE_WIFI
+    - DEVICE_STATE
+    - REQUEST_IMAGE
+    - REQUEST_VIDEO
+    - CONFIG
+    - REBOOT
+    - DRIVER_COACH_INERTIAL
+    - DRIVER_COACH_TELEMETRY
+    - DRIVER_COACH_TRACKING
+    - INTERNAL
+    type: string
+    x-enum-varnames:
+    - ADD_WIFI
+    - DELETE_WIFI
+    - DEVICE_STATE
+    - REQUEST_IMAGE
+    - REQUEST_VIDEO
+    - ORDER_CONFIG
+    - REBOOT
+    - DRIVER_COACH_INERTIAL
+    - DRIVER_COACH_TELEMETRY
+    - DRIVER_COACH_TRACKING
+    - INTERNAL
+  model.Reboot:
+    type: object
+  model.RequestImage:
+    properties:
+      cam:
+        $ref: '#/definitions/model.Cam'
+      start:
+        type: string
+    required:
+    - cam
+    type: object
+  model.RequestVideo:
+    properties:
+      cam:
+        $ref: '#/definitions/model.Cam'
+      end:
+        type: string
+      start:
+        type: string
+    required:
+    - cam
+    type: object
+  model.Tracking:
+    properties:
+      active:
+        type: boolean
+    type: object
+host: v3sandbox.com
+info:
+  contact: {}
+  description: Aplicação em GO responsável por realizar a gestão de ordens para os
+    dispositivos.
+  title: Orders API
+  version: 0.0.1
+paths:
+  /devices/{deviceId}/orders:
+    delete:
+      consumes:
+      - application/json
+      description: |-
+        Deletes multiple orders for a specific device.
+        If the `ids` query parameter is provided, only the specified orders will be deleted.
+        If omitted, all orders associated with the device may be removed (depending on implementation rules).
+      parameters:
+      - description: Unique identifier of the device
+        in: path
+        name: deviceId
+        required: true
+        type: string
+      - description: Comma-separated list of order IDs to delete **(e.g. id1,id2,id3)**
+        in: query
+        name: ids
+        type: string
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Order sended to deleted
+          schema:
+            items:
+              $ref: '#/definitions/mapper.OrderResponse'
+            type: array
+        "400":
+          description: Bad Request
+          schema: {}
+      summary: Delete multiple orders
+      tags:
+      - Order
+    post:
+      consumes:
+      - application/json
+      description: |-
+        Submits a list of commands to be executed by the specified device.
+        Each command in the list can be one of several supported types, such as:
+        (**AddWifi**, **DeleteWifi**, **GetDeviceState**, **RequestImage**, **RequestVideo**, **Reboot**,
+        **DriverCoachInertial**, **DriverCoachTelemetry**, **DriverCoachTracking**).
+      parameters:
+      - description: Device ID
+        in: path
+        name: deviceId
+        required: true
+        type: string
+      - description: Create Order payload
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreateOrderDTO'
+      - description: Order
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.OrderDTO'
+      - description: Add Wifi
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.AddWifiDTO'
+      - description: Delete Wifi
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.DeleteWifiDTO'
+      - description: Device State
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.DeviceStateDTO'
+      - description: Request Image
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.RequestImageDTO'
+      - description: Request Video
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.RequestVideoDTO'
+      - description: Reboot
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.RebootDTO'
+      - description: Driver Coach Inertial
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.DriverInertialDTO'
+      - description: Driver Coach Telemetry
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.DriverTelemetryDTO'
+      - description: Driver Coach Tracking
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.TrackingDTO'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Order sended to created
+          schema:
+            items:
+              $ref: '#/definitions/mapper.OrderResponse'
+            type: array
+        "400":
+          description: Invalid request payload
+          schema: {}
+        "401":
+          description: Unauthorized
+          schema: {}
+        "500":
+          description: Internal server error
+          schema: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Create new order
+      tags:
+      - Order
+  /devices/{deviceId}/orders/{orderId}:
+    delete:
+      consumes:
+      - application/json
+      description: |-
+        Deletes a single order identified by its ID for a given device.
+        This operation is irreversible and will permanently remove the order.
+      parameters:
+      - description: Device ID
+        in: path
+        name: deviceId
+        required: true
+        type: string
+      - description: Order ID
+        in: path
+        name: orderId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Order sended to deleted
+          schema:
+            items:
+              $ref: '#/definitions/mapper.OrderResponse'
+            type: array
+        "400":
+          description: Bad Request
+          schema: {}
+      summary: Delete a specific order
+      tags:
+      - Order
+    get:
+      consumes:
+      - application/json
+      description: Retrieve an order by its ID for a specific device
+      parameters:
+      - description: Device ID
+        in: path
+        name: deviceId
+        required: true
+        type: string
+      - description: Order ID
+        in: path
+        name: orderId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Order retrieved successfully
+          schema:
+            $ref: '#/definitions/mapper.OrderResponse'
+        "400":
+          description: Bad Request
+          schema: {}
+      summary: Get a specific order
+      tags:
+      - Order
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Bearer Token
+    type: apiKey
+swagger: "2.0"

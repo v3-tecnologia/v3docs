@@ -1,0 +1,73 @@
+---
+id: delete-multiple-orders
+title: "Delete multiple orders"
+description: "Deletes multiple orders for a specific device."
+sidebar_label: "Delete multiple orders"
+hide_title: true
+hide_table_of_contents: true
+api: eJzlVc1uEzEQfhXLp7YKSSiccgu0QhVIIH5OUKnOepIMeNfG410IqzwM4sCD9MWY8e62oU2LkLhxqNp6/r75vpnZVlugImJI6Cs90yfgIAGpsnYJgwPlo4VIaumjMooCFLjEQllosIDxh+psqdIa1AVaulCfa4gbFUw0JSeJCkmF6Bu0YEfKV26TffskYIfcX9A5tQBOKrVtl9WXmJLEGTb2jobIF2j4mWPSOmfrkKjSbCRFhNI3bD6wEKCyWK24rsKSOymhSka6VLF2QIdjPdJXUEnP3rc3qHhXITekGH2VBG9UfrlTksNR3IJJa/674kT8X2c7s/wS4XONEayepVjDSFOxhtLoWavTJogvpcgA9XY7uln6qS9L84BA8Em3DilJ9cyDOjshlXxPlzo6OoDxasw4H47QHvPPo8OjowFdluQaHsuk70NyLrAp+IqAxH48PZZfv6N7mVEQ88vQroBIy4WvErMlISYEh0UmfPKRJK7dqYsJylyA5yNATNiVKyJIv/O0B9tI93XutPbM7zPi7jMyyBVEeWfxzW0YohxQuiNXwpKNpgx7pRxe/OIjFEn8ydexgKf3tsb5Uk17TbXD/TjqYO/MuA9H/2BiNBv2EJ/H0+lteZ8Yq153DPyFpNsuYzIr2aVuRvR5Znjtbd4MUS8vHS/MTE86wWjSDsptJ92ey4RCbIatrKMT90nziExlF/7ruPClllElKOqIafNGQHTSzQM+h828lhJttwJrMILlageegIk8v2/9J6j0NS05MDOH1dLnaeTWTSGt5/Ha5Wiembj8efnDKyjVs5eqX5vL7w04Ffhast4Ovxk5myumUjxtd04ryjdSeVIWOYowYeNJDlLC5GBYMVLzV2f8KEx0Zafj6fihaMlBqTRZgb6r7nDfvNv6BvD2Ws//7NT3Mif4mibBGZ4MWSEZrbafyPf9CRHSZjt3vGeS523NrItf2y4Mwbvotlt57m5s/oAgmYWTk780juAe8v/Jhd/b0yee4uHQN8bV4pG3pTERBd1fIj143X/HDtWfv4h7EQ0bVm12IQ1Ir5jenrNvv6wCsTPPiwJC2gm8dYW2u1fm5PTF6dtTXuNfY8YSRw==
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/order/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete multiple orders"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/devices/{deviceId}/orders"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes multiple orders for a specific device.
+If the `ids` query parameter is provided, only the specified orders will be deleted.
+If omitted, all orders associated with the device may be removed (depending on implementation rules).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Unique identifier of the device","in":"path","name":"deviceId","required":true,"schema":{"type":"string"}},{"description":"Comma-separated list of order IDs to delete **(e.g. id1,id2,id3)**","in":"query","name":"ids","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"202":{"description":"Order sended to deleted","content":{"application/json":{"schema":{"items":{"properties":{"createdAt":{"type":"string"},"deletedAt":{"type":"string"},"deviceId":{"type":"string"},"id":{"type":"integer"},"meta":{"properties":{"requestId":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"},"sourceCreatedAt":{"type":"string"},"status":{"type":"string"},"ulid":{"type":"string"},"updatedAt":{"type":"string"}},"type":"object"},"type":"array"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

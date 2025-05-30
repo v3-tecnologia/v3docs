@@ -8,7 +8,7 @@ Este documento descreve o sistema de notificações via webhook, uma solução q
 
 ## Link da API
 
-Caso queira acessar diretamente a documentação da API de Notificações, [clique aqui](/docs/category/notifications-webhook).
+Caso queira acessar diretamente a documentação da API de Notificações, [clique aqui](/docs/category/notification-webhook).
 
 ## O que são Webhooks?
 
