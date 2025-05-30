@@ -2,44 +2,44 @@
 sidebar_position: 13
 ---
 
-# 🪝 Webhooks
+# Webhooks
 
 Este documento descreve o sistema de notificações via webhook, uma solução que permite a comunicação em tempo real entre diferentes sistemas através de notificações HTTP. O sistema foi projetado para ser seguro, confiável e fácil de integrar.
 
-## 🔌 Link da API
+## Link da API
 
 Caso queira acessar diretamente a documentação da API de Notificações, [clique aqui](/docs/category/notifications-webhook).
 
-## 🤔 O que são Webhooks?
+## O que são Webhooks?
 
 Webhooks são uma forma de comunicação entre sistemas onde um sistema (o remetente) envia automaticamente uma notificação HTTP para outro sistema (o destinatário) quando um evento específico ocorre. É como um "callback" na web - quando algo acontece no sistema remetente, ele "chama" o sistema destinatário para informar sobre o evento.
 
-### ✨ Vantagens dos Webhooks
+### Vantagens dos Webhooks
 
-- ⚡ **Tempo Real**: As notificações são enviadas instantaneamente quando um evento ocorre
-- 🚀 **Eficiência**: Não é necessário fazer polling constante para verificar por novas informações
-- 🎯 **Simplicidade**: Implementação simples usando HTTP, um protocolo amplamente suportado
-- 🔄 **Flexibilidade**: Pode ser integrado com qualquer sistema que suporte HTTP
+- **Tempo Real**: As notificações são enviadas instantaneamente quando um evento ocorre
+- **Eficiência**: Não é necessário fazer polling constante para verificar por novas informações
+- **Simplicidade**: Implementação simples usando HTTP, um protocolo amplamente suportado
+- **Flexibilidade**: Pode ser integrado com qualquer sistema que suporte HTTP
 
-## ⚙️ Como Funciona o Sistema
+## Como Funciona o Sistema
 
-### 1. 🔧 Configuração do Cliente
+### 1. Configuração do Cliente
 
 Para começar a receber notificações, o cliente precisa:
 
-1. 🌐 Fornecer um endpoint HTTP que receberá as notificações
-2. 🔑 Configurar um secret key para autenticação
-3. ⏱️ Definir um timeout para as requisições
+1. Fornecer um endpoint HTTP que receberá as notificações
+2. Configurar um secret key para autenticação
+3. Definir um timeout para as requisições
 
-### 2. 🔒 Autenticação e Segurança
+### 2. Autenticação e Segurança
 
 O sistema utiliza autenticação `HMAC-SHA256` para garantir a segurança das notificações:
 
-1. ✍️ Cada notificação é assinada usando o secret key do cliente
-2. 📝 A assinatura é enviada no header `X-V3-Signature`
-3. ✅ O cliente deve validar a assinatura para garantir que a notificação é legítima
+1. Cada notificação é assinada usando o secret key do cliente
+2. A assinatura é enviada no header `X-V3-Signature`
+3. O cliente deve validar a assinatura para garantir que a notificação é legítima
 
-#### 🔍 Como Validar a Assinatura (Lado do Cliente)
+####  Como Validar a Assinatura (Lado do Cliente)
 
 ```python
 import hmac
@@ -61,7 +61,7 @@ def verify_signature(payload, signature, secret):
     return hmac.compare_digest(signature, expected_signature)
 ```
 
-### 3. 📦 Formato das Notificações
+### 3. Formato das Notificações
 
 As notificações são enviadas como requisições HTTP POST com o seguinte formato:
 
@@ -78,26 +78,26 @@ As notificações são enviadas como requisições HTTP POST com o seguinte form
 }
 ```
 
-### 4. 📨 Respostas e Confirmações
+### 4. Respostas e Confirmações
 
 O sistema espera uma resposta HTTP do cliente:
 
-- ✅ **200 OK**: Notificação recebida e processada com sucesso
-- ❌ **Outros códigos**: Indica que houve um problema no processamento
+- **200 OK**: Notificação recebida e processada com sucesso
+- **Outros códigos**: Indica que houve um problema no processamento
 
 O sistema registra todas as tentativas de entrega e suas respostas para auditoria e troubleshooting.
 
-## 📋 Boas Práticas para Implementação
+## Boas Práticas para Implementação
 
-### 💻 Lado do Cliente
+### Lado do Cliente
 
-1. 🔄 **Idempotência**: Implemente seu endpoint para ser idempotente, pois a mesma notificação pode ser enviada mais de uma vez
-2. ⏱️ **Timeout**: Configure um timeout adequado para processar a notificação
-3. ✅ **Validação**: Sempre valide a assinatura antes de processar a notificação
-4. ⚡ **Resposta Rápida**: Responda o mais rápido possível, mesmo que o processamento completo demore mais tempo
-5. 📝 **Logging**: Mantenha logs de todas as notificações recebidas
+1. **Idempotência**: Implemente seu endpoint para ser idempotente, pois a mesma notificação pode ser enviada mais de uma vez
+2. **Timeout**: Configure um timeout adequado para processar a notificação
+3. **Validação**: Sempre valide a assinatura antes de processar a notificação
+4. **Resposta Rápida**: Responda o mais rápido possível, mesmo que o processamento completo demore mais tempo
+5. **Logging**: Mantenha logs de todas as notificações recebidas
 
-### 💡 Exemplo de Implementação (Python)
+### Exemplo de Implementação (Python)
 
 ```python
 from flask import Flask, request, jsonify
@@ -131,29 +131,29 @@ if __name__ == '__main__':
     app.run(port=8080)
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
-### 🚨 Problemas Comuns
+### Problemas Comuns
 
-1. 📭 **Notificações não recebidas**
-   - 🌐 Verifique se o endpoint está acessível
-   - 🔑 Confirme se o secret key está correto
-   - 📝 Verifique os logs do sistema
+1.  **Notificações não recebidas**
+   -  Verifique se o endpoint está acessível
+   -  Confirme se o secret key está correto
+   -  Verifique os logs do sistema
 
-2. 🔒 **Erros de Autenticação**
-   - 🔑 Confirme se o secret key está correto
-   - ✍️ Verifique se a assinatura está sendo calculada corretamente
-   - 📝 Certifique-se de que o header `X-V3-Signature` está sendo enviado
+2.  **Erros de Autenticação**
+   -  Confirme se o secret key está correto
+   -  Verifique se a assinatura está sendo calculada corretamente
+   -  Certifique-se de que o header `X-V3-Signature` está sendo enviado
 
-3. ⏱️ **Timeouts**
-   - ⚙️ Aumente o timeout na configuração se necessário
-   - 🚀 Otimize o processamento do webhook para ser mais rápido
-   - 🔄 Considere processar a notificação de forma assíncrona
+3. **Timeouts**
+   -  Aumente o timeout na configuração se necessário
+   -  Otimize o processamento do webhook para ser mais rápido
+   -  Considere processar a notificação de forma assíncrona
 
-## 🆘 Suporte
+## Suporte
 
 Para suporte técnico ou dúvidas sobre a implementação, entre em contato com a equipe de suporte através do e-mail suporte@v3.com.br.
 
-## 🎯 Conclusão
+## Conclusão
 
 O sistema de notificações via webhook oferece uma maneira eficiente e segura de receber atualizações em tempo real. Com a implementação correta e seguindo as boas práticas, você pode criar uma integração robusta e confiável. 
