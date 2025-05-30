@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# 🛡️ Permissionamento
+# Permissionamento
 
 Quando você obtém um token com sucesso, a resposta terá a seguinte estrutura:
 
@@ -17,7 +17,7 @@ Quando você obtém um token com sucesso, a resposta terá a seguinte estrutura:
 }
 ```
 
-### 📋 Claims do Token
+###Claims do Token
 
 O token de acesso contém informações importantes sobre o usuário e suas permissões. Você pode decodificar o token (que é um JWT) para ver estas informações. O token contém as seguintes claims:
 
@@ -41,29 +41,29 @@ O token de acesso contém informações importantes sobre o usuário e suas perm
 }
 ```
 
-### 👥 Níveis de Permissão
+### Níveis de Permissão
 
 O sistema utiliza um modelo de permissões baseado em roles (papéis) em diferentes níveis:
 
 1. **Roles do Realm**
-   - 👑 `admin_role`: Acesso administrativo V3
-   - 🏢 `tenant_admin_role`: Administrador do tenant
-   - 👤 `tenant_role`: Usuário básico do tenant
+   -  `admin_role`: Acesso administrativo V3
+   -  `tenant_admin_role`: Administrador do tenant
+   -  `tenant_role`: Usuário básico do tenant
 
 2. **Roles do Cliente**
-   - 🔑 Cada cliente (aplicação) pode ter suas próprias roles
-   - 📱 Exemplo: `v3-client` pode ter roles como `admin` e `user`
+   -  Cada cliente (aplicação) pode ter suas próprias roles
+   -  Exemplo: `v3-client` pode ter roles como `admin` e `user`
 
 3. **Claims Personalizadas**
-   - 🆔 `account_id`: Identificador da conta
-   - 🏢 `tenant_id`: Identificador do tenant
+   -  `account_id`: Identificador da conta
+   -  `tenant_id`: Identificador do tenant
 
-### 🔍 Verificando Permissões
+###Verificando Permissões
 
 Para verificar suas permissões atuais, você pode:
 
-1. 🔐 Decodificar o token JWT (usando ferramentas como jwt.io)
-2. 📡 Fazer uma requisição de validação do token:
+1.  Decodificar o token JWT (usando ferramentas como jwt.io)
+2.  Fazer uma requisição de validação do token:
 ```http
 GET /auth/token
 Authorization: Bearer SEU_ACCESS_TOKEN
@@ -71,27 +71,27 @@ Authorization: Bearer SEU_ACCESS_TOKEN
 
 A resposta incluirá todas as claims e roles associadas ao seu token.
 
-### 📊 Hierarquia de Permissões
+### Hierarquia de Permissões
 
-1. **👑 Admin do Realm**
+1. **Admin do Realm**
    - Acesso total ao sistema
    - Pode gerenciar todos os tenants
 
-2. **🏢 Admin do Tenant**
+2. **Admin do Tenant**
    - Acesso administrativo ao seu tenant
    - Pode gerenciar usuários do tenant
    - Permite:
-     - ✅ Todas as permissões do nível TENANT
-     - 📝 Criação de Orders Internas
-     - 🔓 Acesso irrestrito ao sistema
-     - ⚠️ Deve ser concedido com cautela
+     -  Todas as permissões do nível TENANT
+     -  Criação de Orders Internas
+     -  Acesso irrestrito ao sistema
+     -  Deve ser concedido com cautela
 
-3. **👤 Usuário do Tenant**
+3. **Usuário do Tenant**
    - Acesso básico às funcionalidades
    - Permissões limitadas ao seu tenant
    - Permite:
-     - 👁️ Visualização de dados
-     - ⚙️ Operações básicas de gerenciamento
-     - 🚀 Acesso às funcionalidades padrão
-     - 🔌 Integração com APIs comuns
-     - 💡 Recomendado para operações diárias
+     -  Visualização de dados
+     -  Operações básicas de gerenciamento
+     -  Acesso às funcionalidades padrão
+     -  Integração com APIs comuns
+     -  Recomendado para operações diárias
