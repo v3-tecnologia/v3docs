@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.7.0">
 <title data-rh="true">Sistema Multi-Tenant | V3 Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.v3control.com/docs/docs/solucao-v3/03.02-core/03.02.02-v3cloud/03.02.02.02-multi-tenant"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Sistema Multi-Tenant | V3 Docs"><meta data-rh="true" name="description" content="O V3CLOUD utiliza uma arquitetura multi-tenant, permitindo que múltiplos clientes (tenants) compartilhem a mesma infraestrutura enquanto mantém seus dados completamente isolados e seguros."><meta data-rh="true" property="og:description" content="O V3CLOUD utiliza uma arquitetura multi-tenant, permitindo que múltiplos clientes (tenants) compartilhem a mesma infraestrutura enquanto mantém seus dados completamente isolados e seguros."><link data-rh="true" rel="icon" href="/img/shared/favicon.png"><link data-rh="true" rel="canonical" href="https://developer.v3control.com/docs/docs/solucao-v3/03.02-core/03.02.02-v3cloud/03.02.02.02-multi-tenant"><link data-rh="true" rel="alternate" href="https://developer.v3control.com/docs/docs/solucao-v3/03.02-core/03.02.02-v3cloud/03.02.02.02-multi-tenant" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.v3control.com/docs/docs/solucao-v3/03.02-core/03.02.02-v3cloud/03.02.02.02-multi-tenant" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="V3 Docs RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="V3 Docs Atom Feed"><link rel="stylesheet" href="/assets/css/styles.7a006f21.css">
-<script src="/assets/js/runtime~main.68dea455.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="V3 Docs Atom Feed"><link rel="stylesheet" href="/assets/css/styles.62b2b738.css">
+<script src="/assets/js/runtime~main.45543522.js" defer="defer"></script>
 <script src="/assets/js/main.7cd68278.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -16,17 +16,23 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="implementação-no-v3cloud">Implementação no V3CLOUD<a href="#implementação-no-v3cloud" class="hash-link" aria-label="Direct link to Implementação no V3CLOUD" title="Direct link to Implementação no V3CLOUD">​</a></h2>
 <p>No <strong>V3CLOUD</strong>, a arquitetura multi-tenant é implementada através do Kubernetes (K8S), que proporciona isolamento robusto e eficiente compartilhamento de recursos:</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="isolamento-por-namespaces">Isolamento por Namespaces<a href="#isolamento-por-namespaces" class="hash-link" aria-label="Direct link to Isolamento por Namespaces" title="Direct link to Isolamento por Namespaces">​</a></h3>
-<p>-Cada cliente possui seu próprio <strong>namespace</strong> no Kubernetes
--Namespaces fornecem um escopo para nomes, permitindo recursos com os mesmos nomes em diferentes namespaces
--Todas as operações são isoladas dentro do namespace do tenant</p>
+<ul>
+<li>Cada cliente possui seu próprio <strong>namespace</strong> no Kubernetes</li>
+<li>Namespaces fornecem um escopo para nomes, permitindo recursos com os mesmos nomes em diferentes namespaces</li>
+<li>Todas as operações são isoladas dentro do namespace do tenant</li>
+</ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="dns-e-rotas-dedicadas">DNS e Rotas Dedicadas<a href="#dns-e-rotas-dedicadas" class="hash-link" aria-label="Direct link to DNS e Rotas Dedicadas" title="Direct link to DNS e Rotas Dedicadas">​</a></h3>
-<p>-Cada tenant possui seus próprios DNSs dedicados
--Controle de acesso baseado em identity provider específico do cliente</p>
+<ul>
+<li>Cada tenant possui seus próprios DNSs dedicados</li>
+<li>Controle de acesso baseado em identity provider específico do cliente</li>
+</ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="políticas-de-rede">Políticas de Rede<a href="#políticas-de-rede" class="hash-link" aria-label="Direct link to Políticas de Rede" title="Direct link to Políticas de Rede">​</a></h3>
-<p>-Implementação de políticas de rede (Network Policies) do Kubernetes
--Controle granular do tráfego entre pods e namespaces
--Isolamento completo do tráfego de rede entre tenants
--Regras específicas para comunicação permitida entre serviços</p>
+<ul>
+<li>Implementação de políticas de rede (Network Policies) do Kubernetes</li>
+<li>Controle granular do tráfego entre pods e namespaces</li>
+<li>Isolamento completo do tráfego de rede entre tenants</li>
+<li>Regras específicas para comunicação permitida entre serviços</li>
+</ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="camada-compartilhada">Camada Compartilhada<a href="#camada-compartilhada" class="hash-link" aria-label="Direct link to Camada Compartilhada" title="Direct link to Camada Compartilhada">​</a></h3>
 <p>Para otimizar recursos e custos, mantemos uma camada compartilhada (shared) na arquitetura:</p>
 <ul>

@@ -17,7 +17,7 @@ Quando você obtém um token com sucesso, a resposta terá a seguinte estrutura:
 }
 ```
 
-###Claims do Token
+### Claims do Token
 
 O token de acesso contém informações importantes sobre o usuário e suas permissões. Você pode decodificar o token (que é um JWT) para ver estas informações. O token contém as seguintes claims:
 
