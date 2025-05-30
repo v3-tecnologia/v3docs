@@ -3,20 +3,36 @@
     list-style: none;
 }
 
-.breadcrumbs__item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-direction: row;
-}
-
-.breadcrumbs{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-direction: row;
+.breadcrumbs>li:first-child{
+    display: none!important;
 }
 
 .theme-doc-breadcrumbs{
     margin-bottom: 40px!important;
+}
+
+.theme-doc-toc-mobile{
+    margin-bottom: 50px!important;
+    margin-top: 40px!important;
+}
+
+.pagination-nav__sublabel{
+    display: none!important;
+}
+
+.menu__caret{
+    border-radius: 0 15px 15px 0px;
+}
+
+.pagination-nav__link{
+    background-color: var(--ifm-color-primary);
+    color: var(--ifm-color-white);
+    border-radius: 15px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.pagination-nav__link:hover{
+    background-color: #f2f2f2;
+    color: var(--color-primary);
 }

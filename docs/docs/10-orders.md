@@ -2,29 +2,29 @@
 sidebar_position: 10
 ---
 
-# 📝 Orders
+# Orders
 
 O Sistema de Orders é uma ferramenta que permite enviar comandos e configurações para dispositivos em campo de forma simples e eficiente. É como um "controle remoto" que permite gerenciar e monitorar seus dispositivos remotamente.
 
-## 🔌 Link da API
+## Link da API
 
 Caso queira acessar diretamente a documentação da API de Orders, [clique aqui](/docs/category/orders-api).
 
-## 🎯 Para que serve?
+## Para que serve?
 
-- 📤 Enviar comandos para dispositivos (como reiniciar, solicitar imagens ou vídeos)
-- ⚙️ Configurar dispositivos remotamente
-- 📶 Gerenciar conexões WiFi
-- 📊 Monitorar o status das operações
-- 🔔 Receber notificações quando as operações são concluídas
+- Enviar comandos para dispositivos (como reiniciar, solicitar imagens ou vídeos)
+- Configurar dispositivos remotamente
+- Gerenciar conexões WiFi
+- Monitorar o status das operações
+- Receber notificações quando as operações são concluídas
 
-## 🛠️ Comandos Disponíveis
+## Comandos Disponíveis
 
-### 1. ⚙️ Configurações do Dispositivo (CONFIG)
+### 1. Configurações do Dispositivo (CONFIG)
 Permite configurar parâmetros específicos do dispositivo:
-- ⚙️ Configurar módulos do sistema
-- 🔧 Ajustar parâmetros de conexão
-- 📝 Definir configurações específicas
+- Configurar módulos do sistema
+- Ajustar parâmetros de conexão
+- Definir configurações específicas
 
 Exemplo:
 ```json
@@ -41,9 +41,10 @@ Exemplo:
 }
 ```
 
-### 2. 📶 Gerenciamento de WiFi
-#### ➕ Adicionar WiFi (ADD_WIFI)
+### 2. Gerenciamento de WiFi
+#### Adicionar WiFi (ADD_WIFI)
 Adiciona uma nova rede WiFi ao dispositivo:
+
 ```json
 {
     "type": "ADD_WIFI",
@@ -56,7 +57,7 @@ Adiciona uma nova rede WiFi ao dispositivo:
 }
 ```
 
-#### ➖ Remover WiFi (DELETE_WIFI)
+#### Remover WiFi (DELETE_WIFI)
 Remove uma rede WiFi existente:
 ```json
 {
@@ -69,8 +70,8 @@ Remove uma rede WiFi existente:
 }
 ```
 
-### 3. 🔄 Comandos Básicos
-#### 🔄 Reiniciar Dispositivo (REBOOT)
+### 3. Comandos Básicos
+#### Reiniciar Dispositivo (REBOOT)
 Reinicia o dispositivo:
 ```json
 {
@@ -79,7 +80,7 @@ Reinicia o dispositivo:
 }
 ```
 
-#### 📸 Solicitar Imagem (REQUEST_IMAGE)
+#### Solicitar Imagem (REQUEST_IMAGE)
 Solicita uma imagem do dispositivo:
 ```json
 {
@@ -93,7 +94,7 @@ Solicita uma imagem do dispositivo:
 }
 ```
 
-#### 🎥 Solicitar Vídeo (REQUEST_VIDEO)
+#### Solicitar Vídeo (REQUEST_VIDEO)
 Solicita um vídeo do dispositivo:
 ```json
 {
@@ -108,7 +109,7 @@ Solicita um vídeo do dispositivo:
 }
 ```
 
-#### 📊 Estado do Dispositivo (DEVICE_STATE)
+#### Estado do Dispositivo (DEVICE_STATE)
 Força uma atualização do estado do dispositivo:
 ```json
 {
@@ -117,8 +118,8 @@ Força uma atualização do estado do dispositivo:
 }
 ```
 
-### 4. 👨‍✈️ Driver Coach
-#### 📱 Monitoramento Inercial (DRIVER_COACH_INERTIAL)
+### 4. ‍Driver Coach
+#### Monitoramento Inercial (DRIVER_COACH_INERTIAL)
 Ativa/desativa o monitoramento inercial:
 ```json
 {
@@ -131,7 +132,7 @@ Ativa/desativa o monitoramento inercial:
 }
 ```
 
-#### 📊 Telemetria (DRIVER_COACH_TELEMETRY)
+#### Telemetria (DRIVER_COACH_TELEMETRY)
 Ativa/desativa a telemetria:
 ```json
 {
@@ -144,7 +145,7 @@ Ativa/desativa a telemetria:
 }
 ```
 
-#### 📍 Rastreamento (DRIVER_COACH_TRACKING)
+#### Rastreamento (DRIVER_COACH_TRACKING)
 Ativa/desativa o rastreamento:
 ```json
 {
@@ -157,16 +158,16 @@ Ativa/desativa o rastreamento:
 }
 ```
 
-## 🚀 Como Usar
+## Como Usar
 
-### 📤 Enviando Comandos
+### Enviando Comandos
 Para enviar um comando para um dispositivo:
-1. 🔍 Identifique o ID do dispositivo
-2. 🎯 Escolha o tipo de comando desejado
-3. ⚙️ Prepare os parâmetros necessários
-4. 📤 Envie a requisição para o endpoint `/devices/{deviceId}/orders`
+1.  Identifique o ID do dispositivo
+2.  Escolha o tipo de comando desejado
+3.  Prepare os parâmetros necessários
+4.  Envie a requisição para o endpoint `/devices/{deviceId}/orders`
 
-### 📦 Enviando Múltiplos Comandos
+### Enviando Múltiplos Comandos
 Você pode enviar vários comandos de uma vez:
 ```json
 {
@@ -183,60 +184,60 @@ Você pode enviar vários comandos de uma vez:
 }
 ```
 
-## 📊 Monitoramento
+## Monitoramento
 
-### 📈 Status das Orders
+### Status das Orders
 As orders podem ter os seguintes status:
-- ⏳ PENDING: Aguardando processamento
-- 📤 SENT: Enviada para o dispositivo
-- ✅ PROCESSED: Processada com sucesso
-- ❌ FAILED: Falha no processamento
-- 🗑️ DELETED: Order excluída
+- PENDING: Aguardando processamento
+- SENT: Enviada para o dispositivo
+- PROCESSED: Processada com sucesso
+- FAILED: Falha no processamento
+- DELETED: Order excluída
 
-### 🔍 Consultando Orders
+### Consultando Orders
 Você pode consultar:
-- 📱 Orders de um dispositivo específico
-- 📊 Status de uma order específica
-- 📋 Detalhes completos de uma order
+- Orders de um dispositivo específico
+- Status de uma order específica
+- Detalhes completos de uma order
 
-## ⚙️ Gerenciamento de Orders
+## Gerenciamento de Orders
 
-### 🗑️ Excluindo Orders
+### Excluindo Orders
 Você pode excluir orders de três formas:
-1. 🎯 Uma order específica: DELETE `/devices/{deviceId}/orders/{orderId}`
-2. 📦 Múltiplas orders: DELETE `/devices/{deviceId}/orders?ids=id1,id2,id3`
-3. 🧹 Todas as orders de um dispositivo: DELETE `/devices/{deviceId}/orders`
+1. Uma order específica: DELETE `/devices/{deviceId}/orders/{orderId}`
+2. Múltiplas orders: DELETE `/devices/{deviceId}/orders?ids=id1,id2,id3`
+3. Todas as orders de um dispositivo: DELETE `/devices/{deviceId}/orders`
 
-## 💡 Boas Práticas
+## Boas Práticas
 
-1. ✅ **Verifique o Status**: Sempre verifique o status das orders antes de enviar novas
-2. 🧹 **Limpeza Regular**: Remova orders antigas ou desnecessárias
-3. 📊 **Monitoramento**: Acompanhe as notificações para garantir que as operações foram concluídas
-4. 🧪 **Testes**: Teste novas configurações em um dispositivo antes de aplicar em vários
+1. **Verifique o Status**: Sempre verifique o status das orders antes de enviar novas
+2. **Limpeza Regular**: Remova orders antigas ou desnecessárias
+3. **Monitoramento**: Acompanhe as notificações para garantir que as operações foram concluídas
+4. **Testes**: Teste novas configurações em um dispositivo antes de aplicar em vários
 
-## ⚠️ Limitações
+## Limitações
 
-- 🚫 Orders não podem ser canceladas após serem enviadas ao dispositivo
-- ⏱️ Algumas operações podem levar tempo para serem concluídas
-- 🔄 Certas configurações podem requerer reinicialização do dispositivo
-- 🚫 Orders em status diferente de PENDING não podem ser excluídas
+- Orders não podem ser canceladas após serem enviadas ao dispositivo
+- Algumas operações podem levar tempo para serem concluídas
+- Certas configurações podem requerer reinicialização do dispositivo
+- Orders em status diferente de PENDING não podem ser excluídas
 
-## 🆘 Suporte
+## Suporte
 
 Se você encontrar problemas ou tiver dúvidas:
-1. 📊 Verifique o status da order
-2. 📝 Consulte os logs do dispositivo
-3. 📧 Entre em contato com o suporte técnico
+1. Verifique o status da order
+2. Consulte os logs do dispositivo
+3. Entre em contato com o suporte técnico
 
-## 💻 Ferramenta CLI
+## Ferramenta CLI
 
 A V3 oferece ainda uma ferramenta de CLI escrita em Python que pode te ajudar a executar estes e outros comandos mais avançados.
 
 Entre em contato com o nosso suporte através do e-mail suporte@v3.com.br para obter acesso a esta ferramenta.
 
-## 📝 Exemplos de Uso
+## Exemplos de Uso
 
-### 📶 Exemplo 1: Adicionando uma Rede WiFi
+### Exemplo 1: Adicionando uma Rede WiFi
 ```json
 {
     "ssid": "NomeDaRede",
@@ -244,7 +245,7 @@ Entre em contato com o nosso suporte através do e-mail suporte@v3.com.br para o
 }
 ```
 
-### 📸 Exemplo 2: Solicitando uma Imagem
+### Exemplo 2: Solicitando uma Imagem
 ```json
 {
     "timeStamp": "2024-05-07T08:46:00Z",
@@ -252,7 +253,7 @@ Entre em contato com o nosso suporte através do e-mail suporte@v3.com.br para o
 }
 ```
 
-### 📸 Exemplo 3: Reiniciando um Dispositivo
+### Exemplo 3: Reiniciando um Dispositivo
 ```json
 {
     "type": "REBOOT"

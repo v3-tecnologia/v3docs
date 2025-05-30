@@ -2,11 +2,11 @@
 sidebar_position: 7
 ---
 
-# 🔐 Autenticação
+# Autenticação
 
 Este documento fornece um guia entender e implementar a autenticação em nosso sistema. Utilizamos OAuth 2.0 com OpenID Connect para autenticação e autorização seguras.
 
-## 🔌 Link da API
+## Link da API
 
 Caso queira acessar diretamente a documentação da API de Autenticação, [clique aqui](/docs/category/auth-api).
 
