@@ -78,7 +78,7 @@ const config: Config = {
     footer: {
       links: [
         {
-          title: "DEVELOPER",
+          title: "DESENVOLVEDOR",
           items: [
             {
               label: "Home",
