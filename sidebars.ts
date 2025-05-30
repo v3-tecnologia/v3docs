@@ -10,10 +10,10 @@ const sidebars: SidebarsConfig = {
   apiSidebar: [
     {
       type: "category",
-      label: "Orders",
+      label: "Order",
       link: {
         type: "generated-index",
-        title: "Orders API",
+        title: "Order API",
         description:
           "This is the orders API. It contains all the endpoints related to orders.",
         slug: "/category/order-api",

@@ -66,7 +66,7 @@ const config: Config = {
         {
           label: "API",
           position: "left",
-          to: "/docs/category/orders-api",
+          to: "/docs/category/order-api",
         },
         {
           href: "https://github.com/v3-tecnologia",
@@ -94,7 +94,7 @@ const config: Config = {
             },
             {
               label: "API",
-              to: "docs/category/orders-api",
+              to: "docs/category/order-api",
             },
           ],
         },
@@ -321,8 +321,8 @@ const config: Config = {
         docsPluginId: "classic",
         config: {
           notifications: {
-            specPath: "examples/webhook/notifications.yaml",
-            outputDir: "docs/webhook/notifications",
+            specPath: "examples/webhook/notification.yaml",
+            outputDir: "docs/webhook/notification",
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",

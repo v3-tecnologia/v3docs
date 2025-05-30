@@ -23,7 +23,7 @@ definitions:
           $ref: '#/definitions/dto.OrderDTO'
         type: array
     required:
-    - orders
+    - Order
     type: object
   dto.DeleteWifiDTO:
     properties:
@@ -317,7 +317,7 @@ paths:
           schema: {}
       summary: Delete multiple orders
       tags:
-      - Orders
+      - Order
     post:
       consumes:
       - application/json
@@ -420,7 +420,7 @@ paths:
       - ApiKeyAuth: []
       summary: Create new order
       tags:
-      - Orders
+      - Order
   /devices/{deviceId}/orders/{orderId}:
     delete:
       consumes:
@@ -453,7 +453,7 @@ paths:
           schema: {}
       summary: Delete a specific order
       tags:
-      - Orders
+      - Order
     get:
       consumes:
       - application/json
@@ -481,7 +481,7 @@ paths:
           schema: {}
       summary: Get a specific order
       tags:
-      - Orders
+      - Order
 securityDefinitions:
   ApiKeyAuth:
     in: header
