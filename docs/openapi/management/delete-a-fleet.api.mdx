@@ -1,0 +1,74 @@
+---
+id: delete-a-fleet
+title: "Delete a fleet"
+description: "Delete handles HTTP DELETE requests to remove a fleet resource by its ID."
+sidebar_label: "Delete a fleet"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVMFy0zAQ/ZUdnaCTSULhlFuHBMhQpp3SnNoeFHsTa5AlI8mhweOPYTjwIf0x3tpuKW2nVy6cLK9Wb5/evlWjco5ZMFUy3qmZmrPlxFRol1uO9OH8/JTmi+PF+YICf605pkjJY136HZOmjWVO+I2+DhnTek8GGcv5+NItE1U6RKCkgulSmfxSSUSXqBBoE3zZ7Qy4tDo7HtFOW5PrhEMmjQgsKNPW9hBdrc8cdibj8UAUWIXPpdqmy1nOyeCs63DIhy6YSy7uRxttbBwBGkVTHVzEDd4cHtLKVcFnHKNeW6aFSybtKSad6kjfTCpAhDgEwJWStGUUPHEU60wObWp7V+IB+OF0SicfH0GVFfAhWuVdhGg+34/VSN1pE9XsonnQmHed0Ms58oz8VzoVWDucwJ/JsRYhTeBczVKoeaRiVnCp1axRaV91WS7xloNq2yvJ7stHSQBP+TxVsm+14Gce512SxIPJgXweVYgpGLdFgbYdKSj7GPQpqZ/Hbnu0pLeiS89K4QJ96wHZac+dgNBkpiadUSaNyVsEIwxzK2kdrOxPdq8jrLX21+PMl0rUMG7jparw0JnwQMm/mR9V1mT65tfNT48O0vuT2w7e/NixpQruCAzbfdeBPL09W80p15Fg7VDDD1iudWRpNO5sRa1P2sFLJe5NR6dLbAjRvth0PB2/UuBQ+ZhK7YTb0OvB+cPsqQc0mz9S/h/mfzjMw0Akvk6TymrMLJrZ+a8ZfHqhbhs4w/jCgwVaLeGmEaOsgm1bCUPQsEccy50ORm7Vvw+muyEmYKNt5Gd88OJseBle0r1n5EmGQ1A7GUroXssfll943z8z7RWyCtY53hFh0W8cQbsq3TsiQ9zeH9Led3gZfgN2JTdn
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a fleet"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/fleet/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete handles HTTP DELETE requests to remove a fleet resource by its ID.
+It parses the "id" parameter from the request URL, validates it, and calls the fleetService.Delete method.
+If the ID is invalid or the deletion fails, it returns a 422 Unprocessable Entity status with an error message.
+On successful deletion, it returns a 200 OK status with an empty response body.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Fleet ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Fleet removed","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable Entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

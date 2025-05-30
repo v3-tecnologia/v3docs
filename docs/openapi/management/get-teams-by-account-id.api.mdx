@@ -1,0 +1,74 @@
+---
+id: get-teams-by-account-id
+title: "Get teams by account ID"
+description: "FindByAccount handles HTTP GET requests to retrieve team records associated with a specific account."
+sidebar_label: "Get teams by account ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVc1uEzEQfpWRTyBVSSmcciu0lAhQqyg9tVXk7E6yLl57sWdD09U+DOLAg/TFmNls/pqkEhJHTrHn99vx900qlWJMginIeKd66qNx6fv5aZL40hFk2qUWI3waDq/g4nwIAb+XGCkCeT5TMDhDINQ53xIf0gg6Rp8YTZjCD0MZaIgFJmZiEtCLqp1b1yfABzZLoQyXDuifcTpnXA++QKGDzpEwHMFMW5NyxQiGjoAhSesyOAkt9NS4pps1kcBPGjTx1o3Rese+qUClTNOqPQyW2UURfBEE7OILI2kqIySeZ9L0wRB8gBxj1FM2TfhiXAPn1q1BRxD7BJxfNAcdkGNLl3bUkVp9SFS9m+rZuE9XRTjSiKXQlPHZcQ7f2ib9lE0yexMwVT0KJR6pmGSYa9WrFM0LCTaOcIpB1fWdRMfCu4hRAk6Oj+Vnu/flZy6aeE5yJF4ehzWJFm/3PkpItdFDRoWBzKIgP0djNYR53HW3sEcm3QdPuoaAtmm1HROZUm7ahASUZx1p2utO0eIL7kONF2Pdk1DaAzjKIj2Mg/2txY/vmc5qbdAh6LncmaG4H4x4RtE8HnCTJ21HqwkfCpAqewN2wdVie3dyssuFa8cPmAjPxxbh3JGh+V+wo16UJj0Vkqshq0AxB5n2meexqilSowSmdk91G5F0W47EbrUiec1BEcNsqZUyWInvzt5GVuPYP3QSnytht3ETLwgEoE4EYMOJLWk1eJ9+P/3ygDlcXEIriaefM7RQsGaZYtY86gAePgyuzyDl7cPbLZS8H/g41hFFwTwMK2P8qh3POueBwOlVnx0CdNHsuHPcedO8qY+U62Y6rYQvkNq1MJ5vbDr1DG+1Hvb/JfzPl3ArBMIH6hZW86YVaQu9qpaWN6pJ49glMfnYW+9fJl3GbyuBVSXMuA62rsXMjxHmbOfjTPOHjIUssulNoybm/0TbiC+896tBu9pfw9Yfwl7Uy/3iRKA8hlJufPyG860/jPqOgzPUKe8CgbPwc30saCNzR9f1pnCZbrw2/gBdVdmX
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get teams by account ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/teams/accounts/{accountId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindByAccount handles HTTP GET requests to retrieve team records associated with a specific account.
+It expects the account ID as a URL parameter, validates it, and returns a paginated list of teams
+belonging to that account. Returns appropriate HTTP status codes and error messages for invalid
+account IDs or if no teams are found.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Account ID","in":"path","name":"accountId","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"account_id":{"type":"integer"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"integer"},"name":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

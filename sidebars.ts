@@ -10,15 +10,15 @@ const sidebars: SidebarsConfig = {
   apiSidebar: [
     {
       type: "category",
-      label: "Orders",
+      label: "Order",
       link: {
         type: "generated-index",
-        title: "Orders API",
+        title: "Order API",
         description:
           "This is the orders API. It contains all the endpoints related to orders.",
-        slug: "/category/orders-api",
+        slug: "/category/order-api",
       },
-      items: require("./docs/openapi/orders/sidebar"),
+      items: require("./docs/openapi/order/sidebar"),
     },
     {
       type: "category",
@@ -30,7 +30,7 @@ const sidebars: SidebarsConfig = {
           "This is the management API. It contains all the endpoints related to management.",
         slug: "/category/management-api",
       },
-      items: require("./docs/openapi/managements/sidebar"),
+      items: require("./docs/openapi/management/sidebar"),
     },
     {
       type: "category",
@@ -64,9 +64,21 @@ const sidebars: SidebarsConfig = {
         title: "Notifications Webhook",
         description:
           "This is the notifications Webhook. It contains how to implement a HTTP POST to listen Notifications",
-        slug: "category/notifications-webhook",
+        slug: "category/notification-webhook",
       },
-      items: require("./docs/webhook/notifications/sidebar"),
+      items: require("./docs/webhook/notification/sidebar"),
+    },
+    {
+      type: "category",
+      label: "Vision",
+      link: {
+        type: "generated-index",
+        title: "Vision API",
+        description:
+          "This is the vision API. It contains all the endpoints related to vision.",
+        slug: "/category/vision-api",
+      },
+      items: require("./docs/openapi/vision/sidebar"),
     },
   ],
   // But you can create a sidebar manually

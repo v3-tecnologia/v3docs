@@ -1,7 +1,7 @@
 # Vars
 
 # Tasks
-clean: clean-order clean-management clean-auth clean-event
+clean: clean-order clean-management clean-auth clean-event clean-notifications clean-vision
 
 clean-order:
 	npm run docusaurus clean-api-docs all -- --plugin-id order-open-api
@@ -18,7 +18,10 @@ clean-event:
 clean-notifications:
 	npm run docusaurus clean-api-docs all -- --plugin-id notifications-open-webhook
 
-doc: doc-order doc-management doc-auth doc-event doc-notifications
+clean-vision:
+	npm run docusaurus clean-api-docs all -- --plugin-id vision-open-api
+
+doc: doc-order doc-management doc-auth doc-event doc-notifications doc-vision
 
 doc-order:
 	npm run docusaurus gen-api-docs all -- --plugin-id order-open-api
@@ -34,6 +37,9 @@ doc-event:
 
 doc-notifications:
 	npm run docusaurus gen-api-docs all -- --plugin-id notifications-open-webhook
+
+doc-vision:
+	npm run docusaurus gen-api-docs all -- --plugin-id vision-open-api
 
 clear:
 	npm run docusaurus clear
@@ -54,6 +60,9 @@ build-event: clean-event doc-event
 	npm run docusaurus build
 
 build-notifications: clean-notifications doc-notifications
+	npm run docusaurus build
+
+build-vision: clean-vision doc-vision
 	npm run docusaurus build
 
 build-run: build run

@@ -66,7 +66,7 @@ const config: Config = {
         {
           label: "API",
           position: "left",
-          to: "/docs/category/orders-api",
+          to: "/docs/category/order-api",
         },
         {
           href: "https://github.com/v3-tecnologia",
@@ -94,7 +94,7 @@ const config: Config = {
             },
             {
               label: "API",
-              to: "docs/category/orders-api",
+              to: "docs/category/order-api",
             },
           ],
         },
@@ -253,8 +253,8 @@ const config: Config = {
         docsPluginId: "classic",
         config: {
           order: {
-            specPath: "examples/orders.yaml",
-            outputDir: "docs/openapi/orders",
+            specPath: "examples/order.yaml",
+            outputDir: "docs/openapi/order",
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",
@@ -271,7 +271,7 @@ const config: Config = {
         config: {
           management: {
             specPath: "examples/management.yaml",
-            outputDir: "docs/openapi/managements",
+            outputDir: "docs/openapi/management",
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",
@@ -321,8 +321,8 @@ const config: Config = {
         docsPluginId: "classic",
         config: {
           notifications: {
-            specPath: "examples/webhook/notifications.yaml",
-            outputDir: "docs/webhook/notifications",
+            specPath: "examples/webhook/notification.yaml",
+            outputDir: "docs/webhook/notification",
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",
@@ -330,6 +330,23 @@ const config: Config = {
           } satisfies OpenApiPlugin.Options,
         } satisfies Plugin.PluginOptions,
       },
+    ],
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "vision-open-api",
+        docsPluginId: "classic",
+        config: {
+          vision: {
+            specPath: "examples/vision.yaml",
+            outputDir: "docs/openapi/vision",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+        } satisfies Plugin.PluginOptions,
+      }
     ],
   ],
   themes: ["docusaurus-theme-openapi-docs"],
