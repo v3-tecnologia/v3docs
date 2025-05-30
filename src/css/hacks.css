@@ -33,6 +33,6 @@
 }
 
 .pagination-nav__link:hover{
-    background-color: var(--ifm-menu-color);
-    color: var(--ifm-color-white);
+    background-color: #f2f2f2;
+    color: var(--color-primary);
 }

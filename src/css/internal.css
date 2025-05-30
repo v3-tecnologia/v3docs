@@ -25,3 +25,14 @@ aside {
   flex-direction: column;
   gap: 10px;
 }
+
+.card{
+  border: none!important;
+  box-shadow: 0 10px 15px -3px var(--tw-shadow-color, #0000001a), 0 4px 6px -4px var(--tw-shadow-color, #0000001a)!important;
+}
+
+.card:hover{
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+  transition: all 0.3s ease;
+}

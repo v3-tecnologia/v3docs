@@ -14,7 +14,7 @@ A V3 é uma plataforma líder em videotelemetria, oferecendo soluções inovador
 
 Nossa documentação foi estruturada como uma narrativa contínua, dividida em módulos sequenciais que recomendamos seguir na ordem apresentada:
 
-1. **ℹ Sobre a V3**
+1. **Sobre a V3**
    - Entenda como utilizamos tecnologia para revolucionar o mercado de videotelemetria
    - Conheça nossos diferenciais e benefícios
 
