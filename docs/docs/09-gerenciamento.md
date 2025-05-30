@@ -7,9 +7,9 @@ sidebar_position: 9
 A camada de Gerenciamento é um componente fundamental da V3, responsável pela gestão das principais entidades do sistema. Após a configuração inicial, autenticação e permissionamento, esta camada permite o gerenciamento completo de:
 
 - ‍ Motoristas
--  Times
--  Frotas
--  Dispositivos
+- Times
+- Frotas
+- Dispositivos
 
 ## Link da API
 
@@ -20,14 +20,14 @@ Caso queira acessar diretamente a documentação da API de Gerenciamento, [cliqu
 O sistema segue uma estrutura hierárquica clara, com relacionamentos específicos entre as entidades:
 
 ```
- Tenant
-    Teams
-        ‍ Drivers (Muitos para Muitos)
-         Fleets
-              Devices (Um para Muitos)
+🏢 Tenant
+  └── 👥 Teams
+       ├── 👨‍✈️ Drivers (Muitos para Muitos)
+       └── 🚗 Fleets
+            └── 📱 Devices (Um para Muitos)
 ```
 
-###  Relacionamentos Principais
+### Relacionamentos Principais
 - **Times e Motoristas**: Um motorista pode pertencer a vários times, e um time pode ter vários motoristas
 - **Frotas e Dispositivos**: Um dispositivo pertence a apenas uma frota, enquanto uma frota pode ter vários dispositivos
 
@@ -45,17 +45,17 @@ O sistema segue uma estrutura hierárquica clara, com relacionamentos específic
 - **Nome**:  Nome do time
 - **Correlação**:  ID para integração com sistemas externos
 - **Relacionamentos**: 
-  -  Pertence a uma conta
+  - Pertence a uma conta
   - ‍ Pode ter múltiplos motoristas
-  -  Pode ter múltiplas frotas
+  - Pode ter múltiplas frotas
 
 ### Frotas (Fleets)
 - **Identificação**:  ID único e ULID para identificação externa
 - **Nome**:  Nome da frota
 - **Correlação**:  ID para integração com sistemas externos
 - **Relacionamentos**:
-  -  Pertence a um time
-  -  Pode ter múltiplos dispositivos
+  - Pertence a um time
+  - Pode ter múltiplos dispositivos
 
 ### ‍Motoristas (Drivers)
 - **Identificação**:  ID único e ULID para identificação externa

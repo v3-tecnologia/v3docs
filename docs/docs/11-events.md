@@ -42,7 +42,7 @@ O payload contém todas as informações específicas do evento e é estruturado
 - **Message Type**: Tipo da mensagem
 - **Sequence Number**: Número sequencial da mensagem
 
-####⏳ Timestamps
+#### Timestamps
 - **Event Date**: Data do evento (formato YYYY-MM-DD)
 - **Event Time**: Hora do evento (formato HH:mm:ss)
 - **Timestamp**: Timestamp Unix do evento
