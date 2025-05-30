@@ -3,20 +3,16 @@
     list-style: none;
 }
 
-.breadcrumbs__item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-direction: row;
-}
-
-.breadcrumbs{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-direction: row;
+.breadcrumbs>li:first-child{
+    display: flex!important;
+    align-items: center!important;
 }
 
 .theme-doc-breadcrumbs{
     margin-bottom: 40px!important;
+}
+
+.theme-doc-toc-mobile{
+    margin-bottom: 50px!important;
+    margin-top: 40px!important;
 }
