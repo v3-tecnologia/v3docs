@@ -1,0 +1,74 @@
+---
+id: get-devices-by-fleet-id
+title: "Get devices by fleet ID"
+description: "FindByFleet handles HTTP GET requests to retrieve device records associated with a specific fleet."
+sidebar_label: "Get devices by fleet ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVc1uEzEQfpWRTyBVSSmcciv0hwoQqGpPtIq83knW4LUXezY0rPZhEAcepC/GjLNpA00qIXHktPbMeObz+PtmO1ViMtE2ZINXE3VifflyeeIQCSrtS4cJXl9cfIDT4wuI+KXFRAko8JqixQVCiQtrkPcmxDKBTikYqwlL+GqpAg2pQWNn1sBMso6u/BkB3rBRElW4MsPZER/l6Mvzt9DoqGskjHuw0M6WnC2BpT1gQFK4jV5CGz23PldyNhGE2YAlXfkCXfDsnQtUqjQNxeF8fbppYmiiAF3dL5GmNoEJ3I9cB2MMEWpMSc/ZNOON9RnOlV9DTiDWGfiwLg068o1C68uR2lN3F0lq8rH7s9VDEo6zsm80Vbz2fIJ3ucRZyQbpuo1YqgnFFvdUMhXWWk06RctGQq0nnGNUfX8t0akJPmGSgIP9ffn8Xvf9G05qAh/yJF5uhbNGi3f8KUlIt1FD2oSR7CohP0W2WsI6PXTrlkLNmcxU6DD3dlXyDmkRgkPtVc8AIsrTTTVt+BNzys/FXaLDR9y5O1NbbusCt9OY31z353aeqNFuPVAzH9xWT1MFj1Pf1gWn2BbQuh0g2qbcfXX2D5ZQfGKNqHuDjlEvc2lm5PZ7iGea7Lcdbgqk3fTu8XYFSJatAQ/B9WJ7cXDwkGaXnrlhRD6FQzj2ZGn5F8TrV6lJz0U76ijLSzHBWU9V4MaqOVKWGKtmosaD/saZGWncDfrpOSRhXKwl2EYn0ePF88QiL8LNyIRaiXCsnwVBIAC1EYCZhptXOsx4b3/e/giANZy+h0Ftt98X6KDhYcCsdvabjhDg1fnlEZQ81HhkxpbHDi8LnVAGAzfDSRvfac+9rrkhcPjhjB0CdFVsf7Q/epbfNCSqde7OMBtOeW6s502xvBug6g+83X2z/8/1fzrXBxEQ3tC4cdrmiZap1Q2E/KiGg2oYVrKYrIc6063iV5WwrhNOXEbX92Lmh4hLtvNyofkahdBEfh0264h5P9Mu4SMv/eR8+F88hY0/zFbE67niRZjcglZ2vPyMy40/UH/NoRXqUuYcQ1l5D43BhjbOPVBzvylWphkPi19QCvC4
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get devices by fleet ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/devices/fleets/{fleetId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindByFleet handles HTTP GET requests to retrieve device records associated with a specific fleet.
+It expects the fleet ID as a URL parameter, validates it, and returns a paginated list of devices
+belonging to that fleet. Returns appropriate HTTP status codes and error messages for invalid
+fleet IDs or if no devices are found.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Fleet ID","in":"path","name":"fleetId","required":true,"schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"automatic_recognition":{"type":"boolean"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"fleet_id":{"type":"integer"},"iccid":{"type":"string"},"id":{"type":"integer"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

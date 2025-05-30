@@ -1,0 +1,71 @@
+---
+id: get-a-specific-order
+title: "Get a specific order"
+description: "Retrieve an order by its ID for a specific device"
+sidebar_label: "Get a specific order"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVE1v2zAM/SuCThsQJNnHKbe0HYpihw5ddyp6YGQmUWtbmigbzQz/mGGH/ZD+sZGy3RmtW6A9xaFI8em9RzY6QzLB+mhdqVf6AmOwWKOCUrmQYVCbg7KR1NmJ2rqgQJFHY7fWqAxra1DPtIcABUYMpFdXzaMLT1IWl3OilYCHuOfvkkv4X3fJWcaRgD8rGzDTqxgqnGkyeyxArxodD15yiaGVO922s8dNzhPS53qkd7yyxbUkk3clIcn5x+VSfqbahp6yTFFlDBJtqzw/cDfjyohllDrwPrcGpG5xQ1LcjJr74DyGaLtWJiBEzNZxAteMEeT40mlP59ShHYctY9thkDhrNwFDuEKKz9wVbcGHUPhJfYaI29ygiZJPrgoGj198Gt8XK5o8qnI7jaPy2bM3PsXRSuzzlJRHkKmL7sWvUK7tboywE+t3ftDXidG9Y8B6hzENCNtxpRedOrRoBpnaRfImR3qPtpxNGOphlqqQS+Gi/kRQZht3Nzeu0OJOQlMFGw/fBUun2Nrbr3hYV9Ks6QZhjyCQHkbhCCGwZS/dLZb6gR5IhYkwW25dMiEzAEYYSK4aU7VOhNz/vf/jFBbq9Fz1k3L/u8ZceScjAbn9BbIudsyoZGaY9klJStaFcqQyy1Vko60dzQWMjTkOU0Vq/e2Mg8JE13Y5X84/iORcFAtIQvSvOsU4XkyJS/0IdvNf1DctuZ6qiHdx4XNgdsV9Ik/T63vVTx9x9mq01zqJJTgsIpZvz4+QkqbZAOGPkLethNmA4cBx/qwhWNgII7JTLck3W2oLOeELb3t30e+492q8eifhD/KXsq1qyCv5x5+3bIbRak779i0ARmv5Df0HttprTu2NLFx0p2tetT6O6p4MajsexNMvl+zvf+xoYE8=
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/order/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a specific order"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/devices/{deviceId}/orders/{orderId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieve an order by its ID for a specific device
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"deviceId","required":true,"schema":{"type":"string"}},{"description":"Order ID","in":"path","name":"orderId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Order retrieved successfully","content":{"application/json":{"schema":{"properties":{"createdAt":{"type":"string"},"deletedAt":{"type":"string"},"deviceId":{"type":"string"},"id":{"type":"integer"},"meta":{"properties":{"requestId":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"},"sourceCreatedAt":{"type":"string"},"status":{"type":"string"},"ulid":{"type":"string"},"updatedAt":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

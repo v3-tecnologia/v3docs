@@ -1,0 +1,71 @@
+---
+id: get-an-event-by-ulid
+title: "Get an event by ULID"
+description: "Retrieves an event using the provided ULID"
+sidebar_label: "Get an event by ULID"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VcFu2zAM/RVDpw0omizrKbcMK4piw1B07akIAlpiYrW25Emy18Dwv4+UkjRpnBa97GSLpKhH8umpEwq9dLoO2hoxFbcYnMYWfQYmo68JWeO1WWWhwKx2ttUKVXb/8/q7OBM1OKgwoPNi+tC9ynQZN28iNVtqCAX9G9pDq6bUilYO/zTaoRLT4Bo8E14WWIGYdiKsa47zBMisRN/POdjX1nj07J+Mx/wZOnVpG8PJpTWB1hwGdV1qCRw2evQc2+2dRZXV6IJOmaV1DssYuyCQx1gos0MIqBYQBt0KS3zT3WqJh7k1QV2hY3fs+yLZh/xL7aq/4HDRUut1quXojAKcikHvZdsFVpZgD+ey9mlBTk0Hnq7qVDnaL/TK6NjOA7C5tSWC4ZgKlYaTDbHKRp7teU1T5cnpbeMkoXpnJEQEoD68W0Xk5aCjVqfz8wHJYvNHlIEsbJuML445+stmW2J+gKKvD+T0F0NX4BuojG8V+g/lB6XiiKC8ObgMx40cqPNiMjkGcm/oWkn0HvISMwKhw/o/IWIjrFiWkiKIOVMsFJZGK1YYoniRGk3FKF6PUcdj78ns0bVbQWtcyRGj9qsHo3L7fC5tJViIPMrGUTm/GWxCNav1D1zPGs7aJcErEBRxdCd535Cumcvu7BMasYMNcWOkkDZLmwTIBJDcoigW+029K7TPdJTn2c11FmxWEDbqb9KUpNmes+tQ4k4RKZZsO70Q4/Px+RfuXW19qCB2foPyCsOL+OfrrYQfwOhepvixJ2NTc8DnMKpL0PHyxz53m4k8JPmj2Gm8inOWH6IyObouB4/3rux7NhPF3Zrs9NuC08yy9A7pyDga9RJKj29A/3S7eX0+ZwfP1SDK7bgMk7iFsuEV/T7R8DbPWT9nsUxTZyTJNZMS67C36Yj2/T49ry7viAz/ADL0n9U=
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/event/event-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get an event by ULID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/event/{ulid}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves an event using the provided ULID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Event ULID","in":"path","name":"ulid","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Event found","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"device_id":{"type":"integer"},"event_type":{"type":"integer"},"firmware_version":{"type":"string"},"hardware_event_type":{"type":"integer"},"hardware_model":{"type":"string"},"hook_delivered_at":{"type":"string"},"id":{"type":"integer"},"is_ignition_on":{"type":"boolean"},"media_id":{"type":"integer"},"odometer":{"type":"number"},"sourced_created_at":{"type":"string"},"tenant_delivered_at":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"204":{"description":"No content","content":{"application/json":{"schema":{"type":"string"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}},"422":{"description":"Unprocessable entity","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
