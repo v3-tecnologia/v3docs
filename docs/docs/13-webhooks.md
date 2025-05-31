@@ -6,9 +6,11 @@ sidebar_position: 13
 
 Este documento descreve o sistema de notificações via webhook, uma solução que permite a comunicação em tempo real entre diferentes sistemas através de notificações HTTP. O sistema foi projetado para ser seguro, confiável e fácil de integrar.
 
-## Link da API
+:::info[Procurando a API?]
 
 Caso queira acessar diretamente a documentação da API de Notificações, [clique aqui](/docs/category/notification-webhook).
+
+:::
 
 ## O que são Webhooks?
 
@@ -149,11 +151,3 @@ if __name__ == '__main__':
    -  Aumente o timeout na configuração se necessário
    -  Otimize o processamento do webhook para ser mais rápido
    -  Considere processar a notificação de forma assíncrona
-
-## Suporte
-
-Para suporte técnico ou dúvidas sobre a implementação, entre em contato com a equipe de suporte através do e-mail suporte@v3.com.br.
-
-## Conclusão
-
-O sistema de notificações via webhook oferece uma maneira eficiente e segura de receber atualizações em tempo real. Com a implementação correta e seguindo as boas práticas, você pode criar uma integração robusta e confiável. 

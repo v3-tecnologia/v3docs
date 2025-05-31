@@ -10,36 +10,24 @@ sidebar_position: 4
 
 Existem duas formas de adquirir dispositivos para utilização na plataforma V3:
 
-1. **Aquisição direta pela V3**
-2. **Aquisição por outro fornecedor**
-
 ### Aquisição pela V3
 
 Ao adquirir os dispositivos diretamente pela V3, você terá os dispositivos pré-configurados e prontos para uso.
 
-Caso queira adquirir seu dispositivo conosco entre em contato pelo e-mail comercial@v3.com.br.
+:::info[Adiquira Agora]
 
-Neste caso, você pode prosseguir diretamente para a etapa de **Dados Cadastrais**.
+Caso queira adquirir seu dispositivo conosco entre em contato: [comercial@v3.com.br](mailto:comercial@v3.com.br)
+
+:::
+
+Neste caso, você pode prosseguir diretamente para a etapa de [Dados Cadastrais](#dados-cadastrais).
 
 ### Aquisição por Outro Fornecedor
 
 Se você optar por adquirir os dispositivos de outro fornecedor, será necessário:
 
-1. Preencher os **Dados Cadastrais**
-2. Utilizar nossa **Ferramenta Customizada** para configuração
-
-## Ferramenta Customizada
-
-A V3 disponibiliza uma ferramenta customizada para configuração de dispositivos adquiridos de outros fornecedores. Esta ferramenta:
-
--  Está disponível para Windows e Linux
--  Requer conexão USB do dispositivo ao computador
--  Realiza configuração automática completa
--  Prepara o dispositivo para instalação
-
-Você deverá receber essa ferramenta durante o processo de onboarding, enviada pelo nosso time de suporte.
-
-Para ver um passo a passo de como utilizar esta ferramenta, acesse [Ferramenta de Configuração](./06-ferramenta-de-configuracao.md).
+1. Preencher os [Dados Cadastrais](#dados-cadastrais).
+2. Utilizar nossa [Ferramenta de Configuração](#ferramenta-de-configura%C3%A7%C3%A3o) para configuração.
 
 ## Dados Cadastrais
 
@@ -52,24 +40,22 @@ Estas informações são essenciais para:
 -  Definição de permissões
 -  Configuração de redes wifi e APNs
 
-### Estrutura de Dados
-
-#### Informações do Tenant
+### Informações do Tenant
 - **Nome do Tenant** (`tenant_name`): Nome do seu tenant na plataforma V3
 
-#### Informações da Empresa
+### Informações da Empresa
 - **Nome da Empresa** (`company_name`): Nome completo da empresa
 - **Número do Documento** (`document_number`): CNPJ da empresa
 - **Tipo do Documento** (`document_type`): CNPJ
 
-##### Informações de Contato
+#### Informações de Contato
 - **Nome do Departamento** (`name`): Nome do departamento
 - **Email** (`email`): Email de contato
 - **Telefone** (`phone`): Telefone de contato
 - **Website** (`website`): Website da empresa
 
-##### Endereços
-###### Endereço de Cobrança
+#### Endereços
+##### Endereço de Cobrança
 - **Tipo** (`type`): billing
 - **Endereço** (`address`): Endereço completo
 - **Cidade** (`city`): Cidade
@@ -77,7 +63,7 @@ Estas informações são essenciais para:
 - **País** (`country`): País
 - **CEP** (`postal_code`): CEP
 
-###### Endereço de Entrega
+##### Endereço de Entrega
 - **Tipo** (`type`): shipping
 - **Endereço** (`address`): Endereço completo
 - **Cidade** (`city`): Cidade
@@ -85,15 +71,15 @@ Estas informações são essenciais para:
 - **País** (`country`): País
 - **CEP** (`postal_code`): CEP
 
-##### Usuários
+#### Usuários
 - **Nome** (`name`): Nome do usuário
 - **Email** (`email`): Email do usuário
 - **Senha** (`password`): Senha inicial
 - **Função** (`role`): TENANT ou TENANT_ADMIN
 
-#### Dispositivos
+### Dispositivos
 
-##### Perfis
+#### Perfis
 - **Nome do Perfil** (`name`): Nome do perfil
 - **Perfil Padrão** (`default`): true/false
 - **Versão do Firmware** (`firmware_version`): Versão do firmware
@@ -102,12 +88,12 @@ Estas informações são essenciais para:
 - **Versão do Hardware** (`hardware_version`): Versão do hardware
 - **Fornecedor do Hardware** (`hardware_provider`): Fornecedor do hardware
 
-###### Features
+##### Features
 - **Nome da Feature** (`name`): Nome da feature
 - **Habilitada** (`enabled`): true/false
 - **Parâmetros** (`params`): Parâmetros específicos da feature
 
-###### APNs Padrão
+##### APNs Padrão
 - **Nome do APN** (`name`): Nome do APN
 - **Código Numérico** (`numeric`): Código numérico
 - **Tipo do APN** (`type`): Tipo do APN
@@ -117,16 +103,16 @@ Estas informações são essenciais para:
 - **Usuário** (`user`): Usuário
 - **Senha** (`password`): Senha
 
-###### Redes Padrão
+##### Redes Padrão
 - **Tipo de Rede** (`type`): Tipo de rede
 - **Nome da Rede** (`ssid`): Nome da rede
 - **Senha da Rede** (`pre_shared_key`): Senha da rede
 
-##### Equipamentos
+#### Equipamentos
 - **IMEI** (`imei`): Número IMEI do dispositivo
 - **Perfil** (`profile`): Nome do perfil
 
-###### Informações do Veículo
+##### Informações do Veículo
 - **Placa** (`license_plate`): Placa do veículo
 - **Número de Série** (`serial_number`): Número de série
 - **Chassi** (`chassis`): Número do chassi
@@ -136,7 +122,7 @@ Estas informações são essenciais para:
 - **Ano de Fabricação** (`manufacture_year`): Ano de fabricação
 - **Ano do Modelo** (`model_year`): Ano do modelo
 
-###### APNs Personalizados
+##### APNs Personalizados
 - **Nome do APN** (`name`): Nome do APN personalizado
 - **Código Numérico** (`numeric`): Código numérico
 - **Tipo do APN** (`type`): Tipo do APN
@@ -146,12 +132,29 @@ Estas informações são essenciais para:
 - **Usuário** (`user`): Usuário
 - **Senha** (`password`): Senha
 
-###### Redes Personalizadas
+##### Redes Personalizadas
 - **Tipo de Rede** (`type`): Tipo de rede
 - **Nome da Rede** (`ssid`): Nome da rede
 - **Senha da Rede** (`pre_shared_key`): Senha da rede
 
-> Não se preocupe, nosso time de suporte irá acompanhar a coleta e inclusão destes dados!
+:::info
+
+Não se preocupe, nosso time de suporte irá acompanhar a coleta e inclusão destes dados!
+
+:::
+
+## Ferramenta de Configuração
+
+A V3 disponibiliza uma **Ferramenta de Configuração** de dispositivos adquiridos de outros fornecedores. Esta ferramenta:
+
+-  Está disponível para Windows e Linux
+-  Requer conexão USB do dispositivo ao computador
+-  Realiza configuração automática completa
+-  Prepara o dispositivo para instalação
+
+Você deverá receber essa ferramenta durante o processo de onboarding, enviada pelo nosso time de suporte.
+
+Para ver um passo a passo de como utilizar esta ferramenta, acesse [Ferramenta de Configuração](./06-ferramenta-de-configuracao.md).
 
 ## Setup Inicial
 
@@ -205,4 +208,8 @@ Estas credenciais são essenciais para:
 -  Autenticação de dispositivos
 -  Acesso à API
 
-> Entre em contato com o nosso time de suporte para obter as suas credenciais de acesso, via [Suporte](mailto:suporte@v3.com.br)
+:::info[Ficou com dúvidas?]
+
+Entre em contato com o nosso time de suporte para obter as suas credenciais de acesso, via [suporte@v3.com.br](mailto:suporte@v3.com.br)
+
+:::

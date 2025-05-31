@@ -58,7 +58,7 @@ O sistema utiliza um modelo de permissões baseado em roles (papéis) em diferen
    -  `account_id`: Identificador da conta
    -  `tenant_id`: Identificador do tenant
 
-###Verificando Permissões
+### Verificando Permissões
 
 Para verificar suas permissões atuais, você pode:
 

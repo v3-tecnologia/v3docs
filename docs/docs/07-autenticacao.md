@@ -6,9 +6,17 @@ sidebar_position: 7
 
 Este documento fornece um guia entender e implementar a autenticação em nosso sistema. Utilizamos OAuth 2.0 com OpenID Connect para autenticação e autorização seguras.
 
-## Link da API
+:::info[Procurando a API?]
 
 Caso queira acessar diretamente a documentação da API de Autenticação, [clique aqui](/docs/category/auth-api).
+
+:::
+
+:::warning[Importante]
+
+Todas as APIs disponibilizadas pela V3 necessitam de um Token de autenticação. Por isso, é importante que este token seja gerado e gerenciado pela equipe que irá realizar a integração com a V3.
+
+:::
 
 ## Conceitos Principais
 
@@ -97,9 +105,9 @@ A resposta conterá um novo token de acesso e token de atualização.
 
 Respostas de erro comuns incluem:
 
-- 400 Bad Request: Parâmetros de requisição inválidos
-- 401 Unauthorized: Token inválido ou expirado
-- 500 Internal Server Error: Problemas no servidor
+- `400 Bad Request`: Parâmetros de requisição inválidos
+- `401 Unauthorized`: Token inválido ou expirado
+- `500 Internal Server Error`: Problemas no servidor
 
 Cada resposta de erro inclui:
 - `error`: Código do erro

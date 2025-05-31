@@ -6,9 +6,11 @@ sidebar_position: 10
 
 O Sistema de Orders é uma ferramenta que permite enviar comandos e configurações para dispositivos em campo de forma simples e eficiente. É como um "controle remoto" que permite gerenciar e monitorar seus dispositivos remotamente.
 
-## Link da API
+:::info[Procurando a API?]
 
 Caso queira acessar diretamente a documentação da API de Orders, [clique aqui](/docs/category/order-api).
+
+:::
 
 ## Para que serve?
 
@@ -18,7 +20,23 @@ Caso queira acessar diretamente a documentação da API de Orders, [clique aqui]
 - Monitorar o status das operações
 - Receber notificações quando as operações são concluídas
 
-## Comandos Disponíveis
+## Antes de Começar
+
+É importante entender que na V3 nós trabalhamos com alguns tipos de comandos.
+
+Um comando `CONFIG` será utilizado para "alterar" diretamente um comportamento de um módulo na implementação do Firmware. Isso é bastante poderoso, pois conseguimos ter um controle quase que total do dispositivo. Mas exige um conhecimento avançado de como está implementado o nosso Firmware, por isso, caso seja necessário utilizar este comando, possivlemente você será instruído pelo nosso time de desenvolvedores para fazer isso da melhor maneira.
+
+Existe ainda um comando especial do tipo `INTERNAL` que permite que se execute comandos diretamente no sistema operacional do dispositivo. Este comando pode ser importante para ajudar na investigação de problemas e na buscar por dados no dispositivo. Para que estes comandos sejam executados, nós validamos uma permissão especial, chamada de `admin_role` (mais informações em [Níveis de Permissão](08-permissionamento.md#n%C3%ADveis-de-permiss%C3%A3o)).
+
+Por fim, existem os comandos mais "amigáveis" que provavelmente serão os mais comuns de se utilizar. Este comandos, internamente, agrupam uma série de instruções do tipo `CONFIG` que fazem uma ação maior. Estamos sempre melhorando a nossa lista de comandos, e podemos "encapsular" novos comandos na medida do necessário.
+
+:::info[Entre em contato com os nossos Devs]
+
+Entre em contato diretamente com os nossos Devs, para entender melhor como utilizar o comando do tipo `CONFIG`. Envie um e-mail para [dev@v3.com.br](mailto:dev@v3.com.br)
+
+:::
+
+## Comandos Avançados
 
 ### 1. Configurações do Dispositivo (CONFIG)
 Permite configurar parâmetros específicos do dispositivo:
@@ -41,7 +59,38 @@ Exemplo:
 }
 ```
 
-### 2. Gerenciamento de WiFi
+### 2. Configurações Internas (INTERNAL)
+Os comandos internos são operações especiais que requerem permissões administrativas. Estes comandos são usados para configurações mais sensíveis do sistema.
+
+#### Como Usar Comandos Internos
+
+Para enviar um comando interno:
+1. Certifique-se de ter permissões de `admin_tenant`
+2. Use o endpoint específico: `/devices/{deviceId}/order/internal`
+3. Configure o tipo como `INTERNAL`
+
+Exemplo de comando interno:
+```json
+{
+    "orders": [
+        {
+            "type": "INTERNAL",
+            "parameters": [
+                {
+                    "module": "downloaderd",
+                    "key": "S3_REGION",
+                    "value": "us-east-1",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}
+```
+
+## Comandos
+
+### 1. Gerenciamento de WiFi
 #### Adicionar WiFi (ADD_WIFI)
 Adiciona uma nova rede WiFi ao dispositivo:
 
@@ -70,7 +119,7 @@ Remove uma rede WiFi existente:
 }
 ```
 
-### 3. Comandos Básicos
+### 2. Ações no Dispositivo
 #### Reiniciar Dispositivo (REBOOT)
 Reinicia o dispositivo:
 ```json
@@ -118,7 +167,7 @@ Força uma atualização do estado do dispositivo:
 }
 ```
 
-### 4. ‍Driver Coach
+### 3. ‍Driver Coach
 #### Monitoramento Inercial (DRIVER_COACH_INERTIAL)
 Ativa/desativa o monitoramento inercial:
 ```json
@@ -188,11 +237,11 @@ Você pode enviar vários comandos de uma vez:
 
 ### Status das Orders
 As orders podem ter os seguintes status:
-- PENDING: Aguardando processamento
-- SENT: Enviada para o dispositivo
-- PROCESSED: Processada com sucesso
-- FAILED: Falha no processamento
-- DELETED: Order excluída
+- `PENDING`: Aguardando processamento
+- `SENT`: Enviada para o dispositivo
+- `PROCESSED`: Processada com sucesso
+- `FAILED`: Falha no processamento
+- `DELETED`: Order excluída
 
 ### Consultando Orders
 Você pode consultar:
@@ -208,6 +257,12 @@ Você pode excluir orders de três formas:
 2. Múltiplas orders: DELETE `/devices/{deviceId}/orders?ids=id1,id2,id3`
 3. Todas as orders de um dispositivo: DELETE `/devices/{deviceId}/orders`
 
+:::warning[Quando posso excluir?]
+
+Uma order permite a sua exclusão enquanto ainda não foi enviada para o Dispositivo, ou seja, o seu status ainda é `PENDING`. Qualquer status depois de `PENDING` impede a exclusão de uma order.
+
+:::
+
 ## Boas Práticas
 
 1. **Verifique o Status**: Sempre verifique o status das orders antes de enviar novas
@@ -217,23 +272,19 @@ Você pode excluir orders de três formas:
 
 ## Limitações
 
-- Orders não podem ser canceladas após serem enviadas ao dispositivo
 - Algumas operações podem levar tempo para serem concluídas
 - Certas configurações podem requerer reinicialização do dispositivo
-- Orders em status diferente de PENDING não podem ser excluídas
+- É importante lembrar que trabalhamos em um cenário de IoT, no qual sempre há a possibilidade da perca de informação trafegada entre a núvem e o dispositivo. Por isso, o sistema de orders está preparado para inferir se o comando não foi executado depois que o dispositivo não traga a resposta depois de certo tempo.
 
-## Suporte
-
-Se você encontrar problemas ou tiver dúvidas:
-1. Verifique o status da order
-2. Consulte os logs do dispositivo
-3. Entre em contato com o suporte técnico
-
-## Ferramenta CLI
+## Ferramenta CLI para Execução de Orders
 
 A V3 oferece ainda uma ferramenta de CLI escrita em Python que pode te ajudar a executar estes e outros comandos mais avançados.
 
-Entre em contato com o nosso suporte através do e-mail suporte@v3.com.br para obter acesso a esta ferramenta.
+:::info[Entre em contato com os nossos Devs]
+
+Caso queira agilizar a sua operação utilizando a nossa ferramenta de CLI, Envie um e-mail para [dev@v3.com.br](mailto:dev@v3.com.br)
+
+:::
 
 ## Exemplos de Uso
 
@@ -259,7 +310,3 @@ Entre em contato com o nosso suporte através do e-mail suporte@v3.com.br para o
     "type": "REBOOT"
 }
 ```
-
-## Conclusão
-
-O Sistema de Orders é uma ferramenta poderosa para gerenciar seus dispositivos remotamente. Com ele, você pode realizar diversas operações de forma simples e eficiente, mantendo o controle total sobre seus dispositivos em campo. 
