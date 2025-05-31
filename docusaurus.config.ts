@@ -2,9 +2,10 @@ import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
+import { themes as prismThemes } from "prism-react-renderer";
 
 const config: Config = {
-  title: "V3 Docs",
+  title: "Portal do Desenvolvedor V3",
   tagline: "Bem-vindo ao portal do desenvolvedor que quer integrar com a V3",
   url: "https://developer.v3control.com",
   projectName: "v3docs",
@@ -14,7 +15,6 @@ const config: Config = {
   onBrokenMarkdownLinks: "warn",
   favicon: "img/shared/favicon.png",
   trailingSlash: false,
-
   presets: [
     [
       "classic",
@@ -136,6 +136,7 @@ const config: Config = {
       copyright: `© ${new Date().getFullYear()} V3 Tecnologia.`,
     },
     prism: {
+      theme: prismThemes.github,
       additionalLanguages: [
         "ruby",
         "csharp",
@@ -346,7 +347,7 @@ const config: Config = {
             },
           } satisfies OpenApiPlugin.Options,
         } satisfies Plugin.PluginOptions,
-      }
+      },
     ],
   ],
   themes: ["docusaurus-theme-openapi-docs"],

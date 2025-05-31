@@ -18,9 +18,9 @@ Antes de iniciar o processo de instalação, certifique-se de ter os seguintes i
 - Ferramenta de acesso remoto instalada (preferencialmente TeamViewer)
 
 ### Configurações Prévias
-- ULID do cliente (para registrar devices fora da conta da Gol na AWS)
-- Usuário AWS do cliente
-- V3QATools versão 0.20.0 (versão compartilhada com Rastrac foi 0.14.0)
+- Identificação do cliente
+- Usuário do cliente
+- V3QATools em sua última versão
 
 ## Validações Pré-instalação
 
@@ -41,8 +41,10 @@ Durante o processo de instalação, o cliente deve:
 3.  Seguir as instruções da ferramenta V3QATools
 4.  Validar as configurações após a instalação
 
-## Suporte
+:::info[Suporte]
 
-Em caso de dúvidas ou problemas durante o processo de instalação, entre em contato com nossa equipe de suporte:
+Em caso de dúvidas ou problemas durante o processo de instalação, entre em contato com nossa equipe de suporte.
 
-- Email: suporte@v3.com.br
+**Entre em contato:** [suporte@v3.com.br](mailto:suporte@v3.com.br)
+
+:::
