@@ -6,17 +6,27 @@ sidebar_position: 11
 
 O Contexto de events é o coração do sistema de video-telemetria da V3. Ela é responsável por gerenciar todos os eventos que acontecem com os dispositivos em campo, como posição GPS, dados do acelerômetro, identificação do condutor e comportamentos inadequados.
 
-## Link da API
+:::info[Procurando a API?]
 
 Caso queira acessar diretamente a documentação da API de Eventos, [clique aqui](/docs/category/event-api).
+
+:::
 
 ## O que são Events?
 
 Events são registros de tudo o que acontece com um dispositivo em campo. Eles podem ser classificados em três categorias principais:
 
-1. **Hardware**: Eventos relacionados ao automóvel (ex: ignição)
+1. **Hardware**: Eventos relacionados ao automóvel (ex: Ignição Ligada ou Ignição Desligada)
 2. **Vision**: Eventos capturados pelas câmeras
-3. **Telemetry**: Eventos obtidos via sensores do dispositivo (ex: Giroscópio, GPS)
+3. **Telemetry**: Eventos obtidos via sensores do dispositivo (ex: Giroscópio ou GPS)
+
+Os eventos são o coração de como sua integração poderá obter os dados dos dispositivos gerenciados pelas V3.
+
+Através dos eventos você conseguirá criar uma outra camada de funcionalidades, da forma que fizer mais sentido para o seu negócio.
+
+Para isso, é importante entender a estrutura de um evento.
+
+A seguir, explica-se cada um dos dados que podem ser analisado diretamente [neste](/docs/openapi/event/get-an-event-by-ulid) payload.
 
 ## Estrutura de um Evento
 
@@ -109,14 +119,21 @@ O payload contém todas as informações específicas do evento e é estruturado
 
 Os eventos podem ser criados de duas formas:
 
-1. **Automaticamente pelo Sistema**:
+1. **Automaticamente pelo Sistema do Firmware**:
    - Através do MQTT (para eventos de Hardware e Telemetria)
    - Através do S3 (para eventos de Vision)
 
 2. **Manualmente via API**:
    - Endpoint: `POST /devices/{deviceId}/events`
-   - Requer permissão de admin ou tenant_admin
-   - Permite criar eventos de forma manual para testes ou correções
+   - Requer permissão de `admin` ou `tenant_admin`
+
+:::info[Por que criar manualmente?]
+
+A forma de criação manual pode ser importante caso você queira fazer integrações com outros dispositivos. Assim, é possível por exemplo, criar um evento diretamente via HTTP.
+
+Além disso, pode ser interessante em uma manobra de migração ou resolução de incidentes.
+
+:::
 
 ## Como Consumir Eventos?
 
@@ -127,8 +144,15 @@ Existem duas formas de consumir eventos:
    - O cliente deve implementar um endpoint para receber estas notificações
    - O evento é marcado como consumido quando o webhook retorna sucesso (2xx)
 
+:::info[Veja como configurar e utilizar o Webhook]
+
+Caso queira entender como configurar e utilizar o sistema de notificações via WebHook, acesse [aqui](./13-webhooks.md).
+
+:::
+
 2. **Via API**:
-   - Endpoint: `GET /devices/{deviceId}/events`
+   - É um método de consumo do tipo Pooling
+   - Você pode utilizar [este](/docs/openapi/event/get-an-event-by-ulid) endpoint.
    - Suporta paginação
    - Permite filtrar eventos por período
    - Após consumir, o cliente deve marcar o evento como processado usando:
@@ -140,13 +164,4 @@ Existem duas formas de consumir eventos:
 Para eventos que possuem mídias associadas (como fotos ou vídeos):
 
 1. O evento contém informações sobre a mídia no campo `media` do payload
-2. Para obter a URL de acesso à mídia:
-   - Endpoint: `GET /vision/media`
-   - Retorna URLs para acesso aos arquivos
-
-## Segurança
-
-- Todos os endpoints requerem autenticação via token JWT
-- Acesso baseado em roles (admin, tenant_admin, etc.)
-- URLs de mídia são temporárias e expiram automaticamente
-- Suporte a idempotência para evitar duplicação de eventos
+2. Para obter a URL de acesso à mídia você precisa acessar diretamente um endpoint no contexto de visão. Veja mais detalhes em [aqui](/docs/openapi/vision/get-media-by-id)

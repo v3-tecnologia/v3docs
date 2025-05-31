@@ -6,14 +6,16 @@ sidebar_position: 9
 
 A camada de Gerenciamento é um componente fundamental da V3, responsável pela gestão das principais entidades do sistema. Após a configuração inicial, autenticação e permissionamento, esta camada permite o gerenciamento completo de:
 
-- ‍ Motoristas
+- ‍Motoristas
 - Times
 - Frotas
 - Dispositivos
 
-## Link da API
+:::info[Procurando a API?]
 
 Caso queira acessar diretamente a documentação da API de Gerenciamento, [clique aqui](/docs/category/management-api).
+
+:::
 
 ## Hierarquia e Relacionamentos
 
