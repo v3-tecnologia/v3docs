@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.7.0">
 <title data-rh="true">Visão Computacional | Portal do Desenvolvedor V3</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.v3control.com/docs/docs/solucao-v3/03.02-core/03.02.01-v3fw/03.02.01.06-visao-computacional"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Visão Computacional | Portal do Desenvolvedor V3"><meta data-rh="true" name="description" content="A visão computacional no V3FW utiliza técnicas avançadas de inteligência artificial para interpretar dados visuais capturados pelas câmeras do dispositivo."><meta data-rh="true" property="og:description" content="A visão computacional no V3FW utiliza técnicas avançadas de inteligência artificial para interpretar dados visuais capturados pelas câmeras do dispositivo."><link data-rh="true" rel="icon" href="/img/shared/favicon.png"><link data-rh="true" rel="canonical" href="https://developer.v3control.com/docs/docs/solucao-v3/03.02-core/03.02.01-v3fw/03.02.01.06-visao-computacional"><link data-rh="true" rel="alternate" href="https://developer.v3control.com/docs/docs/solucao-v3/03.02-core/03.02.01-v3fw/03.02.01.06-visao-computacional" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.v3control.com/docs/docs/solucao-v3/03.02-core/03.02.01-v3fw/03.02.01.06-visao-computacional" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Portal do Desenvolvedor V3 RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Portal do Desenvolvedor V3 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.62b2b738.css">
-<script src="/assets/js/runtime~main.49c6871a.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.19c20331.js" defer="defer"></script>
 <script src="/assets/js/main.00c3ac50.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -19,7 +19,6 @@
 <ol>
 <li><strong>Captura</strong>: Quando o veículo é ligado, o sistema automaticamente captura uma imagem do motorista.</li>
 <li><strong>Detecção</strong>: O sistema identifica se há uma face presente na imagem.</li>
-<li><strong>Envio para a Nuvem</strong>: Essa face é enviada para a Nuvem.</li>
 <li><strong>Comparação</strong>: Esta face é comparada com outras previamente treinadas.</li>
 <li><strong>Identificação</strong>: O sistema determina a identidade do condutor com base na correspondência mais próxima.</li>
 </ol>
@@ -35,9 +34,9 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="treinamento-do-sistema">Treinamento do Sistema<a href="#treinamento-do-sistema" class="hash-link" aria-label="Direct link to Treinamento do Sistema" title="Direct link to Treinamento do Sistema">​</a></h3>
 <p>Para que o sistema reconheça um condutor:</p>
 <ol>
-<li>É necessário registrar inicialmente o condutor com múltiplas fotos para criar um modelo facial robusto</li>
+<li>É necessário registrar inicialmente o condutor com uma foto de uma de suas viagens para criar um modelo facial.</li>
 <li>O sistema pode ser continuamente treinado com novas imagens para melhorar a precisão ao longo do tempo</li>
-<li>A base de dados de condutores é gerenciada através da plataforma V3Cloud</li>
+<li>A base de dados de condutores é gerenciada através das APIs ou diretaamente pelo V3Web e V3App</li>
 </ol>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="futuras-implementações">Futuras Implementações<a href="#futuras-implementações" class="hash-link" aria-label="Direct link to Futuras Implementações" title="Direct link to Futuras Implementações">​</a></h2>
 <p>A plataforma de visão computacional do V3FW está preparada para incorporar novas funcionalidades no futuro, como:</p>
