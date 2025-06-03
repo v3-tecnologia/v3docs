@@ -1,4 +1,4 @@
-basePath: /
+basePath: /v1
 definitions:
   dto.CreateDeviceDTO:
     properties:
@@ -339,14 +339,14 @@ definitions:
       total_pages:
         type: integer
     type: object
-host: v3sandbox.com
+host: '{tenant}.v3sandbox.com'
 info:
   contact: {}
   description: Aplicação em GO responsável por realizar o CRUD das estruturas base.
   title: Management API
   version: 0.0.1
 paths:
-  /device:
+  /management/device:
     post:
       consumes:
       - application/json
@@ -376,7 +376,7 @@ paths:
       summary: Create a new device
       tags:
       - Device
-  /device/{id}:
+  /management/device/{id}:
     delete:
       description: |-
         Delete handles HTTP DELETE requests to remove a device resource by its ID.
@@ -463,7 +463,7 @@ paths:
       summary: Update a device
       tags:
       - Device
-  /device/imei/{imei}:
+  /management/device/imei/{imei}:
     get:
       description: |-
         FindByIMEI handles HTTP requests to retrieve a single device by its IMEI.
@@ -490,7 +490,7 @@ paths:
       summary: Get a device by IMEI
       tags:
       - Device
-  /device/ulid/{ulid}:
+  /management/device/ulid/{ulid}:
     get:
       description: |-
         FindByULID handles HTTP requests to retrieve a single device by its ULID.
@@ -517,7 +517,7 @@ paths:
       summary: Get a device by ULID
       tags:
       - Device
-  /devices:
+  /management/devices:
     get:
       description: |-
         FindAll handles HTTP GET requests to retrieve device records with optional filtering and pagination.
@@ -547,7 +547,7 @@ paths:
       summary: List devices with pagination
       tags:
       - Device
-  /devices/fleets/{fleetId}:
+  /management/devices/fleets/{fleetId}:
     get:
       description: |-
         FindByFleet handles HTTP GET requests to retrieve device records associated with a specific fleet.
@@ -573,7 +573,7 @@ paths:
       summary: Get devices by fleet ID
       tags:
       - Device
-  /driver:
+  /management/driver:
     post:
       consumes:
       - application/json
@@ -603,7 +603,7 @@ paths:
       summary: Create a new driver
       tags:
       - Driver
-  /driver/{driverId}/team/{teamId}:
+  /management/driver/{driverId}/team/{teamId}:
     post:
       consumes:
       - application/json
@@ -635,7 +635,7 @@ paths:
       summary: Assign driver to team
       tags:
       - Driver
-  /driver/{id}:
+  /management/driver/{id}:
     delete:
       description: |-
         Delete handles HTTP DELETE requests to remove a driver resource by its ID.
@@ -722,7 +722,7 @@ paths:
       summary: Update a driver
       tags:
       - Driver
-  /drivers:
+  /management/drivers:
     get:
       description: |-
         FindAll handles HTTP GET requests to retrieve driver records with optional filtering and pagination.
@@ -752,7 +752,7 @@ paths:
       summary: List drivers with pagination
       tags:
       - Driver
-  /drivers/{driverId}/teams/{teamId}:
+  /management/drivers/{driverId}/teams/{teamId}:
     delete:
       description: |-
         RemoveFromTeam handles the HTTP request to remove a driver from a team.
@@ -782,7 +782,7 @@ paths:
       summary: Remove driver from team
       tags:
       - Driver
-  /fleet:
+  /management/fleet:
     post:
       consumes:
       - application/json
@@ -812,7 +812,7 @@ paths:
       summary: Create a new fleet
       tags:
       - Fleet
-  /fleet/{id}:
+  /management/fleet/{id}:
     delete:
       description: |-
         Delete handles HTTP DELETE requests to remove a fleet resource by its ID.
@@ -899,7 +899,7 @@ paths:
       summary: Update a fleet
       tags:
       - Fleet
-  /fleet/ulid/{ulid}:
+  /management/fleet/ulid/{ulid}:
     get:
       description: |-
         FindByULID handles HTTP requests to retrieve a single fleet by its ULID.
@@ -926,7 +926,7 @@ paths:
       summary: Get a fleet by ULID
       tags:
       - Fleet
-  /fleets:
+  /management/fleets:
     get:
       description: |-
         FindAll handles HTTP GET requests to retrieve fleet records with optional filtering and pagination.
@@ -956,7 +956,7 @@ paths:
       summary: List fleets with pagination
       tags:
       - Fleet
-  /fleets/teams/{teamId}:
+  /management/fleets/teams/{teamId}:
     get:
       description: |-
         FindByTeam handles HTTP GET requests to retrieve fleet records associated with a specific team.
@@ -982,7 +982,7 @@ paths:
       summary: Get fleets by team ID
       tags:
       - Fleet
-  /team:
+  /management/team:
     post:
       consumes:
       - application/json
@@ -1012,7 +1012,7 @@ paths:
       summary: Create a new team
       tags:
       - Team
-  /team/{id}:
+  /management/team/{id}:
     delete:
       description: |-
         Delete handles HTTP DELETE requests to remove a team resource by its ID.
@@ -1099,7 +1099,7 @@ paths:
       summary: Update a team
       tags:
       - Team
-  /teams:
+  /management/teams:
     get:
       description: |-
         FindAll handles HTTP GET requests to retrieve team records with optional filtering and pagination.
@@ -1129,7 +1129,7 @@ paths:
       summary: List teams with pagination
       tags:
       - Team
-  /teams/{teamId}/drivers:
+  /management/teams/{teamId}/drivers:
     get:
       description: |-
         FindDrivers handles HTTP GET requests to retrieve driver records associated with a specific team.
@@ -1155,7 +1155,7 @@ paths:
       summary: Get drivers by team ID
       tags:
       - Team
-  /teams/accounts/{accountId}:
+  /management/teams/accounts/{accountId}:
     get:
       description: |-
         FindByAccount handles HTTP GET requests to retrieve team records associated with a specific account.

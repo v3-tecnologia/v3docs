@@ -1,4 +1,4 @@
-basePath: /
+basePath: /v1
 definitions:
   response.Error:
     properties:
@@ -25,12 +25,6 @@ definitions:
         $ref: '#/definitions/response.Meta'
     type: object
   response.VisionResponse:
-    properties:
-      data:
-        additionalProperties: true
-        type: object
-      meta:
-        $ref: '#/definitions/response.Meta'
     type: object
 host: v3sandbox.com
 info:
