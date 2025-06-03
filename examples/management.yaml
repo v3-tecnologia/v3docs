@@ -339,7 +339,7 @@ definitions:
       total_pages:
         type: integer
     type: object
-host: '{tenant}.v3sandbox.com'
+host: tenant.v3sandbox.com
 info:
   contact: {}
   description: Aplicação em GO responsável por realizar o CRUD das estruturas base.

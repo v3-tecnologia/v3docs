@@ -30,7 +30,7 @@ definitions:
       error_description:
         type: string
     type: object
-host: '{tenant}.v3sandbox.com'
+host: tenant.v3sandbox.com
 info:
   contact: {}
   description: Serviço em Go que atua como proxy para autenticação e verificação de

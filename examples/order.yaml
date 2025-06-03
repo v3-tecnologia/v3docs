@@ -277,7 +277,7 @@ definitions:
       active:
         type: boolean
     type: object
-host: '{tenant}.v3sandbox.com'
+host: tenant.v3sandbox.com
 info:
   contact: {}
   description: Aplicação em GO responsável por realizar a gestão de ordens para os

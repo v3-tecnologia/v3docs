@@ -221,7 +221,7 @@ definitions:
       status:
         type: string
     type: object
-host: '{tenant}.v3sandbox.com'
+host: tenant.v3sandbox.com
 info:
   contact: {}
   description: This is an API to handle device events
