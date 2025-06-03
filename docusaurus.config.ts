@@ -116,7 +116,7 @@ const config: Config = {
           ],
         },
         {
-          title: "MAIS SOBRE A V3",
+          title: "LINKS",
           items: [
             {
               label: "Site",
@@ -129,6 +129,10 @@ const config: Config = {
             {
               label: "LinkedIn",
               href: "https://www.linkedin.com/company/v3-tecnologia",
+            },
+            {
+              label: "Discord",
+              href: "http://discord.gg/placeholder",
             },
           ],
         },

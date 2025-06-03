@@ -74,20 +74,20 @@ export default function Home(): ReactNode {
             <section className="flex flex-row gap-8 mt-15 md:!mt-35 justify-center">
               <div className="text-center max-w-[80%]">
                 <div className="flex items-center justify-center gap-4 mb-6">
-                  <SubTitle>Junte-se à nossa comunidade Discord!</SubTitle>
+                  <SubTitle>Junte-se à comunidade dev3s!</SubTitle>
                 </div>
                 <Paragraph className="mt-6 mb-8 text-lg">
-                  Conecte-se com outros desenvolvedores que estão integrando com
-                  nossa API! Nossa comunidade Discord é o lugar perfeito para
-                  tirar dúvidas, compartilhar experiências e ficar por dentro
-                  das novidades sobre videotelemetria e tecnologias V3.
+                  Conecte-se com outros desenvolvedores na nossa comunidade
+                  dev3s! Nosso Discord é o lugar perfeito para tirar dúvidas,
+                  compartilhar experiências e ficar por dentro das novidades
+                  sobre videotelemetria e tecnologias V3.
                 </Paragraph>
 
                 <a
-                  href="[DISCORD_INVITE_LINK_PLACEHOLDER]"
+                  href="http://discord.gg/placeholder"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex mt-4 items-center gap-2 !text-white !bg-primary px-8 py-4 rounded-2xl font-semibold text-lg hover:!bg-black hover:!text-primary !transition-all !duration-300 !ease-in-out !no-underline !decoration-none"
+                  className="inline-flex mt-4 items-center gap-2 !text-white bg-primary px-8 py-4 rounded-2xl font-semibold text-lg hover:!bg-black hover:!text-primary !transition-all !duration-300 !ease-in-out !no-underline !decoration-none"
                   style={{
                     textDecoration: "none !important",
                     transition: "all 0.3s ease-in-out !important",
