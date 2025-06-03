@@ -137,12 +137,12 @@ if __name__ == '__main__':
 
 ### Problemas Comuns
 
-1.  **Notificações não recebidas**
+1. **Notificações não recebidas**
    -  Verifique se o endpoint está acessível
    -  Confirme se o secret key está correto
    -  Verifique os logs do sistema
 
-2.  **Erros de Autenticação**
+2. **Erros de Autenticação**
    -  Confirme se o secret key está correto
    -  Verifique se a assinatura está sendo calculada corretamente
    -  Certifique-se de que o header `X-V3-Signature` está sendo enviado

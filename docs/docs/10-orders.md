@@ -26,7 +26,7 @@ Caso queira acessar diretamente a documentação da API de Orders, [clique aqui]
 
 Um comando `CONFIG` será utilizado para "alterar" diretamente um comportamento de um módulo na implementação do Firmware. Isso é bastante poderoso, pois conseguimos ter um controle quase que total do dispositivo. Mas exige um conhecimento avançado de como está implementado o nosso Firmware, por isso, caso seja necessário utilizar este comando, possivlemente você será instruído pelo nosso time de desenvolvedores para fazer isso da melhor maneira.
 
-Existe ainda um comando especial do tipo `INTERNAL` que permite que se execute comandos diretamente no sistema operacional do dispositivo. Este comando pode ser importante para ajudar na investigação de problemas e na buscar por dados no dispositivo. Para que estes comandos sejam executados, nós validamos uma permissão especial, chamada de `admin_role` (mais informações em [Níveis de Permissão](08-permissionamento.md#n%C3%ADveis-de-permiss%C3%A3o)).
+Existe ainda um comando especial do tipo `INTERNAL` que permite que se execute comandos diretamente no sistema operacional do dispositivo. Este comando pode ser importante para ajudar na investigação de problemas e para buscar por dados no dispositivo. Para que estes comandos sejam executados, nós validamos uma permissão especial, chamada de `admin_role` (mais informações em [Níveis de Permissão](08-permissionamento.md#n%C3%ADveis-de-permiss%C3%A3o)).
 
 Por fim, existem os comandos mais "amigáveis" que provavelmente serão os mais comuns de se utilizar. Este comandos, internamente, agrupam uma série de instruções do tipo `CONFIG` que fazem uma ação maior. Estamos sempre melhorando a nossa lista de comandos, e podemos "encapsular" novos comandos na medida do necessário.
 
@@ -274,7 +274,7 @@ Uma order permite a sua exclusão enquanto ainda não foi enviada para o Disposi
 
 - Algumas operações podem levar tempo para serem concluídas
 - Certas configurações podem requerer reinicialização do dispositivo
-- É importante lembrar que trabalhamos em um cenário de IoT, no qual sempre há a possibilidade da perca de informação trafegada entre a núvem e o dispositivo. Por isso, o sistema de orders está preparado para inferir se o comando não foi executado depois que o dispositivo não traga a resposta depois de certo tempo.
+- É importante lembrar que trabalhamos em um cenário de IoT, no qual sempre há a possibilidade da perda de informação trafegada entre a núvem e o dispositivo. Por isso, o sistema de orders está preparado para inferir se o comando não foi executado depois que o dispositivo não traga a resposta depois de certo tempo.
 
 ## Ferramenta CLI para Execução de Orders
 

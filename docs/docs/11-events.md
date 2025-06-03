@@ -151,7 +151,7 @@ Caso queira entender como configurar e utilizar o sistema de notificações via 
 :::
 
 2. **Via API**:
-   - É um método de consumo do tipo Pooling
+   - É um método de consumo do tipo Polling
    - Você pode utilizar [este](/docs/openapi/event/get-an-event-by-ulid) endpoint.
    - Suporta paginação
    - Permite filtrar eventos por período

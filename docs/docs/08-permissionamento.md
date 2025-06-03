@@ -13,7 +13,7 @@ Quando você obtém um token com sucesso, a resposta terá a seguinte estrutura:
     "expires_in": 3600,
     "refresh_expires_in": 1800,
     "token_type": "Bearer",
-    "scope": "profile email roles custom-claims"
+    "scope": "profile email *roles* custom-claims"
 }
 ```
 
@@ -43,16 +43,16 @@ O token de acesso contém informações importantes sobre o usuário e suas perm
 
 ### Níveis de Permissão
 
-O sistema utiliza um modelo de permissões baseado em roles (papéis) em diferentes níveis:
+O sistema utiliza um modelo de permissões baseado em **roles* (papéis) em diferentes níveis:
 
-1. **Roles do Realm**
+1. ***Roles* do Realm**
    -  `admin_role`: Acesso administrativo V3
    -  `tenant_admin_role`: Administrador do tenant
    -  `tenant_role`: Usuário básico do tenant
 
-2. **Roles do Cliente**
-   -  Cada cliente (aplicação) pode ter suas próprias roles
-   -  Exemplo: `v3-client` pode ter roles como `admin` e `user`
+2. ***Roles* do Cliente**
+   -  Cada cliente (aplicação) pode ter suas próprias *roles*
+   -  Exemplo: `v3-client` pode ter *roles* como `admin` e `user`
 
 3. **Claims Personalizadas**
    -  `account_id`: Identificador da conta
@@ -69,7 +69,7 @@ GET /auth/token
 Authorization: Bearer SEU_ACCESS_TOKEN
 ```
 
-A resposta incluirá todas as claims e roles associadas ao seu token.
+A resposta incluirá todas as claims e *roles* associadas ao seu token.
 
 ### Hierarquia de Permissões
 

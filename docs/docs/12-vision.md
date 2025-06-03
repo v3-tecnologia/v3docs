@@ -20,7 +20,7 @@ Todos os eventos que chegam são monitorados por um agente que possui algumas fa
 
 ## 1. Consolidação
 
-Todos os eventos que chegarem até a estrutura V3, passarão por uma análise. Para isso, se verifica qual o tipo do evento e se ele possui media associada, pois o motor precisa descartar eventos que não possuem um contexto de visão. Por exemplo, um evento de posição (que não tenha uma media associada), não precisa parrar pelo fluxo.
+Todos os eventos que chegarem até a estrutura V3, passarão por uma análise. Para isso, se verifica qual o tipo do evento e se ele possui media associada, pois o motor precisa descartar eventos que não possuem um contexto de visão. Por exemplo, um evento de posição (que não tenha uma media associada), não precisa passar pelo fluxo.
 
 Na sequência, aguarda-se até que a media esteja disponível.
 
@@ -28,7 +28,7 @@ Na sequência, aguarda-se até que a media esteja disponível.
 
 Nós trabalhamos com um sistema desacoplado de envio de eventos e medias.
 
-No dispositivo, no momento em que um evento acontece, a media já existe, mas o processo de envio do evento e da media ocorrem de forma separada e assíncrona.
+No dispositivo, no momento em que um evento acontece, a media já existe, mas o processo de envio do evento e da media ocorrem de forma separada e assíncrona. Isso pois o tempo para se realizar upload de uma mídia é naturalmente maior que o de um evento (que contém apenas texto), e por isso é possível a TSP obter os eventos primeiro e optar por já mostrá-los em sua plataforma, ou optar por esperar que as mídias cheguem para mostrar apenas os eventos com mídias já disponíveis.
 
 :::
 
