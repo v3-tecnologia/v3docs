@@ -132,7 +132,7 @@ const config: Config = {
             },
             {
               label: "Discord",
-              href: "http://discord.gg/placeholder",
+              href: "https://discord.gg/gfPze8R4S8",
             },
           ],
         },
