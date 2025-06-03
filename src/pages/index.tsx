@@ -71,7 +71,7 @@ export default function Home(): ReactNode {
                 Payloads e muito mais.
               </Card>
             </section>
-            <section className="flex flex-row gap-8 mt-15 md:!mt-35 justify-center">
+            <section className="flex flex-row gap-8 mb-4 lg:!mb-2 mt-15 lg:!mt-35 justify-center">
               <div className="text-center max-w-[80%]">
                 <div className="flex items-center justify-center gap-4 mb-6">
                   <SubTitle>Junte-se à comunidade dev3s!</SubTitle>
