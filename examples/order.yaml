@@ -482,6 +482,8 @@ paths:
       summary: Get a specific order
       tags:
       - Order
+schemes:
+- https
 securityDefinitions:
   ApiKeyAuth:
     in: header

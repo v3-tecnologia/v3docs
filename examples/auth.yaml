@@ -179,4 +179,6 @@ paths:
       summary: Refresh an Authentication Token
       tags:
       - Auth
+schemes:
+- https
 swagger: "2.0"

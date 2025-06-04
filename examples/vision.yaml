@@ -233,6 +233,8 @@ paths:
       summary: Get media by ID
       tags:
       - Media
+schemes:
+- https
 securityDefinitions:
   ApiKeyAuth:
     in: header

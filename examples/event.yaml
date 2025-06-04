@@ -328,4 +328,6 @@ paths:
       summary: Check if application is ready
       tags:
       - health-check
+schemes:
+- https
 swagger: "2.0"
