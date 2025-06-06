@@ -24,17 +24,17 @@ Antes de iniciar o processo de instalação, certifique-se de ter os seguintes i
 - Usuário do cliente
 - V3QATools em sua última versão
 
->**Observação:** As credenciais de acesso utilizadas neste cadastro foram fornecidas por você e validadas internamente pela nossa equipe, garantindo que o registro foi realizado conforme as informações que você nos enviou.
+  >**Observação:** As credenciais de acesso utilizadas neste cadastro foram fornecidas por você e validadas internamente pela nossa equipe, garantindo que o registro foi realizado conforme as informações que você nos enviou.
 
 ## Validações Pré-instalação
 
 Antes de prosseguir com a instalação, é necessário realizar as seguintes validações:
 
 1.  Confirmar se o equipamento está energizado
- >**Importante:** O equipamento precisa estar com o LED vermelho aceso.
+     >**Importante:** O equipamento precisa estar com o LED vermelho aceso.
 2.  Confirmar se o equipamento possui cartão SD
 3.  Confirmar configuração do APN
-     >**Importante:**  A configuração correta do APN garante que o equipamento consiga acessar a rede de dados móveis. Verifique se os parâmetros estão de acordo com a operadora.
+     >**Importante:** A configuração correta do APN garante que o equipamento consiga acessar a rede de dados móveis. Verifique se os parâmetros estão de acordo com a operadora.
 
 4.  Verificar configuração da rede WiFi
 5.  Confirmar versão do V3FW que será instalada
