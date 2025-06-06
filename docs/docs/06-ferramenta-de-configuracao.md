@@ -12,7 +12,23 @@ Ela é essencial para garantir configurações precisas e aumentar a eficiência
 
 Antes de iniciar o processo de instalação, certifique-se de ter os seguintes itens:
 
-### Materiais Necessários
+### Materiais Necessários---
+sidebar_position: 6
+---
+
+# Ferramenta de Configuração
+
+A **V3** desenvolveu a `V3QATools`, uma ferramenta customizável criada para facilitar e otimizar o processo de instalação de dispositivos.
+
+Ela é essencial para garantir configurações precisas e aumentar a eficiência na implantação dos …configuração incorreta pode comprometer o funcionamento do equipamento.
+
+:::info[Suporte]
+
+Em caso de dúvidas ou problemas durante o processo de instalação, entre em contato com nossa equipe de suporte.
+
+**Entre em contato:** [suporte@v3.com.br](mailto:suporte@v3.com.br)
+
+:::
 - Cabo USB para Micro USB (recomendado ter um de backup)
 - Notebook ou PC (Desktop)
 - Clip de reset (pode ser um clipe de papel)
@@ -31,10 +47,10 @@ Antes de iniciar o processo de instalação, certifique-se de ter os seguintes i
 Antes de prosseguir com a instalação, é necessário realizar as seguintes validações:
 
 1.  Confirmar se o equipamento está energizado
-> **Importante:** O equipamento precisa estar com o LED vermelho aceso.
+ >**Importante:** O equipamento precisa estar com o LED vermelho aceso.
 2.  Confirmar se o equipamento possui cartão SD
 3.  Confirmar configuração do APN
-> **Importante:** A configuração correta do APN garante que o equipamento consiga acessar a rede de dados móveis. Verifique se os parâmetros estão de acordo com a operadora.
+     >**Importante:**  A configuração correta do APN garante que o equipamento consiga acessar a rede de dados móveis. Verifique se os parâmetros estão de acordo com a operadora.
 
 4.  Verificar configuração da rede WiFi
 5.  Confirmar versão do V3FW que será instalada
@@ -46,7 +62,7 @@ Durante o processo de instalação, o cliente deve:
 
 1. **Conectar o dispositivo ao computador via USB**
 
-   - Utilize uma porta USB funcional e um cabo adequado.
+   - Utilize uma porta USB funcional e um cabo adequado.**
   
 
 2. **Aguardar a detecção automática do dispositivo**
