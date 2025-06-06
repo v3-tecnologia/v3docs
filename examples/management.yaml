@@ -1,4 +1,4 @@
-basePath: /
+basePath: /v1
 definitions:
   dto.CreateDeviceDTO:
     properties:
@@ -339,14 +339,43 @@ definitions:
       total_pages:
         type: integer
     type: object
-host: v3sandbox.com
+host: tenant.v3sandbox.com
 info:
   contact: {}
   description: Aplicação em GO responsável por realizar o CRUD das estruturas base.
   title: Management API
   version: 0.0.1
 paths:
-  /device:
+  /management/devices:
+    get:
+      description: |-
+        FindAll handles HTTP GET requests to retrieve device records with optional filtering and pagination.
+        It supports filtering by either "ulid" or "fleetId" query parameters, but not both simultaneously.
+        If both filters are provided, it returns a 400 Bad Request error.
+        Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
+        Returns a JSON response containing the paginated devices or an error message.
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Page size (default: 10, max: 100)'
+        in: query
+        name: page_size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/service.PaginatedDevices'
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: List devices with pagination
+      tags:
+      - Device
     post:
       consumes:
       - application/json
@@ -376,7 +405,7 @@ paths:
       summary: Create a new device
       tags:
       - Device
-  /device/{id}:
+  /management/devices/{id}:
     delete:
       description: |-
         Delete handles HTTP DELETE requests to remove a device resource by its ID.
@@ -463,7 +492,33 @@ paths:
       summary: Update a device
       tags:
       - Device
-  /device/imei/{imei}:
+  /management/devices/fleets/{fleetId}:
+    get:
+      description: |-
+        FindByFleet handles HTTP GET requests to retrieve device records associated with a specific fleet.
+        It expects the fleet ID as a URL parameter, validates it, and returns a paginated list of devices
+        belonging to that fleet. Returns appropriate HTTP status codes and error messages for invalid
+        fleet IDs or if no devices are found.
+      parameters:
+      - description: Fleet ID
+        in: path
+        name: fleetId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/service.PaginatedDevices'
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Get devices by fleet ID
+      tags:
+      - Device
+  /management/devices/imei/{imei}:
     get:
       description: |-
         FindByIMEI handles HTTP requests to retrieve a single device by its IMEI.
@@ -490,7 +545,7 @@ paths:
       summary: Get a device by IMEI
       tags:
       - Device
-  /device/ulid/{ulid}:
+  /management/devices/ulid/{ulid}:
     get:
       description: |-
         FindByULID handles HTTP requests to retrieve a single device by its ULID.
@@ -517,14 +572,14 @@ paths:
       summary: Get a device by ULID
       tags:
       - Device
-  /devices:
+  /management/drivers:
     get:
       description: |-
-        FindAll handles HTTP GET requests to retrieve device records with optional filtering and pagination.
-        It supports filtering by either "ulid" or "fleetId" query parameters, but not both simultaneously.
+        FindAll handles HTTP GET requests to retrieve driver records with optional filtering and pagination.
+        It supports filtering by either "ulid" or "teamId" query parameters, but not both simultaneously.
         If both filters are provided, it returns a 400 Bad Request error.
         Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
-        Returns a JSON response containing the paginated devices or an error message.
+        Returns a JSON response containing the paginated drivers or an error message.
       parameters:
       - description: 'Page number (default: 1)'
         in: query
@@ -540,40 +595,13 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/service.PaginatedDevices'
+            $ref: '#/definitions/service.PaginatedDrivers'
         "500":
           description: Internal Server Error
           schema: {}
-      summary: List devices with pagination
+      summary: List drivers with pagination
       tags:
-      - Device
-  /devices/fleets/{fleetId}:
-    get:
-      description: |-
-        FindByFleet handles HTTP GET requests to retrieve device records associated with a specific fleet.
-        It expects the fleet ID as a URL parameter, validates it, and returns a paginated list of devices
-        belonging to that fleet. Returns appropriate HTTP status codes and error messages for invalid
-        fleet IDs or if no devices are found.
-      parameters:
-      - description: Fleet ID
-        in: path
-        name: fleetId
-        required: true
-        type: integer
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/service.PaginatedDevices'
-        "422":
-          description: Unprocessable Entity
-          schema: {}
-      summary: Get devices by fleet ID
-      tags:
-      - Device
-  /driver:
+      - Driver
     post:
       consumes:
       - application/json
@@ -603,7 +631,36 @@ paths:
       summary: Create a new driver
       tags:
       - Driver
-  /driver/{driverId}/team/{teamId}:
+  /management/drivers/{driverId}/teams/{teamId}:
+    delete:
+      description: |-
+        RemoveFromTeam handles the HTTP request to remove a driver from a team.
+        It expects the driver ID and team ID as URL parameters ("id" and "teamId").
+        The method parses these parameters, validates them, and calls the driverService to perform the removal.
+        Returns a 200 OK status with a success message if the operation is successful.
+        Returns a 422 Unprocessable Entity status with an error message if the IDs are invalid or if the removal fails.
+      parameters:
+      - description: Driver ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Team ID
+        in: path
+        name: teamId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: Driver removed from team
+          schema:
+            type: string
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Remove driver from team
+      tags:
+      - Driver
     post:
       consumes:
       - application/json
@@ -635,7 +692,7 @@ paths:
       summary: Assign driver to team
       tags:
       - Driver
-  /driver/{id}:
+  /management/drivers/{id}:
     delete:
       description: |-
         Delete handles HTTP DELETE requests to remove a driver resource by its ID.
@@ -722,14 +779,14 @@ paths:
       summary: Update a driver
       tags:
       - Driver
-  /drivers:
+  /management/fleets:
     get:
       description: |-
-        FindAll handles HTTP GET requests to retrieve driver records with optional filtering and pagination.
+        FindAll handles HTTP GET requests to retrieve fleet records with optional filtering and pagination.
         It supports filtering by either "ulid" or "teamId" query parameters, but not both simultaneously.
         If both filters are provided, it returns a 400 Bad Request error.
         Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
-        Returns a JSON response containing the paginated drivers or an error message.
+        Returns a JSON response containing the paginated fleets or an error message.
       parameters:
       - description: 'Page number (default: 1)'
         in: query
@@ -745,44 +802,13 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/service.PaginatedDrivers'
+            $ref: '#/definitions/service.PaginatedFleets'
         "500":
           description: Internal Server Error
           schema: {}
-      summary: List drivers with pagination
+      summary: List fleets with pagination
       tags:
-      - Driver
-  /drivers/{driverId}/teams/{teamId}:
-    delete:
-      description: |-
-        RemoveFromTeam handles the HTTP request to remove a driver from a team.
-        It expects the driver ID and team ID as URL parameters ("id" and "teamId").
-        The method parses these parameters, validates them, and calls the driverService to perform the removal.
-        Returns a 200 OK status with a success message if the operation is successful.
-        Returns a 422 Unprocessable Entity status with an error message if the IDs are invalid or if the removal fails.
-      parameters:
-      - description: Driver ID
-        in: path
-        name: id
-        required: true
-        type: integer
-      - description: Team ID
-        in: path
-        name: teamId
-        required: true
-        type: integer
-      responses:
-        "200":
-          description: Driver removed from team
-          schema:
-            type: string
-        "422":
-          description: Unprocessable Entity
-          schema: {}
-      summary: Remove driver from team
-      tags:
-      - Driver
-  /fleet:
+      - Fleet
     post:
       consumes:
       - application/json
@@ -812,7 +838,7 @@ paths:
       summary: Create a new fleet
       tags:
       - Fleet
-  /fleet/{id}:
+  /management/fleets/{id}:
     delete:
       description: |-
         Delete handles HTTP DELETE requests to remove a fleet resource by its ID.
@@ -899,7 +925,33 @@ paths:
       summary: Update a fleet
       tags:
       - Fleet
-  /fleet/ulid/{ulid}:
+  /management/fleets/teams/{teamId}:
+    get:
+      description: |-
+        FindByTeam handles HTTP GET requests to retrieve fleet records associated with a specific team.
+        It expects the team ID as a URL parameter, validates it, and returns a paginated list of fleets
+        belonging to that team. Returns appropriate HTTP status codes and error messages for invalid
+        team IDs or if no fleets are found.
+      parameters:
+      - description: Team ID
+        in: path
+        name: teamId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/service.PaginatedFleets'
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Get fleets by team ID
+      tags:
+      - Fleet
+  /management/fleets/ulid/{ulid}:
     get:
       description: |-
         FindByULID handles HTTP requests to retrieve a single fleet by its ULID.
@@ -926,14 +978,14 @@ paths:
       summary: Get a fleet by ULID
       tags:
       - Fleet
-  /fleets:
+  /management/teams:
     get:
       description: |-
-        FindAll handles HTTP GET requests to retrieve fleet records with optional filtering and pagination.
-        It supports filtering by either "ulid" or "teamId" query parameters, but not both simultaneously.
+        FindAll handles HTTP GET requests to retrieve team records with optional filtering and pagination.
+        It supports filtering by either "ulid" or "accountId" query parameters, but not both simultaneously.
         If both filters are provided, it returns a 400 Bad Request error.
         Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
-        Returns a JSON response containing the paginated fleets or an error message.
+        Returns a JSON response containing the paginated teams or an error message.
       parameters:
       - description: 'Page number (default: 1)'
         in: query
@@ -949,40 +1001,13 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/service.PaginatedFleets'
+            $ref: '#/definitions/service.PaginatedTeams'
         "500":
           description: Internal Server Error
           schema: {}
-      summary: List fleets with pagination
+      summary: List teams with pagination
       tags:
-      - Fleet
-  /fleets/teams/{teamId}:
-    get:
-      description: |-
-        FindByTeam handles HTTP GET requests to retrieve fleet records associated with a specific team.
-        It expects the team ID as a URL parameter, validates it, and returns a paginated list of fleets
-        belonging to that team. Returns appropriate HTTP status codes and error messages for invalid
-        team IDs or if no fleets are found.
-      parameters:
-      - description: Team ID
-        in: path
-        name: teamId
-        required: true
-        type: integer
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/service.PaginatedFleets'
-        "422":
-          description: Unprocessable Entity
-          schema: {}
-      summary: Get fleets by team ID
-      tags:
-      - Fleet
-  /team:
+      - Team
     post:
       consumes:
       - application/json
@@ -1012,7 +1037,7 @@ paths:
       summary: Create a new team
       tags:
       - Team
-  /team/{id}:
+  /management/teams/{id}:
     delete:
       description: |-
         Delete handles HTTP DELETE requests to remove a team resource by its ID.
@@ -1099,37 +1124,7 @@ paths:
       summary: Update a team
       tags:
       - Team
-  /teams:
-    get:
-      description: |-
-        FindAll handles HTTP GET requests to retrieve team records with optional filtering and pagination.
-        It supports filtering by either "ulid" or "accountId" query parameters, but not both simultaneously.
-        If both filters are provided, it returns a 400 Bad Request error.
-        Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
-        Returns a JSON response containing the paginated teams or an error message.
-      parameters:
-      - description: 'Page number (default: 1)'
-        in: query
-        name: page
-        type: integer
-      - description: 'Page size (default: 10, max: 100)'
-        in: query
-        name: page_size
-        type: integer
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/service.PaginatedTeams'
-        "500":
-          description: Internal Server Error
-          schema: {}
-      summary: List teams with pagination
-      tags:
-      - Team
-  /teams/{teamId}/drivers:
+  /management/teams/{teamId}/drivers:
     get:
       description: |-
         FindDrivers handles HTTP GET requests to retrieve driver records associated with a specific team.
@@ -1155,7 +1150,7 @@ paths:
       summary: Get drivers by team ID
       tags:
       - Team
-  /teams/accounts/{accountId}:
+  /management/teams/accounts/{accountId}:
     get:
       description: |-
         FindByAccount handles HTTP GET requests to retrieve team records associated with a specific account.
@@ -1181,4 +1176,6 @@ paths:
       summary: Get teams by account ID
       tags:
       - Team
+schemes:
+- https
 swagger: "2.0"

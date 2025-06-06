@@ -84,7 +84,7 @@ export default function Home(): ReactNode {
                 </Paragraph>
 
                 <a
-                  href="https://discord.gg/gfPze8R4S8"
+                  href="https://discord.gg/mJtwGs3g"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex mt-4 items-center gap-2 !text-white bg-primary px-8 py-4 rounded-2xl font-semibold text-lg hover:!bg-black hover:!text-primary !transition-all !duration-300 !ease-in-out !no-underline !decoration-none"

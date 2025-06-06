@@ -1,4 +1,4 @@
-basePath: /
+basePath: /v1
 definitions:
   response.Error:
     properties:
@@ -25,14 +25,8 @@ definitions:
         $ref: '#/definitions/response.Meta'
     type: object
   response.VisionResponse:
-    properties:
-      data:
-        additionalProperties: true
-        type: object
-      meta:
-        $ref: '#/definitions/response.Meta'
     type: object
-host: v3sandbox.com
+host: tenant.v3sandbox.com
 info:
   contact: {}
   description: |-
@@ -239,6 +233,8 @@ paths:
       summary: Get media by ID
       tags:
       - Media
+schemes:
+- https
 securityDefinitions:
   ApiKeyAuth:
     in: header
