@@ -12,23 +12,7 @@ Ela é essencial para garantir configurações precisas e aumentar a eficiência
 
 Antes de iniciar o processo de instalação, certifique-se de ter os seguintes itens:
 
-### Materiais Necessários---
-sidebar_position: 6
----
-
-# Ferramenta de Configuração
-
-A **V3** desenvolveu a `V3QATools`, uma ferramenta customizável criada para facilitar e otimizar o processo de instalação de dispositivos.
-
-Ela é essencial para garantir configurações precisas e aumentar a eficiência na implantação dos …configuração incorreta pode comprometer o funcionamento do equipamento.
-
-:::info[Suporte]
-
-Em caso de dúvidas ou problemas durante o processo de instalação, entre em contato com nossa equipe de suporte.
-
-**Entre em contato:** [suporte@v3.com.br](mailto:suporte@v3.com.br)
-
-:::
+### Materiais Necessários
 - Cabo USB para Micro USB (recomendado ter um de backup)
 - Notebook ou PC (Desktop)
 - Clip de reset (pode ser um clipe de papel)
