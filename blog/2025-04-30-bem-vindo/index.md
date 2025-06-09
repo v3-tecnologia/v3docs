@@ -36,6 +36,7 @@ Este portal é fruto do trabalho dedicado de nossa equipe:
 - **Keven Lucas** ([@kevenmiano](https://github.com/kevenmiano)) - Desenvolvedor Cloud e DevOps
 - **Matheus Maroca** ([@MatheusMaroca](https://github.com/MatheusMaroca)) - Responsável pelo suporte
 - **Renascienza** ([@Renascienza](https://github.com/Renascienza)) - Desenvolvedor FW
+- **Ricardo Raposo** ([@ricardoraposo](https://github.com/ricardoraposo)) - Desenvolvedor Cloud 
 - **Sergio Imperatriz** ([@sjimperatriz](https://github.com/sjimperatriz)) - CTO
 - **Sleipnir** ([@sleipnir](https://github.com/sleipnir)) - Tech Lead
 
