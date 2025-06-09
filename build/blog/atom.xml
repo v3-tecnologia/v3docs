@@ -2,11 +2,105 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://developer.v3control.com/blog</id>
     <title>Portal do Desenvolvedor V3 Blog</title>
-    <updated>2025-05-02T00:00:00.000Z</updated>
+    <updated>2025-06-16T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://developer.v3control.com/blog"/>
     <subtitle>Portal do Desenvolvedor V3 Blog</subtitle>
     <icon>https://developer.v3control.com/img/shared/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Atualizações da Versão 1.17.57]]></title>
+        <id>https://developer.v3control.com/blog/changelog-1.17.57</id>
+        <link href="https://developer.v3control.com/blog/changelog-1.17.57"/>
+        <updated>2025-06-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Olá, desenvolvedores e entusiastas da tecnologia!]]></summary>
+        <content type="html"><![CDATA[<p>Olá, desenvolvedores e entusiastas da tecnologia!</p>
+<p>Estamos empolgados em anunciar nossa primeira entrada no blog de changelogs! A partir de agora, você encontrará aqui todas as novidades e melhorias que estamos implementando no nosso firmware. E para começar com o pé direito, trouxemos uma versão com foco especial em otimizações do DMS, GPS e sistema de reboot.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="destaque-da-versão">Destaque da Versão<a href="https://developer.v3control.com/blog/changelog-1.17.57#destaque-da-vers%C3%A3o" class="hash-link" aria-label="Direct link to Destaque da Versão" title="Direct link to Destaque da Versão">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="processamento-inteligente-de-eventos-dms">Processamento Inteligente de Eventos DMS<a href="https://developer.v3control.com/blog/changelog-1.17.57#processamento-inteligente-de-eventos-dms" class="hash-link" aria-label="Direct link to Processamento Inteligente de Eventos DMS" title="Direct link to Processamento Inteligente de Eventos DMS">​</a></h3>
+<ul>
+<li>Implementamos um novo sistema de <a href="https://developer.v3control.com/docs/docs/solucao-v3/03.02-core/03.02.01-v3fw/03.02.01.05-dms/03.02.01.05.02-deteccao-inteligente"><strong>agrupamento de eventos DMS</strong></a>, que:<!-- -->
+<ul>
+<li>Reduz significativamente a quantidade de eventos gerados</li>
+<li>Otimiza o processamento e consumo de recursos</li>
+<li>Melhora a precisão na detecção de eventos</li>
+</ul>
+</li>
+<li>Criamos novos testes automatizados específicos para validar as regras de negócio do DMS</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="sistema-de-reboot-inteligente">Sistema de Reboot Inteligente<a href="https://developer.v3control.com/blog/changelog-1.17.57#sistema-de-reboot-inteligente" class="hash-link" aria-label="Direct link to Sistema de Reboot Inteligente" title="Direct link to Sistema de Reboot Inteligente">​</a></h3>
+<p>Melhoramos o sistema de reboot recorrento do dispositivo para incorporar novas regras que viram melhorar de forma geral o funcionamento do dispositivo.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="regras">Regras<a href="https://developer.v3control.com/blog/changelog-1.17.57#regras" class="hash-link" aria-label="Direct link to Regras" title="Direct link to Regras">​</a></h4>
+<ul>
+<li>Com conectividade e GPS: Não rebootar</li>
+<li>Com conectividade e sem GPS: Rebootar</li>
+<li>Sem conectividade e com GPS: Não rebootar</li>
+<li>Sem conectividade e sem GPS: Reagendar reboot para quando houver conectividade</li>
+<li>Mantido o reboot semanal programado</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="melhorias-no-gps">Melhorias no GPS<a href="https://developer.v3control.com/blog/changelog-1.17.57#melhorias-no-gps" class="hash-link" aria-label="Direct link to Melhorias no GPS" title="Direct link to Melhorias no GPS">​</a></h3>
+<ul>
+<li>Implementamos um novo sistema de tratamento de coordenadas inválidas:<!-- -->
+<ul>
+<li>Mescla dados da localização atual com a última posição válida quando coordenadas são (0.0, 0.0)</li>
+<li>Servidores recebem atualizações contínuas mesmo com falhas pontuais no GPS</li>
+</ul>
+</li>
+<li>Correção na lógica de precisão:<!-- -->
+<ul>
+<li>Ignora atualizações se accuracy &gt; 10m ou se a precisão não estiver disponível</li>
+<li>Uso de valores atualizados de satélites e HDOP do parser NMEA para decisões em tempo real</li>
+</ul>
+</li>
+<li>Implementação de uso estratégico da FusedLocation API:<!-- -->
+<ul>
+<li>Ativação automática quando GPS está degradado</li>
+<li>Combinação de sinais de GPS, rede e Wi-Fi para maior confiabilidade</li>
+</ul>
+</li>
+<li>Melhorias na persistência de dados:<!-- -->
+<ul>
+<li>Validação de coordenadas durante a recuperação</li>
+<li>Correção de perda de precisão devido a tipo de dados incorreto</li>
+</ul>
+</li>
+<li>Implementação de logs detalhados para debug</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="geração-de-eventos-de-identificação-facial">Geração de Eventos de Identificação Facial<a href="https://developer.v3control.com/blog/changelog-1.17.57#gera%C3%A7%C3%A3o-de-eventos-de-identifica%C3%A7%C3%A3o-facial" class="hash-link" aria-label="Direct link to Geração de Eventos de Identificação Facial" title="Direct link to Geração de Eventos de Identificação Facial">​</a></h3>
+<p>Agora garantimos que um evento sempre seja emitido, seja ele face detectada ou face não detectada</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="outras-melhorias-importantes">Outras Melhorias Importantes<a href="https://developer.v3control.com/blog/changelog-1.17.57#outras-melhorias-importantes" class="hash-link" aria-label="Direct link to Outras Melhorias Importantes" title="Direct link to Outras Melhorias Importantes">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="estabilidade-e-manutenção">Estabilidade e Manutenção<a href="https://developer.v3control.com/blog/changelog-1.17.57#estabilidade-e-manuten%C3%A7%C3%A3o" class="hash-link" aria-label="Direct link to Estabilidade e Manutenção" title="Direct link to Estabilidade e Manutenção">​</a></h3>
+<ul>
+<li>Corrigimos a dependência do <strong>ffmpeg-kit</strong> que estava causando problemas na build</li>
+<li>Adicionamos logs mais descritivos e melhoramos a documentação interna</li>
+<li>Corrigimos pequenos bugs que afetavam a estabilidade do aplicativo em produção</li>
+<li>Melhoramos o desempenho do sistema ao otimizar o armazenamento temporário de dados</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="qualidade-e-testes">Qualidade e Testes<a href="https://developer.v3control.com/blog/changelog-1.17.57#qualidade-e-testes" class="hash-link" aria-label="Direct link to Qualidade e Testes" title="Direct link to Qualidade e Testes">​</a></h3>
+<ul>
+<li>Implementamos testes unitários e de integração para o DMS</li>
+<li>Adicionamos testes NMEA para validação de dados de GPS</li>
+<li>Realizamos uma limpeza geral no código, removendo atributos não utilizados</li>
+<li>Melhoramos a nomenclatura e organização do código</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="processamento-de-imagens">Processamento de Imagens<a href="https://developer.v3control.com/blog/changelog-1.17.57#processamento-de-imagens" class="hash-link" aria-label="Direct link to Processamento de Imagens" title="Direct link to Processamento de Imagens">​</a></h3>
+<ul>
+<li>Realizamos correções no módulo de reconhecimento de faces:<!-- -->
+<ul>
+<li>Ajustes de lógica no processamento de faces</li>
+<li>Correção de erros de concorrência em ambientes multi-thread</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="o-que-isso-significa-para-você">O que isso significa para você?<a href="https://developer.v3control.com/blog/changelog-1.17.57#o-que-isso-significa-para-voc%C3%AA" class="hash-link" aria-label="Direct link to O que isso significa para você?" title="Direct link to O que isso significa para você?">​</a></h2>
+<p>Esta versão traz melhorias significativas em três áreas principais: GPS, sistema de reboot e processamento de eventos. O novo sistema de reboot otimiza a disponibilidade do dispositivo com regras inteligentes baseadas em conectividade e GPS. As melhorias no GPS garantem maior confiabilidade na localização, com tratamento inteligente de falhas e fallback automático. O processamento de eventos DMS e a geração sistemática de eventos de identificação facial melhoram a eficiência e rastreabilidade do sistema.</p>
+<p>Ficou com alguma dúvida? Entre em contato com nossa equipe de desenvolvimento!</p>
+<p>Até a próxima atualização!</p>]]></content>
+        <author>
+            <name>Diogo Cezar</name>
+            <uri>https://github.com/diogocezar</uri>
+        </author>
+        <category label="Changelog" term="Changelog"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Por dentro da arquitetura da V3]]></title>
         <id>https://developer.v3control.com/blog/arquitetura-v3</id>
