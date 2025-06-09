@@ -7,3 +7,8 @@ engenharia:
   label: Engenharia de Software
   permalink: /engenharia-de-software
   description: Engenharia de Software tag
+
+changelog:
+  label: Changelog
+  permalink: /changelog
+  description: Changelog tag
