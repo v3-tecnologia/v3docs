@@ -22,13 +22,6 @@ Estamos empolgados em anunciar nossa primeira entrada no blog de changelogs! A p
 
 Melhoramos o sistema de reboot recorrento do dispositivo para incorporar novas regras que viram melhorar de forma geral o funcionamento do dispositivo.
 
-#### Regras
-- Com conectividade e GPS: Não rebootar
-- Com conectividade e sem GPS: Rebootar
-- Sem conectividade e com GPS: Não rebootar
-- Sem conectividade e sem GPS: Reagendar reboot para quando houver conectividade
-- Mantido o reboot semanal programado
-
 ### Melhorias no GPS
 - Implementamos um novo sistema de tratamento de coordenadas inválidas:
   - Mescla dados da localização atual com a última posição válida quando coordenadas são (0.0, 0.0)
@@ -69,8 +62,24 @@ Agora garantimos que um evento sempre seja emitido, seja ele face detectada ou f
 
 ## O que isso significa para você?
 
-Esta versão traz melhorias significativas em três áreas principais: GPS, sistema de reboot e processamento de eventos. O novo sistema de reboot otimiza a disponibilidade do dispositivo com regras inteligentes baseadas em conectividade e GPS. As melhorias no GPS garantem maior confiabilidade na localização, com tratamento inteligente de falhas e fallback automático. O processamento de eventos DMS e a geração sistemática de eventos de identificação facial melhoram a eficiência e rastreabilidade do sistema.
+Esta versão traz melhorias significativas em quatro áreas principais:
+
+1. **Processamento de Eventos DMS**: Com o novo sistema de agrupamento, reduzimos significativamente a quantidade de eventos gerados, otimizando o processamento e melhorando a precisão na detecção.
+
+2. **Sistema de Reboot Inteligente**: As novas regras de reboot melhoram o funcionamento geral do dispositivo, garantindo que ele permaneça operacional quando necessário e reinicie apenas em situações apropriadas.
+
+3. **Melhorias no GPS**: Implementamos um sistema mais robusto de tratamento de coordenadas, com fallback automático para FusedLocation quando necessário. Isso resulta em maior confiabilidade na localização e melhor tratamento de falhas pontuais.
+
+4. **Identificação Facial**: A geração sistemática de eventos de identificação facial, independentemente do resultado da detecção, melhora a rastreabilidade e análise dos condutores.
+
+Estas melhorias trabalham em conjunto para proporcionar um sistema mais estável, confiável e eficiente, com melhor uso de recursos e maior precisão nas operações.
+
+:::info[Contato]
 
 Ficou com alguma dúvida? Entre em contato com nossa equipe de desenvolvimento!
+
+Envie um [e-mail](mailto:dev@v3.com.br) para os nossos Devs ou entre na nossa comunidade do [Discord](https://discord.gg/mJtwGs3g).
+
+:::
 
 Até a próxima atualização!

@@ -30,14 +30,6 @@
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="sistema-de-reboot-inteligente">Sistema de Reboot Inteligente<a href="https://developer.v3control.com/blog/changelog-1.17.57#sistema-de-reboot-inteligente" class="hash-link" aria-label="Direct link to Sistema de Reboot Inteligente" title="Direct link to Sistema de Reboot Inteligente">​</a></h3>
 <p>Melhoramos o sistema de reboot recorrento do dispositivo para incorporar novas regras que viram melhorar de forma geral o funcionamento do dispositivo.</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="regras">Regras<a href="https://developer.v3control.com/blog/changelog-1.17.57#regras" class="hash-link" aria-label="Direct link to Regras" title="Direct link to Regras">​</a></h4>
-<ul>
-<li>Com conectividade e GPS: Não rebootar</li>
-<li>Com conectividade e sem GPS: Rebootar</li>
-<li>Sem conectividade e com GPS: Não rebootar</li>
-<li>Sem conectividade e sem GPS: Reagendar reboot para quando houver conectividade</li>
-<li>Mantido o reboot semanal programado</li>
-</ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="melhorias-no-gps">Melhorias no GPS<a href="https://developer.v3control.com/blog/changelog-1.17.57#melhorias-no-gps" class="hash-link" aria-label="Direct link to Melhorias no GPS" title="Direct link to Melhorias no GPS">​</a></h3>
 <ul>
 <li>Implementamos um novo sistema de tratamento de coordenadas inválidas:<!-- -->
@@ -93,8 +85,23 @@
 </li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="o-que-isso-significa-para-você">O que isso significa para você?<a href="https://developer.v3control.com/blog/changelog-1.17.57#o-que-isso-significa-para-voc%C3%AA" class="hash-link" aria-label="Direct link to O que isso significa para você?" title="Direct link to O que isso significa para você?">​</a></h2>
-<p>Esta versão traz melhorias significativas em três áreas principais: GPS, sistema de reboot e processamento de eventos. O novo sistema de reboot otimiza a disponibilidade do dispositivo com regras inteligentes baseadas em conectividade e GPS. As melhorias no GPS garantem maior confiabilidade na localização, com tratamento inteligente de falhas e fallback automático. O processamento de eventos DMS e a geração sistemática de eventos de identificação facial melhoram a eficiência e rastreabilidade do sistema.</p>
-<p>Ficou com alguma dúvida? Entre em contato com nossa equipe de desenvolvimento!</p>
+<p>Esta versão traz melhorias significativas em quatro áreas principais:</p>
+<ol>
+<li>
+<p><strong>Processamento de Eventos DMS</strong>: Com o novo sistema de agrupamento, reduzimos significativamente a quantidade de eventos gerados, otimizando o processamento e melhorando a precisão na detecção.</p>
+</li>
+<li>
+<p><strong>Sistema de Reboot Inteligente</strong>: As novas regras de reboot melhoram o funcionamento geral do dispositivo, garantindo que ele permaneça operacional quando necessário e reinicie apenas em situações apropriadas.</p>
+</li>
+<li>
+<p><strong>Melhorias no GPS</strong>: Implementamos um sistema mais robusto de tratamento de coordenadas, com fallback automático para FusedLocation quando necessário. Isso resulta em maior confiabilidade na localização e melhor tratamento de falhas pontuais.</p>
+</li>
+<li>
+<p><strong>Identificação Facial</strong>: A geração sistemática de eventos de identificação facial, independentemente do resultado da detecção, melhora a rastreabilidade e análise dos condutores.</p>
+</li>
+</ol>
+<p>Estas melhorias trabalham em conjunto para proporcionar um sistema mais estável, confiável e eficiente, com melhor uso de recursos e maior precisão nas operações.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Contato</div><div class="admonitionContent_BuS1"><p>Ficou com alguma dúvida? Entre em contato com nossa equipe de desenvolvimento!</p><p>Envie um <a href="mailto:dev@v3.com.br" target="_blank" rel="noopener noreferrer">e-mail</a> para os nossos Devs ou entre na nossa comunidade do <a href="https://discord.gg/mJtwGs3g" target="_blank" rel="noopener noreferrer">Discord</a>.</p></div></div>
 <p>Até a próxima atualização!</p>]]></content:encoded>
             <category>Changelog</category>
         </item>
@@ -149,7 +156,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusão">Conclusão<a href="https://developer.v3control.com/blog/arquitetura-v3#conclus%C3%A3o" class="hash-link" aria-label="Direct link to Conclusão" title="Direct link to Conclusão">​</a></h2>
 <p>A API V3 não é apenas uma interface. É o ponto de entrada para uma plataforma pensada com cuidado, desde a escolha da linguagem até o provisionamento automatizado e compliance legal.</p>
 <p>Nosso objetivo não é apenas facilitar a integração de visão computacional e telemetria, mas fornecer um ecossistema de dados confiável, elástico e seguro para qualquer escala de operação.</p>
-<p>Se você quer conhecer mais detalhes ou está considerando uma integração mais profunda, <a href="http://docs.v3control.com/" target="_blank" rel="noopener noreferrer">visite nossa documentação</a>.</p>
+<p>Se você quer conhecer mais detalhes ou está considerando uma integração mais profunda, <a href="http://developer.v3control.com/" target="_blank" rel="noopener noreferrer">visite nossa documentação</a>.</p>
 <p>Em posts futuros, entraremos a fundo nos desafios que enfrentamos ao construir e operar essa arquitetura — desde o controle fino de recursos por tenant até os aprendizados em observabilidade distribuída em larga escala.</p>
 <hr>
 <p><em>A tecnologia por trás da segurança veicular também pode ser bela.</em></p>]]></content:encoded>
@@ -191,6 +198,7 @@
 <li><strong>Keven Lucas</strong> (<a href="https://github.com/kevenmiano" target="_blank" rel="noopener noreferrer">@kevenmiano</a>) - Desenvolvedor Cloud e DevOps</li>
 <li><strong>Matheus Maroca</strong> (<a href="https://github.com/MatheusMaroca" target="_blank" rel="noopener noreferrer">@MatheusMaroca</a>) - Responsável pelo suporte</li>
 <li><strong>Renascienza</strong> (<a href="https://github.com/Renascienza" target="_blank" rel="noopener noreferrer">@Renascienza</a>) - Desenvolvedor FW</li>
+<li><strong>Ricardo Raposo</strong> (<a href="https://github.com/ricardoraposo" target="_blank" rel="noopener noreferrer">@ricardoraposo</a>) - Desenvolvedor Cloud</li>
 <li><strong>Sergio Imperatriz</strong> (<a href="https://github.com/sjimperatriz" target="_blank" rel="noopener noreferrer">@sjimperatriz</a>) - CTO</li>
 <li><strong>Sleipnir</strong> (<a href="https://github.com/sleipnir" target="_blank" rel="noopener noreferrer">@sleipnir</a>) - Tech Lead</li>
 </ul>

@@ -69,7 +69,7 @@ A API V3 não é apenas uma interface. É o ponto de entrada para uma plataforma
 
 Nosso objetivo não é apenas facilitar a integração de visão computacional e telemetria, mas fornecer um ecossistema de dados confiável, elástico e seguro para qualquer escala de operação.
 
-Se você quer conhecer mais detalhes ou está considerando uma integração mais profunda, [visite nossa documentação](http://docs.v3control.com/).
+Se você quer conhecer mais detalhes ou está considerando uma integração mais profunda, [visite nossa documentação](http://developer.v3control.com/).
 
 Em posts futuros, entraremos a fundo nos desafios que enfrentamos ao construir e operar essa arquitetura — desde o controle fino de recursos por tenant até os aprendizados em observabilidade distribuída em larga escala.
 
