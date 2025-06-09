@@ -20,4 +20,5 @@ yarn-error.log*
 #/build
 
 #IDE
-.idea
+.ideabackup/
+backup/
