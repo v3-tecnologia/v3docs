@@ -63,7 +63,7 @@ export default function Home(): ReactNode {
                 title="API"
                 bgColor="bg-white"
                 textColor="text-black"
-                href="docs/category/orders-api"
+                href="docs/category/order-api"
               >
                 Conheça os detalhes das nossas APIS, que são intuitivas, seguras
                 e escaláveis, permitindo que você desenvolva soluções robustas e
