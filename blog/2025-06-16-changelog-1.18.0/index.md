@@ -1,6 +1,6 @@
 ---
-slug: changelog-1.17.57
-title: Atualizações da Versão 1.17.57
+slug: changelog-1.18.0
+title: Atualizações da Versão 1.18.0
 authors: [diogo]
 tags: [changelog]
 ---

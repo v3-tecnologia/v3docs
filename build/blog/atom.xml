@@ -8,15 +8,15 @@
     <subtitle>Portal do Desenvolvedor V3 Blog</subtitle>
     <icon>https://developer.v3control.com/img/shared/favicon.png</icon>
     <entry>
-        <title type="html"><![CDATA[Atualizações da Versão 1.17.57]]></title>
-        <id>https://developer.v3control.com/blog/changelog-1.17.57</id>
-        <link href="https://developer.v3control.com/blog/changelog-1.17.57"/>
+        <title type="html"><![CDATA[Atualizações da Versão 1.18.0]]></title>
+        <id>https://developer.v3control.com/blog/changelog-1.18.0</id>
+        <link href="https://developer.v3control.com/blog/changelog-1.18.0"/>
         <updated>2025-06-16T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Olá, desenvolvedores e entusiastas da tecnologia!]]></summary>
         <content type="html"><![CDATA[<p>Olá, desenvolvedores e entusiastas da tecnologia!</p>
 <p>Estamos empolgados em anunciar nossa primeira entrada no blog de changelogs! A partir de agora, você encontrará aqui todas as novidades e melhorias que estamos implementando no nosso firmware. E para começar com o pé direito, trouxemos uma versão com foco especial em otimizações do DMS, GPS e sistema de reboot.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="destaque-da-versão">Destaque da Versão<a href="https://developer.v3control.com/blog/changelog-1.17.57#destaque-da-vers%C3%A3o" class="hash-link" aria-label="Direct link to Destaque da Versão" title="Direct link to Destaque da Versão">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="processamento-inteligente-de-eventos-dms">Processamento Inteligente de Eventos DMS<a href="https://developer.v3control.com/blog/changelog-1.17.57#processamento-inteligente-de-eventos-dms" class="hash-link" aria-label="Direct link to Processamento Inteligente de Eventos DMS" title="Direct link to Processamento Inteligente de Eventos DMS">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="destaque-da-versão">Destaque da Versão<a href="https://developer.v3control.com/blog/changelog-1.18.0#destaque-da-vers%C3%A3o" class="hash-link" aria-label="Direct link to Destaque da Versão" title="Direct link to Destaque da Versão">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="processamento-inteligente-de-eventos-dms">Processamento Inteligente de Eventos DMS<a href="https://developer.v3control.com/blog/changelog-1.18.0#processamento-inteligente-de-eventos-dms" class="hash-link" aria-label="Direct link to Processamento Inteligente de Eventos DMS" title="Direct link to Processamento Inteligente de Eventos DMS">​</a></h3>
 <ul>
 <li>Implementamos um novo sistema de <a href="https://developer.v3control.com/docs/docs/solucao-v3/03.02-core/03.02.01-v3fw/03.02.01.05-dms/03.02.01.05.02-deteccao-inteligente"><strong>agrupamento de eventos DMS</strong></a>, que:<!-- -->
 <ul>
@@ -27,9 +27,9 @@
 </li>
 <li>Criamos novos testes automatizados específicos para validar as regras de negócio do DMS</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="sistema-de-reboot-inteligente">Sistema de Reboot Inteligente<a href="https://developer.v3control.com/blog/changelog-1.17.57#sistema-de-reboot-inteligente" class="hash-link" aria-label="Direct link to Sistema de Reboot Inteligente" title="Direct link to Sistema de Reboot Inteligente">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="sistema-de-reboot-inteligente">Sistema de Reboot Inteligente<a href="https://developer.v3control.com/blog/changelog-1.18.0#sistema-de-reboot-inteligente" class="hash-link" aria-label="Direct link to Sistema de Reboot Inteligente" title="Direct link to Sistema de Reboot Inteligente">​</a></h3>
 <p>Melhoramos o sistema de reboot recorrento do dispositivo para incorporar novas regras que viram melhorar de forma geral o funcionamento do dispositivo.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="melhorias-no-gps">Melhorias no GPS<a href="https://developer.v3control.com/blog/changelog-1.17.57#melhorias-no-gps" class="hash-link" aria-label="Direct link to Melhorias no GPS" title="Direct link to Melhorias no GPS">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="melhorias-no-gps">Melhorias no GPS<a href="https://developer.v3control.com/blog/changelog-1.18.0#melhorias-no-gps" class="hash-link" aria-label="Direct link to Melhorias no GPS" title="Direct link to Melhorias no GPS">​</a></h3>
 <ul>
 <li>Implementamos um novo sistema de tratamento de coordenadas inválidas:<!-- -->
 <ul>
@@ -57,24 +57,24 @@
 </li>
 <li>Implementação de logs detalhados para debug</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="geração-de-eventos-de-identificação-facial">Geração de Eventos de Identificação Facial<a href="https://developer.v3control.com/blog/changelog-1.17.57#gera%C3%A7%C3%A3o-de-eventos-de-identifica%C3%A7%C3%A3o-facial" class="hash-link" aria-label="Direct link to Geração de Eventos de Identificação Facial" title="Direct link to Geração de Eventos de Identificação Facial">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="geração-de-eventos-de-identificação-facial">Geração de Eventos de Identificação Facial<a href="https://developer.v3control.com/blog/changelog-1.18.0#gera%C3%A7%C3%A3o-de-eventos-de-identifica%C3%A7%C3%A3o-facial" class="hash-link" aria-label="Direct link to Geração de Eventos de Identificação Facial" title="Direct link to Geração de Eventos de Identificação Facial">​</a></h3>
 <p>Agora garantimos que um evento sempre seja emitido, seja ele face detectada ou face não detectada</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="outras-melhorias-importantes">Outras Melhorias Importantes<a href="https://developer.v3control.com/blog/changelog-1.17.57#outras-melhorias-importantes" class="hash-link" aria-label="Direct link to Outras Melhorias Importantes" title="Direct link to Outras Melhorias Importantes">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="estabilidade-e-manutenção">Estabilidade e Manutenção<a href="https://developer.v3control.com/blog/changelog-1.17.57#estabilidade-e-manuten%C3%A7%C3%A3o" class="hash-link" aria-label="Direct link to Estabilidade e Manutenção" title="Direct link to Estabilidade e Manutenção">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="outras-melhorias-importantes">Outras Melhorias Importantes<a href="https://developer.v3control.com/blog/changelog-1.18.0#outras-melhorias-importantes" class="hash-link" aria-label="Direct link to Outras Melhorias Importantes" title="Direct link to Outras Melhorias Importantes">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="estabilidade-e-manutenção">Estabilidade e Manutenção<a href="https://developer.v3control.com/blog/changelog-1.18.0#estabilidade-e-manuten%C3%A7%C3%A3o" class="hash-link" aria-label="Direct link to Estabilidade e Manutenção" title="Direct link to Estabilidade e Manutenção">​</a></h3>
 <ul>
 <li>Corrigimos a dependência do <strong>ffmpeg-kit</strong> que estava causando problemas na build</li>
 <li>Adicionamos logs mais descritivos e melhoramos a documentação interna</li>
 <li>Corrigimos pequenos bugs que afetavam a estabilidade do aplicativo em produção</li>
 <li>Melhoramos o desempenho do sistema ao otimizar o armazenamento temporário de dados</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="qualidade-e-testes">Qualidade e Testes<a href="https://developer.v3control.com/blog/changelog-1.17.57#qualidade-e-testes" class="hash-link" aria-label="Direct link to Qualidade e Testes" title="Direct link to Qualidade e Testes">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="qualidade-e-testes">Qualidade e Testes<a href="https://developer.v3control.com/blog/changelog-1.18.0#qualidade-e-testes" class="hash-link" aria-label="Direct link to Qualidade e Testes" title="Direct link to Qualidade e Testes">​</a></h3>
 <ul>
 <li>Implementamos testes unitários e de integração para o DMS</li>
 <li>Adicionamos testes NMEA para validação de dados de GPS</li>
 <li>Realizamos uma limpeza geral no código, removendo atributos não utilizados</li>
 <li>Melhoramos a nomenclatura e organização do código</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="processamento-de-imagens">Processamento de Imagens<a href="https://developer.v3control.com/blog/changelog-1.17.57#processamento-de-imagens" class="hash-link" aria-label="Direct link to Processamento de Imagens" title="Direct link to Processamento de Imagens">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="processamento-de-imagens">Processamento de Imagens<a href="https://developer.v3control.com/blog/changelog-1.18.0#processamento-de-imagens" class="hash-link" aria-label="Direct link to Processamento de Imagens" title="Direct link to Processamento de Imagens">​</a></h3>
 <ul>
 <li>Realizamos correções no módulo de reconhecimento de faces:<!-- -->
 <ul>
@@ -83,7 +83,7 @@
 </ul>
 </li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="o-que-isso-significa-para-você">O que isso significa para você?<a href="https://developer.v3control.com/blog/changelog-1.17.57#o-que-isso-significa-para-voc%C3%AA" class="hash-link" aria-label="Direct link to O que isso significa para você?" title="Direct link to O que isso significa para você?">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="o-que-isso-significa-para-você">O que isso significa para você?<a href="https://developer.v3control.com/blog/changelog-1.18.0#o-que-isso-significa-para-voc%C3%AA" class="hash-link" aria-label="Direct link to O que isso significa para você?" title="Direct link to O que isso significa para você?">​</a></h2>
 <p>Esta versão traz melhorias significativas em quatro áreas principais:</p>
 <ol>
 <li>
