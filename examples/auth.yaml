@@ -8,26 +8,49 @@ definitions:
       valid:
         type: boolean
     type: object
-  keycloak.TokenPayload:
+  response.RealmAccess:
     properties:
-      access_token:
-        type: string
-      expires_in:
-        type: integer
-      refresh_expires_in:
-        type: integer
-      refresh_token:
-        type: string
-      scope:
-        type: string
-      token_type:
-        type: string
+      roles:
+        items:
+          type: string
+        type: array
     type: object
   response.StandardError:
     properties:
       error:
         type: string
       error_description:
+        type: string
+    type: object
+  response.TokenPayload:
+    properties:
+      access_token:
+        type: string
+      account_id:
+        type: string
+      active:
+        type: boolean
+      client_id:
+        type: string
+      exp:
+        type: integer
+      iat:
+        type: integer
+      jti:
+        type: string
+      realm_access:
+        $ref: '#/definitions/response.RealmAccess'
+      refresh_token:
+        type: string
+      scope:
+        type: string
+      session_state:
+        type: string
+      tenant_id:
+        type: string
+      token_type:
+        type: string
+      username:
         type: string
     type: object
 host: tenant.v3sandbox.com
@@ -87,14 +110,9 @@ paths:
         name: grant_type
         required: true
         type: string
-      - description: Client ID
+      - description: Scope
         in: formData
-        name: client_id
-        required: true
-        type: string
-      - description: Client Secret
-        in: formData
-        name: client_secret
+        name: scope
         required: true
         type: string
       - description: Username
@@ -113,7 +131,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/keycloak.TokenPayload'
+            $ref: '#/definitions/response.TokenPayload'
         "400":
           description: Bad Request
           schema:
@@ -163,7 +181,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/keycloak.TokenPayload'
+            $ref: '#/definitions/response.TokenPayload'
         "400":
           description: 'Bad Request: invalid or missing form data'
           schema:
