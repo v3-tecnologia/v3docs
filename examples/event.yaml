@@ -216,11 +216,6 @@ definitions:
       updated_at:
         type: string
     type: object
-  health.HealthCheckResponse:
-    properties:
-      status:
-        type: string
-    type: object
 host: tenant.v3sandbox.com
 info:
   contact: {}
@@ -261,7 +256,7 @@ paths:
             type: object
       summary: Create a new event
       tags:
-      - event
+      - Event
   /event/{ulid}:
     get:
       consumes:
@@ -298,36 +293,7 @@ paths:
             type: object
       summary: Get an event by ULID
       tags:
-      - event
-  /healthz:
-    get:
-      description: Check if application is alive
-      responses:
-        "200":
-          description: Application is alive
-          schema:
-            $ref: '#/definitions/health.HealthCheckResponse'
-        "500":
-          description: Internal Server Error
-          schema: {}
-      summary: Check if application is alive
-      tags:
-      - health-check
-  /healthz/ready:
-    get:
-      description: Check if application is ready
-      responses:
-        "200":
-          description: Application is ready
-          schema:
-            $ref: '#/definitions/health.HealthCheckResponse'
-        "503":
-          description: Service Unavailable
-          schema:
-            $ref: '#/definitions/health.HealthCheckResponse'
-      summary: Check if application is ready
-      tags:
-      - health-check
+      - Event
 schemes:
 - https
 swagger: "2.0"

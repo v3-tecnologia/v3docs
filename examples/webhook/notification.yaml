@@ -175,7 +175,7 @@ paths:
         "500":
           description: Internal Server Error
           schema: {}
-      summary: Post to receive event notification
+      summary: Webhook
       tags:
-      - Event
+      - Webhook
 swagger: "2.0"
