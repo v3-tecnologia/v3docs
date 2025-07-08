@@ -18,6 +18,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "openapi/order/get-a-list-of-orders-from-a-device",
+          label: "Get a list of orders from a device",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "openapi/order/create-new-order",
           label: "Create new order",
           className: "api-method post",
