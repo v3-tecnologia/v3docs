@@ -56,7 +56,9 @@ definitions:
 host: tenant.v3sandbox.com
 info:
   contact: {}
-  description: Go service acting as a proxy for authentication and token verification, providing simplified endpoints for obtaining and validating JWT tokens
+  description: Serviço em Go que atua como proxy para autenticação e verificação de
+    tokens do Keycloak, oferecendo endpoints simplificados para obtenção e validação
+    de tokens JWT
   title: Auth API
   version: 0.0.1
 paths:
@@ -97,9 +99,9 @@ paths:
       consumes:
       - application/x-www-form-urlencoded
       description: |-
-        Token handles the generation of an authentication token using credentials.
-        It extracts the necessary configuration from the AuthHandler,
-        and calls the GenerateToken function. If token generation fails, it returns
+        Token handles the generation of an authentication token using Keycloak credentials.
+        It receives a Fiber context, extracts the necessary configuration from the AuthHandler,
+        and calls the keycloak.GenerateToken function. If token generation fails, it returns
         an error response with the appropriate status code and error message. On success,
         it returns the generated token as a JSON response.
       parameters:
@@ -138,7 +140,7 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/response.StandardError'
-      summary: Generate token for use ours services
+      summary: Generate token from Keycloak
       tags:
       - Auth
     put:
@@ -153,21 +155,6 @@ paths:
         On success, a JSON payload with the new access token and related metadata will be returned.
         In case of invalid credentials or an internal error, a structured error response is returned.
       parameters:
-      - description: 'Grant type: must be `refresh_token`'
-        in: formData
-        name: grant_type
-        required: true
-        type: string
-      - description: Client ID
-        in: formData
-        name: client_id
-        required: true
-        type: string
-      - description: Client Secret
-        in: formData
-        name: client_secret
-        required: true
-        type: string
       - description: Valid refresh token
         in: formData
         name: refresh_token

@@ -18,8 +18,8 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "openapi/auth/generate-token-for-use-ours-services",
-          label: "Generate token for use ours services",
+          id: "openapi/auth/generate-token-from-keycloak",
+          label: "Generate token from Keycloak",
           className: "api-method post",
         },
         {
