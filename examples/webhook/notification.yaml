@@ -15,31 +15,29 @@ definitions:
     - CONFIG
   model.Order:
     properties:
-      created_at:
-        type: string
-      deleted_at:
+      ulid:
         type: string
       device_id:
         type: string
       group:
         $ref: '#/definitions/model.Group'
-      id:
-        type: integer
-      metadata:
-        type: string
-      parameters:
-        items:
-          $ref: '#/definitions/model.Parameter'
-        type: array
-      sourced_created_at:
-        type: string
       status:
         $ref: '#/definitions/model.Status'
       type:
         $ref: '#/definitions/model.OrderType'
-      ulid:
+      parameters:
+        items:
+          $ref: '#/definitions/model.Parameter'
+        type: array
+      metadata:
+        type: string
+      created_at:
+        type: string
+      sourced_created_at:
         type: string
       updated_at:
+        type: string
+      deleted_at:
         type: string
     type: object
   model.OrderType:
@@ -95,14 +93,12 @@ definitions:
     - PENDING
   dto.EventResponseDTO:
     properties:
-      correlation_id:
-        type: string
-      created_at:
-        type: string
-      deleted_at:
+      ulid:
         type: string
       device_id:
         type: integer
+      correlation_id:
+        type: string
       event_type:
         type: integer
       firmware_version:
@@ -111,28 +107,41 @@ definitions:
         type: integer
       hardware_model:
         type: string
-      hook_delivered_at:
-        type: string
-      id:
-        type: integer
       is_ignition_on:
         type: boolean
       media_id:
         type: integer
       odometer:
         type: number
-      sourced_created_at:
+      created_at:
+        type: string
+      updated_at:
         type: string
       tenant_delivered_at:
         type: string
-      ulid:
+      sourced_created_at:
         type: string
-      updated_at:
+      hook_delivered_at:
+        type: string
+      deleted_at:
         type: string
     type: object
   main.Data:
     properties:
-      data:
+      id:
+        type: string
+      type:
+        items:
+          enum:
+          - ORDER
+          - EVENT
+          type: string
+          x-enum-varnames:
+          - ORDER
+          - EVENT
+      date:
+        type: string
+      attributes:
         items:
           oneOf:
             - $ref: '#/definitions/model.Order'
@@ -178,4 +187,6 @@ paths:
       summary: Webhook
       tags:
       - Webhook
+schemes:
+- https
 swagger: "2.0"
