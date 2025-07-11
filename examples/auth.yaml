@@ -51,7 +51,7 @@ definitions:
         type: boolean
       client_id:
         type: string
-      exp:
+      expires_in:
         type: integer
       iat:
         type: integer
@@ -118,9 +118,9 @@ paths:
       consumes:
       - application/x-www-form-urlencoded
       description: |-
-        Token handles the generation of an authentication token using Keycloak credentials.
+        Token handles the generation of an authentication token using credentials.
         It receives a Fiber context, extracts the necessary configuration from the AuthHandler,
-        and calls the keycloak.GenerateToken function. If token generation fails, it returns
+        and calls the GenerateToken function. If token generation fails, it returns
         an error response with the appropriate status code and error message. On success,
         it returns the generated token as a JSON response.
       parameters:
@@ -159,7 +159,7 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/response.StandardError'
-      summary: Generate token from Keycloak
+      summary: Generate token
       tags:
       - Auth
     put:

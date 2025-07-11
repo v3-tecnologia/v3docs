@@ -1,0 +1,75 @@
+---
+id: generate-token
+title: "Generate token"
+description: "Token handles the generation of an authentication token using credentials."
+sidebar_label: "Generate token"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVktv00AQ/iurPbtJeV16KwhKQaIVLeJQqmhij+Nt7V2zu85DkX8Nh/6Q/jFmdp3gNg4gLnDgEm3m+c3ba5mhS62qvTJaHslLc4taFKCzEp3wBYoZarTAbGFyAVpAQ2TtVRqJPmg0TumZSC1mzILSjb7oUy8spqjmZAnEGzVFK1KjPS59IujHQuqjD01izoFdMT9Xs6ZzmFtTBYFj8vk2gLLJF00PkUJZRuWTCBAj9LzRKeuOxGneYetFkIMqXSIUI/ON1Y6NCbTWWKK42miHYqF8ESxDXVtTW0XGhfPgG0f4MqKT/6hTMewZjsSZFq5JOQrC98N8P4OYdXiA0/Hu4uzD1uVIJtLi1wadf2mylTxay5Ao7flJMMou2+PlwWKxOMiNrQ4aW6JmPBkLubTACvjlVzVSJc30BlNPhjkGtF6hY+7MgvaTKLN+VPwT5onASzZmnLdUWdkm5MEMKV0E8oB849BqqAZUPm04A1o1OLcwNtvVOt9wdrTamD1lORVX/RA3qHtoei6u24eq3jYYCLEqIV9PDw93oZy9JzN7KnTjWKRfkIcFgNAlk9AKvXL9yAAJmIYCUNketqeJ6rGmxpQImnlpqXC/Ji5ritNNVN+voiBmaJlPfT7MuPFq0KBFKKtJDGg3UEuwwkN5rNyggY4A1sIqlPFh7wYXOUEufpKubVvucggWVWTCozssQfWD/fkKPrej8tP+3m3IR5GETns+1EsvIRMf4+z/eVOFbTRcdOZMHrj8XbgvhuCeEj4KuxQXaOe00F8Hz/8ScCbCzPEm4LMhrxNZoS8MFVnWJmS5BqIfyTGfsnFsLW4XDoj11pJ2K/EL72t3NB7HNhnNnzna/FOzHKWmGs+fyJZMK52bzb6m0aQn+X+0Icmwur8zAitxYgSVWtAtAbollRGUjuVK1GCBD2u8q/d3999IWhAclW//0+EJUJ3IjHiPq7Q0cJvQUUa+spqI9FMbmlsnnKqoBqybGRetmylZ31qGUmU7dt99vuTlqnzJKeXkiePzUyJxXmIsh6PD0ZOwpymTFYSixCGQmzssNgl9VLtth/z/yPhrHxndtHB2xnUJKlyN0OzrbiiuJKdedtuPh6fgmSH6ej0Fh59s2bZMpja29KVyRc85EPwpN83VNdkrEDI6HDxHt0gi8lWs/MFlPMnUfE1Y+7/8rmmTjYljCrv2e5TDkmn7c35+dsGtPO0+piqyRtSe5aT/h2G37XfFHvGm
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/auth/auth-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Generate token"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/auth/token"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Token handles the generation of an authentication token using credentials.
+It receives a Fiber context, extracts the necessary configuration from the AuthHandler,
+and calls the GenerateToken function. If token generation fails, it returns
+an error response with the appropriate status code and error message. On success,
+it returns the generated token as a JSON response.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/x-www-form-urlencoded":{"schema":{"type":"object","properties":{"grant_type":{"description":"Grant type","type":"string"},"scope":{"description":"Scope","type":"string"},"username":{"description":"Username","type":"string"},"password":{"description":"Password","type":"string"}},"required":["grant_type","scope","username","password"]}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"access_token":{"type":"string"},"account_id":{"type":"string"},"active":{"type":"boolean"},"client_id":{"type":"string"},"expires_in":{"type":"integer"},"iat":{"type":"integer"},"jti":{"type":"string"},"realm_access":{"properties":{"roles":{"items":{"type":"string"},"type":"array"}},"type":"object"},"refresh_token":{"type":"string"},"scope":{"type":"string"},"session_state":{"type":"string"},"tenant_id":{"type":"string"},"token_type":{"type":"string"},"username":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
