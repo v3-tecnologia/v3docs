@@ -8,6 +8,25 @@ definitions:
       valid:
         type: boolean
     type: object
+  model.RefreshToken:
+    properties:
+      access_token:
+        type: string
+      expires_in:
+        type: integer
+      not-before-policy:
+        type: integer
+      refresh_expires_in:
+        type: integer
+      refresh_token:
+        type: string
+      scope:
+        type: string
+      session_state:
+        type: string
+      token_type:
+        type: string
+    type: object
   response.RealmAccess:
     properties:
       roles:
@@ -166,7 +185,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/response.TokenPayload'
+            $ref: '#/definitions/model.RefreshToken'
         "400":
           description: 'Bad Request: invalid or missing form data'
           schema:
