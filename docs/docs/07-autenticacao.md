@@ -41,23 +41,30 @@ Você já deve estar em posse das suas credenciais assim como ficou documentado 
 Para obter um token de acesso, você precisa fazer uma requisição POST com os seguintes parâmetros:
 
 ```http
-POST https://sso.v3sandbox.com/auth/token
+POST https://tenant.v3sandbox.com/v1/auth/token
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=password
-client_id=SEU_CLIENT_ID
-client_secret=SEU_CLIENT_SECRET
+scope=openid custom-claims
 username=SEU_USUARIO
 password=SUA_SENHA
 ```
 
 A resposta incluirá:
-- `access_token`: O token para usar nas requisições da API
-- `refresh_token`: Token para obter novos tokens de acesso
-- `expires_in`: Tempo em segundos até o token de acesso expirar
-- `refresh_expires_in`: Tempo em segundos até o token de atualização expirar
-- `token_type`: Tipo do token (geralmente "Bearer")
-- `scope`: Permissões concedidas ao token
+- `access_token` (string): O token para usar nas requisições da API
+- `account_id` (string): Identificador da conta
+- `active` (boolean): Indica se o token está ativo
+- `client_id` (string): Identificador do cliente
+- `exp` (integer): Timestamp de expiração do token
+- `iat` (integer): Timestamp de emissão do token
+- `jti` (string): Identificador único do token (JWT ID)
+- `realm_access` (object): Informações de acesso ao realm
+- `refresh_token` (string): Token para obter novos tokens de acesso
+- `scope` (string): Permissões concedidas ao token
+- `session_state` (string): Estado da sessão
+- `tenant_id` (string): Identificador do tenant
+- `token_type` (string): Tipo do token (geralmente "Bearer")
+- `username` (string): Nome do usuário autenticado
 
 ### 2. Usando o Access Token
 
@@ -72,12 +79,9 @@ Authorization: Bearer SEU_ACCESS_TOKEN
 Quando seu token de acesso expirar, use o token de atualização para obter um novo:
 
 ```http
-POST https://sso.v3sandbox.com/auth/token
+PUT https://tenant.v3sandbox.com/v1/auth/token
 Content-Type: application/x-www-form-urlencoded
 
-grant_type=refresh_token
-client_id=SEU_CLIENT_ID
-client_secret=SEU_CLIENT_SECRET
 refresh_token=SEU_REFRESH_TOKEN
 ```
 
@@ -118,11 +122,14 @@ Cada resposta de erro inclui:
 Você pode validar o status de um token usando:
 
 ```http
-GET https://sso.v3sandbox.com/auth/token
+GET https://tenant.v3sandbox.com/v1/auth/token
 Authorization: Bearer SEU_ACCESS_TOKEN
 ```
 
-A resposta indicará se o token é válido e incluirá quaisquer claims associados.
+A resposta incluirá:
+- `claims` (object): Claims do token JWT
+- `message` (string): Mensagem informativa sobre o status da validação
+- `valid` (boolean): Indica se o token é válido
 
 ## Notas Importantes
 
