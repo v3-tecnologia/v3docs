@@ -5,7 +5,7 @@ description: "Deletes multiple orders for a specific device."
 sidebar_label: "Delete multiple orders"
 hide_title: true
 hide_table_of_contents: true
-api: eJzlVc1uGzcQfhWCJ9tQJdnpSTclNgqjBVKkySk1EGo5kibhkgw5u4260MMUPfRB/GKd4e7aqi27CJBbDoKk+f3mmx922kKuEkbC4PVCX4IDgqzqxhFGByokCymrdUjKqByhwjVWykKLFUx/99drRVtQH9DmD+pzA2mnokmm5iBJYVYxhRYt2IkK3u2K7RAE7Bj7D3ROrYCDSm7bRw01EomfYeVgaHIOFRoWsw9tS7QeiarNTkIkqEPL6hMLEbxFv+G8CmuupAZPRqpUqXGQT6d6ou+gZr143z2g4p1HLkgxek+CN6mwPkjJ7ihm0dCWf3sOxP963bVlSYLPDSawekGpgYnO1RZqoxedpl0U20yJAer9fvIw9atQ1+aHDIJPqnWYSbIXHtT1ZVYUBrrU2dkJTDdTxnk+QXvBnxenZ2cjutKSe3jcJv0ckhuBnWPwGbLoL+YX8vVfdK8Lisz8MrQ7IFJyFTwxW+JiYnRYFcJnH7P4dQd5kaAuCXg+IiTCPl2VQOpd0hFsEz3keVI7MH9MiYdiZJAbSCLn5pvHMKRzkOmJWIQ1K00dj7ZylITVR6hI7HNoUgWvni2N41GTj6oah8dxNNE+GfEYjkFgUjI7thCbH+fzx+19aax60zPwFS3d9xHJbGSX+hnRN4XhbbBlM6R7Zel4YRZ61jcsz7qxc/tZv+cyoZDacSub5Nh8SxTzYjZjMMbTtH2Rjber8GVahXrWnmsZ3QxVk5B2vwmovpXLiD/DbtlIyq5fiS0YwXa3Ey/BJJ7nt+ETeH1PU3EsTKJfhzKdTIWphIoyboecLQszt//c/h0U1Oqn12pYo9u/WnAq8vXk/jv808gZ3TC1Ymn78+pzuZkqZGWRvTIStiHLgSIkB+PKZbX89ZqFwkyfdj6dT8+lt+xEtSkdGarqD/nDO64fAO/u+/udnf6hzQRfaBad4cmQlZJR64YJfT+cFCFtcXDXByZ53rbMuth13cpkeJfcfi/i/uaWBwWzWTl5AtbGZXiG/G9y8Y/W9ImneDz8rXGNWJRtaU1CQfeVSE/eDO/aqfr/F/IoonHD/O4Q0oj0jun9DdsOyyoQe/WyqiDSgeOjq7Q/vDqXV79cvb3iNf4XkSAYQg==
+api: eJyVVM1OGzEQfhXLpxKluwF6yi2AVEU9gEp7alEx60liumsbj3fbNMrDVD30QXixzthJCLAg9RAlmb/vm88zs5IasArGR+OsHMszqCECiqato/E1CBc0BBQzF4QS6KEyM1MJDZ2poPhqpzMRFyCujcZrcddCWAqvgmqoSBAGhQ+uMxr0UDhbL1Pspgjobe0fpq7FDVBRxta5qmtMjJynyLkJVIiuMorMlBMXqVpmIhq15BIBGteR+40GD1YbOydcYRrqpAEbFXcpQlsDHhRyKHdUUY6/rJ5I8dkaakgQexuZbxButgdJ6YbDvIoL+m2pEP3Lvm9GkynAXWsCaDmOoYWhxGoBjZLjlYxLz8EYAzGU6/XwKfapaxr1FoEJcru1wcjwSQgxPUMR3UYvMRi8gWJeENHDodFH9Dk+GAy29NKbPPCjd5KvMbli2uidRUD2H42O+Osxu/PEAklgorYjwi1XzkaSi1OU97WpkuLlLXLeag/XRGgSAA2IhxBNhqtcCFCnpKnu4UcIAViRSez1bpi86OXHeaHwPLjW93pMfwINjnreAT86YHwBJJoGLqNq+oDYnS3u5haqyPH7A7onmtLasEaqvtgDz1P2rMbGoEJQS/6Prg0VnL6qI9KqtNjfQjL0OFqvX6zY19tjXmuOeTcaPZ+2E6XFx6zqf0zYOleMas67nUdWXqVXWzidNpVHJR0BWuCxLPN0YLna7fC6zIenHG/WBkK3vRVtqClpEaPHcVkSJWVj0R2jsvrG/Swq15TdoeR9QqjaYOLykqnlIZl48wGWk5aBV3lPF6CY4W5RT0AFWrJP7jtY+SBWSkx6GjtzeWXorlUsSJrwfeUmSZ/7v/d/nIBGvD8Xm92+/91BLTzddJqC2vxSfNznJDBH6nz0LaZLLhwKbSgLaeI6h3w2o4k1bO8AisnFlIysTIYdFaOCWl//Axw/OGc=
 sidebar_class_name: "delete api-method"
 info_path: docs/openapi/order/orders-api
 custom_edit_url: null
@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"delete"}
-  path={"/devices/{deviceId}/orders"}
+  path={"/devices/{device_id}/orders/:ids"}
   context={"endpoint"}
 >
   
@@ -49,7 +49,7 @@ If omitted, all orders associated with the device may be removed (depending on i
 </Heading>
 
 <ParamsDetails
-  parameters={[{"description":"Unique identifier of the device","in":"path","name":"deviceId","required":true,"schema":{"type":"string"}},{"description":"Comma-separated list of order IDs to delete **(e.g. id1,id2,id3)**","in":"query","name":"ids","schema":{"type":"string"}}]}
+  parameters={[{"description":"Unique identifier of the device","in":"path","name":"device_id","required":true,"schema":{"type":"string"}},{"description":"Comma-separated list of order IDs to delete **(e.g. id1,id2,id3)**","in":"query","name":"ids","schema":{"type":"string"}}]}
 >
   
 </ParamsDetails>
@@ -64,7 +64,7 @@ If omitted, all orders associated with the device may be removed (depending on i
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"202":{"description":"Order sended to deleted","content":{"application/json":{"schema":{"items":{"properties":{"createdAt":{"type":"string"},"deletedAt":{"type":"string"},"deviceId":{"type":"string"},"id":{"type":"integer"},"meta":{"properties":{"requestId":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"},"sourceCreatedAt":{"type":"string"},"status":{"type":"string"},"ulid":{"type":"string"},"updatedAt":{"type":"string"}},"type":"object"},"type":"array"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{}}}}}}
+  responses={{"202":{"description":"Order sended to deleted","content":{"application/json":{"schema":{"items":{"properties":{"correlationId":{"type":"string"},"createdAt":{"type":"string"},"deletedAt":{"type":"string"},"deviceId":{"type":"string"},"group":{"type":"string"},"id":{"type":"string"},"meta":{"properties":{"requestId":{"type":"string"},"timeStamp":{"type":"string"}},"type":"object"},"parameters":{"items":{"additionalProperties":true,"type":"object"},"type":"array"},"sourceCreatedAt":{"type":"string"},"status":{"type":"string"},"type":{"type":"string"},"updatedAt":{"type":"string"}},"type":"object"},"type":"array"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{}}}}}}
 >
   
 </StatusCodes>

@@ -40,24 +40,6 @@ const sidebar: SidebarsConfig = {
           label: "Update a device",
           className: "api-method put",
         },
-        {
-          type: "doc",
-          id: "openapi/management/get-devices-by-fleet-id",
-          label: "Get devices by fleet ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "openapi/management/get-a-device-by-imei",
-          label: "Get a device by IMEI",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "openapi/management/get-a-device-by-ulid",
-          label: "Get a device by ULID",
-          className: "api-method get",
-        },
       ],
     },
     {
@@ -78,6 +60,24 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "openapi/management/delete-a-driver",
+          label: "Delete a driver",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "openapi/management/get-a-driver-by-id",
+          label: "Get a driver by Id",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "openapi/management/update-a-driver",
+          label: "Update a driver",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
           id: "openapi/management/remove-driver-from-team",
           label: "Remove driver from team",
           className: "api-method delete",
@@ -87,24 +87,6 @@ const sidebar: SidebarsConfig = {
           id: "openapi/management/assign-driver-to-team",
           label: "Assign driver to team",
           className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "openapi/management/delete-a-driver",
-          label: "Delete a driver",
-          className: "api-method delete",
-        },
-        {
-          type: "doc",
-          id: "openapi/management/get-a-driver-by-id",
-          label: "Get a driver by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "openapi/management/update-a-driver",
-          label: "Update a driver",
-          className: "api-method put",
         },
       ],
     },
@@ -148,12 +130,6 @@ const sidebar: SidebarsConfig = {
           label: "Get fleets by team ID",
           className: "api-method get",
         },
-        {
-          type: "doc",
-          id: "openapi/management/get-a-fleet-by-ulid",
-          label: "Get a fleet by ULID",
-          className: "api-method get",
-        },
       ],
     },
     {
@@ -181,7 +157,7 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "openapi/management/get-a-team-by-id",
-          label: "Get a team by ID",
+          label: "Get a team by Id",
           className: "api-method get",
         },
         {
@@ -193,13 +169,7 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "openapi/management/get-drivers-by-team-id",
-          label: "Get drivers by team ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "openapi/management/get-teams-by-account-id",
-          label: "Get teams by account ID",
+          label: "Get drivers by team Id",
           className: "api-method get",
         },
       ],

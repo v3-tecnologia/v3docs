@@ -5,7 +5,7 @@ description: "FindOne handles HTTP requests to retrieve a single device by its I
 sidebar_label: "Get a device by ID"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVE1v00AQ/SurPYEUJWnpKbeKtCUqkKq0p7aKNvYk3mLvmt1xIFj+MYgDP6R/jLe2mzg0rcSNAyev5+PN29k3U8qYfOR0ztoaOZKn2sRTQyJRJk7Ji3dXVxfC0ZeCPHvBFmd2mlYklPDaLFMSMa10RGK+Fhohk3H/1kxY5Mp55HNC4lbq+FYGi8qIyYmFs1ntaYHF9eX7nlipVMeKkaS5J1BfRCpNG4imxidydSnQWBBHSccVii7q/8lYaECYGq4HrEC5cMaD8dHhobg2ubMRea/mIH9iWPMaIT63xndg2lsBylgWC1uYJ2DDI/ERvtPg6yJMjfBFFErsZHRQcU0lvmpOAHM4HIrp+TZf9uSmU16Obso/XmjcQEzGCNTBkCtOcDZIwZ+OcQ591Y5iOWJXUE/6KKFMyVEpeZ3XUYZpSU5W1V2Ibkr7EAA64bNbc3oO0MgiyXDwqjxPdaSCd3DvQ0jZqYH+5uRYN4CqYJshNJo5iuzS6AZzQ2VubUrKyAoVHOH945nijt9Db2YZ3DGl9IJ7kRLxDPffc020Kop2XNu8ZzMy0nsTMgsmez15Yg3NTJHNAbEvoEifIVHk8fNXh7+12Pk9RQxLsEGAT59qo8i/eLGqwWO1DIJrFSahDIgwsSAsl8S1LqG0kRxkyqglZYAeNIL2g1LHFSI8JvRRtoVDk2TCnPvRYAAiynB/9cZjsuf2Wz+y2WB1IIMAtVnYQCjwVVHgW79291rHNf2HXw8/raBMnE0fB+bhx4pSkVsHAyb+u3LCireX12MMmRdYLq7A+OE4V81wYd7T0MoPm0uI44sJHIF4U2zYH/YP6ve0nnHZwK0drzNizOx25dVjuEO13Lb9/zb9F7ZpOzpM33iQp0rXq6YWZ9kq+kZuFV0/Z61pnEaYVugzgQxCVFkGEV27tKqCGd12a9hxXCmnQweafa3rbmBuFir19II+Xl22i/q16K71vYxbozLroFWVFuEPx8+0btZ+dYeohFQcdg9oNI5jtC7nTsqTTVB1B/3s5Arb5TeNncpe
+api: eJztVU1v00AQ/SurPYEUJaFwyq0iUCI+gkp7alG1sSfxgr1rdseBYPnHIA78kP4x3timdWmCxI0Dp4xnZt+8nX0zqXVKMQm2ZOudnunn1qVLRyozLs0pqhdnZ29VoE8VRY6KPWwOlrakjIrWbXJSKW1tQmq1UxYpi/n40i1YlSZEnOeM1KW26aUWjymIKah18EUb6YHV+emrkdqa3KaGccjySKG+SkyedxBdjXcU2lKgsSZOskFIiq7b78VcWUC4Fm4ELKFcBRfB+MnRkTp3ZfAJxWhWIP/MseUdUmLpXRzA9LcClPOs1r5y98CmT9QbxJ5LbIiwdCpWiZS4c2KAimsa9dlyBpij6VQtX96e1yN906moZxf1by807yAWcyRacZSGM9gOR/BlU9jSVxso1TMOFY10TDIqjJ7VmnelZEU8otvopnkvyV3lKHGwkZ+7JZcvgZl4x+RYoqYsc5sYiU4+REmpByXQ3pIC2w7QVOwLpCZXgRK/cbbDvGGy8j4n43SDCnJqLcB0hWvcZyskQqC8rXwwJRAA0ivDe8Mp5fSH8Don4kPQNkkORQ64C7J7A4UHj72RMvOOrlxVrCjsTajK9PD9EO89fvWBEoZHfJDq/Ve90e5fPG7T4bHZiDR7LWqICHLNPJqgN8StgqHJmZ4UxpkNFYCedNKPk9qmDTIiZvmXwKuAXuiMuYyzyQREjOPx9nHEDlj5L+PEF5PtIy1atW7thZDwNYnwbZ90eK3jlv71j+vvXlGhTpa/Ruv625ZyVfoAB3bDVxOUV09Pz+cYx6iwhkKFQYW5Mt0YYjPk0srXN5dQx28XCAjxrth0PB0/ap/NR8ZlhVs/iCfEmO7b5dgO7B2q9W3b/+/df2Hv9qPD9IUnZW5su5Vacda9oi/0raLb52w1DWuGDQB9ZpCBZNW1iOg85E0jbnQ77OCHuTXBSge6zW7bbmBu1iaP9Ad9PDjtV/pDNfwD2Mu4dxq3E62avJIvmB9p1/1BNO+RlZFJZcWARhc4RutKHhy5twma4aCfPDvDdvkJBNrZ5Q==
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/management/management-api
 custom_edit_url: null
@@ -51,7 +51,7 @@ On success, it returns the device data with a 200 OK response.
 </Heading>
 
 <ParamsDetails
-  parameters={[{"description":"Device ID","in":"path","name":"id","required":true,"schema":{"type":"integer"}}]}
+  parameters={[{"description":"Device ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
 >
   
 </ParamsDetails>
@@ -66,7 +66,7 @@ On success, it returns the device data with a 200 OK response.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"fleet_id":{"type":"integer"},"iccid":{"type":"string"},"id":{"type":"integer"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"fleet_id":{"type":"string"},"iccid":{"type":"string"},"id":{"type":"string"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
 >
   
 </StatusCodes>

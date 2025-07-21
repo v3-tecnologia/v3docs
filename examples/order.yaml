@@ -77,6 +77,13 @@ definitions:
     type: object
   dto.OrderDTO:
     properties:
+      correlation_id:
+        description: |-
+          CorrelationID is an optional unique identifier for request tracking.
+          If not provided, it will be auto-generated.
+        maxLength: 50
+        minLength: 3
+        type: string
       parameters:
         description: |-
           Parameters contains the specific data needed for the order type.
@@ -165,26 +172,35 @@ definitions:
     properties:
       requestId:
         type: string
-      timestamp:
+      timeStamp:
         type: string
     type: object
   mapper.OrderResponse:
     properties:
+      correlationId:
+        type: string
       createdAt:
         type: string
       deletedAt:
         type: string
       deviceId:
         type: string
+      group:
+        type: string
       id:
-        type: integer
+        type: string
       meta:
         $ref: '#/definitions/mapper.Meta'
+      parameters:
+        items:
+          additionalProperties: true
+          type: object
+        type: array
       sourceCreatedAt:
         type: string
       status:
         type: string
-      ulid:
+      type:
         type: string
       updatedAt:
         type: string
@@ -285,7 +301,46 @@ info:
   title: Orders API
   version: 0.0.1
 paths:
-  /devices/{deviceId}/orders:
+  /devices/{device_id}/orders:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of orders with optional filtering by device_id
+        and correlation_id. Supports pagination.
+      parameters:
+      - description: Device ID
+        in: path
+        name: device_id
+        required: true
+        type: string
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Page size (default: 10, max: 100)'
+        in: query
+        name: page_size
+        type: integer
+      - description: Filter by correlation ID
+        in: query
+        name: correlation_id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Orders retrieved successfully
+          schema:
+            items:
+              $ref: '#/definitions/mapper.OrderResponse'
+            type: array
+        "400":
+          description: Bad Request
+          schema: {}
+      summary: Find orders with optional filtering
+      tags:
+      - Order
+  /devices/{device_id}/orders/:ids:
     delete:
       consumes:
       - application/json
@@ -296,7 +351,7 @@ paths:
       parameters:
       - description: Unique identifier of the device
         in: path
-        name: deviceId
+        name: device_id
         required: true
         type: string
       - description: Comma-separated list of order IDs to delete **(e.g. id1,id2,id3)**
@@ -318,39 +373,6 @@ paths:
       summary: Delete multiple orders
       tags:
       - Order
-    get:
-      consumes:
-      - application/json
-      description: Retrieve a list of orders for a specific device
-      parameters:
-      - description: Device ID
-        in: path
-        name: deviceId
-        required: true
-        type: string
-      - description: 'Page number (default: 1)'
-        in: query
-        name: page
-        type: integer
-      - description: 'Page size (default: 10, max: 100)'
-        in: query
-        name: page_size
-        type: integer
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: Orders retrieved successfully
-          schema:
-            items:
-              $ref: '#/definitions/mapper.OrderResponse'
-            type: array
-        "400":
-          description: Bad Request
-          schema: {}
-      summary: Get a list of orders from a device
-      tags:
-      - Order
     post:
       consumes:
       - application/json
@@ -362,7 +384,7 @@ paths:
       parameters:
       - description: Device ID
         in: path
-        name: deviceId
+        name: device_id
         required: true
         type: string
       - description: Create Order payload
@@ -454,7 +476,7 @@ paths:
       summary: Create new order
       tags:
       - Order
-  /devices/{deviceId}/orders/{orderId}:
+  /devices/{device_id}/orders/{id}:
     delete:
       consumes:
       - application/json
@@ -464,12 +486,12 @@ paths:
       parameters:
       - description: Device ID
         in: path
-        name: deviceId
+        name: device_id
         required: true
         type: string
       - description: Order ID
         in: path
-        name: orderId
+        name: id
         required: true
         type: string
       produces:
@@ -494,12 +516,12 @@ paths:
       parameters:
       - description: Device ID
         in: path
-        name: deviceId
+        name: device_id
         required: true
         type: string
       - description: Order ID
         in: path
-        name: orderId
+        name: id
         required: true
         type: string
       produces:
@@ -515,11 +537,11 @@ paths:
       summary: Get a specific order
       tags:
       - Order
-schemes:
-- https
 securityDefinitions:
   ApiKeyAuth:
     in: header
     name: Bearer Token
     type: apiKey
+schemes:
+  - https
 swagger: "2.0"

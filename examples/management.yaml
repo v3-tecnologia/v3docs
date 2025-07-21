@@ -6,9 +6,21 @@ definitions:
         description: 'Flag indicating if the device has automatic recognition enabled
           **Example**: true'
         type: boolean
+      certificate_id:
+        description: CertificateID is the unique identifier of the certificate associated
+          with the device.
+        maxLength: 50
+        minLength: 3
+        type: string
+      correlation_id:
+        description: 'Unique identifier for request tracking (optional, auto-generated
+          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        maxLength: 50
+        minLength: 3
+        type: string
       fleet_id:
         description: 'ID of the fleet that owns the device **Example**: 1'
-        type: integer
+        type: string
       iccid:
         description: 'ICCID of the SIM card **Example**: "89550311000000000123"'
         maxLength: 20
@@ -30,16 +42,13 @@ definitions:
         minLength: 10
         type: string
     required:
-    - fleet_id
-    - iccid
     - imei
-    - model
-    - phone_number
     type: object
   dto.CreateDriverDTO:
     properties:
       correlation_id:
-        description: 'Unique identifier for request tracking **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        description: 'Unique identifier for request tracking (optional, auto-generated
+          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
@@ -48,14 +57,19 @@ definitions:
         maxLength: 100
         minLength: 3
         type: string
+      team_id:
+        description: Optional team ID for driver assignment
+        maxLength: 50
+        minLength: 3
+        type: string
     required:
-    - correlation_id
     - name
     type: object
   dto.CreateFleetDTO:
     properties:
       correlation_id:
-        description: 'Unique identifier for request tracking **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        description: 'Unique identifier for request tracking (optional, auto-generated
+          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
@@ -66,19 +80,16 @@ definitions:
         type: string
       team_id:
         description: 'ID of the team that owns the fleet **Example**: 1'
-        type: integer
+        type: string
     required:
-    - correlation_id
     - name
     - team_id
     type: object
   dto.CreateTeamDTO:
     properties:
-      account_id:
-        description: 'ID of the account that owns the team **Example**: 1'
-        type: integer
       correlation_id:
-        description: 'Unique identifier for request tracking **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        description: 'Unique identifier for request tracking (optional, auto-generated
+          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
@@ -88,8 +99,6 @@ definitions:
         minLength: 3
         type: string
     required:
-    - account_id
-    - correlation_id
     - name
     type: object
   dto.UpdateDeviceDTO:
@@ -98,9 +107,21 @@ definitions:
         description: 'Flag indicating if the device has automatic recognition enabled
           **Example**: true'
         type: boolean
+      certificate_id:
+        description: CertificateID is the unique identifier of the certificate associated
+          with the device.
+        maxLength: 50
+        minLength: 3
+        type: string
+      correlation_id:
+        description: 'Unique identifier for request tracking (optional, auto-generated
+          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        maxLength: 50
+        minLength: 3
+        type: string
       fleet_id:
         description: 'ID of the fleet that owns the device **Example**: 1'
-        type: integer
+        type: string
       iccid:
         description: 'ICCID of the SIM card **Example**: "89550311000000000123"'
         maxLength: 20
@@ -122,16 +143,13 @@ definitions:
         minLength: 10
         type: string
     required:
-    - fleet_id
-    - iccid
     - imei
-    - model
-    - phone_number
     type: object
   dto.UpdateDriverDTO:
     properties:
       correlation_id:
-        description: 'Unique identifier for request tracking **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        description: 'Unique identifier for request tracking (optional, auto-generated
+          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
@@ -140,14 +158,19 @@ definitions:
         maxLength: 100
         minLength: 3
         type: string
+      team_id:
+        description: Optional team ID for driver assignment
+        maxLength: 50
+        minLength: 3
+        type: string
     required:
-    - correlation_id
     - name
     type: object
   dto.UpdateFleetDTO:
     properties:
       correlation_id:
-        description: 'Unique identifier for request tracking **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        description: 'Unique identifier for request tracking (optional, auto-generated
+          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
@@ -158,19 +181,16 @@ definitions:
         type: string
       team_id:
         description: 'ID of the team that owns the fleet **Example**: 1'
-        type: integer
+        type: string
     required:
-    - correlation_id
     - name
     - team_id
     type: object
   dto.UpdateTeamDTO:
     properties:
-      account_id:
-        description: 'ID of the account that owns the team **Example**: 1'
-        type: integer
       correlation_id:
-        description: 'Unique identifier for request tracking **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        description: 'Unique identifier for request tracking (optional, auto-generated
+          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
@@ -180,31 +200,31 @@ definitions:
         minLength: 3
         type: string
     required:
-    - account_id
-    - correlation_id
     - name
     type: object
   model.Device:
     properties:
       automatic_recognition:
         type: boolean
+      certificate_id:
+        type: string
+      correlation_id:
+        type: string
       created_at:
         type: string
       deleted_at:
         type: string
       fleet_id:
-        type: integer
+        type: string
       iccid:
         type: string
       id:
-        type: integer
+        type: string
       imei:
         type: string
       model:
         type: string
       phone_number:
-        type: string
-      ulid:
         type: string
       updated_at:
         type: string
@@ -218,10 +238,10 @@ definitions:
       deleted_at:
         type: string
       id:
-        type: integer
+        type: string
       name:
         type: string
-      ulid:
+      team_id:
         type: string
       updated_at:
         type: string
@@ -235,12 +255,10 @@ definitions:
       deleted_at:
         type: string
       id:
-        type: integer
+        type: string
       name:
         type: string
       team_id:
-        type: integer
-      ulid:
         type: string
       updated_at:
         type: string
@@ -248,7 +266,7 @@ definitions:
   model.Team:
     properties:
       account_id:
-        type: integer
+        type: string
       correlation_id:
         type: string
       created_at:
@@ -256,27 +274,10 @@ definitions:
       deleted_at:
         type: string
       id:
-        type: integer
+        type: string
       name:
         type: string
-      ulid:
-        type: string
       updated_at:
-        type: string
-    type: object
-  model.TeamDriver:
-    properties:
-      created_at:
-        type: string
-      deleted_at:
-        type: string
-      driver_id:
-        type: integer
-      id:
-        type: integer
-      team_id:
-        type: integer
-      ulid:
         type: string
     type: object
   service.PaginatedDevices:
@@ -350,8 +351,8 @@ paths:
     get:
       description: |-
         FindAll handles HTTP GET requests to retrieve device records with optional filtering and pagination.
-        It supports filtering by either "ulid" or "fleetId" query parameters, but not both simultaneously.
-        If both filters are provided, it returns a 400 Bad Request error.
+        It supports filtering by either "correlation_id", "fleet_id", or "imei" query parameters, but only one at a time.
+        If multiple filters are provided, it returns a 400 Bad Request error.
         Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
         Returns a JSON response containing the paginated devices or an error message.
       parameters:
@@ -363,6 +364,18 @@ paths:
         in: query
         name: page_size
         type: integer
+      - description: Filter by correlation ID
+        in: query
+        name: correlation_id
+        type: string
+      - description: Filter by fleet ID
+        in: query
+        name: fleet_id
+        type: string
+      - description: Filter by IMEI
+        in: query
+        name: imei
+        type: string
       produces:
       - application/json
       responses:
@@ -417,7 +430,7 @@ paths:
         in: path
         name: id
         required: true
-        type: integer
+        type: string
       responses:
         "200":
           description: Device removed
@@ -441,7 +454,7 @@ paths:
         in: path
         name: id
         required: true
-        type: integer
+        type: string
       produces:
       - application/json
       responses:
@@ -469,7 +482,7 @@ paths:
         in: path
         name: id
         required: true
-        type: integer
+        type: string
       - description: Device Data
         in: body
         name: device
@@ -492,91 +505,11 @@ paths:
       summary: Update a device
       tags:
       - Device
-  /management/devices/fleets/{fleetId}:
-    get:
-      description: |-
-        FindByFleet handles HTTP GET requests to retrieve device records associated with a specific fleet.
-        It expects the fleet ID as a URL parameter, validates it, and returns a paginated list of devices
-        belonging to that fleet. Returns appropriate HTTP status codes and error messages for invalid
-        fleet IDs or if no devices are found.
-      parameters:
-      - description: Fleet ID
-        in: path
-        name: fleetId
-        required: true
-        type: integer
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/service.PaginatedDevices'
-        "422":
-          description: Unprocessable Entity
-          schema: {}
-      summary: Get devices by fleet ID
-      tags:
-      - Device
-  /management/devices/imei/{imei}:
-    get:
-      description: |-
-        FindByIMEI handles HTTP requests to retrieve a single device by its IMEI.
-        It parses the "imei" parameter from the request URL, validates it, and calls the deviceService to fetch the device.
-        If the IMEI is invalid, it returns a 422 Unprocessable Entity response.
-        If the device is not found, it returns a 404 Not Found response.
-        On success, it returns the device data with a 200 OK response.
-      parameters:
-      - description: Device IMEI
-        in: path
-        name: imei
-        required: true
-        type: string
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/model.Device'
-        "404":
-          description: Not Found
-          schema: {}
-      summary: Get a device by IMEI
-      tags:
-      - Device
-  /management/devices/ulid/{ulid}:
-    get:
-      description: |-
-        FindByULID handles HTTP requests to retrieve a single device by its ULID.
-        It parses the "ulid" parameter from the request URL, validates it, and calls the deviceService to fetch the device.
-        If the ULID is invalid, it returns a 422 Unprocessable Entity response.
-        If the device is not found, it returns a 404 Not Found response.
-        On success, it returns the device data with a 200 OK response.
-      parameters:
-      - description: Device ULID
-        in: path
-        name: ulid
-        required: true
-        type: string
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/model.Device'
-        "404":
-          description: Not Found
-          schema: {}
-      summary: Get a device by ULID
-      tags:
-      - Device
   /management/drivers:
     get:
       description: |-
         FindAll handles HTTP GET requests to retrieve driver records with optional filtering and pagination.
-        It supports filtering by either "ulid" or "teamId" query parameters, but not both simultaneously.
+        It supports filtering by either "correlation_id" or "team_id" query parameters, but not both simultaneously.
         If both filters are provided, it returns a 400 Bad Request error.
         Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
         Returns a JSON response containing the paginated drivers or an error message.
@@ -589,6 +522,14 @@ paths:
         in: query
         name: page_size
         type: integer
+      - description: Filter by correlation Id
+        in: query
+        name: correlation_id
+        type: string
+      - description: Filter by team Id
+        in: query
+        name: team_id
+        type: string
       produces:
       - application/json
       responses:
@@ -631,80 +572,19 @@ paths:
       summary: Create a new driver
       tags:
       - Driver
-  /management/drivers/{driverId}/teams/{teamId}:
-    delete:
-      description: |-
-        RemoveFromTeam handles the HTTP request to remove a driver from a team.
-        It expects the driver ID and team ID as URL parameters ("id" and "teamId").
-        The method parses these parameters, validates them, and calls the driverService to perform the removal.
-        Returns a 200 OK status with a success message if the operation is successful.
-        Returns a 422 Unprocessable Entity status with an error message if the IDs are invalid or if the removal fails.
-      parameters:
-      - description: Driver ID
-        in: path
-        name: id
-        required: true
-        type: integer
-      - description: Team ID
-        in: path
-        name: teamId
-        required: true
-        type: integer
-      responses:
-        "200":
-          description: Driver removed from team
-          schema:
-            type: string
-        "422":
-          description: Unprocessable Entity
-          schema: {}
-      summary: Remove driver from team
-      tags:
-      - Driver
-    post:
-      consumes:
-      - application/json
-      description: |-
-        AssignToTeam handles the HTTP request to assign a driver to a team.
-        It expects the driver ID as a URL parameter and the team assignment data in the request body.
-        The method validates the driver ID, parses and validates the request body, and delegates the assignment
-        operation to the driver service. Returns appropriate HTTP status codes and messages based on the outcome.
-      parameters:
-      - description: Driver ID
-        in: path
-        name: id
-        required: true
-        type: integer
-      - description: Team Data
-        in: body
-        name: team
-        required: true
-        schema:
-          $ref: '#/definitions/model.TeamDriver'
-      responses:
-        "200":
-          description: Driver assigned to team
-          schema:
-            type: string
-        "422":
-          description: Unprocessable Entity
-          schema: {}
-      summary: Assign driver to team
-      tags:
-      - Driver
   /management/drivers/{id}:
     delete:
       description: |-
-        Delete handles HTTP DELETE requests to remove a driver resource by its ID.
+        Delete handles HTTP DELETE requests to remove a driver resource by its Id.
         It parses the "id" parameter from the request URL, validates it, and calls the driverService.Delete method.
-        If the ID is invalid or the deletion fails, it returns a 422 Unprocessable Entity status with an error message.
+        If the Id is invalid or the deletion fails, it returns a 422 Unprocessable Entity status with an error message.
         On successful deletion, it returns a 200 OK status with an empty response body.
       parameters:
-      - description: Driver ID
+      - description: Driver Id
         in: path
         name: id
         required: true
-        type: integer
+        type: string
       responses:
         "200":
           description: Driver removed
@@ -718,17 +598,17 @@ paths:
       - Driver
     get:
       description: |-
-        FindOne handles HTTP requests to retrieve a single driver by its ID.
+        FindOne handles HTTP requests to retrieve a single driver by its Id.
         It parses the "id" parameter from the request URL, validates it, and calls the driverService to fetch the driver.
-        If the ID is invalid, it returns a 422 Unprocessable Entity response.
+        If the Id is invalid, it returns a 422 Unprocessable Entity response.
         If the driver is not found, it returns a 404 Not Found response.
         On success, it returns the driver data with a 200 OK response.
       parameters:
-      - description: Driver ID
+      - description: Driver Id
         in: path
         name: id
         required: true
-        type: integer
+        type: string
       produces:
       - application/json
       responses:
@@ -739,7 +619,7 @@ paths:
         "404":
           description: Not Found
           schema: {}
-      summary: Get a driver by ID
+      summary: Get a driver by Id
       tags:
       - Driver
     put:
@@ -747,16 +627,16 @@ paths:
       - application/json
       description: |-
         Update handles the HTTP PUT request to update an existing driver entity.
-        It parses the driver ID from the URL parameters, validates the request body,
+        It parses the driver Id from the URL parameters, validates the request body,
         and updates the driver using the provided service. Returns appropriate HTTP
         status codes and error messages for invalid input, validation errors, or if
         the driver is not found.
       parameters:
-      - description: Driver ID
+      - description: Driver Id
         in: path
         name: id
         required: true
-        type: integer
+        type: string
       - description: Driver Data
         in: body
         name: driver
@@ -779,11 +659,69 @@ paths:
       summary: Update a driver
       tags:
       - Driver
+  /management/drivers/{id}/teams/{team_id}:
+    delete:
+      description: |-
+        RemoveFromTeam handles the HTTP request to remove a driver from a team.
+        It expects the driver Id and team Id as URL parameters ("id" and "team_id").
+        The method parses these parameters, validates them, and calls the driverService to perform the removal.
+        Returns a 200 OK status with a success message if the operation is successful.
+        Returns a 422 Unprocessable Entity status with an error message if the Ids are invalid or if the removal fails.
+      parameters:
+      - description: Driver Id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Team Id
+        in: path
+        name: team_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: Driver removed from team
+          schema:
+            type: string
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Remove driver from team
+      tags:
+      - Driver
+    post:
+      consumes:
+      - application/json
+      description: |-
+        AssignToTeam handles the HTTP request to assign a driver to a team.
+        It expects the driver Id e o team Id como parâmetros da URL.
+      parameters:
+      - description: Driver Id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Team Id
+        in: path
+        name: team_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: Driver assigned to team
+          schema:
+            type: string
+        "422":
+          description: Unprocessable Entity
+          schema: {}
+      summary: Assign driver to team
+      tags:
+      - Driver
   /management/fleets:
     get:
       description: |-
         FindAll handles HTTP GET requests to retrieve fleet records with optional filtering and pagination.
-        It supports filtering by either "ulid" or "teamId" query parameters, but not both simultaneously.
+        It supports filtering by either "correlation_id" or "team_id" query parameters, but not both simultaneously.
         If both filters are provided, it returns a 400 Bad Request error.
         Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
         Returns a JSON response containing the paginated fleets or an error message.
@@ -796,6 +734,14 @@ paths:
         in: query
         name: page_size
         type: integer
+      - description: Filter by correlation ID
+        in: query
+        name: correlation_id
+        type: string
+      - description: Filter by team ID
+        in: query
+        name: team_id
+        type: string
       produces:
       - application/json
       responses:
@@ -850,7 +796,7 @@ paths:
         in: path
         name: id
         required: true
-        type: integer
+        type: string
       responses:
         "200":
           description: Fleet removed
@@ -874,7 +820,7 @@ paths:
         in: path
         name: id
         required: true
-        type: integer
+        type: string
       produces:
       - application/json
       responses:
@@ -902,7 +848,7 @@ paths:
         in: path
         name: id
         required: true
-        type: integer
+        type: string
       - description: Fleet Data
         in: body
         name: fleet
@@ -925,7 +871,7 @@ paths:
       summary: Update a fleet
       tags:
       - Fleet
-  /management/fleets/teams/{teamId}:
+  /management/fleets/teams/{team_id}:
     get:
       description: |-
         FindByTeam handles HTTP GET requests to retrieve fleet records associated with a specific team.
@@ -935,9 +881,9 @@ paths:
       parameters:
       - description: Team ID
         in: path
-        name: teamId
+        name: team_id
         required: true
-        type: integer
+        type: string
       produces:
       - application/json
       responses:
@@ -951,38 +897,11 @@ paths:
       summary: Get fleets by team ID
       tags:
       - Fleet
-  /management/fleets/ulid/{ulid}:
-    get:
-      description: |-
-        FindByULID handles HTTP requests to retrieve a single fleet by its ULID.
-        It parses the "ulid" parameter from the request URL, validates it, and calls the fleetService to fetch the fleet.
-        If the ULID is invalid, it returns a 422 Unprocessable Entity response.
-        If the fleet is not found, it returns a 404 Not Found response.
-        On success, it returns the fleet data with a 200 OK response.
-      parameters:
-      - description: Fleet ULID
-        in: path
-        name: ulid
-        required: true
-        type: string
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/model.Fleet'
-        "404":
-          description: Not Found
-          schema: {}
-      summary: Get a fleet by ULID
-      tags:
-      - Fleet
   /management/teams:
     get:
       description: |-
         FindAll handles HTTP GET requests to retrieve team records with optional filtering and pagination.
-        It supports filtering by either "ulid" or "accountId" query parameters, but not both simultaneously.
+        It supports filtering by either "correlation_id" query parameters, but not both simultaneously.
         If both filters are provided, it returns a 400 Bad Request error.
         Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
         Returns a JSON response containing the paginated teams or an error message.
@@ -995,6 +914,10 @@ paths:
         in: query
         name: page_size
         type: integer
+      - description: Filter by correlation Id
+        in: query
+        name: correlation_id
+        type: string
       produces:
       - application/json
       responses:
@@ -1040,16 +963,16 @@ paths:
   /management/teams/{id}:
     delete:
       description: |-
-        Delete handles HTTP DELETE requests to remove a team resource by its ID.
+        Delete handles HTTP DELETE requests to remove a team resource by its Id.
         It parses the "id" parameter from the request URL, validates it, and calls the teamService.Delete method.
-        If the ID is invalid or the deletion fails, it returns a 422 Unprocessable Entity status with an error message.
+        If the Id is invalid or the deletion fails, it returns a 422 Unprocessable Entity status with an error message.
         On successful deletion, it returns a 200 OK status with an empty response body.
       parameters:
-      - description: Team ID
+      - description: Team Id
         in: path
         name: id
         required: true
-        type: integer
+        type: string
       responses:
         "200":
           description: Team removed
@@ -1063,17 +986,17 @@ paths:
       - Team
     get:
       description: |-
-        FindOne handles HTTP requests to retrieve a single team by its ID.
+        FindOne handles HTTP requests to retrieve a single team by its Id.
         It parses the "id" parameter from the request URL, validates it, and calls the teamService to fetch the team.
-        If the ID is invalid, it returns a 422 Unprocessable Entity response.
+        If the Id is invalid, it returns a 422 Unprocessable Entity response.
         If the team is not found, it returns a 404 Not Found response.
         On success, it returns the team data with a 200 OK response.
       parameters:
-      - description: Team ID
+      - description: Team Id
         in: path
         name: id
         required: true
-        type: integer
+        type: string
       produces:
       - application/json
       responses:
@@ -1084,7 +1007,7 @@ paths:
         "404":
           description: Not Found
           schema: {}
-      summary: Get a team by ID
+      summary: Get a team by Id
       tags:
       - Team
     put:
@@ -1092,16 +1015,16 @@ paths:
       - application/json
       description: |-
         Update handles the HTTP PUT request to update an existing team entity.
-        It parses the team ID from the URL parameters, validates the request body,
+        It parses the team Id from the URL parameters, validates the request body,
         and updates the team using the provided service. Returns appropriate HTTP
         status codes and error messages for invalid input, validation errors, or if
         the team is not found.
       parameters:
-      - description: Team ID
+      - description: Team Id
         in: path
         name: id
         required: true
-        type: integer
+        type: string
       - description: Team Data
         in: body
         name: team
@@ -1124,19 +1047,19 @@ paths:
       summary: Update a team
       tags:
       - Team
-  /management/teams/{teamId}/drivers:
+  /management/teams/{team_id}/drivers:
     get:
       description: |-
         FindDrivers handles HTTP GET requests to retrieve driver records associated with a specific team.
-        It expects the team ID as a URL parameter, validates it, and returns a paginated list of drivers
+        It expects the team Id as a URL parameter, validates it, and returns a paginated list of drivers
         belonging to that team. Returns appropriate HTTP status codes and error messages for invalid
-        team IDs or if no drivers are found.
+        team Ids or if no drivers are found.
       parameters:
-      - description: Team ID
+      - description: Team Id
         in: path
-        name: teamId
+        name: team_id
         required: true
-        type: integer
+        type: string
       produces:
       - application/json
       responses:
@@ -1147,33 +1070,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
-      summary: Get drivers by team ID
-      tags:
-      - Team
-  /management/teams/accounts/{accountId}:
-    get:
-      description: |-
-        FindByAccount handles HTTP GET requests to retrieve team records associated with a specific account.
-        It expects the account ID as a URL parameter, validates it, and returns a paginated list of teams
-        belonging to that account. Returns appropriate HTTP status codes and error messages for invalid
-        account IDs or if no teams are found.
-      parameters:
-      - description: Account ID
-        in: path
-        name: accountId
-        required: true
-        type: integer
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/service.PaginatedTeams'
-        "422":
-          description: Unprocessable Entity
-          schema: {}
-      summary: Get teams by account ID
+      summary: Get drivers by team Id
       tags:
       - Team
 schemes:

@@ -12,15 +12,15 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "openapi/order/delete-multiple-orders",
-          label: "Delete multiple orders",
-          className: "api-method delete",
+          id: "openapi/order/find-orders-with-optional-filtering",
+          label: "Find orders with optional filtering",
+          className: "api-method get",
         },
         {
           type: "doc",
-          id: "openapi/order/get-a-list-of-orders-from-a-device",
-          label: "Get a list of orders from a device",
-          className: "api-method get",
+          id: "openapi/order/delete-multiple-orders",
+          label: "Delete multiple orders",
+          className: "api-method delete",
         },
         {
           type: "doc",
