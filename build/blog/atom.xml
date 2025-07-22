@@ -2,11 +2,58 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://developer.v3control.com/blog</id>
     <title>Portal do Desenvolvedor V3 Blog</title>
-    <updated>2025-06-16T00:00:00.000Z</updated>
+    <updated>2025-07-22T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://developer.v3control.com/blog"/>
     <subtitle>Portal do Desenvolvedor V3 Blog</subtitle>
     <icon>https://developer.v3control.com/img/shared/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Atualizações da Versão 1.18.4]]></title>
+        <id>https://developer.v3control.com/blog/changelog-1.18.4</id>
+        <link href="https://developer.v3control.com/blog/changelog-1.18.4"/>
+        <updated>2025-07-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Olá, desenvolvedores e entusiastas da tecnologia!]]></summary>
+        <content type="html"><![CDATA[<p>Olá, desenvolvedores e entusiastas da tecnologia!</p>
+<p>Nesta atualização, reunimos as principais melhorias, correções e novidades implementadas entre as versões 1.18.1 e 1.18.4 do nosso firmware, com foco em estabilidade, performance e evolução contínua do DMS e dos sistemas embarcados.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="destaques-das-atualizações">Destaques das Atualizações<a href="https://developer.v3control.com/blog/changelog-1.18.4#destaques-das-atualiza%C3%A7%C3%B5es" class="hash-link" aria-label="Direct link to Destaques das Atualizações" title="Direct link to Destaques das Atualizações">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="otimizações-e-novas-funcionalidades-no-dms">Otimizações e Novas Funcionalidades no DMS<a href="https://developer.v3control.com/blog/changelog-1.18.4#otimiza%C3%A7%C3%B5es-e-novas-funcionalidades-no-dms" class="hash-link" aria-label="Direct link to Otimizações e Novas Funcionalidades no DMS" title="Direct link to Otimizações e Novas Funcionalidades no DMS">​</a></h3>
+<ul>
+<li>Ajustamos a prioridade do evento de sonolência (drowsiness), tornando o sistema mais sensível e responsivo a situações críticas de fadiga do condutor.</li>
+<li>Implementamos <strong>vozes no DMS</strong>, trazendo feedbacks sonoros para eventos relevantes e aumentando a interação e segurança do usuário.</li>
+<li>Habilitamos a configuração de velocidade nas regras do DMS, permitindo maior flexibilidade e personalização conforme o perfil de uso.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="melhorias-de-performance-e-robustez">Melhorias de Performance e Robustez<a href="https://developer.v3control.com/blog/changelog-1.18.4#melhorias-de-performance-e-robustez" class="hash-link" aria-label="Direct link to Melhorias de Performance e Robustez" title="Direct link to Melhorias de Performance e Robustez">​</a></h3>
+<ul>
+<li>Realizamos diversas correções de concorrência no processamento do DMS, tornando o sistema mais estável, especialmente em ambientes multi-thread.</li>
+<li>Refatoramos a implementação de vozes, tornando-a mais eficiente e modular.</li>
+<li>Migramos a versão do banco de dados de configuração de eventos, garantindo compatibilidade e melhor desempenho.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ajustes-de-precisão-e-parâmetros">Ajustes de Precisão e Parâmetros<a href="https://developer.v3control.com/blog/changelog-1.18.4#ajustes-de-precis%C3%A3o-e-par%C3%A2metros" class="hash-link" aria-label="Direct link to Ajustes de Precisão e Parâmetros" title="Direct link to Ajustes de Precisão e Parâmetros">​</a></h3>
+<ul>
+<li>Atualizamos o threshold de reconhecimento facial (faceid), aprimorando a precisão na detecção e reduzindo falsos positivos/negativos.</li>
+<li>Ajustamos parâmetros internos para garantir maior confiabilidade nas detecções e respostas do sistema.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="qualidade-testes-e-manutenção">Qualidade, Testes e Manutenção<a href="https://developer.v3control.com/blog/changelog-1.18.4#qualidade-testes-e-manuten%C3%A7%C3%A3o" class="hash-link" aria-label="Direct link to Qualidade, Testes e Manutenção" title="Direct link to Qualidade, Testes e Manutenção">​</a></h3>
+<ul>
+<li>Corrigimos e aprimoramos testes automatizados, garantindo maior cobertura e confiabilidade nas validações do sistema.</li>
+<li>Realizamos atualizações de versão e pequenas melhorias de manutenção para manter o firmware sempre atualizado e seguro.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="o-que-isso-significa-para-você">O que isso significa para você?<a href="https://developer.v3control.com/blog/changelog-1.18.4#o-que-isso-significa-para-voc%C3%AA" class="hash-link" aria-label="Direct link to O que isso significa para você?" title="Direct link to O que isso significa para você?">​</a></h2>
+<p>Essas atualizações trazem um sistema mais inteligente, seguro e confiável para todos os usuários:</p>
+<ul>
+<li><strong>DMS mais preciso e interativo</strong>: Com vozes, novas regras e ajustes de prioridade, o sistema responde melhor a situações críticas e oferece feedbacks mais claros.</li>
+<li><strong>Maior estabilidade</strong>: Correções de concorrência e melhorias de performance reduzem falhas e aumentam a robustez em cenários de uso intenso.</li>
+<li><strong>Reconhecimento facial aprimorado</strong>: Ajustes finos nos parâmetros garantem detecções mais confiáveis e seguras.</li>
+<li><strong>Evolução contínua</strong>: Testes e manutenções constantes asseguram que o sistema acompanhe as necessidades do mercado e dos usuários.</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Contato</div><div class="admonitionContent_BuS1"><p>Ficou com alguma dúvida? Entre em contato com nossa equipe de desenvolvimento!</p><p>Envie um <a href="mailto:dev@v3.com.br" target="_blank" rel="noopener noreferrer">e-mail</a> para os nossos Devs ou entre na nossa comunidade do <a href="https://discord.gg/e69avYVnzG" target="_blank" rel="noopener noreferrer">Discord</a>.</p></div></div>
+<p>Até a próxima atualização!</p>]]></content>
+        <author>
+            <name>Diogo Cezar</name>
+            <uri>https://github.com/diogocezar</uri>
+        </author>
+        <category label="Changelog" term="Changelog"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Atualizações da Versão 1.18.0]]></title>
         <id>https://developer.v3control.com/blog/changelog-1.18.0</id>
@@ -100,7 +147,7 @@
 </li>
 </ol>
 <p>Estas melhorias trabalham em conjunto para proporcionar um sistema mais estável, confiável e eficiente, com melhor uso de recursos e maior precisão nas operações.</p>
-<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Contato</div><div class="admonitionContent_BuS1"><p>Ficou com alguma dúvida? Entre em contato com nossa equipe de desenvolvimento!</p><p>Envie um <a href="mailto:dev@v3.com.br" target="_blank" rel="noopener noreferrer">e-mail</a> para os nossos Devs ou entre na nossa comunidade do <a href="https://discord.gg/mJtwGs3g" target="_blank" rel="noopener noreferrer">Discord</a>.</p></div></div>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Contato</div><div class="admonitionContent_BuS1"><p>Ficou com alguma dúvida? Entre em contato com nossa equipe de desenvolvimento!</p><p>Envie um <a href="mailto:dev@v3.com.br" target="_blank" rel="noopener noreferrer">e-mail</a> para os nossos Devs ou entre na nossa comunidade do <a href="https://discord.gg/e69avYVnzG" target="_blank" rel="noopener noreferrer">Discord</a>.</p></div></div>
 <p>Até a próxima atualização!</p>]]></content>
         <author>
             <name>Diogo Cezar</name>

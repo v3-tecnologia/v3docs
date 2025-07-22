@@ -78,7 +78,7 @@ Estas melhorias trabalham em conjunto para proporcionar um sistema mais estável
 
 Ficou com alguma dúvida? Entre em contato com nossa equipe de desenvolvimento!
 
-Envie um [e-mail](mailto:dev@v3.com.br) para os nossos Devs ou entre na nossa comunidade do [Discord](https://discord.gg/mJtwGs3g).
+Envie um [e-mail](mailto:dev@v3.com.br) para os nossos Devs ou entre na nossa comunidade do [Discord](https://discord.gg/e69avYVnzG).
 
 :::
 
