@@ -21,7 +21,6 @@
 <ul>
 <li>Ajustamos a prioridade do evento de sonolência (drowsiness), tornando o sistema mais sensível e responsivo a situações críticas de fadiga do condutor.</li>
 <li>Implementamos <strong>vozes no DMS</strong>, trazendo feedbacks sonoros para eventos relevantes e aumentando a interação e segurança do usuário.</li>
-<li>Habilitamos a configuração de velocidade nas regras do DMS, permitindo maior flexibilidade e personalização conforme o perfil de uso.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="melhorias-de-performance-e-robustez">Melhorias de Performance e Robustez<a href="https://developer.v3control.com/blog/changelog-1.18.4#melhorias-de-performance-e-robustez" class="hash-link" aria-label="Direct link to Melhorias de Performance e Robustez" title="Direct link to Melhorias de Performance e Robustez">​</a></h3>
 <ul>

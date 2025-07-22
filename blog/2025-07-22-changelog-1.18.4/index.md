@@ -14,7 +14,6 @@ Nesta atualização, reunimos as principais melhorias, correções e novidades i
 ### Otimizações e Novas Funcionalidades no DMS
 - Ajustamos a prioridade do evento de sonolência (drowsiness), tornando o sistema mais sensível e responsivo a situações críticas de fadiga do condutor.
 - Implementamos **vozes no DMS**, trazendo feedbacks sonoros para eventos relevantes e aumentando a interação e segurança do usuário.
-- Habilitamos a configuração de velocidade nas regras do DMS, permitindo maior flexibilidade e personalização conforme o perfil de uso.
 
 ### Melhorias de Performance e Robustez
 - Realizamos diversas correções de concorrência no processamento do DMS, tornando o sistema mais estável, especialmente em ambientes multi-thread.
