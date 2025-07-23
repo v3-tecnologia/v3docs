@@ -168,13 +168,6 @@ definitions:
         - $ref: '#/definitions/model.OrderType'
         description: Type of the order (it must be DRIVER_COACH_TRACKING)
     type: object
-  mapper.Meta:
-    properties:
-      requestId:
-        type: string
-      timeStamp:
-        type: string
-    type: object
   mapper.OrderResponse:
     properties:
       correlationId:
@@ -189,13 +182,6 @@ definitions:
         type: string
       id:
         type: string
-      meta:
-        $ref: '#/definitions/mapper.Meta'
-      parameters:
-        items:
-          additionalProperties: true
-          type: object
-        type: array
       sourceCreatedAt:
         type: string
       status:
@@ -340,7 +326,7 @@ paths:
       summary: Find orders with optional filtering
       tags:
       - Order
-  /devices/{device_id}/orders/:ids:
+  /v1/devices/{device_id}/orders:
     delete:
       consumes:
       - application/json
@@ -476,7 +462,7 @@ paths:
       summary: Create new order
       tags:
       - Order
-  /devices/{device_id}/orders/{id}:
+  /v1/devices/{device_id}/orders/{id}:
     delete:
       consumes:
       - application/json
@@ -542,6 +528,4 @@ securityDefinitions:
     in: header
     name: Bearer Token
     type: apiKey
-schemes:
-  - https
 swagger: "2.0"
