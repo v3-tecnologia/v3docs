@@ -5,7 +5,7 @@ description: "Deletes a single order identified by its ID for a given device."
 sidebar_label: "Delete a specific order"
 hide_title: true
 hide_table_of_contents: true
-api: eJzNVcFO3DAQ/RUrp1ZCm4X2tLeloAq1EgjoiaLKG88SQ2KnHicljfIxVQ/9EH6sM3aAlM0iwamnOOMZz/jNm+cuUYCZ05XX1iSL5AAK8IBCCtTmqgBhnQIntALj9VqDEqtWaI/i6ECsrSO/K92AEQoancHsqznPNQpbgZN8oqAf7Rw04FCv6DhplPihi0KQRykNnVq0wkFpGxA+H9LNkp2kkk6WVIrDZHHRbVTJ2agGctRsqKTPaW0ohP5iMd+0IpOD77V2oJKFdzXsJJjlUMpk0SW+rdgZvaObJn2/8zTLcbj6tiQvPP2SnbGyBgF5f2++x5+pjAhGEdDeEqrcDU6UWeMJLA6RVVXoLMCbXiPHdaO82kMZElSOu+B1TJdZ6kIRgo7URH2UwYGkXEs/uTtUsnWXAd9y8JWzdTW5o6cDqO1y8wYMNaDfksTrEs68LKcS8Xa02NU1ZJ79x/QagSaV0oyRLE5GyWNvN84YDNI52fI/2tpl8OFZHNFLX+P0FYJhYqOu1NYTp+72b109+7yfzzfZti+VOI2ovoBhfTzRyyuezEjZ5DJ0LbcqTB9TJYwwzcsiSSM7MO0e5rJPw5yTidbkieCa+0mvXUFBufcVLtKUSpLGz5p3SMqxsrezzJZps5vwPCFktdO+PePSIkmWlf4E7bLmxF2c2hwkV/gwt/sgHQ3Zub0BkzyCFQIDntqsbRwZ42XGgASGj5FbBnzu/tz9tgJK8fFYDLN996sB0jYSRmJBoX/KoJAEMHuqKG8GBbNPWBRKUxQS4xqLLHpe+wLudQDF8uSIjEE7Q9r5bD7bDey16Ek9ucrhVlG3WbYryEios6ikyZPKu8c2/z9SP7TAw61Pq0JS15j0TINu4NDFoDBI3ouxukcasZV+iRI5AcPuXbeSCF9c0fdsJo67luy0bKTTcsUo86uikdfE2rUsEJ4B683poPRvxfjxmSz9nlKm5e7JouY/Wt4QwcaPU3hxXlPB6GF6RQGc+ZK8hsFgHOLGMsug8qOQDR3ox3N+cPj58PyQRuYvTqrbhQ==
+api: eJzNVM1O3DAQfhXLp1ZCm4X2tLeloAq1EhWlJ4oqbzK7MWRt1zNJSaN9mKqHPggvxkyShQiySHDqKfZ4/vLNN1+jM8A02kDWOz3TR1AAASqj0LpVAcrHDKKyGTiySwuZWtTKEqqTI7X0kf1WtgKnMqhsCpPv7jy3qHyAaCSj4ouNESqIaBeczrhM/bJFodhjbRxnLWoVYe0rUJT35SZ6TwcTzZpbiahnF82TLqUa98COVgzBUM5nxyF865r5YTM2RfhZ2giZnlEsYU9jmsPa6FmjqQ7ijBT5T/Vms/e4ymn767uKvDD7pThj8A4B5f1geiCfsYoILmOgyTOqMg0plHpHDJaEmBAKm7bwJlcocc2griVYtwVClCmQ7cqlnqdQtEEn2Uh/XCGC4VpzGn3tO9n5KoDvSLyKvgyjL3Y8AH0ZU/jwbD9IhkocfeoMIw9lyHZmvI/TfnEFKT0k0iZGU7OH+LyfTp9O7dBk6oyJAEgvmNSmy0hmJQzvRq+ZJUz63GctiwXydhWYdzOdVPtJBzQmzT3FN0m7MmziMzsjxGq7NGUsOC4nCjhLEu7KOJpU75CXcOFvJqlfc04t1ERIy2ip/irddYyZB/sJ6nkptZtuAXIw0uT9ChyCiczXc38NTj/g1Qa2kFq39B37HJlUMGnJMgRv3kJ0++/2r1ewVh9PVb8mt38qYJlgjWEiFPa3acWGMRbPrFMKh0p0QnlUmeUotGQrj6IfZKmA7Uqhmn85YWMrQ23Z6WQ62ZchcxCxEEmX/V91EigKGCBlzUs7UdKPOm8eJv3/qGY/AoIbSkJheGrCe6FB09PoQvPItxuLfJoN1bLjklj5yrzIGR2JaZqFQfgWi81GzMz1WLOdj5WJ1iwEalFpi3Jm9i5NgfAMYm/OeuV8q4ZiPtr/lleulhGaopQbH6+ZZUOxbxX8NR0MhP4VDUjlS/bqt0Nw6B7maQqBBiFP9GAz3Pej48/H58e8N3dT+Jyf
 sidebar_class_name: "delete api-method"
 info_path: docs/openapi/order/orders-api
 custom_edit_url: null
@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"delete"}
-  path={"/devices/{device_id}/orders/{id}"}
+  path={"/v1/devices/{device_id}/orders/{id}"}
   context={"endpoint"}
 >
   
@@ -63,7 +63,7 @@ This operation is irreversible and will permanently remove the order.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"202":{"description":"Order sended to deleted","content":{"application/json":{"schema":{"items":{"properties":{"correlationId":{"type":"string"},"createdAt":{"type":"string"},"deletedAt":{"type":"string"},"deviceId":{"type":"string"},"group":{"type":"string"},"id":{"type":"string"},"meta":{"properties":{"requestId":{"type":"string"},"timeStamp":{"type":"string"}},"type":"object"},"parameters":{"items":{"additionalProperties":true,"type":"object"},"type":"array"},"sourceCreatedAt":{"type":"string"},"status":{"type":"string"},"type":{"type":"string"},"updatedAt":{"type":"string"}},"type":"object"},"type":"array"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{}}}}}}
+  responses={{"202":{"description":"Order sended to deleted","content":{"application/json":{"schema":{"items":{"properties":{"correlationId":{"type":"string"},"createdAt":{"type":"string"},"deletedAt":{"type":"string"},"deviceId":{"type":"string"},"group":{"type":"string"},"id":{"type":"string"},"sourceCreatedAt":{"type":"string"},"status":{"type":"string"},"type":{"type":"string"},"updatedAt":{"type":"string"}},"type":"object"},"type":"array"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{}}}}}}
 >
   
 </StatusCodes>

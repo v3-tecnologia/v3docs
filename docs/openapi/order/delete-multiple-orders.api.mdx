@@ -5,7 +5,7 @@ description: "Deletes multiple orders for a specific device."
 sidebar_label: "Delete multiple orders"
 hide_title: true
 hide_table_of_contents: true
-api: eJyVVM1OGzEQfhXLpxKluwF6yi2AVEU9gEp7alEx60liumsbj3fbNMrDVD30QXixzthJCLAg9RAlmb/vm88zs5IasArGR+OsHMszqCECiqato/E1CBc0BBQzF4QS6KEyM1MJDZ2poPhqpzMRFyCujcZrcddCWAqvgmqoSBAGhQ+uMxr0UDhbL1Pspgjobe0fpq7FDVBRxta5qmtMjJynyLkJVIiuMorMlBMXqVpmIhq15BIBGteR+40GD1YbOydcYRrqpAEbFXcpQlsDHhRyKHdUUY6/rJ5I8dkaakgQexuZbxButgdJ6YbDvIoL+m2pEP3Lvm9GkynAXWsCaDmOoYWhxGoBjZLjlYxLz8EYAzGU6/XwKfapaxr1FoEJcru1wcjwSQgxPUMR3UYvMRi8gWJeENHDodFH9Dk+GAy29NKbPPCjd5KvMbli2uidRUD2H42O+Osxu/PEAklgorYjwi1XzkaSi1OU97WpkuLlLXLeag/XRGgSAA2IhxBNhqtcCFCnpKnu4UcIAViRSez1bpi86OXHeaHwPLjW93pMfwINjnreAT86YHwBJJoGLqNq+oDYnS3u5haqyPH7A7onmtLasEaqvtgDz1P2rMbGoEJQS/6Prg0VnL6qI9KqtNjfQjL0OFqvX6zY19tjXmuOeTcaPZ+2E6XFx6zqf0zYOleMas67nUdWXqVXWzidNpVHJR0BWuCxLPN0YLna7fC6zIenHG/WBkK3vRVtqClpEaPHcVkSJWVj0R2jsvrG/Swq15TdoeR9QqjaYOLykqnlIZl48wGWk5aBV3lPF6CY4W5RT0AFWrJP7jtY+SBWSkx6GjtzeWXorlUsSJrwfeUmSZ/7v/d/nIBGvD8Xm92+/91BLTzddJqC2vxSfNznJDBH6nz0LaZLLhwKbSgLaeI6h3w2o4k1bO8AisnFlIysTIYdFaOCWl//Axw/OGc=
+api: eJzlVc1uGzcQfhWCJ9tQJdnpSTclNgKjBVKkySkJGmo5kibhLhkOdxt1oYcJcuiD+MU6Q65+6sguAvSWgyCJ8/fxm2+GvbZAVcSQ0Dd6pq/BQQJSdesSBgfKRwuR1NJHZRQFqHCJlbLQYQXjt83tUqU1qPdo6b361ELcqGCiqTlJVEgqRN+hBTtSvnGb7DskAbvL/Sc6pxbASaW2LVl9jSlJnGHj4GiIfIWGjzkmrXO2gkTVZiMpItS+Y/OZhQCNxWbFdRXWfJMammTkliq2Duh8rEd6D5X07E1/j4rXDfKFFKNvkuCNyi+PSnI4ilswac2/G07E/4rtD7R8FOFTixGsnqXYwkhTtYba6Fmv0yaIM6XICPV2O7pf+5mva/MTgQCU6zqkJOUzEer2mlTyA1/q4uIMxqsxA70cob3iz5Pzi4sdvNyTAz7uk34MyTuBTcE3BCT2q+mVfP0b3YuMgphghrYHIleufJOYLgkxITisMuOTDyRx/VFdTFDnAiyQADFhKVf5GMHloFt7Ah9XiCCMzNNJ64DkQas054HEq+jbcNKCpwPIt7GCZ4/iIZZcSydN5eCEoQ32wYz7OO0XH6BKh0TaxGg27CE+P0+n33btqbHqJUsSKH1Hp7YlYzIrmZHSes0q4bFZe5sVL5TnYeJBmOlJdzkpRNOk34/DdlJmWMQHsdtNXBsdh6xTCjSbTBiQadK4e0KmsQv/eVz5mtNpUSVB1UZMm98FWBHLPOAvsJm3UrYval+DEXx7uT8FE1mqr/xHaPSBqhyY2cRm6YvweDtUQkfWyTFv88zO3d93X72CWj1/oYYJufvSgVOBNyNrwOFfRlbkiukVT1tWZ0N5HypPyiJHESbsPMnySZgc7KaJ1Py3Wz4UZkrZ6Xg6vpT+clCqTe7KcKuypO/vaH0PeH/o8Q+21oc2J/icJsEZVoaMlUitH1T6RrOsdgtBmJsdL+6BT1bdmrkX775fGILX0W23clyWan4ykMzCyY5fGkfwSAv+l5V+8mYfWcu7zd4Z14pHnpnORBR034n07OXwcJ2r/34DTyLazVmzOYa0Q3qgevuOnYeZFYzFPq8qCOko8psFtT1eQNc3v968uuFp/gfwOA3T
 sidebar_class_name: "delete api-method"
 info_path: docs/openapi/order/orders-api
 custom_edit_url: null
@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"delete"}
-  path={"/devices/{device_id}/orders/:ids"}
+  path={"/v1/devices/{device_id}/orders"}
   context={"endpoint"}
 >
   
@@ -64,7 +64,7 @@ If omitted, all orders associated with the device may be removed (depending on i
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"202":{"description":"Order sended to deleted","content":{"application/json":{"schema":{"items":{"properties":{"correlationId":{"type":"string"},"createdAt":{"type":"string"},"deletedAt":{"type":"string"},"deviceId":{"type":"string"},"group":{"type":"string"},"id":{"type":"string"},"meta":{"properties":{"requestId":{"type":"string"},"timeStamp":{"type":"string"}},"type":"object"},"parameters":{"items":{"additionalProperties":true,"type":"object"},"type":"array"},"sourceCreatedAt":{"type":"string"},"status":{"type":"string"},"type":{"type":"string"},"updatedAt":{"type":"string"}},"type":"object"},"type":"array"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{}}}}}}
+  responses={{"202":{"description":"Order sended to deleted","content":{"application/json":{"schema":{"items":{"properties":{"correlationId":{"type":"string"},"createdAt":{"type":"string"},"deletedAt":{"type":"string"},"deviceId":{"type":"string"},"group":{"type":"string"},"id":{"type":"string"},"sourceCreatedAt":{"type":"string"},"status":{"type":"string"},"type":{"type":"string"},"updatedAt":{"type":"string"}},"type":"object"},"type":"array"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{}}}}}}
 >
   
 </StatusCodes>
