@@ -279,6 +279,49 @@ definitions:
       active:
         type: boolean
     type: object
+  types.OrdersSuccessResponse:
+    properties:
+      orders:
+        items:
+          $ref: '#/definitions/types.SuccessAccepted'
+        type: array
+    type: object
+  types.Source:
+    properties:
+      pointer:
+        type: string
+    type: object
+  types.SuccessAccepted:
+    properties:
+      href:
+        description: Href to the order resource avaiable to be accessed e.g. https://golfleet.v3sandbox.com/v1/devices/{device_id}/orders/{order_id}
+        type: string
+      id:
+        description: ID of the order
+        type: string
+      status:
+        description: Status of the order (PENDING, DELETED, FAILED, SENT, PROCESSEDED)
+        type: string
+    type: object
+  types.ValidationError:
+    properties:
+      code:
+        description: Error code
+        type: string
+      detail:
+        description: Human-readable error description
+        type: string
+      source:
+        allOf:
+        - $ref: '#/definitions/types.Source'
+        description: Source of the error, e.g. the field that caused the error
+      status:
+        description: HTTP status code
+        type: integer
+      title:
+        description: Human-readable error title
+        type: string
+    type: object
 host: tenant.v3sandbox.com
 info:
   contact: {}
@@ -321,8 +364,13 @@ paths:
               $ref: '#/definitions/mapper.OrderResponse'
             type: array
         "400":
-          description: Bad Request
-          schema: {}
+          description: Invalid request payload
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/types.ValidationError'
       summary: Find orders with optional filtering
       tags:
       - Order
@@ -351,11 +399,20 @@ paths:
           description: Order sended to deleted
           schema:
             items:
-              $ref: '#/definitions/mapper.OrderResponse'
+              $ref: '#/definitions/types.OrdersSuccessResponse'
             type: array
         "400":
-          description: Bad Request
-          schema: {}
+          description: Invalid request payload
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/types.ValidationError'
       summary: Delete multiple orders
       tags:
       - Order
@@ -445,18 +502,19 @@ paths:
         "202":
           description: Order sended to created
           schema:
-            items:
-              $ref: '#/definitions/mapper.OrderResponse'
-            type: array
+            $ref: '#/definitions/types.OrdersSuccessResponse'
         "400":
           description: Invalid request payload
-          schema: {}
+          schema:
+            $ref: '#/definitions/types.ValidationError'
         "401":
           description: Unauthorized
-          schema: {}
+          schema:
+            $ref: '#/definitions/types.ValidationError'
         "500":
           description: Internal server error
-          schema: {}
+          schema:
+            $ref: '#/definitions/types.ValidationError'
       security:
       - ApiKeyAuth: []
       summary: Create new order
@@ -487,11 +545,20 @@ paths:
           description: Order sended to deleted
           schema:
             items:
-              $ref: '#/definitions/mapper.OrderResponse'
+              $ref: '#/definitions/types.OrdersSuccessResponse'
             type: array
         "400":
-          description: Bad Request
-          schema: {}
+          description: Invalid request payload
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/types.ValidationError'
       summary: Delete a specific order
       tags:
       - Order
@@ -518,8 +585,13 @@ paths:
           schema:
             $ref: '#/definitions/mapper.OrderResponse'
         "400":
-          description: Bad Request
-          schema: {}
+          description: Invalid request payload
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/types.ValidationError'
       summary: Get a specific order
       tags:
       - Order
