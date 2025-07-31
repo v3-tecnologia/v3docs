@@ -65,18 +65,117 @@ def verify_signature(payload, signature, secret):
 
 ### 3. Formato das Notificações
 
-As notificações são enviadas como requisições HTTP POST com o seguinte formato:
+As notificações são enviadas como requisições HTTP POST com os seguintes formatos, podendo ser:
+
+1. Order Status
+1. Order Ack
+1. Upload
+
+#### 3.1. Payload do Webhook de Evento de Order Status
+```json
+{
+    "id":"ULID do Webhook",
+    "created_at":"2024-03-21T10:00:00Z", // Data da criação do webhook
+    "type":"ORDER_STATUS",
+    "attributes":[
+        {
+            "id":"ULID do Evento",
+			"created_at":"2024-03-21T10:00:00Z", // Data da criação do evento no Firmeware
+            "attributes":{
+                "device":{
+					"id":"ULID do Dispositivo", // Id do dispositivo na API
+					"correlation_id": "ULID relacional do Dispositivo (opcional)",
+                    "imei":"IMEI do Dispositivo"
+                },
+                "order":{
+                    "id":"ULID da Order que originou o evento de upload (opcional)",
+					"correlation_id":"ULID relacional da Order (opcional)",
+                    "group":"COMMAND | CONFIG",
+                    "status":"DELETED | PROCESSED | FAILED | SENT | PENDING",
+                    "type":"ADD_WIFI | DELETE_WIFI | DEVICE_STATE | REQUEST_IMAGE | REQUEST_VIDEO | CONFIG | REBOOT | DRIVER_COACH_INERTIAL | DRIVER_COACH_TELEMETRY | DRIVER_COACH_TRACKING | INTERNAL",
+                    "source_request":"Aqui será retornado o campo `source_request`",
+					"created_at":"2024-03-21T10:00:00Z", // Data da criação da Order
+		            "updated_at":"2024-03-21T10:00:00Z", // Data da última atualização da Order
+					"deleted_at":"2024-03-21T10:00:00Z" // Data da deleção da Order
+                }
+            },
+        }
+    ]
+}
+```
+
+#### 3.2. Payload do Webhook do Event ORDER_ACK
 
 ```json
 {
-  "tenant_id": "seu-tenant-id",
-  "timestamp": "2024-03-21T10:00:00Z",
-  "payload": {
-    "event": "tipo_do_evento",
-    "data": {
-      // Dados específicos do evento
-    }
-  }
+    "id":"ULID do Webhook",
+    "created_at":"2024-03-21T10:00:00Z", // Data da criação do webhook
+    "type":"ORDER_ACK",
+    "attributes":[
+        {
+            "id":"ULID do Evento",
+			"created_at":"2024-03-21T10:00:00Z", // Data da criação do evento no Firmeware
+            "attributes":{
+                "device":{
+					"id":"ULID do Dispositivo", // Id do dispositivo na API
+					"correlation_id": "ULID relacional do Dispositivo (opcional)",
+                    "imei":"string"
+                },
+                "order":{
+                    "id":"ULID da Order que originou o evento de upload (opcional)",
+					"correlation_id":"ULID relacional da Order (opcional)",
+                    "status":"PROCESSED | FAILED",
+					"created_at":"2024-03-21T10:00:00Z", // Data da criação da Order
+		            "updated_at":"2024-03-21T10:00:00Z", // Data da última atualização da Order
+					"deleted_at":"2024-03-21T10:00:00Z" // Data da deleção da Order
+                },
+            },
+        }
+    ]
+}
+```
+
+#### 3.3. UPLOAD
+
+```json
+{
+    "id":"ULID do Webhook",
+    "created_at":"2024-03-21T10:00:00Z", // Data da criação do webhook
+    "type":"UPLOAD",
+    "attributes":[
+        {
+            "id":"ULID do Evento",
+			"created_at":"2024-03-21T10:00:00Z", // Data da criação do evento no Firmeware
+            "attributes":{
+                "device":{
+					"id":"ULID do Dispositivo", // Id do dispositivo na API
+					"correlation_id": "ULID relacional do Dispositivo (opcional)",
+                    "imei":"string"
+                },
+                "order":{
+                    "id":"ULID da Order que originou o evento de upload (opcional)",
+					"created_at":"2024-03-21T10:00:00Z", // Data da criação da Order
+		            "updated_at":"2024-03-21T10:00:00Z", // Data da última atualização da Order
+					"deleted_at":"2024-03-21T10:00:00Z" // Data da deleção da Order
+                },
+                "media":[
+                    {
+                        "id":"ULID da Mídia",
+                        "url":"https://s3.amazonaws.com/01GY8D9P/862798050832837/07PWF2JT2E_image0.jpg",
+                        "metadata":{
+                            "width":1920,
+                            "height":1080,
+                            "compression":"JPEG",
+                            "quality":85,
+                            "cam_channel":"1",
+                            "content_type":"image/jpeg",
+                            "file_size":245678
+                        }
+                    }
+                ]
+            },
+        }
+    ]
 }
 ```
 
