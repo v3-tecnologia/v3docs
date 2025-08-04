@@ -105,10 +105,10 @@ A aplicação estará disponível em `http://localhost:3000`
 │   │   ├── 07-autenticacao.md
 │   │   ├── 08-permissionamento.md
 │   │   ├── 09-gerenciamento.md
-│   │   ├── 10-orders.md
-│   │   ├── 11-events.md
-│   │   ├── 12-vision.md
-│   │   └── 13-webhooks.md
+│   │   ├── 10-ordens.md
+│   │   ├── 11-eventos.md
+│   │   ├── 12-visoes.md
+│   │   └── 13-notificacoes.md
 │   ├── openapi/          # Documentação OpenAPI
 │   └── webhook/          # Documentação de Webhooks
 ├── examples/             # Exemplos e especificações

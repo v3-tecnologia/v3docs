@@ -53,10 +53,18 @@ definitions:
         enum:
           - "STATUS"
           - "UPLOAD"
+          - "DMS"
+          - "DRIVER_BEHAVIOR"
+          - "TELEMETRY"
+          - "ADAS"
         description: Subtipo do Evento
         x-enum-varnames:
           - "STATUS"
           - "UPLOAD"
+          - "DMS"
+          - "DRIVER_BEHAVIOR"
+          - "TELEMETRY"
+          - "ADAS"
       trip_id:
         type: string
         description: ULID da Trip associada ao Evento
@@ -73,11 +81,15 @@ definitions:
             order:
               $ref: '#/definitions/model.Order'
               description: Order associada ao Evento
-            files:
-              type: array
-              items:
-                $ref: '#/definitions/model.File'
-              description: Lista de arquivos associados ao Evento
+            data:
+              type: object
+              description: Dados do Evento
+              properties:
+                files:
+                type: array
+                items:
+                  $ref: '#/definitions/model.File'
+                description: Lista de arquivos associados ao Evento
   model.Device:
     type: object
     required:

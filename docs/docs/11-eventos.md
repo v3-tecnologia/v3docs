@@ -146,7 +146,7 @@ Existem duas formas de consumir eventos:
 
 :::info[Veja como configurar e utilizar o Webhook]
 
-Caso queira entender como configurar e utilizar o sistema de notificações via WebHook, acesse [aqui](./13-webhooks.md).
+Caso queira entender como configurar e utilizar o sistema de notificações via WebHook, acesse [aqui](./13-notificacoes.md).
 
 :::
 
