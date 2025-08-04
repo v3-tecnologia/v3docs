@@ -120,16 +120,12 @@ definitions:
       status:
         type: string
         enum:
-          - "DELETED"
-          - "PROCESSED"
           - "FAILED"
           - "SENT"
           - "PENDING"
           - "NACK"
           - "ACK"
         x-enum-varnames:
-          - "DELETED"
-          - "PROCESSED"
           - "FAILED"
           - "SENT"
           - "PENDING"
