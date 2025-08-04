@@ -170,25 +170,25 @@ definitions:
     type: object
   mapper.OrderResponse:
     properties:
-      correlationId:
+      correlation_id:
         type: string
-      createdAt:
+      created_at:
         type: string
-      deletedAt:
+      deleted_at:
         type: string
-      deviceId:
+      device_id:
         type: string
       group:
         type: string
       id:
         type: string
-      sourceCreatedAt:
+      source_created_at:
         type: string
       status:
         type: string
       type:
         type: string
-      updatedAt:
+      updated_at:
         type: string
     type: object
   model.AddWifi:
