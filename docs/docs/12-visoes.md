@@ -2,7 +2,7 @@
 sidebar_position: 12
 ---
 
-# Vision
+# Visões
 
 O contexto de visão se propõe a ser a central de processamento dos eventos que chegam até a **V3CLOUD**, para inferência de visão computacional.
 

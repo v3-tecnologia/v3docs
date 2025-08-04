@@ -8,12 +8,12 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Webhook",
+      label: "Webhooks",
       items: [
         {
           type: "doc",
-          id: "webhook/notification/webhook",
-          label: "Webhook",
+          id: "webhook/notification/eventos",
+          label: "Eventos",
           className: "api-method post",
         },
       ],

@@ -2,7 +2,7 @@
 sidebar_position: 13
 ---
 
-# Webhooks
+# Notificações
 
 Este documento descreve o sistema de notificações via webhook, uma solução que permite a comunicação em tempo real entre diferentes sistemas através de notificações HTTP. O sistema foi projetado para ser seguro, confiável e fácil de integrar.
 

@@ -2,7 +2,7 @@
 sidebar_position: 11
 ---
 
-# Events
+# Eventos
 
 O Contexto de events é o coração do sistema de video-telemetria da V3. Ela é responsável por gerenciar todos os eventos que acontecem com os dispositivos em campo, como posição GPS, dados do acelerômetro, identificação do condutor e comportamentos inadequados.
 

@@ -82,14 +82,14 @@ definitions:
               $ref: '#/definitions/model.Order'
               description: Order associada ao Evento
             data:
-              type: object
-              description: Dados do Evento
               properties:
                 files:
-                type: array
-                items:
-                  $ref: '#/definitions/model.File'
-                description: Lista de arquivos associados ao Evento
+                  type: array
+                  items:
+                    $ref: '#/definitions/model.File'
+                  description: Lista de arquivos associados ao Evento
+              type: object
+              description: Dados do Evento
   model.Device:
     type: object
     required:
@@ -260,9 +260,9 @@ paths:
         "500":
           description: Internal Server Error
           schema: {}
-      summary: Webhook
+      summary: Eventos
       tags:
-      - Webhook
+      - Webhooks
 schemes:
 - https
 swagger: "2.0"

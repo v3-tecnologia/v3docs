@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# Orders
+# Ordens
 
 O Sistema de Orders é uma ferramenta que permite enviar comandos e configurações para dispositivos em campo de forma simples e eficiente. É como um "controle remoto" que permite gerenciar e monitorar seus dispositivos remotamente.
 
