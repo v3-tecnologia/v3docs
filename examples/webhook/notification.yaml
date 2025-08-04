@@ -120,17 +120,17 @@ definitions:
       status:
         type: string
         enum:
-          - "FAILED"
-          - "SENT"
           - "PENDING"
-          - "NACK"
+          - "SENT"
+          - "FAILED"
           - "ACK"
+          - "NACK"
         x-enum-varnames:
-          - "FAILED"
-          - "SENT"
           - "PENDING"
-          - "NACK"
+          - "SENT"
+          - "FAILED"
           - "ACK"
+          - "NACK"
         description: Status da Order
       type:
         type: string
