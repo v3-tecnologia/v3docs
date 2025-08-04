@@ -57,13 +57,15 @@ definitions:
         x-enum-varnames:
           - "STATUS"
           - "UPLOAD"
+      trip_id:
+        type: string
+        description: ULID da Trip associada ao Evento
       attributes:
         type: array
         items:
           type: object
           required:
             - device
-            - order
           properties:
             device:
               $ref: '#/definitions/model.Device'
@@ -80,7 +82,6 @@ definitions:
     type: object
     required:
       - id
-      - correlation_id
       - imei
     properties:
       id:
@@ -99,7 +100,6 @@ definitions:
       - id
       - created_at
       - updated_at
-      - deleted_at
     properties:
       id:
         type: string
@@ -110,6 +110,12 @@ definitions:
         description: ULID de correlação da Order
       group:
         type: string
+        enum:
+            - "COMMAND"
+            - "CONFIG"
+        x-enum-varnames:
+            - "COMMAND"
+            - "CONFIG"
         description: Grupo da Order
       status:
         type: string
