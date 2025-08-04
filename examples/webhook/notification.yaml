@@ -6,6 +6,11 @@ definitions:
         type: string
     type: object
   main.WebhookPayload:
+    type: object
+    required:
+      - id
+      - created_at
+      - attributes
     properties:
       id:
         type: string
@@ -17,45 +22,15 @@ definitions:
       attributes:
         type: array
         items:
-          oneOf:
-          - $ref: '#/definitions/model.OrderStatus'
-            title: Order
-          - $ref: '#/definitions/model.Event'
-            title: Event
-        description: Atributos do Webhook
-    type: object
-  model.OrderStatus:
-    properties:
-      id:
-        type: string
-        value: "ORDER"
-        description: ULID do Evento
-      created_at:
-        type: string
-        format: date-time
-        description: Data de criação do Evento
-      type:
-        type: string
-        description: Tipo do Evento
-      sub:
-        type: string
-        value: "STATUS"
-        description: Subtipo do Evento
-      attributes:
-        items:
-          type: array
-          properties:
-            device:
-              $ref: '#/definitions/model.Device'
-              description: Dispositivo associado ao Evento
-              type: object
-            order:
-              $ref: '#/definitions/model.Order'
-              description: Order associada ao Evento
-              type: object
-        description: Atributos da Order Status
-    type: object
+          $ref: '#/definitions/model.Event'
+        description: Lista de Eventos associados ao Webhook
   model.Event:
+    type: object
+    required:
+      - id
+      - created_at
+      - type
+      - sub
     properties:
       id:
         type: string
@@ -66,27 +41,47 @@ definitions:
         description: Data de criação do Evento no Firmeware
       type:
         type: string
+        enum:
+          - "ORDER"
+          - "EVENT"
         description: Tipo do Evento
+        x-enum-varnames:
+          - "ORDER"
+          - "EVENT"
       sub:
         type: string
+        enum:
+          - "STATUS"
+          - "UPLOAD"
         description: Subtipo do Evento
+        x-enum-varnames:
+          - "STATUS"
+          - "UPLOAD"
       attributes:
+        type: array
         items:
-          type: array
+          type: object
+          required:
+            - device
+            - order
           properties:
             device:
               $ref: '#/definitions/model.Device'
               description: Dispositivo associado ao Evento
             order:
-              $ref: '#/definitions/model.OrderSummary'
+              $ref: '#/definitions/model.Order'
               description: Order associada ao Evento
             files:
+              type: array
               items:
                 $ref: '#/definitions/model.File'
-              type: array
               description: Lista de arquivos associados ao Evento
-    type: object
   model.Device:
+    type: object
+    required:
+      - id
+      - correlation_id
+      - imei
     properties:
       id:
         type: string
@@ -98,8 +93,13 @@ definitions:
       imei:
         type: string
         description: IMEI do Dispositivo
-    type: object
   model.Order:
+    type: object
+    required:
+      - id
+      - created_at
+      - updated_at
+      - deleted_at
     properties:
       id:
         type: string
@@ -112,7 +112,7 @@ definitions:
         type: string
         description: Grupo da Order
       status:
-        type: enum
+        type: string
         enum:
           - "DELETED"
           - "PROCESSED"
@@ -131,7 +131,7 @@ definitions:
           - "ACK"
         description: Status da Order
       type:
-        type: enum
+        type: string
         enum:
           - "ADD_WIFI"
           - "DELETE_WIFI"
@@ -169,30 +169,12 @@ definitions:
         type: string
         format: date-time
         description: Data de exclusão da Order
-    type: object
-  model.OrderSummary:
-    properties:
-      id:
-        type: string
-        description: ULID da Order
-      correlation_id:
-        type: string
-        format: ulid
-        description: ULID de correlação da Order
-      created_at:
-        type: string
-        format: date-time
-        description: Data de criação da Order
-      updated_at:
-        type: string
-        format: date-time
-        description: Data da última atualização da Order
-      deleted_at:
-        type: string
-        format: date-time
-        description: Data de exclusão da Order
-    type: object
   model.File:
+    type: object
+    required:
+      - id
+      - url
+      - metadata
     properties:
       id:
         type: string
@@ -203,8 +185,11 @@ definitions:
       metadata:
         $ref: '#/definitions/model.FileMetadata'
         description: Metadados da Mídia
-    type: array
   model.FileMetadata:
+    type: object
+    required:
+      - content_type
+      - file_size
     properties:
       width:
         type: integer
@@ -227,7 +212,6 @@ definitions:
       file_size:
         type: integer
         description: Tamanho do arquivo em bytes
-    type: object
 host: yourcompany.com
 info:
   contact: {}
@@ -249,9 +233,9 @@ paths:
       - description: Webhook Payload
         in: body
         name: payload
-        required: true
         schema:
           $ref: '#/definitions/main.WebhookPayload'
+          required: true
       produces:
       - application/json
       responses:
