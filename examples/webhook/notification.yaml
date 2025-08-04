@@ -221,7 +221,7 @@ info:
   title: notification-service
   version: 0.0.1
 paths:
-  /webhook:
+  /event:
     post:
       consumes:
       - application/json

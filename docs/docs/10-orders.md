@@ -239,9 +239,10 @@ Você pode enviar vários comandos de uma vez:
 As orders podem ter os seguintes status:
 - `PENDING`: Aguardando processamento
 - `SENT`: Enviada para o dispositivo
-- `PROCESSED`: Processada com sucesso
-- `FAILED`: Falha no processamento
+- `FAILED`: Falha no processamento, antes do envio ao dispositivo
 - `DELETED`: Order excluída
+- `ACK`: Processada com sucesso do dispositivo
+- `NACK`: Erro durante o processamento do dispositivo
 
 ### Consultando Orders
 Você pode consultar:
