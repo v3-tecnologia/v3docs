@@ -2,16 +2,21 @@ basePath: /v1
 definitions:
   dto.AddWifiDTO:
     properties:
-      parameters:
-        description: 'Array of WiFi configuration parameters **Example**: [{"ssid":
-          "MyWifi", "password": "123456"}]'
-        items:
-          $ref: '#/definitions/model.AddWifi'
-        type: array
-      type:
-        allOf:
-        - $ref: '#/definitions/model.OrderType'
-        description: Type of the order (it must be **ADD_WIFI**)
+      password:
+        description: Password of the Wifi network
+        type: string
+      ssid:
+        description: SSID of the WiFi network
+        type: string
+    type: object
+  dto.AudioAndEventDTO:
+    properties:
+      audio_enabled:
+        description: Enables or disables audio
+        type: boolean
+      send_event_enabled:
+        description: Enables or disables event sending
+        type: boolean
     type: object
   dto.CreateOrderDTO:
     properties:
@@ -27,53 +32,40 @@ definitions:
     type: object
   dto.DeleteWifiDTO:
     properties:
-      parameters:
-        description: 'Array of WiFi deletion parameters **Example**: [{"ssid": "MyWifi"}]'
-        items:
-          $ref: '#/definitions/model.DeleteWifi'
-        type: array
-      type:
-        allOf:
-        - $ref: '#/definitions/model.OrderType'
-        description: Type of the order (it must be **DELETE_WIFI**)
+      ssid:
+        description: SSID of the WiFi network to delete
+        type: string
     type: object
   dto.DeviceStateDTO:
-    properties:
-      parameters:
-        description: 'Array of device state parameters **Example**: [{"active": true}]'
-        items:
-          $ref: '#/definitions/model.DeviceState'
-        type: array
-      type:
-        allOf:
-        - $ref: '#/definitions/model.OrderType'
-        description: Type of the order (it must be **DEVICE_STATE**)
     type: object
-  dto.DriverInertialDTO:
+  dto.DriverBehaviorDTO:
     properties:
-      parameters:
-        description: 'Array of driver inertial parameters **Example**: [{"active":
-          true}]'
-        items:
-          $ref: '#/definitions/model.DriverInertial'
-        type: array
-      type:
+      active:
+        description: Enables or disables driver behavior
+        type: boolean
+      inertial:
         allOf:
-        - $ref: '#/definitions/model.OrderType'
-        description: Type of the order (it must be DRIVER_COACH_INERTIAL)
+        - $ref: '#/definitions/dto.InertialDTO'
+        description: Inertial behavior audio and event settings
+      speed:
+        $ref: '#/definitions/dto.SpeedDTO'
+      tracking:
+        allOf:
+        - $ref: '#/definitions/dto.AudioAndEventDTO'
+        description: Tracking behavior audio and event settings
     type: object
-  dto.DriverTelemetryDTO:
+  dto.InertialDTO:
     properties:
-      parameters:
-        description: 'Array of driver telemetry parameters **Example**: [{"active":
-          true}]'
-        items:
-          $ref: '#/definitions/model.DriverTelemetry'
-        type: array
-      type:
-        allOf:
-        - $ref: '#/definitions/model.OrderType'
-        description: Type of the order (it must be DRIVER_COACH_TELEMETRY)
+      audio_enabled:
+        description: Enables or disables audio
+        type: boolean
+      send_event_enabled:
+        description: Enables or disables event sending
+        type: boolean
+      sensitivity:
+        description: 'Driver behavior sensitivity **Ex: (1 = LOW, 2 = MEDIUM, 3 =
+          HIGH)**'
+        type: integer
     type: object
   dto.OrderDTO:
     properties:
@@ -91,24 +83,24 @@ definitions:
           For example, ADD_WIFI parameters would contain ssid and password...
         items:
           oneOf:
-            - $ref: '#/definitions/model.AddWifi'
+            - $ref: '#/definitions/dto.AddWifiDTO'
               title: AddWifi
-            - $ref: '#/definitions/model.DeleteWifi'
+            - $ref: '#/definitions/dto.DeleteWifiDTO'
               title: DeleteWifi
-            - $ref: '#/definitions/model.DeviceState'
+            - $ref: '#/definitions/dto.DeviceStateDTO'
               title: DeviceState
-            - $ref: '#/definitions/model.RequestImage'
+            - $ref: '#/definitions/dto.RequestImageDTO'
               title: RequestImage
-            - $ref: '#/definitions/model.RequestVideo'
+            - $ref: '#/definitions/dto.RequestVideoDTO'
               title: RequestVideo
-            - $ref: '#/definitions/model.Reboot'
+            - $ref: '#/definitions/dto.RebootDTO'
               title: Reboot
-            - $ref: '#/definitions/model.DriverInertial'
-              title: DriverInertial
-            - $ref: '#/definitions/model.DriverTelemetry'
-              title: DriverTelemetry
-            - $ref: '#/definitions/model.Tracking'
-              title: Tracking
+            - $ref: '#/definitions/dto.DriverBehaviorDTO'
+              title: DriverBehavior
+            - $ref: '#/definitions/dto.PeriodicDTO'
+              title: Periodic
+            - $ref: '#/definitions/dto.VisionConfigDTO'
+              title: VisionConfig
         type: array
       type:
         allOf:
@@ -118,113 +110,112 @@ definitions:
     - parameters
     - type
     type: object
-  dto.RebootDTO:
+  dto.PeriodicDTO:
     properties:
-      parameters:
-        description: 'Array of reboot parameters **Example**: [{"active": true}]'
-        items:
-          $ref: '#/definitions/model.Reboot'
-        type: array
-      type:
-        allOf:
-        - $ref: '#/definitions/model.OrderType'
-        description: Type of the order (it must be REBOOT)
+      off_message_periodic_seconds:
+        description: Turns off periodic messages for **seconds**
+        type: integer
+      on_message_first_seconds:
+        description: Sends the first message after **seconds**
+        type: integer
+      on_message_period_seconds:
+        description: Sends messages every **seconds**
+        type: integer
+    type: object
+  dto.RebootDTO:
     type: object
   dto.RequestImageDTO:
     properties:
-      parameters:
-        description: 'Array of image request parameters **Example**: [{"start": "2024-03-20T10:00:00Z",
-          "cam": "1"}]'
-        items:
-          $ref: '#/definitions/model.RequestImage'
-        type: array
-      type:
-        allOf:
-        - $ref: '#/definitions/model.OrderType'
-        description: Type of the order (it must be REQUEST_IMAGE)
+      cam:
+        description: 'Camera to be used for image capture **Ex: (0 = DriverCam, 1
+          = RoadCam)**'
+        type: string
+      start:
+        description: 'Start of the time range for image capture in **RFC3339 format
+          Ex: "2006-01-02T15:04:05Z07:00"**'
+        type: string
+    required:
+    - cam
     type: object
   dto.RequestVideoDTO:
     properties:
-      parameters:
-        description: 'Array of video request parameters **Example**: [{"start": "2024-03-20T10:00:00Z",
-          "end": "2024-03-20T11:00:00Z", "cam": "1"}]'
-        items:
-          $ref: '#/definitions/model.RequestVideo'
-        type: array
-      type:
-        allOf:
-        - $ref: '#/definitions/model.OrderType'
-        description: Type of the order (it must be REQUEST_VIDEO)
+      cam:
+        description: 'Camera to be used for video capture **Ex: (0 = DriverCam, 1
+          = RoadCam)**'
+        type: string
+      end:
+        description: 'End of the time range for video capture in **RFC3339 format
+          Ex: "2006-01-02T15:04:05Z07:00"**'
+        type: string
+      start:
+        description: 'Start of the time range for video capture in **RFC3339 format
+          Ex: "2006-01-02T15:04:05Z07:00"**'
+        type: string
+    required:
+    - cam
     type: object
-  dto.TrackingDTO:
+  dto.SpeedDTO:
     properties:
-      parameters:
-        description: 'Array of tracking parameters **Example**: [{"active": true}]'
-        items:
-          $ref: '#/definitions/model.Tracking'
-        type: array
-      type:
-        allOf:
-        - $ref: '#/definitions/model.OrderType'
-        description: Type of the order (it must be DRIVER_COACH_TRACKING)
+      active:
+        description: Enables or disables the maximum speed feature
+        type: boolean
+      max_speed_kmh:
+        description: Maximum speed in Km/h
+        type: integer
+      overtaking_time_seconds:
+        description: Overtaking time limit in seconds
+        type: integer
+    type: object
+  dto.VisionConfigDTO:
+    properties:
+      active_face_detect:
+        description: Enables or disables face detection
+        type: boolean
     type: object
   mapper.OrderResponse:
     properties:
-      correlation_id:
+      correlationId:
         type: string
-      created_at:
+      createdAt:
         type: string
-      deleted_at:
+      deletedAt:
         type: string
-      device_id:
+      deviceId:
         type: string
       group:
         type: string
       id:
         type: string
-      source_created_at:
+      sourceCreatedAt:
         type: string
       status:
         type: string
       type:
         type: string
-      updated_at:
+      updatedAt:
         type: string
     type: object
-  model.AddWifi:
+  mapper.OrderSuccessAccepted:
     properties:
-      password:
-        description: Password for the Wi-Fi network
+      orders:
+        items:
+          $ref: '#/definitions/mapper.SuccessAccepted'
+        type: array
+    type: object
+  mapper.SuccessAccepted:
+    properties:
+      correlation_id:
+        description: CorrelationID of the order
         type: string
-      ssid:
-        description: SSID of the Wi-Fi network
+      href:
+        description: Href to the order resource avaiable to be accessed e.g. https://golfleet.v3sandbox.com/v1/devices/{device_id}/orders/{order_id}
         type: string
-    type: object
-  model.Cam:
-    enum:
-    - "1"
-    - "0"
-    type: string
-    x-enum-varnames:
-    - RoadCam
-    - DriverCam
-  model.DeleteWifi:
-    properties:
-      ssid:
-        description: Indicates the SSID of the Wi-Fi network to be deleted
+      id:
+        description: ID of the order
         type: string
-    type: object
-  model.DeviceState:
-    type: object
-  model.DriverInertial:
-    properties:
-      active:
-        type: boolean
-    type: object
-  model.DriverTelemetry:
-    properties:
-      active:
-        type: boolean
+      status:
+        description: Status of the order (PENDING, DELETED, FAILED, SENT, PROCESSEDED)
+        type: string
     type: object
   model.OrderType:
     enum:
@@ -239,6 +230,8 @@ definitions:
     - DRIVER_COACH_TELEMETRY
     - DRIVER_COACH_TRACKING
     - INTERNAL
+    - VISION_CONFIG
+    - PERIODIC
     type: string
     x-enum-varnames:
     - ADD_WIFI
@@ -252,55 +245,11 @@ definitions:
     - DRIVER_COACH_TELEMETRY
     - DRIVER_COACH_TRACKING
     - INTERNAL
-  model.Reboot:
-    type: object
-  model.RequestImage:
-    properties:
-      cam:
-        $ref: '#/definitions/model.Cam'
-      start:
-        type: string
-    required:
-    - cam
-    type: object
-  model.RequestVideo:
-    properties:
-      cam:
-        $ref: '#/definitions/model.Cam'
-      end:
-        type: string
-      start:
-        type: string
-    required:
-    - cam
-    type: object
-  model.Tracking:
-    properties:
-      active:
-        type: boolean
-    type: object
-  types.OrdersSuccessResponse:
-    properties:
-      orders:
-        items:
-          $ref: '#/definitions/types.SuccessAccepted'
-        type: array
-    type: object
+    - VISION_CONFIG
+    - PERIODIC
   types.Source:
     properties:
       pointer:
-        type: string
-    type: object
-  types.SuccessAccepted:
-    properties:
-      href:
-        description: Href to the order resource avaiable to be accessed e.g. https://golfleet.v3sandbox.com/v1/devices/{device_id}/orders/{order_id}
-        type: string
-      id:
-        description: ID of the order
-        type: string
-      status:
-        description: Status of the order (PENDING, DELETED, FAILED, SENT, PROCESSEDED)
         type: string
     type: object
   types.ValidationError:
@@ -398,9 +347,7 @@ paths:
         "202":
           description: Order sended to deleted
           schema:
-            items:
-              $ref: '#/definitions/types.OrdersSuccessResponse'
-            type: array
+            $ref: '#/definitions/mapper.OrderSuccessAccepted'
         "400":
           description: Invalid request payload
           schema:
@@ -422,10 +369,10 @@ paths:
       description: |-
         Submits a list of commands to be executed by the specified device.
         Each command in the list can be one of several supported types, such as:
-        (**AddWifi**, **DeleteWifi**, **GetDeviceState**, **RequestImage**, **RequestVideo**, **Reboot**,
-        **DriverCoachInertial**, **DriverCoachTelemetry**, **DriverCoachTracking**).
+        (**AddWifi**, **DeleteWifi**, **DeviceState**, **RequestImage**, **RequestVideo**, **Reboot**,
+        **DriverBehavior**, **Periodic**, **VisionConfig**).
       parameters:
-      - description: Device ID
+      - description: ULID do Device
         in: path
         name: device_id
         required: true
@@ -478,31 +425,31 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/dto.RebootDTO'
-      - description: Driver Coach Inertial
+      - description: Driver Behavior
         in: body
         name: payload
         required: true
         schema:
-          $ref: '#/definitions/dto.DriverInertialDTO'
-      - description: Driver Coach Telemetry
+          $ref: '#/definitions/dto.DriverBehaviorDTO'
+      - description: Periodic
         in: body
         name: payload
         required: true
         schema:
-          $ref: '#/definitions/dto.DriverTelemetryDTO'
-      - description: Driver Coach Tracking
+          $ref: '#/definitions/dto.PeriodicDTO'
+      - description: Vision Config
         in: body
         name: payload
         required: true
         schema:
-          $ref: '#/definitions/dto.TrackingDTO'
+          $ref: '#/definitions/dto.VisionConfigDTO'
       produces:
       - application/json
       responses:
         "202":
           description: Order sended to created
           schema:
-            $ref: '#/definitions/types.OrdersSuccessResponse'
+            $ref: '#/definitions/mapper.OrderSuccessAccepted'
         "400":
           description: Invalid request payload
           schema:
@@ -544,9 +491,7 @@ paths:
         "202":
           description: Order sended to deleted
           schema:
-            items:
-              $ref: '#/definitions/types.OrdersSuccessResponse'
-            type: array
+            $ref: '#/definitions/mapper.OrderSuccessAccepted'
         "400":
           description: Invalid request payload
           schema:
@@ -590,6 +535,10 @@ paths:
             $ref: '#/definitions/types.ValidationError'
         "401":
           description: Unauthorized
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+        "404":
+          description: Order not found
           schema:
             $ref: '#/definitions/types.ValidationError'
       summary: Get a specific order
