@@ -77,12 +77,14 @@ Cada serviço da API possui dois níveis de permissão:
 
 #### 2.1. Escopos disponíveis
 
-| Serviço            | Escopos suportados                                  | Descrição geral                            |
-|---------------------|--------------------------------------------------------|---------------------------------------------|
-| Orders             | `orders:read`, `orders:write`                       | Leitura e escrita de orders         |
-| Management   | `management:read`, `management:write` | Leitura e escrita de recursos da management  |
-| Event               | `event:read`, `event:write`                         | Leitura e escrita de eventos       |
-| Notification | `notifications:read`, `notifications:write` | Leitura e escrita de notifications | 
+| Serviço             | Escopos suportados                          | Descrição geral                             |
+|---------------------|---------------------------------------------|---------------------------------------------|
+| Orders              | `orders:read`, `orders:write`               | Leitura e escrita de orders                 |
+| Management          | `management:read`, `management:write`       | Leitura e escrita de recursos da management |
+| Event               | `event:read`, `event:write`                 | Leitura e escrita de eventos                |
+| Notification        | `notifications:read`, `notifications:write` | Leitura e escrita de notifications          |
+
+>__Atenção__: Também estão disponíveis os escopos `api:read` e `api:write`, que concedem acesso global de leitura ou escrita a todos os serviços da API.
 
 #### 2.2. Solicitando um token com scope
 
@@ -96,6 +98,10 @@ curl -X POST https://tenant.v3sandbox.com/v1/auth/token \
   -d "client_id=SEU_CLIENT_ID" \
   -d "client_secret=SEU_CLIENT_SECRET" \
   -d "scope=orders:write management:read"
+```
+Nesse exemplo, o token retornado permitirá ler pedidos e criar/atualizar/excluir dispositivos.
+
+>__Dica__: sempre solicite apenas os scopes mínimos necessários para sua aplicação.
 
 ### 3. Usando o Access Token
 
