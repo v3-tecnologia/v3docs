@@ -46,8 +46,8 @@ Content-Type: application/x-www-form-urlencoded
 
 grant_type=password
 scope=openid custom-claims
-username=SEU_USUARIO
-password=SUA_SENHA
+client_id=SEU_CLIENT_ID
+client_secret=SEU_CLIENT_SECRET
 ```
 
 A resposta incluirá:
@@ -66,7 +66,89 @@ A resposta incluirá:
 - `token_type` (string): Tipo do token (geralmente "Bearer")
 - `username` (string): Nome do usuário autenticado
 
-### 2. Usando o Access Token
+### 2. Scopes
+
+Os tokens devem ser solicitados informando o scope de utilização do mesmo podendo ser do tipo read | write para cada serviço, seguindo a lista abaixo:
+
+#### 2.1. Orders
+
+| Método | Endpoint                                  | Scope        |
+|--------|-------------------------------------------|--------------|
+| POST   | /devices/:deviceID/orders                 | orders:write |
+| DELETE | /devices/:deviceID/orders/:orderID        | orders:write |
+| DELETE | /devices/:deviceID/orders                 | orders:write |
+| GET    | /devices/:deviceID/orders/:orderID        | orders:read  |
+
+#### 2.2 Management Devices
+
+| Método | Endpoint                                  | Scope           |
+|--------|-------------------------------------------|-----------------|
+| GET    | /devices                                  | management:read |
+| POST   | /devices                                  | management:write|
+| GET    | /devices/:id                              | management:read |
+| PUT    | /devices/:id                              | management:write|
+| DELETE | /devices/:id                              | management:write|
+| GET    | /devices/fleet/:fleetId                   | management:read |
+
+
+#### 2.3. Management Drivers
+
+| Método | Endpoint                                  | Scope           |
+|--------|-------------------------------------------|-----------------|
+| GET    | /drivers                                  | management:read |
+| POST   | /drivers                                  | management:write|
+| GET    | /drivers/:id                              | management:read |
+| PUT    | /drivers/:id                              | management:write|
+| DELETE | /drivers/:id                              | management:write|
+| POST   | /drivers/:id/teams                        | management:write|
+| DELETE | /drivers/:id/teams/:teamId                | management:write|
+
+#### 2.4. Management Fleets
+
+| Método | Endpoint                                  | Scope           |
+|--------|-------------------------------------------|-----------------|
+| GET    | /fleets                                   | management:read |
+| POST   | /fleets                                   | management:write|
+| GET    | /fleets/:id                               | management:read |
+| PUT    | /fleets/:id                               | management:write|
+| DELETE | /fleets/:id                               | management:write|
+| GET    | /fleets/teams/:teamId                     | management:read |
+
+#### 2.5. Management Teams
+
+| Método | Endpoint                                  | Scope           |
+|--------|-------------------------------------------|-----------------|
+| GET    | /teams                                    | management:read |
+| POST   | /teams                                    | management:write|
+| GET    | /teams/:id                                | management:read |
+| PUT    | /teams/:id                                | management:write|
+| DELETE | /teams/:id                                | management:write|
+
+#### 2.6. Notifications
+
+| Método | Endpoint                                                           | Scope                |
+|--------|--------------------------------------------------------------------|----------------------|
+| POST   | /notifications/tenants/:tenant_id/webhooks                         | notifications:write  |
+| GET    | /notifications/tenants/:tenant_id/webhooks                         | notifications:read   |
+| GET    | /notifications/tenants/:tenant_id/webhooks/:id                     | notifications:read   |
+| PUT    | /notifications/tenants/:tenant_id/webhooks/:id                     | notifications:write  |
+| DELETE | /notifications/tenants/:tenant_id/webhooks/:id                     | notifications:write  |
+
+#### 2.7. Events
+
+| Método | Endpoint                                  | Scope        |
+|--------|-------------------------------------------|--------------|
+| POST   | /events/                                  | events:write |
+| GET    | /events/:ulid                             | events:read  |
+| GET    | /events/device/:device_id                 | events:read  |
+
+#### 2.8. Visions
+
+| Método | Endpoint             | Scope              |
+|--------|----------------------|--------------------|
+| -      | (em desenvolvimento) | visions:read/write |
+
+### 3. Usando o Access Token
 
 Inclua o token de acesso no cabeçalho Authorization das suas requisições à API:
 
@@ -74,7 +156,7 @@ Inclua o token de acesso no cabeçalho Authorization das suas requisições à A
 Authorization: Bearer SEU_ACCESS_TOKEN
 ```
 
-### 3. Atualizando o Access Token
+### 4. Atualizando o Access Token
 
 Quando seu token de acesso expirar, use o token de atualização para obter um novo:
 
