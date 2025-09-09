@@ -44,7 +44,7 @@ Para obter um token de acesso, você precisa fazer uma requisição POST com os 
 POST https://tenant.v3sandbox.com/v1/auth/token
 Content-Type: application/x-www-form-urlencoded
 
-grant_type=password
+grant_type=client_credentials
 scope=openid custom-claims
 client_id=SEU_CLIENT_ID
 client_secret=SEU_CLIENT_SECRET
