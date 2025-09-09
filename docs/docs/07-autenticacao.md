@@ -66,87 +66,36 @@ A resposta incluirá:
 - `token_type` (string): Tipo do token (geralmente "Bearer")
 - `username` (string): Nome do usuário autenticado
 
-### 2. Scopes
+### 2. Autenticação e Scopes
 
-Os tokens devem ser solicitados informando o scope de utilização do mesmo podendo ser do tipo read | write para cada serviço, seguindo a lista abaixo:
+A API utiliza **OAuth 2.0** para autenticação e autorização.  
+Ao solicitar um token, o cliente deve informar explicitamente quais **scopes** deseja utilizar.  
 
-#### 2.1. Orders
+Cada serviço da API possui dois níveis de permissão:  
+- **read** → permite consultar recursos (`GET`)  
+- **write** → permite criar, atualizar ou excluir recursos (`POST`, `PUT`, `PATCH`, `DELETE`)  
 
-| Método | Endpoint                                  | Scope        |
-|--------|-------------------------------------------|--------------|
-| POST   | /devices/:deviceID/orders                 | orders:write |
-| DELETE | /devices/:deviceID/orders/:orderID        | orders:write |
-| DELETE | /devices/:deviceID/orders                 | orders:write |
-| GET    | /devices/:deviceID/orders/:orderID        | orders:read  |
+#### 2.1. Escopos disponíveis
 
-#### 2.2 Management Devices
+| Serviço            | Escopos suportados                                  | Descrição geral                            |
+|---------------------|--------------------------------------------------------|---------------------------------------------|
+| Orders             | `orders:read`, `orders:write`                       | Leitura e escrita de orders         |
+| Management   | `management:read`, `management:write` | Leitura e escrita de recursos da management  |
+| Event               | `event:read`, `event:write`                         | Leitura e escrita de eventos       |
+| Notification | `notifications:read`, `notifications:write` | Leitura e escrita de notifications | 
 
-| Método | Endpoint                                  | Scope           |
-|--------|-------------------------------------------|-----------------|
-| GET    | /devices                                  | management:read |
-| POST   | /devices                                  | management:write|
-| GET    | /devices/:id                              | management:read |
-| PUT    | /devices/:id                              | management:write|
-| DELETE | /devices/:id                              | management:write|
-| GET    | /devices/fleet/:fleetId                   | management:read |
+#### 2.2. Solicitando um token com scope
 
+Para obter um token válido, o cliente deve informar o(s) scope(s) necessários no momento da requisição ao Authorization Server.
 
-#### 2.3. Management Drivers
+**Exemplo (Client Credentials flow):**
 
-| Método | Endpoint                                  | Scope           |
-|--------|-------------------------------------------|-----------------|
-| GET    | /drivers                                  | management:read |
-| POST   | /drivers                                  | management:write|
-| GET    | /drivers/:id                              | management:read |
-| PUT    | /drivers/:id                              | management:write|
-| DELETE | /drivers/:id                              | management:write|
-| POST   | /drivers/:id/teams                        | management:write|
-| DELETE | /drivers/:id/teams/:teamId                | management:write|
-
-#### 2.4. Management Fleets
-
-| Método | Endpoint                                  | Scope           |
-|--------|-------------------------------------------|-----------------|
-| GET    | /fleets                                   | management:read |
-| POST   | /fleets                                   | management:write|
-| GET    | /fleets/:id                               | management:read |
-| PUT    | /fleets/:id                               | management:write|
-| DELETE | /fleets/:id                               | management:write|
-| GET    | /fleets/teams/:teamId                     | management:read |
-
-#### 2.5. Management Teams
-
-| Método | Endpoint                                  | Scope           |
-|--------|-------------------------------------------|-----------------|
-| GET    | /teams                                    | management:read |
-| POST   | /teams                                    | management:write|
-| GET    | /teams/:id                                | management:read |
-| PUT    | /teams/:id                                | management:write|
-| DELETE | /teams/:id                                | management:write|
-
-#### 2.6. Notifications
-
-| Método | Endpoint                                                           | Scope                |
-|--------|--------------------------------------------------------------------|----------------------|
-| POST   | /notifications/tenants/:tenant_id/webhooks                         | notifications:write  |
-| GET    | /notifications/tenants/:tenant_id/webhooks                         | notifications:read   |
-| GET    | /notifications/tenants/:tenant_id/webhooks/:id                     | notifications:read   |
-| PUT    | /notifications/tenants/:tenant_id/webhooks/:id                     | notifications:write  |
-| DELETE | /notifications/tenants/:tenant_id/webhooks/:id                     | notifications:write  |
-
-#### 2.7. Events
-
-| Método | Endpoint                                  | Scope        |
-|--------|-------------------------------------------|--------------|
-| POST   | /events/                                  | events:write |
-| GET    | /events/:ulid                             | events:read  |
-| GET    | /events/device/:device_id                 | events:read  |
-
-#### 2.8. Visions
-
-| Método | Endpoint             | Scope              |
-|--------|----------------------|--------------------|
-| -      | (em desenvolvimento) | visions:read/write |
+```bash
+curl -X POST https://tenant.v3sandbox.com/v1/auth/token \
+  -d "grant_type=client_credentials" \
+  -d "client_id=SEU_CLIENT_ID" \
+  -d "client_secret=SEU_CLIENT_SECRET" \
+  -d "scope=orders:write management:read"
 
 ### 3. Usando o Access Token
 
