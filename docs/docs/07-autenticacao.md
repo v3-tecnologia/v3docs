@@ -99,7 +99,7 @@ curl -X POST https://tenant.v3sandbox.com/v1/auth/token \
   -d "client_secret=SEU_CLIENT_SECRET" \
   -d "scope=orders:write management:read"
 ```
-Nesse exemplo, o token retornado permitirá ler pedidos e criar/atualizar/excluir dispositivos.
+Nesse exemplo, o token retornado concede permissão para consultar e enviar ordens a dispositivos, além de criar, atualizar e excluir recursos da API de gerenciamento.
 
 >__Dica__: sempre solicite apenas os scopes mínimos necessários para sua aplicação.
 
