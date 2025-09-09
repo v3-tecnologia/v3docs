@@ -46,8 +46,8 @@ Content-Type: application/x-www-form-urlencoded
 
 grant_type=password
 scope=openid custom-claims
-username=SEU_USUARIO
-password=SUA_SENHA
+client_id=SEU_CLIENT_ID
+client_secret=SEU_CLIENT_SECRET
 ```
 
 A resposta incluirá:
@@ -66,7 +66,38 @@ A resposta incluirá:
 - `token_type` (string): Tipo do token (geralmente "Bearer")
 - `username` (string): Nome do usuário autenticado
 
-### 2. Usando o Access Token
+### 2. Autenticação e Scopes
+
+A API utiliza **OAuth 2.0** para autenticação e autorização.  
+Ao solicitar um token, o cliente deve informar explicitamente quais **scopes** deseja utilizar.  
+
+Cada serviço da API possui dois níveis de permissão:  
+- **read** → permite consultar recursos (`GET`)  
+- **write** → permite criar, atualizar ou excluir recursos (`POST`, `PUT`, `PATCH`, `DELETE`)  
+
+#### 2.1. Escopos disponíveis
+
+| Serviço            | Escopos suportados                                  | Descrição geral                            |
+|---------------------|--------------------------------------------------------|---------------------------------------------|
+| Orders             | `orders:read`, `orders:write`                       | Leitura e escrita de orders         |
+| Management   | `management:read`, `management:write` | Leitura e escrita de recursos da management  |
+| Event               | `event:read`, `event:write`                         | Leitura e escrita de eventos       |
+| Notification | `notifications:read`, `notifications:write` | Leitura e escrita de notifications | 
+
+#### 2.2. Solicitando um token com scope
+
+Para obter um token válido, o cliente deve informar o(s) scope(s) necessários no momento da requisição ao Authorization Server.
+
+**Exemplo (Client Credentials flow):**
+
+```bash
+curl -X POST https://tenant.v3sandbox.com/v1/auth/token \
+  -d "grant_type=client_credentials" \
+  -d "client_id=SEU_CLIENT_ID" \
+  -d "client_secret=SEU_CLIENT_SECRET" \
+  -d "scope=orders:write management:read"
+
+### 3. Usando o Access Token
 
 Inclua o token de acesso no cabeçalho Authorization das suas requisições à API:
 
@@ -74,7 +105,7 @@ Inclua o token de acesso no cabeçalho Authorization das suas requisições à A
 Authorization: Bearer SEU_ACCESS_TOKEN
 ```
 
-### 3. Atualizando o Access Token
+### 4. Atualizando o Access Token
 
 Quando seu token de acesso expirar, use o token de atualização para obter um novo:
 
