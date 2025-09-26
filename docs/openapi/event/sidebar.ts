@@ -12,9 +12,9 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "openapi/event/create-a-new-event",
-          label: "Create a new event",
-          className: "api-method post",
+          id: "openapi/event/list-events-for-a-specific-device",
+          label: "List events for a specific device",
+          className: "api-method get",
         },
         {
           type: "doc",
