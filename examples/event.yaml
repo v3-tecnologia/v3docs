@@ -1,184 +1,5 @@
 basePath: /v1
 definitions:
-  dto.CreateEventConnectionDTO:
-    properties:
-      cell_id:
-        type: integer
-      connection_type:
-        type: integer
-      iccid:
-        type: string
-      location_area_code:
-        type: integer
-      mcc:
-        type: integer
-      mnc:
-        type: integer
-      signal_strength:
-        type: integer
-      timing_advance:
-        type: integer
-    type: object
-  dto.CreateEventDTO:
-    properties:
-      correlation_id:
-        type: string
-      device_id:
-        type: integer
-      event_type:
-        type: integer
-      hardware_event_type:
-        type: integer
-      hardware_model:
-        type: string
-      hook_delivered_at:
-        type: string
-      payload:
-        $ref: '#/definitions/dto.CreateEventPayloadDTO'
-      sourced_created_at:
-        type: string
-      tenant_delivered_at:
-        type: string
-    required:
-    - correlation_id
-    - device_id
-    - event_type
-    - hardware_event_type
-    - hardware_model
-    - hook_delivered_at
-    - payload
-    - sourced_created_at
-    - tenant_delivered_at
-    type: object
-  dto.CreateEventDeviceMetadataDTO:
-    properties:
-      details:
-        type: string
-      firmware_version:
-        type: string
-      pid:
-        $ref: '#/definitions/dto.CreateEventPIDDTO'
-      version:
-        $ref: '#/definitions/dto.CreateEventVersionDTO'
-    type: object
-  dto.CreateEventGPSDTO:
-    properties:
-      altitude:
-        type: number
-      gps_heading:
-        type: number
-      hdop:
-        type: number
-      is_fixed:
-        type: boolean
-      latitude:
-        type: number
-      longitude:
-        type: number
-      satellites:
-        type: integer
-      speed:
-        type: number
-      vdop:
-        type: number
-    type: object
-  dto.CreateEventMediaDTO:
-    properties:
-      bucket_name:
-        type: string
-      cam_channel:
-        type: string
-      content_type:
-        type: string
-      file_size:
-        type: integer
-      media_type:
-        type: string
-      metadata:
-        additionalProperties:
-          type: string
-        type: object
-      object_name:
-        type: string
-      ulid:
-        type: string
-    type: object
-  dto.CreateEventPIDDTO:
-    properties:
-      main:
-        type: string
-      sub:
-        type: string
-    type: object
-  dto.CreateEventPayloadDTO:
-    properties:
-      connection:
-        $ref: '#/definitions/dto.CreateEventConnectionDTO'
-      gps:
-        $ref: '#/definitions/dto.CreateEventGPSDTO'
-      media:
-        $ref: '#/definitions/dto.CreateEventMediaDTO'
-      message_type:
-        type: integer
-      metadata:
-        $ref: '#/definitions/dto.CreateEventDeviceMetadataDTO'
-      sequence_number:
-        type: integer
-      timestamps:
-        $ref: '#/definitions/dto.CreateEventTimestampsDTO'
-      vehicle:
-        $ref: '#/definitions/dto.CreateEventVehicleDTO'
-    required:
-    - connection
-    - gps
-    - media
-    - message_type
-    - metadata
-    - sequence_number
-    - timestamps
-    - vehicle
-    type: object
-  dto.CreateEventTimestampsDTO:
-    properties:
-      event_date:
-        type: string
-      event_time:
-        type: string
-      last_timestamp_of_fix:
-        type: integer
-      process_timestamp:
-        type: integer
-      received_timestamp:
-        type: integer
-      time_since_boot:
-        type: integer
-      timestamp:
-        type: integer
-      ttl_timestamp:
-        type: integer
-    type: object
-  dto.CreateEventVehicleDTO:
-    properties:
-      backup_battery_voltage:
-        type: number
-      is_ignition_on:
-        type: boolean
-      is_vehicle_battery_connected:
-        type: boolean
-      odometer:
-        type: number
-      vehicle_battery_voltage:
-        type: number
-    type: object
-  dto.CreateEventVersionDTO:
-    properties:
-      major:
-        type: integer
-      minor:
-        type: integer
-      patch:
-        type: integer
-    type: object
   dto.EventResponseDTO:
     properties:
       correlation_id:
@@ -188,7 +9,7 @@ definitions:
       deleted_at:
         type: string
       device_id:
-        type: integer
+        type: string
       event_type:
         type: integer
       firmware_version:
@@ -200,11 +21,11 @@ definitions:
       hook_delivered_at:
         type: string
       id:
-        type: integer
+        type: string
       is_ignition_on:
         type: boolean
       media_id:
-        type: integer
+        type: string
       odometer:
         type: number
       sourced_created_at:
@@ -216,6 +37,30 @@ definitions:
       updated_at:
         type: string
     type: object
+  types.Source:
+    properties:
+      pointer:
+        type: string
+    type: object
+  types.ValidationError:
+    properties:
+      code:
+        description: Error code
+        type: string
+      detail:
+        description: Human-readable error description
+        type: string
+      source:
+        allOf:
+        - $ref: '#/definitions/types.Source'
+        description: Source of the error, e.g. the field that caused the error
+      status:
+        description: HTTP status code
+        type: integer
+      title:
+        description: Human-readable error title
+        type: string
+    type: object
 host: tenant.v3sandbox.com
 info:
   contact: {}
@@ -223,41 +68,62 @@ info:
   title: Event API
   version: 0.0.1
 paths:
-  /event:
-    post:
+  /event/device/{device_id}:
+    get:
       consumes:
       - application/json
-      description: Creates a new event based on the provided payload
+      description: Retrieves a paginated list of events associated with the provided
+        device ID
       parameters:
-      - description: Event payload
-        in: body
-        name: payload
+      - description: Device ID
+        in: path
+        name: device_id
         required: true
-        schema:
-          $ref: '#/definitions/dto.CreateEventDTO'
+        type: string
+      - default: 1
+        description: Page number
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Number of items per page
+        in: query
+        maximum: 100
+        name: page_size
+        type: integer
+      - description: Start datetime filter in format yyyy-MM-ddTHH:mm:ssZ
+        in: query
+        name: start
+        type: string
+      - description: End datetime filter in format yyyy-MM-ddTHH:mm:ssZ
+        in: query
+        name: end
+        type: string
       produces:
       - application/json
       responses:
         "200":
-          description: Event successfully created
+          description: List of events
           schema:
-            $ref: '#/definitions/dto.EventResponseDTO'
+            items:
+              $ref: '#/definitions/dto.EventResponseDTO'
+            type: array
+        "204":
+          description: No content
+          schema:
+            type: string
         "400":
-          description: Bad request
+          description: Invalid request payload
           schema:
-            additionalProperties:
-              type: string
-            type: object
-        "422":
-          description: Unprocessable entity
+            $ref: '#/definitions/types.ValidationError'
+        "401":
+          description: Unauthorized
           schema:
-            additionalProperties:
-              type: string
-            type: object
-      summary: Create a new event
+            $ref: '#/definitions/types.ValidationError'
+      summary: List events for a specific device
       tags:
       - Event
-  /event/{ulid}:
+  /events/{ulid}:
     get:
       consumes:
       - application/json
@@ -280,20 +146,21 @@ paths:
           schema:
             type: string
         "400":
-          description: Bad request
+          description: Invalid request payload
           schema:
-            additionalProperties:
-              type: string
-            type: object
-        "422":
-          description: Unprocessable entity
+            $ref: '#/definitions/types.ValidationError'
+        "401":
+          description: Unauthorized
           schema:
-            additionalProperties:
-              type: string
-            type: object
+            $ref: '#/definitions/types.ValidationError'
       summary: Get an event by ULID
       tags:
       - Event
 schemes:
 - https
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Bearer Token
+    type: apiKey
 swagger: "2.0"
