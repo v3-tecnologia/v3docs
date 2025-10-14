@@ -227,11 +227,6 @@ definitions:
         type: integer
         description: Tamanho do arquivo em bytes
 host: yourcompany.com
-info:
-  contact: {}
-  description: That is a webhook service for notifications.
-  title: notification-service
-  version: 0.0.1
 paths:
   /event:
     post:
@@ -260,9 +255,9 @@ paths:
         "500":
           description: Internal Server Error
           schema: {}
-      summary: Eventos
+      summary: Events
       tags:
-      - Webhooks
+      - Subscriptions
 schemes:
 - https
 swagger: "2.0"

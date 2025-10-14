@@ -36,7 +36,8 @@ doc-event:
 	npm run docusaurus gen-api-docs all -- --plugin-id event-open-api
 
 doc-notifications:
-	npm run docusaurus gen-api-docs all -- --plugin-id notifications-open-webhook
+	npm run docusaurus gen-api-docs all -- --plugin-id notification-open-api
+	npm run docusaurus gen-api-docs all -- --plugin-id subscription-open-webhook
 
 doc-vision:
 	npm run docusaurus gen-api-docs all -- --plugin-id vision-open-api

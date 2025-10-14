@@ -1,0 +1,249 @@
+basePath: /v1
+definitions:
+  dto.WebhookRequest:
+    properties:
+      event_names:
+        items:
+          type: string
+        type: array
+      name:
+        type: string
+      tenant_id:
+        type: string
+      url:
+        type: string
+    type: object
+  dto.WebhookResponse:
+    properties:
+      event_names:
+        items:
+          $ref: '#/definitions/model.EventName'
+        type: array
+      id:
+        type: string
+      name:
+        type: string
+      tenant_id:
+        type: string
+      url:
+        type: string
+    type: object
+  model.Category:
+    properties:
+      subs:
+        items:
+          type: string
+        type: array
+      type:
+        type: string
+    type: object
+  model.EventName:
+    properties:
+      category:
+        items:
+          $ref: '#/definitions/model.Category'
+        type: array
+      type:
+        type: string
+    type: object
+host: tenant.v3sandbox.com
+info:
+  contact: {}
+  description: Aplicação em GO responsável por realizar a gestão de Webhooks para
+    os clientes.
+  title: Notifications API
+  version: 0.0.1
+paths:
+  /notifications/webhooks:
+    get:
+      consumes:
+      - application/json
+      description: Retorna todos os webhooks cadastrados para o tenant
+      parameters:
+      - description: Tenant ID
+        in: path
+        name: tenant_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.WebhookResponse'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Lista todos os webhooks de um tenant
+      tags:
+      - Webhook
+    post:
+      consumes:
+      - application/json
+      description: Cria um webhook associado ao tenant informado
+      parameters:
+      - description: Tenant ID
+        in: path
+        name: tenant_id
+        required: true
+        type: string
+      - description: Dados do webhook
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.WebhookRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.WebhookResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Cria um novo webhook para o tenant
+      tags:
+      - Webhook
+  /notifications/webhooks/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Remove um webhook do tenant
+      parameters:
+      - description: Tenant ID
+        in: path
+        name: tenant_id
+        required: true
+        type: string
+      - description: Webhook ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: No Content
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Remove um webhook
+      tags:
+      - Webhook
+    get:
+      consumes:
+      - application/json
+      description: Retorna os dados de um webhook específico do tenant
+      parameters:
+      - description: Tenant ID
+        in: path
+        name: tenant_id
+        required: true
+        type: string
+      - description: Webhook ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.WebhookResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Busca um webhook por ID
+      tags:
+      - Webhook
+    put:
+      consumes:
+      - application/json
+      description: Atualiza os dados de um webhook do tenant
+      parameters:
+      - description: Tenant ID
+        in: path
+        name: tenant_id
+        required: true
+        type: string
+      - description: Webhook ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Dados do webhook
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.WebhookRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.WebhookResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Atualiza um webhook
+      tags:
+      - Webhook
+schemes:
+- https
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Bearer Token
+    type: apiKey
+swagger: "2.0"
