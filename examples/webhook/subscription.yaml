@@ -14,16 +14,16 @@ definitions:
     properties:
       id:
         type: string
-        description: ULID do Webhook
+        description: ULID of the Webhook
       created_at:
         type: string
         format: date-time
-        description: Data de criação do Webhook
+        description: Webhook creation date
       attributes:
         type: array
         items:
           $ref: '#/definitions/model.Event'
-        description: Lista de Eventos associados ao Webhook
+          description: List of events associated with the Webhook
   model.Event:
     type: object
     required:
@@ -34,17 +34,17 @@ definitions:
     properties:
       id:
         type: string
-        description: ULID do Evento
+        description: ULID of the Event
       created_at:
         type: string
         format: date-time
-        description: Data de criação do Evento no Firmeware
+        description: Event creation date in the Firmware
       type:
         type: string
         enum:
           - "ORDER"
           - "EVENT"
-        description: Tipo do Evento
+        description: Event type
         x-enum-varnames:
           - "ORDER"
           - "EVENT"
@@ -57,7 +57,7 @@ definitions:
           - "DRIVER_BEHAVIOR"
           - "TELEMETRY"
           - "ADAS"
-        description: Subtipo do Evento
+        description: Event subtype
         x-enum-varnames:
           - "STATUS"
           - "UPLOAD"
@@ -67,7 +67,7 @@ definitions:
           - "ADAS"
       trip_id:
         type: string
-        description: ULID da Trip associada ao Evento
+        description: ULID of the Trip associated with the Event
       attributes:
         type: array
         items:
@@ -77,19 +77,19 @@ definitions:
           properties:
             device:
               $ref: '#/definitions/model.Device'
-              description: Dispositivo associado ao Evento
+              description: Device associated with the Event
             order:
               $ref: '#/definitions/model.Order'
-              description: Order associada ao Evento
+              description: Order associated with the Event
             data:
               properties:
                 files:
                   type: array
                   items:
                     $ref: '#/definitions/model.File'
-                  description: Lista de arquivos associados ao Evento
+                  description: List of files associated with the Event
               type: object
-              description: Dados do Evento
+              description: Event data
   model.Device:
     type: object
     required:
@@ -98,14 +98,14 @@ definitions:
     properties:
       id:
         type: string
-        description: ULID do dispositivo na API
+        description: Device ULID in the API
       correlation_id:
         type: string
         format: ulid
-        description: ULID de correlação do Dispositivo
+        description: Device correlation ULID
       imei:
         type: string
-        description: IMEI do Dispositivo
+        description: Device IMEI
   model.Order:
     type: object
     required:
@@ -115,11 +115,11 @@ definitions:
     properties:
       id:
         type: string
-        description: ULID da Order
+        description: ULID of the Order
       correlation_id:
         type: string
         format: ulid
-        description: ULID de correlação da Order
+        description: Order correlation ULID
       group:
         type: string
         enum:
@@ -128,7 +128,7 @@ definitions:
         x-enum-varnames:
             - "COMMAND"
             - "CONFIG"
-        description: Grupo da Order
+        description: Order group
       status:
         type: string
         enum:
@@ -143,7 +143,7 @@ definitions:
           - "FAILED"
           - "ACK"
           - "NACK"
-        description: Status da Order
+        description: Order status
       type:
         type: string
         enum:
@@ -170,19 +170,19 @@ definitions:
           - "DRIVER_COACH_TELEMETRY"
           - "DRIVER_COACH_TRACKING"
           - "INTERNAL"
-        description: Tipo de Order
+        description: Order type
       created_at:
         type: string
         format: date-time
-        description: Data de criação da Order
+        description: Order creation date
       updated_at:
         type: string
         format: date-time
-        description: Data da última atualização da Order
+        description: Order last update date
       deleted_at:
         type: string
         format: date-time
-        description: Data de exclusão da Order
+        description: Order deletion date
   model.File:
     type: object
     required:
@@ -192,13 +192,13 @@ definitions:
     properties:
       id:
         type: string
-        description: ULID da Mídia
+        description: Media ULID
       url:
         type: string
-        description: URL da Mídia
+        description: Media URL
       metadata:
         $ref: '#/definitions/model.FileMetadata'
-        description: Metadados da Mídia
+        description: Media metadata
   model.FileMetadata:
     type: object
     required:
@@ -207,31 +207,26 @@ definitions:
     properties:
       width:
         type: integer
-        description: Largura da mídia em pixels
+        description: Media width in pixels
       height:
         type: integer
-        description: Altura da mídia em pixels
+        description: Media height in pixels
       compression:
         type: string
-        description: Tipo de compressão da mídia
+        description: Media compression type
       quality:
         type: integer
-        description: Qualidade da mídia (0-100)
+        description: Media quality (0-100)
       cam_channel:
         type: string
-        description: Canal da câmera
+        description: Camera channel
       content_type:
         type: string
-        description: Tipo de conteúdo da mídia (MIME)
+        description: Media content type (MIME)
       file_size:
         type: integer
-        description: Tamanho do arquivo em bytes
+        description: File size in bytes
 host: yourcompany.com
-info:
-  contact: {}
-  description: That is a webhook service for notifications.
-  title: notification-service
-  version: 0.0.1
 paths:
   /event:
     post:
@@ -260,9 +255,9 @@ paths:
         "500":
           description: Internal Server Error
           schema: {}
-      summary: Eventos
+      summary: Events
       tags:
-      - Webhooks
+      - Subscriptions
 schemes:
 - https
 swagger: "2.0"

@@ -1,0 +1,71 @@
+---
+id: lists-all-webhooks-for-a-tenant
+title: "Lists all webhooks for a tenant"
+description: "Returns all webhooks registered for the tenant"
+sidebar_label: "Lists all webhooks for a tenant"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVMFOG0EM/ZXRnFoJZUOrXnJLVYQQVUFAxQEh5Ow62YHJzOCZTUlX+zFVD/2Q/Bj2bkISSJGoetrZscd+fs92rQuMOZmQjHd6oM8wVeSiAmvVDxyV3t9FRTgxMSFhocaeVCpRJXTgkt7TAQimyMaoB1f1s2gXrZc6+sKORi4CpJLPjp/wXxfkxhR8RXhfGc6gB4kq3NMxL3EKelDrNA/iHBMZN9FNcy3OMXgXMYr9Q78vn+3MJ8ccM/eOUySxQgjW5CDW7DaKS72RwiSctrEC+YCUTBcZZ/z6RsDGV7w4Kk48zV9xidVoO8KzmvZWF0AE8/X/y+KfPP3oFvP0n5+yErvAdXLtQv0k4C5rRfafcDTi82mXqkesJzmw6hxphqQOiDy9RWgoCiMmsKdbAv1NjxXEDlOCiXS5vuwGQ3MncuuXnsvXE+ymgft7oDPnkxkvYcRsNUjsEFvg3ay0/OgypRAHWdZx2Zt9jOCKkX/o5X6azfa19HvEvCKT5udSSId4GMwxzoeV5Ku74SoRCqT1eH1GICbpwt+h02uS24etDsaNfdvBTB/kQh9fbjM+bNlc/Fn89gqn6vBELWdv8WuGVgVeB4RgzU8gBWqCMYlngepytTxkQSgfVW4NS4SxJ1BMsoLl2yZNanh6xDahp8vd7/V7+yJG8DFNoZVyWdpX3kfPlpRsJljvpa0y6nWHvH3DLXlL+JCyYIGpXvd2p/eV3tKb3zwpzuKVjF586noEEb+TbRq5vq9QdsYVH2dABkbCiGxQE+XMPTUGG/GVSt6dLXfme7W5aHfiXYnv5kIx2Er++HjHrbC5iJtrdl42kqDp7MM8x5A2Xr6YsmZzFg4PLri/HgHiizSa
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/notification/notifications-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Lists all webhooks for a tenant"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/notifications/webhooks"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns all webhooks registered for the tenant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Tenant ID","in":"path","name":"tenant_id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"items":{"properties":{"event_names":{"items":{"properties":{"category":{"items":{"properties":{"subs":{"items":{"type":"string"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"id":{"type":"string"},"name":{"type":"string"},"tenant_id":{"type":"string"},"url":{"type":"string"}},"type":"object"},"type":"array"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

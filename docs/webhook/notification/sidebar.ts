@@ -3,12 +3,8 @@ import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 const sidebar: SidebarsConfig = {
   apisidebar: [
     {
-      type: "doc",
-      id: "webhook/notification/notification-service",
-    },
-    {
       type: "category",
-      label: "Webhooks",
+      label: "Subscriptions",
       items: [
         {
           type: "doc",

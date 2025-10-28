@@ -66,7 +66,7 @@ const sidebars: SidebarsConfig = {
           "This is the notifications Webhook. It contains how to implement a HTTP POST to listen Notifications",
         slug: "category/notification-webhook",
       },
-      items: require("./docs/webhook/notification/sidebar"),
+      items: [require("./docs/openapi/notification/sidebar"), require("./docs/webhook/subscription/sidebar")],
     },
     {
       type: "category",

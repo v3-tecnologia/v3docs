@@ -1,0 +1,71 @@
+---
+id: updates-a-webhook
+title: "Updates a webhook"
+description: "Updates the data of a tenant's webhook"
+sidebar_label: "Updates a webhook"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vs1O20AQfpXVXtpKaRz6c8kttKhCSAVRUA8RQhN7kizY3u3uOpBaeZiqhz4IL9YZr01iYhAg2hyS3fHMzrfzjb9JKRN0sVXGK53LoTw1CXh0ws9R0AqEngoQHnPI/SsnrnAy1/pS9qQBCxl6tE4Ox+WdU04qf7H/mRwVGwz4Oa1zCqFdOO5cJWSy+KNQFhM59LbAnnTxHDOQw1L6pWFn563KZ3K16t3N8j2AuTfNE88/C87o/K5OluwR65ygel6CMamKgTNHF47TlxtHGasNWq/Q8Q4XFHTOIKqt8pi5joS9xgDWwpL3AXeX423Bup4WNu2sV2PRkwuMPVnI1F1BZnqrVis2OKNzF+7xbjDgn/YJhwcU98J1anvRYTjTdvmAiysmT6x02D+iZi8aeg9//5x2sn3oIm8XEnEcWv4pLEKSKH4E6VGLhvuq3gLysQvIPmW2dJ74hnaBVuxZq+1/gsRGmLGKNa+DJCUgaZvrhCWl8JXakbAMZZRrr6Y1DBfVauiiUiUr8nIV+iCIFTty7r1xwygKTPYX7x3kyURf92OdRYsdyaLjMC6s8stvfJsAe2TUAS5HBSctg7TNERK0a3HbRbBUqRN9iblct1oVWHUBF+l4rWd715CZFLfeu3FTnLPbo2tDq//WxnCxdUVVPtWNWELMXG3JzKii7ubPzW8tMBNfDkUtLDe/FpgKoy0ZIFU/wdKwmRFi9kxQ1IQ4wdNGaCfiVBF2dH1GpzzfR37d5ESMjvbpGdMQcg/6g/4O4zTa+Qyqvqnv2cw62BhrLeAbE+Dxg7FmwuO1j0wKRN76XQ1tNJatNqKYppFoOaRqExVzQsueZTkBh6c2Xa3YTHSyEo5puQCrYMIV4PGrHK+JqCmkDh+4x+vjWuTfiM0p3Ym6aap8ySWFtOAdLS+pxTaneDWan4OgNcGfAYFzn5FX/XJwJcKDTyHb2xMOXwduiQgjDxGjOEbjH/TdlIWj0xPyndR/FDKdcIiFK56i9F1h1CbwSw6VrZQp5LMCZuwbjuTPXyvuR+w=
+sidebar_class_name: "put api-method"
+info_path: docs/openapi/notification/notifications-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Updates a webhook"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/notifications/webhooks/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Updates the data of a tenant's webhook
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Tenant ID","in":"path","name":"tenant_id","required":true,"schema":{"type":"string"}},{"description":"Webhook ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"event_names":{"items":{"type":"string"},"type":"array"},"name":{"type":"string"},"tenant_id":{"type":"string"},"url":{"type":"string"}},"type":"object"}}},"description":"Webhook data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"event_names":{"items":{"properties":{"category":{"items":{"properties":{"subs":{"items":{"type":"string"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"id":{"type":"string"},"name":{"type":"string"},"tenant_id":{"type":"string"},"url":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
