@@ -47,6 +47,8 @@ definitions:
         allOf:
         - $ref: '#/definitions/dto.InertialDTO'
         description: Inertial behavior audio and event settings
+      profile:
+        $ref: '#/definitions/dto.Profile'
       speed:
         $ref: '#/definitions/dto.SpeedDTO'
       tracking:
@@ -122,6 +124,14 @@ definitions:
         description: Sends messages every **seconds**
         type: integer
     type: object
+  dto.Profile:
+    enum:
+    - BASIC
+    - ADVANCED
+    type: string
+    x-enum-varnames:
+    - ProfileBasic
+    - ProfileAdvanced
   dto.RebootDTO:
     type: object
   dto.RequestImageDTO:

@@ -58,7 +58,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: Retorna todos os webhooks cadastrados para o tenant
+      description: Returns all webhooks registered for the tenant
       parameters:
       - description: Tenant ID
         in: path
@@ -80,20 +80,15 @@ paths:
             additionalProperties:
               type: string
             type: object
-      summary: Lista todos os webhooks de um tenant
+      summary: Lists all webhooks for a tenant
       tags:
       - Webhook
     post:
       consumes:
       - application/json
-      description: Cria um webhook associado ao tenant informado
+      description: Creates a webhook associated with the specified tenant
       parameters:
-      - description: Tenant ID
-        in: path
-        name: tenant_id
-        required: true
-        type: string
-      - description: Dados do webhook
+      - description: Webhook data
         in: body
         name: payload
         required: true
@@ -118,14 +113,14 @@ paths:
             additionalProperties:
               type: string
             type: object
-      summary: Cria um novo webhook para o tenant
+      summary: Creates a new webhook for the tenant
       tags:
       - Webhook
   /notifications/webhooks/{id}:
     delete:
       consumes:
       - application/json
-      description: Remove um webhook do tenant
+      description: Removes a webhook from the tenant
       parameters:
       - description: Tenant ID
         in: path
@@ -156,13 +151,13 @@ paths:
             additionalProperties:
               type: string
             type: object
-      summary: Remove um webhook
+      summary: Removes a webhook
       tags:
       - Webhook
     get:
       consumes:
       - application/json
-      description: Retorna os dados de um webhook específico do tenant
+      description: Returns the data of a specific webhook for the tenant
       parameters:
       - description: Tenant ID
         in: path
@@ -193,13 +188,13 @@ paths:
             additionalProperties:
               type: string
             type: object
-      summary: Busca um webhook por ID
+      summary: Get a webhook by ID
       tags:
       - Webhook
     put:
       consumes:
       - application/json
-      description: Atualiza os dados de um webhook do tenant
+      description: Updates the data of a tenant's webhook
       parameters:
       - description: Tenant ID
         in: path
@@ -211,7 +206,7 @@ paths:
         name: id
         required: true
         type: string
-      - description: Dados do webhook
+      - description: Webhook data
         in: body
         name: payload
         required: true
@@ -236,7 +231,7 @@ paths:
             additionalProperties:
               type: string
             type: object
-      summary: Atualiza um webhook
+      summary: Updates a webhook
       tags:
       - Webhook
 schemes:

@@ -16,7 +16,8 @@ clean-event:
 	npm run docusaurus clean-api-docs all -- --plugin-id event-open-api
 
 clean-notifications:
-	npm run docusaurus clean-api-docs all -- --plugin-id notifications-open-webhook
+	npm run docusaurus clean-api-docs all -- --plugin-id notification-open-api
+	npm run docusaurus clean-api-docs all -- --plugin-id subscription-open-webhook
 
 clean-vision:
 	npm run docusaurus clean-api-docs all -- --plugin-id vision-open-api

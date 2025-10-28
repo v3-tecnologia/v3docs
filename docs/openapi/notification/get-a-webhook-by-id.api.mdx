@@ -1,0 +1,71 @@
+---
+id: get-a-webhook-by-id
+title: "Get a webhook by ID"
+description: "Returns the data of a specific webhook for the tenant"
+sidebar_label: "Get a webhook by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vc1u2zAMfhVBpw0I4nTrybcU24qiwFp0HXYoioK2mVitI2mSnNUz8jDDDnuQvNhI/yxxmhZrMexkmaLIT/z4UbXM0KdO2aCMlrG8wFA67UXIUWQQQJiZAOEtpmqmUvENk9yYOzEzrnEJqEEHOZIWHCwwoPMyvqp3gl42XuLkHTkqNlgIOa01HaG/NsiNysjk8GupHGYyDq7EkfRpjguQcS1DZdnZB6f0XK5Wo90sXzpsj6V5ZvxrdvbWaI+e999MJvwZ5jw7pZip0XSFwLtgbaFS4N3o1rNLvZXCOmPRBdUGxCUdumFwza8KuPAPvSgYzo2rnnDxZTKMsHOVUW8A56Da/O+paW8xyS2m4R8fJQL2gWvp2Yf6T1/s2y1d8Vc4Vmw73EfeEWTigvoBfXgOi5BliregOB/Q8FjVd4AcPgTy0QTxwZQ6+08w2AhzVmovGkndTvLNDdVazrFVNIknlpE2gaXfwPBRNwB8VKtsRV4e3bIXfcOIzEOwPo6ilr3x8q0HnSXmfpyaRbQ8kCwsj2npVKg+8W1a2FOrTrGalpy0buWbI2ToNgI+QnDoxKW5Qy037dUcbJhXemYazVANIeUaknFY6mlT0vWv9U8jcCGOz0Qn8vWPJRbC0lxzCIX6Do7m3pxagz0zFF2hvOBJJ4wXaaGIJ/RjhqJCgS2Rm1qJ6fkJ7XF52tyT8WR8wIxY48MCGj67qx1joHT9dE2qdogNoNeb1njxlO5KFvA+RLYAqvJGSC3fV3LAN53pGadlTFIk9nKCz551nYDHz65YrdhMQuIxdUXLJTgFCZeE3wLleU2dNYPC4xPXenXRTefXYvvJ2Iu6Z19XXGMoSv6j5R31wvaT0rwTL0EweE5eAIFzX5NX18VciXZjmqZow9aRBzpfbavx+P0lNfdvU0WiSQ==
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/notification/notifications-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a webhook by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/notifications/webhooks/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the data of a specific webhook for the tenant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Tenant ID","in":"path","name":"tenant_id","required":true,"schema":{"type":"string"}},{"description":"Webhook ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"event_names":{"items":{"properties":{"category":{"items":{"properties":{"subs":{"items":{"type":"string"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"id":{"type":"string"},"name":{"type":"string"},"tenant_id":{"type":"string"},"url":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
