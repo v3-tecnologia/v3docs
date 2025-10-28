@@ -30,8 +30,8 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "openapi/notification/get-a-webhook-by-id",
-          label: "Get a webhook by ID",
+          id: "openapi/notification/retrieves-a-webhook-by-id",
+          label: "Retrieves a webhook by ID",
           className: "api-method get",
         },
         {

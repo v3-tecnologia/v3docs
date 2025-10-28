@@ -8,13 +8,13 @@ definitions:
         type: array
       name:
         type: string
-      tenant_id:
-        type: string
       url:
         type: string
     type: object
   dto.WebhookResponse:
     properties:
+      created_at:
+        type: string
       event_names:
         items:
           $ref: '#/definitions/model.EventName'
@@ -23,7 +23,7 @@ definitions:
         type: string
       name:
         type: string
-      tenant_id:
+      updated_at:
         type: string
       url:
         type: string
@@ -49,8 +49,7 @@ definitions:
 host: tenant.v3sandbox.com
 info:
   contact: {}
-  description: Aplicação em GO responsável por realizar a gestão de Webhooks para
-    os clientes.
+  description: GO application responsible for managing Webhooks for clients.
   title: Notifications API
   version: 0.0.1
 paths:
@@ -59,12 +58,6 @@ paths:
       consumes:
       - application/json
       description: Returns all webhooks registered for the tenant
-      parameters:
-      - description: Tenant ID
-        in: path
-        name: tenant_id
-        required: true
-        type: string
       produces:
       - application/json
       responses:
@@ -122,11 +115,6 @@ paths:
       - application/json
       description: Removes a webhook from the tenant
       parameters:
-      - description: Tenant ID
-        in: path
-        name: tenant_id
-        required: true
-        type: string
       - description: Webhook ID
         in: path
         name: id
@@ -159,11 +147,6 @@ paths:
       - application/json
       description: Returns the data of a specific webhook for the tenant
       parameters:
-      - description: Tenant ID
-        in: path
-        name: tenant_id
-        required: true
-        type: string
       - description: Webhook ID
         in: path
         name: id
@@ -188,7 +171,7 @@ paths:
             additionalProperties:
               type: string
             type: object
-      summary: Get a webhook by ID
+      summary: Retrieves a webhook by ID
       tags:
       - Webhook
     put:
@@ -196,11 +179,6 @@ paths:
       - application/json
       description: Updates the data of a tenant's webhook
       parameters:
-      - description: Tenant ID
-        in: path
-        name: tenant_id
-        required: true
-        type: string
       - description: Webhook ID
         in: path
         name: id

@@ -5,7 +5,7 @@ description: "Returns all webhooks registered for the tenant"
 sidebar_label: "Lists all webhooks for a tenant"
 hide_title: true
 hide_table_of_contents: true
-api: eJytVMFOG0EM/ZXRnFoJZUOrXnJLVYQQVUFAxQEh5Ow62YHJzOCZTUlX+zFVD/2Q/Bj2bkISSJGoetrZscd+fs92rQuMOZmQjHd6oM8wVeSiAmvVDxyV3t9FRTgxMSFhocaeVCpRJXTgkt7TAQimyMaoB1f1s2gXrZc6+sKORi4CpJLPjp/wXxfkxhR8RXhfGc6gB4kq3NMxL3EKelDrNA/iHBMZN9FNcy3OMXgXMYr9Q78vn+3MJ8ccM/eOUySxQgjW5CDW7DaKS72RwiSctrEC+YCUTBcZZ/z6RsDGV7w4Kk48zV9xidVoO8KzmvZWF0AE8/X/y+KfPP3oFvP0n5+yErvAdXLtQv0k4C5rRfafcDTi82mXqkesJzmw6hxphqQOiDy9RWgoCiMmsKdbAv1NjxXEDlOCiXS5vuwGQ3MncuuXnsvXE+ymgft7oDPnkxkvYcRsNUjsEFvg3ay0/OgypRAHWdZx2Zt9jOCKkX/o5X6azfa19HvEvCKT5udSSId4GMwxzoeV5Ku74SoRCqT1eH1GICbpwt+h02uS24etDsaNfdvBTB/kQh9fbjM+bNlc/Fn89gqn6vBELWdv8WuGVgVeB4RgzU8gBWqCMYlngepytTxkQSgfVW4NS4SxJ1BMsoLl2yZNanh6xDahp8vd7/V7+yJG8DFNoZVyWdpX3kfPlpRsJljvpa0y6nWHvH3DLXlL+JCyYIGpXvd2p/eV3tKb3zwpzuKVjF586noEEb+TbRq5vq9QdsYVH2dABkbCiGxQE+XMPTUGG/GVSt6dLXfme7W5aHfiXYnv5kIx2Er++HjHrbC5iJtrdl42kqDp7MM8x5A2Xr6YsmZzFg4PLri/HgHiizSa
+api: eJytVEFu2zAQ/IrAc2A5LXrxzQWCIEjRBE2KHAwjWFFriTFFsiSlxhD89+5KcmUlToAUPUkil7OjmeG2IscgvXJRWSMW4gfG2puQgNbJb8xKa7ch8VioENFjnmysT2KJSUQDJooz4TE4awIGsWjFp/mcH1PIm2sqk9bQkci74JxWEng3fQpc0oogS6yA31TEqsNy3jr0UfXI0iNEzB+hg4g7h4QcolemEPszgQ2BPxqo+uq3QAiisH73TkmosynCq1bDAngPu/H7VeFYabMnlPE/H1X5SXKswMmN2uXv6Vd7/U9E9lzz5ZTrV+S3N6CTO/QN+uTCe+s/EgTIc8VboG8nDr1lyIFizylCQdUr8dBnWKzPRIWxtCSbKJCD6yCW9JEaG9VmoBHSQ+apIHTEGaXt9RFljC4s0rQP/6z5HMDkmX2eSVulzbnYr/mUrL2Kuzv+kZ7x0qlr3C1r7kfJYnVKhBxZjt4w8RXBk0j3dotGjCJ3BzsflNnYLsIkH0iWjxanil/eJEeKJsPFVJnG7tZWYKAgyZKHw7XmVakVuRFm3FRFzV2/HwuSLG+vaI+F6LvMZ/PZOcvubIiEyaSGn/hGQ+LF5OAWMA6LCeF2zMLHx86gUMTnmDoNJOqY4t7ZlZg4S2f+eks2lcSea9o2g4A/vd7veflXjTweVvTagFeQsSKrNWEPjnEYtuTJQiylRMdUGtB179aLOO+PQ3d5cU9G/gHuYuLj
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/notification/notifications-api
 custom_edit_url: null
@@ -38,16 +38,8 @@ import Heading from "@theme/Heading";
 
 Returns all webhooks registered for the tenant
 
-<Heading
-  id={"request"}
-  as={"h2"}
-  className={"openapi-tabs__heading"}
-  children={"Request"}
->
-</Heading>
-
 <ParamsDetails
-  parameters={[{"description":"Tenant ID","in":"path","name":"tenant_id","required":true,"schema":{"type":"string"}}]}
+  parameters={undefined}
 >
   
 </ParamsDetails>
@@ -62,7 +54,7 @@ Returns all webhooks registered for the tenant
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"items":{"properties":{"event_names":{"items":{"properties":{"category":{"items":{"properties":{"subs":{"items":{"type":"string"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"id":{"type":"string"},"name":{"type":"string"},"tenant_id":{"type":"string"},"url":{"type":"string"}},"type":"object"},"type":"array"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"items":{"properties":{"created_at":{"type":"string"},"event_names":{"items":{"properties":{"category":{"items":{"properties":{"subs":{"items":{"type":"string"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"},"url":{"type":"string"}},"type":"object"},"type":"array"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
 >
   
 </StatusCodes>

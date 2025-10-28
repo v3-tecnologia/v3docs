@@ -5,7 +5,7 @@ description: "Creates a webhook associated with the specified tenant"
 sidebar_label: "Creates a new webhook for the tenant"
 hide_title: true
 hide_table_of_contents: true
-api: eJy9Vc1u2zAMfhVB5yxO93PJLR2KoRiwFm2HHYKgoG0mVmtbmiQnzYw8zLDDHqQvNtJy4npJi3Xo1kMq0aREft8nspYpusQq45Uu5Vi+twgenQCxwjjT+laAczpRZEzFSvlM+AyFM5iouSKTxxJKLwfS4tcKnT/W6VqOa5nokj55XoIxuUqAL4huHN9SS5dkWACvjNUGrVfoeIdLCrouoQhb5bFoFn5tkLJz3qpyITeDrQGshTXvOeSwY5PgtUoPfq1sfsDena/jG0w8WcjUB+pLC08KHtrylUW6xdsKN2xwRpcu1PF6dMT/DkGdUvALg9X3osNwoe36CRdXxc+EO+z/ALgXDX2ExH/OPdnejkb7DB5DKi6C7p/DIqSp4k+Qn/doeAz1XiLvDiVySjdbOk9col2iFSfWavufUmIjLMh7un0TcjaQBfpME+7S6AYcAz6jXVRqT40j5OGitsc4cnBN5nxMHZiRmffGjaMosDhcvnFQprG+Gya6iJZHcjPjqKSyyq8vuZKQ8sSoj7ieVHwfSZrhyRBSZDyCUuQxgiWUrvQtlrKTWRPYKIABuuga2skdFCbHvTc33QIz2x3dGnra64yhsA5NVc71tltCwjzt9ZlJQ9v9z/sfWmAhPpyJtrPcf19iLoy2ZIBcfQNLTXtBGbNniqIlwwkDFoR2IskV5Y5uyNkpz/XITw/pEJPzU/rGNIS7R8PR8IjzZBILaDTT1tnNiRJXu1kxp2x4PuymQq+WB1Ph7+dMS5bHOx+ZHIjf7ikHkU1lT2QUs5MZ8ZSxHsmnrmNw+Nnmmw2biWtukVNaLsEqiBme6YzObsXDurwleVDqoYhXV5wJu+dVkM9vD2wz2EZMkgSNf9L34ZM5P7u8Iue4HaWFTjnGwornDP2OJS20CdWRQ2OrZQ7looIF+4Yz+e8Xd22/rg==
+api: eJy9VU1v2zAM/SuCzlmc7uOSWzoUQzFgLdoOOwTBQFtsrNaWNElOGhj57yMt56tNi7YYloMjUST19PhEtVJhKLx2UVsjx/KrR4gYBIgl5qW19wJCsIUmoxJLHUsRSxTBYaFvNZkiGjBRDqTHPw2GeGrVSo5bWVhDS5GH4FylC+ANsrvAu7QyFCXWwCPnrUMfNQae4YKCfhuo01RHrLtBXDkkdCF6beZyPdgYwHtY8ZxDjjo2vjpi32Ww+R0WkSxkOqTiV0+Aggj9AbVHJcfRN7hmQ3DWhIT04+iE/46RqSj4nXQUKcFviEfP9hxbj5JQirn1qxdcQpO/ke80fwWv/zRUq6Pgni++Uy/x93ptkO3zaPS0wqegxFVS/luqDEppXoLq8qAOz9F+AOTLMSDntLOnfOIa/QK9OPPe+v8EiY0wJ+/p5s7I2UDWGEtL9ZLOduQ4iCXNMmMjtY6EI2R9lwnkEDrknKZNlZFljC6Msyw1meHiUwCjcvswLGydLU7kesZRReN1XF3zSRLkidPfcTVpeD/SNNNTIihkPpJU5CmCJ5Zu7D0audNZF9gpgAm62rW0sweoXYVPWtR0Q8xsm7o39OraI06bW7tpjVBwSZ60nG8XYq9Kou8wOq9Q3FovajAwp2yipzl01qLShCgM+Rw6Mkj5Y59jMbk8pzXmNu0yGo6GJ4yIK0M5GVQPftf+DS63TwDvwm1/2+wPUO81+/c/H30FIj7EzFVARdvdz6ScqTxQDsVstUPklywy8mnbHAL+9NV6zWYqIDe+KQ0X4DXkTM90Rrl7RbDY7qnmBD0d4sMNI2H3qkmaeHRr1oNNxKQo0MUXfffvweXF9Q055/0LWVvFMR6W/LjQdyxpYF06HTl0tlZWYOYNzNk35eTfX0idr0A=
 sidebar_class_name: "post api-method"
 info_path: docs/openapi/notification/notifications-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ Creates a webhook associated with the specified tenant
 
 <RequestSchema
   title={"Body"}
-  body={{"content":{"application/json":{"schema":{"properties":{"event_names":{"items":{"type":"string"},"type":"array"},"name":{"type":"string"},"tenant_id":{"type":"string"},"url":{"type":"string"}},"type":"object"}}},"description":"Webhook data","required":true}}
+  body={{"content":{"application/json":{"schema":{"properties":{"event_names":{"items":{"type":"string"},"type":"array"},"name":{"type":"string"},"url":{"type":"string"}},"type":"object"}}},"description":"Webhook data","required":true}}
 >
   
 </RequestSchema>
@@ -62,7 +62,7 @@ Creates a webhook associated with the specified tenant
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"event_names":{"items":{"properties":{"category":{"items":{"properties":{"subs":{"items":{"type":"string"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"id":{"type":"string"},"name":{"type":"string"},"tenant_id":{"type":"string"},"url":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"created_at":{"type":"string"},"event_names":{"items":{"properties":{"category":{"items":{"properties":{"subs":{"items":{"type":"string"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"},"url":{"type":"string"}},"type":"object"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
 >
   
 </StatusCodes>
