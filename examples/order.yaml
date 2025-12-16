@@ -9,15 +9,6 @@ definitions:
         description: SSID of the WiFi network
         type: string
     type: object
-  dto.AudioAndEventDTO:
-    properties:
-      audio_enabled:
-        description: Enables or disables audio
-        type: boolean
-      send_event_enabled:
-        description: Enables or disables event sending
-        type: boolean
-    type: object
   dto.CreateOrderDTO:
     properties:
       orders:
@@ -37,37 +28,6 @@ definitions:
         type: string
     type: object
   dto.DeviceStateDTO:
-    type: object
-  dto.DriverBehaviorDTO:
-    properties:
-      active:
-        description: Enables or disables driver behavior
-        type: boolean
-      inertial:
-        allOf:
-        - $ref: '#/definitions/dto.InertialDTO'
-        description: Inertial behavior audio and event settings
-      profile:
-        $ref: '#/definitions/dto.Profile'
-      speed:
-        $ref: '#/definitions/dto.SpeedDTO'
-      tracking:
-        allOf:
-        - $ref: '#/definitions/dto.AudioAndEventDTO'
-        description: Tracking behavior audio and event settings
-    type: object
-  dto.InertialDTO:
-    properties:
-      audio_enabled:
-        description: Enables or disables audio
-        type: boolean
-      send_event_enabled:
-        description: Enables or disables event sending
-        type: boolean
-      sensitivity:
-        description: 'Driver behavior sensitivity **Ex: (1 = LOW, 2 = MEDIUM, 3 =
-          HIGH)**'
-        type: integer
     type: object
   dto.OrderDTO:
     properties:
@@ -97,8 +57,6 @@ definitions:
               title: RequestVideo
             - $ref: '#/definitions/dto.RebootDTO'
               title: Reboot
-            - $ref: '#/definitions/dto.DriverBehaviorDTO'
-              title: DriverBehavior
             - $ref: '#/definitions/dto.PeriodicDTO'
               title: Periodic
             - $ref: '#/definitions/dto.VisionConfigDTO'
@@ -124,14 +82,6 @@ definitions:
         description: Sends messages every **seconds**
         type: integer
     type: object
-  dto.Profile:
-    enum:
-    - BASIC
-    - ADVANCED
-    type: string
-    x-enum-varnames:
-    - ProfileBasic
-    - ProfileAdvanced
   dto.RebootDTO:
     type: object
   dto.RequestImageDTO:
@@ -163,18 +113,6 @@ definitions:
         type: string
     required:
     - cam
-    type: object
-  dto.SpeedDTO:
-    properties:
-      active:
-        description: Enables or disables the maximum speed feature
-        type: boolean
-      max_speed_kmh:
-        description: Maximum speed in Km/h
-        type: integer
-      overtaking_time_seconds:
-        description: Overtaking time limit in seconds
-        type: integer
     type: object
   dto.VisionConfigDTO:
     properties:
@@ -236,9 +174,6 @@ definitions:
     - REQUEST_VIDEO
     - CONFIG
     - REBOOT
-    - DRIVER_COACH_INERTIAL
-    - DRIVER_COACH_TELEMETRY
-    - DRIVER_COACH_TRACKING
     - INTERNAL
     - VISION_CONFIG
     - PERIODIC
@@ -251,9 +186,6 @@ definitions:
     - REQUEST_VIDEO
     - ORDER_CONFIG
     - REBOOT
-    - DRIVER_COACH_INERTIAL
-    - DRIVER_COACH_TELEMETRY
-    - DRIVER_COACH_TRACKING
     - INTERNAL
     - VISION_CONFIG
     - PERIODIC
@@ -380,7 +312,7 @@ paths:
         Submits a list of commands to be executed by the specified device.
         Each command in the list can be one of several supported types, such as:
         (**AddWifi**, **DeleteWifi**, **DeviceState**, **RequestImage**, **RequestVideo**, **Reboot**,
-        **DriverBehavior**, **Periodic**, **VisionConfig**).
+        **Periodic**, **VisionConfig**).
       parameters:
       - description: ULID do Device
         in: path
@@ -435,12 +367,6 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/dto.RebootDTO'
-      - description: Driver Behavior
-        in: body
-        name: payload
-        required: true
-        schema:
-          $ref: '#/definitions/dto.DriverBehaviorDTO'
       - description: Periodic
         in: body
         name: payload
