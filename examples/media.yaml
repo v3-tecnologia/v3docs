@@ -1,0 +1,65 @@
+basePath: /v1
+host: tenant.v3sandbox.com
+info:
+  contact: {}
+  description: Aplicação em GO responsável por realizar o download de arquivos de
+    mídia.
+  title: Vision Media API
+  version: 0.1.0
+paths:
+  /medias/files:
+    get:
+      description: Allows downloading a file identified by an encrypted key. Supports
+        image resizing with width and height parameters.
+      parameters:
+      - description: key to identify the file
+        in: query
+        name: key
+        required: true
+        type: string
+      - description: If 1, forces download
+        in: query
+        name: download
+        type: string
+      - description: Custom filename for download
+        in: query
+        name: filename
+        type: string
+      - description: Width for image thumbnail (only for images)
+        in: query
+        name: width
+        type: integer
+      - description: Height for image thumbnail (only for images)
+        in: query
+        name: height
+        type: integer
+      - description: Range header to request partial content
+        in: header
+        name: Range
+        type: string
+      responses:
+        "200":
+          description: File served successfully
+          schema:
+            type: file
+        "206":
+          description: Partial content served
+          schema:
+            type: file
+        "404":
+          description: File not found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Download a file from S3 using secure key
+      tags:
+      - Media-API
+schemes:
+- https
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Bearer Token
+    type: apiKey
+swagger: "2.0"

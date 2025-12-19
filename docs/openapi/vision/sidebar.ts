@@ -36,18 +36,6 @@ const sidebar: SidebarsConfig = {
         },
       ],
     },
-    {
-      type: "category",
-      label: "Media",
-      items: [
-        {
-          type: "doc",
-          id: "openapi/vision/get-media-by-id",
-          label: "Get media by ID",
-          className: "api-method get",
-        },
-      ],
-    },
   ],
 };
 

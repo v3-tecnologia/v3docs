@@ -194,45 +194,6 @@ paths:
       summary: Update dataset by ID
       tags:
       - Datasets
-  /media/{id}:
-    get:
-      consumes:
-      - application/json
-      description: Retrieves media by its ID.
-      parameters:
-      - description: Media ID
-        in: path
-        name: id
-        required: true
-        type: string
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: Media retrieved successfully
-          schema:
-            $ref: '#/definitions/response.VisionResponse'
-        "400":
-          description: Invalid request payload
-          schema:
-            $ref: '#/definitions/response.VisionErrorResponse'
-        "401":
-          description: Unauthorized
-          schema:
-            $ref: '#/definitions/response.VisionErrorResponse'
-        "404":
-          description: Media not found
-          schema:
-            $ref: '#/definitions/response.VisionErrorResponse'
-        "500":
-          description: Internal server error
-          schema:
-            $ref: '#/definitions/response.VisionErrorResponse'
-      security:
-      - ApiKeyAuth: []
-      summary: Get media by ID
-      tags:
-      - Media
 schemes:
 - https
 securityDefinitions:

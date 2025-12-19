@@ -80,6 +80,18 @@ const sidebars: SidebarsConfig = {
       },
       items: require("./docs/openapi/vision/sidebar"),
     },
+    {
+      type: "category",
+      label: "Medias",
+      link: {
+        type: "generated-index",
+        title: "Media API",
+        description:
+          "This is the media API. It contains all the endpoints related to media.",
+        slug: "/category/media-api",
+      },
+      items: require("./docs/openapi/media/sidebar"),
+    },
   ],
   // But you can create a sidebar manually
   /*

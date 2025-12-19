@@ -164,4 +164,4 @@ Caso queira entender como configurar e utilizar o sistema de notificações via 
 Para eventos que possuem mídias associadas (como fotos ou vídeos):
 
 1. O evento contém informações sobre a mídia no campo `media` do payload
-2. Para obter a URL de acesso à mídia você precisa acessar diretamente um endpoint no contexto de visão. Veja mais detalhes em [aqui](/docs/openapi/vision/get-media-by-id)
+2. Para obter a URL de acesso à mídia você precisa acessar diretamente um endpoint no contexto de visão. Veja mais detalhes em [aqui](/docs/openapi/media/download-a-file-from-s-3-using-secure-key.api.mdx)
