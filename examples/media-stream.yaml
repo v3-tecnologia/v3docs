@@ -1,0 +1,278 @@
+basePath: /v1
+definitions:
+  response.SegmentStatus:
+    properties:
+      app:
+        description: Application name
+        type: string
+      file_count:
+        description: Number of segment files in the stream
+        type: integer
+      newest_file:
+        description: Timestamp of the newest segment file
+        type: string
+      oldest_file:
+        description: Timestamp of the oldest segment file
+        type: string
+      path:
+        description: Path to stream directory
+        type: string
+      size_mb:
+        description: Total size of all segments in megabytes
+        type: number
+      stream_key:
+        description: Stream key identifier
+        type: string
+    type: object
+  response.CleanupConfig:
+    properties:
+      cleanup_interval_seconds:
+        description: Interval in seconds between cleanup operations
+        type: integer
+      max_age_minutes:
+        description: Maximum age in minutes for segments before deletion
+        type: integer
+      max_segments_per_stream:
+        description: Maximum number of segments allowed per stream
+        type: integer
+    type: object
+  response.SegmentsStatusResponse:
+    properties:
+      cleanup_config:
+        $ref: '#/definitions/response.CleanupConfig'
+        description: Current cleanup configuration
+      streams:
+        description: List of all active streams with segment information
+        items:
+          $ref: '#/definitions/response.SegmentStatus'
+        type: array
+      total_files:
+        description: Total number of segment files across all streams
+        type: integer
+      total_size_mb:
+        description: Total size of all segments in megabytes
+        type: number
+    type: object
+  response.CleanupResponse:
+    properties:
+      message:
+        description: Response message
+        type: string
+      status:
+        description: Status of the cleanup operation
+        type: string
+    type: object
+  types.ValidationError:
+    properties:
+      code:
+        description: Error code
+        type: string
+      detail:
+        description: Human-readable error description
+        type: string
+      source:
+        allOf:
+        - $ref: '#/definitions/types.Source'
+        description: Source of the error
+      status:
+        description: HTTP status code
+        type: integer
+      title:
+        description: Human-readable error title
+        type: string
+    type: object
+  types.Source:
+    properties:
+      pointer:
+        type: string
+    type: object
+host: tenant.v3sandbox.com
+paths:
+  /video/{app}/{stream_key}/{filename}:
+    get:
+      consumes:
+      - application/json
+      description: |-
+        Allows downloading HLS segment files (M3U8, TS) identified by path.
+        Supports partial content requests through Range header.
+      parameters:
+      - description: Application identifier
+        in: path
+        name: app
+        required: true
+        type: string
+      - description: Stream key identifier
+        in: path
+        name: stream_key
+        required: true
+        type: string
+      - description: Filename of the segment (e.g., manifest.m3u8, segment-123.ts)
+        in: path
+        name: filename
+        required: true
+        type: string
+      - description: Range header to request partial content (e.g., bytes=0-1023)
+        in: header
+        name: Range
+        type: string
+      produces:
+      - application/vnd.apple.mpegurl
+      - video/mp2t
+      responses:
+        "200":
+          description: Segment file served successfully
+          schema:
+            type: file
+        "206":
+          description: Partial content served successfully
+          schema:
+            type: file
+        "404":
+          description: Stream file not found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Download HLS segment or manifest file
+      tags:
+      - Media-Stream
+  /streams:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of all active HLS streams with their current status and metadata.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of active streams retrieved successfully
+          schema:
+            items:
+              properties:
+                app:
+                  type: string
+                  description: Application identifier
+                created_at:
+                  type: string
+                  description: Timestamp when stream was created
+                stream_key:
+                  type: string
+                  description: Stream key identifier
+                status:
+                  type: string
+                  description: Current stream status (active, inactive, etc)
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+      security:
+      - OAuth2: [read:streams]
+      summary: List all active streams
+      tags:
+      - Media-Stream
+  /stream/{app}/{stream_key}:
+    get:
+      consumes:
+      - application/json
+      description: |-
+        Retrieve the HTML player page for a specific HLS stream.
+        The stream must be active and available in the registry.
+      parameters:
+      - description: Application identifier
+        in: path
+        name: app
+        required: true
+        type: string
+      - description: Stream key identifier
+        in: path
+        name: stream_key
+        required: true
+        type: string
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: Stream player page rendered successfully
+          schema:
+            type: string
+        "302":
+          description: Stream not found or inactive, redirect to home
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+      security:
+      - OAuth2: [read:streams]
+      summary: Get stream player page
+      tags:
+      - Media-Stream
+  /admin/segments/status:
+    get:
+      consumes:
+      - application/json
+      description: |-
+        Retrieve comprehensive statistics about all active streams and their segments.
+        Includes information about storage usage, file counts, and cleanup configuration.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Segment status retrieved successfully
+          schema:
+            $ref: '#/definitions/response.SegmentsStatusResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+      security:
+      - OAuth2: [read:admin]
+      summary: Get segments status and cleanup configuration
+      tags:
+      - Media-Stream
+  /admin/segments/cleanup:
+    post:
+      consumes:
+      - application/json
+      description: |-
+        Trigger an immediate cleanup of old and excess segments.
+        This operation removes segments based on configured thresholds:
+        - Maximum age in minutes
+        - Maximum segments per stream
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Cleanup operation initiated successfully
+          schema:
+            $ref: '#/definitions/response.CleanupResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+      security:
+      - OAuth2: [write:admin]
+      summary: Force segment cleanup
+      tags:
+      - Media-Stream
+schemes:
+- https
+securityDefinitions:
+  OAuth2:
+    authorizationUrl: https://auth.v3sandbox.com/oauth/authorize
+    flow: implicit
+    scopes:
+      read:streams: Read access to streams
+      write:streams: Write access to streams
+      read:admin: Read access to admin endpoints
+      write:admin: Write access to admin endpoints
+    type: oauth2
+swagger: "2.0"

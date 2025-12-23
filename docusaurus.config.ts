@@ -387,6 +387,23 @@ const config: Config = {
         } satisfies Plugin.PluginOptions,
       },
     ],
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "media-stream-open-api",
+        docsPluginId: "classic",
+        config: {
+          mediaStream: {
+            specPath: "examples/media-stream.yaml",
+            outputDir: "docs/openapi/media-stream",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+        } satisfies Plugin.PluginOptions,
+      },
+    ],
   ],
   themes: ["docusaurus-theme-openapi-docs"],
 };

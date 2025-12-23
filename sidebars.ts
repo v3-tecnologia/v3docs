@@ -90,7 +90,7 @@ const sidebars: SidebarsConfig = {
           "This is the media API. It contains all the endpoints related to media.",
         slug: "/category/media-api",
       },
-      items: require("./docs/openapi/media/sidebar"),
+      items: [require("./docs/openapi/media/sidebar"), require("./docs/openapi/media-stream/sidebar")],
     },
   ],
   // But you can create a sidebar manually

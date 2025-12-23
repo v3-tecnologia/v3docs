@@ -1,0 +1,65 @@
+---
+id: force-segment-cleanup
+title: "Force segment cleanup"
+description: "Trigger an immediate cleanup of old and excess segments."
+sidebar_label: "Force segment cleanup"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVUtv2zAM/iuCzmnddtvFt2LY0B2KFkuKHdpiUGzGVmdJniSnyYz895HyI07s7nUrsJNlkvr4+kjVPAWXWFl6aTSP+cLKLAPLhGZSKUil8MCSAoSuSmZWzBQp6lIGmwScYw4yBdq70we9yKVjpgQrCIpZUGYNewu2FA5ShprE6JXMKot/PrfgcsR08YM+YddiI1WlmMiASc2U1JUHN9T0aOiHOW9BKD7jCFIa7cDxuOYXZ2f0OUzrfZdBH5/U0lNyKXNVQrmsqqLYIhiG59EFYYiyLGQS7KMnR0A1d0kOStCptITmZeNWIQTGPXb9uQ2OdRYz7rclGnKMX+qM72Z4Er5y47vzIKe6+3zQhi6JMdSul5jlEyQeJSR7e3Y+Br/TovK5sfIHpP+ed2LSiaQ/WGssC7qJdFPwQhbjW1eVEvoEm5qKZQEMAsjQZKp0prJJiEAUxc2Kx/fHEZZGYmaWjr+t1uPsuAMBvutAiOhXDbtaLG5ZozzKnmLAwaLLXvpiomaT2Te2f9rnd1Pc/0TZa1Hg8Ng1jk2TxP+Gv/6GU1yQVFb6bSjDzSUO9AUe+TPKIBYprlD+SEl6kTlSXNNKP5k3mxPlCnAFpAhbGufRbSl8jn9RuBp16zZqVw8nh0QiF/xVFnvKc+9LF0cRkklof7p+4/CBWJrNaWJUtD4PNe7CnBOpmi51wfZNMiIIZnxVmOdgIhXRUjYUbXdVIOndgWNSHbkNWFG/3yjuBCkSUKngcfN2uLCfBT5p4Qlg3rBOMWtruDf8Qv+TlgGxKfYIL4gZ6DSwco/bmR+jHtu3fZZ6ZSh4qn3DHt7zihPHqH9IJ7LRQpH0oyEity1k+w4ekLDer4HX+fa35PGw8VFZCKwpFiMQs27JfM+bWhMLGwRafm05kJs5MR+t6prCRGrtdiT+XoGlscLjWlhJI0p/iJ5jh2m94AR8AzThl9i9kqZnLYqKohnt091w1G5v5gs0JnZO0b89EHyrEno7AB/ylx2QlO2JyIYsm7VxhhnA+rwA/Ffz1CCShIbxRcx+hLsbmcUl8TXY7h6R2j8B6gK0hA==
+sidebar_class_name: "post api-method"
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Force segment cleanup"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/admin/segments/cleanup"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Trigger an immediate cleanup of old and excess segments.
+This operation removes segments based on configured thresholds:
+- Maximum age in minutes
+- Maximum segments per stream
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Cleanup operation initiated successfully","content":{"application/json":{"schema":{"properties":{"message":{"description":"Response message","type":"string"},"status":{"description":"Status of the cleanup operation","type":"string"}},"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"properties":{"code":{"description":"Error code","type":"string"},"detail":{"description":"Human-readable error description","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Source of the error"},"status":{"description":"HTTP status code","type":"integer"},"title":{"description":"Human-readable error title","type":"string"}},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"properties":{"code":{"description":"Error code","type":"string"},"detail":{"description":"Human-readable error description","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Source of the error"},"status":{"description":"HTTP status code","type":"integer"},"title":{"description":"Human-readable error title","type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

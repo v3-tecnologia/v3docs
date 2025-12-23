@@ -24,6 +24,7 @@ clean-vision:
 
 clean-media:
 	npm run docusaurus clean-api-docs all -- --plugin-id media-open-api
+	npm run docusaurus clean-api-docs all -- --plugin-id media-stream-open-api
 
 doc: doc-order doc-management doc-auth doc-event doc-notifications doc-vision doc-media
 
@@ -48,6 +49,7 @@ doc-vision:
 
 doc-media:
 	npm run docusaurus gen-api-docs all -- --plugin-id media-open-api
+	npm run docusaurus gen-api-docs all -- --plugin-id media-stream-open-api
 
 clear:
 	npm run docusaurus clear
