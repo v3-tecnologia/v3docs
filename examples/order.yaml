@@ -21,6 +21,24 @@ definitions:
     required:
     - orders
     type: object
+  dto.DataPlanConfigDTO:
+    properties:
+      block_reason:
+        description: Reason for blocking the data plan. Required if IsBlocked is true,
+          must be empty if IsBlocked is false.
+        type: string
+      cycle_day:
+        description: Cycle day of the month when the data plan resets (1-31). Optional,
+          defaults to 0 (no cycle).
+        type: integer
+      is_blocked:
+        description: Indicates whether the data plan is currently blocked. Optional,
+          defaults to false.
+        type: boolean
+      total_mb:
+        description: Total data plan in megabytes to be applied to the device
+        type: integer
+    type: object
   dto.DeleteWifiDTO:
     properties:
       ssid:
@@ -61,6 +79,8 @@ definitions:
               title: Periodic
             - $ref: '#/definitions/dto.VisionConfigDTO'
               title: VisionConfig
+            - $ref: '#/definitions/dto.DataPlanConfigDTO'
+              title: DataPlanConfig
         type: array
       type:
         allOf:
@@ -177,6 +197,7 @@ definitions:
     - INTERNAL
     - VISION_CONFIG
     - PERIODIC
+    - DATA_PLAN_CONFIG
     type: string
     x-enum-varnames:
     - ADD_WIFI
@@ -189,6 +210,7 @@ definitions:
     - INTERNAL
     - VISION_CONFIG
     - PERIODIC
+    - DATA_PLAN_CONFIG
   types.Source:
     properties:
       pointer:
@@ -312,7 +334,7 @@ paths:
         Submits a list of commands to be executed by the specified device.
         Each command in the list can be one of several supported types, such as:
         (**AddWifi**, **DeleteWifi**, **DeviceState**, **RequestImage**, **RequestVideo**, **Reboot**,
-        **Periodic**, **VisionConfig**).
+        **Periodic**, **VisionConfig**, **DataPlanConfig).
       parameters:
       - description: ULID do Device
         in: path
@@ -379,6 +401,12 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/dto.VisionConfigDTO'
+      - description: Data Plan Config
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.DataPlanConfigDTO'
       produces:
       - application/json
       responses:
