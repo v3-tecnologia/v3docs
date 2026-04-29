@@ -334,7 +334,7 @@ paths:
         Submits a list of commands to be executed by the specified device.
         Each command in the list can be one of several supported types, such as:
         (**AddWifi**, **DeleteWifi**, **DeviceState**, **RequestImage**, **RequestVideo**, **Reboot**,
-        **Periodic**, **VisionConfig**, **DataPlanConfig).
+        **Periodic**, **VisionConfig**, **DataPlanConfig**).
       parameters:
       - description: ULID do Device
         in: path
