@@ -18,20 +18,14 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "openapi/order/delete-multiple-orders",
-          label: "Delete multiple orders",
-          className: "api-method delete",
-        },
-        {
-          type: "doc",
           id: "openapi/order/create-new-order",
           label: "Create new order",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "openapi/order/delete-a-specific-order",
-          label: "Delete a specific order",
+          id: "openapi/order/delete-multiple-orders",
+          label: "Delete multiple orders",
           className: "api-method delete",
         },
         {
@@ -39,6 +33,12 @@ const sidebar: SidebarsConfig = {
           id: "openapi/order/get-a-specific-order",
           label: "Get a specific order",
           className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "openapi/order/delete-a-specific-order",
+          label: "Delete a specific order",
+          className: "api-method delete",
         },
       ],
     },
