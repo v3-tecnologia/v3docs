@@ -27,7 +27,6 @@ const config: Config = {
           showReadingTime: true,
           onInlineAuthors: "ignore",
           onUntruncatedBlogPosts: "ignore",
-          futureDate: "ignore",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
