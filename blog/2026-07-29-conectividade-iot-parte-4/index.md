@@ -93,6 +93,23 @@ Além de software e rede, a camada física faz diferença:
 
 Com isso, a operação deixa de olhar apenas "dispositivo online" e passa a medir a pergunta certa: o dado chegou a tempo de gerar ação?
 
+## Monitoramento em tempo real da operação
+
+Para que essas métricas façam sentido prático, é essencial ter visibilidade ponta a ponta da frota. Um painel de monitoramento bem desenhado expõe:
+
+- Saúde geral de cada dispositivo (online, offline, sinal fraco, dados acumulados).
+- Agregação por rota, corredor logístico ou zona geográfica.
+- Distribuição de sinal (forte, bom, fraco) por localização.
+- Consumo de dados acumulado e velocidade média.
+- Padrões de bateria e eventos de ignição (para veículos).
+- Alertas automáticos para anomalias (dispositivo offline prolongado, oscilação de rede, timeout de uplink).
+
+Com essas informações estruturadas e em tempo real, times de operação conseguem antecipar problemas, validar impacto de mudanças infraestruturais e comunicar com transparência o status da frota para stakeholders.
+
+<img src="./monitoramento-frota-dashboard.jpg" alt="Dashboard de monitoramento de frota com métricas de conectividade, distribuição de sinal, consumo de dados e localização de dispositivos em tempo real." style="max-width: 100%; width: 100%; height: auto; border-radius: 8px; margin: 20px 0;" />
+
+<p style="font-size: 14px; color: #666; margin: 12px 0 24px 0; font-style: italic;">Figura: Dashboard da solução V3 de monitoramento para operações de frota. Visibilidade completa de saúde de dispositivos, distribuição de conectividade e métricas operacionais em tempo real da frota do cliente.</p>
+
 ## Normas e referências úteis
 
 - 3GPP e GSMA para fundamentos de redes móveis e ecossistema SIM.
