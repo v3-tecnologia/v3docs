@@ -22,6 +22,8 @@ Os SDKs disponíveis atualmente são:
 - [SDK Kotlin](./kotlin.md)
 - [SDK .NET](./dotnet.md)
 - [SDK Go](./go.md)
+- [SDK Python](./python.md)
+- [SDK Elixir](./elixir.md)
 
 ## Repositórios oficiais
 

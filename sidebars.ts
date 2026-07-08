@@ -93,6 +93,8 @@ const sidebars: SidebarsConfig = {
             "docs/integracao-e-operacao/sdks/kotlin",
             "docs/integracao-e-operacao/sdks/dotnet",
             "docs/integracao-e-operacao/sdks/go",
+            "docs/integracao-e-operacao/sdks/python",
+            "docs/integracao-e-operacao/sdks/elixir",
           ],
         },
       ],
