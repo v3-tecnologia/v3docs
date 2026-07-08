@@ -1,6 +1,6 @@
 ---
 slug: conectividade-iot-parte-2
-title: Conectividade IoT sem mistério (Parte 2): rede celular, SIM M2M e APN
+title: "Conectividade IoT sem mistério (Parte 2): rede celular, SIM M2M e APN"
 authors: [adriano]
 tags: [v3-tecnologia, engenharia]
 ---
@@ -19,7 +19,7 @@ Quando um dispositivo IoT com modem celular envia dados, o caminho simplificado 
 
 Em termos práticos, a operadora não oferece apenas cobertura de rádio. Ela oferece controle de sessão, autenticação, roteamento e políticas de tráfego.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/GSM_ArchitecturePL.svg" alt="Visão simplificada de arquitetura de rede celular." style="max-width: 780px; width: 100%; height: auto;" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/GSM_ArchitecturePL.svg" alt="Visão simplificada de arquitetura de rede celular." style={{ maxWidth: "780px", width: "100%", height: "auto" }} />
 
 Fonte: [Wikimedia Commons - File:GSM_ArchitecturePL.svg](https://commons.wikimedia.org/wiki/File:GSM_ArchitecturePL.svg)
 
@@ -60,7 +60,7 @@ Quando o dispositivo sobe sessão de dados, o APN participa do fluxo de ponta a 
 
 Em termos de transporte, o plano de usuário em redes móveis usa encapsulamento em túneis (como GTP-U no contexto 3GPP), o que permite separar sessões por dispositivo e aplicar política por bearer/sessão.
 
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Evolved_Packet_Core.svg" alt="Arquitetura EPC com principais funções de core usadas para sessão de dados e política de APN." style="max-width: 780px; width: 100%; height: auto;" />
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Evolved_Packet_Core.svg" alt="Arquitetura EPC com principais funções de core usadas para sessão de dados e política de APN." style={{ maxWidth: "780px", width: "100%", height: "auto" }} />
 
 Fonte: [Wikimedia Commons - File:Evolved_Packet_Core.svg](https://commons.wikimedia.org/wiki/File:Evolved_Packet_Core.svg)
 

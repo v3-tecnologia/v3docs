@@ -1,12 +1,12 @@
 ---
 slug: conectividade-iot-parte-1
-title: Conectividade IoT sem mistério (Parte 1): fundamentos para decisões de conectividade
+title: "Conectividade IoT sem mistério (Parte 1): fundamentos para decisões de conectividade"
 authors: [adriano]
 tags: [v3-tecnologia, engenharia]
 ---
 
-<div style="margin: 0 0 24px 0; border-radius: 14px; overflow: hidden; border: 1px solid #d9e2f2; box-shadow: 0 10px 28px rgba(9, 30, 66, 0.12);">
-	<img src="./conectividade-iot-parte-1-header.png" alt="Ilustração de cobertura celular em diferentes distâncias e terrenos." style="display: block; width: 100%; max-height: 420px; object-fit: cover;" />
+<div style={{ margin: "0 0 24px 0", borderRadius: "14px", overflow: "hidden", border: "1px solid #d9e2f2", boxShadow: "0 10px 28px rgba(9, 30, 66, 0.12)" }}>
+	<img src="./conectividade-iot-parte-1-header.png" alt="Ilustração de cobertura celular em diferentes distâncias e terrenos." style={{ display: "block", width: "100%", maxHeight: "420px", objectFit: "cover" }} />
 </div>
 
 Escolher conectividade em IoT vai muito além de definir "qual rede usar". Em projetos reais, essa decisão afeta viabilidade financeira, velocidade de implantação, confiabilidade da operação e experiência do cliente no dia a dia.
@@ -32,7 +32,7 @@ Em laboratório, quase toda conectividade parece funcionar. Em produção, surge
 
 Essas zonas de baixa disponibilidade ou baixa qualidade de sinal são as chamadas áreas de sombra. Na prática, elas não são apenas pontos sem sinal: podem ser regiões com latência imprevisível, perda de pacotes ou oscilação de tecnologia (4G para 3G, por exemplo).
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/18/CellTowerRichmondHill.jpg" alt="Torre de rede celular usada para cobertura em campo." style="max-width: 780px; width: 100%; height: auto;" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/18/CellTowerRichmondHill.jpg" alt="Torre de rede celular usada para cobertura em campo." style={{ maxWidth: "780px", width: "100%", height: "auto" }} />
 
 Fonte: [Wikimedia Commons - File:CellTowerRichmondHill.jpg](https://commons.wikimedia.org/wiki/File:CellTowerRichmondHill.jpg)
 
@@ -88,7 +88,7 @@ Projetos IoT maduros alinham tecnologia com normas e diretrizes de mercado:
 
 Seguir padrões reduz risco de lock-in, melhora interoperabilidade e facilita auditoria técnica/comercial.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Cellular_network_standards_and_generation_timeline.svg" alt="Linha do tempo de padrões e gerações de redes celulares." style="max-width: 780px; width: 100%; height: auto;" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Cellular_network_standards_and_generation_timeline.svg" alt="Linha do tempo de padrões e gerações de redes celulares." style={{ maxWidth: "780px", width: "100%", height: "auto" }} />
 
 Fonte: [Wikimedia Commons - File:Cellular_network_standards_and_generation_timeline.svg](https://commons.wikimedia.org/wiki/File:Cellular_network_standards_and_generation_timeline.svg)
 

@@ -1,6 +1,6 @@
 ---
 slug: conectividade-iot-parte-3
-title: Conectividade IoT sem mistério (Parte 3): Mesh, LoRa, LoRaWAN e Zigbee
+title: "Conectividade IoT sem mistério (Parte 3): Mesh, LoRa, LoRaWAN e Zigbee"
 authors: [adriano]
 tags: [v3-tecnologia, engenharia]
 ---
@@ -23,7 +23,7 @@ Pontos de atenção:
 - Mais hops podem aumentar latência e consumo.
 - Interferência em banda não licenciada pode degradar desempenho.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/97/NetworkTopology-Mesh.svg" alt="Topologia de rede mesh parcialmente conectada." style="max-width: 560px; width: 100%; height: auto;" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/97/NetworkTopology-Mesh.svg" alt="Topologia de rede mesh parcialmente conectada." style={{ maxWidth: "560px", width: "100%", height: "auto" }} />
 
 Fonte: [Wikimedia Commons - File:NetworkTopology-Mesh.svg](https://commons.wikimedia.org/wiki/File:NetworkTopology-Mesh.svg)
 
@@ -43,7 +43,7 @@ Limitações típicas:
 - Dever de transmissão (duty cycle) e regras de espectro impactam capacidade.
 - Latência e downlink limitados dependendo da classe do dispositivo.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/94/LoRa-RF_Ananlyzer-12-7.8k.1.jpg" alt="Sinal LoRa observado em analisador de RF." style="max-width: 420px; width: 100%; height: auto;" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/94/LoRa-RF_Ananlyzer-12-7.8k.1.jpg" alt="Sinal LoRa observado em analisador de RF." style={{ maxWidth: "420px", width: "100%", height: "auto" }} />
 
 Fonte: [Wikimedia Commons - File:LoRa-RF_Ananlyzer-12-7.8k.1.jpg](https://commons.wikimedia.org/wiki/File:LoRa-RF_Ananlyzer-12-7.8k.1.jpg)
 
@@ -62,7 +62,7 @@ Desafios:
 - Alcance por salto depende da densidade de nós roteadores.
 - Coexistência em 2,4 GHz exige planejamento para evitar interferência.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/ETRX357_ZigBee_module_with_size_ref.JPG" alt="Módulo Zigbee (ETRX357) com referência de tamanho." style="max-width: 420px; width: 100%; height: auto;" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/ETRX357_ZigBee_module_with_size_ref.JPG" alt="Módulo Zigbee (ETRX357) com referência de tamanho." style={{ maxWidth: "420px", width: "100%", height: "auto" }} />
 
 Fonte: [Wikimedia Commons - File:ETRX357_ZigBee_module_with_size_ref.JPG](https://commons.wikimedia.org/wiki/File:ETRX357_ZigBee_module_with_size_ref.JPG)
 

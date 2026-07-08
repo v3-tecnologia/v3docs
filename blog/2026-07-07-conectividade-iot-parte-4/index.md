@@ -1,6 +1,6 @@
 ---
 slug: conectividade-iot-parte-4
-title: Conectividade IoT sem mistério (Parte 4): redes para dispositivos móveis em veículos
+title: "Conectividade IoT sem mistério (Parte 4): redes para dispositivos móveis em veículos"
 authors: [adriano]
 tags: [v3-tecnologia, engenharia]
 ---
@@ -21,7 +21,7 @@ Por isso, telemetria veicular precisa ser projetada para intermitência, não pa
 
 Em outras palavras: ter "barra de sinal" não significa que o sistema consegue entregar dado útil com previsibilidade. Em mobilidade, a diferença entre "conectado" e "operando bem" aparece quando a rede oscila e o sistema precisa manter contexto, ordem temporal e prioridade de eventos.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/73/E-call_in_a_vw_e-golf_2018.jpg" alt="Botão de emergência automotiva conectado por rede celular." style="max-width: 780px; width: 100%; height: auto;" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/73/E-call_in_a_vw_e-golf_2018.jpg" alt="Botão de emergência automotiva conectado por rede celular." style={{ maxWidth: "780px", width: "100%", height: "auto" }} />
 
 Fonte: [Wikimedia Commons - File:E-call_in_a_vw_e-golf_2018.jpg](https://commons.wikimedia.org/wiki/File:E-call_in_a_vw_e-golf_2018.jpg)
 
@@ -39,7 +39,7 @@ Na prática, o efeito da oscilação aparece assim:
 - Upload de arquivos grandes (video/imagem): aumento forte de tempo total e risco de timeout.
 - Telemetria de eventos: fila concorrendo com mídia e perdendo janela operacional.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Video_telematics_device_and_fleet_management_software_with_video_functionality.jpg" alt="Exemplo de dispositivo de videotelemetria em contexto de gestao de frota." style="max-width: 640px; width: 100%; height: auto;" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Video_telematics_device_and_fleet_management_software_with_video_functionality.jpg" alt="Exemplo de dispositivo de videotelemetria em contexto de gestao de frota." style={{ maxWidth: "640px", width: "100%", height: "auto" }} />
 
 Fonte: [Wikimedia Commons - File:Video_telematics_device_and_fleet_management_software_with_video_functionality.jpg](https://commons.wikimedia.org/wiki/File:Video_telematics_device_and_fleet_management_software_with_video_functionality.jpg)
 
@@ -76,7 +76,7 @@ No cenário de videotelemetria, APN e política de roteamento também influencia
 - Definição de limites para evitar que upload de vídeo degrade dados operacionais.
 - Política clara para roaming e fallback, evitando "buracos" em rotas longas.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Dashcams_P1210466.JPG" alt="Exemplo de dashcams instaladas em para-brisa, representando carga de videodados em mobilidade." style="max-width: 560px; width: 100%; height: auto;" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Dashcams_P1210466.JPG" alt="Exemplo de dashcams instaladas em para-brisa, representando carga de videodados em mobilidade." style={{ maxWidth: "560px", width: "100%", height: "auto" }} />
 
 Fonte: [Wikimedia Commons - File:Dashcams_P1210466.JPG](https://commons.wikimedia.org/wiki/File:Dashcams_P1210466.JPG)
 
@@ -106,9 +106,9 @@ Para que essas métricas façam sentido prático, é essencial ter visibilidade 
 
 Com essas informações estruturadas e em tempo real, times de operação conseguem antecipar problemas, validar impacto de mudanças infraestruturais e comunicar com transparência o status da frota para stakeholders.
 
-<img src="./monitoramento-frota-dashboard.jpg" alt="Dashboard de monitoramento de frota com métricas de conectividade, distribuição de sinal, consumo de dados e localização de dispositivos em tempo real." style="max-width: 100%; width: 100%; height: auto; border-radius: 8px; margin: 20px 0;" />
+<img src="./monitoramento-frota-dashboard.jpg" alt="Dashboard de monitoramento de frota com métricas de conectividade, distribuição de sinal, consumo de dados e localização de dispositivos em tempo real." style={{ maxWidth: "100%", width: "100%", height: "auto", borderRadius: "8px", margin: "20px 0" }} />
 
-<p style="font-size: 14px; color: #666; margin: 12px 0 24px 0; font-style: italic;">Figura: Dashboard da solução V3 de monitoramento para operações de frota. Visibilidade completa de saúde de dispositivos, distribuição de conectividade e métricas operacionais em tempo real da frota do cliente.</p>
+<p style={{ fontSize: "14px", color: "#666", margin: "12px 0 24px 0", fontStyle: "italic" }}>Figura: Dashboard da solução V3 de monitoramento para operações de frota. Visibilidade completa de saúde de dispositivos, distribuição de conectividade e métricas operacionais em tempo real da frota do cliente.</p>
 
 ## Normas e referências úteis
 
