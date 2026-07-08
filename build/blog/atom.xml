@@ -25,8 +25,7 @@
 </ul>
 <p>Por isso, telemetria veicular precisa ser projetada para intermitência, não para conectividade perfeita.</p>
 <p>Em outras palavras: ter "barra de sinal" não significa que o sistema consegue entregar dado útil com previsibilidade. Em mobilidade, a diferença entre "conectado" e "operando bem" aparece quando a rede oscila e o sistema precisa manter contexto, ordem temporal e prioridade de eventos.</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/73/E-call_in_a_vw_e-golf_2018.jpg" alt="Botão de emergência automotiva conectado por rede celular." style="max-width:780px;width:100%;height:auto">
-<p>Fonte: <a href="https://commons.wikimedia.org/wiki/File:E-call_in_a_vw_e-golf_2018.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons - File<!-- -->:E-call_in_a_vw_e-golf_2018<!-- -->.jpg</a></p>
+<img src="https://developer.v3control.com/assets/images/sinal-em-redes-moveis-f1031a8488642c90a389dddee80af11a.png" alt="Exemplo de conectividade móvel em veículo com transição de sinal entre redes durante o deslocamento." style="max-width:780px;width:100%;height:auto">
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="videotelemetria-e-streaming-em-operações-móveis">Videotelemetria e streaming em operações móveis<a href="https://developer.v3control.com/blog/conectividade-iot-parte-4#videotelemetria-e-streaming-em-opera%C3%A7%C3%B5es-m%C3%B3veis" class="hash-link" aria-label="Direct link to Videotelemetria e streaming em operações móveis" title="Direct link to Videotelemetria e streaming em operações móveis">​</a></h2>
 <p>Quando o caso de uso inclui câmera embarcada, upload de clipes ou streaming ao vivo, o desenho de rede precisa considerar três fatores ao mesmo tempo:</p>
 <ul>
@@ -40,8 +39,7 @@
 <li>Upload de arquivos grandes (video/imagem): aumento forte de tempo total e risco de timeout.</li>
 <li>Telemetria de eventos: fila concorrendo com mídia e perdendo janela operacional.</li>
 </ul>
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Video_telematics_device_and_fleet_management_software_with_video_functionality.jpg" alt="Exemplo de dispositivo de videotelemetria em contexto de gestao de frota." style="max-width:640px;width:100%;height:auto">
-<p>Fonte: <a href="https://commons.wikimedia.org/wiki/File:Video_telematics_device_and_fleet_management_software_with_video_functionality.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons - File<!-- -->:Video_telematics_device_and_fleet_management_software_with_video_functionality<!-- -->.jpg</a></p>
+<img src="https://developer.v3control.com/assets/images/videotelemetria-veicular-part4-e9e942fc426401f4d57996bf933bfd02.png" alt="Exemplo de videotelemetria veicular com variação de sinal em mobilidade." style="max-width:640px;width:100%;height:auto">
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="diretrizes-de-arquitetura-para-operações-móveis">Diretrizes de arquitetura para operações móveis<a href="https://developer.v3control.com/blog/conectividade-iot-parte-4#diretrizes-de-arquitetura-para-opera%C3%A7%C3%B5es-m%C3%B3veis" class="hash-link" aria-label="Direct link to Diretrizes de arquitetura para operações móveis" title="Direct link to Diretrizes de arquitetura para operações móveis">​</a></h2>
 <p>Mais do que publicar uma "receita pronta", vale reforçar os princípios que sustentam uma operação confiável em mobilidade:</p>
 <ul>

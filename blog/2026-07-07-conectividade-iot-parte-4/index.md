@@ -6,6 +6,8 @@ tags: [v3-tecnologia, engenharia]
 ---
 
 import FleetDashboardImage from "./monitoramento-frota-dashboard.jpg";
+import MobileNetworkSignalImage from "./sinal-em-redes-moveis.png";
+import VehicleVideotelemetryImage from "./videotelemetria-veicular-part4.png";
 
 Nos posts anteriores, cobrimos fundamentos de conectividade e comparação entre tecnologias. Para encerrar a série, vamos para um recorte prático: conectividade IoT em ativos móveis, com foco em veículos.
 
@@ -23,9 +25,7 @@ Por isso, telemetria veicular precisa ser projetada para intermitência, não pa
 
 Em outras palavras: ter "barra de sinal" não significa que o sistema consegue entregar dado útil com previsibilidade. Em mobilidade, a diferença entre "conectado" e "operando bem" aparece quando a rede oscila e o sistema precisa manter contexto, ordem temporal e prioridade de eventos.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/73/E-call_in_a_vw_e-golf_2018.jpg" alt="Botão de emergência automotiva conectado por rede celular." style={{ maxWidth: "780px", width: "100%", height: "auto" }} />
-
-Fonte: [Wikimedia Commons - File:E-call_in_a_vw_e-golf_2018.jpg](https://commons.wikimedia.org/wiki/File:E-call_in_a_vw_e-golf_2018.jpg)
+<img src={MobileNetworkSignalImage} alt="Exemplo de conectividade móvel em veículo com transição de sinal entre redes durante o deslocamento." style={{ maxWidth: "780px", width: "100%", height: "auto" }} />
 
 ## Videotelemetria e streaming em operações móveis
 
@@ -41,9 +41,7 @@ Na prática, o efeito da oscilação aparece assim:
 - Upload de arquivos grandes (video/imagem): aumento forte de tempo total e risco de timeout.
 - Telemetria de eventos: fila concorrendo com mídia e perdendo janela operacional.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Video_telematics_device_and_fleet_management_software_with_video_functionality.jpg" alt="Exemplo de dispositivo de videotelemetria em contexto de gestao de frota." style={{ maxWidth: "640px", width: "100%", height: "auto" }} />
-
-Fonte: [Wikimedia Commons - File:Video_telematics_device_and_fleet_management_software_with_video_functionality.jpg](https://commons.wikimedia.org/wiki/File:Video_telematics_device_and_fleet_management_software_with_video_functionality.jpg)
+<img src={VehicleVideotelemetryImage} alt="Exemplo de videotelemetria veicular com variação de sinal em mobilidade." style={{ maxWidth: "640px", width: "100%", height: "auto" }} />
 
 ## Diretrizes de arquitetura para operações móveis
 
