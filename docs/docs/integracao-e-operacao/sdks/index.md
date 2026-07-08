@@ -23,7 +23,15 @@ Os SDKs disponíveis atualmente são:
 - [SDK .NET](./dotnet.md)
 - [SDK Go](./go.md)
 
-Além disso, aqui você encontrará, em breve:
+## Repositórios oficiais
+
+- Java: [v3-tecnologia/v3-java-sdk](https://github.com/v3-tecnologia/v3-java-sdk)
+- Kotlin: [v3-tecnologia/v3-kotlin-sdk](https://github.com/v3-tecnologia/v3-kotlin-sdk)
+- .NET Orders: [v3-tecnologia/v3-dotnet-sdk](https://github.com/v3-tecnologia/v3-dotnet-sdk)
+- .NET Webhook: [v3-tecnologia/v3-webhook-dotnet-sdk](https://github.com/v3-tecnologia/v3-webhook-dotnet-sdk)
+- Go Webhook: [v3-tecnologia/v3-webhook-go-sdk](https://github.com/v3-tecnologia/v3-webhook-go-sdk)
+
+Nesta seção você encontrará:
 
 - Guias de instalação por linguagem
 - Exemplos de uso para cenários comuns
