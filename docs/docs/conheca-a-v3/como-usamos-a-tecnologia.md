@@ -16,7 +16,7 @@ A inteligência artificial representa sistemas computacionais capazes de realiza
 ###  Visão Computacional
 A visão computacional é um campo da IA que permite aos computadores "ver" e interpretar o mundo visual como os humanos. Através de técnicas sofisticadas de processamento de imagens e redes neurais convolucionais, nossos sistemas conseguem detectar objetos, reconhecer padrões visuais e compreender cenas complexas em tempo real.
 
-Um dos diferenciais da V3 é o seu motor de processamento para **Visão Computacional**, que pode ser visto com mais detalhes na [Sessão de Visão](/docs/docs/integracao-e-operacao/ap/visoes).
+Um dos diferenciais da V3 é o seu motor de processamento para **Visão Computacional**, que pode ser visto com mais detalhes na [Sessão de Visão](/docs/docs/integracao-e-operacao/api/visoes).
 
 ##  Nossos pilares tecnológicos
 

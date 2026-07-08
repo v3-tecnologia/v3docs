@@ -103,7 +103,7 @@ A aplicação estará disponível em `http://localhost:3000`
 │   │   ├── implantacao-e-setup/          # Configuração, instalação e ferramentas
 │   │   │   └── manual-de-instalacao/
 │   │   └── integracao-e-operacao/        # APIs e SDKs
-│   │       ├── ap/
+│   │       ├── api/
 │   │       └── sdks/
 │   ├── openapi/          # Documentação OpenAPI
 │   └── webhook/          # Documentação de Webhooks

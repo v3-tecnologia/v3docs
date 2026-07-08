@@ -34,6 +34,6 @@ Além disso, aqui você encontrará, em breve:
 
 Enquanto a documentação de SDKs é expandida, recomendamos iniciar por:
 
-1. [Autenticação](../ap/autenticacao.md)
-2. [Permissionamento](../ap/permissionamento.md)
+1. [Autenticação](../api/autenticacao.md)
+2. [Permissionamento](../api/permissionamento.md)
 3. [API](/docs/category/order-api)
