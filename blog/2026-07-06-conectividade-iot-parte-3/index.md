@@ -66,6 +66,29 @@ Desafios:
 
 Fonte: [Wikimedia Commons - File:ETRX357_ZigBee_module_with_size_ref.JPG](https://commons.wikimedia.org/wiki/File:ETRX357_ZigBee_module_with_size_ref.JPG)
 
+## Redes satelitais: cobertura ampla com trade-offs de latência e custo
+
+Quando o projeto opera fora da cobertura terrestre consistente (áreas remotas, oceânicas, mineração, agro em grande extensão), conectividade satelital deixa de ser exceção e passa a ser considerada parte da arquitetura.
+
+De forma prática, as órbitas mais comuns entram no desenho assim:
+
+- LEO (Low Earth Orbit): menor latência e melhor experiência para aplicações mais interativas, com constelações de muitos satélites e handovers frequentes (ex.: Starlink e OneWeb).
+- MEO (Medium Earth Orbit): equilíbrio entre cobertura e latência, menos comum em IoT generalista, mas relevante em alguns serviços especializados (ex.: SES O3b).
+- GEO (Geostationary Earth Orbit): grande cobertura por satélite, arquitetura mais estável do ponto de vista orbital, porém com latência maior (ex.: Inmarsat, Intelsat e Viasat).
+
+Critérios de decisão para satélite:
+
+- Cobertura real de campo, não apenas mapa de marketing do provedor.
+- Orçamento de energia do terminal e perfil de transmissão (evento, lote, quase tempo real).
+- Sensibilidade da aplicação à latência e à variação de throughput.
+- Custo total: hardware, plano de dados, instalação e operação contínua.
+- Estratégia híbrida com fallback terrestre (celular/LPWAN) quando disponível.
+- Avaliar tráfego de mídia (imagens, clipes de vídeo e streaming): uplink sustentado, tempo de upload, risco de timeout, consumo de franquia e necessidade de priorização entre evento crítico e mídia.
+- Quando o IoT é móvel, avaliar handover entre feixes/células, estabilidade de sessão em deslocamento e variação de desempenho por corredor logístico.
+- Em mobilidade, considerar o impacto de velocidade e rota na perda de pacote, jitter e tempo de entrega de eventos críticos.
+
+Em muitos projetos IoT, satélite não substitui tudo: ele complementa a conectividade terrestre para garantir continuidade operacional onde a infraestrutura tradicional não chega com previsibilidade. Em cenários móveis, essa complementaridade precisa ser validada em rota real, porque o desempenho pode variar significativamente entre regiões e condições de deslocamento.
+
 ## Como escolher entre essas redes
 
 Use uma matriz simples de decisão:
@@ -82,6 +105,7 @@ Uma regra prática:
 - Se precisa mobilidade ampla e controle centralizado, celular tende a liderar.
 - Se precisa autonomia energética e longas distâncias com pouca carga, LoRaWAN é forte.
 - Se precisa rede local densa e baixa potência, Zigbee ou Mesh podem ser melhores.
+- Se precisa cobertura em áreas remotas sem infraestrutura terrestre confiável, satélite (LEO/MEO/GEO) entra como opção principal ou camada de contingência.
 
 ## Normas e referências técnicas
 
