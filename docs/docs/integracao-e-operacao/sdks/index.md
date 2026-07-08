@@ -2,7 +2,7 @@
 sidebar_position: 14
 ---
 
-# SDKs
+# Visão Geral
 
 Esta seção reúne os SDKs oficiais da V3 para acelerar integrações e reduzir complexidade de implementação.
 

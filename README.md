@@ -97,18 +97,14 @@ A aplicação estará disponível em `http://localhost:3000`
 │   └── YYYY-MM-DD-*      # Posts do blog
 ├── docs/
 │   ├── docs/             # Documentação geral
-│   │   ├── 02-conhecendo-a-v3/    # Introdução à V3
-│   │   ├── 03-solucao-v3/         # Detalhes da solução
-│   │   ├── 04-configuracao-inicial.md
-│   │   ├── 05-manual-de-instalacao/
-│   │   ├── 06-ferramenta-de-configuracao.md
-│   │   ├── 07-autenticacao.md
-│   │   ├── 08-permissionamento.md
-│   │   ├── 09-gerenciamento.md
-│   │   ├── 10-ordens.md
-│   │   ├── 11-eventos.md
-│   │   ├── 12-visoes.md
-│   │   └── 13-notificacoes.md
+│   │   ├── conheca-a-v3/                 # Quem somos, tecnologia e público
+│   │   ├── visao-geral-da-plataforma/    # Missão/visão/valores + solução
+│   │   │   └── solucao-v3/               # Detalhes da solução
+│   │   ├── implantacao-e-setup/          # Configuração, instalação e ferramentas
+│   │   │   └── manual-de-instalacao/
+│   │   └── integracao-e-operacao/        # APIs e SDKs
+│   │       ├── ap/
+│   │       └── sdks/
 │   ├── openapi/          # Documentação OpenAPI
 │   └── webhook/          # Documentação de Webhooks
 ├── examples/             # Exemplos e especificações
@@ -143,7 +139,7 @@ Os arquivos principais de configuração são:
 
 ### Documentação de APIs
 
-Os arquivos `.yaml` no diretório `examples/` são automaticamente renderizados na pasta `docs/api/`. Para adicionar uma nova API:
+Os arquivos `.yaml` no diretório `examples/` são automaticamente renderizados na seção de API (OpenAPI) em `docs/openapi/`. Para adicionar uma nova API:
 
 1. Adicione o arquivo `.yaml` em `examples/`
 2. Configure o plugin no `docusaurus.config.ts`
@@ -175,7 +171,7 @@ sidebar_position: 1
 
 Para criar um novo post no blog:
 
-1. Crie um arquivo em `blog/YYYY-MM-DD-titulo.md`
+1. Crie uma pasta em `blog/YYYY-MM-DD-titulo/` com um arquivo `index.md` dentro
 2. Adicione o cabeçalho:
 ```markdown
 ---

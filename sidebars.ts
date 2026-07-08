@@ -73,7 +73,7 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: "category",
-          label: "AP",
+          label: "API",
           items: [
             "docs/integracao-e-operacao/ap/autenticacao",
             "docs/integracao-e-operacao/ap/permissionamento",
