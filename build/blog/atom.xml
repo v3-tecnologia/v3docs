@@ -92,7 +92,7 @@
 <li>Alertas automáticos para anomalias (dispositivo offline prolongado, oscilação de rede, timeout de uplink).</li>
 </ul>
 <p>Com essas informações estruturadas e em tempo real, times de operação conseguem antecipar problemas, validar impacto de mudanças infraestruturais e comunicar com transparência o status da frota para stakeholders.</p>
-<img src="https://developer.v3control.com/blog/monitoramento-frota-dashboard.jpg" alt="Dashboard de monitoramento de frota com métricas de conectividade, distribuição de sinal, consumo de dados e localização de dispositivos em tempo real." style="max-width:100%;width:100%;height:auto;border-radius:8px;margin:20px 0">
+<img src="https://developer.v3control.com/assets/images/monitoramento-frota-dashboard-09a4c7c0282e916e5b4a7440c6f429e5.jpg" alt="Dashboard de monitoramento de frota com métricas de conectividade, distribuição de sinal, consumo de dados e localização de dispositivos em tempo real." style="max-width:100%;width:100%;height:auto;border-radius:8px;margin:20px 0">
 <p style="font-size:14px;color:#666;margin:12px 0 24px 0;font-style:italic">Figura: Dashboard da solução V3 de monitoramento para operações de frota. Visibilidade completa de saúde de dispositivos, distribuição de conectividade e métricas operacionais em tempo real da frota do cliente.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="normas-e-referências-úteis">Normas e referências úteis<a href="https://developer.v3control.com/blog/conectividade-iot-parte-4#normas-e-refer%C3%AAncias-%C3%BAteis" class="hash-link" aria-label="Direct link to Normas e referências úteis" title="Direct link to Normas e referências úteis">​</a></h2>
 <ul>
@@ -302,7 +302,7 @@
         <link href="https://developer.v3control.com/blog/conectividade-iot-parte-1"/>
         <updated>2026-07-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Escolher conectividade em IoT vai muito além de definir "qual rede usar". Em projetos reais, essa decisão afeta viabilidade financeira, velocidade de implantação, confiabilidade da operação e experiência do cliente no dia a dia.]]></summary>
-        <content type="html"><![CDATA[<div style="margin:0 0 24px 0;border-radius:14px;overflow:hidden;border:1px solid #d9e2f2;box-shadow:0 10px 28px rgba(9, 30, 66, 0.12)"><img src="https://developer.v3control.com/blog/conectividade-iot-parte-1-header.png" alt="Ilustração de cobertura celular em diferentes distâncias e terrenos." style="display:block;width:100%;max-height:420px;object-fit:cover"></div>
+        <content type="html"><![CDATA[<div style="margin:0 0 24px 0;border-radius:14px;overflow:hidden;border:1px solid #d9e2f2;box-shadow:0 10px 28px rgba(9, 30, 66, 0.12)"><img src="https://developer.v3control.com/assets/images/conectividade-iot-parte-1-header-716dc1313af835cc6d6954eb5277409b.png" alt="Ilustração de cobertura celular em diferentes distâncias e terrenos." style="display:block;width:100%;max-height:420px;object-fit:cover"></div>
 <p>Escolher conectividade em IoT vai muito além de definir "qual rede usar". Em projetos reais, essa decisão afeta viabilidade financeira, velocidade de implantação, confiabilidade da operação e experiência do cliente no dia a dia.</p>
 <p>Esta série foi criada para organizar esse tema de forma progressiva, conectando visão de negócio e fundamentos técnicos sem perder foco prático. A ideia é ajudar times de produto, engenharia e operações a tomarem decisões melhores antes que os problemas apareçam em campo.</p>
 <p>Ao longo de 4 partes, vamos cobrir:</p>

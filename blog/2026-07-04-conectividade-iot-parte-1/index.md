@@ -5,8 +5,10 @@ authors: [adriano]
 tags: [v3-tecnologia, engenharia]
 ---
 
+import HeaderImage from "./conectividade-iot-parte-1-header.png";
+
 <div style={{ margin: "0 0 24px 0", borderRadius: "14px", overflow: "hidden", border: "1px solid #d9e2f2", boxShadow: "0 10px 28px rgba(9, 30, 66, 0.12)" }}>
-	<img src="./conectividade-iot-parte-1-header.png" alt="Ilustração de cobertura celular em diferentes distâncias e terrenos." style={{ display: "block", width: "100%", maxHeight: "420px", objectFit: "cover" }} />
+	<img src={HeaderImage} alt="Ilustração de cobertura celular em diferentes distâncias e terrenos." style={{ display: "block", width: "100%", maxHeight: "420px", objectFit: "cover" }} />
 </div>
 
 Escolher conectividade em IoT vai muito além de definir "qual rede usar". Em projetos reais, essa decisão afeta viabilidade financeira, velocidade de implantação, confiabilidade da operação e experiência do cliente no dia a dia.

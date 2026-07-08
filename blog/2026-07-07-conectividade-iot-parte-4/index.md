@@ -5,6 +5,8 @@ authors: [adriano]
 tags: [v3-tecnologia, engenharia]
 ---
 
+import FleetDashboardImage from "./monitoramento-frota-dashboard.jpg";
+
 Nos posts anteriores, cobrimos fundamentos de conectividade e comparação entre tecnologias. Para encerrar a série, vamos para um recorte prático: conectividade IoT em ativos móveis, com foco em veículos.
 
 ## O que muda quando o ativo está em movimento
@@ -106,7 +108,7 @@ Para que essas métricas façam sentido prático, é essencial ter visibilidade 
 
 Com essas informações estruturadas e em tempo real, times de operação conseguem antecipar problemas, validar impacto de mudanças infraestruturais e comunicar com transparência o status da frota para stakeholders.
 
-<img src="./monitoramento-frota-dashboard.jpg" alt="Dashboard de monitoramento de frota com métricas de conectividade, distribuição de sinal, consumo de dados e localização de dispositivos em tempo real." style={{ maxWidth: "100%", width: "100%", height: "auto", borderRadius: "8px", margin: "20px 0" }} />
+<img src={FleetDashboardImage} alt="Dashboard de monitoramento de frota com métricas de conectividade, distribuição de sinal, consumo de dados e localização de dispositivos em tempo real." style={{ maxWidth: "100%", width: "100%", height: "auto", borderRadius: "8px", margin: "20px 0" }} />
 
 <p style={{ fontSize: "14px", color: "#666", margin: "12px 0 24px 0", fontStyle: "italic" }}>Figura: Dashboard da solução V3 de monitoramento para operações de frota. Visibilidade completa de saúde de dispositivos, distribuição de conectividade e métricas operacionais em tempo real da frota do cliente.</p>
 
