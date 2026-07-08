@@ -12,7 +12,7 @@ Estamos empolgados em anunciar nossa primeira entrada no blog de changelogs! A p
 ## Destaque da Versão
 
 ### Processamento Inteligente de Eventos DMS
-- Implementamos um novo sistema de [**agrupamento de eventos DMS**](/docs/docs/solucao-v3/03.02-core/03.02.01-v3fw/03.02.01.05-dms/03.02.01.05.02-deteccao-inteligente), que:
+- Implementamos um novo sistema de [**agrupamento de eventos DMS**](/docs/docs/visao-geral-da-plataforma/solucao-v3/03.02-core/03.02.01-v3fw/03.02.01.05-dms/03.02.01.05.02-deteccao-inteligente), que:
   - Reduz significativamente a quantidade de eventos gerados
   - Otimiza o processamento e consumo de recursos
   - Melhora a precisão na detecção de eventos

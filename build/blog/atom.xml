@@ -435,7 +435,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="destaque-da-versão">Destaque da Versão<a href="https://developer.v3control.com/blog/changelog-1.18.0#destaque-da-vers%C3%A3o" class="hash-link" aria-label="Direct link to Destaque da Versão" title="Direct link to Destaque da Versão">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="processamento-inteligente-de-eventos-dms">Processamento Inteligente de Eventos DMS<a href="https://developer.v3control.com/blog/changelog-1.18.0#processamento-inteligente-de-eventos-dms" class="hash-link" aria-label="Direct link to Processamento Inteligente de Eventos DMS" title="Direct link to Processamento Inteligente de Eventos DMS">​</a></h3>
 <ul>
-<li>Implementamos um novo sistema de <a href="https://developer.v3control.com/docs/docs/solucao-v3/03.02-core/03.02.01-v3fw/03.02.01.05-dms/03.02.01.05.02-deteccao-inteligente"><strong>agrupamento de eventos DMS</strong></a>, que:<!-- -->
+<li>Implementamos um novo sistema de <a href="https://developer.v3control.com/docs/docs/visao-geral-da-plataforma/solucao-v3/03.02-core/03.02.01-v3fw/03.02.01.05-dms/03.02.01.05.02-deteccao-inteligente"><strong>agrupamento de eventos DMS</strong></a>, que:<!-- -->
 <ul>
 <li>Reduz significativamente a quantidade de eventos gerados</li>
 <li>Otimiza o processamento e consumo de recursos</li>
