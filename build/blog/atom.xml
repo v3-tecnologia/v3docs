@@ -66,8 +66,7 @@
 <li>Definição de limites para evitar que upload de vídeo degrade dados operacionais.</li>
 <li>Política clara para roaming e fallback, evitando "buracos" em rotas longas.</li>
 </ul>
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Dashcams_P1210466.JPG" alt="Exemplo de dashcams instaladas em para-brisa, representando carga de videodados em mobilidade." style="max-width:560px;width:100%;height:auto">
-<p>Fonte: <a href="https://commons.wikimedia.org/wiki/File:Dashcams_P1210466.JPG" target="_blank" rel="noopener noreferrer">Wikimedia Commons - File<!-- -->:Dashcams_P1210466<!-- -->.JPG</a></p>
+<img src="https://developer.v3control.com/assets/images/videotelemetria-e-monitoramento-24a7993260d70d8457d019bbd303baba.png" alt="Exemplo de dashcams instaladas em para-brisa, representando carga de videodados em mobilidade." style="max-width:560px;width:100%;height:auto">
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="boas-práticas-operacionais-para-reduzir-falhas">Boas práticas operacionais para reduzir falhas<a href="https://developer.v3control.com/blog/conectividade-iot-parte-4#boas-pr%C3%A1ticas-operacionais-para-reduzir-falhas" class="hash-link" aria-label="Direct link to Boas práticas operacionais para reduzir falhas" title="Direct link to Boas práticas operacionais para reduzir falhas">​</a></h2>
 <p>Além de software e rede, a camada física faz diferença:</p>
 <ul>

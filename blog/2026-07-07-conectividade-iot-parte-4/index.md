@@ -8,6 +8,7 @@ tags: [v3-tecnologia, engenharia]
 import FleetDashboardImage from "./monitoramento-frota-dashboard.jpg";
 import MobileNetworkSignalImage from "./sinal-em-redes-moveis.png";
 import VehicleVideotelemetryImage from "./videotelemetria-veicular-part4.png";
+import DashcamImage from "./videotelemetria-e-monitoramento.png";
 
 Nos posts anteriores, cobrimos fundamentos de conectividade e comparação entre tecnologias. Para encerrar a série, vamos para um recorte prático: conectividade IoT em ativos móveis, com foco em veículos.
 
@@ -76,9 +77,7 @@ No cenário de videotelemetria, APN e política de roteamento também influencia
 - Definição de limites para evitar que upload de vídeo degrade dados operacionais.
 - Política clara para roaming e fallback, evitando "buracos" em rotas longas.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Dashcams_P1210466.JPG" alt="Exemplo de dashcams instaladas em para-brisa, representando carga de videodados em mobilidade." style={{ maxWidth: "560px", width: "100%", height: "auto" }} />
-
-Fonte: [Wikimedia Commons - File:Dashcams_P1210466.JPG](https://commons.wikimedia.org/wiki/File:Dashcams_P1210466.JPG)
+<img src={DashcamImage} alt="Exemplo de dashcams instaladas em para-brisa, representando carga de videodados em mobilidade." style={{ maxWidth: "560px", width: "100%", height: "auto" }} />
 
 ## Boas práticas operacionais para reduzir falhas
 
