@@ -197,10 +197,10 @@
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="normas-e-referências-técnicas">Normas e referências técnicas<a href="https://developer.v3control.com/blog/conectividade-iot-parte-3#normas-e-refer%C3%AAncias-t%C3%A9cnicas" class="hash-link" aria-label="Direct link to Normas e referências técnicas" title="Direct link to Normas e referências técnicas">​</a></h2>
 <ul>
-<li>LoRaWAN: especificações da LoRa Alliance.</li>
-<li>Zigbee: especificações Zigbee sobre IEEE 802.15.4.</li>
-<li>Redes mesh em geral: perfis e stacks variam por protocolo (Thread, Zigbee, Bluetooth Mesh).</li>
-<li>Segurança IoT: referências como ETSI EN 303 645 e boas práticas de gestão de chaves/credenciais.</li>
+<li>LoRaWAN: especificações da <a href="https://lora-alliance.org/resource_hub/lorawan-specification-v1-1/" target="_blank" rel="noopener noreferrer">LoRa Alliance</a>.</li>
+<li>Zigbee: especificações da <a href="https://csa-iot.org/all-solutions/zigbee/" target="_blank" rel="noopener noreferrer">Connectivity Standards Alliance (Zigbee)</a> sobre <a href="https://standards.ieee.org/ieee/802.15.4/7028/" target="_blank" rel="noopener noreferrer">IEEE 802.15.4</a>.</li>
+<li>Redes mesh em geral: perfis e stacks variam por protocolo (<a href="https://www.threadgroup.org/What-is-Thread" target="_blank" rel="noopener noreferrer">Thread</a>, <a href="https://csa-iot.org/all-solutions/zigbee/" target="_blank" rel="noopener noreferrer">Zigbee</a>, <a href="https://www.bluetooth.com/mesh/" target="_blank" rel="noopener noreferrer">Bluetooth Mesh</a>).</li>
+<li>Segurança IoT: referências como <a href="https://www.etsi.org/deliver/etsi_en/303600_303699/303645/02.01.01_60/en_303645v020101p.pdf" target="_blank" rel="noopener noreferrer">ETSI EN 303 645</a> e boas práticas de gestão de chaves/credenciais.</li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="próximo-post-da-série">Próximo post da série<a href="https://developer.v3control.com/blog/conectividade-iot-parte-3#pr%C3%B3ximo-post-da-s%C3%A9rie" class="hash-link" aria-label="Direct link to Próximo post da série" title="Direct link to Próximo post da série">​</a></h2>
 <p>Na <a href="https://developer.v3control.com/blog/conectividade-iot-parte-4">Parte 4</a>, fechamos a série com foco em conectividade para dispositivos móveis em veículos, cobrindo desafios de mobilidade, arquitetura de resiliência e boas práticas de campo.</p>

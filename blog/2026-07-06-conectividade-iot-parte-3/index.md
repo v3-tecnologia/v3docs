@@ -109,10 +109,10 @@ Uma regra prática:
 
 ## Normas e referências técnicas
 
-- LoRaWAN: especificações da LoRa Alliance.
-- Zigbee: especificações Zigbee sobre IEEE 802.15.4.
-- Redes mesh em geral: perfis e stacks variam por protocolo (Thread, Zigbee, Bluetooth Mesh).
-- Segurança IoT: referências como ETSI EN 303 645 e boas práticas de gestão de chaves/credenciais.
+- LoRaWAN: especificações da [LoRa Alliance](https://lora-alliance.org/resource_hub/lorawan-specification-v1-1/).
+- Zigbee: especificações da [Connectivity Standards Alliance (Zigbee)](https://csa-iot.org/all-solutions/zigbee/) sobre [IEEE 802.15.4](https://standards.ieee.org/ieee/802.15.4/7028/).
+- Redes mesh em geral: perfis e stacks variam por protocolo ([Thread](https://www.threadgroup.org/What-is-Thread), [Zigbee](https://csa-iot.org/all-solutions/zigbee/), [Bluetooth Mesh](https://www.bluetooth.com/mesh/)).
+- Segurança IoT: referências como [ETSI EN 303 645](https://www.etsi.org/deliver/etsi_en/303600_303699/303645/02.01.01_60/en_303645v020101p.pdf) e boas práticas de gestão de chaves/credenciais.
 
 ## Próximo post da série
 
