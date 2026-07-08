@@ -28,7 +28,14 @@ val client = V3ClientFactory.create(
 ```kotlin
 val result = client.device("device-001") {
 	orders {
-		reboot {
+		
+		addWifi {
+			ssid = "Office-WiFi"
+			password = "Secret123"
+			correlationId = "wifi-setup-1"
+		}
+
+        reboot {
 			autoGenerateCorrelationId = true
 		}
 	}
@@ -40,21 +47,63 @@ result.match(
 )
 ```
 
-## Exemplo rápido: Media
+## Exemplo rápido: Management (Devices)
 
 ```kotlin
-client.media {
-	val fileResult = downloadFile(
-		key = "encrypted-file-key",
-		download = true,
-		filename = "snapshot.jpg"
-	)
+val listDevicesResult = client.devices {
+	list(page = 1, pageSize = 10)
+}
 
-	fileResult.match(
-		onSuccess = { bytes -> println("Downloaded bytes: ${bytes.size}") },
-		onFailure = { error -> println("Download error: $error") }
+listDevicesResult.match(
+	onSuccess = { page -> println("Devices: ${page.data.size}") },
+	onFailure = { error -> println("List devices error: $error") }
+)
+
+val createDeviceResult = client.devices {
+	create {
+		imei = "123456789012345"
+		model = "GPS Tracker Pro"
+		correlationId = "device-create-1"
+	}
+}
+
+createDeviceResult.match(
+	onSuccess = { device -> println("Created device id: ${device.id}") },
+	onFailure = { error -> println("Create device error: $error") }
+)
+```
+
+## Exemplo rápido: Management (Drivers)
+
+```kotlin
+val getDriverResult = client.driver("driver-xyz") { get() }
+
+val updateDriverResult = client.driver("driver-xyz") {
+	update {
+		name = "John Doe"
+		teamId = "team-789"
+	}
+}
+
+client.drivers {
+	create {
+		name = "John Doe"
+		correlationId = "driver-create-1"
+		teamId = "team-789"
+	}
+
+	list(pageSize = 10).match(
+		onSuccess = { page ->
+			println("Total drivers: ${page.data.size}")
+		},
+		onFailure = { error ->
+			println("List drivers error: $error")
+		}
 	)
 }
+
+val assignDriverResult = client.driver("driver-xyz") { assignToTeam("team-789") }
+val removeDriverFromTeamResult = client.driver("driver-xyz") { removeFromTeam("team-789") }
 ```
 
 ## Padrão de retorno
