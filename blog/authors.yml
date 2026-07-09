@@ -1,13 +1,3 @@
-diogo:
-  name: Diogo Cezar
-  title: Head of Technology @ V3 Tecnologia
-  url: https://github.com/diogocezar
-  image_url: https://github.com/diogocezar.png
-  page: true
-  socials:
-    x: diogocezar
-    github: diogocezar
-
 adriano:
   name: Adriano Santos
   title: Development Manager @ V3 Tecnologia
@@ -17,3 +7,23 @@ adriano:
   socials:
     github: sleipnir
     linkedin: https://www.linkedin.com/in/adriano-santos-67367217/
+
+ana:
+  name: Ana Novaes
+  title: Head of Business Development @ V3 Tecnologia
+  url: https://github.com/anaclaudianovaes
+  image_url: https://avatars.githubusercontent.com/u/195814491?v=4
+  page: true
+  socials:
+    github: anaclaudianovaes
+    linkedin: https://www.linkedin.com/in/anaclaudianovaes/
+
+diogo:
+  name: Diogo Cezar
+  title: Head of Technology @ V3 Tecnologia
+  url: https://github.com/diogocezar
+  image_url: https://github.com/diogocezar.png
+  page: true
+  socials:
+    x: diogocezar
+    github: diogocezar
