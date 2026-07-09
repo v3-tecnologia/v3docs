@@ -9,6 +9,13 @@ definitions:
         description: SSID of the WiFi network
         type: string
     type: object
+  dto.CloseStreamDTO:
+    properties:
+      cam:
+        type: string
+    required:
+    - cam
+    type: object
   dto.CreateOrderDTO:
     properties:
       orders:
@@ -47,6 +54,22 @@ definitions:
     type: object
   dto.DeviceStateDTO:
     type: object
+  dto.OpenStreamDTO:
+    properties:
+      cam:
+        type: string
+      domain_endpoint:
+        type: string
+      port:
+        type: string
+      protocol:
+        type: string
+      timeout_seconds:
+        type: string
+    required:
+    - cam
+    - protocol
+    type: object
   dto.OrderDTO:
     properties:
       correlation_id:
@@ -81,6 +104,10 @@ definitions:
               title: VisionConfig
             - $ref: '#/definitions/dto.DataPlanConfigDTO'
               title: DataPlanConfig
+            - $ref: '#/definitions/dto.OpenStreamDTO'
+              title: OpenStream
+            - $ref: '#/definitions/dto.CloseStreamDTO'
+              title: CloseStream
         type: array
       type:
         allOf:
@@ -198,6 +225,8 @@ definitions:
     - VISION_CONFIG
     - PERIODIC
     - DATAPLAN_CONFIG
+    - OPEN_STREAM
+    - CLOSE_STREAM
     type: string
     x-enum-varnames:
     - ADD_WIFI
@@ -211,6 +240,8 @@ definitions:
     - VISION_CONFIG
     - PERIODIC
     - DATAPLAN_CONFIG
+    - OPEN_STREAM
+    - CLOSE_STREAM
   types.Source:
     properties:
       pointer:
@@ -334,7 +365,7 @@ paths:
         Submits a list of commands to be executed by the specified device.
         Each command in the list can be one of several supported types, such as:
         (**AddWifi**, **DeleteWifi**, **DeviceState**, **RequestImage**, **RequestVideo**, **Reboot**,
-        **Periodic**, **VisionConfig**, **DataPlanConfig**).
+        **Periodic**, **VisionConfig**, **DataPlanConfig**, **OpenStream**, **CloseStream**).
       parameters:
       - description: ULID do Device
         in: path
@@ -407,6 +438,18 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/dto.DataPlanConfigDTO'
+      - description: Open Stream
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.OpenStreamDTO'
+      - description: Close Stream
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CloseStreamDTO'
       produces:
       - application/json
       responses:
