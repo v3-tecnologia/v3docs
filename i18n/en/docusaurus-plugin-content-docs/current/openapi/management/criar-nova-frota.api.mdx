@@ -1,0 +1,71 @@
+---
+id: criar-nova-frota
+title: "Create new fleet"
+description: "Registers a new fleet with the data provided in the request body."
+sidebar_label: "Create new fleet"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVVlv2zgQ/ivEvHTXoM846VZv7W4WCNCiRY+nNCjG4lhmI5EKOfKxhv77Yigfae2mKFA9iZx7vm+GWzAU82Brtt5BBu+psJEpRIXK0UrNSyJWK8sLxQtSBhlVHfzSGjLKunQZ6KGhyGrmzWYAGnbnV95sINtC7h2TY/nFui5tjhJr+DVKwC3EfEEVyl8dfE2BLcXOLAQqk+4Xa+Tm20w/OfvQkLKGHNu5paDmPhxy4YD5vXWF+sMnAyy1KshRQCajsGFfIdscy3Kj7Fw5z4ey/lS93vWgGGS9nvoM48kFTS+vnvfprxez/nhiLvo4vbzqTydXV+Pp+Pl0NBp9BtBQ4fo1uYIXkF2ONFTW7Y8XGnhTE2QQOVhXQKvBYUWnNf2bui2yb3J4g9apJPs+0nj081BMWJ3t4NuVo6BErG7+UX6ewOwA7/Wu1xI8U2M4cdl2ENtABrLbrpRjmLuDvp99pZyhFYNzdQqZ4LEvDg0l57H2LnY0mIzGp5n/HUhwBP37yHXStryL8QX5rNhQSU+If+B0D/tTIJ3Imtr8OJP2TLtbDdPJ5NzI1MHnFCPOSlIyN7z5hR62nWvpY9K4MZBBHiyGvvNL7M+DT4AyFlGIkVAWPlTECy/KtY8MGmoUrsKwQocFVeR4mGgXQUOksKQg9ltoQgkZLJjrmA2HTA4dD5YXEZ2Z+fUg99VwOYb2ToPk+v64dq7XWNUlnUN637g9FsfzAYLHMLq53+8wzKVFJ1z+QGFpc9mCibVWWiubyIcCnf1PdhA6oyq0jtE6OZtgpUadZi/qbuaiTnqGxFtUpXX3ZBT7NJV5E9lXFJ5FdWi/rFq2LGXCm0Mn1ct3N6BB/Hf5jQajwVhqkeZXmCDdld6N0XHPw3e1Pdrdv+Vh2BGVac3DukTrErsF5O2OE7dw5ARo2LHiTsNCmJPdwnY7w0ifQtm2cv3QUNhAdnunYYnBCq/l1GpYEBoKiUb3tJFiu1L6HyUJUS8bSeaE8a3eW7zMc6r5Sd3H5H739sNH0DDbPXuVN2ITcCU7DleQye7uXqO0g9LdFkp0RYOF6HY+5fsfrnKagA==
+sidebar_class_name: "post api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create new fleet"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/management/fleets"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Registers a new fleet with the data provided in the request body.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"correlation_id":{"description":"Unique identifier for request tracking (optional, generated automatically if not provided) **E.g.:** \"123e4567-e89b-12d3-a456-426614174000\"","maxLength":50,"minLength":3,"type":"string"},"name":{"description":"Fleet name **E.g.:** \"Main Fleet\"","maxLength":100,"minLength":3,"type":"string"},"team_id":{"description":"Owner team ID of the fleet **Ex.:**: 1","type":"string"}},"required":["name","team_id"],"type":"object"}}},"description":"Fleet data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"team_id":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"422":{"description":"Unprocessable entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

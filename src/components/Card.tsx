@@ -1,16 +1,17 @@
 import React from "react";
+import Link from "@docusaurus/Link";
 
 interface CardProps {
-  title: string;
+  title: React.ReactNode;
   children: React.ReactNode;
   href?: string;
-  bgColor?: string; // Tailwind class, e.g. 'bg-white' or 'bg-primary'
-  textColor?: string; // Tailwind class, e.g. 'text-black' or 'text-white'
+  bgColor?: string;
+  textColor?: string;
   className?: string;
 }
 
 interface CardSuportProps {
-  title: string;
+  title: React.ReactNode;
   children: React.ReactNode;
   className?: string;
 }
@@ -59,12 +60,12 @@ export const Card = ({
 
   if (href) {
     return (
-      <a
-        href={href}
+      <Link
+        to={href}
         className="block focus:outline-none focus:ring-2 focus:ring-primary rounded-3xl !no-underline"
       >
         {cardContent}
-      </a>
+      </Link>
     );
   }
   return cardContent;
@@ -75,7 +76,7 @@ export const CardSuport = ({
   children,
   className = "",
 }: CardSuportProps) => {
-  const cardContent = (
+  return (
     <div
       className={`relative rounded-3xl shadow-lg p-7 pt-8 ${className} min-h-[200px] flex flex-col`}
       style={{ boxShadow: "0 4px 24px 0 rgba(0,0,0,0.08)" }}
@@ -88,5 +89,4 @@ export const CardSuport = ({
       </div>
     </div>
   );
-  return cardContent;
 };

@@ -1,0 +1,71 @@
+---
+id: associar-motorista-ao-time
+title: "Associate driver to team"
+description: "Associates a driver with a team. Requires the Driver ID and the team ID as URL parameters."
+sidebar_label: "Associate driver to team"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VE1v2zAM/SsCL9sKNU67nXwr0EuBDSv6cQqCgbWYWKgtuRLjNTP03wfKTtJ2XYEV2EmgRJF8j48cwFCsgu3YegclnMXoK4tMUaEywfYU1E/LtULFhO1MXdHDxgaKimtS56PDxblCZ/KNOGU7qturr6rDgC0xhTgDDQcLysXwIvM+FmiwctEh16DBYUtQgjWgIYzJDZQcNqQhVjW1COUAvO3EK3Kwbg0p6Zfhb8bCXg8uVf/4xwxLcY6dd5GivJ/O53K8Cgp3rJqRTMkHGirvmBzLt6PiSI6/p0tJw5fT0z9T3Lou+IpixLuGFDm2vH07dhqj+Y4CSpALAyVMJYbj1rMPNjIeoz9m2xJoYFxLyyY4sNTQEtde/nU+cm4t11BC0aLDNbXkuBjVE4vBmlQI4lgME9EJNEQK/U4Jm9BACTVzF8uiYHLoeNZ/jujMnX+cVb4t+hMQyq1beQEj8LASeEm/IOSaQm8rUlN3rNCy8kH5sEZnf1m3zmpt0TpG68SeStW5MVGrVUPEUWc/QxItqsa6ezKKfdZ5tYnsWwofotrzKBJny4307dueB3V2eQEaJP5Y33w2n51A0pm6Fp3AmXS4n77d6Em2USvPMA6H9v7fiZ1UyPTIRdegdVJ37tYwtXwBh5ZLmSOToKHM85QJFWs3YksNtUimXMAw3GGk29CkJNcPGwpbKBdLDT0GK3Ie14TN0jZQrrCJ9AYVHyeo5pN6uk1eBTFdopNh6bHZiAUa7mk7bpu8Qt6T+rBp3pF4R1NaJg01oaGQSRhfz6qKOn7yT0Y7PR3Hy+/XN5DSb/vn/F4=
+sidebar_class_name: "post api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Associate driver to team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/management/drivers/{id}/teams/{team_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Associates a driver with a team. Requires the Driver ID and the team ID as URL parameters.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver ID","in":"path","name":"id","required":true,"schema":{"type":"string"}},{"description":"Team ID","in":"path","name":"team_id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Driver associated with team","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

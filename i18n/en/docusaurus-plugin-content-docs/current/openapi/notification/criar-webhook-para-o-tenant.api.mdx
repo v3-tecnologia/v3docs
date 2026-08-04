@@ -1,0 +1,71 @@
+---
+id: criar-webhook-para-o-tenant
+title: "Create webhook for tenant"
+description: "Creates a webhook associated with the specified tenant"
+sidebar_label: "Create webhook for tenant"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VU1v2zAM/SsGz85H93HxLRt2KAZsxdphhyAoGImJ1dqSKtFJA8P/fWDkpEmbFm0xLBdLjEg+Pj5RLWiKKhjPxlko4GsgZIoZZmual87dZhijUwaZdLY2XGZcUhY9KbMwpDMmi5Yhh0B3DUX+4vQGihaUs0yWZYneV0ahJBjdRMnSQlQl1SgrH5ynwIai7GhFlq8t1mlrmOrtgjeeoIDIwdgldPnOgCHgRvbicvJgE6oT9ocIbn5DiqET0zEVf3oCNDL2BZpAGgoODXViiN7ZmJB+GJ/J5xSZGvL30qFSgGvkk7U9x9ajIMi0dGHzwpHYzN/Id9q/gtd/6mr0SXDPN9/rl/h7vTa6HD6Nx087fG5XWBmd9ep/S6dRayN/YXVx1IvnqD8C8/k0GKZgscoihRWFjEJw4T9B6nIQj23kcw0FqGAwDPohMvAYcOAG+2nBuIxQTHd3DGY51MSlE0/vtkR65BIKGFnHZtFjjqM+YIQcUpUSpk2dhJLZx2I0SmmGq48RrZ67+6Fy9Wh1Bt1MvFQTDG8upepU3sSb77SZNJKvBSNUloSahLskLfhCGChkV+6WLDzocuu4VYyQ+ethBH67x9pX9GSkTXckzvahe0OvxgOSjV243ShFJe17MqIuKayMoqwfRWZeUbZwIavR4tLY5W6Ix61VNZFdTSEOpQTDgg9+HNKbTS7OIQehNSUYD8fDMwEjTalxq5cedxpu+2dCEuzbe4Ty4DF4//PSM850zyNfobEH9zcpZQpHSoEc9lqZ5VCKqIoptO0cI/0OVdeJ+a4hGYzTWQ4rDAbnwsl01uU7BYi4bmkj0FMRgytBIserJmng0Y3q8p3HRCny/OLZQ91f/Ly8ghzm/QtaOy0+Adfy+OAaCgC5ZKm6ok22Fiq0ywaXcjbFlN9f3dO7+A==
+sidebar_class_name: "post api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/notification/notifications-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create webhook for tenant"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/notifications/webhooks"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Creates a webhook associated with the specified tenant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"event_names":{"items":{"type":"string"},"type":"array"},"name":{"type":"string"},"url":{"type":"string"}},"type":"object"}}},"description":"Webhook data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"created_at":{"type":"string"},"event_names":{"items":{"properties":{"category":{"items":{"properties":{"subs":{"items":{"type":"string"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"},"url":{"type":"string"}},"type":"object"}}}},"400":{"description":"Invalid request","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

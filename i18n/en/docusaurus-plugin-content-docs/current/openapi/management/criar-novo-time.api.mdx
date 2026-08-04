@@ -1,0 +1,71 @@
+---
+id: criar-novo-time
+title: "Create new team"
+description: "Registers a new team with the data provided in the request body."
+sidebar_label: "Create new team"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVU1v2zgQ/SvEXNoN6M84aatbd7eHArto0aanJCjG5FhmI5EMOXLsGvrvxUi2m9Zuiy5WJ5Eczsd7T09bsJRNcpFd8FDAOypdZkpZofL0oJiwVg+Ol4qXpCwyqpjCylmyyvluM9F9Q5nVPNjNEDTs1n8Gu4FiCyZ4Js/yijFWzqCUGn3KUm8L2SypRnmLKURK7Cj311Kiqov96KzsfNvoB+/uG1LOkme3cJTUIqRDL5zQ3Dlfqqehu4CVViV5SshkFTYcamRnsKo2yi2UD3wY6w91dvZqWA6LszN1A5PpOc0uLp8N6PmL+WAytecDnF1cDmbTy8vJbPJsNh6PbwA01Lj+h3zJSyguxhpq5/fLcw28iQQFZE7Ol9Bq8FjT8UxXArYcSQtr6aBQN/A3ragKsSbPSiK+LzcZ/6pe25PiElkorvvit4eoMP9EhqGVsBP9COfwOAGnhrqMOQafe7am48nxOH8lErhB/1cNoDGh8bzj/wjEY4kch/QtfEQ+eWypop8c/yDpnryjgybaH1drTwDeaphNp6fEHVMwlDPOK1KicN78Boxtn1qg7CJeWyjAJIdp4MMqDNjVBBoYyyx6EJpFDzXxMkhoDJlBQ0SRE4xq9FiS6G8kdpBBQ6a0oiS3t9CkCgpYMsdcjEZMHj0PV+cZvZ2H9dCEerSaQHurQRp999UdXq2xjhWd+tr3qO3BfkyKX4S9r6ARMI50+57Syhlxpk6iTkAUdwipRO8+iy+gt6pG5xmdl7VNTgbSneFlrRYVEWfdxVmSbFlVzt+RVRw62zNN5lBTepLVAWixP3YsM8G/B9TUy7evQYPk7/sbD8fDicwiQNfYkbebs/9mDtYL3432yE7/D6veCZJpzaNYofOdioXP7Y79a/jKvlzo+L/VsBSJFNew3c4x04dUta1s3zeUNlBc32pYYXIiX1m1GpaEllInmDvayKT9IIMr6UHCq0Z6ORJ2q/c3XhpDkX8a+1jFb9+8vwIN891/qA5W7iR8EDfDByjER/vfQ+c23d4WKvRlg6XE9jnl+QJ6/XaX
+sidebar_class_name: "post api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create new team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/management/teams"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Registers a new team with the data provided in the request body.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"correlation_id":{"description":"Unique identifier for request tracking (optional, generated automatically if not provided) **E.g.:** \"123e4567-e89b-12d3-a456-426614174000\"","maxLength":50,"minLength":3,"type":"string"},"name":{"description":"Team name **Ex.:**: \"Development Team\"","maxLength":100,"minLength":3,"type":"string"}},"required":["name"],"type":"object"}}},"description":"Team data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"account_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"422":{"description":"Unprocessable entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

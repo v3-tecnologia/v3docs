@@ -1,0 +1,71 @@
+---
+id: atualizar-conjunto-de-dados-por-id
+title: "Atualizar conjunto de dados por ID"
+description: "Atualiza um conjunto de dados existente pelo seu ID."
+sidebar_label: "Atualizar conjunto de dados por ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVs1OI0cQfpVWnRJpbEOyufjGLhxQpAgRdi+AovJ04Wl2+ofuGi/OaN4l0R5WiZRjnsAvFtX8YC8eVoQzFxh3d3V99VXXV1WDppRHE9h4B3M44gpL8zuqyqrcu9vKsVealEbtk6J7k5gckwpUepWoUqfHU8ggYERLTDHB/LJ+dOfpsdJ+/zbIwMh2QC4gA4eWYA5GQwaR7ioTScOcY0UZpLwgizCvgddBTiWOxi2haa67w5T4rddrOZF7JxDlE0MoTY4CY3abBEu9cxVqbWQLy7PoA0U2lAaHvRu/uKWcoWma7FFMx8RYFpQU9oQJPU9E+XU0jSyk4F0SdzX8cHAg/76+/t0e9Vs/KvdWpSqnlDxkz493L6Ymgzdjzs8FbzKbL5vPXhm32vxZGo3/x1XYIbQGitHH/eXcaxpJqTDNaMr2jGGy8tE8pARjxLWcspQSLsduaPbyJ6d5BFn/dH4zehQIG0uJ0YZnORlZ6Sg+3Kf4F6EWK/axTekrty/l9s1zascJ2+SE4vjK9ovZ/mlMLE5iFJFgis6LACaKK6N9fCX5JSQ3GSTKq2h43TbSo2B+pvVRxQXML6+l2wmelsdTLeH1XSFOhsYz0TRpX/0k+DhpuynjUtoyHCNjIk5w3QZYeLkhVNz2b/EAM90fmdVGNyBg4mpo6lUsYQ4Fc0jz2YzJoePp6seETi/8/TT3drY6BME4hPCrZLijbjeQuuv7BaGmuO38bwkjRXXhP5KDbQJbw5YueTjn22Z/co82lNSl27gbP3R/zLlbfDTaqA8mGe/U0dmp2vylvCqqhcpJRKEUsQjRS1NFS7160Eq+koqU08KIkgQqUYUSGW98tJhduQIXpjSMTksZ3FDc/O1yg2K+MkmEJ/c2VIx5O2pMr9yHkWXBIxMX2uCVxragSrPs78LI5sbkBkt1V8nsFa1h6qouRGKMV44U3XNEEwWFYNt82fxLSXAYi0tySZFabf7R5FOmkrFV2WLGAWZRWXQ4vXIniVElX1bdACBPTMB6ZT37uE+UzH4PVAm+vKAlWrX5Q7lqRTa7ctY7wz62YiwZMq5qjakzRicjRiJFuxTKXMmGJcOwzRxkIC+yS+nB9GB6KKUXfGKLraz0r2kYZOPIGBt8VKfH8OiB7IyOLx2D+zfLdM+zUKJxgq2tm7ovsUsYSgwymBsttVj4xLJT1wtM9D6WTSPLdxVFUYHrDFYYDS6ECRmuTZJvDfMbLBN9I4rvzvvJ83v19Aw+inkoPrcWvrGs5Bdk8JHW3YzeXDfZUMECqtt417meXIj51nBP/ZtssDjKcwr8zbO7anX2/gIyWPSjvm1bAkT8JFM2fuow+paJTrBlrYYS3bJqxR+6K0VNsNeirc4Iomz4kKBGWXgkU10Y8leCGrWo607EmubhfLf1pMWDNPZ8CwtN0/wHbATU7A==
+sidebar_class_name: "put api-method"
+info_path: docs/openapi/vision/vision-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Atualizar conjunto de dados por ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/datasets/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Atualiza um conjunto de dados existente pelo seu ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID do conjunto de dados","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={{"content":{"application/json":{"schema":{"additionalProperties":true,"type":"object"}}},"description":"Detalhes atualizados do conjunto de dados","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"200":{"description":"Conjunto de dados atualizado com sucesso","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Requisição inválida","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"401":{"description":"Não autorizado","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Conjunto de dados não encontrado","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

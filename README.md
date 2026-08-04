@@ -8,6 +8,8 @@
   <a href="#tech-stack">Tech Stack</a> • 
   <a href="#requirements">Pré-requisitos</a> • 
   <a href="#get-started">Como Executar</a> • 
+  <a href="#i18n">Internacionalização (PT/EN)</a> • 
+  <a href="#openapi-workflow">Documentação OpenAPI</a> • 
   <a href="#contribute">Como Contribuir</a> • 
   <a href="#project-structure">Estrutura do Projeto</a> • 
   <a href="#useful-info">Informações Úteis</a>
@@ -29,7 +31,7 @@ Este projeto utiliza as seguintes tecnologias:
   - Tema escuro
   - Layout responsivo
 - **[GitHub Pages](https://pages.github.com/)**: Hospedagem da documentação
-- **[Docusaurus API Docs](https://www.npmjs.com/package/docusaurus-plugin-api-docs)**: Plugin para renderização de documentação OpenAPI/Swagger
+- **[Docusaurus OpenAPI Docs](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs)**: Plugin para renderização de documentação OpenAPI/Swagger
 
 <h2 id="requirements">❗ Pré-requisitos</h2>
 
@@ -51,14 +53,104 @@ cd v3docs
 npm install
 ```
 
-3. Execute o projeto:
+3. Gere a documentação OpenAPI e execute o projeto:
+
 ```bash
-make build-run
+npm run clean && npm run docs-all && npm run build && npm run serve
 ```
 
-A aplicação estará disponível em `http://localhost:3000`
+A aplicação estará disponível em `http://localhost:3000` (PT) e `http://localhost:3000/en` (EN).
 
-> 💡 Verifique o arquivo [Makefile](/Makefile) para mais comandos disponíveis
+### Comandos de desenvolvimento
+
+| Comando | Descrição |
+|---|---|
+| `npm run start` | Dev server em **português** (locale padrão) |
+| `npm run start:en` | Dev server em **inglês** |
+| `npm run start:pt` | Dev server em **português** |
+| `npm run build` | Build de produção com **PT + EN** |
+| `npm run serve` | Serve o build de produção (necessário para testar a troca de idioma) |
+| `npm run clear` | Limpa cache do Docusaurus (`.docusaurus`) |
+
+> **Importante:** no modo dev (`npm run start`), o Docusaurus carrega **um locale por vez**. Para testar a troca PT ↔ EN com fidelidade ao ambiente de produção, use `npm run build && npm run serve`. Para trabalhar só em inglês no dev, use `npm run start:en`.
+
+> 💡 O [Makefile](/Makefile) ainda expõe targets por API, mas o fluxo recomendado para PT + EN é via scripts npm descritos em [Documentação OpenAPI](#openapi-workflow).
+
+<h2 id="i18n">🌐 Internacionalização (PT/EN)</h2>
+
+O portal suporta dois locales configurados em [`docusaurus.config.ts`](/docusaurus.config.ts):
+
+| Locale | Código | URLs | Conteúdo |
+|---|---|---|---|
+| Português (padrão) | `pt` | `/`, `/docs/...` | `docs/` + `docs/openapi/` |
+| Inglês | `en` | `/en`, `/en/docs/...` | `i18n/en/docusaurus-plugin-content-docs/current/` |
+
+### Documentação narrativa (guides)
+
+- **PT:** arquivos em `docs/docs/`
+- **EN:** traduções em `i18n/en/docusaurus-plugin-content-docs/current/docs/`
+- **Labels da sidebar EN:** `i18n/en/docusaurus-plugin-content-docs/current.json`
+
+Para extrair novas strings de tradução da sidebar após alterações em `sidebars.ts`:
+
+```bash
+npm run write-translations
+```
+
+<h2 id="openapi-workflow">📘 Documentação OpenAPI (PT + EN)</h2>
+
+Cada API possui **duas specs OpenAPI** — uma por locale — geradas pelo plugin `docusaurus-plugin-openapi-docs`:
+
+| Locale | Spec (fonte) | MDX gerado |
+|---|---|---|
+| PT | `examples/{api}.yaml` | `docs/openapi/{api}/` |
+| EN | `examples/en/{api}.yaml` | `i18n/en/docusaurus-plugin-content-docs/current/openapi/{api}/` |
+
+APIs disponíveis: `order`, `management`, `auth`, `event`, `notification`, `vision`, `media`, `media-stream`.
+
+### Fluxo completo de geração
+
+```bash
+npm run clean && npm run docs-all && npm run clear && npm run build
+```
+
+| Script | O que faz |
+|---|---|
+| `npm run clean` | Remove MDX/sidebars OpenAPI gerados (PT + EN) |
+| `npm run docs-all` | Regenera MDX a partir das specs, localiza labels PT e valida EN |
+| `npm run clear` | Limpa cache interno do Docusaurus |
+| `npm run build` | Build final com os dois locales |
+
+O `docs-all` executa, nesta ordem:
+
+1. `gen-api-docs all` para cada plugin OpenAPI (gera PT **e** EN por plugin)
+2. `scripts/localize-openapi-docs.mjs` — traduz labels de UI nos MDX **PT** (`Request` → `Requisição`, etc.)
+3. `scripts/validate-openapi-en-docs.mjs` — falha se detectar texto em português nos MDX **EN**
+
+### Adicionar ou alterar endpoints
+
+1. Edite a spec PT em `examples/{api}.yaml`
+2. Edite a spec EN correspondente em `examples/en/{api}.yaml` com **descrições e summaries em inglês**
+3. Mantenha o mesmo `operationId` (slug kebab) nos dois arquivos para preservar URLs entre locales
+4. Se for um endpoint novo, adicione a tradução do summary na sidebar EN em `i18n/en/docusaurus-plugin-content-docs/current.json` (chave `sidebar.apiSidebar.doc.{summary PT}`)
+5. Sincronize `operationId` e summaries EN:
+
+```bash
+npm run sync-openapi-ids
+```
+
+6. Regenere a documentação:
+
+```bash
+npm run clean && npm run docs-all && npm run clear && npm run build
+```
+
+### Regras importantes
+
+- **`examples/en/*.yaml` é a fonte de verdade do conteúdo EN** — descrições de API, operações e parâmetros devem estar em inglês no YAML, não nos MDX gerados
+- **`operationId` define o slug da URL** — use o mesmo valor em PT e EN (ex: `criar-nova-ordem` → `/docs/openapi/order/criar-nova-ordem` e `/en/docs/openapi/order/criar-nova-ordem`)
+- **Não edite MDX gerados manualmente** — alterações serão sobrescritas no próximo `docs-all`
+- **Após `docs-all`, rode `clear` + `build`** antes de validar EN em produção ou via `serve`
 
 <h2 id="contribute">📫 Como contribuir</h2>
 
@@ -91,33 +183,52 @@ A aplicação estará disponível em `http://localhost:3000`
 
 ```
 .
-├── blog/                   # Postagens do Blog
-│   ├── authors.yml        # Configuração dos autores
-│   ├── tags.yml          # Configuração das tags
-│   └── YYYY-MM-DD-*      # Posts do blog
+├── blog/                          # Postagens do Blog
+│   ├── authors.yml
+│   ├── tags.yml
+│   └── YYYY-MM-DD-*/
 ├── docs/
-│   ├── docs/             # Documentação geral
-│   │   ├── conheca-a-v3/                 # Quem somos, tecnologia e público
-│   │   ├── visao-geral-da-plataforma/    # Missão/visão/valores + solução
-│   │   │   └── solucao-v3/               # Detalhes da solução
-│   │   ├── implantacao-e-setup/          # Configuração, instalação e ferramentas
-│   │   │   └── manual-de-instalacao/
-│   │   └── integracao-e-operacao/        # APIs e SDKs
-│   │       ├── api/
-│   │       └── sdks/
-│   ├── openapi/          # Documentação OpenAPI
-│   └── webhook/          # Documentação de Webhooks
-├── examples/             # Exemplos e especificações
-│   ├── auth.yaml        # Especificação da Auth API
-│   ├── management.yaml  # Especificação da Management API
-│   ├── orders.yaml      # Especificação da Orders API
-│   ├── event.yaml       # Especificação de Eventos
-│   └── webhook/         # Exemplos de Webhooks
-├── src/                  # Código fonte do Docusaurus
-├── static/              # Arquivos estáticos (imagens, etc.)
-├── docusaurus.config.ts # Configuração principal
-├── sidebars.ts         # Configuração da barra lateral
-└── Makefile            # Comandos de build e execução
+│   ├── docs/                      # Documentação narrativa (PT)
+│   │   ├── conheca-a-v3/
+│   │   ├── visao-geral-da-plataforma/
+│   │   ├── implantacao-e-setup/
+│   │   └── integracao-e-operacao/
+│   └── openapi/                   # MDX OpenAPI gerados (PT)
+│       ├── order/
+│       ├── management/
+│       ├── auth/
+│       ├── event/
+│       ├── notification/
+│       ├── vision/
+│       ├── media/
+│       └── media-stream/
+├── examples/                      # Specs OpenAPI (fonte)
+│   ├── order.yaml                 # PT
+│   ├── management.yaml
+│   ├── auth.yaml
+│   ├── event.yaml
+│   ├── notification.yaml
+│   ├── vision.yaml
+│   ├── media.yaml
+│   ├── media-stream.yaml
+│   └── en/                        # Specs OpenAPI (EN)
+│       ├── order.yaml
+│       └── ...
+├── i18n/
+│   └── en/
+│       └── docusaurus-plugin-content-docs/
+│           ├── current.json       # Traduções da sidebar EN
+│           ├── current/docs/      # Documentação narrativa EN
+│           └── current/openapi/   # MDX OpenAPI gerados (EN)
+├── scripts/
+│   ├── localize-openapi-docs.mjs  # Localiza labels PT nos MDX gerados
+│   ├── sync-openapi-operation-ids.mjs  # Sincroniza operationId + summaries EN
+│   └── validate-openapi-en-docs.mjs    # Valida ausência de PT nos MDX EN
+├── src/                           # Código fonte do Docusaurus
+├── static/                        # Arquivos estáticos (imagens, etc.)
+├── docusaurus.config.ts           # Configuração principal + plugins OpenAPI i18n
+├── sidebars.ts                    # Configuração da barra lateral
+└── Makefile                       # Targets legados por API (build parcial)
 ```
 
 <h2 id="useful-info">ℹ️ Informações Úteis</h2>
@@ -139,11 +250,17 @@ Os arquivos principais de configuração são:
 
 ### Documentação de APIs
 
-Os arquivos `.yaml` no diretório `examples/` são automaticamente renderizados na seção de API (OpenAPI) em `docs/openapi/`. Para adicionar uma nova API:
+As specs OpenAPI em `examples/` são a **fonte de verdade**. Os MDX em `docs/openapi/` (PT) e `i18n/en/.../openapi/` (EN) são **gerados automaticamente** — não edite manualmente.
 
-1. Adicione o arquivo `.yaml` em `examples/`
-2. Configure o plugin no `docusaurus.config.ts`
-3. Atualize o `sidebars.ts` com a nova seção
+Para adicionar uma nova API:
+
+1. Crie `examples/{api}.yaml` (PT) e `examples/en/{api}.yaml` (EN)
+2. Registre o plugin em `docusaurus.config.ts` usando `openapiLocaleConfigs("{api}", "{api}.yaml")`
+3. Adicione a seção em `sidebars.ts` (`require("./docs/openapi/{api}/sidebar")`)
+4. Adicione traduções de sidebar EN em `i18n/en/docusaurus-plugin-content-docs/current.json`
+5. Regenere: `npm run clean && npm run docs-all && npm run clear && npm run build`
+
+Veja o fluxo completo em [Documentação OpenAPI](#openapi-workflow).
 
 ### Tutoriais
 

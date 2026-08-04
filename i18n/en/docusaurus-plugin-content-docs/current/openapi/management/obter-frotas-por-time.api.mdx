@@ -1,0 +1,71 @@
+---
+id: obter-frotas-por-time
+title: "Get fleets by team ID"
+description: "Returns the paginated list of fleets associated with a specific team."
+sidebar_label: "Get fleets by team ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVE1v1DAQ/SvWXADJ3ZTCKbdKQNUDEuLjVK2qWWc2GUhs154sLFH+O5pkt92y20pInCx7Pj1v3hugouwSR+HgoYTPJH3y2UhDJmLNHoUq03IWE9Zm3RJJNphzcDxZfrI0Bk2O5HjNzghhtwALERN2JJQylDfDX0W+Enbm+h1YYL1GlAYseOwIStAMt1yBhUR3PSeqoJTUk4XsGuoQygFkG9U1S2Jfwzgu1TnH4DNltV+cn+vxuOqHuflEkpg2VJncO0c5r/u23YIFF7yQFw3EGFt2qIHF96zRw0H1mEKkJDzXqlCmVxbq8rHZhZSonVLpr46bt+AS6SxvUU6aK2rpGfMTSedpnjDs53vK1sfq6U40dn4Jq+/kBB4eMCXc6j1ifViVvVBNaW+5zfz7CbMEwfb2foZPOWiWkw7HzY369vbi4ngRvvmYgiKPq5YMeWH5F/zHObWCPHlcV1NVoXS2TkEwn8WQzoQ7AguCtTJgXj5YWuhImqARNcnEE2mghKJDjzV15KWYSVYoTrkYdnCNYCFT2uwJ1acWSmhEYi6LQsijl8XmTUZfrcKvhQtdsXkNSgz26zAvohd0+r1ppw4H8oXShh2ZHYdYx7IOyYRUo+ff7GuDvjIdshdkr/cqsfZiJ8Jnu1MGO/lVpNmyadn/oMpImNTE9VlCR+lFNvejU6UQllZx+3g/AXP56RosaP65v/PF+eL1tEQhS4cTHDu1uCLZq9JqOzUzC8ujDw4P2P43gdttm9AvKWKL7Cf+KCrDDtQbeAAVLMypYSagnuWeiUsLTciiEcOwwkzfUjuO+nzXU9pCebO0sMHEuq+znPK0uxWUa2wzPfPdl593IvrKPKjuyd73VPbKhQ22vd7Awg/aHqjyuBwtNIQVpamT2XrpHEU5iDsi0Hi4+lfvv8I4/gGz3j/g
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get fleets by team ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/management/fleets/teams/{team_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the paginated list of fleets associated with a specific team.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Team ID","in":"path","name":"team_id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Fleets retrieved successfully","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"team_id":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"422":{"description":"Unprocessable entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

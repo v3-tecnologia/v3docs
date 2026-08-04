@@ -1,0 +1,71 @@
+---
+id: criar-novo-conjunto-de-dados
+title: "Create new dataset"
+description: "Creates a new dataset with the provided details."
+sidebar_label: "Create new dataset"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVktz2zYQ/iuYPdOS3ceFNyfNwdNDPY3Ti6zprICVCAcEGGApm+Xwv3cWoCzFVjOpz7lInMXu4ttvXxjBUNLRdmyDhxreR0KmpFB5elQGGROxerTcKG5IdTHsrSGjDDFalxZQQaQvPSV+F8wA9Qg6eCbP8old56xGcb18SOJ/hKQbajGfGmPlCN1tDB1FtpSg5thTBTx0BDWEzQNphmmaqhc4f5uRzThmGDaSKS4mEaQu+CROR/jp8kr+zjvROWijUq81pbTtnRug+v5IXqGdKvjl8vL1hTd+j84aNVP2f+7oTjgagWIM8bVYB0MngBJH63eQySs01SNYplY+pmeWMUYcRKullHB3zsP0KiWizWeQzaH9bc1ZIGxbSoxt912XnJEUbs8k85PHnpsQ7T9kfhD7NmJ/PV+0TNGjU4ninqIqFP1g+A0MTxUk0n20PEC9GuG6s7/TcN1zA/VqPa0rEDyZxxsDNehoMV74sA8XOviH3nO4MHRh0AQZeYy7BPXqMMcSrHNoTRDbLuQB06E4h6U56AgEyWPKCProoIaGuUv1csnk0fNi/3NCbzbhaaFDu9xfgSA7AP8oeS2EncIfwUqxNISGpDo8thL8O8JIUd2Fz+ThmLZsmEmScvnzuEE+PGHbOSpJtn4bDisFNRfh18V515D6yyYbvLq+vVE25TWlyXNEp5p+o7YhytqSwW79TtGePCcVSZPdk1GboSw2h7wNsa3uPXncOFHVoe16pqj25QLrtxTJa1rc+/cvz2Rlbi05o8JWYWS7tdqiU9YzOWd3Yqe4Qc6S2EXidO/RG0VPHFFzEv8htjn7ahtDq2yLO9nF3ijZuiFVKtm2d8gCr+lb9PP9i3t/19ikUnB9ts8OUUCdxu531lNmZKYhA4qEuqx37UJvqnsvhFvfhz65QbXBWw6RTDZEj25ItqA6MiK5tSyJg2M6oAIptJKpy8Xl4kr6SAqzxTwj5iIpj47TFwe8yPPJs+ItT5S57JieeNk5tF5w5NIf5wZZgTlpokZ6p17BOG4w0afopknEX3qK0rjrCvYYLW4k3tV6qg5lLx31mQYBWeBe3MnNou76UvgvBuVUHSyutaaOv6l72t63f3y8gwo286urzeMTIj7KUwgfoQaQaSLWZbiJbASHftfnQQnFp/Qgzh187E6BVB0+JKrDkR9OEL5o7hKH/EpUZy3GsbT+ND3rl6P/tHgeKEVbUreepulfnnfCXw==
+sidebar_class_name: "post api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/vision/vision-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create new dataset"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/datasets"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Creates a new dataset with the provided details.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"additionalProperties":true,"type":"object"}}},"description":"Dataset details","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Dataset created successfully","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Invalid request","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

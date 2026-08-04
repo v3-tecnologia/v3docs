@@ -1,0 +1,71 @@
+---
+id: excluir-dispositivo
+title: "Excluir dispositivo"
+description: "Remove um dispositivo pelo ID informado."
+sidebar_label: "Excluir dispositivo"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVU01v2zAM/SsCT1uhxWm3k28FkkOADRi67VTkwFpMLMz6qEQbzQz9lw079Ifkjw10sjXtugI7yRYpku89vhEM5SbZyDZ4qOGKXBhI9U4Zm2PIlu0QVKQuqNVCWb8JyaEJM9AQMaEjppShvh6f1FktlAmnNUCDlUBEbkGDR0dQgzWgIdFtbxMZqDn1pCE3LTmEegTeRcnKnKzfQilrSc4x+ExZ4hfzuRyPWy9OBk8Cxxrp3gTP5Fnyz6ozOf7dpxQN7y4u/q699GwNGlJ+/zOomEJDOe9/DNS93KEcaoZICaXUykANdNd0vU1vHrPEuBVCYUGDbQjWGhxxG+SBoY6YJuq5hRoqhx635MhzZab0XI3WFNCQKQ2/lelTBzW0zDHXVcXk0fNseJvRm5twN2uCq4ZzEHJFX5lbkGAjSIp+wsAnSoPd3wu1kxATeBVDUiFt0dtvmBQph54pKRc4JJsZs1ZsHWWtNikwZkWnu5HVYH3Td2hCVvvvaqJpfy8Um6CazpJnkpVjy50I9eEPbnX5cQUaBOthvvlsPjuHoiGGzA69wDku2/LA95OtfARvfBDxf6xw3B+mO65ih9bLABPt41Gra3jQamo6qQUaamtE4zZklqxxvMFMX1JXilzf9pR2UF+vNQyYLN4IfDGbzfJtoN5gl+kFFK+uju56rZ7z5LOTHy/R74Ra7Hr5Aw1faXfwbFkXDS2hoTSNcwhcNg1FPnkiLiinC7xYvl9+XkIpvwBMBI2R
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Excluir dispositivo"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/management/devices/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Remove um dispositivo pelo ID informado.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID do dispositivo","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"200":{"description":"Dispositivo removido","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Entidade não processável","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: obter-evento-por-ulid
+title: "Obter evento por ULID"
+description: "Recupera um evento usando o ULID informado"
+sidebar_label: "Obter evento por ULID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVrFuIzcQ/RViqgRYS/LF1XZK7pAYCWLDp6sMQaCWY4lnLkkPuRsri/2YIEWqq9Kl1Y8FQ0q2bEn2Ha4KkEorznD4ZuaR8zpQGCrSPmpnoYQrrBqPJEVTC2zRRieaIK1ywokPv5y/FdreOKqlclCAlyRrjEgByuvuWaTkrdwmChSgedXLuIQCrKwRSmiMVlAA4V2jCRWUkRosIFRLrCWUHcSVZ78QSdsF9P2UnYN3NmBg+5vRiH+envwu40ZbORspQ+VPtJGdpfdGV5Kdhx8D7+h2TvTkPFLUOX7liNAk35lWBxAVUBHKiGom40GzQoMvmltd4bHYqXazvPxg1jbiAontN5rq3yThrEUKOqeyF2QpSSWn16I9ONZOoTkcy7nbmUKjW6TjSR3JRoeZXlidivkE69w5g9KyT41Ky2PlcMoluu0YbVPPM/rgGqpQzV7pR0QrbXw9h0TNgwavjsfnA/KKm3/EKkLf89qb0dk+Td9jLRIt1/98GUWfn8knnB26CFd8r4Je/7X+0wlt2/UfRiv5NbdB4f4pP6z/Vnrh0l0n4kwOsDxKbfa3vk3/Mj6Di/WnFs1LcXKPE2xjLm7Sq/MUondMaPqs1kyLZ3AuSC+w3gIohHck8B5rb/j5q2TtnbhrUFSyCa4RG5yMK8rYhBdKgyK7iJ8mk8vHzHYuX9TRHCjuZP0pNuZzqnOEemej0/2ov3LBZRMd6d+/8n38nxH/LUbwM8oDnqOdq2SLSCd5Sp94RyeboRzlgsd6nqYw5ac5Lh3vWGBMwz8uoYRh2hmGHW/roYCA1G4VQUMGSljG6EM5HOand9B+x4Ji7u4HlauH7Wkqe8CqIR1X75louXFjr3/G1bjhY7qsHpYoFdKjfvgeJSGJibtF+5i/TBtT/qxWMk9tlBXTu3/e4vHluWAhw29xaEyUAsUCCW2lZZ2EhMKNiAn8qXTwLuioWxcG8NCmXCcxvjyHAh7GMYwGo8Epd9O7EGuZLtMG/AUXfiuymFismOAZvO7xZn6ZNtvUIuJ9HHojdZquqR/dpnXXWV4EKKBMPZ/yfA+RLV03lwE/kOl7Xr5rkFZQXk8LaCVpOeeMWfHpwN8KyhtpAr6A/Zurjcb7VuwJw4NQt720K66nNA3/gwJucbUVjv2UFUmmBKPJpnFVoY87m/bes36XzD++m0Df/wvqwOGs
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/event/event-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Obter evento por ULID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/events/{ulid}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Recupera um evento usando o ULID informado
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ULID do evento","in":"path","name":"ulid","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"200":{"description":"Evento encontrado","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"device_id":{"type":"string"},"event_type":{"type":"integer"},"firmware_version":{"type":"string"},"hardware_event_type":{"type":"integer"},"hardware_model":{"type":"string"},"hook_delivered_at":{"type":"string"},"id":{"type":"string"},"is_ignition_on":{"type":"boolean"},"media_id":{"type":"string"},"odometer":{"type":"number"},"sourced_created_at":{"type":"string"},"tenant_delivered_at":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"204":{"description":"Sem conteúdo","content":{"application/json":{"schema":{"type":"string"}}}},"400":{"description":"Requisição inválida","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro","type":"string"},"detail":{"description":"Descrição legível do erro","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo o campo que causou o erro"},"status":{"description":"Código de status HTTP","type":"integer"},"title":{"description":"Título legível do erro","type":"string"}},"type":"object"}}}},"401":{"description":"Não autorizado","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro","type":"string"},"detail":{"description":"Descrição legível do erro","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo o campo que causou o erro"},"status":{"description":"Código de status HTTP","type":"integer"},"title":{"description":"Título legível do erro","type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

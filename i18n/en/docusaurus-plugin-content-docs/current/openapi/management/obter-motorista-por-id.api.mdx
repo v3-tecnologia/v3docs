@@ -1,0 +1,71 @@
+---
+id: obter-motorista-por-id
+title: "Get driver by ID"
+description: "Returns data for a specific driver by the specified ID."
+sidebar_label: "Get driver by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVE1v2zAM/SsCL9sANU63nnwr0KHIYcDQbaciKBiJidXakirRRjPD/32g7bbZlhQYdrLFb/I9sgdL2SQX2QUPJdwQt8lnZZFRbUNSqHIk47bOKJtcR0lt9oorehaTVaurBWiImLAhppShvO3/CHs1ua6uQIMTQUSuQIPHhqAEZ0FDosfWJbJQcmpJQzYVNQhlD7yPYpU5Ob+DYViLcY7BZ8qi/7hcyudoykScHHVkVW6NoZy3bV3vQYMJnsmzOGKMtTMojsV9Fu/+IHtMIVJiN+UyISWqR9s7Z49Up8EkQiZ7h3xUbammN9Qngk6TOqJgwuZUJW20pysR30kSNvdkGIZBZBfLi5PD9IHVNrTe/sP8himszHC0WNkxI1M6awKH5DLjWQzpbCQB4074MyeEtYaGuArisyMeacYVlFA06HFHDXkuJl7mond2AA2ZUvfMwjbVUELFHHNZFEwePS+6Txm93YSnhQlN0Z2DEMr5bZjw9YxG2hqhOhzCN0qdM6Rm7rlNTeOKhLRD7346v1PorWrQeUbn5T2XppWglLXa1kSc9WhnSaJlVTv/QFZxGNfKtJlDQ+ldVi8jk/Vix7Vg9eWlb3X5dQUaJP5U33KxXJwL7DFkbnCEYV6wa+KD9R3X8Lfe+lc4/+MEzHRieuIi1uj8yEGBoJ9xu4VX3KSGaTygoXRWwK5CZrHq+w1m+pHqYRDxY0tpD+XtWkOHyeFGRiFHxmX5t1Busc70RlPvb+br8kEd3qKjFc9C9HImOqxbeYGGB9pPt2pYDxoqQktpLGNSXBpDkQ9c/lqL4ZDO15+/wzD8Ar335eM=
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get driver by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/management/drivers/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns data for a specific driver by the specified ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Driver retrieved successfully","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"team_id":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Driver not found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

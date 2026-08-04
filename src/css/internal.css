@@ -36,3 +36,14 @@ aside {
   color: var(--ifm-color-white);
   transition: all 0.3s ease;
 }
+
+html[lang="pt-BR"] .openapi-schema__required {
+  font-size: 0;
+  line-height: 0;
+}
+
+html[lang="pt-BR"] .openapi-schema__required::after {
+  content: "obrigatório";
+  font-size: var(--ifm-code-font-size);
+  line-height: normal;
+}

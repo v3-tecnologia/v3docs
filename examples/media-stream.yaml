@@ -3,82 +3,82 @@ definitions:
   response.SegmentStatus:
     properties:
       app:
-        description: Application name
+        description: Nome da aplicação
         type: string
       file_count:
-        description: Number of segment files in the stream
+        description: Número de arquivos de segmento na transmissão
         type: integer
       newest_file:
-        description: Timestamp of the newest segment file
+        description: Data/hora do arquivo de segmento mais recente
         type: string
       oldest_file:
-        description: Timestamp of the oldest segment file
+        description: Data/hora do arquivo de segmento mais antigo
         type: string
       path:
-        description: Path to stream directory
+        description: Caminho do diretório da transmissão
         type: string
       size_mb:
-        description: Total size of all segments in megabytes
+        description: Tamanho total de todos os segmentos em megabytes
         type: number
       stream_key:
-        description: Stream key identifier
+        description: Identificador da chave da transmissão
         type: string
     type: object
   response.CleanupConfig:
     properties:
       cleanup_interval_seconds:
-        description: Interval in seconds between cleanup operations
+        description: Intervalo em segundos entre operações de limpeza
         type: integer
       max_age_minutes:
-        description: Maximum age in minutes for segments before deletion
+        description: Idade máxima em minutos dos segmentos antes da exclusão
         type: integer
       max_segments_per_stream:
-        description: Maximum number of segments allowed per stream
+        description: Número máximo de segmentos permitidos por transmissão
         type: integer
     type: object
   response.SegmentsStatusResponse:
     properties:
       cleanup_config:
         $ref: '#/definitions/response.CleanupConfig'
-        description: Current cleanup configuration
+        description: Configuração atual de limpeza
       streams:
-        description: List of all active streams with segment information
+        description: Lista de todas as transmissões ativas com informações de segmentos
         items:
           $ref: '#/definitions/response.SegmentStatus'
         type: array
       total_files:
-        description: Total number of segment files across all streams
+        description: Número total de arquivos de segmento em todas as transmissões
         type: integer
       total_size_mb:
-        description: Total size of all segments in megabytes
+        description: Tamanho total de todos os segmentos em megabytes
         type: number
     type: object
   response.CleanupResponse:
     properties:
       message:
-        description: Response message
+        description: Mensagem de resposta
         type: string
       status:
-        description: Status of the cleanup operation
+        description: Status da operação de limpeza
         type: string
     type: object
   types.ValidationError:
     properties:
       code:
-        description: Error code
+        description: Código do erro
         type: string
       detail:
-        description: Human-readable error description
+        description: Descrição legível do erro
         type: string
       source:
         allOf:
         - $ref: '#/definitions/types.Source'
-        description: Source of the error
+        description: Origem do erro
       status:
-        description: HTTP status code
+        description: Código de status HTTP
         type: integer
       title:
-        description: Human-readable error title
+        description: Título legível do erro
         type: string
     type: object
   types.Source:
@@ -93,25 +93,25 @@ paths:
       consumes:
       - application/json
       description: |-
-        Allows downloading HLS segment files (M3U8, TS) identified by path.
-        Supports partial content requests through Range header.
+        Permite baixar arquivos de segmento HLS (M3U8, TS) identificados pelo caminho.
+        Suporta requisições de conteúdo parcial por meio do cabeçalho Range.
       parameters:
-      - description: Application identifier
+      - description: Identificador da aplicação
         in: path
         name: app
         required: true
         type: string
-      - description: Stream key identifier
+      - description: Identificador da chave da transmissão
         in: path
         name: stream_key
         required: true
         type: string
-      - description: Filename of the segment (e.g., manifest.m3u8, segment-123.ts)
+      - description: "Nome do arquivo do segmento (ex.: manifest.m3u8, segment-123.ts)"
         in: path
         name: filename
         required: true
         type: string
-      - description: Range header to request partial content (e.g., bytes=0-1023)
+      - description: "Cabeçalho Range para solicitar conteúdo parcial (ex.: bytes=0-1023)"
         in: header
         name: Range
         type: string
@@ -120,55 +120,58 @@ paths:
       - video/mp2t
       responses:
         "200":
-          description: Segment file served successfully
+          description: Arquivo de segmento servido com sucesso
           schema:
             type: file
         "206":
-          description: Partial content served successfully
+          description: Conteúdo parcial servido com sucesso
           schema:
             type: file
         "404":
-          description: Stream file not found
+          description: Arquivo da transmissão não encontrado
           schema:
             additionalProperties:
               type: string
             type: object
-      summary: Download HLS segment or manifest file
+      operationId: baixar-segmento-ou-manifesto-hls
+      summary: Baixar segmento ou manifesto HLS
       tags:
       - Media-Stream
   /streams:
     get:
       consumes:
       - application/json
-      description: Retrieve a list of all active HLS streams with their current status and metadata.
+      description: Recupera a lista de todas as transmissões HLS ativas com status
+        e metadados atuais.
       produces:
       - application/json
       responses:
         "200":
-          description: List of active streams retrieved successfully
+          description: Lista de transmissões ativas recuperada com sucesso
           schema:
             items:
               properties:
                 app:
                   type: string
-                  description: Application identifier
+                  description: Identificador da aplicação
                 created_at:
                   type: string
-                  description: Timestamp when stream was created
+                  description: Data/hora de criação da transmissão
                 stream_key:
                   type: string
-                  description: Stream key identifier
+                  description: Identificador da chave da transmissão
                 status:
                   type: string
-                  description: Current stream status (active, inactive, etc)
+                  description: Status atual da transmissão (active, inactive, etc.)
             type: array
         "401":
-          description: Unauthorized
+          description: Não autorizado
           schema:
             $ref: '#/definitions/types.ValidationError'
       security:
       - OAuth2: [read:streams]
-      summary: List all active streams
+      operationId: listar-transmissoes-ativas
+      summary: Listar transmissões ativas
       tags:
       - Media-Stream
   /stream/{app}/{stream_key}:
@@ -176,15 +179,15 @@ paths:
       consumes:
       - application/json
       description: |-
-        Retrieve the HTML player page for a specific HLS stream.
-        The stream must be active and available in the registry.
+        Recupera a página HTML do player para uma transmissão HLS específica.
+        A transmissão deve estar ativa e disponível no registro.
       parameters:
-      - description: Application identifier
+      - description: Identificador da aplicação
         in: path
         name: app
         required: true
         type: string
-      - description: Stream key identifier
+      - description: Identificador da chave da transmissão
         in: path
         name: stream_key
         required: true
@@ -193,74 +196,19 @@ paths:
       - text/html
       responses:
         "200":
-          description: Stream player page rendered successfully
+          description: Página do player da transmissão renderizada com sucesso
           schema:
             type: string
         "302":
-          description: Stream not found or inactive, redirect to home
+          description: Transmissão não encontrada ou inativa, redirecionamento para a página inicial
         "401":
-          description: Unauthorized
+          description: Não autorizado
           schema:
             $ref: '#/definitions/types.ValidationError'
       security:
       - OAuth2: [read:streams]
-      summary: Get stream player page
-      tags:
-      - Media-Stream
-  /admin/segments/status:
-    get:
-      consumes:
-      - application/json
-      description: |-
-        Retrieve comprehensive statistics about all active streams and their segments.
-        Includes information about storage usage, file counts, and cleanup configuration.
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: Segment status retrieved successfully
-          schema:
-            $ref: '#/definitions/response.SegmentsStatusResponse'
-        "401":
-          description: Unauthorized
-          schema:
-            $ref: '#/definitions/types.ValidationError'
-        "500":
-          description: Internal server error
-          schema:
-            $ref: '#/definitions/types.ValidationError'
-      security:
-      - OAuth2: [read:admin]
-      summary: Get segments status and cleanup configuration
-      tags:
-      - Media-Stream
-  /admin/segments/cleanup:
-    post:
-      consumes:
-      - application/json
-      description: |-
-        Trigger an immediate cleanup of old and excess segments.
-        This operation removes segments based on configured thresholds:
-        - Maximum age in minutes
-        - Maximum segments per stream
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: Cleanup operation initiated successfully
-          schema:
-            $ref: '#/definitions/response.CleanupResponse'
-        "401":
-          description: Unauthorized
-          schema:
-            $ref: '#/definitions/types.ValidationError'
-        "500":
-          description: Internal server error
-          schema:
-            $ref: '#/definitions/types.ValidationError'
-      security:
-      - OAuth2: [write:admin]
-      summary: Force segment cleanup
+      operationId: obter-pagina-do-player-de-transmissao
+      summary: Obter página do player de transmissão
       tags:
       - Media-Stream
 schemes:
@@ -270,9 +218,10 @@ securityDefinitions:
     authorizationUrl: https://auth.v3sandbox.com/oauth/authorize
     flow: implicit
     scopes:
-      read:streams: Read access to streams
-      write:streams: Write access to streams
-      read:admin: Read access to admin endpoints
-      write:admin: Write access to admin endpoints
+      read:streams: Acesso de leitura às transmissões
+      write:streams: Acesso de escrita às transmissões
+      read:admin: Acesso de leitura aos endpoints administrativos
+      write:admin: Acesso de escrita aos endpoints administrativos
     type: oauth2
 swagger: "2.0"
+

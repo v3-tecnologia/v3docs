@@ -1,0 +1,71 @@
+---
+id: excluir-frota
+title: "Delete fleet"
+description: "Removes a fleet by the specified ID."
+sidebar_label: "Delete fleet"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNU8Fu2zAM/RWBl22FFqfdTr4VSAYE2IChW09FDozFxERtyZVoI5mhfx9oZ23RdcVOAiXqke/xcQRHqYrcCQcPJdxQGwZKBs2+IRKzOxmpyaSOKt4zObNZLcBChxFbEooJyrvxBcaX6edmBRZY4w6lBgseW4IS2IGFSA89R3JQSuzJQqpqahHKEeTUaVaSyP4AOW81OXXBJ0r6frVc6vFaxTj1rvBV8EJeNPGiuNDj3wVytvD56upv0FvfxVBRSrhryJAXltPb2HlGCx1FVJCNgxLoWDU9x4/7GATBguBBRZt7hq2FlqQOmumoIaFJXamhhKJFjwdqyUsxTSMVI7sMFhLF4Y/2fWyghFqkS2VRCHn0shg+JfRuF46LKrTFcAmqI/t90H6VAVbKINsXnH9QHLgic5aclfk+RBPiAT3/Yn8w6J1pkb0ge41dZO3FGiFsk519k+yU50jRkmnY35MzEiYzVX2S0FJ8l8yjVGoqYWl0NN8eaZvr7xuwoPhzf8vFcnEJ2UIXkrTolc7ZV6tJvbk8vOA1Pk3tfx1+tonQUYquQfZaddJ6PM/nDp7mAxZm3mChZKdjrUMSTRrHHSa6jU3Oev3QUzxBebe1MGBk9da8Qjz5zEG5xybRGwTe35yX54N5tmmv9nu+RK/GHbDpNQIL93SaNzFvs4Wa0FGcupgfrquKOnn2RY2en1t1tf66/rmGnH8D/UFwaA==
+sidebar_class_name: "delete api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete fleet"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/management/fleets/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Removes a fleet by the specified ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Fleet ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Fleet removed","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

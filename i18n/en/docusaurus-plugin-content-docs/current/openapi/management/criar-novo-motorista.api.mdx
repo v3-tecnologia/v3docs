@@ -1,0 +1,71 @@
+---
+id: criar-novo-motorista
+title: "Create new driver"
+description: "Registers a new driver with the data provided in the request body."
+sidebar_label: "Create new driver"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVc1uGzcQfhViLm0M6tey0+4tbXJwkaBB7JxkIxgtRyvGS3JNzspShH2aPEpfrJhdSVYjxUWA7GlJDofz/XC4AUMpj7ZiGzxk8IEKm5hiUqg8PSoT7ZKierS8ULwgZZBRVTEsrSGjrG8nIz3UlFjNgln3QcN2/Ecwa8g2kAfP5Fl+sapKm6McNvic5MQNpHxBDuWviqGiyJZSty1GKtvYT9bIzH9L/ejtQ03KGvJs55aimoe4r4Uj5vfWF+rX0G7AUquCPEVkMgprDg7Z5liWa2Xnygfew3qhzs7e9It+dnambmE0PqfJxeXLHv32+6w3GpvzHk4uLnuT8eXlaDJ6ORkOh7cAGhyu3pIveAHZxVCDs343PNfA64ogg8TR+gIaDR4dHWN63dEti1LESmrI1C38Ff75GtS1LZf47Vmj4f8fxoTuJIc3hE5dvW6Z20qNKYXctrQ/cffiB/E1nQlsJAPZtAN7t48Ks8+UMzQSdhK/uAwOU3Csqc2ZquBT54/xcHQM6M9IIjDon+e6Izbz7oxPyCeXDZX0zPJ3ku788Jx2R2t1Zb5fSXOC70bDZDw+dZeqGHJKCWclKblQvP4BDpsutfDYRlwZyCCPFmPPh2XoucAh2tSKylgk8UQntbjCES+C7KhCYtBQoZgKBg49FuTI86DzZgINiWL7l003UMcSMlgwVykbDJg8eu4vzxN6Mwurfh7cYDmC5k6DVPzhqSu9WaGrSjql946+nSJP470Qh2L6edi1OMyFqCNLX1Nc2lyaZOtdKwTLdQuxQG+/SItCb5RD6xmtl/EWrVZyZNJqXhJx0m2cIcmWVGn9PRnFoe3AeZ04OIq/JLUXQToxWxaY8G5PpXr1/go0SP6uvmF/2B8JFmHfYSvsFnp3mQ7eAfgG3EFv/zkvx9awTCseVCVa37pcZN5sbTGFJ1tIOVtj3GlYiHuyKWw2M0z0MZZNI9MPNcU1ZNM7DUuMVgwuo0bDgtBQbJ10T2vB24Hp3UgVEl7WUs2R9Ru92/Eqz6niZ2MPDf7+7+sb0DDbPowuGNkT8VGaHT5CJr2967ltM2rnNlCiL2osJLbLKd+/GK2qvg==
+sidebar_class_name: "post api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create new driver"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/management/drivers"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Registers a new driver with the data provided in the request body.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"correlation_id":{"description":"Unique identifier for request tracking (optional, generated automatically if not provided) **E.g.:** \"123e4567-e89b-12d3-a456-426614174000\"","maxLength":50,"minLength":3,"type":"string"},"name":{"description":"Driver name **Ex.:**: \"João Silva\"","maxLength":100,"minLength":3,"type":"string"},"team_id":{"description":"Team ID for driver association (optional)","maxLength":50,"minLength":3,"type":"string"}},"required":["name"],"type":"object"}}},"description":"Driver data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"team_id":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"422":{"description":"Unprocessable entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

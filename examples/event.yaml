@@ -45,26 +45,26 @@ definitions:
   types.ValidationError:
     properties:
       code:
-        description: Error code
+        description: Código do erro
         type: string
       detail:
-        description: Human-readable error description
+        description: Descrição legível do erro
         type: string
       source:
         allOf:
         - $ref: '#/definitions/types.Source'
-        description: Source of the error, e.g. the field that caused the error
+        description: Origem do erro, por exemplo o campo que causou o erro
       status:
-        description: HTTP status code
+        description: Código de status HTTP
         type: integer
       title:
-        description: Human-readable error title
+        description: Título legível do erro
         type: string
     type: object
 host: tenant.v3sandbox.com
 info:
   contact: {}
-  description: This is an API to handle device events
+  description: API para consulta e gerenciamento de eventos de dispositivos.
   title: Event API
   version: 0.0.1
 paths:
@@ -72,30 +72,30 @@ paths:
     get:
       consumes:
       - application/json
-      description: Retrieves a paginated list of events associated with the provided
-        device ID
+      description: Recupera uma lista paginada de eventos associados ao ID do dispositivo
+        informado
       parameters:
-      - description: Device ID
+      - description: ID do dispositivo
         in: path
         name: device_id
         required: true
         type: string
       - default: 1
-        description: Page number
+        description: Número da página
         in: query
         name: page
         type: integer
       - default: 10
-        description: Number of items per page
+        description: Quantidade de itens por página
         in: query
         maximum: 100
         name: page_size
         type: integer
-      - description: Start datetime filter in format yyyy-MM-ddTHH:mm:ssZ
+      - description: Filtro de data/hora inicial no formato yyyy-MM-ddTHH:mm:ssZ
         in: query
         name: start
         type: string
-      - description: End datetime filter in format yyyy-MM-ddTHH:mm:ssZ
+      - description: Filtro de data/hora final no formato yyyy-MM-ddTHH:mm:ssZ
         in: query
         name: end
         type: string
@@ -103,33 +103,34 @@ paths:
       - application/json
       responses:
         "200":
-          description: List of events
+          description: Lista de eventos
           schema:
             items:
               $ref: '#/definitions/dto.EventResponseDTO'
             type: array
         "204":
-          description: No content
+          description: Sem conteúdo
           schema:
             type: string
         "400":
-          description: Invalid request payload
+          description: Requisição inválida
           schema:
             $ref: '#/definitions/types.ValidationError'
         "401":
-          description: Unauthorized
+          description: Não autorizado
           schema:
             $ref: '#/definitions/types.ValidationError'
-      summary: List events for a specific device
+      operationId: listar-eventos-de-um-dispositivo
+      summary: Listar eventos de um dispositivo
       tags:
       - Event
   /events/{ulid}:
     get:
       consumes:
       - application/json
-      description: Retrieves an event using the provided ULID
+      description: Recupera um evento usando o ULID informado
       parameters:
-      - description: Event ULID
+      - description: ULID do evento
         in: path
         name: ulid
         required: true
@@ -138,22 +139,23 @@ paths:
       - application/json
       responses:
         "200":
-          description: Event found
+          description: Evento encontrado
           schema:
             $ref: '#/definitions/dto.EventResponseDTO'
         "204":
-          description: No content
+          description: Sem conteúdo
           schema:
             type: string
         "400":
-          description: Invalid request payload
+          description: Requisição inválida
           schema:
             $ref: '#/definitions/types.ValidationError'
         "401":
-          description: Unauthorized
+          description: Não autorizado
           schema:
             $ref: '#/definitions/types.ValidationError'
-      summary: Get an event by ULID
+      operationId: obter-evento-por-ulid
+      summary: Obter evento por ULID
       tags:
       - Event
 schemes:
@@ -164,3 +166,4 @@ securityDefinitions:
     name: Bearer Token
     type: apiKey
 swagger: "2.0"
+

@@ -1,0 +1,71 @@
+---
+id: atualizar-conjunto-de-dados-por-id
+title: "Update dataset by ID"
+description: "Updates an existing dataset by its ID."
+sidebar_label: "Update dataset by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk1z4zYM/SscnNoZxU7a7cW37KaHTC+ZbdJLkunAImwhS5FaEvTGq9F/70CSYyfW7qQ555LIIPH1QACvBUupjNwIBw8LuGksCiWD3tAjJ2G/NhYFE4lZbg1LMpcXMyigwYg1CcUEi9v2hZWLUePyAgpglTQoFRTgsSZYAFsoINLXzJEsLCRmKiCVFdUIixZk2+itJJH9GrrufrhMST4Gu9UbZfBCXvQTm8Zxiep5/pDUfXtgCq1lPUJ3FUNDUZjSzuHoJiwfqBTouq6YBMM+AWBJkF06ir1TQWqCT2q8hd9OT/XfNCZ5NJpyWVJKq+zcForXZ3QUdVfAhymHl36Djq0Zofs/PpoDrFqgGEM8FpfB0kS1FMQBpkULLFTrR/eENsaIW71VU0q4nrLQHZVGb8tEZGNq/7KdDES4piRYN69yMiEZsD07xvbGY5YqRP5O9h3YtwL74cdd4oOYVcj+Hd03ovvH9EgQih6dSRQ3FM0A0TvCb0C4KyBRmSPLtl+A5w3/RdvzLBUsbu91ZWk8PY6XVtOTjI6/Yzwpg3/IXsKJpROLNqSTJsSTfiUKrnWd7rogwX2fYBXUQpOl37vqAebjTkrzlm0HGoxWdFjGOTpYQCXSpMV8LuTRy2zze0Jvl+FxVoZ6vjkDjXGXwt9a4QG6w0TaYXlXhJbifn1/JIwUzXX4Qh72BewVe7j04Xzeb+w/H7FuHA3lZr8KuxWOpQzC58/0uiLzDycO3pxfXRpORioyJXmJ6EyVl2YVomli0AWqDIU25CWZSCXxhqwyFdVoHMoqxLq48+Rx6fRqGeomC0WzGRywX1EkX9Lszn96eZYMmhWTsyasDEbhFZeMzrAXco7XqmekQuklsYkk6c6jt4YeJWIpSe2HWPfvwKxiqA3XuO4JljUbthRSYRLX2WHPtapcox/9z+78dcXJpOByr98bRA3qMHe/Zk89IiMMfUCRsKwG3FzItrjzCjj7HHJyW1MHzxIi2V4RPbpt4iGqPSJaWxYtHOzLAQXoQxsqdTo7nZ1pRzUhSY39tBgfyUCeDsljzwafVfqAyL2eeY7PTehR5o1D9uq/f/Lt2B23sOsOKGDBVtuoCkn0pG2XmOgmuq5T8ddMURv4voANRsalZqt8lpN+W1is0CX6Sdy/fB654K/mGe2dDHPXKl4p3wZd1l9QwBfaDrS4u++KXb9pHMPBp8HbybWq7xWPZnVX7DTOy5Ia+endw9lydXMNBSxHdl33AxwiflOqi9+GGEOf/DBeVdaCQ7/O/aiGwaT2Po6TYz8VNKJi96FJTaLwYqgMaehfTWpSo22HkdN1T/eHox9qPA2yEW9Foeu6/wDYIorF
+sidebar_class_name: "put api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/vision/vision-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update dataset by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/datasets/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Updates an existing dataset by its ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Dataset ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"additionalProperties":true,"type":"object"}}},"description":"Updated dataset details","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Dataset updated successfully","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Invalid request","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Dataset not found","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

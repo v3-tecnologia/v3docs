@@ -49,7 +49,7 @@ definitions:
 host: tenant.v3sandbox.com
 info:
   contact: {}
-  description: GO application responsible for managing Webhooks for clients.
+  description: Serviço responsável por gerenciar webhooks para clientes.
   title: Notifications API
   version: 0.0.1
 paths:
@@ -57,31 +57,32 @@ paths:
     get:
       consumes:
       - application/json
-      description: Returns all webhooks registered for the tenant
+      description: Retorna todos os webhooks registrados para o tenant
       produces:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Sucesso
           schema:
             items:
               $ref: '#/definitions/dto.WebhookResponse'
             type: array
         "500":
-          description: Internal Server Error
+          description: Erro interno do servidor
           schema:
             additionalProperties:
               type: string
             type: object
-      summary: Lists all webhooks for a tenant
+      operationId: listar-webhooks-do-tenant
+      summary: Listar webhooks do tenant
       tags:
       - Webhook
     post:
       consumes:
       - application/json
-      description: Creates a webhook associated with the specified tenant
+      description: Cria um webhook associado ao tenant informado
       parameters:
-      - description: Webhook data
+      - description: Dados do webhook
         in: body
         name: payload
         required: true
@@ -91,31 +92,32 @@ paths:
       - application/json
       responses:
         "201":
-          description: Created
+          description: Criado
           schema:
             $ref: '#/definitions/dto.WebhookResponse'
         "400":
-          description: Bad Request
+          description: Requisição inválida
           schema:
             additionalProperties:
               type: string
             type: object
         "500":
-          description: Internal Server Error
+          description: Erro interno do servidor
           schema:
             additionalProperties:
               type: string
             type: object
-      summary: Creates a new webhook for the tenant
+      operationId: criar-webhook-para-o-tenant
+      summary: Criar webhook para o tenant
       tags:
       - Webhook
   /notifications/webhooks/{id}:
     delete:
       consumes:
       - application/json
-      description: Removes a webhook from the tenant
+      description: Remove um webhook do tenant
       parameters:
-      - description: Webhook ID
+      - description: ID do webhook
         in: path
         name: id
         required: true
@@ -124,30 +126,31 @@ paths:
       - application/json
       responses:
         "204":
-          description: No Content
+          description: Sem conteúdo
           schema:
             type: string
         "400":
-          description: Bad Request
+          description: Requisição inválida
           schema:
             additionalProperties:
               type: string
             type: object
         "500":
-          description: Internal Server Error
+          description: Erro interno do servidor
           schema:
             additionalProperties:
               type: string
             type: object
-      summary: Removes a webhook
+      operationId: remover-webhook
+      summary: Remover webhook
       tags:
       - Webhook
     get:
       consumes:
       - application/json
-      description: Returns the data of a specific webhook for the tenant
+      description: Retorna os dados de um webhook específico do tenant
       parameters:
-      - description: Webhook ID
+      - description: ID do webhook
         in: path
         name: id
         required: true
@@ -156,35 +159,36 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Sucesso
           schema:
             $ref: '#/definitions/dto.WebhookResponse'
         "400":
-          description: Bad Request
+          description: Requisição inválida
           schema:
             additionalProperties:
               type: string
             type: object
         "404":
-          description: Not Found
+          description: Não encontrado
           schema:
             additionalProperties:
               type: string
             type: object
-      summary: Retrieves a webhook by ID
+      operationId: obter-webhook-por-id
+      summary: Obter webhook por ID
       tags:
       - Webhook
     put:
       consumes:
       - application/json
-      description: Updates the data of a tenant's webhook
+      description: Atualiza os dados de um webhook do tenant
       parameters:
-      - description: Webhook ID
+      - description: ID do webhook
         in: path
         name: id
         required: true
         type: string
-      - description: Webhook data
+      - description: Dados do webhook
         in: body
         name: payload
         required: true
@@ -194,22 +198,23 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Sucesso
           schema:
             $ref: '#/definitions/dto.WebhookResponse'
         "400":
-          description: Bad Request
+          description: Requisição inválida
           schema:
             additionalProperties:
               type: string
             type: object
         "500":
-          description: Internal Server Error
+          description: Erro interno do servidor
           schema:
             additionalProperties:
               type: string
             type: object
-      summary: Updates a webhook
+      operationId: atualizar-webhook
+      summary: Atualizar webhook
       tags:
       - Webhook
 schemes:
@@ -220,3 +225,4 @@ securityDefinitions:
     name: Bearer Token
     type: apiKey
 swagger: "2.0"
+

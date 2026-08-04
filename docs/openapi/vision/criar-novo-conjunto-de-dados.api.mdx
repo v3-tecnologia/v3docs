@@ -1,0 +1,71 @@
+---
+id: criar-novo-conjunto-de-dados
+title: "Criar novo conjunto de dados"
+description: "Cria um novo conjunto de dados com os detalhes informados."
+sidebar_label: "Criar novo conjunto de dados"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVs1uG0cMfpUBz2vJ7s9lb07jQ1CgNRI3F1koqB1aGmfnxxyuYnWx79KihyAFeswT6MUC7mpt1VKKpL3mIi1mhjMfP5If2YKlXLFL4mKAEn5gh6bxJsR1NFUMt02QaCwZizZmU0VvYjaWBOsVZePCTWSvWxMogOmuoSzPot1A2UIVg1AQ/cSUalehPjK9zfpSC7lakcd+11qnW1hfckzE4ihDKdxQAbJJBCXExS1VAl3XFU8QPx+x2COAd6Ackx0u7HQhpxiyPtHCN6dn+veEhEO/2WF/vze5qSjnCMXn+3fgQ1fAd6enhw+/VKzZbd9t/4zGhfX2j9pZ/JKn0h6BLRBz5MPlKlraw5WFXVhCz6ygq/szTsjrR/cQAmTGjZ7ylDMuj93QHcRLT8sRZLtU+dXZo0DEecqCPn3WI0dWBoqPxPYnpRYbiex+Q/tFYfzK7SO33x9L3wtmTVshDlHLMROvnY38leT/QnJXQKaqYScbKGctnCf3I23OG1lBOZt38wIUT8/jCwslqEbxiQr3yaiDJ5ZORh0UXGYoZ/AcBTNJhnnv2iqqbYpZoICEejlM7XhGIfCaOPcIGq6hhJVIyuV0KhQwyGT9bcZgF/F+UkU/XZ+BIhuBv9K4DoTtw2/Bab6sCC1pdgT06vwzQiY2V/ENBXgMW2/Yk6Tp8vKxyVzco081DUHWVjR2HaxkWPxnfp6b1y67GMz55QuzfW+iWTULU1EQxlrFPnFUcUdPO/WntX5lw1TRwmknSFSjSTUK9p2vuA4rXLjaCQaryX9DvP0rVA7VfO2yyk0VfWoEq77FTa7D6yPLiqfxpkKforHYl1Htlru7kMXduMphbe4aMonYO6Gh1hKTIF8HMnQvjI7Hrrx9t/2gfZGM87ikkA2Z9fZvSzEXJjvf1D1mHGGuGo8BJ9fhIguaHOtmaEQoDSrYaHyUyIdEJWR8oErxVStaojfb301o1uSL6+BjcBJ5N0QEcaHpjWkwxqCtLpOhfQp1phAnGmF4jBwUoBk5hPR0cjo504LTDPbYi8kum3SU4U8MMvAkNfaGlf83Au1yVuhepqlGFxRbXzftrrpmYPcqcKWFV86gbReY6Reuu06X7xpirfp5AWtkhwvlYDbvirFmtBzf0GYYVhT4yZW+rMfrZqiaJyrbFaPFeVVRkn89u68Nlz+/uoICFrupzvfaC4xvdbjCt1ACqBSp9aCMutZCjWHZ9CoLw51awLgr/8fSVkjF+KFejVths4fwiTIMfuivenXUom0H3ei6h/PD1ictHtRoOK2hm3dd9xFxr/Qd
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/vision/vision-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Criar novo conjunto de dados"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/datasets"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Cria um novo conjunto de dados com os detalhes informados.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={{"content":{"application/json":{"schema":{"additionalProperties":true,"type":"object"}}},"description":"Detalhes do conjunto de dados","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"201":{"description":"Conjunto de dados criado com sucesso","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Requisição inválida","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"401":{"description":"Não autorizado","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

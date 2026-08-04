@@ -1,0 +1,71 @@
+---
+id: atualizar-motorista
+title: "Update driver"
+description: "Updates an existing driver with the information provided in the request body."
+sidebar_label: "Update driver"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVs1u2zgQfhViLtsE9G+cdKtbd9NDFrtA0SanJCjG4lhmI5EKOXLsGnqafZR9scVIsmPYTooA9ckk5/ebb2a0BkMxDbZk6x0kcFMaZIoKnaKljWxdpkywCwrqyfJc8ZyUdTMfChQNVQa/sIaMsq55C/RYUWQ19WbVBw0lBiyIKURIbtd7zi5bw1eXoMHKRYk8Bw0OC4IErAENYtAGMpBwqEhDTOdUICRr4FUpUpGDdRnU9X0rTJH/8GYlEql3TI7lL5ZlbtMm5sH3KN7XO6bK4EsKbCm2aiFQ3sh+s0Zu9jBy9rEiZQ05tjNLQc182GbOAdMHge2dbxQw1yojRwGZjMKKvUCXYp6vlJ0p53kL4ok6Pf3Uz/rJ6am6g9H4jCbnF+979PuHaW80Nmc9nJxf9Cbji4vRZPR+MhwO7wA0FLj8m1zGc0jOhxoK6zbHM72P0gbcF0ohjxLEUmJI1B385f/716uvNl+garlh9n2Ohj93yoTFUSyvCQt1ddkg2PEMY/Spbem1xfDkjXnWu8y5bZO+30r56XdKGWoRO4qDQcYD8jU2Y+ldbHkyHg5fBLJqsVKxSlOKcVbl+Qr0r2PkAcJpIHH4Dfnos6GcXnl+weiGK6/V8+CtS/24q/pIDWoNk+HkZU56VjNfOfMG/Dqr4/Gx7i2Dl5rgNCclLcxvqUzdmpbqNBJXBhJArjC3PzD0Cs8+2NiwhzGTqdflIfQriOdeFMqKm+Eo5IVBgQ4zKsjxoO2BOFhbU4OGSGGxmZ1VyCGBOXMZk8GAyaHj/uIsojNTv+ynvhgsRiBjUIL+8jwKPy2xKHM6RqRNXbYzd3veVniXJW7mN3MVU8HqoH++UljYVPZA0yhWMJbe9iFDZ3/IXERnVIHWMVr3vF6iVuIyajXLiTjqRs6QWIsqt+6BjGLfLJm0iuwLCr9Fta2DLBu2LGnCP1s81cfPV6BB7LfxDfvD/khyKX3kApvadqm3460LB/YS21kmv3xHdg3BtORBmaN1TRdJtdcdRW7hmSISWYsYaEisEV7NfWSRWq+nGOkm5HUt148VhRUkt/caFhisEL7dwrYhv4FkhnmkV1J996WbgCdqd1kfjbi7RCfttMC8khNoeKBVu8zr+1rDnNBQaMJoH/5snfWuRf1Z8aAJa73R+JimVPKrsru99vnmGjRMu2+CwhtRCfgk8x2f2hjbNdPM2uZuDTm6rMJMZFuT8vsf7o0rkg==
+sidebar_class_name: "put api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update driver"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/management/drivers/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Updates an existing driver with the information provided in the request body.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"correlation_id":{"description":"Unique identifier for request tracking (optional, generated automatically if not provided) **E.g.:** \"123e4567-e89b-12d3-a456-426614174000\"","maxLength":50,"minLength":3,"type":"string"},"name":{"description":"Driver name **Ex.:**: \"João Silva Updated\"","maxLength":100,"minLength":3,"type":"string"},"team_id":{"description":"Team ID for driver association (optional)","maxLength":50,"minLength":3,"type":"string"}},"required":["name"],"type":"object"}}},"description":"Driver data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Driver updated successfully","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"team_id":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Driver not found","content":{"application/json":{"schema":{}}}},"422":{"description":"Unprocessable entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

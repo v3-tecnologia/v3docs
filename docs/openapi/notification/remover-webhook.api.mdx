@@ -1,0 +1,71 @@
+---
+id: remover-webhook
+title: "Remover webhook"
+description: "Remove um webhook do tenant"
+sidebar_label: "Remover webhook"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VD1v2zAQ/SvETS3AWk6bLtpcxEPQogiSFB0CD7R4iZhIJHM8qTEE/ZigQ/5DV/+x4iy5dj6QoksnUeQd33t379iBxVSQi+yChxxOsQ4tqqZWP3BZhnCjbFCM3ngGDdGQqZGREuQX3ZPU4yOJHdNAg5PNaLgEDd7UCDk4CxoIbxtHaCFnalBDKkqsDeQd8CpKVGJy/gr6fiHBKQafMMn5++mhfB7DnmGtiuAZ179sAA2btWcJNDFWrjASmF0nie5eQet7DYfT6XOEUyGc3Pph/TMo59v1feWs+RcoY62TI1OdUIhI7AZBTyjo7UZYXmPBI6ePL3GaEwkXRvJByp6QWmcD/SdWvQbJ2Nx8bCEH2viG3u3az+ZKXALfx52Fhhq5DBJtsULGjaG4hBwyH9hdjkxTNl6Sss7ZHjSIuK3nGqogh5I5pjzLBmdO2g/JeLsMd5Mi1Fl7AGKdhEVDjldnInhQNovuM65mjYB2g0FLNBZpZ9FPaAhJnYcb9PBHutkkguh2/jJItpTZFFLmXj+zJLVu/RDU6N71fYuVioHUFRL6whnazklSMlOqqBx6xjQRSMeVYH7dr4manRyDBinDgDGdTCcH0pwYEtdm09pRwjDDtDeKj+h1O4f8ZdxH8Yx3nMXKOC94mwZ0Y+cu4FHnQMNWF2jInZWulyGxRHbd0iT8RlXfy/Ztg7SC/GKhoTXkzFJEy6Pikqwt5JemSvgK+Ten40vyVj19e15kvu2lX0klTdXIH2i4wdXwNvWLXm8NIVSGg1lRYOS9lGdT1e97+2j+ZX4+h77/DQ8i3l4=
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/notification/notifications-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Remover webhook"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/notifications/webhooks/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Remove um webhook do tenant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID do webhook","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"204":{"description":"Sem conteúdo","content":{"application/json":{"schema":{"type":"string"}}}},"400":{"description":"Requisição inválida","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

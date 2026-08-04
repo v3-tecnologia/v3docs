@@ -26,7 +26,7 @@ Através dos eventos você conseguirá criar uma outra camada de funcionalidades
 
 Para isso, é importante entender a estrutura de um evento.
 
-A seguir, explica-se cada um dos dados que podem ser analisado diretamente [neste](/docs/openapi/event/get-an-event-by-ulid) payload.
+A seguir, explica-se cada um dos dados que podem ser analisado diretamente [neste](/docs/openapi/event/obter-evento-por-ulid) payload.
 
 ## Estrutura de um Evento
 
@@ -152,7 +152,7 @@ Caso queira entender como configurar e utilizar o sistema de notificações via 
 
 2. **Via API**:
    - É um método de consumo do tipo Polling
-   - Você pode utilizar [este](/docs/openapi/event/get-an-event-by-ulid) endpoint.
+   - Você pode utilizar [este](/docs/openapi/event/obter-evento-por-ulid) endpoint.
    - Suporta paginação
    - Permite filtrar eventos por período
    - Após consumir, o cliente deve marcar o evento como processado usando:
@@ -164,4 +164,4 @@ Caso queira entender como configurar e utilizar o sistema de notificações via 
 Para eventos que possuem mídias associadas (como fotos ou vídeos):
 
 1. O evento contém informações sobre a mídia no campo `media` do payload
-2. Para obter a URL de acesso à mídia você precisa acessar diretamente um endpoint no contexto de visão. Veja mais detalhes em [aqui](/docs/openapi/media/download-a-file-from-s-3-using-secure-key.api.mdx)
+2. Para obter a URL de acesso à mídia você precisa acessar diretamente um endpoint no contexto de visão. Veja mais detalhes [aqui](/docs/openapi/media/baixar-arquivo-com-chave-segura).

@@ -1,0 +1,71 @@
+---
+id: criar-novo-dispositivo
+title: "Create new device"
+description: "Registers a new device with the data provided in the request body."
+sidebar_label: "Create new device"
+hide_title: true
+hide_table_of_contents: true
+api: eJytV9tu2zgQ/RWCL93NyhfZcZrorZsGCwNbNGjapyQwxuREZiuRKkk5cQ3/+2Io2ZYjOW0W9ZNIDmfO3A7Hay7RCasKr4zmCf+EqXIerWPAND4yiUslkD0qv2B+gUyCB1ZYs1QSJVM6bFr8XqLzbG7kqs8jXq//NnLFkzUXRnvUnj6hKDIlgIwNvjqyuOZOLDAH+iqsKdB6hS7Ilt7k4JWYWRQm1aqCuH6GeKolaUTHHhfoF2grnBXuBTi208MaehhqmGco2cnJVT/tJycnzNsSecT9qkCe8LkxGYLmm4gLwvQQjMyUbCP4otX3EllDjCmJmhZoGThnhAKPshHFgI5ClcPTv6hTv+DJZBjxXOntcryD4rxVOg1IjLWYhfC9hKRh/cHYXXq8BfFN6ZT9YcIFyCKWokYbwO3CBFm2YuqBaeN3mf6zEac7Ho/GeDo5e9vD84t5Lx7JcQ9OJ2e909HZWXwavz0dDod3/NXePWSIvtOvj4+afKFzNn3PzEMzxycnV08ELGEx79CqhOhSeTP9wARYyaaXl9P3DSV3/PxiMhmO43i4/cWj8XN3RofuxBddlnNUbcPvK9TTD1dTpst8jvbAeDwaU2jPL4bh67ndeHJod9JhNzcSs6OGw+mByX+ub9hnqg207Nqa/5G5YmE0zipv2oav6XTr6/F2OMD012QSxxfb38+iMGxh2lQspCxKntxWqbjfSZn5VxSeb0isM0hEc7ypgsgh6HSF0a4iqNEwbjt7aZGc49Fvp71fIaZfYIy2SIV4Br7zuNmVx5urfXJku+6J40X70+JqCTgPvnQdkbQIjQtKe0zRBpfBWoV2JozE7pjUAhryIwKYZYdBaao3WqMIMa8OXx91VcxASovOdR5n4PwMl6h9reDZm3jzkZ2fDWPmVY7OQ14ccuYbx0gDCxq6SJMqxpcHwakTQIdGp8dPIXvhai5Ed/Z1975TqYZs5rytW70r3K5AlJ3mykIeD/KmRQevvhAI5HQ06nqJC2sEOkdTBqPn2K9ewQmbSjVVc5CYSp5wYRXYnjZL05PKFcYpr5aG0gepI5aryIt4Lke/MHSnMI4SXAAFjw9y0JBijtoPqkpwPOIO7RItaVjz0mY84QvvC5cMBh41aN9fjh1oOTdPfWHywTLmm/uIE+ZP+0Hv6gnyIsMXGIwotM1Z2+i2qWp/sqeg/V7NPI2NwCz7dU0o+41DHmn2mn4w2zkVBCWn9SzcoA3vQs3/ipJKo5WxKWj1g4Yq0JLloLQHpWktraKoRswj5C6qphcXBbk69ixT+htK5k3oTVE6b3K0bxzbJZ5mRK88BZZ/2CWPvbue8oiT/grfsD/sx4EsjfM5hGKquKt+kBrDPH/mXGNA/z3jf90kHp/8oMhAhbcqFNa6LsRbvi/EAKcqxfuIL6hek1u+Xs/B4RebbTa0/b1Eu+LJ7X3El2AVNRWtNhFfIEjK5+2af8MV+Vs50/tMKEg8KwlNq9020fbGOyGw8C/KNlvq+uPNZx7xef3vJg9vCLfwSAMDPPKEhpVqwg7kHfbWPAOdlpCSbKWTfv8B+X6cgQ==
+sidebar_class_name: "post api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create new device"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/management/devices"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Registers a new device with the data provided in the request body.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"description":"Indicates whether the device has automatic recognition enabled **E.g.:** true","type":"boolean"},"certificate_id":{"description":"Unique certificate identifier associated with the device.","maxLength":50,"minLength":3,"type":"string"},"correlation_id":{"description":"Unique identifier for request tracking (optional, generated automatically if not provided) **E.g.:** \"123e4567-e89b-12d3-a456-426614174000\"","maxLength":50,"minLength":3,"type":"string"},"fleet_id":{"description":"Owner fleet ID of the device **Ex.:**: 1","type":"string"},"iccid":{"description":"SIM card ICCID **Ex.:**: \"89550311000000000123\"","maxLength":20,"minLength":19,"type":"string"},"imei":{"description":"Device IMEI number **Ex.:**: \"123456789012345\"","maxLength":15,"minLength":15,"type":"string"},"model":{"description":"Device model **Ex.:**: \"GPS Tracker Pro\"","maxLength":50,"minLength":3,"type":"string"},"phone_number":{"description":"Phone number associated with the device **Ex.:**: \"+5511999999999\"","maxLength":15,"minLength":10,"type":"string"}},"required":["imei"],"type":"object"}}},"description":"Device data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"fleet_id":{"type":"string"},"iccid":{"type":"string"},"id":{"type":"string"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"status":{"properties":{"area":{"type":"integer"},"carrier_code":{"type":"string"},"carrier_name":{"type":"string"},"cell_id":{"type":"integer"},"connection_type":{"type":"string"},"created_at":{"type":"string"},"ip_address":{"type":"string"},"last_event_at":{"description":"ISO 8601 timestamp of the device's last event","type":"string"},"latitude":{"type":"number"},"longitude":{"type":"number"},"altitude":{"type":"number"},"mcc":{"type":"string"},"mnc":{"type":"string"},"signal_strength":{"type":"integer"},"speed":{"type":"number"},"updated_at":{"type":"string"}},"type":"object"},"updated_at":{"type":"string"}},"type":"object"}}}},"422":{"description":"Unprocessable entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

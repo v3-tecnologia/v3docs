@@ -1,0 +1,71 @@
+---
+id: obter-conjunto-de-dados-por-id
+title: "Obter conjunto de dados por ID"
+description: "Recupera um conjunto de dados pelo seu ID."
+sidebar_label: "Obter conjunto de dados por ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVs1OI0cQfpVWnRJpsCHZXHwjAUUoUhKRzV4ArcrThafZ6R+qayyc0bxLVjmsEinHfQK/WFQzNmbxEC175gLt7qqar776bcFSLtklcTHADM6pbBIxmsabMoabJkg0loxFG7NJVEeTqTFnJxMoICGjJyHOMLtoH1k6OzE27tuAApw+J5QKCgjoCWbgLBTAdNs4Jgsz4YYKyGVFHmHWgqySSmVhFxbQdVcqnFMMmbK+f3N4qP8+BfDDHnzeONfj8iY3JeUcoYAyBqEgagNTql2JamN6k9VQuw8kzm+oFOi6rivg1djHz9WX7NYf1n9F48Jy/b52Fp/zqcQxEYsbPCTmyPvXZbQ0QlABlgRd3cs4Ia+HrtiKITOuVMpTzrgYs7AT3vqq0jKCTKNGWd46OwpEnKcs6NNnfWTkZqD4aJ/in5VabCSy+wPts8L4wu1Dbl99Tu0EZZuCUswvbH8x29+NNYtTZm0SQhyiNs1MvHQ28gvJX0JyV0CmsmEnq34sHSf3E62OG6lgdnGls0Px9Dye2V5ViA+2g+rA0kGf8Qcp8kE/lwQXOuDgBAUzSYar3rkqqvaCpJ+Eah2mdiMybZ3tQIHwcjseG65hBpVIyrPpVChgkMny24zBzuPdpIx+ujwCxbeF/5tGd6DtoRPtMEErQku8m6HfEzKxeR3fUYBd8HrFnioXruOQBUGwlCHGn2bisXnjsovBHP96ZtZ/m2iqZm5K0qKvtRkkjjo00dOmO9BST/1spbnbLAloUo2C15E9FpehwrmrnWCwmubXxOt/QulQ1Zcua2Mpo0+NYOliwHpyGd6MXCse3UrQp2gs9gVTu8XGFrK4a1c6rM1tQyYReyc0VFViEuTLQIbuhNGxolBs6w/rj5QVh/O4oJANmeX6X0sxFyY739Q9ZtzCrBqPASeX4TQLmhzrZhjwKA0q2Gh8lMj7ROmmdE+V4isrWqA36z9NaJbki8vgY3ASuW+2GiEXml6ZBmUMukJkMvSQQt3CxEmtkd5FDgrQrBtCejg5nBxpaaWYxWPfNjYZ84tm/tiaF9mcncCj5Gh3zeh5a+ImE4XuZJpqdEHR9NXQbgrnAraFAwXMnNUKq2IWfWnbOWb6neuu0+vbhljr+qqAJbLDufquy6fLerYwu8Y60/9g/+p8s2d+bZ7eUUcxb0sqrJRhrBv9BQW8o9Www3ZXXbGtSwU1PByXJSV5oLLXybuHHeXH09dQAG5KfVfGaqzYHtT6KJxHXWBAoH+74gmNth16RNfdyw9PT2rcd56N4+pA13X/AT/1VeU=
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/vision/vision-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Obter conjunto de dados por ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/datasets/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Recupera um conjunto de dados pelo seu ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID do conjunto de dados","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"200":{"description":"Conjunto de dados recuperado com sucesso","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Requisição inválida","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"401":{"description":"Não autorizado","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Conjunto de dados não encontrado","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

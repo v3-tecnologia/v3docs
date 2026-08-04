@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Translate from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
 import { Title, SubTitle } from "../components/Headers";
 import { Paragraph } from "../components/Paragraph";
@@ -13,15 +14,21 @@ export default function Home(): ReactNode {
             <section className="flex flex-col lg:!flex-row gap-8">
               <div className="w-full lg:!w-[50%]">
                 <Title className="mt-6 md:!mt-10">
-                  Bem vindo ao portal do desenvolvedor V3
+                  <Translate id="homepage.title">
+                    Bem vindo ao portal do desenvolvedor V3
+                  </Translate>
                 </Title>
                 <Paragraph className="mt-6 md:!mt-10">
-                  Este é o ambiente de desenvolvimento da V3, onde você
-                  encontrará todas as informações necessárias para integrar e
-                  utilizar nossos serviços.
+                  <Translate id="homepage.intro">
+                    Este é o ambiente de desenvolvimento da V3, onde você
+                    encontrará todas as informações necessárias para integrar e
+                    utilizar nossos serviços.
+                  </Translate>
                 </Paragraph>
                 <Paragraph className="mt-6 md:!mt-12 !text-2xl" variant="bold">
-                  Nosso portal está organizado em três seções:
+                  <Translate id="homepage.sections.title">
+                    Nosso portal está organizado em três seções:
+                  </Translate>
                 </Paragraph>
               </div>
               <div className="w-full lg:!w-[50%] max-h-[420px] !flex !items-center !justify-center">
@@ -34,53 +41,70 @@ export default function Home(): ReactNode {
             </section>
             <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center mt-15">
               <Card
-                title="Blog"
+                title={
+                  <Translate id="homepage.card.blog.title">Blog</Translate>
+                }
                 bgColor="bg-white"
                 textColor="text-black"
                 href="/blog"
               >
-                É o espaço onde nosso time de tecnologia compartilha
-                conhecimentos sobre as tecnologias que utilizamos, tendências de
-                mercado, inovações que estamos acompanhando, e como solucionamos
-                os desafios técnicos da V3, incluindo projetos experimentais e
-                provas de conceito.
+                <Translate id="homepage.card.blog.body">
+                  É o espaço onde nosso time de tecnologia compartilha
+                  conhecimentos sobre engenharia, tendências de mercado,
+                  inovações que acompanhamos e como solucionamos os desafios da
+                  V3, incluindo projetos experimentais e provas de conceito.
+                </Translate>
               </Card>
 
               <Card
-                title="Documentação"
+                title={
+                  <Translate id="homepage.card.docs.title">
+                    Documentação
+                  </Translate>
+                }
                 bgColor="bg-white"
                 textColor="text-black"
                 href="/docs/docs"
               >
-                Guia estruturado em módulos sequenciais para compreender e
-                implementar o ecossistema V3. A jornada inclui: Sobre a V3,
-                Nossa Solução, Configuração Inicial, Manual de Instalação,
-                Ferramenta de Configuração, Autenticação, Permissionamento,
-                Gestão de Dispositivos, Orders, Events, Vision e Webhooks.
+                <Translate id="homepage.card.docs.body">
+                  Guia estruturado em módulos sequenciais para compreender e
+                  imfplementar o ecossistema V3. A jornada inclui: Sobre a V3,
+                  Nossa Solução, Configuração Inicial, Manual de Instalação,
+                  Ferramenta de Configuração, Autenticação, Permissionamento,
+                  Gestão de Dispositivos, Ordens, Eventos, Visões e Notificações.
+                </Translate>
               </Card>
 
               <Card
-                title="API"
+                title={<Translate id="homepage.card.api.title">API</Translate>}
                 bgColor="bg-white"
                 textColor="text-black"
-                href="docs/category/order-api"
+                href="/docs/category/order-api"
               >
-                Conheça os detalhes das nossas APIS, que são intuitivas, seguras
-                e escaláveis, permitindo que você desenvolva soluções robustas e
-                eficientes. Veja exemplos de implementações, detalhes dos
-                Payloads e muito mais.
+                <Translate id="homepage.card.api.body">
+                  Conheça os detalhes das nossas APIs, que são intuitivas, seguras
+                  e escaláveis, permitindo que você desenvolva soluções robustas e
+                  eficientes. Veja exemplos de implementação, detalhes das
+                  requisições e muito mais.
+                </Translate>
               </Card>
             </section>
             <section className="flex flex-row gap-8 mb-4 lg:!mb-2 mt-15 lg:!mt-35 justify-center">
               <div className="text-center max-w-[80%]">
                 <div className="flex items-center justify-center gap-4 mb-6">
-                  <SubTitle>Junte-se à comunidade dev3s!</SubTitle>
+                  <SubTitle>
+                    <Translate id="homepage.community.title">
+                      Junte-se à comunidade dev3s!
+                    </Translate>
+                  </SubTitle>
                 </div>
                 <Paragraph className="mt-6 mb-8 text-lg">
-                  Conecte-se com outros desenvolvedores na nossa comunidade
-                  dev3s! Nosso Discord é o lugar perfeito para tirar dúvidas,
-                  compartilhar experiências e ficar por dentro das novidades
-                  sobre videotelemetria e tecnologias V3.
+                  <Translate id="homepage.community.body">
+                    Conecte-se com outros desenvolvedores na nossa comunidade
+                    dev3s! Lá você pode tirar dúvidas, compartilhar experiências
+                    e ficar por dentro das novidades sobre videotelemetria e a
+                    plataforma V3.
+                  </Translate>
                 </Paragraph>
 
                 <a
@@ -109,14 +133,24 @@ export default function Home(): ReactNode {
                       </clipPath>
                     </defs>
                   </svg>
-                  Entrar no Discord
+                  <Translate id="homepage.community.cta">
+                    Entrar na comunidade
+                  </Translate>
                 </a>
               </div>
             </section>
             <section className="flex flex-col lg:flex-row gap-8 mt-10 items-center">
               <div className="w-full lg:w-[40%]">
-                <CardSuport title="Ficou com alguma dúvida?">
-                  Entre em contato conosco através do e-mail{" "}
+                <CardSuport
+                  title={
+                    <Translate id="homepage.support.title">
+                      Ficou com alguma dúvida?
+                    </Translate>
+                  }
+                >
+                  <Translate id="homepage.support.body">
+                    Entre em contato conosco através do e-mail
+                  </Translate>{" "}
                   <a href="mailto:suporte@v3.com.br">suporte@v3.com.br</a>
                 </CardSuport>
               </div>

@@ -1,0 +1,72 @@
+---
+id: listar-times-com-paginacao
+title: "List teams with pagination"
+description: "Returns the list of teams with optional filter by correlation identifier."
+sidebar_label: "List teams with pagination"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VU1vG0cM/SsDXtoCY0lu0cvecmgLAy0QNOnJFQxqlruaZHZmy+GqVoT97wVnHUux1nKcQ0/S8uuRQ/LxADVlx74XnyJU8CfJwDEb2ZIJPotJjRHCLpt/vWxNKnYYTOODEJvN3rjETAFVbnxNUXzjiRd/x3dD3yeWbHpsfSwGC7DQI2NHQpyhuj08gX+LLZk4dBti831NDQ5BKnP9A1jwqv9nIN6DhYgdQQU9tgQWsttSh1AdQPa9yn0UaolhHO0sQvaf6DT+ypoO7/XP6hLUnfq9Eu/XFx7qGbgT4ztfz2FmYR9bGMe1Babcp5gpq/7H1Up/vkzjfekhk7CnHdUmD85Rzs0QgqK6FIWiqB/2ffCuIC8/ZHU+nID3nHpi8RNUjVKkXqjL52p0Lg1RtIDzvO3TGmdNmFCovkOZVdcU6IL6maDTE88ohr5+Hm20nyVp84GcwFGAzLjX7zKPM2NhT8ZnVi1JMNw9PuNzBhpl1uA8uVFlP8+Nwk0UYt3hTLwjNsSc+BUzME6xtdHF4qaGCpQrkK/Ed5SvXOqupqV3mMCCYKvLXoYQ1hY6km1Sr5akMIJsoYJlhxFb6ijKslCOTn1JcWKKgQNUsBXpc7VcCkWMstj9lDHWm3S/cKlb7q5B18HHJmnKWhE6rajMyukjvCPeeUfmYXP8JpBpEpvELUb/ycfWYKxNhz4K+qjfNXvNxU58aE0TiCTbYleTRssm+PiRaiOpEKgbsqSO+LtsHl9LKVC8BO3VH48Fmzdvb8CCxp/yWy1Wi+syOClLh6UDD9Twu9LyCScf6RWeVHk49vR/IPaHARS6l2Uf0MeyUtq0w0OLb+HYYnUoTV5b2KYsqj0cNpjpLw7jqOKJEsuR8Bk3gWqoGgyZLpR54YDM5veR9sc7ssMwqAkUGn8d5gsn5QXwz5flGzP4iiNzIYGzW3PMYq0f7DUNqG7Xo4UtYU1cujJ5v3GOejnxOiOP8XTlf/vlPYzjf/8U8Gw=
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List teams with pagination"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/management/teams"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the list of teams with optional filter by correlation identifier.
+Supports pagination.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}},{"description":"Filter by correlation identifier","in":"query","name":"correlation_id","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Teams retrieved successfully","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"account_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: excluir-dispositivo
+title: "Delete device"
+description: "Removes a device by the specified ID."
+sidebar_label: "Delete device"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNU01v2zAM/SsCL9sKLU67nXwrkB4CbMDQraciB8ZiYqK25Eq00czQfx9oe23RdsVOgiR+vPf4OIKjVEXuhIOHEq6pDQMlg8bRwBWZ/clITSZ1VPGByZntZgUWOozYklBMUN6OL4ps5tTtBiywPnQoNVjw2BKUwA4sRLrvOZKDUmJPFlJVU4tQjiCnTqOSRPZHyHmnwakLPlHS/4v1Wo83W8YJvtavghfyopFnxZke/+6Qs4WvFxevq974LoaKUsJ9Q4a8sJzer53naqGjiFpk66AEeqianuNnx6kLiYWHABYEjyreAh12FlqSOmiCo4aEJpmlhhKKFj0eqSUvxTyXVIzsMlhIFIe/U+hjAyXUIl0qi0LIo5fV8CWhd/vwsKpCWwznoIKyPwTFrUywUibZvuD+k+Ii6aQ9qwKHEE2IR/T8m/3RoHemRfaC7PXuIisWa4SwTdYcGiJJdopbYJuG/R05I2GyVdUnCS3FD8k8Sqb2EpZGR/T9kbe5/LEFC1p/xrderVfnkC10IUmLXuksBttM8i0t4QWx8Wl8/+32xTBCD1J0DbLXvpPa4zKiW3ga0dRxYgsWSnY62jok0ahx3GOim9jkrM/3PcUTlLc7CwNGVpvN+8ST5RyUB2wSvUPh4/WySJ/M87V7E/HyiF5NPGDT6w0s3NFpXsu8yxZqQkdxgjF/XFYVdfIsRU2fn/t1c/Xt6tcV5PwHTX92aQ==
+sidebar_class_name: "delete api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete device"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/management/devices/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Removes a device by the specified ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Device removed","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

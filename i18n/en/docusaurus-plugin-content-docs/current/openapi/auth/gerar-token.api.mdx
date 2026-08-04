@@ -1,0 +1,76 @@
+---
+id: gerar-token
+title: "Generate token"
+description: "Generates an authentication token from the provided credentials."
+sidebar_label: "Generate token"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk2P2zYQ/SsEz7K9adqLb9sWKdxDN8CmJ9swxuTY4kYileFIu4ah/14MKTv2WpsWBQL00Isg8c33PM3wqC1GQ65hF7ye69/QIwFjVOAVtFyiZ2dAUMXhM3q1o1ArLlE1FDpn0SpDaEUMqjhd+QevYmsMxlgox4qQW/IxaewH43Yw5bz6/fHhD7ULVANPV36xO8mIvx24KhYKVGRqDbeEViFRIEUYm+AjKhcHB2jVs+MyuYGmodCQA8aVjwzcRmWCRQXeqhpjhD1OV/5DIFUHQuV8DsAFX6iImI1c526DaWv0nL+AV75kbuJ8NrPYYRUapGn33gTPFKqpCfXMBhPzA1rOlgwEXWjCLy1G/jnYg54fteigZ3mFpqkGh7OXyfPz80QCm7RUoZcErAhFU2IN8saHBvVch+0TGtaFlqyR2GEUdE/geZNljq+7LJhKWHEyE5mc3+u+0NGEMaXHdDwibyqHnjfO3ur8kiC1+PUbehENIb+pO8A3+n2upCMpy/Iy3VMGl5G99rburw0wtZgOMrFSBX+4uxupQua2GBxv3FMUucs+XfcFkv4m/QEXXfxaFjAmtOd6jsDsOryAtiFUCP6mEzea+NI4wrhxl36dZ9wjCe6Ax4EndqMGCaGqNzmh20QpVPnFMdZx1MBwAERwSB29pnRysSOM5TfKdWbrLYIxuuA3MgLGJRg9vF2v5PP8B93AbUTyUI+Bt5kkuv04RqiF76ByVg1j4d8TK43G8cYLsrly+09D/mk8ZJbUKxWROqQ8lP9TgfeFFg/J/8Lqud4jAU0yiwrNsI8yNO5bLvW60DVyGUSsCakDDXCp51omdzk7KeVkRe+oW6r0XJ9WQKbRtHsfwdtteEnzv3un+3WhZbmcxjwYqU1fvCrn/fWqET/OyBYCPi3ZqKKrm8rtnOxAb5vgPEdZnCpsGZx3fp/WW+IScPpM/2VetXEqWTuucPCn7j8udKEloRzE3fRu+k5qLiWoIVU6s/t8J1CnSrxqyLnt/98evv/tYeA64wvPmgpcmvuJjseBtkst3vUwv4TepbB6vtTH4xYi/klV38vxlxbpoOfLdaE7IAdbYcdy3Re6RLBIiemf8SC7OLd48inv1w6qNg3uv72w9MXJxL0x2PAbymlE9Jd/4seHx0+60NvhllQHKzoXlovLDwm77/8CDVHZ6A==
+sidebar_class_name: "post api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/auth/auth-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Generate token"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/auth/token"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Generates an authentication token from the provided credentials.
+On success, it returns the generated token in JSON format.
+If generation fails, a structured error response is returned with the appropriate
+status code and message.
+For more information, see the authentication documentation at
+https://developer.v3control.com/docs/docs/autenticacao
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/x-www-form-urlencoded":{"schema":{"type":"object","properties":{"grant_type":{"description":"Grant type","type":"string"},"scope":{"description":"Scope","type":"string"},"client_id":{"description":"Client ID","type":"string"},"client_secret":{"description":"Client secret","type":"string"}},"required":["grant_type","scope","client_id","client_secret"]}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Success","content":{"application/json":{"schema":{"properties":{"access_token":{"type":"string"},"account_id":{"type":"string"},"active":{"type":"boolean"},"client_id":{"type":"string"},"expires_in":{"type":"integer"},"iat":{"type":"integer"},"jti":{"type":"string"},"realm_access":{"properties":{"roles":{"items":{"type":"string"},"type":"array"}},"type":"object"},"refresh_token":{"type":"string"},"scope":{"type":"string"},"session_state":{"type":"string"},"tenant_id":{"type":"string"},"token_type":{"type":"string"},"username":{"type":"string"}},"type":"object"}}}},"400":{"description":"Invalid request","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

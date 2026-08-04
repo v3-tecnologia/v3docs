@@ -1,0 +1,66 @@
+{
+  "link.title.DESENVOLVEDOR": {
+    "message": "DEVELOPER",
+    "description": "The title of the footer links column with title=DESENVOLVEDOR in the footer"
+  },
+  "link.title.TRABALHE CONOSCO": {
+    "message": "CAREERS",
+    "description": "The title of the footer links column with title=TRABALHE CONOSCO in the footer"
+  },
+  "link.title.LINKS": {
+    "message": "LINKS",
+    "description": "The title of the footer links column with title=LINKS in the footer"
+  },
+  "link.item.label.Home": {
+    "message": "Home",
+    "description": "The label of footer link with label=Home linking to /"
+  },
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
+  "link.item.label.Documentação": {
+    "message": "Documentation",
+    "description": "The label of footer link with label=Documentação linking to /docs/docs"
+  },
+  "link.item.label.API": {
+    "message": "API",
+    "description": "The label of footer link with label=API linking to /docs/category/order-api"
+  },
+  "link.item.label.Vagas Abertas": {
+    "message": "Open Positions",
+    "description": "The label of footer link with label=Vagas Abertas linking to https://github.com/v3-tecnologia/join-our-team"
+  },
+  "link.item.label.Descrições das Vagas": {
+    "message": "Job Descriptions",
+    "description": "The label of footer link with label=Descrições das Vagas linking to https://github.com/v3-tecnologia/job-descriptions"
+  },
+  "link.item.label.Desafio Técnico V3": {
+    "message": "V3 Technical Challenge",
+    "description": "The label of footer link with label=Desafio Técnico V3 linking to https://github.com/v3-tecnologia/challenge"
+  },
+  "link.item.label.Site": {
+    "message": "Site",
+    "description": "The label of footer link with label=Site linking to https://www.v3.com.br"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/v3-tecnologia"
+  },
+  "link.item.label.LinkedIn": {
+    "message": "LinkedIn",
+    "description": "The label of footer link with label=LinkedIn linking to https://www.linkedin.com/company/v3-tecnologia"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://discord.gg/e69avYVnzG"
+  },
+  "copyright": {
+    "message": "© 2026 V3 Tecnologia.",
+    "description": "The footer copyright"
+  },
+  "link.item.label.Início": {
+    "message": "Home",
+    "description": "The label of footer link with label=Início linking to /"
+  }
+}

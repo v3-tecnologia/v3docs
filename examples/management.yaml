@@ -3,41 +3,40 @@ definitions:
   dto.CreateDeviceDTO:
     properties:
       automatic_recognition:
-        description: 'Flag indicating if the device has automatic recognition enabled
-          **Example**: true'
+        description: 'Indica se o dispositivo possui reconhecimento automático habilitado
+          **Ex.:**: true'
         type: boolean
       certificate_id:
-        description: CertificateID is the unique identifier of the certificate associated
-          with the device.
+        description: Identificador único do certificado associado ao dispositivo.
         maxLength: 50
         minLength: 3
         type: string
       correlation_id:
-        description: 'Unique identifier for request tracking (optional, auto-generated
-          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        description: 'Identificador único para rastreamento da requisição (opcional,
+          gerado automaticamente se não informado) **Ex.:**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
       fleet_id:
-        description: 'ID of the fleet that owns the device **Example**: 1'
+        description: 'ID da frota proprietária do dispositivo **Ex.:**: 1'
         type: string
       iccid:
-        description: 'ICCID of the SIM card **Example**: "89550311000000000123"'
+        description: 'ICCID do cartão SIM **Ex.:**: "89550311000000000123"'
         maxLength: 20
         minLength: 19
         type: string
       imei:
-        description: 'IMEI number of the device **Example**: "123456789012345"'
+        description: 'Número IMEI do dispositivo **Ex.:**: "123456789012345"'
         maxLength: 15
         minLength: 15
         type: string
       model:
-        description: 'Model of the device **Example**: "GPS Tracker Pro"'
+        description: 'Modelo do dispositivo **Ex.:**: "GPS Tracker Pro"'
         maxLength: 50
         minLength: 3
         type: string
       phone_number:
-        description: 'Phone number associated with the device **Example**: "+5511999999999"'
+        description: 'Número de telefone associado ao dispositivo **Ex.:**: "+5511999999999"'
         maxLength: 15
         minLength: 10
         type: string
@@ -47,18 +46,18 @@ definitions:
   dto.CreateDriverDTO:
     properties:
       correlation_id:
-        description: 'Unique identifier for request tracking (optional, auto-generated
-          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        description: 'Identificador único para rastreamento da requisição (opcional,
+          gerado automaticamente se não informado) **Ex.:**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
       name:
-        description: 'Name of the driver **Example**: "John Doe"'
+        description: 'Nome do motorista **Ex.:**: "João Silva"'
         maxLength: 100
         minLength: 3
         type: string
       team_id:
-        description: Optional team ID for driver assignment
+        description: ID do time para associação do motorista (opcional)
         maxLength: 50
         minLength: 3
         type: string
@@ -68,18 +67,18 @@ definitions:
   dto.CreateFleetDTO:
     properties:
       correlation_id:
-        description: 'Unique identifier for request tracking (optional, auto-generated
-          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        description: 'Identificador único para rastreamento da requisição (opcional,
+          gerado automaticamente se não informado) **Ex.:**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
       name:
-        description: 'Name of the fleet **Example**: "Main Fleet"'
+        description: 'Nome da frota **Ex.:**: "Frota Principal"'
         maxLength: 100
         minLength: 3
         type: string
       team_id:
-        description: 'ID of the team that owns the fleet **Example**: 1'
+        description: 'ID do time proprietário da frota **Ex.:**: 1'
         type: string
     required:
     - name
@@ -88,13 +87,13 @@ definitions:
   dto.CreateTeamDTO:
     properties:
       correlation_id:
-        description: 'Unique identifier for request tracking (optional, auto-generated
-          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        description: 'Identificador único para rastreamento da requisição (opcional,
+          gerado automaticamente se não informado) **Ex.:**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
       name:
-        description: 'Name of the team **Example**: "Development Team"'
+        description: 'Nome do time **Ex.:**: "Time de Desenvolvimento"'
         maxLength: 100
         minLength: 3
         type: string
@@ -104,41 +103,40 @@ definitions:
   dto.UpdateDeviceDTO:
     properties:
       automatic_recognition:
-        description: 'Flag indicating if the device has automatic recognition enabled
-          **Example**: true'
+        description: 'Indica se o dispositivo possui reconhecimento automático habilitado
+          **Ex.:**: true'
         type: boolean
       certificate_id:
-        description: CertificateID is the unique identifier of the certificate associated
-          with the device.
+        description: Identificador único do certificado associado ao dispositivo.
         maxLength: 50
         minLength: 3
         type: string
       correlation_id:
-        description: 'Unique identifier for request tracking (optional, auto-generated
-          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        description: 'Identificador único para rastreamento da requisição (opcional,
+          gerado automaticamente se não informado) **Ex.:**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
       fleet_id:
-        description: 'ID of the fleet that owns the device **Example**: 1'
+        description: 'ID da frota proprietária do dispositivo **Ex.:**: 1'
         type: string
       iccid:
-        description: 'ICCID of the SIM card **Example**: "89550311000000000123"'
+        description: 'ICCID do cartão SIM **Ex.:**: "89550311000000000123"'
         maxLength: 20
         minLength: 19
         type: string
       imei:
-        description: 'IMEI number of the device **Example**: "123456789012345"'
+        description: 'Número IMEI do dispositivo **Ex.:**: "123456789012345"'
         maxLength: 15
         minLength: 15
         type: string
       model:
-        description: 'Model of the device **Example**: "GPS Tracker Pro X"'
+        description: 'Modelo do dispositivo **Ex.:**: "GPS Tracker Pro X"'
         maxLength: 50
         minLength: 3
         type: string
       phone_number:
-        description: 'Phone number associated with the device **Example**: "+5511999999999"'
+        description: 'Número de telefone associado ao dispositivo **Ex.:**: "+5511999999999"'
         maxLength: 15
         minLength: 10
         type: string
@@ -148,18 +146,18 @@ definitions:
   dto.UpdateDriverDTO:
     properties:
       correlation_id:
-        description: 'Unique identifier for request tracking (optional, auto-generated
-          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        description: 'Identificador único para rastreamento da requisição (opcional,
+          gerado automaticamente se não informado) **Ex.:**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
       name:
-        description: 'Name of the driver **Example**: "John Doe Updated"'
+        description: 'Nome do motorista **Ex.:**: "João Silva Atualizado"'
         maxLength: 100
         minLength: 3
         type: string
       team_id:
-        description: Optional team ID for driver assignment
+        description: ID do time para associação do motorista (opcional)
         maxLength: 50
         minLength: 3
         type: string
@@ -169,18 +167,18 @@ definitions:
   dto.UpdateFleetDTO:
     properties:
       correlation_id:
-        description: 'Unique identifier for request tracking (optional, auto-generated
-          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        description: 'Identificador único para rastreamento da requisição (opcional,
+          gerado automaticamente se não informado) **Ex.:**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
       name:
-        description: 'Name of the fleet **Example**: "Updated Fleet"'
+        description: 'Nome da frota **Ex.:**: "Frota Atualizada"'
         maxLength: 100
         minLength: 3
         type: string
       team_id:
-        description: 'ID of the team that owns the fleet **Example**: 1'
+        description: 'ID do time proprietário da frota **Ex.:**: 1'
         type: string
     required:
     - name
@@ -189,18 +187,127 @@ definitions:
   dto.UpdateTeamDTO:
     properties:
       correlation_id:
-        description: 'Unique identifier for request tracking (optional, auto-generated
-          if not provided) **Example**: "123e4567-e89b-12d3-a456-426614174000"'
+        description: 'Identificador único para rastreamento da requisição (opcional,
+          gerado automaticamente se não informado) **Ex.:**: "123e4567-e89b-12d3-a456-426614174000"'
         maxLength: 50
         minLength: 3
         type: string
       name:
-        description: 'Name of the team **Example**: "Updated Development Team"'
+        description: 'Nome do time **Ex.:**: "Time de Desenvolvimento Atualizado"'
         maxLength: 100
         minLength: 3
         type: string
     required:
     - name
+    type: object
+  dto.DeviceResponse:
+    properties:
+      automatic_recognition:
+        type: boolean
+      certificate_id:
+        type: string
+      correlation_id:
+        type: string
+      created_at:
+        type: string
+      fleet_id:
+        type: string
+      iccid:
+        type: string
+      id:
+        type: string
+      imei:
+        type: string
+      model:
+        type: string
+      phone_number:
+        type: string
+      status:
+        $ref: '#/definitions/dto.DeviceStatusResponse'
+      updated_at:
+        type: string
+    type: object
+  dto.DeviceStatusPatchDTO:
+    properties:
+      area:
+        type: integer
+      carrier_code:
+        type: string
+      carrier_name:
+        type: string
+      cell_id:
+        type: integer
+      connection_type:
+        type: string
+      imei:
+        type: string
+      ip_address:
+        type: string
+      last_event_at:
+        description: Timestamp ISO 8601 do último evento do dispositivo
+        type: string
+      latitude:
+        type: number
+      longitude:
+        type: number
+      altitude:
+        type: number
+      mcc:
+        type: string
+      mnc:
+        type: string
+      signal_strength:
+        type: integer
+      speed:
+        type: number
+    type: object
+  dto.DeviceStatusResponse:
+    properties:
+      area:
+        type: integer
+      carrier_code:
+        type: string
+      carrier_name:
+        type: string
+      cell_id:
+        type: integer
+      connection_type:
+        type: string
+      created_at:
+        type: string
+      ip_address:
+        type: string
+      last_event_at:
+        description: Timestamp ISO 8601 do último evento do dispositivo
+        type: string
+      latitude:
+        type: number
+      longitude:
+        type: number
+      altitude:
+        type: number
+      mcc:
+        type: string
+      mnc:
+        type: string
+      signal_strength:
+        type: integer
+      speed:
+        type: number
+      updated_at:
+        type: string
+    type: object
+  dto.PatchDeviceStatusDTO:
+    properties:
+      iccid:
+        type: string
+      status:
+        $ref: '#/definitions/dto.DeviceStatusPatchDTO'
+    type: object
+  health.HealthCheckResponse:
+    properties:
+      status:
+        type: string
     type: object
   model.Device:
     properties:
@@ -284,7 +391,7 @@ definitions:
     properties:
       data:
         items:
-          $ref: '#/definitions/model.Device'
+          $ref: '#/definitions/dto.DeviceResponse'
         type: array
       page:
         type: integer
@@ -343,36 +450,65 @@ definitions:
 host: tenant.v3sandbox.com
 info:
   contact: {}
-  description: Aplicação em GO responsável por realizar o CRUD das estruturas base.
+  description: Serviço responsável por organizar e manter motoristas, times, frotas
+    e dispositivos vinculados à operação do cliente.
   title: Management API
   version: 0.0.1
 paths:
+  /healthz:
+    get:
+      description: Verifica se a aplicação está ativa
+      responses:
+        "200":
+          description: Aplicação ativa
+          schema:
+            $ref: '#/definitions/health.HealthCheckResponse'
+        "500":
+          description: Erro interno do servidor
+          schema: {}
+      operationId: verificar-se-a-aplicacao-esta-ativa
+      summary: Verificar se a aplicação está ativa
+      tags:
+      - Health Check
+  /healthz/ready:
+    get:
+      description: Verifica se a aplicação está pronta
+      responses:
+        "200":
+          description: Aplicação pronta
+          schema:
+            $ref: '#/definitions/health.HealthCheckResponse'
+        "503":
+          description: Serviço indisponível
+          schema:
+            $ref: '#/definitions/health.HealthCheckResponse'
+      operationId: verificar-se-a-aplicacao-esta-pronta
+      summary: Verificar se a aplicação está pronta
+      tags:
+      - Health Check
   /management/devices:
     get:
       description: |-
-        FindAll handles HTTP GET requests to retrieve device records with optional filtering and pagination.
-        It supports filtering by either "correlation_id", "fleet_id", or "imei" query parameters, but only one at a time.
-        If multiple filters are provided, it returns a 400 Bad Request error.
-        Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
-        Returns a JSON response containing the paginated devices or an error message.
+        Retorna a lista de dispositivos com filtros opcionais por identificador de correlação,
+        ID da frota ou IMEI. Suporta paginação. Apenas um filtro pode ser utilizado por vez.
       parameters:
-      - description: 'Page number (default: 1)'
+      - description: 'Número da página (padrão: 1)'
         in: query
         name: page
         type: integer
-      - description: 'Page size (default: 10, max: 100)'
+      - description: 'Tamanho da página (padrão: 10, máximo: 100)'
         in: query
         name: page_size
         type: integer
-      - description: Filter by correlation ID
+      - description: Filtrar por identificador de correlação
         in: query
         name: correlation_id
         type: string
-      - description: Filter by fleet ID
+      - description: Filtrar por ID da frota
         in: query
         name: fleet_id
         type: string
-      - description: Filter by IMEI
+      - description: Filtrar por IMEI
         in: query
         name: imei
         type: string
@@ -380,26 +516,23 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Dispositivos recuperados com sucesso
           schema:
             $ref: '#/definitions/service.PaginatedDevices'
         "500":
-          description: Internal Server Error
+          description: Erro interno do servidor
           schema: {}
-      summary: List devices with pagination
+      operationId: listar-dispositivos-com-paginacao
+      summary: Listar dispositivos com paginação
       tags:
       - Device
     post:
       consumes:
       - application/json
-      description: |-
-        Create handles the HTTP request to create a new device.
-        It parses the request body into a CreateDeviceDTO, validates the input,
-        and calls the device service to create the device. On success, it returns
-        the created device with HTTP 201 status. On error, it returns an appropriate
-        HTTP error status and message.
+      description: Cadastra um novo dispositivo com os dados informados no corpo da
+        requisição.
       parameters:
-      - description: Device Data
+      - description: Dados do dispositivo
         in: body
         name: device
         required: true
@@ -409,48 +542,41 @@ paths:
       - application/json
       responses:
         "201":
-          description: Created
+          description: Criado
           schema:
-            $ref: '#/definitions/model.Device'
+            $ref: '#/definitions/dto.DeviceResponse'
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Create a new device
+      operationId: criar-novo-dispositivo
+      summary: Criar novo dispositivo
       tags:
       - Device
   /management/devices/{id}:
     delete:
-      description: |-
-        Delete handles HTTP DELETE requests to remove a device resource by its ID.
-        It parses the "id" parameter from the request URL, validates it, and calls the deviceService.Delete method.
-        If the ID is invalid or the deletion fails, it returns a 422 Unprocessable Entity status with an error message.
-        On successful deletion, it returns a 200 OK status with an empty response body.
+      description: Remove um dispositivo pelo ID informado.
       parameters:
-      - description: Device ID
+      - description: ID do dispositivo
         in: path
         name: id
         required: true
         type: string
       responses:
         "200":
-          description: Device removed
+          description: Dispositivo removido
           schema:
             type: string
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Delete a device
+      operationId: excluir-dispositivo
+      summary: Excluir dispositivo
       tags:
       - Device
     get:
-      description: |-
-        FindOne handles HTTP requests to retrieve a single device by its ID.
-        It parses the "id" parameter from the request URL, validates it, and calls the deviceService to fetch the device.
-        If the ID is invalid, it returns a 422 Unprocessable Entity response.
-        If the device is not found, it returns a 404 Not Found response.
-        On success, it returns the device data with a 200 OK response.
+      description: Retorna os dados de um dispositivo específico pelo ID informado.
       parameters:
-      - description: Device ID
+      - description: ID do dispositivo
         in: path
         name: id
         required: true
@@ -459,31 +585,61 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Dispositivo recuperado com sucesso
           schema:
-            $ref: '#/definitions/model.Device'
+            $ref: '#/definitions/dto.DeviceResponse'
         "404":
-          description: Not Found
+          description: Dispositivo não encontrado
           schema: {}
-      summary: Get a device by ID
+      operationId: obter-dispositivo-por-id
+      summary: Obter dispositivo por ID
+      tags:
+      - Device
+    patch:
+      consumes:
+      - application/json
+      description: Atualiza parcialmente o status de telemetria e o ICCID do dispositivo.
+      parameters:
+      - description: ID do dispositivo
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Dados de status do dispositivo
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.PatchDeviceStatusDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Dispositivo atualizado com sucesso
+          schema:
+            $ref: '#/definitions/dto.DeviceResponse'
+        "404":
+          description: Dispositivo não encontrado
+          schema: {}
+        "422":
+          description: Entidade não processável
+          schema: {}
+      operationId: atualizar-status-do-dispositivo
+      summary: Atualizar status do dispositivo
       tags:
       - Device
     put:
       consumes:
       - application/json
-      description: |-
-        Update handles the HTTP PUT request to update an existing device entity.
-        It parses the device ID from the URL parameters, validates the request body,
-        and updates the device using the provided service. Returns appropriate HTTP
-        status codes and error messages for invalid input, validation errors, or if
-        the device is not found.
+      description: Atualiza os dados de um dispositivo existente com as informações
+        informadas no corpo da requisição.
       parameters:
-      - description: Device ID
+      - description: ID do dispositivo
         in: path
         name: id
         required: true
         type: string
-      - description: Device Data
+      - description: Dados do dispositivo
         in: body
         name: device
         required: true
@@ -493,40 +649,38 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Dispositivo atualizado com sucesso
           schema:
-            $ref: '#/definitions/model.Device'
+            $ref: '#/definitions/dto.DeviceResponse'
         "404":
-          description: Not Found
+          description: Dispositivo não encontrado
           schema: {}
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Update a device
+      operationId: atualizar-dispositivo
+      summary: Atualizar dispositivo
       tags:
       - Device
   /management/drivers:
     get:
       description: |-
-        FindAll handles HTTP GET requests to retrieve driver records with optional filtering and pagination.
-        It supports filtering by either "correlation_id" or "team_id" query parameters, but not both simultaneously.
-        If both filters are provided, it returns a 400 Bad Request error.
-        Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
-        Returns a JSON response containing the paginated drivers or an error message.
+        Retorna a lista de motoristas com filtros opcionais por identificador de correlação
+        ou ID do time. Suporta paginação. Apenas um filtro pode ser utilizado por vez.
       parameters:
-      - description: 'Page number (default: 1)'
+      - description: 'Número da página (padrão: 1)'
         in: query
         name: page
         type: integer
-      - description: 'Page size (default: 10, max: 100)'
+      - description: 'Tamanho da página (padrão: 10, máximo: 100)'
         in: query
         name: page_size
         type: integer
-      - description: Filter by correlation Id
+      - description: Filtrar por identificador de correlação
         in: query
         name: correlation_id
         type: string
-      - description: Filter by team Id
+      - description: Filtrar por ID do time
         in: query
         name: team_id
         type: string
@@ -534,26 +688,23 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Motoristas recuperados com sucesso
           schema:
             $ref: '#/definitions/service.PaginatedDrivers'
         "500":
-          description: Internal Server Error
+          description: Erro interno do servidor
           schema: {}
-      summary: List drivers with pagination
+      operationId: listar-motoristas-com-paginacao
+      summary: Listar motoristas com paginação
       tags:
       - Driver
     post:
       consumes:
       - application/json
-      description: |-
-        Create handles the HTTP request to create a new driver.
-        It parses the request body into a CreateDriverDTO, validates the input,
-        and calls the driver service to create the driver. On success, it returns
-        the created driver with HTTP 201 status. On error, it returns an appropriate
-        HTTP error status and message.
+      description: Cadastra um novo motorista com os dados informados no corpo da
+        requisição.
       parameters:
-      - description: Driver Data
+      - description: Dados do motorista
         in: body
         name: driver
         required: true
@@ -563,48 +714,41 @@ paths:
       - application/json
       responses:
         "201":
-          description: Created
+          description: Criado
           schema:
             $ref: '#/definitions/model.Driver'
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Create a new driver
+      operationId: criar-novo-motorista
+      summary: Criar novo motorista
       tags:
       - Driver
   /management/drivers/{id}:
     delete:
-      description: |-
-        Delete handles HTTP DELETE requests to remove a driver resource by its Id.
-        It parses the "id" parameter from the request URL, validates it, and calls the driverService.Delete method.
-        If the Id is invalid or the deletion fails, it returns a 422 Unprocessable Entity status with an error message.
-        On successful deletion, it returns a 200 OK status with an empty response body.
+      description: Remove um motorista pelo ID informado.
       parameters:
-      - description: Driver Id
+      - description: ID do motorista
         in: path
         name: id
         required: true
         type: string
       responses:
         "200":
-          description: Driver removed
+          description: Motorista removido
           schema:
             type: string
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Delete a driver
+      operationId: excluir-motorista
+      summary: Excluir motorista
       tags:
       - Driver
     get:
-      description: |-
-        FindOne handles HTTP requests to retrieve a single driver by its Id.
-        It parses the "id" parameter from the request URL, validates it, and calls the driverService to fetch the driver.
-        If the Id is invalid, it returns a 422 Unprocessable Entity response.
-        If the driver is not found, it returns a 404 Not Found response.
-        On success, it returns the driver data with a 200 OK response.
+      description: Retorna os dados de um motorista específico pelo ID informado.
       parameters:
-      - description: Driver Id
+      - description: ID do motorista
         in: path
         name: id
         required: true
@@ -613,31 +757,28 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Motorista recuperado com sucesso
           schema:
             $ref: '#/definitions/model.Driver'
         "404":
-          description: Not Found
+          description: Motorista não encontrado
           schema: {}
-      summary: Get a driver by Id
+      operationId: obter-motorista-por-id
+      summary: Obter motorista por ID
       tags:
       - Driver
     put:
       consumes:
       - application/json
-      description: |-
-        Update handles the HTTP PUT request to update an existing driver entity.
-        It parses the driver Id from the URL parameters, validates the request body,
-        and updates the driver using the provided service. Returns appropriate HTTP
-        status codes and error messages for invalid input, validation errors, or if
-        the driver is not found.
+      description: Atualiza os dados de um motorista existente com as informações
+        informadas no corpo da requisição.
       parameters:
-      - description: Driver Id
+      - description: ID do motorista
         in: path
         name: id
         required: true
         type: string
-      - description: Driver Data
+      - description: Dados do motorista
         in: body
         name: driver
         required: true
@@ -647,98 +788,92 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Motorista atualizado com sucesso
           schema:
             $ref: '#/definitions/model.Driver'
         "404":
-          description: Not Found
+          description: Motorista não encontrado
           schema: {}
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Update a driver
+      operationId: atualizar-motorista
+      summary: Atualizar motorista
       tags:
       - Driver
   /management/drivers/{id}/teams/{team_id}:
     delete:
-      description: |-
-        RemoveFromTeam handles the HTTP request to remove a driver from a team.
-        It expects the driver Id and team Id as URL parameters ("id" and "team_id").
-        The method parses these parameters, validates them, and calls the driverService to perform the removal.
-        Returns a 200 OK status with a success message if the operation is successful.
-        Returns a 422 Unprocessable Entity status with an error message if the Ids are invalid or if the removal fails.
+      description: Remove a associação de um motorista com um time.
       parameters:
-      - description: Driver Id
+      - description: ID do motorista
         in: path
         name: id
         required: true
         type: string
-      - description: Team Id
+      - description: ID do time
         in: path
         name: team_id
         required: true
         type: string
       responses:
         "200":
-          description: Driver removed from team
+          description: Motorista removido do time
           schema:
             type: string
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Remove driver from team
+      operationId: remover-motorista-do-time
+      summary: Remover motorista do time
       tags:
       - Driver
     post:
       consumes:
       - application/json
-      description: |-
-        AssignToTeam handles the HTTP request to assign a driver to a team.
-        It expects the driver Id e o team Id como parâmetros da URL.
+      description: Associa um motorista a um time. Requer o ID do motorista e o ID
+        do time como parâmetros da URL.
       parameters:
-      - description: Driver Id
+      - description: ID do motorista
         in: path
         name: id
         required: true
         type: string
-      - description: Team Id
+      - description: ID do time
         in: path
         name: team_id
         required: true
         type: string
       responses:
         "200":
-          description: Driver assigned to team
+          description: Motorista associado ao time
           schema:
             type: string
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Assign driver to team
+      operationId: associar-motorista-ao-time
+      summary: Associar motorista ao time
       tags:
       - Driver
   /management/fleets:
     get:
       description: |-
-        FindAll handles HTTP GET requests to retrieve fleet records with optional filtering and pagination.
-        It supports filtering by either "correlation_id" or "team_id" query parameters, but not both simultaneously.
-        If both filters are provided, it returns a 400 Bad Request error.
-        Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
-        Returns a JSON response containing the paginated fleets or an error message.
+        Retorna a lista de frotas com filtros opcionais por identificador de correlação
+        ou ID do time. Suporta paginação. Apenas um filtro pode ser utilizado por vez.
       parameters:
-      - description: 'Page number (default: 1)'
+      - description: 'Número da página (padrão: 1)'
         in: query
         name: page
         type: integer
-      - description: 'Page size (default: 10, max: 100)'
+      - description: 'Tamanho da página (padrão: 10, máximo: 100)'
         in: query
         name: page_size
         type: integer
-      - description: Filter by correlation ID
+      - description: Filtrar por identificador de correlação
         in: query
         name: correlation_id
         type: string
-      - description: Filter by team ID
+      - description: Filtrar por ID do time
         in: query
         name: team_id
         type: string
@@ -746,26 +881,22 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Frotas recuperadas com sucesso
           schema:
             $ref: '#/definitions/service.PaginatedFleets'
         "500":
-          description: Internal Server Error
+          description: Erro interno do servidor
           schema: {}
-      summary: List fleets with pagination
+      operationId: listar-frotas-com-paginacao
+      summary: Listar frotas com paginação
       tags:
       - Fleet
     post:
       consumes:
       - application/json
-      description: |-
-        Create handles the HTTP request to create a new fleet.
-        It parses the request body into a CreateFleetDTO, validates the input,
-        and calls the fleet service to create the fleet. On success, it returns
-        the created fleet with HTTP 201 status. On error, it returns an appropriate
-        HTTP error status and message.
+      description: Cadastra uma nova frota com os dados informados no corpo da requisição.
       parameters:
-      - description: Fleet Data
+      - description: Dados da frota
         in: body
         name: fleet
         required: true
@@ -775,48 +906,41 @@ paths:
       - application/json
       responses:
         "201":
-          description: Created
+          description: Criado
           schema:
             $ref: '#/definitions/model.Fleet'
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Create a new fleet
+      operationId: criar-nova-frota
+      summary: Criar nova frota
       tags:
       - Fleet
   /management/fleets/{id}:
     delete:
-      description: |-
-        Delete handles HTTP DELETE requests to remove a fleet resource by its ID.
-        It parses the "id" parameter from the request URL, validates it, and calls the fleetService.Delete method.
-        If the ID is invalid or the deletion fails, it returns a 422 Unprocessable Entity status with an error message.
-        On successful deletion, it returns a 200 OK status with an empty response body.
+      description: Remove uma frota pelo ID informado.
       parameters:
-      - description: Fleet ID
+      - description: ID da frota
         in: path
         name: id
         required: true
         type: string
       responses:
         "200":
-          description: Fleet removed
+          description: Frota removida
           schema:
             type: string
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Delete a fleet
+      operationId: excluir-frota
+      summary: Excluir frota
       tags:
       - Fleet
     get:
-      description: |-
-        FindOne handles HTTP requests to retrieve a single fleet by its ID.
-        It parses the "id" parameter from the request URL, validates it, and calls the fleetService to fetch the fleet.
-        If the ID is invalid, it returns a 422 Unprocessable Entity response.
-        If the fleet is not found, it returns a 404 Not Found response.
-        On success, it returns the fleet data with a 200 OK response.
+      description: Retorna os dados de uma frota específica pelo ID informado.
       parameters:
-      - description: Fleet ID
+      - description: ID da frota
         in: path
         name: id
         required: true
@@ -825,31 +949,28 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Frota recuperada com sucesso
           schema:
             $ref: '#/definitions/model.Fleet'
         "404":
-          description: Not Found
+          description: Frota não encontrada
           schema: {}
-      summary: Get a fleet by ID
+      operationId: obter-frota-por-id
+      summary: Obter frota por ID
       tags:
       - Fleet
     put:
       consumes:
       - application/json
-      description: |-
-        Update handles the HTTP PUT request to update an existing fleet entity.
-        It parses the fleet ID from the URL parameters, validates the request body,
-        and updates the fleet using the provided service. Returns appropriate HTTP
-        status codes and error messages for invalid input, validation errors, or if
-        the fleet is not found.
+      description: Atualiza os dados de uma frota existente com as informações informadas
+        no corpo da requisição.
       parameters:
-      - description: Fleet ID
+      - description: ID da frota
         in: path
         name: id
         required: true
         type: string
-      - description: Fleet Data
+      - description: Dados da frota
         in: body
         name: fleet
         required: true
@@ -859,27 +980,24 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Frota atualizada com sucesso
           schema:
             $ref: '#/definitions/model.Fleet'
         "404":
-          description: Not Found
+          description: Frota não encontrada
           schema: {}
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Update a fleet
+      operationId: atualizar-frota
+      summary: Atualizar frota
       tags:
       - Fleet
   /management/fleets/teams/{team_id}:
     get:
-      description: |-
-        FindByTeam handles HTTP GET requests to retrieve fleet records associated with a specific team.
-        It expects the team ID as a URL parameter, validates it, and returns a paginated list of fleets
-        belonging to that team. Returns appropriate HTTP status codes and error messages for invalid
-        team IDs or if no fleets are found.
+      description: Retorna a lista paginada de frotas associadas a um time específico.
       parameters:
-      - description: Team ID
+      - description: ID do time
         in: path
         name: team_id
         required: true
@@ -888,33 +1006,31 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Frotas recuperadas com sucesso
           schema:
             $ref: '#/definitions/service.PaginatedFleets'
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Get fleets by team ID
+      operationId: obter-frotas-por-time
+      summary: Obter frotas por time
       tags:
       - Fleet
   /management/teams:
     get:
       description: |-
-        FindAll handles HTTP GET requests to retrieve team records with optional filtering and pagination.
-        It supports filtering by either "correlation_id" query parameters, but not both simultaneously.
-        If both filters are provided, it returns a 400 Bad Request error.
-        Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
-        Returns a JSON response containing the paginated teams or an error message.
+        Retorna a lista de times com filtro opcional por identificador de correlação.
+        Suporta paginação.
       parameters:
-      - description: 'Page number (default: 1)'
+      - description: 'Número da página (padrão: 1)'
         in: query
         name: page
         type: integer
-      - description: 'Page size (default: 10, max: 100)'
+      - description: 'Tamanho da página (padrão: 10, máximo: 100)'
         in: query
         name: page_size
         type: integer
-      - description: Filter by correlation Id
+      - description: Filtrar por identificador de correlação
         in: query
         name: correlation_id
         type: string
@@ -922,26 +1038,22 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Times recuperados com sucesso
           schema:
             $ref: '#/definitions/service.PaginatedTeams'
         "500":
-          description: Internal Server Error
+          description: Erro interno do servidor
           schema: {}
-      summary: List teams with pagination
+      operationId: listar-times-com-paginacao
+      summary: Listar times com paginação
       tags:
       - Team
     post:
       consumes:
       - application/json
-      description: |-
-        Create handles the HTTP request to create a new team.
-        It parses the request body into a CreateTeamDTO, validates the input,
-        and calls the team service to create the team. On success, it returns
-        the created team with HTTP 201 status. On error, it returns an appropriate
-        HTTP error status and message.
+      description: Cadastra um novo time com os dados informados no corpo da requisição.
       parameters:
-      - description: Team Data
+      - description: Dados do time
         in: body
         name: team
         required: true
@@ -951,48 +1063,41 @@ paths:
       - application/json
       responses:
         "201":
-          description: Created
+          description: Criado
           schema:
             $ref: '#/definitions/model.Team'
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Create a new team
+      operationId: criar-novo-time
+      summary: Criar novo time
       tags:
       - Team
   /management/teams/{id}:
     delete:
-      description: |-
-        Delete handles HTTP DELETE requests to remove a team resource by its Id.
-        It parses the "id" parameter from the request URL, validates it, and calls the teamService.Delete method.
-        If the Id is invalid or the deletion fails, it returns a 422 Unprocessable Entity status with an error message.
-        On successful deletion, it returns a 200 OK status with an empty response body.
+      description: Remove um time pelo ID informado.
       parameters:
-      - description: Team Id
+      - description: ID do time
         in: path
         name: id
         required: true
         type: string
       responses:
         "200":
-          description: Team removed
+          description: Time removido
           schema:
             type: string
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Delete a team
+      operationId: excluir-time
+      summary: Excluir time
       tags:
       - Team
     get:
-      description: |-
-        FindOne handles HTTP requests to retrieve a single team by its Id.
-        It parses the "id" parameter from the request URL, validates it, and calls the teamService to fetch the team.
-        If the Id is invalid, it returns a 422 Unprocessable Entity response.
-        If the team is not found, it returns a 404 Not Found response.
-        On success, it returns the team data with a 200 OK response.
+      description: Retorna os dados de um time específico pelo ID informado.
       parameters:
-      - description: Team Id
+      - description: ID do time
         in: path
         name: id
         required: true
@@ -1001,31 +1106,28 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Time recuperado com sucesso
           schema:
             $ref: '#/definitions/model.Team'
         "404":
-          description: Not Found
+          description: Time não encontrado
           schema: {}
-      summary: Get a team by Id
+      operationId: obter-time-por-id
+      summary: Obter time por ID
       tags:
       - Team
     put:
       consumes:
       - application/json
-      description: |-
-        Update handles the HTTP PUT request to update an existing team entity.
-        It parses the team Id from the URL parameters, validates the request body,
-        and updates the team using the provided service. Returns appropriate HTTP
-        status codes and error messages for invalid input, validation errors, or if
-        the team is not found.
+      description: Atualiza os dados de um time existente com as informações informadas
+        no corpo da requisição.
       parameters:
-      - description: Team Id
+      - description: ID do time
         in: path
         name: id
         required: true
         type: string
-      - description: Team Data
+      - description: Dados do time
         in: body
         name: team
         required: true
@@ -1035,27 +1137,24 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Time atualizado com sucesso
           schema:
             $ref: '#/definitions/model.Team'
         "404":
-          description: Not Found
+          description: Time não encontrado
           schema: {}
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Update a team
+      operationId: atualizar-time
+      summary: Atualizar time
       tags:
       - Team
   /management/teams/{team_id}/drivers:
     get:
-      description: |-
-        FindDrivers handles HTTP GET requests to retrieve driver records associated with a specific team.
-        It expects the team Id as a URL parameter, validates it, and returns a paginated list of drivers
-        belonging to that team. Returns appropriate HTTP status codes and error messages for invalid
-        team Ids or if no drivers are found.
+      description: Retorna a lista paginada de motoristas associados a um time específico.
       parameters:
-      - description: Team Id
+      - description: ID do time
         in: path
         name: team_id
         required: true
@@ -1064,15 +1163,17 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Motoristas recuperados com sucesso
           schema:
             $ref: '#/definitions/service.PaginatedDrivers'
         "422":
-          description: Unprocessable Entity
+          description: Entidade não processável
           schema: {}
-      summary: Get drivers by team Id
+      operationId: obter-motoristas-por-time
+      summary: Obter motoristas por time
       tags:
       - Team
 schemes:
 - https
 swagger: "2.0"
+

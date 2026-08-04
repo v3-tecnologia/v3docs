@@ -1,0 +1,209 @@
+basePath: /v1
+definitions:
+  auth.VerifyResponse:
+    properties:
+      claims: {}
+      message:
+        type: string
+      valid:
+        type: boolean
+    type: object
+  model.RefreshToken:
+    properties:
+      access_token:
+        type: string
+      expires_in:
+        type: integer
+      not-before-policy:
+        type: integer
+      refresh_expires_in:
+        type: integer
+      refresh_token:
+        type: string
+      scope:
+        type: string
+      session_state:
+        type: string
+      token_type:
+        type: string
+    type: object
+  response.RealmAccess:
+    properties:
+      roles:
+        items:
+          type: string
+        type: array
+    type: object
+  response.StandardError:
+    properties:
+      error:
+        type: string
+      error_description:
+        type: string
+    type: object
+  response.TokenPayload:
+    properties:
+      access_token:
+        type: string
+      account_id:
+        type: string
+      active:
+        type: boolean
+      client_id:
+        type: string
+      expires_in:
+        type: integer
+      iat:
+        type: integer
+      jti:
+        type: string
+      realm_access:
+        $ref: '#/definitions/response.RealmAccess'
+      refresh_token:
+        type: string
+      scope:
+        type: string
+      session_state:
+        type: string
+      tenant_id:
+        type: string
+      token_type:
+        type: string
+      username:
+        type: string
+    type: object
+host: tenant.v3sandbox.com
+info:
+  contact: {}
+  description: Authentication service that provides simplified endpoints for
+    obtaining and validating access tokens.
+  title: Auth API
+  version: 0.0.1
+paths:
+  /auth/token:
+    get:
+      consumes:
+      - application/json
+      description: |-
+        This endpoint allows validating an existing authentication token.
+        When a token is sent, the system checks whether it is still valid and trusted.
+        On success, it returns a JSON response with the token details (claims).
+        If the token is invalid, expired, or malformed, a structured error is returned.
+      parameters:
+      - description: Bearer token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/auth.VerifyResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.StandardError'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/response.StandardError'
+      operationId: validar-token-de-autenticacao
+      summary: Validate authentication token
+      tags:
+      - Auth
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      description: |-
+        Generates an authentication token from the provided credentials.
+        On success, it returns the generated token in JSON format.
+        If generation fails, a structured error response is returned with the appropriate
+        status code and message.
+        For more information, see the authentication documentation at
+        https://developer.v3control.com/docs/docs/autenticacao
+      parameters:
+      - description: Grant type
+        in: formData
+        name: grant_type
+        required: true
+        type: string
+      - description: Scope
+        in: formData
+        name: scope
+        required: true
+        type: string
+      - description: Client ID
+        in: formData
+        name: client_id
+        required: true
+        type: string
+      - description: Client secret
+        in: formData
+        name: client_secret
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/response.TokenPayload'
+        "400":
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/response.StandardError'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/response.StandardError'
+      operationId: gerar-token
+      summary: Generate token
+      tags:
+      - Auth
+    put:
+      consumes:
+      - application/x-www-form-urlencoded
+      description: |-
+        This endpoint allows renewing an existing authentication token.
+        When a refresh token is sent, the system checks whether it is still valid and trusted.
+        On success, it returns a JSON response with the new access token details
+        and related metadata.
+        If the token is invalid, expired, or malformed, a structured error is returned.
+        To renew a token, provide the refresh token via form data.
+      parameters:
+      - description: Valid refresh token
+        in: formData
+        name: refresh_token
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/model.RefreshToken'
+        "400":
+          description: 'Invalid request: invalid or missing form data'
+          schema:
+            $ref: '#/definitions/response.StandardError'
+        "401":
+          description: 'Unauthorized: invalid or expired refresh token'
+          schema:
+            $ref: '#/definitions/response.StandardError'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/response.StandardError'
+      operationId: renovar-token-de-autenticacao
+      summary: Renew authentication token
+      tags:
+      - Auth
+schemes:
+- https
+swagger: "2.0"
+

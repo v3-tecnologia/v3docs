@@ -1,0 +1,71 @@
+---
+id: listar-eventos-de-um-dispositivo
+title: "Listar eventos de um dispositivo"
+description: "Recupera uma lista paginada de eventos associados ao ID do dispositivo informado"
+sidebar_label: "Listar eventos de um dispositivo"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV01vGzcQ/SsETy2wsuQ0p725TVobbRLXUS8NBGG0HEmM+WV+qFaE/TFBDz3l1Fuu+mPFcCVLllaynbaHAj3ZWg5n3sw8Dh8XXGCovHRRWsNLfoVVcuiBJQ1MyRCBOZhIAwKYQIYzNNEGBiHYSoKgfy27eMGEZUIGZ4OMcmaZNGPrNQjLC+7Ag8aIPvDy3WIn3t5WXnBJCw7ilBfcgEZecoEzWeFQCl5wjzdJehS8jD5hwUM1RQ28XPA4d2Qcopdmwuu62I32evlZo7dMAHPLj5TWOtxNQj/fxHMwQd7iWpqIE/S84ALHkFTk5WlLnJ8TmCgFCKSiyYgmMGf9I4IOg/zwQGQNt1InzcvTXm8bR68FyPdSRcoXmYAI3an1wKSRlQTFjGW5SdGy+Xw+77x61RGif35eal2G8OsBkCGCj20AD1e9DcRYmi+GgEYcBTAgjgRnTcBA6896PfpzH9RPmdsbSvOCV9ZENJFswTklKyDb7vtAGxZbAWVEnT07bx36KJs4lfUeVd5ETN1HVvDKI0QUQ4itywIVHl1en4K21ZzIsPm8R5u64GPp9W/gcThDH2ST056TKXiRjR7ydmeorUDV7sva66FAJWfoDyd1IBsZhnJiZC7mPawjaxWCIRuNQsKhclhh89TZWjRJjxr0wSZfoRg+0I+IBkx8OIekDoBIThz2TwGaL3b0HqvINx/Ae5jzuiabZ73n+/R9i5plvi4/5yH7aO7uYqAIz9sOyBWN2SCXfyx/p3k+W35UUsBTQu2eDoH7Ub5b/inkxNIlgN5TJi2sjyDV/tYX+VeDT+Fk+WmG6pifpucZtlJvxvkyug/RWSK4f1SrBsUOnDdeTlCvARR53uMtaqcss6wC7Sy7ScgqSMEmtsJJuCLEFI6UBlljws77/ctNZluHMcqoWorbX36KST2mOvv5rYhxuu/1NRUcUrRefoCnke9/Rvy3GUFjldQhebsQvORZIfrO6g7tCOwk3bmv5iJMSPjxl2TDBzS149TS5gnGLA/jlJe8m310myuuu7i76mq66tHP1vIxecVLPo3RhbLbbQb0yeybAEaM7O1JZXV3dpqbEbBKXsb5W6Jf084zJ3/E+VmiiItGW0wRRJZVK3HxLYJHz/r2Gs2mKpA35qqQtG3YayJURPp6t/FnlxeMVC9N6JBUBIZsgh5NJUFTpbalNMmiTcHCCb9rXlMydnZ5wQt+d2nz3knv5JR67GyIGvIRW4HPosZvu056R1zfQ7rYHN1/Q/mvihfxNnadApkv7dzAxart7xrVwtfahhe83KicAWmIEMlssRhBwF+8qmv63CjC/JyQAUaKXgNjUAGPJNgq/lshXuN88waYgUpkwrOwfXS0h58AD4RevwS+MP7fU/5HsK0fAP8grsc+Bo6gat4EG0wD+uElgXoiTb66Wr0vv95n9yEM6ylh5tsg1tg2hK4HJIubiUOomvWzqkK3XdK9S7TeHps/vOzzuv4LAseFFg==
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/event/event-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Listar eventos de um dispositivo"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/event/device/{device_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Recupera uma lista paginada de eventos associados ao ID do dispositivo informado
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID do dispositivo","in":"path","name":"device_id","required":true,"schema":{"type":"string"}},{"description":"Número da página","in":"query","name":"page","schema":{"type":"integer","default":1}},{"description":"Quantidade de itens por página","in":"query","name":"page_size","schema":{"type":"integer","maximum":100,"default":10}},{"description":"Filtro de data/hora inicial no formato yyyy-MM-ddTHH:mm:ssZ","in":"query","name":"start","schema":{"type":"string"}},{"description":"Filtro de data/hora final no formato yyyy-MM-ddTHH:mm:ssZ","in":"query","name":"end","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"200":{"description":"Lista de eventos","content":{"application/json":{"schema":{"items":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"device_id":{"type":"string"},"event_type":{"type":"integer"},"firmware_version":{"type":"string"},"hardware_event_type":{"type":"integer"},"hardware_model":{"type":"string"},"hook_delivered_at":{"type":"string"},"id":{"type":"string"},"is_ignition_on":{"type":"boolean"},"media_id":{"type":"string"},"odometer":{"type":"number"},"sourced_created_at":{"type":"string"},"tenant_delivered_at":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"}}}},"204":{"description":"Sem conteúdo","content":{"application/json":{"schema":{"type":"string"}}}},"400":{"description":"Requisição inválida","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro","type":"string"},"detail":{"description":"Descrição legível do erro","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo o campo que causou o erro"},"status":{"description":"Código de status HTTP","type":"integer"},"title":{"description":"Título legível do erro","type":"string"}},"type":"object"}}}},"401":{"description":"Não autorizado","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro","type":"string"},"detail":{"description":"Descrição legível do erro","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo o campo que causou o erro"},"status":{"description":"Código de status HTTP","type":"integer"},"title":{"description":"Título legível do erro","type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

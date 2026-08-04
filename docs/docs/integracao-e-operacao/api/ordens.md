@@ -4,310 +4,82 @@ sidebar_position: 10
 
 # Ordens
 
-O Sistema de Orders é uma ferramenta que permite enviar comandos e configurações para dispositivos em campo de forma simples e eficiente. É como um "controle remoto" que permite gerenciar e monitorar seus dispositivos remotamente.
+O sistema de ordens permite enviar instruções e ajustes para dispositivos em campo de forma remota, acompanhar o andamento de cada solicitação e saber quando ela foi concluída.
 
-:::info[Procurando a API?]
+:::info[Referência da API]
 
-Caso queira acessar diretamente a documentação da API de Orders, [clique aqui](/docs/category/order-api).
-
-:::
-
-## Para que serve?
-
-- Enviar comandos para dispositivos (como reiniciar, solicitar imagens ou vídeos)
-- Configurar dispositivos remotamente
-- Gerenciar conexões WiFi
-- Monitorar o status das operações
-- Receber notificações quando as operações são concluídas
-
-## Antes de Começar
-
-É importante entender que na V3 nós trabalhamos com alguns tipos de comandos.
-
-Um comando `CONFIG` será utilizado para "alterar" diretamente um comportamento de um módulo na implementação do Firmware. Isso é bastante poderoso, pois conseguimos ter um controle quase que total do dispositivo. Mas exige um conhecimento avançado de como está implementado o nosso Firmware, por isso, caso seja necessário utilizar este comando, possivlemente você será instruído pelo nosso time de desenvolvedores para fazer isso da melhor maneira.
-
-Existe ainda um comando especial do tipo `INTERNAL` que permite que se execute comandos diretamente no sistema operacional do dispositivo. Este comando pode ser importante para ajudar na investigação de problemas e para buscar por dados no dispositivo. Para que estes comandos sejam executados, nós validamos uma permissão especial, chamada de `admin_role` (mais informações em [Níveis de Permissão](./permissionamento.md#n%C3%ADveis-de-permiss%C3%A3o)).
-
-Por fim, existem os comandos mais "amigáveis" que provavelmente serão os mais comuns de se utilizar. Este comandos, internamente, agrupam uma série de instruções do tipo `CONFIG` que fazem uma ação maior. Estamos sempre melhorando a nossa lista de comandos, e podemos "encapsular" novos comandos na medida do necessário.
-
-:::info[Entre em contato com os nossos Devs]
-
-Entre em contato diretamente com os nossos Devs, para entender melhor como utilizar o comando do tipo `CONFIG`. Envie um e-mail para [dev@v3.com.br](mailto:dev@v3.com.br)
+Para consultar operações, parâmetros e respostas disponíveis, acesse a [documentação de Ordens](/docs/category/order-api).
 
 :::
 
-## Comandos Avançados
+## Para que serve
 
-### 1. Configurações do Dispositivo (CONFIG)
-Permite configurar parâmetros específicos do dispositivo:
-- Configurar módulos do sistema
-- Ajustar parâmetros de conexão
-- Definir configurações específicas
+- Solicitar ações no dispositivo, como reinício ou atualização de informações
+- Pedir imagens ou trechos de vídeo das câmeras
+- Configurar conectividade, alertas, áudio e outras preferências operacionais
+- Iniciar ou encerrar transmissões de imagem quando aplicável
+- Acompanhar se cada solicitação foi recebida, processada ou concluída
 
-Exemplo:
-```json
-{
-    "type": "CONFIG",
-    "parameters": [
-        {
-            "module": "downloaderd",
-            "key": "S3_REGION",
-            "value": "us-east-1",
-            "type": "string"
-        }
-    ]
-}
-```
+## Como funciona
 
-### 2. Configurações Internas (INTERNAL)
-Os comandos internos são operações especiais que requerem permissões administrativas. Estes comandos são usados para configurações mais sensíveis do sistema.
+Cada solicitação gera uma ou mais ordens. A plataforma registra o progresso até que o dispositivo confirme a execução ou informe que não foi possível concluir.
 
-#### Como Usar Comandos Internos
+Em termos gerais, o fluxo é:
 
-Para enviar um comando interno:
-1. Certifique-se de ter permissões de `admin_tenant`
-2. Use o endpoint específico: `/devices/{deviceId}/order/internal`
-3. Configure o tipo como `INTERNAL`
+1. Identificar o dispositivo desejado
+2. Enviar a instrução com os parâmetros necessários
+3. Acompanhar o andamento da ordem
+4. Utilizar o resultado ou tratar pendências, se houver
 
-Exemplo de comando interno:
-```json
-{
-    "orders": [
-        {
-            "type": "INTERNAL",
-            "parameters": [
-                {
-                    "module": "downloaderd",
-                    "key": "S3_REGION",
-                    "value": "us-east-1",
-                    "type": "string"
-                }
-            ]
-        }
-    ]
-}
-```
+Várias instruções podem ser enviadas na mesma operação. Quando a ação envolve mais de uma câmera, a plataforma pode tratar cada uma de forma independente.
 
-## Comandos
+## Tipos de instrução
 
-### 1. Gerenciamento de WiFi
-#### Adicionar WiFi (ADD_WIFI)
-Adiciona uma nova rede WiFi ao dispositivo:
+A plataforma oferece instruções prontas para os cenários mais comuns da operação:
 
-```json
-{
-    "type": "ADD_WIFI",
-    "parameters": [
-        {
-            "ssid": "NomeDaRede",
-            "password": "SenhaDaRede"
-        }
-    ]
-}
-```
+| Categoria | O que permite |
+|-----------|----------------|
+| Dispositivo | Reiniciar o aparelho ou solicitar uma atualização de status |
+| Mídia | Pedir foto ou vídeo de um período, por câmera |
+| Conectividade | Incluir ou remover redes sem fio |
+| Visão | Ativar ou desativar recursos de detecção |
+| Comunicação | Ajustar intervalos e comportamento de mensagens |
+| Dados móveis | Definir limites, ciclos e regras de uso |
+| Áudio | Configurar alertas sonoros globais ou por tipo de ocorrência |
+| Transmissão | Abrir ou fechar envio de imagem ao vivo |
+| Avançado | Ajustes específicos orientados pelo time V3 |
 
-#### Remover WiFi (DELETE_WIFI)
-Remove uma rede WiFi existente:
-```json
-{
-    "type": "DELETE_WIFI",
-    "parameters": [
-        {
-            "ssid": "NomeDaRede"
-        }
-    ]
-}
-```
+As câmeras costumam ser identificadas como **motorista** e **estrada**. A referência técnica detalha os nomes e valores aceitos em cada caso.
 
-### 2. Ações no Dispositivo
-#### Reiniciar Dispositivo (REBOOT)
-Reinicia o dispositivo:
-```json
-{
-    "type": "REBOOT",
-    "parameters": []
-}
-```
+## Instruções avançadas
 
-#### Solicitar Imagem (REQUEST_IMAGE)
-Solicita uma imagem do dispositivo:
-```json
-{
-    "type": "REQUEST_IMAGE",
-    "parameters": [
-        {
-            "start": "2024-03-20T10:00:00Z",
-            "cam": "1"  // 1 = Câmera da Estrada, 0 = Câmera do Motorista
-        }
-    ]
-}
-```
+Algumas configurações exigem conhecimento mais profundo do equipamento e do ambiente operacional. Em geral, são utilizadas sob orientação do time V3.
 
-#### Solicitar Vídeo (REQUEST_VIDEO)
-Solicita um vídeo do dispositivo:
-```json
-{
-    "type": "REQUEST_VIDEO",
-    "parameters": [
-        {
-            "start": "2024-03-20T10:00:00Z",
-            "end": "2024-03-20T11:00:00Z",
-            "cam": "1"  // 1 = Câmera da Estrada, 0 = Câmera do Motorista
-        }
-    ]
-}
-```
+Há também instruções reservadas a perfis administrativos, destinadas a diagnóstico e operações especiais. O acesso a esse tipo de recurso depende das permissões concedidas à sua integração.
 
-#### Estado do Dispositivo (DEVICE_STATE)
-Força uma atualização do estado do dispositivo:
-```json
-{
-    "type": "DEVICE_STATE",
-    "parameters": []
-}
-```
+## Situações da ordem
 
-### 3. ‍Driver Coach
-#### Monitoramento Inercial (DRIVER_COACH_INERTIAL)
-Ativa/desativa o monitoramento inercial:
-```json
-{
-    "type": "DRIVER_COACH_INERTIAL",
-    "parameters": [
-        {
-            "active": true
-        }
-    ]
-}
-```
+Durante o ciclo de vida, a ordem pode estar:
 
-#### Telemetria (DRIVER_COACH_TELEMETRY)
-Ativa/desativa a telemetria:
-```json
-{
-    "type": "DRIVER_COACH_TELEMETRY",
-    "parameters": [
-        {
-            "active": true
-        }
-    ]
-}
-```
+- **Aguardando** — ainda não foi processada
+- **Em andamento** — já foi encaminhada ou está sendo executada
+- **Concluída** — o dispositivo confirmou a execução
+- **Não concluída** — houve recusa, falha ou a ordem foi removida
 
-#### Rastreamento (DRIVER_COACH_TRACKING)
-Ativa/desativa o rastreamento:
-```json
-{
-    "type": "DRIVER_COACH_TRACKING",
-    "parameters": [
-        {
-            "active": true
-        }
-    ]
-}
-```
+Consulte a referência da API para ver a lista completa de situações e o significado de cada uma.
 
-## Como Usar
+## Cancelamento
 
-### Enviando Comandos
-Para enviar um comando para um dispositivo:
-1.  Identifique o ID do dispositivo
-2.  Escolha o tipo de comando desejado
-3.  Prepare os parâmetros necessários
-4.  Envie a requisição para o endpoint `/devices/{deviceId}/orders`
+Uma ordem só pode ser cancelada enquanto ainda não foi encaminhada ao dispositivo. Depois disso, é necessário aguardar o resultado ou enviar uma nova instrução, conforme o caso.
 
-### Enviando Múltiplos Comandos
-Você pode enviar vários comandos de uma vez:
-```json
-{
-    "orders": [
-        {
-            "type": "CONFIG",
-            "parameters": [...]
-        },
-        {
-            "type": "ADD_WIFI",
-            "parameters": [...]
-        }
-    ]
-}
-```
+## Boas práticas
 
-## Monitoramento
+1. Confirme o status antes de repetir a mesma solicitação
+2. Teste em um dispositivo antes de aplicar em toda a frota
+3. Considere que equipamentos em campo podem estar temporariamente indisponíveis
+4. Mantenha um identificador de rastreio por solicitação quando sua operação exigir auditoria ou conciliação
+5. Para cenários avançados ou integrações customizadas, entre em contato com [dev@v3.com.br](mailto:dev@v3.com.br)
 
-### Status das Orders
-As orders podem ter os seguintes status:
-- `PENDING`: Aguardando processamento
-- `SENT`: Enviada para o dispositivo
-- `FAILED`: Falha no processamento, antes do envio ao dispositivo
-- `DELETED`: Order excluída
-- `ACK`: Processada com sucesso do dispositivo
-- `NACK`: Erro durante o processamento do dispositivo
+## Relação com outras APIs
 
-### Consultando Orders
-Você pode consultar:
-- Orders de um dispositivo específico
-- Status de uma order específica
-- Detalhes completos de uma order
-
-## Gerenciamento de Orders
-
-### Excluindo Orders
-Você pode excluir orders de três formas:
-1. Uma order específica: DELETE `/devices/{deviceId}/orders/{orderId}`
-2. Múltiplas orders: DELETE `/devices/{deviceId}/orders?ids=id1,id2,id3`
-3. Todas as orders de um dispositivo: DELETE `/devices/{deviceId}/orders`
-
-:::warning[Quando posso excluir?]
-
-Uma order permite a sua exclusão enquanto ainda não foi enviada para o Dispositivo, ou seja, o seu status ainda é `PENDING`. Qualquer status depois de `PENDING` impede a exclusão de uma order.
-
-:::
-
-## Boas Práticas
-
-1. **Verifique o Status**: Sempre verifique o status das orders antes de enviar novas
-2. **Limpeza Regular**: Remova orders antigas ou desnecessárias
-3. **Monitoramento**: Acompanhe as notificações para garantir que as operações foram concluídas
-4. **Testes**: Teste novas configurações em um dispositivo antes de aplicar em vários
-
-## Limitações
-
-- Algumas operações podem levar tempo para serem concluídas
-- Certas configurações podem requerer reinicialização do dispositivo
-- É importante lembrar que trabalhamos em um cenário de IoT, no qual sempre há a possibilidade da perda de informação trafegada entre a núvem e o dispositivo. Por isso, o sistema de orders está preparado para inferir se o comando não foi executado depois que o dispositivo não traga a resposta depois de certo tempo.
-
-## Ferramenta CLI para Execução de Orders
-
-A V3 oferece ainda uma ferramenta de CLI escrita em Python que pode te ajudar a executar estes e outros comandos mais avançados.
-
-:::info[Entre em contato com os nossos Devs]
-
-Caso queira agilizar a sua operação utilizando a nossa ferramenta de CLI, Envie um e-mail para [dev@v3.com.br](mailto:dev@v3.com.br)
-
-:::
-
-## Exemplos de Uso
-
-### Exemplo 1: Adicionando uma Rede WiFi
-```json
-{
-    "ssid": "NomeDaRede",
-    "password": "SenhaDaRede"
-}
-```
-
-### Exemplo 2: Solicitando uma Imagem
-```json
-{
-    "timeStamp": "2024-05-07T08:46:00Z",
-    "selectedCam": "driver"
-}
-```
-
-### Exemplo 3: Reiniciando um Dispositivo
-```json
-{
-    "type": "REBOOT"
-}
-```
+Ordens dependem do cadastro correto de dispositivos na plataforma. Antes de enviar uma instrução, certifique-se de que o equipamento está registrado e vinculado à estrutura organizacional desejada. Veja também [Gerenciamento](./gerenciamento.md).

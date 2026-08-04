@@ -1,0 +1,63 @@
+---
+id: verificar-se-a-aplicacao-esta-pronta
+title: "Verificar se a aplicação está pronta"
+description: "Verifica se a aplicação está pronta"
+sidebar_label: "Verificar se a aplicação está pronta"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1k89u2zAMxl9F4HFQ4nTFLr4Vw7D1MGDA/lyCHBiZjbXakiYyRlND77Jih572FH6xgU7WtRiG7bKTBFqkyd/3cYSG2GWfxMcANXyi7K+8Q8Nk0GDqvMPpfvoWDbFMdyblGATBQiZOMTAx1CM8X630eFrq4lHyQ5qLQSiIvn5WPdODXUs96i3lmCiLP9ZkQdnPNzkkghpYsg87KMX+jMTtZ3ICpWjsxer89x7eUx78dB+ND43XhqfvA3X/sY9iQZNR/3/ZQA3DCWheMC1wcSTqMC6IBRcPXAR3DPUa3hB20pqXLblr2FjoSdqodXYkYCGhtFBD1c7PbqtM2BzAAlMeKGuFEfa5gxpakcR1VQkFDLIczhlDs403Sxf7ajiDsrHgw1XUwRQGOoVR7J8AnvSe7gbqTIrZxLzD4G8xGzI9BqFs+igxexZka8T3xNZc5SjIhsyMn734IbIZfHD7DpvIZvpqZmBHnzTRuM5TEFoqFC+d8n2LAXfUUxBz8e4SrELlY3+r5Wp5BsVCiiw9Bh0nYE+PrJz/6uUnI4+/vPHv23AygtCNVKlDH7SlWYjxpNkaTprNu6OqbSy0kUU/jeMWmT7mrhQNf9lTPkC93lgYMHvcKoX1plit0VCeZb6mgy6Zc5TUGQN2e21B3VweG+f1qw9Qyg8Ja2VB
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Verificar se a aplicação está pronta"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/healthz/ready"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Verifica se a aplicação está pronta
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"200":{"description":"Aplicação pronta","content":{"*/*":{"schema":{"properties":{"status":{"type":"string"}},"type":"object"}}}},"503":{"description":"Serviço indisponível","content":{"*/*":{"schema":{"properties":{"status":{"type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

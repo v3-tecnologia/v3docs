@@ -1,0 +1,72 @@
+---
+id: excluir-ordem-especifica
+title: "Delete a specific order"
+description: "Deletes a specific order by ID for the specified device."
+sidebar_label: "Delete a specific order"
+hide_title: true
+hide_table_of_contents: true
+api: eJztl1Fv3DYMx7+KwKcVcO6SbnvxW4YEaLACLdb0KTsUOokXq7Ell6K93Ax/94GSk1zPTrH2pcDWp/NJFEmRf1k/D2AxGnItu+ChhAuskTEqrWKLxu2cUYEsktru1dWF2gVSXOHDJFplsXcGV3/668pFFVokLa6Ui8oRYY8U3bZGpb1VLVKjPXqu94qwCT3G5C1FWEEBrSbdICNFKG+GWWoSSV1dQAFOBlrNFRTgdYNQQk7kg7NQAOGnzhFaKJk6LCCaChsN5QC8b8U4Mjl/C+NYHEd5k3b7XJCv9L4R49gGHzHK/MvTl/KzFDGi51ReKx2QmQJM8IyeZYlu29qZVNr1xyjrhoO4LUnh2eUoqZzpyTE2cW5gAhHWyZnU65mMDqyUs+hZGk5QHO+ygIpwN/fy2vk7xeGpw4owho4MLvl4Po/Ui5l9ZM1dfLaaeXa2bnwcCduPaBieBjSR3i9ZjDL2y+npPNaV73XtrBJBYORv75gJFufuL4mCtMEuFswia1fPV73qGu1PCLXVcu4wOTk0WSpmbotkXddvdunwfZ5hG5xnpMUjdFywTbG4kRykULi6XSVR7BzWVnGlWRndRbRpNCX8pQ6/ur5+OzX4qDiS4i2mxey4XijpYnGy7b/QyqSEs7nf9153XAVyf6P9IYP/gwx+XX4hMJLXtYpIPdK0iR96+M/rYSzgEX2uLJSA96buHJ3Ixdec4ANMafGnbwVv8k0FmwIa5CrYhDACX4mDuIIS1plp4np4hJtxnW/39eDsCAVkoWVc6qiGEirmNpbrNaPXnlf9z1F7uw33KxOadX+W+hDRdOR4/06Elzt53rrfcX/eSeAho0+F2qYLf4Kf31ATkroOd3ggF50Wpro4vwtZt561EbmPxz1/h5QobsKihIZCPYQGXe/8bQJDRuV8ZOqMLIuFmPylyco8V9gIVmSZTBUqMl9S6F02Im3u5EF8ozbVwx0tlDmJIDcgqvO3V1BAAtWU4unqdHUmYmlD5EanEzpVINPxDI7haJfD04H/zkA99YjxntdtrZ2XfSWdDJPIbiZwFlgqDxl6osgCSmdFpVWILObDsNUR31M9jjL8qUPaQ3mzKaDX5OT8ZHZ3UZ4tlDtdR/xChX76Y+LpF+oQ8RdTf9Cc30vLdN3JPyjgDveffQIkrv+WDObI+TUJSOSNAHE+OVKHPHFuDLZ8sGR2DYyHL4KLy9eX15cwjv8A+Li+sw==
+sidebar_class_name: "delete api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/order/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a specific order"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/devices/{device_id}/orders/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes a specific order by ID for the specified device.
+This operation is irreversible and permanently removes the order.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"device_id","required":true,"schema":{"type":"string"}},{"description":"Order ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"202":{"description":"Order sent for deletion","content":{"application/json":{"schema":{"properties":{"orders":{"items":{"properties":{"correlation_id":{"description":"Order correlation identifier","type":"string"},"href":{"description":"Link to the order resource","type":"string"},"id":{"description":"Order ID","type":"string"},"status":{"description":"Order status","type":"string"}},"type":"object"},"type":"array"}},"type":"object"}}}},"400":{"description":"Invalid request","content":{"application/json":{"schema":{"properties":{"code":{"description":"Error code","type":"string"},"detail":{"description":"Human-readable error description","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Error source, e.g. the field that caused the error"},"status":{"description":"HTTP status code","type":"integer"},"title":{"description":"Human-readable error title","type":"string"}},"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"properties":{"code":{"description":"Error code","type":"string"},"detail":{"description":"Human-readable error description","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Error source, e.g. the field that caused the error"},"status":{"description":"HTTP status code","type":"integer"},"title":{"description":"Human-readable error title","type":"string"}},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"properties":{"code":{"description":"Error code","type":"string"},"detail":{"description":"Human-readable error description","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Error source, e.g. the field that caused the error"},"status":{"description":"HTTP status code","type":"integer"},"title":{"description":"Human-readable error title","type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

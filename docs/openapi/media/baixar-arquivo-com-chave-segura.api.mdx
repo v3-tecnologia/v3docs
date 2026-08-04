@@ -1,0 +1,71 @@
+---
+id: baixar-arquivo-com-chave-segura
+title: "Baixar arquivo com chave segura"
+description: "Permite baixar um arquivo identificado por uma chave criptografada. Suporta redimensionamento de imagens com os parâmetros width e height."
+sidebar_label: "Baixar arquivo com chave segura"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVU2P2zYQ/SvEnJJA/tg06ME3ZxEUQT+wyKa9LHwYi2NrGpHUkpSzrqEf0/awp/6BXv3HiqGkXcdZO7GRQ0+STNLvzczjexvQFHLPVWRnYQJX5A1HUnPkO/SqNgr9bc0rp1iTjbzgHLVTlZM1VHmBK1LpvFt6XKDGobquK+cjKk+aDdnAzqIhG53SpNjgkmxQuTPKBVWh3/5lKHoX1EfWsVCkCuJlEYeQQYUeDUXyASY3mz2qlwlbtuxw88r1jCEDln23Nfk1ZCAkYAIfSD483dbsScMk+poyCHlBBmGygbiuZFuInu0Smibbx70mdZGphfPbe1ROaffRlg71Abid5RMwfnGGVEU+OIsl/yEt1w+FtTV/AXfBJaXXk3B/Qr+s5c9RGbaMsftIUzPqGVZkMXRNbyf5/ACBNM2n0NlGWpJ/Cn5axm+E3mroRPhLnNP2HsvCqXdol524gis554he5c5G2v6r0wRyxrIHLwg1+Uf0dPpo52ciwVA5GyjI+svxWB577ejmHcivWLt0Z0KdUwgi7sTGRjn2YvRCHofgMlg4bzDCBOZs0a+haZomg5fj7z8Hvdwvsof/JpCvxq8O12m3fztFVlA8fhEQtWb5AyyvvKvIR25budfqrP/BzX+nPCYeTQZyAuX4Wy0ck90Nugs2yJ0ZJGsbBJL7ABlEXIoJwc+kGQfTq7cwy8BQLJycX1JMdhULmMDIyJ4wkisYRAXkV72F1b4UvcRYhcloFMmijcPVdwGtnru7Ye7MaHUBIo9Aee05rq+l4LayacU/0npaC8rmaeW9JvTk1Xv3gSw8lI7poEge2C6cnJbOYi6dbbLPDM6veHvvVKfQ7Z8rKpPle0pu5HdsTzy9a1uQd7P9RzOKeUeOpYD/xpIAKjVOSeMykHa0WOPhxXAsQ6pciAatUOtLaSOoNz0Rfxs3DzP5hPbmUSz/sxTrhhDpLo6qEtlKvUkIm04yN9BKRq5NEs0sg8KFKCubzRwD/erLppGfW59LacgB56VE2ALLQEfa8exdl3bP1VeE5pN0JTX77FxhWcsOSA761SwO5+YRxJ1dZ8KeFqVHqOwk6plUzkzXI5z6kD2T0Hl5e4TPQ+w+EprJh2dhBJObWZP1nnWahs/J5iNE+4T+pHHt0jTPqdqtQZKn2XX7H968h6b5D6/j6SA=
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/media/vision-media-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Baixar arquivo com chave segura"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/medias/files"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Permite baixar um arquivo identificado por uma chave criptografada. Suporta redimensionamento de imagens com os parâmetros width e height.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Chave para identificar o arquivo","in":"query","name":"key","required":true,"schema":{"type":"string"}},{"description":"Se 1, força o download","in":"query","name":"download","schema":{"type":"string"}},{"description":"Nome personalizado do arquivo para download","in":"query","name":"filename","schema":{"type":"string"}},{"description":"Largura da miniatura da imagem (apenas para imagens)","in":"query","name":"width","schema":{"type":"integer"}},{"description":"Altura da miniatura da imagem (apenas para imagens)","in":"query","name":"height","schema":{"type":"integer"}},{"description":"Cabeçalho Range para solicitar conteúdo parcial","in":"header","name":"Range","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"200":{"description":"Arquivo servido com sucesso","content":{"*/*":{"schema":{"type":"string","format":"binary"}}}},"206":{"description":"Conteúdo parcial servido","content":{"*/*":{"schema":{"type":"string","format":"binary"}}}},"404":{"description":"Arquivo não encontrado","content":{"*/*":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -12,3 +12,53 @@ changelog:
   label: Changelog
   permalink: /changelog
   description: Changelog tag
+
+videotelemetria:
+  label: Videotelemetria
+  permalink: /videotelemetria
+  description: Conteúdo sobre videotelemetria
+
+"inteligência de dados":
+  label: Inteligência de Dados
+  permalink: /inteligencia-de-dados
+  description: Análise e uso inteligente de dados
+
+IA:
+  label: IA
+  permalink: /ia
+  description: Inteligência artificial
+
+"visão computacional":
+  label: Visão Computacional
+  permalink: /visao-computacional
+  description: Visão computacional aplicada à mobilidade
+
+telemática:
+  label: Telemática
+  permalink: /telematica
+  description: Telemática veicular
+
+frota:
+  label: Frota
+  permalink: /frota
+  description: Gestão e operação de frotas
+
+manutenção:
+  label: Manutenção
+  permalink: /manutencao
+  description: Manutenção veicular e preditiva
+
+frotas:
+  label: Frotas
+  permalink: /frotas
+  description: Operação e gestão de frotas
+
+dados:
+  label: Dados
+  permalink: /dados
+  description: Dados operacionais e analíticos
+
+série:
+  label: Série
+  permalink: /serie
+  description: Posts em série

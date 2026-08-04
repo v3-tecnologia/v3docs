@@ -1,0 +1,71 @@
+---
+id: excluir-motorista
+title: "Delete driver"
+description: "Removes a driver by the specified ID."
+sidebar_label: "Delete driver"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNU8Fu2zAM/RWBl22FFqfdTr4VSA8BNmDo1lORA2MxMVFbciXaaGbo3wfaXlu0XbGTIIl6fO/xaQRHqYrcCQcPJVxTGwZKBo2LPFA0+5ORmkzqqOIDkzPbzQosdBixJaGYoLwdX4Bs5qfbDVhgPehQarDgsSUogR1YiHTfcyQHpcSeLKSqphahHEFOnVYlieyPkPNOi1MXfKKk9xfrtS5vtowTfcWvghfyopVnxZku/+6Qs4WvFxevUW98F0NFKeG+IUNeWE7vY+cZLXQUUUG2Dkqgh6rpOX5ug4TISRAsCB7VuoU47Cy0JHXQckcNCU0mSw0lFC16PFJLXop5KqkY2WWwkCgOf2fQxwZKqEW6VBaFkEcvq+FLQu/24WFVhbYYzkHtZH8Iylp1YKU6sn2h/CfFgSsyi/Os+g8hmhCP6Pk3+6NB70yL7AXZ636hZo0QtsmaQ0MkyU51jhQtmYb9HTkjYQpV1ScJLcUPyTwapuESlkYH9P1Rt7n8sQULij/zW6/Wq3PIFrqQpEWvcpZ4bSb7FjrwQtj4NLz/zvoSF6EHKboG2Wvfye1xGdEtPI1IO85OgIWSnY62Dkm0ahz3mOgmNjnr8X1P8QTl7c7CgJE1ZPNv4ilwDsoDNonekfDxevlGn8zzT/cm4+UQvUZ4wKbXHVi4o9P8KfMuW6gJHcWJxnxxWVXUybMnGvn8PK+bq29Xv64g5z8vyHaK
+sidebar_class_name: "delete api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete driver"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/management/drivers/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Removes a driver by the specified ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Driver removed","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

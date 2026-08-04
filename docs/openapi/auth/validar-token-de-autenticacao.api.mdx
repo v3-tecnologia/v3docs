@@ -1,0 +1,74 @@
+---
+id: validar-token-de-autenticacao
+title: "Validar token de autenticação"
+description: "Este endpoint permite validar um token de autenticação existente."
+sidebar_label: "Validar token de autenticação"
+hide_title: true
+hide_table_of_contents: true
+api: eJztlM9uHDcMxl+F4KkFxrvr/rnMLQGMIjmkLZz2Yi8K7ojrVTIjjiVqYHcwDxP0EOQ59sUKamdjx96ecukhp8FQlEhRv+8b0XFqou/VS8AaL5IycHC9+KDQc+y8MgzUekcRcgcq7zmAY6CsHNQ3tP+4/0eA73yyAC+uw++ZgpOH7P0n4DB4clKBQLLEjmDg6Le+IUgM3DKQD44sd9h/aL0TYGgkbP3+w8Dt4jpcdNBQEqudcsMpSQWRVWIgyB1B5NRLUoLXl7++gUY6kASOldodJ3AyN/Nd05Lv0veL63DJcIxuJYIPc+UK+K73kZyAZOio3UrsSve5A45RgJPGrLmk7D8d23CywAp7itSxckxYX41P5vu2VHvJFDlihd5iOyZX/gJ1jDW+yLqT6P+msqfCyLfZR3ZYa8xcYWp23BHWI+p9bxuSRh9ucJrWlpx6CYmTrf+wWtnnyxYuD8PDChsJ9mSWQn3f+qZUXL5Lljc+qtNH6TmqP5x6GCDW41RhxynRDZ9opsJCzaOVjUjLFHCaqmNINu+4UZwmi/20On/e7RuDi7KWgbiv6NreLZ7ss6z89UXZ56M93fLPpwZ8YYT4oByDGHeJ4+CdxP9V71OFVqHUf+WwxlnjZ0UPZ47PPgu8IRu70o0BXejEtb287sQ23rAW6nWHNS4p625ZzsAK7eZHHeTYGuuqfaqXS+VAQRfDj4mC28jdopFuOZyjIezDVgpnEpQaPYD2hGEb6f6jnDCi28wgW47cPBhZguS7vi124ySBSRRkoxxm85od7vDn+GAKqZxexGK6Vq/tUZ7w4rdXWKFd7tDQarFanNuDmAV1VJ5hlvOfs3n+h3Pik7uND5B8c+Ovd+OZfOU7XfYt+WCPVFgcZ2av0Ji11ELtusKdJLX4OG4o8R+xnSYL32aO91hfrc3aoqeN4XC1nqqjgxvm7/neGGka7k0WA7XZ6j9T+/RYQr9cvMVp+hfctrsc
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/auth/auth-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Validar token de autenticação"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/auth/token"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Este endpoint permite validar um token de autenticação existente.
+Quando um token é enviado, o sistema verifica se ele ainda é válido e confiável.
+Em caso de sucesso, retorna uma resposta JSON com os detalhes do token (claims).
+Se o token for inválido, expirado ou malformado, um erro estruturado é retornado.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Token Bearer","in":"header","name":"Authorization","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"200":{"description":"Sucesso","content":{"application/json":{"schema":{"properties":{"claims":{},"message":{"type":"string"},"valid":{"type":"boolean"}},"type":"object"}}}},"401":{"description":"Não autorizado","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

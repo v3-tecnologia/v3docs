@@ -4,6 +4,32 @@ import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 import { themes as prismThemes } from "prism-react-renderer";
 
+const openapiEnOutputBase =
+  "i18n/en/docusaurus-plugin-content-docs/current/openapi";
+
+const openapiSidebarOptions = {
+  groupPathsBy: "tag",
+  categoryLinkSource: "tag",
+} as const;
+
+function openapiLocaleConfigs(
+  id: string,
+  specFile: string,
+): Record<string, OpenApiPlugin.Options> {
+  return {
+    [id]: {
+      specPath: `examples/${specFile}`,
+      outputDir: `docs/openapi/${id}`,
+      sidebarOptions: openapiSidebarOptions,
+    },
+    [`${id}En`]: {
+      specPath: `examples/en/${specFile}`,
+      outputDir: `${openapiEnOutputBase}/${id}`,
+      sidebarOptions: openapiSidebarOptions,
+    },
+  };
+}
+
 const config: Config = {
   title: "Portal do Desenvolvedor V3",
   tagline: "Bem-vindo ao portal do desenvolvedor que quer integrar com a V3",
@@ -15,6 +41,20 @@ const config: Config = {
   onBrokenMarkdownLinks: "warn",
   favicon: "img/shared/favicon.png",
   trailingSlash: false,
+  i18n: {
+    defaultLocale: "pt",
+    locales: ["pt", "en"],
+    localeConfigs: {
+      pt: {
+        label: "Português",
+        htmlLang: "pt-BR",
+      },
+      en: {
+        label: "English",
+        htmlLang: "en",
+      },
+    },
+  },
   presets: [
     [
       "classic",
@@ -47,7 +87,7 @@ const config: Config = {
       },
     },
     navbar: {
-      title: "Home",
+      title: "Início",
       logo: {
         alt: "Logo",
         src: "img/shared/logo/logo-v3.svg",
@@ -73,6 +113,10 @@ const config: Config = {
           label: "GitHub",
           position: "right",
         },
+        {
+          type: "localeDropdown",
+          position: "right",
+        },
       ],
     },
     footer: {
@@ -81,7 +125,7 @@ const config: Config = {
           title: "DESENVOLVEDOR",
           items: [
             {
-              label: "Home",
+              label: "Início",
               to: "/",
             },
             {
@@ -94,7 +138,7 @@ const config: Config = {
             },
             {
               label: "API",
-              to: "docs/category/order-api",
+              to: "/docs/category/order-api",
             },
           ],
         },
@@ -257,14 +301,7 @@ const config: Config = {
         id: "order-open-api",
         docsPluginId: "classic",
         config: {
-          order: {
-            specPath: "examples/order.yaml",
-            outputDir: "docs/openapi/order",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-          } satisfies OpenApiPlugin.Options,
+          ...openapiLocaleConfigs("order", "order.yaml"),
         } satisfies Plugin.PluginOptions,
       },
     ],
@@ -274,14 +311,7 @@ const config: Config = {
         id: "management-open-api",
         docsPluginId: "classic",
         config: {
-          management: {
-            specPath: "examples/management.yaml",
-            outputDir: "docs/openapi/management",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-          } satisfies OpenApiPlugin.Options,
+          ...openapiLocaleConfigs("management", "management.yaml"),
         } satisfies Plugin.PluginOptions,
       },
     ],
@@ -291,14 +321,7 @@ const config: Config = {
         id: "auth-open-api",
         docsPluginId: "classic",
         config: {
-          management: {
-            specPath: "examples/auth.yaml",
-            outputDir: "docs/openapi/auth",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-          } satisfies OpenApiPlugin.Options,
+          ...openapiLocaleConfigs("auth", "auth.yaml"),
         } satisfies Plugin.PluginOptions,
       },
     ],
@@ -308,31 +331,7 @@ const config: Config = {
         id: "event-open-api",
         docsPluginId: "classic",
         config: {
-          event: {
-            specPath: "examples/event.yaml",
-            outputDir: "docs/openapi/event",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-          } satisfies OpenApiPlugin.Options,
-        } satisfies Plugin.PluginOptions,
-      },
-    ],
-    [
-      "docusaurus-plugin-openapi-docs",
-      {
-        id: "subscription-open-webhook",
-        docsPluginId: "classic",
-        config: {
-          notifications: {
-            specPath: "examples/webhook/subscription.yaml",
-            outputDir: "docs/webhook/subscription",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-          } satisfies OpenApiPlugin.Options,
+          ...openapiLocaleConfigs("event", "event.yaml"),
         } satisfies Plugin.PluginOptions,
       },
     ],
@@ -342,14 +341,7 @@ const config: Config = {
         id: "notification-open-api",
         docsPluginId: "classic",
         config: {
-          notifications: {
-            specPath: "examples/notification.yaml",
-            outputDir: "docs/openapi/notification",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-          } satisfies OpenApiPlugin.Options,
+          ...openapiLocaleConfigs("notification", "notification.yaml"),
         } satisfies Plugin.PluginOptions,
       },
     ],
@@ -359,14 +351,7 @@ const config: Config = {
         id: "vision-open-api",
         docsPluginId: "classic",
         config: {
-          vision: {
-            specPath: "examples/vision.yaml",
-            outputDir: "docs/openapi/vision",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-          } satisfies OpenApiPlugin.Options,
+          ...openapiLocaleConfigs("vision", "vision.yaml"),
         } satisfies Plugin.PluginOptions,
       },
     ],
@@ -376,14 +361,7 @@ const config: Config = {
         id: "media-open-api",
         docsPluginId: "classic",
         config: {
-          media: {
-            specPath: "examples/media.yaml",
-            outputDir: "docs/openapi/media",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-          } satisfies OpenApiPlugin.Options,
+          ...openapiLocaleConfigs("media", "media.yaml"),
         } satisfies Plugin.PluginOptions,
       },
     ],
@@ -393,14 +371,7 @@ const config: Config = {
         id: "media-stream-open-api",
         docsPluginId: "classic",
         config: {
-          mediaStream: {
-            specPath: "examples/media-stream.yaml",
-            outputDir: "docs/openapi/media-stream",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-          } satisfies OpenApiPlugin.Options,
+          ...openapiLocaleConfigs("media-stream", "media-stream.yaml"),
         } satisfies Plugin.PluginOptions,
       },
     ],

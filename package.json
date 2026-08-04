@@ -12,8 +12,13 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "docs-all": "docusaurus gen-api-docs all --plugin-id management-open-api && docusaurus gen-api-docs all --plugin-id order-open-api",
-    "clean": "docusaurus clean-api-docs all --plugin-id management-open-api && docusaurus clean-api-docs all --plugin-id order-open-api",
+    "start:en": "docusaurus start --locale en",
+    "start:pt": "docusaurus start --locale pt",
+    "build:en": "docusaurus build --locale en",
+    "build:pt": "docusaurus build --locale pt",
+    "docs-all": "docusaurus gen-api-docs all --plugin-id order-open-api && docusaurus gen-api-docs all --plugin-id management-open-api && docusaurus gen-api-docs all --plugin-id auth-open-api && docusaurus gen-api-docs all --plugin-id event-open-api && docusaurus gen-api-docs all --plugin-id notification-open-api && docusaurus gen-api-docs all --plugin-id vision-open-api && docusaurus gen-api-docs all --plugin-id media-open-api && docusaurus gen-api-docs all --plugin-id media-stream-open-api && node scripts/localize-openapi-docs.mjs && node scripts/validate-openapi-en-docs.mjs",
+    "sync-openapi-ids": "node scripts/sync-openapi-operation-ids.mjs",
+    "clean": "docusaurus clean-api-docs all --plugin-id order-open-api && docusaurus clean-api-docs all --plugin-id management-open-api && docusaurus clean-api-docs all --plugin-id auth-open-api && docusaurus clean-api-docs all --plugin-id event-open-api && docusaurus clean-api-docs all --plugin-id notification-open-api && docusaurus clean-api-docs all --plugin-id vision-open-api && docusaurus clean-api-docs all --plugin-id media-open-api && docusaurus clean-api-docs all --plugin-id media-stream-open-api",
     "typecheck": "tsc"
   },
   "dependencies": {

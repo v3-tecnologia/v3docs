@@ -1,0 +1,76 @@
+---
+id: gerar-token
+title: "Gerar token"
+description: "Gera um token de autenticação a partir das credenciais fornecidas."
+sidebar_label: "Gerar token"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVs1uIzcMfhVB54md7bYX39I2KNJDN2jSk2MYtMTYys6IE4ozSWDMwxR7CHpe9An8YgU1tuvEs2nRS3voxRiL4t/Hj6TW1mNyHGoJFO3E/oAMpqmM0EeMxqOBRjBKcLB53nwiA6YGlsDGQzKO0WN0AUIyt8QRXfCQRjfxvDIOEql+ahymRIVhFOIIhra2l8jgyWClqhUImR+vPvw0uolXaCBLe4+3UK6AC9NUYBhTTUlADSMzGUzCjTQMHszmt50PD8ZRZci4zWcflnQTNRABaZJR4xXGBEusDNRMNQfwpFFfAoOpNJkQc0yb583vmArjKKamFFX15JoKo2yDOwYIq5u4EqnTZDz22GJJNfKofe8oClM5clSNPbnU/+yVHZAtLON9g0m+Jf9kJ2urOhhFP6Guy+BAqzR+PHl4eDjRCE8aLjE68uj1UnIrrEC/5KlGO7G0uEMntrCaJ7IETCpdMkSZ93fWrwhwHeqclqOohdt80ri25pJwiEvbFTY5GlI+1/NBBVcGjDIP/ljp4nvjyfQX8A3dhI5RjvWvcMno6U0jXY9tYAVqegjALpfDEF+7nHUvDQg3mA9STTH1mH51ejoQWk9+NThcyruk9w4r97JS4NTAPHfMQV3/xAaco2YP7IBYQosHogVRiRCPSnKkiY91YEzzcOg3RMElssoDyLDgTsKgQUYoq3mf0HGiTGX/EQSrNGhgewDM8JQr+pLk2cUtY1q9Adeet8cSTClQnOuYGL4hGOHLeGWf+546EjcJOUI1JDzOJNPt6yFC/awcTKEfNSG2m1/L4OGf80uHKA/XXyXzF97/buTfDEV+ruNaacIxt2pCboMn/k/F3hVWPWT/F95OrK4hPun5VFiBZdLxcdbIys4KW6GsSK/pUtIpC7KyE6tTfTXeKWmiyKq3tg2XdmJ366En1Kh9nyD6BT3m3dC+s92ssLqBdisAnGLTFUdzj9uweR5aQvcNGrpFRocGo68pREkmhaouw21wuu90j4OhhWDcLi7TgpJpv9hyAilbz1NspAgEKRUzRcCcXV7YwmpyfUCno9PRO8Vf4aggo95zPj8r2OwgeVWZff3/f338q6+PbT8IPsq4LiHkLZEpu95Se2qV2nY77bQFVsr8ydSu1wtI+AuXXafH9w3yk51MZ4VtgQMslDXTWVfYFYJHzt3wEZ/sxH7XV//kut/GLZRNHvN/+eDpip2JM+ewli8o5zHSHXbr5Yera1vYxfaVVZFXnQPLxeEfDbvr/gBvtAtc
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/auth/auth-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Gerar token"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/auth/token"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Gera um token de autenticação a partir das credenciais fornecidas.
+Em caso de sucesso, retorna o token gerado em formato JSON.
+Se a geração falhar, uma resposta de erro estruturada é retornada com o código
+de status e a mensagem apropriados.
+Para mais informações, consulte a documentação de autenticação em
+https://developer.v3control.com/docs/docs/autenticacao
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={{"content":{"application/x-www-form-urlencoded":{"schema":{"type":"object","properties":{"grant_type":{"description":"Tipo de concessão","type":"string"},"scope":{"description":"Escopo","type":"string"},"client_id":{"description":"ID do cliente","type":"string"},"client_secret":{"description":"Segredo do cliente","type":"string"}},"required":["grant_type","scope","client_id","client_secret"]}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"200":{"description":"Sucesso","content":{"application/json":{"schema":{"properties":{"access_token":{"type":"string"},"account_id":{"type":"string"},"active":{"type":"boolean"},"client_id":{"type":"string"},"expires_in":{"type":"integer"},"iat":{"type":"integer"},"jti":{"type":"string"},"realm_access":{"properties":{"roles":{"items":{"type":"string"},"type":"array"}},"type":"object"},"refresh_token":{"type":"string"},"scope":{"type":"string"},"session_state":{"type":"string"},"tenant_id":{"type":"string"},"token_type":{"type":"string"},"username":{"type":"string"}},"type":"object"}}}},"400":{"description":"Requisição inválida","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

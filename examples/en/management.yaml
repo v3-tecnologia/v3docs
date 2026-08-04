@@ -1,0 +1,1179 @@
+basePath: /v1
+definitions:
+  dto.CreateDeviceDTO:
+    properties:
+      automatic_recognition:
+        description: 'Indicates whether the device has automatic recognition enabled
+          **E.g.:** true'
+        type: boolean
+      certificate_id:
+        description: Unique certificate identifier associated with the device.
+        maxLength: 50
+        minLength: 3
+        type: string
+      correlation_id:
+        description: 'Unique identifier for request tracking (optional,
+          generated automatically if not provided) **E.g.:** "123e4567-e89b-12d3-a456-426614174000"'
+        maxLength: 50
+        minLength: 3
+        type: string
+      fleet_id:
+        description: 'Owner fleet ID of the device **Ex.:**: 1'
+        type: string
+      iccid:
+        description: 'SIM card ICCID **Ex.:**: "89550311000000000123"'
+        maxLength: 20
+        minLength: 19
+        type: string
+      imei:
+        description: 'Device IMEI number **Ex.:**: "123456789012345"'
+        maxLength: 15
+        minLength: 15
+        type: string
+      model:
+        description: 'Device model **Ex.:**: "GPS Tracker Pro"'
+        maxLength: 50
+        minLength: 3
+        type: string
+      phone_number:
+        description: 'Phone number associated with the device **Ex.:**: "+5511999999999"'
+        maxLength: 15
+        minLength: 10
+        type: string
+    required:
+    - imei
+    type: object
+  dto.CreateDriverDTO:
+    properties:
+      correlation_id:
+        description: 'Unique identifier for request tracking (optional,
+          generated automatically if not provided) **E.g.:** "123e4567-e89b-12d3-a456-426614174000"'
+        maxLength: 50
+        minLength: 3
+        type: string
+      name:
+        description: 'Driver name **Ex.:**: "João Silva"'
+        maxLength: 100
+        minLength: 3
+        type: string
+      team_id:
+        description: Team ID for driver association (optional)
+        maxLength: 50
+        minLength: 3
+        type: string
+    required:
+    - name
+    type: object
+  dto.CreateFleetDTO:
+    properties:
+      correlation_id:
+        description: 'Unique identifier for request tracking (optional,
+          generated automatically if not provided) **E.g.:** "123e4567-e89b-12d3-a456-426614174000"'
+        maxLength: 50
+        minLength: 3
+        type: string
+      name:
+        description: 'Fleet name **E.g.:** "Main Fleet"'
+        maxLength: 100
+        minLength: 3
+        type: string
+      team_id:
+        description: 'Owner team ID of the fleet **Ex.:**: 1'
+        type: string
+    required:
+    - name
+    - team_id
+    type: object
+  dto.CreateTeamDTO:
+    properties:
+      correlation_id:
+        description: 'Unique identifier for request tracking (optional,
+          generated automatically if not provided) **E.g.:** "123e4567-e89b-12d3-a456-426614174000"'
+        maxLength: 50
+        minLength: 3
+        type: string
+      name:
+        description: 'Team name **Ex.:**: "Development Team"'
+        maxLength: 100
+        minLength: 3
+        type: string
+    required:
+    - name
+    type: object
+  dto.UpdateDeviceDTO:
+    properties:
+      automatic_recognition:
+        description: 'Indicates whether the device has automatic recognition enabled
+          **E.g.:** true'
+        type: boolean
+      certificate_id:
+        description: Unique certificate identifier associated with the device.
+        maxLength: 50
+        minLength: 3
+        type: string
+      correlation_id:
+        description: 'Unique identifier for request tracking (optional,
+          generated automatically if not provided) **E.g.:** "123e4567-e89b-12d3-a456-426614174000"'
+        maxLength: 50
+        minLength: 3
+        type: string
+      fleet_id:
+        description: 'Owner fleet ID of the device **Ex.:**: 1'
+        type: string
+      iccid:
+        description: 'SIM card ICCID **Ex.:**: "89550311000000000123"'
+        maxLength: 20
+        minLength: 19
+        type: string
+      imei:
+        description: 'Device IMEI number **Ex.:**: "123456789012345"'
+        maxLength: 15
+        minLength: 15
+        type: string
+      model:
+        description: 'Device model **Ex.:**: "GPS Tracker Pro X"'
+        maxLength: 50
+        minLength: 3
+        type: string
+      phone_number:
+        description: 'Phone number associated with the device **Ex.:**: "+5511999999999"'
+        maxLength: 15
+        minLength: 10
+        type: string
+    required:
+    - imei
+    type: object
+  dto.UpdateDriverDTO:
+    properties:
+      correlation_id:
+        description: 'Unique identifier for request tracking (optional,
+          generated automatically if not provided) **E.g.:** "123e4567-e89b-12d3-a456-426614174000"'
+        maxLength: 50
+        minLength: 3
+        type: string
+      name:
+        description: 'Driver name **Ex.:**: "João Silva Updated"'
+        maxLength: 100
+        minLength: 3
+        type: string
+      team_id:
+        description: Team ID for driver association (optional)
+        maxLength: 50
+        minLength: 3
+        type: string
+    required:
+    - name
+    type: object
+  dto.UpdateFleetDTO:
+    properties:
+      correlation_id:
+        description: 'Unique identifier for request tracking (optional,
+          generated automatically if not provided) **E.g.:** "123e4567-e89b-12d3-a456-426614174000"'
+        maxLength: 50
+        minLength: 3
+        type: string
+      name:
+        description: 'Fleet name **Ex.:**: "Updated Fleet"'
+        maxLength: 100
+        minLength: 3
+        type: string
+      team_id:
+        description: 'Owner team ID of the fleet **Ex.:**: 1'
+        type: string
+    required:
+    - name
+    - team_id
+    type: object
+  dto.UpdateTeamDTO:
+    properties:
+      correlation_id:
+        description: 'Unique identifier for request tracking (optional,
+          generated automatically if not provided) **E.g.:** "123e4567-e89b-12d3-a456-426614174000"'
+        maxLength: 50
+        minLength: 3
+        type: string
+      name:
+        description: 'Team name **Ex.:**: "Updated Development Team"'
+        maxLength: 100
+        minLength: 3
+        type: string
+    required:
+    - name
+    type: object
+  dto.DeviceResponse:
+    properties:
+      automatic_recognition:
+        type: boolean
+      certificate_id:
+        type: string
+      correlation_id:
+        type: string
+      created_at:
+        type: string
+      fleet_id:
+        type: string
+      iccid:
+        type: string
+      id:
+        type: string
+      imei:
+        type: string
+      model:
+        type: string
+      phone_number:
+        type: string
+      status:
+        $ref: '#/definitions/dto.DeviceStatusResponse'
+      updated_at:
+        type: string
+    type: object
+  dto.DeviceStatusPatchDTO:
+    properties:
+      area:
+        type: integer
+      carrier_code:
+        type: string
+      carrier_name:
+        type: string
+      cell_id:
+        type: integer
+      connection_type:
+        type: string
+      imei:
+        type: string
+      ip_address:
+        type: string
+      last_event_at:
+        description: ISO 8601 timestamp of the device's last event
+        type: string
+      latitude:
+        type: number
+      longitude:
+        type: number
+      altitude:
+        type: number
+      mcc:
+        type: string
+      mnc:
+        type: string
+      signal_strength:
+        type: integer
+      speed:
+        type: number
+    type: object
+  dto.DeviceStatusResponse:
+    properties:
+      area:
+        type: integer
+      carrier_code:
+        type: string
+      carrier_name:
+        type: string
+      cell_id:
+        type: integer
+      connection_type:
+        type: string
+      created_at:
+        type: string
+      ip_address:
+        type: string
+      last_event_at:
+        description: ISO 8601 timestamp of the device's last event
+        type: string
+      latitude:
+        type: number
+      longitude:
+        type: number
+      altitude:
+        type: number
+      mcc:
+        type: string
+      mnc:
+        type: string
+      signal_strength:
+        type: integer
+      speed:
+        type: number
+      updated_at:
+        type: string
+    type: object
+  dto.PatchDeviceStatusDTO:
+    properties:
+      iccid:
+        type: string
+      status:
+        $ref: '#/definitions/dto.DeviceStatusPatchDTO'
+    type: object
+  health.HealthCheckResponse:
+    properties:
+      status:
+        type: string
+    type: object
+  model.Device:
+    properties:
+      automatic_recognition:
+        type: boolean
+      certificate_id:
+        type: string
+      correlation_id:
+        type: string
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      fleet_id:
+        type: string
+      iccid:
+        type: string
+      id:
+        type: string
+      imei:
+        type: string
+      model:
+        type: string
+      phone_number:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  model.Driver:
+    properties:
+      correlation_id:
+        type: string
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      team_id:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  model.Fleet:
+    properties:
+      correlation_id:
+        type: string
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      team_id:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  model.Team:
+    properties:
+      account_id:
+        type: string
+      correlation_id:
+        type: string
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  service.PaginatedDevices:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/dto.DeviceResponse'
+        type: array
+      page:
+        type: integer
+      page_size:
+        type: integer
+      total_items:
+        type: integer
+      total_pages:
+        type: integer
+    type: object
+  service.PaginatedDrivers:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/model.Driver'
+        type: array
+      page:
+        type: integer
+      page_size:
+        type: integer
+      total_items:
+        type: integer
+      total_pages:
+        type: integer
+    type: object
+  service.PaginatedFleets:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/model.Fleet'
+        type: array
+      page:
+        type: integer
+      page_size:
+        type: integer
+      total_items:
+        type: integer
+      total_pages:
+        type: integer
+    type: object
+  service.PaginatedTeams:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/model.Team'
+        type: array
+      page:
+        type: integer
+      page_size:
+        type: integer
+      total_items:
+        type: integer
+      total_pages:
+        type: integer
+    type: object
+host: tenant.v3sandbox.com
+info:
+  contact: {}
+  description: Service responsible for organizing and maintaining drivers, teams, fleets,
+    and devices linked to the customer's operation.
+  title: Management API
+  version: 0.0.1
+paths:
+  /healthz:
+    get:
+      description: Checks whether the application is alive
+      responses:
+        "200":
+          description: Application alive
+          schema:
+            $ref: '#/definitions/health.HealthCheckResponse'
+        "500":
+          description: Internal server error
+          schema: {}
+      operationId: verificar-se-a-aplicacao-esta-ativa
+      summary: Check if application is alive
+      tags:
+      - Health Check
+  /healthz/ready:
+    get:
+      description: Checks whether the application is ready
+      responses:
+        "200":
+          description: Application ready
+          schema:
+            $ref: '#/definitions/health.HealthCheckResponse'
+        "503":
+          description: Service unavailable
+          schema:
+            $ref: '#/definitions/health.HealthCheckResponse'
+      operationId: verificar-se-a-aplicacao-esta-pronta
+      summary: Check if application is ready
+      tags:
+      - Health Check
+  /management/devices:
+    get:
+      description: |-
+        Returns the list of devices with optional filters by correlation identifier,
+        Fleet ID ou IMEI. Supports pagination. Only one filter can be used at a time.
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Page size (default: 10, max: 100)'
+        in: query
+        name: page_size
+        type: integer
+      - description: Filter by correlation identifier
+        in: query
+        name: correlation_id
+        type: string
+      - description: Filter by fleet ID
+        in: query
+        name: fleet_id
+        type: string
+      - description: Filter by IMEI
+        in: query
+        name: imei
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Devices retrieved successfully
+          schema:
+            $ref: '#/definitions/service.PaginatedDevices'
+        "500":
+          description: Internal server error
+          schema: {}
+      operationId: listar-dispositivos-com-paginacao
+      summary: List devices with pagination
+      tags:
+      - Device
+    post:
+      consumes:
+      - application/json
+      description: Registers a new device with the data provided in the request
+        body.
+      parameters:
+      - description: Device data
+        in: body
+        name: device
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreateDeviceDTO'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.DeviceResponse'
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: criar-novo-dispositivo
+      summary: Create new device
+      tags:
+      - Device
+  /management/devices/{id}:
+    delete:
+      description: Removes a device by the specified ID.
+      parameters:
+      - description: Device ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: Device removed
+          schema:
+            type: string
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: excluir-dispositivo
+      summary: Delete device
+      tags:
+      - Device
+    get:
+      description: Returns data for a specific device by the specified ID.
+      parameters:
+      - description: Device ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Device retrieved successfully
+          schema:
+            $ref: '#/definitions/dto.DeviceResponse'
+        "404":
+          description: Device not found
+          schema: {}
+      operationId: obter-dispositivo-por-id
+      summary: Get device by ID
+      tags:
+      - Device
+    patch:
+      consumes:
+      - application/json
+      description: Partially updates the device telemetry status and ICCID.
+      parameters:
+      - description: Device ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Device status data
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.PatchDeviceStatusDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Device updated successfully
+          schema:
+            $ref: '#/definitions/dto.DeviceResponse'
+        "404":
+          description: Device not found
+          schema: {}
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: atualizar-status-do-dispositivo
+      summary: Update device status
+      tags:
+      - Device
+    put:
+      consumes:
+      - application/json
+      description: Updates an existing device with the information provided in the
+        request body.
+      parameters:
+      - description: Device ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Device data
+        in: body
+        name: device
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UpdateDeviceDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Device updated successfully
+          schema:
+            $ref: '#/definitions/dto.DeviceResponse'
+        "404":
+          description: Device not found
+          schema: {}
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: atualizar-dispositivo
+      summary: Update device
+      tags:
+      - Device
+  /management/drivers:
+    get:
+      description: |-
+        Returns the list of drivers with optional filters by correlation identifier
+        ou Team ID. Supports pagination. Only one filter can be used at a time.
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Page size (default: 10, max: 100)'
+        in: query
+        name: page_size
+        type: integer
+      - description: Filter by correlation identifier
+        in: query
+        name: correlation_id
+        type: string
+      - description: Filter by team ID
+        in: query
+        name: team_id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Drivers retrieved successfully
+          schema:
+            $ref: '#/definitions/service.PaginatedDrivers'
+        "500":
+          description: Internal server error
+          schema: {}
+      operationId: listar-motoristas-com-paginacao
+      summary: List drivers with pagination
+      tags:
+      - Driver
+    post:
+      consumes:
+      - application/json
+      description: Registers a new driver with the data provided in the request
+        body.
+      parameters:
+      - description: Driver data
+        in: body
+        name: driver
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreateDriverDTO'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Driver'
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: criar-novo-motorista
+      summary: Create new driver
+      tags:
+      - Driver
+  /management/drivers/{id}:
+    delete:
+      description: Removes a driver by the specified ID.
+      parameters:
+      - description: Driver ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: Driver removed
+          schema:
+            type: string
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: excluir-motorista
+      summary: Delete driver
+      tags:
+      - Driver
+    get:
+      description: Returns data for a specific driver by the specified ID.
+      parameters:
+      - description: Driver ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Driver retrieved successfully
+          schema:
+            $ref: '#/definitions/model.Driver'
+        "404":
+          description: Driver not found
+          schema: {}
+      operationId: obter-motorista-por-id
+      summary: Get driver by ID
+      tags:
+      - Driver
+    put:
+      consumes:
+      - application/json
+      description: Updates an existing driver with the information provided in the
+        request body.
+      parameters:
+      - description: Driver ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Driver data
+        in: body
+        name: driver
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UpdateDriverDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Driver updated successfully
+          schema:
+            $ref: '#/definitions/model.Driver'
+        "404":
+          description: Driver not found
+          schema: {}
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: atualizar-motorista
+      summary: Update driver
+      tags:
+      - Driver
+  /management/drivers/{id}/teams/{team_id}:
+    delete:
+      description: Removes a driver's association with a team.
+      parameters:
+      - description: Driver ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Team ID
+        in: path
+        name: team_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: Driver removed from team
+          schema:
+            type: string
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: remover-motorista-do-time
+      summary: Remove driver from team
+      tags:
+      - Driver
+    post:
+      consumes:
+      - application/json
+      description: Associates a driver with a team. Requires the Driver ID and the team
+        ID as URL parameters.
+      parameters:
+      - description: Driver ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Team ID
+        in: path
+        name: team_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: Driver associated with team
+          schema:
+            type: string
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: associar-motorista-ao-time
+      summary: Associate driver to team
+      tags:
+      - Driver
+  /management/fleets:
+    get:
+      description: |-
+        Returns the list of fleets with optional filters by correlation identifier
+        ou Team ID. Supports pagination. Only one filter can be used at a time.
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Page size (default: 10, max: 100)'
+        in: query
+        name: page_size
+        type: integer
+      - description: Filter by correlation identifier
+        in: query
+        name: correlation_id
+        type: string
+      - description: Filter by team ID
+        in: query
+        name: team_id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Fleets retrieved successfully
+          schema:
+            $ref: '#/definitions/service.PaginatedFleets'
+        "500":
+          description: Internal server error
+          schema: {}
+      operationId: listar-frotas-com-paginacao
+      summary: List fleets with pagination
+      tags:
+      - Fleet
+    post:
+      consumes:
+      - application/json
+      description: Registers a new fleet with the data provided in the request body.
+      parameters:
+      - description: Fleet data
+        in: body
+        name: fleet
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreateFleetDTO'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Fleet'
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: criar-nova-frota
+      summary: Create new fleet
+      tags:
+      - Fleet
+  /management/fleets/{id}:
+    delete:
+      description: Removes a fleet by the specified ID.
+      parameters:
+      - description: Fleet ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: Fleet removed
+          schema:
+            type: string
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: excluir-frota
+      summary: Delete fleet
+      tags:
+      - Fleet
+    get:
+      description: Returns data for a specific fleet by the specified ID.
+      parameters:
+      - description: Fleet ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Fleet retrieved successfully
+          schema:
+            $ref: '#/definitions/model.Fleet'
+        "404":
+          description: Fleet not found
+          schema: {}
+      operationId: obter-frota-por-id
+      summary: Get fleet by ID
+      tags:
+      - Fleet
+    put:
+      consumes:
+      - application/json
+      description: Updates an existing fleet with the information provided in the
+        request body.
+      parameters:
+      - description: Fleet ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Fleet data
+        in: body
+        name: fleet
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UpdateFleetDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Fleet updated successfully
+          schema:
+            $ref: '#/definitions/model.Fleet'
+        "404":
+          description: Fleet not found
+          schema: {}
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: atualizar-frota
+      summary: Update fleet
+      tags:
+      - Fleet
+  /management/fleets/teams/{team_id}:
+    get:
+      description: Returns the paginated list of fleets associated with a specific team.
+      parameters:
+      - description: Team ID
+        in: path
+        name: team_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Fleets retrieved successfully
+          schema:
+            $ref: '#/definitions/service.PaginatedFleets'
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: obter-frotas-por-time
+      summary: Get fleets by team ID
+      tags:
+      - Fleet
+  /management/teams:
+    get:
+      description: |-
+        Returns the list of teams with optional filter by correlation identifier.
+        Supports pagination.
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Page size (default: 10, max: 100)'
+        in: query
+        name: page_size
+        type: integer
+      - description: Filter by correlation identifier
+        in: query
+        name: correlation_id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Teams retrieved successfully
+          schema:
+            $ref: '#/definitions/service.PaginatedTeams'
+        "500":
+          description: Internal server error
+          schema: {}
+      operationId: listar-times-com-paginacao
+      summary: List teams with pagination
+      tags:
+      - Team
+    post:
+      consumes:
+      - application/json
+      description: Registers a new team with the data provided in the request body.
+      parameters:
+      - description: Team data
+        in: body
+        name: team
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreateTeamDTO'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Team'
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: criar-novo-time
+      summary: Create new team
+      tags:
+      - Team
+  /management/teams/{id}:
+    delete:
+      description: Removes a team by the specified ID.
+      parameters:
+      - description: Team ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: Team removed
+          schema:
+            type: string
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: excluir-time
+      summary: Delete team
+      tags:
+      - Team
+    get:
+      description: Returns data for a specific team by the specified ID.
+      parameters:
+      - description: Team ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Team retrieved successfully
+          schema:
+            $ref: '#/definitions/model.Team'
+        "404":
+          description: Team not found
+          schema: {}
+      operationId: obter-time-por-id
+      summary: Get team by ID
+      tags:
+      - Team
+    put:
+      consumes:
+      - application/json
+      description: Updates an existing team with the information provided in the
+        request body.
+      parameters:
+      - description: Team ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Team data
+        in: body
+        name: team
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UpdateTeamDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Team updated successfully
+          schema:
+            $ref: '#/definitions/model.Team'
+        "404":
+          description: Team not found
+          schema: {}
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: atualizar-time
+      summary: Update team
+      tags:
+      - Team
+  /management/teams/{team_id}/drivers:
+    get:
+      description: Returns the paginated list of drivers associated with a specific team.
+      parameters:
+      - description: Team ID
+        in: path
+        name: team_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Drivers retrieved successfully
+          schema:
+            $ref: '#/definitions/service.PaginatedDrivers'
+        "422":
+          description: Unprocessable entity
+          schema: {}
+      operationId: obter-motoristas-por-time
+      summary: Get drivers by team ID
+      tags:
+      - Team
+schemes:
+- https
+swagger: "2.0"
+

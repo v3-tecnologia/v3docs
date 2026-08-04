@@ -1,0 +1,71 @@
+---
+id: obter-evento-por-ulid
+title: "Get event by ULID"
+description: "Retrieves an event using the specified ULID"
+sidebar_label: "Get event by ULID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk1vGzcQ/SsETy2wluTUp72paJAICVIjtU+GIIyWIy1jLskMZ7dRF/vfC5KSI0uruEZPBXqSljOcz8eZ10uFoSLtWTsrS/kZmTR2GARYgR1aFm3Qdiu4RhE8VnqjUYn7j4vfZCE9EDTISEGWD/2Jqbfp9l5TxxMPXMtCWmhQlrI1WslCEn5tNaGSJVOLhQxVjQ3Ispe881EvMGm7lcOwjMrBOxswRPmb2Sz+jHnduNZG45WzjJajGnhvdAVRbfolRN3+yJcn55FYZ8uVI0KTdFdajcRSyIoQGNUKeFSs0OAPxZ2u8JLtVPdVPn4Sa8u4RYryjabmTyBcdUhB51TOjNRAKim9ZO1JsXEKzbgt5x5XCo3ukC4ndSEbHVZ6a3Uq5rNY184ZBBt1GlQaLpXDKZdAdiS0bbPO0QfXUoVq9UI/GC1YfjmHBMpRgVeX7UcH+cStv2DFchji2ZvZzTlAPzlxQOUr8HnqMJq/GcP/wnZgtBLxWWF4lY/TN6Bw5HkRORJJVozBmkGb81vv2wbsFSEoWBsUmIwcq4zYyo1NURvz+yYNmOcRehdRTP+oH8tiNJHspBA42U7SiNtoNEpwDSwqaAOqdJoCTkExcBtGEry7uxVZeFKco4fGms1ISUeLk3XPynIBaDez63O79xZarh3pv/BfjcL/YfDfgEGclB4ptXWhkoyRrtL4d1fe0dV+4zJs477Oq1Iu4/Tl2sUbW+S01bmWpZymm2Hax2uDLGRA6g6rviUjS1kz+1BOp3m6TrpfAli1dt8mlWum3XWqd8CqJc27PyLAcsfmXn/A3byNbvpMDWoEhfSdHPyKQEjizj3iESwgXUz5a7txGZ+WoYqwHk57O79diI0j8bVF2kUOA1aJBixs40dewZnjhIl86sueQcxvF7KQTwtWziazyXVsn3eBG0hvZh/rO+Q9VVrvDnznWST998f3SoK1z5vxG0+9AZ2WZap9v2/TQ2YLQRayTP1dxnUdOEr6fg0B78kMQzxOdZDlw7KQHZCOMMu0TYf4X8lyAybgD4L/6fOerP0snrG70TAPPbO7WEgwbfyShXzE3YH9DctILnLrYyRZNK8q9Hx06WxeDcegfff2Tg7D33bnvow=
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/event/event-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get event by ULID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/events/{ulid}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves an event using the specified ULID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Event ULID","in":"path","name":"ulid","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Event found","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"device_id":{"type":"string"},"event_type":{"type":"integer"},"firmware_version":{"type":"string"},"hardware_event_type":{"type":"integer"},"hardware_model":{"type":"string"},"hook_delivered_at":{"type":"string"},"id":{"type":"string"},"is_ignition_on":{"type":"boolean"},"media_id":{"type":"string"},"odometer":{"type":"number"},"sourced_created_at":{"type":"string"},"tenant_delivered_at":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"204":{"description":"No content","content":{"application/json":{"schema":{"type":"string"}}}},"400":{"description":"Invalid request","content":{"application/json":{"schema":{"properties":{"code":{"description":"Error code","type":"string"},"detail":{"description":"Human-readable error description","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Error source, e.g. the field that caused the error"},"status":{"description":"HTTP status code","type":"integer"},"title":{"description":"Human-readable error title","type":"string"}},"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"properties":{"code":{"description":"Error code","type":"string"},"detail":{"description":"Human-readable error description","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Error source, e.g. the field that caused the error"},"status":{"description":"HTTP status code","type":"integer"},"title":{"description":"Human-readable error title","type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

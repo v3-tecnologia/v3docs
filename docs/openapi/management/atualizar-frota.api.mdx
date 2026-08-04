@@ -1,0 +1,71 @@
+---
+id: atualizar-frota
+title: "Atualizar frota"
+description: "Atualiza os dados de uma frota existente com as informações informadas no corpo da requisição."
+sidebar_label: "Atualizar frota"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vs1uGzcQfhViTolB/Vp22r25tQMYaIsgTU6OEYyWI4npktyQs4pcYd+lQQ9+gl561YsVs6uVfyS7CFBUB0EkZzgz33zzUWswlPJoS7bBQwZnXGFhf0cVkjJo5JtU5VDNYmBUtLKJyTOpPDiFSVk/C9Hh5nbzF+1WBpPyQeUhlkEZVJE+VzbZze3mz9AHDSVGdMQUE2RX60cZXJ6LSxMONFjZKpEXoMGjI8jAGtDQXBnJQMaxIg0pX5BDyNbAN6VYJY7Wz6Gur1tjSvxDMDdikQcvNchPLMvC5iihB5+SxF/fu6qMoaTIllLrFiMVje1Ha2TnUeKGPNuZzdGEqDZ/e5sHJaWqiIkjoSPPe3ioF6HMbfBYaDWniCYorDg4ZJs3HqQSKS+WHbrhpTo6ulj1s6OjTH2A0fiYJienr3r03ffT3mhsjns4OTntTcanp6PJ6NVkOBx+ANDgcPUT+TkvIDsZanDWd8tj/Ri2Du3HRf4SHO368yCN181Oxx+Dj0OOhv8ekwndYWzPlQmKrSMlTYmWePM12nAolRHs3VzfJ8xVW9pdtOudfZh+opyhFoeHCZy3s3BHzIcEbAKkMvjUcmU8HO4X0SKEO4SaGUpVTikF0P8dLfdgzSMhk/mIfPDYUEHPHD9xaceP55q4d1aV5ulM6gN9qDVMhpOnsGzGgrwgF9HgN4C4vXo83r/6wrM1aLZDV8YgDdp8XVLxjffXGqRRjcWlgQy61sdexyLGuWggvC6IWIjoiBdBbMuKG6WUUYGBQ49zEjkYzMQ0DdbW1KAhUVx2OlrFAjJYMJcpGwyYPHruL48TejMNq34e3GA5AhFESfftnSherNCVBR1iU9ecnfru1rs236eKn4VOYTEXlPYG6VeKS7u5DWo7Lw2wqgxRhThHL+goUg49U1QucIg2MSbdDH/S7fwlRcrYVIZk2S5DUkvr86poZnTzh2pQb9XVBJUXVmRUHh62LGXCzzs41dmbS9AgGLb5DfvD/khqKUNih01Xt6V32hZ3IvCgtHsPy//zjG6HhWnFg7JA65sJExKst8S5gjvigIaWOqAha1VvERKL0Xo9xUTvY1HXsv25ongD2dW1hiVGi1PBTN5pm+S3gWyGRaJnyn/xdquOL9XD5/xgyttN9DfSCSwqWYGG3+imfe7r61rDgtBQbBJpD35sw/Xeifud495Y1rrzOMtzKvlZ2/sj+Ob9O9Aw3f5rcMGIS8Qvov74pc0xNNU3QtzsraFAP69wLrbtlfL5BwLnSzQ=
+sidebar_class_name: "put api-method"
+info_path: docs/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Atualizar frota"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/management/fleets/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Atualiza os dados de uma frota existente com as informações informadas no corpo da requisição.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID da frota","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={{"content":{"application/json":{"schema":{"properties":{"correlation_id":{"description":"Identificador único para rastreamento da requisição (opcional, gerado automaticamente se não informado) **Ex.:**: \"123e4567-e89b-12d3-a456-426614174000\"","maxLength":50,"minLength":3,"type":"string"},"name":{"description":"Nome da frota **Ex.:**: \"Frota Atualizada\"","maxLength":100,"minLength":3,"type":"string"},"team_id":{"description":"ID do time proprietário da frota **Ex.:**: 1","type":"string"}},"required":["name","team_id"],"type":"object"}}},"description":"Dados da frota","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"200":{"description":"Frota atualizada com sucesso","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"team_id":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Frota não encontrada","content":{"application/json":{"schema":{}}}},"422":{"description":"Entidade não processável","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

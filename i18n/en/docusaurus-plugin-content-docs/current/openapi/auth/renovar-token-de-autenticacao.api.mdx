@@ -1,0 +1,76 @@
+---
+id: renovar-token-de-autenticacao
+title: "Renew authentication token"
+description: "This endpoint allows renewing an existing authentication token."
+sidebar_label: "Renew authentication token"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVktz2zYQ/iuYPUOS3ceFN7cn59BkGrs92BoNBKxMxCTAYJd6VMP/3lmASvTKpJOTD72B+/z2zT04JJt8xz4GqOCh9qQwuC76wMo0TdyQShhw48OLMkHh1hPnd881BvbWiKri+Iph+hz+rjEooxKuElJdyMqTIgysFdeoaEeMrbI12ldSmxq5xqQ8Zyn2TaPWpvFOmeAUp54Y3fQ5vA+KemuRSItsQu5TIGXUu4/v/1AJqYuBUG0819lLwI0yWX7E4JCNb+g5iN2EjWF0qkU2zrCZPof7Vdb7AtiHDEMr3HY+odMqJtWaZhVTK19GEafecp/QKUwpJtEquDLih1gSp0wxqlWX4to7zH5OE7T2RolhlcGAhoSfeyT+LbodVHuwMTAGlqfpumZM+mw72Ww2E1Gc9KnBYKNDJ0Jka2yNvHjXIVQQl5/QMmjoUuwwsUcS7ohikVEI4bQb/sqFOIEK+mCSOPnwAsNQ0EqOoHo6MzkfTvmcesyEUq8M4qebm0vXH0uxQX8r9k8Uw2mop6GV4n+N7Ay1hlJXWvhjtg+ML5iEHyJPlriKCSddbLzdXRc7xPs9cxepvgBENgrlGgeJfAwLYsPXJbLVRSFfsAd91gZDrsov1/J+X9pejQ1YHeYgd78nktH/0qk/Xp08MNfLIpzFCaj/HtDtZUCPQTZVTP4fdCfRjHN90d5vKaJfr5eIMQXTKMK0xlSWz5sCPmgQD9n/vYMKEoa4NmmSczxxODE9l+NhTZSVYl5IlsddzzXMNbTIdRTFrs9Ly3ANFcykkrNDnUr0oraHPjVQQc3cUTWbMQYTeLr+mUxwy7id2tjO1rcwzDX4sIqHjWqsJGvQZ/m9O71s4sdb2dqGDyucFPm2a/zKy/IfzyXJYKi4ZONDuZaunDJTDubRNSLZ8ey5wdGfuvtwDxokoALiZnozvZUidJG4NTn1wbQi/2e5KlfuL5yFcnQ4/r/sb+Syj9PCuOVZ1xgfpMi5f/djnz+BVADGpS7jUEdioe/3S0P4mJphEPLnHtMOqqe5hrVJ3iylnZ7mg4YajcOUR+MVd1DB76UPJg/iXcSbXlB8/2di0AcTd9Zix99QzktmOJ7cD48PoGE5/sC00YnKkWF9/CGoh+FfbpHFNQ==
+sidebar_class_name: "put api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/auth/auth-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Renew authentication token"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/auth/token"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint allows renewing an existing authentication token.
+When a refresh token is sent, the system checks whether it is still valid and trusted.
+On success, it returns a JSON response with the new access token details
+and related metadata.
+If the token is invalid, expired, or malformed, a structured error is returned.
+To renew a token, provide the refresh token via form data.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/x-www-form-urlencoded":{"schema":{"type":"object","properties":{"refresh_token":{"description":"Valid refresh token","type":"string"}},"required":["refresh_token"]}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Success","content":{"application/json":{"schema":{"properties":{"access_token":{"type":"string"},"expires_in":{"type":"integer"},"not-before-policy":{"type":"integer"},"refresh_expires_in":{"type":"integer"},"refresh_token":{"type":"string"},"scope":{"type":"string"},"session_state":{"type":"string"},"token_type":{"type":"string"}},"type":"object"}}}},"400":{"description":"Invalid request: invalid or missing form data","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"401":{"description":"Unauthorized: invalid or expired refresh token","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

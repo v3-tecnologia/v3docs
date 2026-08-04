@@ -1,0 +1,71 @@
+---
+id: excluir-conjunto-de-dados-por-id
+title: "Delete dataset by ID"
+description: "Deletes a dataset by its ID."
+sidebar_label: "Delete dataset by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVktv5DYM/isCTy3geaTdXnxLmxyC9lC02V6SoOBI9JhZWfJK9CBTw/+9oO3ZmSSz2yLnXBKPRIofPz57cJRt4lY4BijhijwJZYPGoWAmMZu9Ycnm5moJBbSYsCGhlKG861/qzho3V1AA60mLUkMBARuCEthBAYk+d5zIQSmpowKyralBKHuQfatSWRKHLQzDgwrnNoZMWe9/WH/Qf+dtuhG3M7mzlnKuOu/3MBTwYb1+rXQTdujZGcVCWaAAG4NQEBXFtvVsUUVXj1nl+xOQbYotJeEJEqUU0+tjGx2d8agAR4LsRxkWavRjKA5imBKOmBvKGbfnXjgKx80jWZmk5Qyy2bW/2Z0FItxQFmza/2XkzMkwcnvxmtuPATupY+J/yL0T+1Ziv5HpIYqpYhfe2X0juz+dbwlCKaA3mdKOkpkoemf4DQwPBWSyXWLZj0PisuVfaX/ZSQ3l3YO2dcUz8njjoAR6sr7jtLAxPHZB4sLRwqGLedHGtBiHhuBWB86hBjI8jO7VUfWn1j8OJzUBq3ly5VXPbgBFoyGdJlaXPJRQi7S5XK2EAgZZ7n7MGNwmPi1tbFa7C1CQBx/+1BBP3J160k8TriZ0lI4z7mfCRMncxk8U4BjBUXHki0MVp1QIglamQD/PxduazF+cOQZz+fuN4WykJmMpSEJv6m5jqphMm6JOOg5bQzsKkk0iS7wjpyNbNVqPUsXUFPeBAm68itrYtJ1QMrvJAIeKEgVLy/vwy8s7XQMqJu9MrAwm4YotozcchLznreoZqVHGk9QmknwfMDhDT5LQStb3Y2rGYJsqxcZwg1vdL4IzO3YUc2EyN51HUXh112CY7S/vw23N2eTou1F/fBAV1KnvYcuBRkZmGkZAidDWE28+dq64D0o4hy522e9NEwNLTORGRQzo95knVEdGNH4sXgN4DAcUoMk0RWq9XC8vtGzamKXBsSXMiTAtUqdb1LgWPYt0f2wv/7V4zYkk9CSr1iMHtTomcz/n/R0c8h4KKNlpjdQxi970/QYzfUx+GPT4c0dJa/OhgB0mxo36qOscZ/12UFboM30D7Xd/zGvc9+bZ1ncW5qEIwl7JQ9/pLyjgE+2nrXB4GIpDJSmO6eLSWmrlROVVAx5O28DV9W/Xt9dQAM71eaw9fa84fKiBs4helO4EQv8OxVc0+n4q7GH4Ij9dfVXjS7uYfVcfhmH4F/5jAWI=
+sidebar_class_name: "delete api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/vision/vision-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete dataset by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/datasets/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes a dataset by its ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Dataset ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Dataset deleted successfully"},"400":{"description":"Invalid request","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Dataset not found","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

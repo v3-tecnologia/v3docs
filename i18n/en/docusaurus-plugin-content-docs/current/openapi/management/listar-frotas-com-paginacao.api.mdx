@@ -1,0 +1,72 @@
+---
+id: listar-frotas-com-paginacao
+title: "List fleets with pagination"
+description: "Returns the list of fleets with optional filters by correlation identifier"
+sidebar_label: "List fleets with pagination"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVU2P20YM/SsEL2kBre1tkItuAdIWC7RokI/TxljQEiVPMppROZSzjqH/HlBy1sZa9nbbS0+2+PU4nDePOyw5FeJadTFgju9YOwkJdM3gXVKIFVSeWRN8dbqGOASSh8p5ZUmw2kIRRdiTOcCVHNRVjuVTiB18YGrg5s0M3ndtG0UTtFS7MMTO4K/gtxAD74tBQQFWDF3iEkiBQF3DM8ywJaGGDQ/z292jlt9SzRC6ZsUCP5VcUec1h+ufMUNn/r87li1mGKhhzLGlmjHDVKy5Icx3qNvW7C4o1yzY99kkQnLf+Lj+IoOG7u3P4hLUneU9E++3cRxnR3sG7ij4zpVTmEnFhfoypI5XdgbDvE8VX2YonNoYEifz/7JY2M8jwJFUwiqON1xC6oqCU6o67w2viEE5qCVS23pXDOeaf06WvTtCbyW2LOpGrJJ0sDrlJp26H43otPkMC2FSLu9IJ90le77gPlN0nN6E48c8p3xdW57vxHJHS1x95kLxYCAR2tr3QPUJxmVHzJx0a1Tydw8zPBdgVSYDTpvrzfZqigg3QVlMURLLhgVYJMozCNCPte2Wh4ibEnM06SK5qiQqpasiNlej7hQUMUOl2oRk5CAuM2xY19HyatZBbnSNOc4bClRzw0HnowYa7YcuRx3qxGOOa9U25fO5cqCgs83LRKFcxftZEZv55hrtPbhQxZF/QamwQw1UOp7De5aNKxj2T8etPEMVBaLUFNw3F2qgUEJDLii5YN+lOOslG95syvZCnQ1xJVu1BN6FL1yCxkHSiy5pbFheJHgYmAmsOvV2XX8+nBhev73BDK3+2N9itphdD9yJSRsaLmEvCn/YojjeEgeRx0fH3B3u9X+6a/bEVb7XeevJheEp2k3v9sS4xQMxMMM9NZYZrmNSc+92K0r8UXzfm3mU0GFxuUQrzyXmFfnEF2ZzYalNNviFt4fdtiHfWQgOOv88zCfW3BPgP7bdv+zgHyy+Cw2c7L//3MVhF16APazEA97SPsQZIOa3yz7DNVPJMrBgTHtdFNzqUdaJyvXHyvT7rx+w778DAcVZGQ==
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List fleets with pagination"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/management/fleets"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the list of fleets with optional filters by correlation identifier
+ou Team ID. Supports pagination. Only one filter can be used at a time.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}},{"description":"Filter by correlation identifier","in":"query","name":"correlation_id","schema":{"type":"string"}},{"description":"Filter by team ID","in":"query","name":"team_id","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Fleets retrieved successfully","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"team_id":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

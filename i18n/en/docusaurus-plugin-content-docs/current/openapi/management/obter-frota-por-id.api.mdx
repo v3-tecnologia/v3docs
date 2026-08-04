@@ -1,0 +1,71 @@
+---
+id: obter-frota-por-id
+title: "Get fleet by ID"
+description: "Returns data for a specific fleet by the specified ID."
+sidebar_label: "Get fleet by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVE1v2zAM/SsCL9sANU63nnwr0K3IYcDQbaciKBiJjtXakirRRjPD/32gnbXZlhTYTrb4Tb5HDmApm+Qiu+ChhBviLvmsLDKqKiSFKkcyrnJGVQ0Rq81OcU2/pGTV6moBGiImbIkpZShvhz+ifpo8V1egwck7ItegwWNLUIKzoCHRY+cSWSg5daQhm5pahHIA3kWxypyc38I4rsU4x+AzZdG/Xy7lcyxjIk6OerIqd8ZQzlXXNDvQYIJn8ix+GGPjDIpfcZ/FeThIHlOIlNjNqUxIiZrJ9s7ZI8VpMImQyd4hH1VbaugV9Ymg86COKJiwPVVJF+3pSsR3loTNPRmGcRTZxfLi1Cx9YFWFztt/GN84R5URThYrOyVkSmdVCoxnMaSzCX7GrRBnzgVrDS1xHcR8SzzRi2sooWjR45Za8lxMdMzF4OwIGjKl/hf5utRACTVzzGVRMHn0vOg/ZPR2E54WJrRFfw5CJOerMAPrGY00NGF02P1XSr0zpPacc5uGpsUIaYve/XB+q9Bb1aLzjM7L2yYntWgl8GQ9L07Wk50liZZV4/wDWcVh2ibTZQ4tpTdZPQ9LtoodNwLS5+e21eWXFWiQ+HN9y8VycS54x5C5xQmA/WJdE78s7bR9v7U2vOD4/3u/ZxHTExexQecn6gkAwx60W3gBDTTMwwANpbMCdB0yi9EwbDDT99SMo4gfO0o7KG/XGnpMDjcyBzksLsu/hbLCJtMrLb292Z+Ud+rg/hytdy9EL7ehx6aTF2h4oN18n8b1qKEmtJSmKmbFpTEU+cDlr2UYD5l8/fEbjONPEpHfRQ==
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get fleet by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/management/fleets/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns data for a specific fleet by the specified ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Fleet ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Fleet retrieved successfully","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"team_id":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Fleet not found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,169 @@
+basePath: /v1
+definitions:
+  dto.EventResponseDTO:
+    properties:
+      correlation_id:
+        type: string
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      device_id:
+        type: string
+      event_type:
+        type: integer
+      firmware_version:
+        type: string
+      hardware_event_type:
+        type: integer
+      hardware_model:
+        type: string
+      hook_delivered_at:
+        type: string
+      id:
+        type: string
+      is_ignition_on:
+        type: boolean
+      media_id:
+        type: string
+      odometer:
+        type: number
+      sourced_created_at:
+        type: string
+      tenant_delivered_at:
+        type: string
+      ulid:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  types.Source:
+    properties:
+      pointer:
+        type: string
+    type: object
+  types.ValidationError:
+    properties:
+      code:
+        description: Error code
+        type: string
+      detail:
+        description: Human-readable error description
+        type: string
+      source:
+        allOf:
+        - $ref: '#/definitions/types.Source'
+        description: Error source, e.g. the field that caused the error
+      status:
+        description: HTTP status code
+        type: integer
+      title:
+        description: Human-readable error title
+        type: string
+    type: object
+host: tenant.v3sandbox.com
+info:
+  contact: {}
+  description: API for querying and managing device events.
+  title: Event API
+  version: 0.0.1
+paths:
+  /event/device/{device_id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves a paginated list of events associated with the provided
+        Device ID
+      parameters:
+      - description: Device ID
+        in: path
+        name: device_id
+        required: true
+        type: string
+      - default: 1
+        description: Page number
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Number of items per page
+        in: query
+        maximum: 100
+        name: page_size
+        type: integer
+      - description: Start date/time filter in yyyy-MM-ddTHH:mm:ssZ format
+        in: query
+        name: start
+        type: string
+      - description: End date/time filter in yyyy-MM-ddTHH:mm:ssZ format
+        in: query
+        name: end
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Event list
+          schema:
+            items:
+              $ref: '#/definitions/dto.EventResponseDTO'
+            type: array
+        "204":
+          description: No content
+          schema:
+            type: string
+        "400":
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+      operationId: listar-eventos-de-um-dispositivo
+      summary: List device events
+      tags:
+      - Event
+  /events/{ulid}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves an event using the specified ULID
+      parameters:
+      - description: Event ULID
+        in: path
+        name: ulid
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Event found
+          schema:
+            $ref: '#/definitions/dto.EventResponseDTO'
+        "204":
+          description: No content
+          schema:
+            type: string
+        "400":
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+      operationId: obter-evento-por-ulid
+      summary: Get event by ULID
+      tags:
+      - Event
+schemes:
+- https
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Bearer Token
+    type: apiKey
+swagger: "2.0"
+

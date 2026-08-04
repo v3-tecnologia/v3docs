@@ -1,0 +1,71 @@
+---
+id: obter-frota-por-id
+title: "Obter frota por ID"
+description: "Retorna os dados de uma frota específica pelo ID informado."
+sidebar_label: "Obter frota por ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVM1uEzEQfhVrTiC52RR62lulUpQDAhU4VVE1sSeJy67t2rNRw2rfBcShJ54iL4Zmd6FpaSohLvszP/bM930zLVjKJrnILngo4YI4JI8qZGXRypNUU6NapsCoKEcyu59LZ1BFqoKanSnnlyHVaMMENERMWBNTylBeto/Onp0pO54EGpyYIvIaNHisCUpwFjQkumlcIgslp4Y0ZLOmGqFsgbdRojIn51fQdXMJzjH4TFn8r6ZTeT289LwvPJFpIiW0qEyoVW4M5RxAgwmeybPkYYyVMyh5xXWW5Hbv8phCpMRuuMqElKjqY6+cfaI4DSYRMtkr5Cfdlip6xn3g0AGoJxxMWB+qpIn2cCWSO1jC4poMQ9eJ7WR6cghLv/sRFHlBTgD9BxC74WwBso+Y2f5apnTUq+IohnTUi4BxJQqC84qIYa6hJl4HCV8R9zrjNZRQ1OhxRTV5LpYSmovW2Q40ZEqb3ypsUgUlrJljLouCyaPnyeZ1Rm8X4XZiQl1sjkHkJFoe6PWMRhrqmdrH4COljdvdBTVKb/d9Q5WKIamQVujdV0yKVI2eKak6cEguM2at2NWU9SD/rEhZl2PIjt0mZLVx3jRVP3C7b6oHaHcnONugTOXIM8l4seNKqHr3p211+mEGGqTXob7pZDo5FtZjyFxjT8A4Xu8F6XGSpeDZGTzqrr2n8n83wSgqplsuYoXO90oUJtqRvUu4Zw80DPyBhtJZYXwdMktQ2y4w0+dUdZ2YbxpKWygv5xo2mBwuBBBZNS7Lt4VyiVWmZxp7cTFumJfq4UZ6suTRiH4rMGPVyB9o+ELbYWN1807DmtBS6gsZHKfGUOS9lL8Go9tX9ds3n6DrfgGAM+93
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Obter frota por ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/management/fleets/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retorna os dados de uma frota específica pelo ID informado.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID da frota","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"200":{"description":"Frota recuperada com sucesso","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"team_id":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Frota não encontrada","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

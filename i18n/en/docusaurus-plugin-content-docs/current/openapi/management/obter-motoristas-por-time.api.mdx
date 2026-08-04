@@ -1,0 +1,71 @@
+---
+id: obter-motoristas-por-time
+title: "Get drivers by team ID"
+description: "Returns the paginated list of drivers associated with a specific team."
+sidebar_label: "Get drivers by team ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVE2P0zAQ/SvWXADJ2ywLp9yQQGgPSIiP06paTZ1pYkhs45kUSpT/jiZJt4V2kZA4WfZ8et68N0BF7LJP4mOAEj6Q9DmwkYZMwtoHFKpM61lM3Joq+x1lNsgcnZ9M3700Bg0ncn7rnRHCbgUWEmbsSCgzlHfDH1U+EXbm9jVY8HpNKA1YCNgRlKAZ7n0FFjJ9632mCkrJPVlg11CHUA4g+6SuLNmHGsZxrc6cYmBitd9cX+vxe9XXS/eZJHvaUWW4d46Yt33b7sGCi0EoiEZiSq13qJHFF9bw4aR8yjFRFj8Xq1CmVy/U8bnZxZypnVLpt867t+Ay6TDvUS6aK2rpL+ZHks7jvGA4DPiSrU/V451o7PwSN1/ICRwfMGfc6z1hfVrVB6Ga8sFyz/7nI2aJgu39wwwfc9AsFx3Omxv17eXNzfkmfA4pR0UeNy0ZCuLlX/Af59QK8uRxW01VhfJVFyVmz4J8lWK+Et8RWBCslQbT3sPaQkfSRA2qSSauSAMlFB0GrKmjIIVixMWwQDUWC/PAAlPeHVjV5xZKaEQSl0UhFDDIaveCMVSb+GPlYlfsnoOyw4dtnJcxCDr94rRXp0P5SHnnHZmFSF5Hs43ZxFxj8D99qA2GynTog6APel+6shPr2ZptSyRsJ7+KNBub1oevVBmJk6a4niV2lJ+weRifyoV4aRW7dw8jMK/e34IFzT/3d726Xj2fFimydDhBskjGW5IHbdrsp25mefnth8MR4P+nc8vOCf2QIrXow8QixWVYcL2DI64ws09xLI86dwB3baGJLBoyDBtk+pzbcdTnbz3lPZR3aws7zF7XdpZVP61wBeUWW6a/fPjph0VMn5mj+l5s/sDooJTYYdvrDSx8pf2JOo/r0UJDWFGeOpmtr5yjJCdxZzwaT9f/7ZtPMI6/ALl1RCU=
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get drivers by team ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/management/teams/{team_id}/drivers"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the paginated list of drivers associated with a specific team.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Team ID","in":"path","name":"team_id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Drivers retrieved successfully","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"team_id":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"422":{"description":"Unprocessable entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

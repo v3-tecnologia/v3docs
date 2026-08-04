@@ -1,8 +1,8 @@
 ---
 id: orders-api
 title: "Orders API"
-description: "Aplicação em GO responsável por realizar a gestão de ordens para os dispositivos."
-sidebar_label: Introduction
+description: "Serviço responsável por receber instruções remotas, encaminhá-las aos dispositivos em campo e disponibilizar o acompanhamento de cada solicitação."
+sidebar_label: Introdução
 sidebar_position: 0
 hide_title: true
 custom_edit_url: null
@@ -16,7 +16,7 @@ import Export from "@theme/ApiExplorer/Export";
 
 <span
   className={"theme-doc-version-badge badge badge--secondary"}
-  children={"Version: 0.0.1"}
+  children={"Versão: 0.0.1"}
 >
 </span>
 
@@ -29,7 +29,7 @@ import Export from "@theme/ApiExplorer/Export";
 
 
 
-Aplicação em GO responsável por realizar a gestão de ordens para os dispositivos.
+Serviço responsável por receber instruções remotas, encaminhá-las aos dispositivos em campo e disponibilizar o acompanhamento de cada solicitação.
 
 <div
   style={{"marginBottom":"2rem"}}
@@ -38,7 +38,7 @@ Aplicação em GO responsável por realizar a gestão de ordens para os disposit
     id={"authentication"}
     as={"h2"}
     className={"openapi-tabs__heading"}
-    children={"Authentication"}
+    children={"Autenticação"}
   >
   </Heading><SchemaTabs
     className={"openapi-tabs__security-schemes"}
@@ -56,13 +56,13 @@ Aplicação em GO responsável por realizar a gestão de ordens para os disposit
           <tbody>
             <tr>
               <th>
-                Security Scheme Type:
+                Tipo de esquema de segurança:
               </th><td>
                 apiKey
               </td>
             </tr><tr>
               <th>
-                Header parameter name:
+                Nome do parâmetro no header:
               </th><td>
                 Bearer Token
               </td>

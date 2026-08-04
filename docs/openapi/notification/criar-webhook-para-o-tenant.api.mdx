@@ -1,0 +1,71 @@
+---
+id: criar-webhook-para-o-tenant
+title: "Criar webhook para o tenant"
+description: "Cria um webhook associado ao tenant informado"
+sidebar_label: "Criar webhook para o tenant"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vc1u2zAMfhWDZ+en+7n4lm49FAO2ou2wQxAUjMUmam1JpeS0geGHKXbog+TFBkZ2mzRp0Q7DcrHEkNTHj5+oGhT5nLUL2hrI4AtrTKoyuaXp3NrrBL23uUZlE7RJIIMmJNpcWi5RWUiB6aYiHw6tWkJWQ25NIBNkic4VOkfJO7jykrwGn8+pRFk5to44aPKyowWZcGGwjFsdqFwvwtIRZOADazODJu0MyIxL2UvIXseKiz32pwx2ekV5gEZM2wx8RWV9omxHQVukZlKQBa6oEYN31viI9sPwQD67PK4J+ktGciYMpC4w7C3vJcKeJcFAM8vLV1x8NX0n5XH/Bmr/aahWe8G93H+nXuPv7fJoUvg0HO42+FQ04fXqYfXbJtosVveFVviehqNSWv7C4mSrJS91YAvT532YjpgFSyA2VhTsiRdaWf5PqJoUJGKd+VhBBjlr5F57j3oOGXu2F4cIpBBw5iEbw6/2nk1SKCnMrUQ668XFYZhDBgNjg75sMftBm9BDClIhsaSpY09hHoLz2WAQj+kvPno0amrv+rktB4sDaCYSlVesw/JMqo7ljZz+RstRJefVoIXNOaEi4S6KDA4JmTg5t9dk4Emh68C1doTM06d5eHSHpStoZ76NOxInj6lbQ6vLDZJl1HZzFXNp3868OpMmrx5s0g6l1f2CisRZTmbEZHKN3I0yn0gPkrzQZAL5vlShg0CE75sMJ6OTY0hBmI1nDPvD/oHgkb6UuJZMC10G3eMBMX/3UMAzqBvPw7vfmZbtQHdh4ArUZuMWR5WMYUslkMKjTiYpzEVQ2RjqeoqefnLRNGK+qUjG43iSwgJZ41TIGE+atOu+COualoI4Yu+dCxJxL6rY/2e3qUm7iFGekwuv+m5q/uTH2TmkMG2f0tIqiWG8lRcIbyEDkAsWq8vqaKuhQDOrcCa+Maf8/gAjkb6m
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/notification/notifications-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Criar webhook para o tenant"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/notifications/webhooks"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Cria um webhook associado ao tenant informado
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={{"content":{"application/json":{"schema":{"properties":{"event_names":{"items":{"type":"string"},"type":"array"},"name":{"type":"string"},"url":{"type":"string"}},"type":"object"}}},"description":"Dados do webhook","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"201":{"description":"Criado","content":{"application/json":{"schema":{"properties":{"created_at":{"type":"string"},"event_names":{"items":{"properties":{"category":{"items":{"properties":{"subs":{"items":{"type":"string"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"},"url":{"type":"string"}},"type":"object"}}}},"400":{"description":"Requisição inválida","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: excluir-time
+title: "Delete team"
+description: "Removes a team by the specified ID."
+sidebar_label: "Delete team"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNU8Fu2zAM/RWBl22FFqfdTr4VSA8BNmDo2lORA2MxMVFLciXaaGbo3wc6WVt0XbGTQIl8enx8nMBRbhL3wjFADdfk40jZoBFCb7YHIy2Z3FPDOyZn1qsFWOgxoSehlKG+m15B3GjhegUWWMMepQULAT1BDezAQqKHgRM5qCUNZCE3LXmEegI59JqVJXHYQykbTc59DJmyvl8sl3q88WGaiSt6E4NQEM07q870+Dd+KRa+Xlz8jXkb+hQbyhm3HRkKwnJ4H7sc0WJPCRVk7aAGemy6gdNnYU9gQXCvis2MYWPBk7RR8xx1JDQrKy3UUHkMuCdPQSodRK4mdgUsZErjH9mH1EENrUif66oSChhkMX7JGNw2Pi6a6KvxHFRDDruoZJU+Nkq/2FcN/6Q0ckPmJDdr27uYTEx7DPyLw95gcMYjB0EOGrvEysXOVsnW7DoiyXbOc6Ro2XQc7skZibOPmiFL9JQ+ZPOkk/pJWDqdy/enrs3ljzVYUPwjv+ViuTiHYqGPWTwGbefkqdUs3swCXrU1PU/sP619cojQo1R9hxz0z1np6TScO3gejhZo82ChZqcjbWMWzZmmLWa6TV0pev0wUDpAfbexMGJiddVxdXh2mIN6h12md+h/vD5tzSfzvGFvsj1dYlDHjtgNGoGFezocN7BsioWW0FGaSRwfLpuGenlRog4vL126uvp2dXMFpfwG289sSg==
+sidebar_class_name: "delete api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/management/teams/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Removes a team by the specified ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Team ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Team removed","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,63 @@
+---
+id: verificar-se-a-aplicacao-esta-pronta
+title: "Check if application is ready"
+description: "Checks whether the application is ready"
+sidebar_label: "Check if application is ready"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1U7FuGzEM/RWBYyD7nAZdbnOLog06tEDSyfBA62hL9VlSKN4l7uH+veDZbhIUGTp0EiHxUY+PjwM0VByHLCFFqOGjJ7cv5tGTeGIjngzm3AaHmmBCMUzYHMECU8kpFipQD/BusdDjda3lC+AF5VIUiqLJV9WVHsV5OqBGmVMmlnAqWQSlmyI5ZoIainCIOxhHe7lJm5/kBMZR794vbv6mcEfcB0emi9hjaHHT0n8kMVpQ8NTxbQM19MRhGxzyrNAMZzjp4TDNqAjOMqcoCBYEdwXqFXwhbMWbaQawtnAg8Unr7EjAQkbxUEPlp7Rf1UXTQtwTa4UBOm6hBi+SS11VQhGjzPubgrHZpKe5S4eqv4ZxrSjXcZDjnbZ+6naZw1c6Ljv9ZoCgAnrChhgsRDxotx8Imdjcpz1F+KMBTsBJlRC3SdGqMTrVeLRvDOXsoLBpyWwTGyZHoQ9xZ5gOSciEWIQ7p7BiNeURudF38XQwksw2UNuYhrRcsQZjYzKnPpySGN1eA61N6LxheuioyFyJB2mV+TduiItZfr8Fq+MqJ4qL+WJ+DaOFnIocMGpHZwWm6ZiwfWsvXvU6PHvtH1brrKrQk1S5xRCVyTTZ4WyCFZxNMC2iotYWfCqiT8OwwUI/uB1HvX7oiI9Qr9YWeuQw7UC9Wo/2Mlz1zZ6OurHOUVar9dh2SkHXY3zpxM+f7mEcfwPRM3Pk
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/order/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Check if application is ready"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/healthz/ready"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Checks whether the application is ready
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Application ready","content":{"*/*":{"schema":{"properties":{"status":{"type":"string"}},"type":"object"}}}},"503":{"description":"Service unavailable","content":{"*/*":{"schema":{"properties":{"status":{"type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

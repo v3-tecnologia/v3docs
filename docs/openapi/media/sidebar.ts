@@ -12,8 +12,8 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "openapi/media/download-a-file-from-s-3-using-secure-key",
-          label: "Download a file from S3 using secure key",
+          id: "openapi/media/baixar-arquivo-com-chave-segura",
+          label: "Baixar arquivo com chave segura",
           className: "api-method get",
         },
       ],

@@ -30,10 +30,12 @@ host: tenant.v3sandbox.com
 info:
   contact: {}
   description: |-
-    The Vision context serves as the central processing hub for events received by V3CLOUD, enabling computer vision inference.
-    Computer vision is a field of artificial intelligence that allows computers to interpret and extract information from images and videos, simulating human vision.
-    This solution is designed to act as a processing engine for events arriving at the Cloud.
-    All incoming events are monitored by an agent.
+    A Vision API é o hub central de processamento de eventos recebidos pela plataforma,
+    habilitando inferência de visão computacional.
+    Visão computacional é um campo da inteligência artificial que permite interpretar
+    e extrair informações de imagens e vídeos, simulando a visão humana.
+    Esta solução atua como motor de processamento para eventos que chegam à nuvem,
+    monitorados continuamente para análise e inferência.
   title: Vision API
   version: 0.0.1
 paths:
@@ -41,9 +43,9 @@ paths:
     post:
       consumes:
       - application/json
-      description: Creates a new dataset with the provided details.
+      description: Cria um novo conjunto de dados com os detalhes informados.
       parameters:
-      - description: Dataset details
+      - description: Detalhes do conjunto de dados
         in: body
         name: payload
         required: true
@@ -54,33 +56,34 @@ paths:
       - application/json
       responses:
         "201":
-          description: Dataset created successfully
+          description: Conjunto de dados criado com sucesso
           schema:
             $ref: '#/definitions/response.VisionResponse'
         "400":
-          description: Invalid request payload
+          description: Requisição inválida
           schema:
             $ref: '#/definitions/response.VisionErrorResponse'
         "401":
-          description: Unauthorized
+          description: Não autorizado
           schema:
             $ref: '#/definitions/response.VisionErrorResponse'
         "500":
-          description: Internal server error
+          description: Erro interno do servidor
           schema:
             $ref: '#/definitions/response.VisionErrorResponse'
       security:
       - ApiKeyAuth: []
-      summary: Create new dataset
+      operationId: criar-novo-conjunto-de-dados
+      summary: Criar novo conjunto de dados
       tags:
       - Datasets
   /datasets/{id}:
     delete:
       consumes:
       - application/json
-      description: Deletes a dataset by its ID.
+      description: Exclui um conjunto de dados pelo seu ID.
       parameters:
-      - description: Dataset ID
+      - description: ID do conjunto de dados
         in: path
         name: id
         required: true
@@ -89,34 +92,35 @@ paths:
       - application/json
       responses:
         "204":
-          description: Dataset deleted successfully
+          description: Conjunto de dados excluído com sucesso
         "400":
-          description: Invalid request payload
+          description: Requisição inválida
           schema:
             $ref: '#/definitions/response.VisionErrorResponse'
         "401":
-          description: Unauthorized
+          description: Não autorizado
           schema:
             $ref: '#/definitions/response.VisionErrorResponse'
         "404":
-          description: Dataset not found
+          description: Conjunto de dados não encontrado
           schema:
             $ref: '#/definitions/response.VisionErrorResponse'
         "500":
-          description: Internal server error
+          description: Erro interno do servidor
           schema:
             $ref: '#/definitions/response.VisionErrorResponse'
       security:
       - ApiKeyAuth: []
-      summary: Delete dataset by ID
+      operationId: excluir-conjunto-de-dados-por-id
+      summary: Excluir conjunto de dados por ID
       tags:
       - Datasets
     get:
       consumes:
       - application/json
-      description: Retrieves a dataset by its ID.
+      description: Recupera um conjunto de dados pelo seu ID.
       parameters:
-      - description: Dataset ID
+      - description: ID do conjunto de dados
         in: path
         name: id
         required: true
@@ -125,41 +129,42 @@ paths:
       - application/json
       responses:
         "200":
-          description: Dataset retrieved successfully
+          description: Conjunto de dados recuperado com sucesso
           schema:
             $ref: '#/definitions/response.VisionResponse'
         "400":
-          description: Invalid request payload
+          description: Requisição inválida
           schema:
             $ref: '#/definitions/response.VisionErrorResponse'
         "401":
-          description: Unauthorized
+          description: Não autorizado
           schema:
             $ref: '#/definitions/response.VisionErrorResponse'
         "404":
-          description: Dataset not found
+          description: Conjunto de dados não encontrado
           schema:
             $ref: '#/definitions/response.VisionErrorResponse'
         "500":
-          description: Internal server error
+          description: Erro interno do servidor
           schema:
             $ref: '#/definitions/response.VisionErrorResponse'
       security:
       - ApiKeyAuth: []
-      summary: Get dataset by ID
+      operationId: obter-conjunto-de-dados-por-id
+      summary: Obter conjunto de dados por ID
       tags:
       - Datasets
     put:
       consumes:
       - application/json
-      description: Updates an existing dataset by its ID.
+      description: Atualiza um conjunto de dados existente pelo seu ID.
       parameters:
-      - description: Dataset ID
+      - description: ID do conjunto de dados
         in: path
         name: id
         required: true
         type: string
-      - description: Updated dataset details
+      - description: Detalhes atualizados do conjunto de dados
         in: body
         name: payload
         required: true
@@ -170,28 +175,29 @@ paths:
       - application/json
       responses:
         "200":
-          description: Dataset updated successfully
+          description: Conjunto de dados atualizado com sucesso
           schema:
             $ref: '#/definitions/response.VisionResponse'
         "400":
-          description: Invalid request payload
+          description: Requisição inválida
           schema:
             $ref: '#/definitions/response.VisionErrorResponse'
         "401":
-          description: Unauthorized
+          description: Não autorizado
           schema:
             $ref: '#/definitions/response.VisionErrorResponse'
         "404":
-          description: Dataset not found
+          description: Conjunto de dados não encontrado
           schema:
             $ref: '#/definitions/response.VisionErrorResponse'
         "500":
-          description: Internal server error
+          description: Erro interno do servidor
           schema:
             $ref: '#/definitions/response.VisionErrorResponse'
       security:
       - ApiKeyAuth: []
-      summary: Update dataset by ID
+      operationId: atualizar-conjunto-de-dados-por-id
+      summary: Atualizar conjunto de dados por ID
       tags:
       - Datasets
 schemes:
@@ -202,3 +208,4 @@ securityDefinitions:
     name: Bearer Token
     type: apiKey
 swagger: "2.0"
+

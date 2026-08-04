@@ -1,0 +1,72 @@
+---
+id: listar-motoristas-com-paginacao
+title: "List drivers with pagination"
+description: "Returns the list of drivers with optional filters by correlation identifier"
+sidebar_label: "List drivers with pagination"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVU2P20YM/SsEL00Bre1t0YtuAdIEC6RI0KSnrbGgJVqeZDSjcCh3HUP/vaCkrJ217O22l55s8etxOG8e91hyKsQ16mLAHH9nbSUk0A2Dd0khrqEUt2VJ8JfTDcQ+kjysnVezrnZQRBH2ZA5wJQd1a8fyZ4gtfGSq4ebVDD60TRNFEzRUudDHzuBd8DuIgcdiUFCAFUObuARSIFBX8wwzbEioZsPD/Hb/qOf3VDGEtl6xwIuS19R6zeH6R8zQmf9Ly7LDDAPVjDk2VDFmmIoN14T5HnXXmN0F5YoFuy6bREjuKx/XX2RQ0739WVyCurO8Z+K9HsZxdrRn4I6C71w5hZlUXKguQ+pwZWcwzPtU8WWGwqmJIXEy/0+Lhf18D/hqZJWwiuMtl5DaouCU1q33BljEoBzUMqlpvCv6g80/JUvfH8E3EhsWdQNYSdpbnXKdTt2PZnTafYaFMCmXd6ST7pI9X3CfKTqMb8LxbaBTvrYpz3diuYMlrj5xoXgwkAjt7Lvn+gTlsiNqTro1Kvm7hxmeC7AqkwGnzXVm+2WKCTdBWUxSEsuWBVgkyjMI0A217Zb7iJsSczTxIrmqo0axv+mqiPXVID4FRcxQqTI1GYmIywxr1k205Iq1Fx3dYI7zmgJVXHPQ+SiFxv6+10GOWvGY40a1Sfl8rhwo6Gz7c6JQruL9rIj1fHuN9ixcWMeBhUGpsKP1hDqexgeWrSsYxhfkVp5hHQWiVBTcVxcqoFBCTS4ouWDfY1dZ/3RTBmvPrCnr40q2agm8C5+5BI29tBdt0liz/JDgYWyms+rU26X99nBkePn+BjO0+kN/i9lidt0zKCatqb+KURve2sL4blscxB4fnXN/uN7/69IZCax8r/PGkwv9k7S73o/cuMUDN+yAIzuWGW5iUvPv9ytK/If4rjPzIKb9CnOJVp5LzNfkE1+YzoX1NtnhZ94dttyWfGsh2Cv+8zCfWHhPgH/be/+yg3+wAi80cLIJ/3MXh614AfawHA94S/sQZ4CY3y67DDdMJUvPgiHtZVFwo0dZJ3LXHavTm18/Ytf9DcDPXkM=
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List drivers with pagination"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/management/drivers"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the list of drivers with optional filters by correlation identifier
+ou Team ID. Supports pagination. Only one filter can be used at a time.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}},{"description":"Filter by correlation identifier","in":"query","name":"correlation_id","schema":{"type":"string"}},{"description":"Filter by team ID","in":"query","name":"team_id","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Drivers retrieved successfully","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"team_id":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

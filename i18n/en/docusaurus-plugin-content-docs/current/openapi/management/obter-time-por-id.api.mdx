@@ -1,0 +1,71 @@
+---
+id: obter-time-por-id
+title: "Get team by ID"
+description: "Returns data for a specific team by the specified ID."
+sidebar_label: "Get team by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVE1v2zAM/SsCL9sANU63nnwr0KHIYcDQdaciGBiJjtXakirRQTPD/32gkrbZlhTYTrb4zcdHjmApm+Qiu+ChhhviIfmsLDKqJiSFKkcyrnFGMWGvVlvFLT0LyarF1Qw0REzYE1PKUN+NfwS9FcfFFWhw8ozILWjw2BPU4CxoSPQ4uEQWak4DacimpR6hHoG3UawyJ+fXME1LMc4x+ExZ9B/nc/kcSZiIk6MNWZUHYyjnZui6LWgwwTN5FjeMsXMGxa26z+I7HuSOKURK7HaZ0JgweP7h7JG6JGpK1JVQJ00SIZP9gXxUbamjN9Qngu5gPKIYoj2dbdLPkrC6J8MwTSK7mF+cQNMHVk0YvP0HAKddUAGxWCxsyceUztj1dBZDOivjZ1wLb0omWGroidsgxmviQi5uoYaqR49r6slzJVzM1ejsBBoypc0z84bUQQ0tc8x1VTF59DzbfMro7So8zUzoq805CI2cb4KUK92gkW7KDA47/0Zp4wypPePcqqOyFCGt0bufzq8Veqt6dJ7ReXnb5KQWXbYla9V0RJx1sbMk0bLqnH8gqziUVTJD5tBTepfVC1KyUuy4kwF9eelaXX5dgAaJv6tvPpvPzmXWMWTusaC/X6tr4peFLav3W2fj6wz/e+X3/GF64ip26HwhncA/7id2B68TEwdBBDTUzsqQ25BZbMZxhZm+p26aRPw4UNpCfbfUsMHkcCUgyElxWf4t1A12md5o6P3N/pp8UK+X52i1eyF6OQsb7AZ5gYYH2u4u07ScNLSEllIpYqe4NIYiH7j8tQXTIYmvP9/CNP0C7mXcBA==
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get team by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/management/teams/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns data for a specific team by the specified ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Team ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Team retrieved successfully","content":{"application/json":{"schema":{"properties":{"account_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Team not found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

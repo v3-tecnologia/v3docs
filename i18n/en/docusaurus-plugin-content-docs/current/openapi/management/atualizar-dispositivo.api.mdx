@@ -1,0 +1,71 @@
+---
+id: atualizar-dispositivo
+title: "Update device"
+description: "Updates an existing device with the information provided in the request body."
+sidebar_label: "Update device"
+hide_title: true
+hide_table_of_contents: true
+api: eJytV19vGjkQ/yrWvLTNbYAlkCa89ZrohHRVo6aRTkojNKwHcLtrb20vCUV892q8CyywpM2pPLGe8fyf34yXIMklVuVeGQ0DuMslenICtaAn5bzSUyFprhISj8rPhJ+RUHpibIZ8Q+TWzJUkKZQONEvfC3JejI1ctCCCHC1m5Mk6GNwv95RdlYKHVxCB4oMc/Qwi0JgRDEBJiIAFKksSBt4WFIFLZpQhDJbgFzlzOW+VnsJq9VAyk/N/G7lgjsRoT9rzX8zzVCXB5vZXx9qXNVG5NTlZr8gF3sIbdi8ZWUrMVKvS3H3rh1qyRHLicUZ+RjYEoArWDJ3YyBE1OYI0jlOS4uTkujVtDU5OBDsG0dqfsTEpoYZVBAnbNAlKRkoeWnCn1feCRI1NKEmaP8gKdM4kCj3JbepK6zgxGT79S3rqZzDodyLIlF5/nkX7oY0gMdZSGsL3nCU17RNjN8XgLSbfuJJem3AB00hMSZMNxm3ChGm6EGoitPGbunpTi9MXiLtn1Oufvz2li8vxadyVZ6fY65+f9rrn53EvftvrdDpf4MXeTVIi3+jXx0fNvjBdDK+EmdRzfHJy/cSGDUQMDVJVkjSJvB1+EAlaKYbv3w+vakK+wMVlv985i+PO+hd3z/bd6e66E182ac5IHSped9uH66HQRTYmu6M87p5xaC8uO+Hfvt64v6u336A3M5LSo4oDdUflPze34jPXBllxY43473/kLp8ZTaPSn0PVN0xde3u8IXas+qvfj+PL9e9Xcegc2LSqg9Z9mYyHDZcZf6XEw4rZGsMk0eMB7gWZLjfalRDV7XSOxrkIEC6FK5KEnJsUabqA6I+D4e/A1W/gyCGLJTZ/hL6RXO/V4y13SDlyXHXK8VL+ZcEdMDiPvnANkbRUn1tKe5qSDS6jtYrsKDGSmmNSMZSDsYmB0nQ3KHXxRmtKQsxL4sujrvIRSmnJuUZyis6PaE7aVwL2JuXtR3Fx3omFVxk5j1m+i6SvnGAJIkhoglKuGF/sBKdKABONnh6nYvrM1SxJmrOvm8+dmmpMR87bqv2bwu1yItmorurM5iCvDiDixRcCqPQ6vaPQwJN1YgotX4AHldRut2nq59YwxvBGI3j0+5cgzaoUzT0SOIYSBoC+wFT9QHsqlcuNU17NDdcETnmFrDxhQM3IzwxfyQsfNk1OCLQz1DiljLRvl9Xl2kslVxCBIztfL6KFTWEAM+9zN2i3PWnUvjU/c6jl2Dy1EpO15zHwTslmf9rulddPmOUpPQON5Z66D4brtB1i4JayxbbtWQVptYMAWdvvCqm2B7sAVW9iPTHrtRgTzs/BDLolGwqlGjaK88qbnLFT1OoH73CopchQaY9Kh9eBVRzVSHjCzEXlsuSiwFclQKRKfyMpvAlNnxTOm4zsKyc2ueeV1CvPgYUPmwyKdzdDiIDll/Z1Wp1WHFDYOJ9hqKfqtVC+XCqVsOdY7S3wx584VRN6evLtPEUVZmGor2VVlPewLcpgWYgKRDBQkit5ZpxnruVyjI7ubLpa8fH3guwCBvcPEczRKm6y8hGlQsNJGEwwdfSMq68/VVvEG1F/azVaXB2i5haeY1rwF0TwjRblW2z1sIpgRii5rO6XFeF9qez0M1/fXjxo/FW0vvEuSSj3z/LWu/vm7jNEMK6edFkYkWDxkXckfCxtLJ8VYTaFsyWkqKcFTpm3FMm/n9zvGnY=
+sidebar_class_name: "put api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update device"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/management/devices/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Updates an existing device with the information provided in the request body.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"description":"Indicates whether the device has automatic recognition enabled **E.g.:** true","type":"boolean"},"certificate_id":{"description":"Unique certificate identifier associated with the device.","maxLength":50,"minLength":3,"type":"string"},"correlation_id":{"description":"Unique identifier for request tracking (optional, generated automatically if not provided) **E.g.:** \"123e4567-e89b-12d3-a456-426614174000\"","maxLength":50,"minLength":3,"type":"string"},"fleet_id":{"description":"Owner fleet ID of the device **Ex.:**: 1","type":"string"},"iccid":{"description":"SIM card ICCID **Ex.:**: \"89550311000000000123\"","maxLength":20,"minLength":19,"type":"string"},"imei":{"description":"Device IMEI number **Ex.:**: \"123456789012345\"","maxLength":15,"minLength":15,"type":"string"},"model":{"description":"Device model **Ex.:**: \"GPS Tracker Pro X\"","maxLength":50,"minLength":3,"type":"string"},"phone_number":{"description":"Phone number associated with the device **Ex.:**: \"+5511999999999\"","maxLength":15,"minLength":10,"type":"string"}},"required":["imei"],"type":"object"}}},"description":"Device data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Device updated successfully","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"fleet_id":{"type":"string"},"iccid":{"type":"string"},"id":{"type":"string"},"imei":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"status":{"properties":{"area":{"type":"integer"},"carrier_code":{"type":"string"},"carrier_name":{"type":"string"},"cell_id":{"type":"integer"},"connection_type":{"type":"string"},"created_at":{"type":"string"},"ip_address":{"type":"string"},"last_event_at":{"description":"ISO 8601 timestamp of the device's last event","type":"string"},"latitude":{"type":"number"},"longitude":{"type":"number"},"altitude":{"type":"number"},"mcc":{"type":"string"},"mnc":{"type":"string"},"signal_strength":{"type":"integer"},"speed":{"type":"number"},"updated_at":{"type":"string"}},"type":"object"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Device not found","content":{"application/json":{"schema":{}}}},"422":{"description":"Unprocessable entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

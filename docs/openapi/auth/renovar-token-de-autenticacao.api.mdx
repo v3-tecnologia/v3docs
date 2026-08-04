@@ -1,0 +1,76 @@
+---
+id: renovar-token-de-autenticacao
+title: "Renovar token de autenticação"
+description: "Este endpoint permite renovar um token de autenticação existente."
+sidebar_label: "Renovar token de autenticação"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVs1uG0cMfhVizivJ7s9lb27hQ3pI3Tg5WYJBzVDWJLvDNWdmbVfYhzF6CPIcerGCu1KsPyNFTynQ2+5wSH78+chZGUfRim+S52BKcxkTAQXXsA8JGpLaJwKhwC0K5BoSf6IAjgBzopC8xfXn9V8M9OijHtB4Gv7IGBzrbaGFUFxutNZfgELr0XEBDFEVaoSWxC+8RYgEVBGgDw71brt+rrxjILAcFn793FI1nobLGixGVgwxW4qRCxBKLAEh1whCseGYEH67/v0tWK6BIzhKWC0pgmMI3PJOHL2JaSCoKaFDxxGEKrSeg/6Mp+GaYKuwYAEfNsgKoMfGCzoGzlBjtWCp++hyDSTCQDFJTrm/sv6yhel4PA1XKHiU2AJ8UCPqcD93rUd1XoPDhGNTGKH7TDH9wu7JlCtjOWj69RObpvIWtaKTx9HDw8NIFUdZKgqWHTm9FO2SatSv9NSQKQ3PP5JNpjCNcEOSPEWVblDc9ij0YL9f3u2DHPJiiq3RmMSHO9N1A14v6vzmwOis25cnydQfxIZDHGD8cHZ27Px6KL8pXov+Y+SwH+x+cGjVwEtsB6gL09eX4q3fFfuQ6I5E5YHTaE4LFho1XHn7dPraNt5vmTtK9hGgaFlPTkkoRs/hNiZMp2/0Vm+H4yNxVxw0QtdX5adTeX+npYp+IP6WDVjCQB7HfaPmav0s/kXOUUmCOeqQiP++ZsorOV0sldzuQf3nYZ4fh/lWw8OcWPyf6Lg8YOTXwDSu7SD4zuL6+VT5LnUyaddJYK1WJGm9Y/musHeFUQ+9/zfOlGYzKkd98keORl8XkMV+4uBd1NlykdPSzApTU1qyKja5n2qYlqY0E8xpORn4pZyRlkTVViZLZUqzTKmJ5WSSKGBI4/bHiMHN+XFsuZ6056abFUZH9HbkotVkdcXhZNKUrj/ziUV5nwl4QUL2ZdFGiL5uqn4NKlEa3Q08TxQ2yxVaVIoNf46GDowv60sXQvKp0iRqAuDi6o0pjAY3ADobn43PtSC6GmvsyxCwpp7Nww56ZbObg9h2Vs3/r4X/zGthQ7BEj2nSVOiD9kLf8qsNNW6MUsNs1oQyaMkx6flqNcdIH6TqOj2+zyRPpryZFaZF8TjXrruZdYVZEjqSnk2f6MmU5tehU0bv1bter7Ki+PYDpSu2Ji6spSa9otzPpW6X7Fcf3pvCzDePopqdquwYLnZ/FHXX/Q3GVgS7
+sidebar_class_name: "put api-method"
+info_path: docs/openapi/auth/auth-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Renovar token de autenticação"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/auth/token"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Este endpoint permite renovar um token de autenticação existente.
+Quando um refresh token é enviado, o sistema verifica se ele ainda é válido e confiável.
+Em caso de sucesso, retorna uma resposta JSON com os detalhes do novo token de acesso
+e metadados relacionados.
+Se o token for inválido, expirado ou malformado, um erro estruturado é retornado.
+Para renovar um token, informe o refresh token via form data.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={{"content":{"application/x-www-form-urlencoded":{"schema":{"type":"object","properties":{"refresh_token":{"description":"Refresh token válido","type":"string"}},"required":["refresh_token"]}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"200":{"description":"Sucesso","content":{"application/json":{"schema":{"properties":{"access_token":{"type":"string"},"expires_in":{"type":"integer"},"not-before-policy":{"type":"integer"},"refresh_expires_in":{"type":"integer"},"refresh_token":{"type":"string"},"scope":{"type":"string"},"session_state":{"type":"string"},"token_type":{"type":"string"}},"type":"object"}}}},"400":{"description":"Requisição inválida: dados do formulário inválidos ou ausentes","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"401":{"description":"Não autorizado: refresh token inválido ou expirado","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -12,20 +12,20 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "openapi/auth/validate-an-authentication-token",
-          label: "Validate an Authentication Token",
+          id: "openapi/auth/validar-token-de-autenticacao",
+          label: "Validar token de autenticação",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "openapi/auth/generate-token",
-          label: "Generate token",
+          id: "openapi/auth/gerar-token",
+          label: "Gerar token",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "openapi/auth/refresh-an-authentication-token",
-          label: "Refresh an Authentication Token",
+          id: "openapi/auth/renovar-token-de-autenticacao",
+          label: "Renovar token de autenticação",
           className: "api-method put",
         },
       ],

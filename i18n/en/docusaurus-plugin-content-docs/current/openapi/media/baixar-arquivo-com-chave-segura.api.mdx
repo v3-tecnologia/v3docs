@@ -1,0 +1,71 @@
+---
+id: baixar-arquivo-com-chave-segura
+title: "Download file with secure key"
+description: "Allows downloading a file identified by an encrypted key. Supports image resizing with the width and height parameters."
+sidebar_label: "Download file with secure key"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVU1v20YQ/SuLOSUB9eEk6IE3tUkLIwhgxGkvhg4jckhuTO7Su0PZLMH/XsySjCTXkuUgQE4EuTP73nzwvQ5S8onTNWtrIIZVWdp7r1J7b0qLqTa5QpXpkpROybDONKVq0yo0ikzi2popVbfUztV1U9fWsVe6wpyUI6//lfR7zYXigtS9TrlQaFJVkM4LVjU6rIjJ+TlEsHuD+KZ7ROsTtYrtxKEN9wkriEDL+V1DroUIDFYEMdySvDi6a7SjFGJ2DUXgk4IqhLgDbmsJ8+y0yaHvo8d4l5m6iFRmXUK7ZhwB2zt+AcIfjWdbhSLkHsF6DmiKfRnQZRgHF021MajLcQyvwpS8sqZsXx/BC5FPgWnDlJM7B20c9TlwQ+gL8b6gyUkVhCk52RCZOfmwW6yxVIk1TIYnyCFwhxnST/ZzLXvka2s8eTl/u1zK45DFn/KDeHJbSpVvkoS8z5qylOImAnEHbxZv5HEMK4LMugoZYthog66Fvu/7CN4uf/s/4tVhfSP4T8F7v3x/pEJjWWW2Mc/hYJpqycPyytmaHOuhd496G00f7OYbJRzg+wgkAyX9MhVqqB/QzdDdNXprZ4mtZkmBW5p5yhuHEAFjLpIBnynVOFtdXcI6goq4sJKfEwdx4QJiWFQS4xfyJ3kZu3RtFJzGlbIgzLWPFwsmg4bn23ceTbqxD/PEVovtBcg+eEoap7m9loKHyla1/kTtqhGU7ulV+53QkVNf7S0Z+F46hkTZbNAms5ItncVEOttHj6ZwTW6rkyCuspF6Ux4Kh+htKDHoSpBV1lwK0D/aa2tUaJKSJkUgpQ/3LucX86UMpLaeKzRCY6T9Ybx6MIEg5qF+UoPIHhDsdmvxC51kbC3TAy/qErWRysJ4u3ERbmBYBPkHwiqsIyisZznpug16+tuVfS+fB5EKjqQ9bkqxkwxLTydKf/VldJ7X6oRxPUlTmjr51xbLRiIgyN7Z6Me86wTeXtQPgj5jZyew91ztRws+y+FOUJiM7ifhH/G8EwS+W9+OwVpenBYKEN+s+2gSlJet4vn+eILe5JIH/RmOVklC9T5zMYN+X4D/+vgV+v4/rGeSNQ==
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/media/vision-media-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Download file with secure key"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/medias/files"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Allows downloading a file identified by an encrypted key. Supports image resizing with the width and height parameters.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Key to identify the file","in":"query","name":"key","required":true,"schema":{"type":"string"}},{"description":"If 1, forces download","in":"query","name":"download","schema":{"type":"string"}},{"description":"Custom filename for download","in":"query","name":"filename","schema":{"type":"string"}},{"description":"Image thumbnail width (images only)","in":"query","name":"width","schema":{"type":"integer"}},{"description":"Image thumbnail height (images only)","in":"query","name":"height","schema":{"type":"integer"}},{"description":"Range header to request partial content","in":"header","name":"Range","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"File served successfully","content":{"*/*":{"schema":{"type":"string","format":"binary"}}}},"206":{"description":"Partial content served","content":{"*/*":{"schema":{"type":"string","format":"binary"}}}},"404":{"description":"File not found","content":{"*/*":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

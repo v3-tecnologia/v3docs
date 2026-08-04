@@ -1,0 +1,63 @@
+---
+id: listar-webhooks-do-tenant
+title: "List tenant webhooks"
+description: "Returns all webhooks registered for the tenant"
+sidebar_label: "List tenant webhooks"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVF1v2zAM/CsGn9043bAXv2XAMBQbhmLtsIcgKGiZtdXakkbRXgPD/32gnTRJv4ANe4ojHY+nO0oDlBQN2yDWO8jhO0nHLibYNMlvKmrv72PCVNkoxFQmt54TqSkRcugEUmCKwbtIEfIB3i2X+nNKedUZQzFCCsY7IScKwRAaa1Ah2V1U3ADR1NSiflmhdiIM7AOx2JneMKFQeYMThWwDQQ5R2LoKxhSoJyc3DtsZ/RoJClWet29AYlecMjxrtVtAZtwe/j8DHpC+uCMj/7nUli+KUwde3OhC+ZZ/HTf/JGRUzIeXor9wQuywSSJxT5wQs+e/GQQsS6tb2FyeJPRaIHuJsyatmJgvSsihsVGQz/ZTfVb6s8cpFqwi5Gv4OW/CJoWWpPZaV5EiAkoNOWTOi73dCY7ZngxSmI+oLMPsJNQiIeZZNndZ9O8jurLwDwvj26w/h3GjVaZjK9srPfJ8tlWwX2i76rTfAFZ9rAlLUuPmaOEjIRMn1/6eHBzimAqnxKy79dOweydo1OgxfXotiXtrKNldYFs0NN3uFh1W1lWH66+rpoviW+K40H5WGm347diLZHV5ASmoB3OD5WK5ONdsgo/S4pTsTv9XG2X3hCRHFp4IHA5T8vev0s4RoQfJQoPWHc33nOQaTpKEFB6FbFKofRTFDEOBkX5wM466/KsjfTjWmxR6ZIuF2rDejOk+IQ3/nraQw8oYCiqlx6ab03ky6OPxkH3+dA3j+Aclk++J
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/notification/notifications-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List tenant webhooks"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/notifications/webhooks"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns all webhooks registered for the tenant
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Success","content":{"application/json":{"schema":{"items":{"properties":{"created_at":{"type":"string"},"event_names":{"items":{"properties":{"category":{"items":{"properties":{"subs":{"items":{"type":"string"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"},"url":{"type":"string"}},"type":"object"},"type":"array"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

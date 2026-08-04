@@ -12,14 +12,14 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "openapi/event/list-events-for-a-specific-device",
-          label: "List events for a specific device",
+          id: "openapi/event/listar-eventos-de-um-dispositivo",
+          label: "Listar eventos de um dispositivo",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "openapi/event/get-an-event-by-ulid",
-          label: "Get an event by ULID",
+          id: "openapi/event/obter-evento-por-ulid",
+          label: "Obter evento por ULID",
           className: "api-method get",
         },
       ],

@@ -43,10 +43,10 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Implantação e Setup",
+      label: "Implantação e Configuração",
       link: {
         type: "generated-index",
-        title: "Implantação e Setup",
+        title: "Implantação e Configuração",
         description:
           "Prepare o ambiente e execute a implantação com os guias operacionais da V3.",
         slug: "/docs/category/implantacao-e-setup",
@@ -86,7 +86,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "category",
-          label: "SDKs",
+          label: "Kits de desenvolvimento",
           items: [
             "docs/integracao-e-operacao/sdks/index",
             "docs/integracao-e-operacao/sdks/java",
@@ -108,7 +108,7 @@ const sidebars: SidebarsConfig = {
         type: "generated-index",
         title: "Order API",
         description:
-          "This is the orders API. It contains all the endpoints related to orders.",
+          "Referência das operações para enviar instruções a dispositivos e acompanhar o andamento de cada solicitação.",
         slug: "/category/order-api",
       },
       items: require("./docs/openapi/order/sidebar"),
@@ -120,7 +120,7 @@ const sidebars: SidebarsConfig = {
         type: "generated-index",
         title: "Management API",
         description:
-          "This is the management API. It contains all the endpoints related to management.",
+          "Referência das operações para organizar motoristas, times, frotas e dispositivos da operação.",
         slug: "/category/management-api",
       },
       items: require("./docs/openapi/management/sidebar"),
@@ -132,7 +132,7 @@ const sidebars: SidebarsConfig = {
         type: "generated-index",
         title: "Auth API",
         description:
-          "Go service that acts as a proxy for authentication and token verification with Keycloak, providing simplified endpoints for obtaining and validating JWT tokens.",
+          "Referência das operações para obter, validar e renovar tokens de acesso.",
         slug: "/category/auth-api",
       },
       items: require("./docs/openapi/auth/sidebar"),
@@ -144,7 +144,7 @@ const sidebars: SidebarsConfig = {
         type: "generated-index",
         title: "Event API",
         description:
-          "This is the event API. It contains all the endpoints related to event.",
+          "Referência das operações para consultar eventos gerados pelos dispositivos.",
         slug: "/category/event-api",
       },
       items: require("./docs/openapi/event/sidebar"),
@@ -156,10 +156,10 @@ const sidebars: SidebarsConfig = {
         type: "generated-index",
         title: "Notifications Webhook",
         description:
-          "This is the notifications Webhook. It contains how to implement a HTTP POST to listen Notifications",
-        slug: "category/notification-webhook",
+          "Referência para configurar notificações e recebê-las em tempo real na sua aplicação.",
+        slug: "/category/notification-webhook",
       },
-      items: [require("./docs/openapi/notification/sidebar"), require("./docs/webhook/subscription/sidebar")],
+      items: require("./docs/openapi/notification/sidebar"),
     },
     {
       type: "category",
@@ -168,7 +168,7 @@ const sidebars: SidebarsConfig = {
         type: "generated-index",
         title: "Vision API",
         description:
-          "This is the vision API. It contains all the endpoints related to vision.",
+          "Referência das operações relacionadas a análise de imagens e conjuntos de dados de visão.",
         slug: "/category/vision-api",
       },
       items: require("./docs/openapi/vision/sidebar"),
@@ -180,7 +180,7 @@ const sidebars: SidebarsConfig = {
         type: "generated-index",
         title: "Media API",
         description:
-          "This is the media API. It contains all the endpoints related to media.",
+          "Referência das operações para download de arquivos e transmissão de mídia.",
         slug: "/category/media-api",
       },
       items: [require("./docs/openapi/media/sidebar"), require("./docs/openapi/media-stream/sidebar")],

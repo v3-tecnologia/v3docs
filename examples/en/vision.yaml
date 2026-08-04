@@ -1,0 +1,211 @@
+basePath: /v1
+definitions:
+  response.Error:
+    properties:
+      code:
+        type: string
+      details:
+        items: {}
+        type: array
+      message:
+        type: string
+    type: object
+  response.Meta:
+    properties:
+      request_id:
+        type: string
+      timestamp:
+        type: string
+    type: object
+  response.VisionErrorResponse:
+    properties:
+      error:
+        $ref: '#/definitions/response.Error'
+      meta:
+        $ref: '#/definitions/response.Meta'
+    type: object
+  response.VisionResponse:
+    type: object
+host: tenant.v3sandbox.com
+info:
+  contact: {}
+  description: |-
+    The Vision API is the central hub for processing events received by the platform,
+    enabling computer vision inference.
+    Computer vision is a field of artificial intelligence that interprets
+    and extracts information from images and videos, simulating human vision.
+    This solution acts as a processing engine for events that reach the cloud,
+    continuously monitored for analysis and inference.
+  title: Vision API
+  version: 0.0.1
+paths:
+  /datasets:
+    post:
+      consumes:
+      - application/json
+      description: Creates a new dataset with the provided details.
+      parameters:
+      - description: Dataset details
+        in: body
+        name: payload
+        required: true
+        schema:
+          additionalProperties: true
+          type: object
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Dataset created successfully
+          schema:
+            $ref: '#/definitions/response.VisionResponse'
+        "400":
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/response.VisionErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.VisionErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/response.VisionErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      operationId: criar-novo-conjunto-de-dados
+      summary: Create new dataset
+      tags:
+      - Datasets
+  /datasets/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Deletes a dataset by its ID.
+      parameters:
+      - description: Dataset ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: Dataset deleted successfully
+        "400":
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/response.VisionErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.VisionErrorResponse'
+        "404":
+          description: Dataset not found
+          schema:
+            $ref: '#/definitions/response.VisionErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/response.VisionErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      operationId: excluir-conjunto-de-dados-por-id
+      summary: Delete dataset by ID
+      tags:
+      - Datasets
+    get:
+      consumes:
+      - application/json
+      description: Retrieves a dataset by its ID.
+      parameters:
+      - description: Dataset ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Dataset retrieved successfully
+          schema:
+            $ref: '#/definitions/response.VisionResponse'
+        "400":
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/response.VisionErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.VisionErrorResponse'
+        "404":
+          description: Dataset not found
+          schema:
+            $ref: '#/definitions/response.VisionErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/response.VisionErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      operationId: obter-conjunto-de-dados-por-id
+      summary: Get dataset by ID
+      tags:
+      - Datasets
+    put:
+      consumes:
+      - application/json
+      description: Updates an existing dataset by its ID.
+      parameters:
+      - description: Dataset ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Updated dataset details
+        in: body
+        name: payload
+        required: true
+        schema:
+          additionalProperties: true
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Dataset updated successfully
+          schema:
+            $ref: '#/definitions/response.VisionResponse'
+        "400":
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/response.VisionErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.VisionErrorResponse'
+        "404":
+          description: Dataset not found
+          schema:
+            $ref: '#/definitions/response.VisionErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/response.VisionErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      operationId: atualizar-conjunto-de-dados-por-id
+      summary: Update dataset by ID
+      tags:
+      - Datasets
+schemes:
+- https
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Bearer Token
+    type: apiKey
+swagger: "2.0"
+

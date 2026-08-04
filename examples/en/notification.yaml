@@ -1,0 +1,228 @@
+basePath: /v1
+definitions:
+  dto.WebhookRequest:
+    properties:
+      event_names:
+        items:
+          type: string
+        type: array
+      name:
+        type: string
+      url:
+        type: string
+    type: object
+  dto.WebhookResponse:
+    properties:
+      created_at:
+        type: string
+      event_names:
+        items:
+          $ref: '#/definitions/model.EventName'
+        type: array
+      id:
+        type: string
+      name:
+        type: string
+      updated_at:
+        type: string
+      url:
+        type: string
+    type: object
+  model.Category:
+    properties:
+      subs:
+        items:
+          type: string
+        type: array
+      type:
+        type: string
+    type: object
+  model.EventName:
+    properties:
+      category:
+        items:
+          $ref: '#/definitions/model.Category'
+        type: array
+      type:
+        type: string
+    type: object
+host: tenant.v3sandbox.com
+info:
+  contact: {}
+  description: Service responsible for managing webhooks for customers.
+  title: Notifications API
+  version: 0.0.1
+paths:
+  /notifications/webhooks:
+    get:
+      consumes:
+      - application/json
+      description: Returns all webhooks registered for the tenant
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+          schema:
+            items:
+              $ref: '#/definitions/dto.WebhookResponse'
+            type: array
+        "500":
+          description: Internal server error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      operationId: listar-webhooks-do-tenant
+      summary: List tenant webhooks
+      tags:
+      - Webhook
+    post:
+      consumes:
+      - application/json
+      description: Creates a webhook associated with the specified tenant
+      parameters:
+      - description: Webhook data
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.WebhookRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.WebhookResponse'
+        "400":
+          description: Invalid request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal server error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      operationId: criar-webhook-para-o-tenant
+      summary: Create webhook for tenant
+      tags:
+      - Webhook
+  /notifications/webhooks/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Removes a webhook from the tenant
+      parameters:
+      - description: Webhook ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: No content
+          schema:
+            type: string
+        "400":
+          description: Invalid request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal server error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      operationId: remover-webhook
+      summary: Remove webhook
+      tags:
+      - Webhook
+    get:
+      consumes:
+      - application/json
+      description: Returns data for a specific tenant webhook
+      parameters:
+      - description: Webhook ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/dto.WebhookResponse'
+        "400":
+          description: Invalid request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "404":
+          description: Not found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      operationId: obter-webhook-por-id
+      summary: Get webhook by ID
+      tags:
+      - Webhook
+    put:
+      consumes:
+      - application/json
+      description: Updates a tenant webhook
+      parameters:
+      - description: Webhook ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Webhook data
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.WebhookRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/dto.WebhookResponse'
+        "400":
+          description: Invalid request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal server error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      operationId: atualizar-webhook
+      summary: Update webhook
+      tags:
+      - Webhook
+schemes:
+- https
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Bearer Token
+    type: apiKey
+swagger: "2.0"
+

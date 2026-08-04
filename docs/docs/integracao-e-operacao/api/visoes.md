@@ -92,7 +92,7 @@ Caso queira entender como configurar e utilizar o sistema de notificações via 
 
 ## Fluxo de Exemplo (Ponta a Ponta)
 
-Setup: Um dispositivo com a política de reconhecimento facial de motorista ativada para que o motor de visão processe a identificação e retorne quem foi o motorista que estava dirigindo.
+Configuração: Um dispositivo com a política de reconhecimento facial de motorista ativada para que o motor de visão processe a identificação e retorne quem foi o motorista que estava dirigindo.
 
 1. No automóvel, um evento de `IGNITION_ON` (ignição ligado) foi disparado;
 2. Este evento "carrega" uma foto com o motorista dirigindo o veículo;

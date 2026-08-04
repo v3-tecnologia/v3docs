@@ -1,0 +1,71 @@
+---
+id: remover-motorista-do-time
+title: "Remove driver from team"
+description: "Removes a driver's association with a team."
+sidebar_label: "Remove driver from team"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVEtP3DAQ/ivWXNois1loT7khwQGplSoKJ7Sqhnh2YxHbwZ5N2Ub+79U44VlAglNkx/5mvsd4BEOpibZnGzzUcEYuDJQUKhPtQPFTUphSaCzKAfXHcqtQMaFbgIYeIzpiignqy/EZ1HEBUKfHoMHKRo/cggaPjqAGa0BDpJutjWSg5rglDalpySHUI/Cul1OJo/UbyFk/hz8ndK+CS4O/31lhJYdTH3yiJP8Pl0v5vEgqFpmMWsfgihqgoQmeybPc2av25PN6rZw1fDs8/B//wvcxNJQSXnWkyLPl3dvYeUILPcXi0amBGqb+4r4LHKJNjPsm7LN1BBoYN2LXTAVWGhxxG+SaoY6YirHcQg2VQ48bcuS5mvKQqtGaXAnlVI2zzBk0JIrDXQ62sYMaWuY+1VXF5NHzYvia0JurcLtogquGAxDBrV8HYSP8sBF+WT9T5BfFwTakZm+s6LIOUYW4QW//Wr9R6I1yaD2j9bKeW9XFmaTVuiPipMs5Q4KWVGf9NRnFQXFLqtkmDq7E/V5ICThb7sS4H/c6qKOfp6BB8Kf+lovl4gCyhj4kduiFzpzCaZjmdp5k5QnF8cHed87fHCumW676Dq2XPor642zhJTxYKHUnZUBDXaajCCSru4FZaWhDYrk4jleY6CJ2Ocv2zZbiDurLlYYBo5V8TkNvS1YN1GvsEr3B7fPZPItf1OO34UUS8yZ6Sf+A3VZWoOGadtPbUR6Ej5R+eDc+UPhOprzKGlpCQ7GIMP09ahrq+dE9mdX8eMCOT76fnJ9Azv8AHWDcbw==
+sidebar_class_name: "delete api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Remove driver from team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/management/drivers/{id}/teams/{team_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Removes a driver's association with a team.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver ID","in":"path","name":"id","required":true,"schema":{"type":"string"}},{"description":"Team ID","in":"path","name":"team_id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Driver removed from team","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Unprocessable entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

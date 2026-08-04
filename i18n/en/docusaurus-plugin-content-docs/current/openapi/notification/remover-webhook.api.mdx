@@ -1,0 +1,71 @@
+---
+id: remover-webhook
+title: "Remove webhook"
+description: "Removes a webhook from the tenant"
+sidebar_label: "Remove webhook"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1P3DAQ/SvWnFrJ3SwtveS2FRxWrSoEVD2gPcwmsxtDYofxJGUV5b9Xk4/CAkLtpac49ny8N+/ZHeQUM3a1uOAhhUuqQkvRoPlF2yKEO7PjUBkpyAh59AIWamSsSIgjpDfdswI/p7T1GVhwulOjFGDBY0WQgsvBAtN945hySIUbshCzgiqEtAM51BoVhZ3fQ99vNDjWwUeKev5xeaqf457fg8mCFxrQzau0A6zr0mWoUclt1NDujVZ9b+F0uXxZfu1bLF1uFDXFf+qBee70CMsLDjWxuJHGs9523gjbW8pkAvP5dTBC7LE0kbglNsQc+D9B6i1oxlB5nUMKPLiFP0xeAQuCe3XFbAPYWKhIiqDROZUkNBhICkgh8UHcbkIak6lITDqX92BhJDh6rOESUihE6pgmyejERfspos+34WGRhSppT0DdEilr2MnhSgmPzFa1+0qHVaNNu9GTBWFO/OjKL4RMbK7DHXn4Qx2HRFDezu+CZuuYMdMx9/aZMlfErcvITH5125LMLrCp0OPe+f18o+KwmzVRQkUcF9rPSUmDkZ8MxKwu1mBBZzA2WC6WixNVpg5RKhx0nfCP19Y86nAErXt0x19d8Im+0IMkdYnOa9NBgm7S7gaOtAMLMzmwkLpcdS9CFI3sui1G+sFl3+v2fUN8gPRmY6FFdrhV5vqMuKjrHNIdlpHeoPDucno+3puj1+ZV2LOU/qCzxLLRP7BwR4fxNeo3vZ39oDjGg1WWUS1PUl5cqv6ptc/Ov51fn0Pf/wb8gtZb
+sidebar_class_name: "delete api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/notification/notifications-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Remove webhook"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/notifications/webhooks/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Removes a webhook from the tenant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Webhook ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"No content","content":{"application/json":{"schema":{"type":"string"}}}},"400":{"description":"Invalid request","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

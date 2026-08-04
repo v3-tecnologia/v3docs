@@ -1,0 +1,71 @@
+---
+id: buscar-ordens-com-filtros-opcionais
+title: "Find orders with optional filtering"
+description: "Returns the list of orders with optional filters by device and correlation identifier. Supports pagination."
+sidebar_label: "Find orders with optional filtering"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV01vGzkM/SuCTi0wsZ3dPc0t3ba7wR4aNOmpMApZoj1qZiSVoty4xvz3BTXjeGKP3WYPPRR7si1+PIqkyOetNBA12kDWO1nK90AJXRRUgahtJOGXwqMBjOKrpUr4rKhqsbQ18eliIwysrQahnBHaI0KtWEdYA47s0gJOxG0KwSNFEdTKuiyfyEIGhaoB9iPLj9uDUF53bq9fy0JaPgiKKllIpxqQpexQP1kjC4nwJVkEI0vCBIWMuoJGyXIraRNYORJat5JtWxyi3KgVCJeaBaB4YWCpUk2luHy5A/2SADd71KBWIEcArCNYAZ5EiPYbDP3PCtGoB/4yOwf1ie2eifc2V4YLM16NE3AD5S6pp5M454zH4F2EyPLfZjP+eBrGu65rEAgtrMGImLSGGJeprhlWe0fgiA1VCLXVGXr6ObL1doBuCZoME9AHQLId6CDeazMSZSE1giIwVzQqNVDDOSl31wnHK/QpjErsuEH0CTX8eTaeSIpSHBV1ByOCFMxJj4920i8+g6a9I6kQ1Ua2Lev8MVa7a7dWtTWC3xVEek61Dotk4Nj9G0SPIsuKsdSTsvWx1d+pUe4CQRm1qEFAdjJUGfHVJT5HXdfvlnnKPI0weH5K+EMJnBejF+lACgGT1SQPzqWF2giqFAmtUgSTT3PATyt9cMG7uxvRCQ+S8/jaC0mW6pGUjian0z1Ky/HF+k64PPb7walElUf7Dcz/bfDrt0FbSE7L41iVixS1wgvmAC5eaN9c8OZHHy980EwFbGTXasUrvBv6cl7IBqjybL8CyoueKlnKaTdW43T7uL3baUcveOEArndUIGEtS1kRhVhOpwROOZqsf4/KmYV/mGjfTNeXuRQRdEJLm1vuva6YV8H+A5urxJjbbtlVoExeff22ewUKAcWdv4dBx6hsmFNj3dJ3retIae749rDst4CZofS70HLGlx4Fgga7tm4lEBpPIKyLhEmzWSxY5atCw3KqoBHk+07pk1NkJhXQr22nhErf8xf2DUpXu7HMDKrvg922vbq5loXkLHYhziazySX3S/CRGpUfaZ+Bt9aZc9SOe+Tgxtv9+//JRLGvD8EDTUOtrMvbD/N46HrrY7+yuZHKITfs22teyMpHYsXtdqEifMC6bfm440GZf9rIz8bIcqnqCGduf4Y1joZ6D5s9eVyrOrGKzNzteZjf4ZHfAd/Ryf8YwQ8wyzMBHBHMfRRz/oGWw3hmIV6876n/SzH8vzAaxu6Ru80QfBfevmfaeVvsBgZH08mvtIZAA8ujBdgO595fb+5k2/4LeyOkmQ==
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/order/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Find orders with optional filtering"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/devices/{device_id}/orders"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the list of orders with optional filters by device and correlation identifier. Supports pagination.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"device_id","required":true,"schema":{"type":"string"}},{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}},{"description":"Filter by correlation identifier","in":"query","name":"correlation_id","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Orders retrieved successfully","content":{"application/json":{"schema":{"items":{"properties":{"correlationId":{"type":"string"},"createdAt":{"type":"string"},"deletedAt":{"type":"string"},"deviceId":{"type":"string"},"group":{"type":"string"},"id":{"type":"string"},"sourceCreatedAt":{"type":"string"},"status":{"type":"string"},"type":{"type":"string"},"updatedAt":{"type":"string"}},"type":"object"},"type":"array"}}}},"400":{"description":"Invalid request","content":{"application/json":{"schema":{"properties":{"code":{"description":"Error code","type":"string"},"detail":{"description":"Human-readable error description","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Error source, e.g. the field that caused the error"},"status":{"description":"HTTP status code","type":"integer"},"title":{"description":"Human-readable error title","type":"string"}},"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"properties":{"code":{"description":"Error code","type":"string"},"detail":{"description":"Human-readable error description","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Error source, e.g. the field that caused the error"},"status":{"description":"HTTP status code","type":"integer"},"title":{"description":"Human-readable error title","type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

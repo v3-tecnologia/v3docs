@@ -1,0 +1,71 @@
+---
+id: associar-motorista-ao-time
+title: "Associar motorista ao time"
+description: "Associa um motorista a um time. Requer o ID do motorista e o ID do time como parâmetros da URL."
+sidebar_label: "Associar motorista ao time"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1P3DAQ/SvWnFpkNgvtKTckekAqKoJyQqtqiIddq7Ed7NmIbeT/0o9Df8j+sWqy2Q+2gEQPPSUejz1v3pvnDgylKtqGbfBQwklKobKo5k65wCHaxKj6JVtHI3VJ93OKKqizU2XCTg5tYpKoquCCajAufzriGJIyqK4vP45AQ4MRHTHFBOVNt1d/71rQYCXcIM9Ag0dHUII1oCHS/dxGMlBynJOGVM3IIZQd8KKRrMTR+inkrJ8uIjifvp8J3ZdXFplIcmqCT5Rk/3g8ls/jwudbSlc8m6Bwg6QKnsmzHDsoDuTzfLmcNbw/Pv67xAfP1qAh5Ze/gmpiqCil5Y+W6pcr5NWdoaGIctWZgRIGlPFwI8ghhsMBLuNUFITTaFuKMNHgiGdBzjUhca80z6CEwqHHKTnyXJg+ORWdNbkQnlPRDXRn0JAotuvBmMcaSpgxN6ksCiaPnkftu4Te3IaHURVc0R6BEG/9XZBmpD2spL2s92i5otja5e+gBpF6RlQTogpxit5+w6hIOfRMcTt+SffaJK3uYmBMipSxqQnJsm1DUq311bxGE5Jaflc9d8vfwrsJqqoteSaZeLZci3rnGx7UycUZaJBeV/jGo/HoCLLuqXPopZ1hGgdLxl1DbmbmUZfdVuD/YeRhJpkeuGhqtF7w96p1g/Q3sJVewK7EBw1l765ef1mtDTfRMJPRKW+g624x0XWsc5awgF1AeTPR0GK0eCuEyuthk/wbKO+wTvQCIW8uBy+/3W/5uVaGIPqFSIX1XFag4SstVo9Q/7L8O4C1j15fe81XnmQNM0JDsWdjtXtSVdTwzjnxet7158Wnq8+Q8x8aqRCn
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Associar motorista ao time"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/management/drivers/{id}/teams/{team_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Associa um motorista a um time. Requer o ID do motorista e o ID do time como parâmetros da URL.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID do motorista","in":"path","name":"id","required":true,"schema":{"type":"string"}},{"description":"ID do time","in":"path","name":"team_id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"200":{"description":"Motorista associado ao time","content":{"*/*":{"schema":{"type":"string"}}}},"422":{"description":"Entidade não processável","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

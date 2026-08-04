@@ -1,0 +1,63 @@
+---
+id: verificar-se-a-aplicacao-esta-pronta
+title: "Check if application is ready"
+description: "Checks whether the application is ready"
+sidebar_label: "Check if application is ready"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1U8Fu2zAM/RWBlwGFEqcrdvGtGIathwEDtp2CHBiZsbXYkibSXlND/z7QTbYWRQ877CSZJh8e33uaoSF22SfxMUAN7ztyRza/OpKOspGODKbUe4faYDybTNicwEImTjEwMdQzvN1s9HiOdftk8DLlYhAKos1X1ZUe7DoaUG8px0RZ/CMkC8q43OSUCGpgyT60UIq9VOL+BzmBUrT2bnPzksJXypN3ZMaAE/oe9z39RxLFgg4vG981UMNE2R+8w7xiWuEKFz0cxhWx4CrlGATBgmDLUG/hE2EvnVk8gJ2FgaSLitOSgIWE0kENVbe0PVQXTZnyRFkRZhhzDzV0IonrqhIKGGQ93TCGZh/v1y4O1XQNZWfBh0PUxVQMdCpGsa+od7ba73syh5hNzC0G/+BDazA0ZkAfBH3Q7yZ75WKNEA5szaEnErZLX0OKxqb34UiNkbjEy40scaD8hs0f8dYqipde9f2MAVsaKIi5/XIHVkXlR36b9WZ9DcVCiiwDBl0n4ECXHBt/eC29zxad/ybiHx7A2X+he6lSjz4ok0X/+WzVFs5WLc9Fp3YWusiiv+Z5j0zfc1+Kln+OlE9Qb3cWJsx+SWq93RWrGA3lxd0jnfRdOUdJAzFhPyoFDXF5mpePH75BKb8BnWpU/g==
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Check if application is ready"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/healthz/ready"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Checks whether the application is ready
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Application ready","content":{"*/*":{"schema":{"properties":{"status":{"type":"string"}},"type":"object"}}}},"503":{"description":"Service unavailable","content":{"*/*":{"schema":{"properties":{"status":{"type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

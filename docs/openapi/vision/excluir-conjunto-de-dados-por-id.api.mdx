@@ -1,0 +1,71 @@
+---
+id: excluir-conjunto-de-dados-por-id
+title: "Excluir conjunto de dados por ID"
+description: "Exclui um conjunto de dados pelo seu ID."
+sidebar_label: "Excluir conjunto de dados por ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVsFuG0cM/ZUBTy2wluw2vejm1joYLYoiTXOxjYDaoSU6OzNrDlewuth/adFD0AI59gv0YwF3Jcux5CL12Rd7NEPOPr4hH9mCp1wK18opwgSmd2XVsGuCK1O8aaIm58l59Cm7mqrkMjXu/GwEBdQoGEhJMkwu2kf3nJ85n/bvgALYjmvUBRQQMRBMgD0UIHTbsJCHiUpDBeRyQQFh0oKuarPKKhzn0HVXZpzrFDNlO//m+JX9+xzAD3vwyUJbf+xhBZebknJO0BXw6vh43/+1wcm8/rD+KzmOy/WfFXuEAsoUlaKaB9Z1xSWax/gmm1v7AHYtqSZRHkCSSJL97TJ5OhBjAZ4UueptWCnYoiu2ZiiCK7MKlDPOD92wM06zGyp1sNYDyIx4yvqO/UEgyoGyYqi/6CMHdrqe4pN9in82arHRJPw7+vTC7XO5/aL0j8Y2RaNYXth+NtvfHRKLqYiJhJLEZLqXSZbsk7yQ/BySuwIylY2wrvrOclrzj7Q6bXQBk4srk3/D0/N47mECvbCzHG27zZGnoz7nj+okR31zUZxbl4IzVMykGa768BbJ/D1VpNR3NPsEjP3Gatyy78DQyHLb5hqpYAIL1TpPxmOliFFHy28zRj9Ld6MyhfHyBAzkNoZf7YkH7h5G0g6dcEHoSXa98HtCIXFv0nuKsHvB3rHni+N1GlIhKpY6PPTn6Xjq3nLmFN3pL+du/bdLbtHMXElW+ZUpQi3Juh8G2kgELW2VnVBJM940e3R1hYrXSQIWl3GBM65YMXrL9WuS9T+xZDT3JWdTlzKFulEsOUWsRpfx7YFtw2PTBYY6OY991VQ839yFonzNJWPlbhtyNUlgpaG0aiFFuYzk6E4FWQyFYVt/WP9L2XBwwDnF7Mgt1x89pVy4zKGpesy4hbloAkYcXcZpVnQ5Vc3Q5VEbNLDJhaRJ9omyieeeKsNXLmiOwa3/cLFZUiguY0iRNUmvuPZCHJvemQZnjDZHZHL0kEKbppS1spfevRwUYFk3POnx6Hh0YvVVp6wBe+3YZMwwssmhgS2JOz+DR+nR7jTp/4x7m0xUutNxXSFHQ9NXQ7spnAvYFg4UMGFvRbZIWe2kbWeY6Tepus62bxsSK+6rApYojDOL3YZIzrb2MLnGKtN/IP/q9WZe/No9PWsexLwtqbgyhrFq7BcU8J5WwyzaXXXFti4N1HBwWpZU6wOXPTnvHorK2fSn6ZspFICbat9Vst1XbBf2gYOIHgnBAML+dsUTHm07yETX3dsPR0963IvPJnaLoeu6Tx1ZQt0=
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/vision/vision-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Excluir conjunto de dados por ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/datasets/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Exclui um conjunto de dados pelo seu ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID do conjunto de dados","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"204":{"description":"Conjunto de dados excluído com sucesso"},"400":{"description":"Requisição inválida","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"401":{"description":"Não autorizado","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"404":{"description":"Conjunto de dados não encontrado","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"properties":{"error":{"properties":{"code":{"type":"string"},"details":{"items":{},"type":"array"},"message":{"type":"string"}},"type":"object"},"meta":{"properties":{"request_id":{"type":"string"},"timestamp":{"type":"string"}},"type":"object"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

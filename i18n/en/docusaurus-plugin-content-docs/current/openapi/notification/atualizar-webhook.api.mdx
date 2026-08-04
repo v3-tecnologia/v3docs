@@ -1,0 +1,71 @@
+---
+id: atualizar-webhook
+title: "Update webhook"
+description: "Updates a tenant webhook"
+sidebar_label: "Update webhook"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VU1v2zAM/SsGTxugJe0+Lr612w7FgKHoB3YogoKx2EStLakSnTYz/N8HWnaTtG7RDsNyScSQ1OMj9diAplgE49k4Czmce41MMcOMyaLl7I7mS+duQIHHgBUxhQj5RfMo7ldyy46+gQIjFo+8BAUWK4IcjAYFgW5rE0hDzqEmBbFYUoWQN8BrL16Rg7ELaNtZcqbIh06vxaNwlsmy/ETvS1Og3Dy9jnJ9s5XKB+cpsKEoJ1qR5UsB0R0NUxVHLlSDAUPAtZwT7hHHOpRjiB8yuPk1FQytmMY50sj4hI1WDNE7GxPSj3t78rWb4bQuCooR1N/SUQRCJn2JPFrbc2w9SoJMCxfWL7jEev5GvtP5Fbz+01CjR8E93/zueTzL3+tno1XweazDR3aFpdFZP/1v6TRqbeQvLI93evEc9TtgvoyDYQoWyyxSWFHIKAQX/hOkVoFEdJmPtPSMayzNbwwfNpLEuBAxGl4WzBRUxEsn/r7mTrR4CTlMrWNz1QON0z5DnDZGt6Ag1Zd0reshLJl9zKfTpIKT1aeIVs/d/aRw1XS1D6JQkYo6GF6fSr2psANvftD6oJZLm6SDS0JNYaOEh4SBQnbmbsjCZiK7wG5WhMaTjfh9v8fKl/REzC4G+mYPqXtDP4db9Bp75QYRxUIa90ScTimsTEFZL0JmXlJ25UJWocWFsYthEcTOWtSRXUUhTqQEw4IPfm5znB0cH4ECoTVdsDfZm+wLGO8iV9hNSo87LZ2tVbMDbUv7X1pPPZFM9zz1JRq79SDTFFzAzhSAgqEmUJAbLUwuXWTxbJo5RjoPZduK+bYm0buLmYIVBoNzKViWoInyW0N+hWWkF5C/O+nl/n22sytHYQ9DYddCIZa1nEDBDa3TLm1nrRomS3CkP76m2z6cSfgm8MkbbdUQcVAU5PlF3+03dXx+Bgrm/UqunJaQgHeyzfAuYXQ+sZs3ydZAiXZR40J8U0r5/AH7Ru7L
+sidebar_class_name: "put api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/notification/notifications-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update webhook"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/notifications/webhooks/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Updates a tenant webhook
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Webhook ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"event_names":{"items":{"type":"string"},"type":"array"},"name":{"type":"string"},"url":{"type":"string"}},"type":"object"}}},"description":"Webhook data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Success","content":{"application/json":{"schema":{"properties":{"created_at":{"type":"string"},"event_names":{"items":{"properties":{"category":{"items":{"properties":{"subs":{"items":{"type":"string"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"},"url":{"type":"string"}},"type":"object"}}}},"400":{"description":"Invalid request","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

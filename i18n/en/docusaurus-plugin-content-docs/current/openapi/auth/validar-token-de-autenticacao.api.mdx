@@ -1,0 +1,74 @@
+---
+id: validar-token-de-autenticacao
+title: "Validate authentication token"
+description: "This endpoint allows validating an existing authentication token."
+sidebar_label: "Validate authentication token"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVE1v40YM/SsETy0wsZ1+XHRLgaJID90Cu9seEqOgJdqajTSjJSknqaD/XlDjoPHGl/bUQ0/ScDjzOI/vccKGtZY4WMwJK/zQRgVOzZBjMqCuy48KR+piQxbTASgBP0Ut/6O1nCzW5IfB8gOn1X36veUEVJYQFZSTBbCWQZ/VuIe65fpB4bFla1kg2pJlsesKElBqwGRU42Z1n94l0LGuWTV4rrCNkhQIfn7/7hcQ1iEnZXiM1i4oBbhho9gpfFV3FHv9enWfbvev9qNCTAtcAH4aonATIAv01O2z9L4iUJOxtlG4ARbJ4qcKPjcrDDiQUM/GoljdTV9Q+QOTsBQ4DBg91jI1LBgwUc9Y4c1obZb458IgBhT+PHopWJmMHFDrlnvCakJ7HvyAmsR0wHneenJ5uvr+N5uNf85LeF94w4B1TsbJPIWGoTv1bP1JPW96hTNIHlgsllsLeVhNc8CeVenAF4oJuBD5ameXc8eUcJ7DSyjvPnFtOM8e+25z/bbaj4lOdHDz70teGnWxyGXnjzPMt7xervf7S+zeJmNJ1IGyHFmKRP5Thc8BHWHBv22wKn0iuVpEedXwFY1WLFxTxoBGB5fyokvces+tzX7wwLbo3VqscO19Wr8Iu7y+OGCUzlVuNmi1XhsnSrY6fquUml1+WtW5Xx+v0cUb0z4vCsvJqLYisXN+b87ni+PEmsFaMhgkH2PDChr7oYv76BY9jS2FfRbIO6OYysxqzkbY4oniS3UXW7TuxYxw8+stBvQHlSI2q83q2pswZLWeFupP5v2t3MkXByF+8Zrpb1n8P2T/0ZA9ydr4ydZDRzF5NxahTSdB3qGz5KkL89uAbVbz+DTtSPmjdPPs4c8jyzNWd1ufWBJp532/287hZTC7hh/42cVQ1zy45o/UjY7/xsrza3/89OMHnOe/AK79lsc=
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/auth/auth-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Validate authentication token"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/auth/token"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint allows validating an existing authentication token.
+When a token is sent, the system checks whether it is still valid and trusted.
+On success, it returns a JSON response with the token details (claims).
+If the token is invalid, expired, or malformed, a structured error is returned.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Bearer token","in":"header","name":"Authorization","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Success","content":{"application/json":{"schema":{"properties":{"claims":{},"message":{"type":"string"},"valid":{"type":"boolean"}},"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
