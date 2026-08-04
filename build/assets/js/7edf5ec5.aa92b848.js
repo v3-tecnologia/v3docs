@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkv3_docs=self.webpackChunkv3_docs||[]).push([[1599],{69797:a=>{a.exports=JSON.parse('{"tag":{"label":"frota","permalink":"/blog/tags/frota","allTagsPath":"/blog/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/blog/tags/frota","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

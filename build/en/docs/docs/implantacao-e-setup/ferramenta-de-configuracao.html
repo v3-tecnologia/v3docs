@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-docs/implantacao-e-setup/ferramenta-de-configuracao" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Configuration Tool | Portal do Desenvolvedor V3</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.v3control.com/en/docs/docs/implantacao-e-setup/ferramenta-de-configuracao"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Configuration Tool | Portal do Desenvolvedor V3"><meta data-rh="true" name="description" content="V3 developed V3QATools, a customizable tool created to facilitate and optimize the device installation process."><meta data-rh="true" property="og:description" content="V3 developed V3QATools, a customizable tool created to facilitate and optimize the device installation process."><link data-rh="true" rel="icon" href="/en/img/shared/favicon.png"><link data-rh="true" rel="canonical" href="https://developer.v3control.com/en/docs/docs/implantacao-e-setup/ferramenta-de-configuracao"><link data-rh="true" rel="alternate" href="https://developer.v3control.com/docs/docs/implantacao-e-setup/ferramenta-de-configuracao" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://developer.v3control.com/en/docs/docs/implantacao-e-setup/ferramenta-de-configuracao" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.v3control.com/docs/docs/implantacao-e-setup/ferramenta-de-configuracao" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/en/blog/rss.xml" title="Portal do Desenvolvedor V3 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/en/blog/atom.xml" title="Portal do Desenvolvedor V3 Atom Feed"><link rel="stylesheet" href="/en/assets/css/styles.e42332fc.css">
+<script src="/en/assets/js/runtime~main.ef26f246.js" defer="defer"></script>
+<script src="/en/assets/js/main.73eefdaf.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/en/img/shared/logo/logo-v3.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/en/"><div class="navbar__logo"><img src="/en/img/shared/logo/logo-v3.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/en/img/shared/logo/logo-v3.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Home</b></a><a class="navbar__item navbar__link" href="/en/blog">Blog</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/en/docs/docs">Documentation</a><a class="navbar__item navbar__link" href="/en/docs/category/order-api">API</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/v3-tecnologia" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>English</a><ul class="dropdown__menu"><li><a href="/docs/docs/implantacao-e-setup/ferramenta-de-configuracao" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português</a></li><li><a href="/en/docs/docs/implantacao-e-setup/ferramenta-de-configuracao" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="en">English</a></li></ul></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/docs/docs">Welcome to V3</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/en/docs/docs/category/conheca-a-v3">About V3</a><button aria-label="Expand sidebar category &#x27;About V3&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/en/docs/docs/category/visao-geral-da-plataforma">Platform Overview</a><button aria-label="Expand sidebar category &#x27;Platform Overview&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/en/docs/docs/category/implantacao-e-setup">Deployment and Setup</a><button aria-label="Collapse sidebar category &#x27;Deployment and Setup&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/docs/implantacao-e-setup/configuracao-inicial">Initial Configuration</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/docs/implantacao-e-setup/manual-de-instalacao/06.01-JC400P">JC400P</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/en/docs/docs/implantacao-e-setup/ferramenta-de-configuracao">Configuration Tool</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/en/docs/docs/category/integracao-e-operacao">Integration and Operations</a><button aria-label="Expand sidebar category &#x27;Integration and Operations&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_xLCN"><div class="docItemContainer_jfFK"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/en/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/en/docs/docs/category/implantacao-e-setup"><span itemprop="name">Deployment and Setup</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Configuration Tool</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><div class="row"><div class="col col--12 markdown"><header><h1>Configuration Tool</h1></header>
+<p><strong>V3</strong> developed <code>V3QATools</code>, a customizable tool created to facilitate and optimize the device installation process.</p>
+<p>It is essential for ensuring accurate configurations and increasing efficiency in equipment deployment, promoting quality and standardization across all installations performed with <strong>V3</strong> solutions.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-important-notice-firmware-replacement-and-device-formatting">⚠️ Important Notice: Firmware Replacement and Device Formatting<a href="#️-important-notice-firmware-replacement-and-device-formatting" class="hash-link" aria-label="Direct link to ⚠️ Important Notice: Firmware Replacement and Device Formatting" title="Direct link to ⚠️ Important Notice: Firmware Replacement and Device Formatting">​</a></h2>
+<blockquote>
+<p><strong>Attention!</strong></p>
+<p>By following this procedure, you will be replacing the device&#x27;s <strong>original firmware</strong> with the <strong>V3QATools</strong> firmware.</p>
+<p>During this process, the device will be <strong>formatted</strong>, and its contents will be <strong>completely erased</strong>, including:</p>
+<ul>
+<li>The original factory firmware</li>
+<li>All stored data</li>
+</ul>
+<p>⚠️ <strong>This process permanently removes all data and settings from the device.</strong></p>
+<p>➕ Although it is possible to <strong>revert to the manufacturer&#x27;s firmware in the future</strong>, <strong>data cannot be recovered</strong>.</p>
+<p>By continuing, you declare that you are <strong>aware</strong> and <strong>agree</strong> to:</p>
+<ul>
+<li>The complete replacement of the current firmware.</li>
+<li>The total and irreversible loss of stored data and media.</li>
+<li>The complete reset of settings to V3 defaults.</li>
+</ul>
+</blockquote>
+<hr>
+<p>✅ <strong>Recommendations before starting:</strong></p>
+<ul>
+<li>Back up any important information beforehand.</li>
+<li>Ensure the device is connected to power.</li>
+<li>Read all documentation before executing any step.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="pre-installation-requirements">Pre-installation Requirements<a href="#pre-installation-requirements" class="hash-link" aria-label="Direct link to Pre-installation Requirements" title="Direct link to Pre-installation Requirements">​</a></h2>
+<p>Before starting the installation process, make sure you have the following items:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="required-materials">Required Materials<a href="#required-materials" class="hash-link" aria-label="Direct link to Required Materials" title="Direct link to Required Materials">​</a></h3>
+<ul>
+<li>USB to Micro USB cable (recommended to have a backup)</li>
+<li>Laptop or PC (Desktop)</li>
+<li>Reset clip (can be a paper clip)</li>
+<li>12V power supply with original harness</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="prior-configuration">Prior Configuration<a href="#prior-configuration" class="hash-link" aria-label="Direct link to Prior Configuration" title="Direct link to Prior Configuration">​</a></h3>
+<ul>
+<li>Customer identification</li>
+<li>Customer user<!-- -->
+<blockquote>
+<p><strong>Note:</strong> The access credentials used in this registration were provided by you and validated internally by our team, ensuring the registration was completed according to the information you sent us.</p>
+</blockquote>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="pre-installation-validations">Pre-installation Validations<a href="#pre-installation-validations" class="hash-link" aria-label="Direct link to Pre-installation Validations" title="Direct link to Pre-installation Validations">​</a></h2>
+<p>Before proceeding with installation, the following validations must be performed:</p>
+<ol>
+<li>
+<p>Confirm the device is powered on</p>
+<blockquote>
+<p><strong>Important:</strong> The device must have the red LED lit.</p>
+</blockquote>
+</li>
+<li>
+<p>Confirm the device has an SD card</p>
+</li>
+<li>
+<p>Confirm APN configuration</p>
+<blockquote>
+<p><strong>Important:</strong> Correct APN configuration ensures the device can access the mobile data network. Verify that the parameters match your carrier.</p>
+</blockquote>
+</li>
+<li>
+<p>Verify WiFi network configuration.</p>
+</li>
+<li>
+<p>Confirm the V3 Firmware version that will be installed.</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="installation-process">Installation Process<a href="#installation-process" class="hash-link" aria-label="Direct link to Installation Process" title="Direct link to Installation Process">​</a></h2>
+<p>During the installation process, the customer must:</p>
+<ol>
+<li>
+<p><strong>Connect the device to the computer via USB</strong></p>
+<ul>
+<li>Use a functional USB port and an appropriate cable.</li>
+</ul>
+</li>
+<li>
+<p><strong>Wait for automatic device detection</strong></p>
+</li>
+</ol>
+<ul>
+<li>The system should automatically recognize the device when connected via USB cable.</li>
+<li>When the device is detected correctly:<!-- -->
+<ul>
+<li>
+<p>It may appear in the <strong>&quot;My Computer&quot;</strong> (or <strong>&quot;This PC&quot;</strong>) tab in two ways:</p>
+<ul>
+<li>As a <strong>storage drive</strong> (with a drive letter, such as <code>E:</code> or <code>F:</code>).</li>
+<li>Or as a <strong>media device</strong>, without a drive letter, but with file access.</li>
+</ul>
+</li>
+<li>
+<p>Verify the cable is properly connected.</p>
+</li>
+<li>
+<p>Try using another USB port.</p>
+</li>
+<li>
+<p>Try using another <strong>micro USB</strong> cable.</p>
+</li>
+<li>
+<p>Make sure the device is powered on.</p>
+</li>
+<li>
+<p>Restart the device or computer if necessary.</p>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>
+<p><strong>Follow the V3QATools instructions</strong></p>
+<ul>
+<li>Run V3QATools, previously installed in its latest version.</li>
+<li>Carefully follow the on-screen instructions.</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p><strong>Important:</strong> Perform all validations before putting the device into operation. Incorrect configuration may compromise device functionality.</p>
+</blockquote>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Support</div><div class="admonitionContent_BuS1"><p>If you have questions or problems during the installation process, contact our support team.</p><p><strong>Note:</strong> Support is provided exclusively through the ticket portal.</p><p>🔗 <strong>Access:</strong> <a href="https://v3-team.atlassian.net/servicedesk/customer/portal/1" target="_blank" rel="noopener noreferrer">https://v3-team.atlassian.net/servicedesk/customer/portal/1</a></p></div></div></div></div></div><div class="row"><div class="col col--12"></div></div></article><div class="row"><div class="col col--12"><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/en/docs/docs/implantacao-e-setup/manual-de-instalacao/06.01-JC400P"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">JC400P</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/en/docs/docs/category/integracao-e-operacao"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Integração e Operação</div></a></nav></div></div></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#️-important-notice-firmware-replacement-and-device-formatting" class="table-of-contents__link toc-highlight">⚠️ Important Notice: Firmware Replacement and Device Formatting</a></li><li><a href="#pre-installation-requirements" class="table-of-contents__link toc-highlight">Pre-installation Requirements</a><ul><li><a href="#required-materials" class="table-of-contents__link toc-highlight">Required Materials</a></li><li><a href="#prior-configuration" class="table-of-contents__link toc-highlight">Prior Configuration</a></li></ul></li><li><a href="#pre-installation-validations" class="table-of-contents__link toc-highlight">Pre-installation Validations</a></li><li><a href="#installation-process" class="table-of-contents__link toc-highlight">Installation Process</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">DEVELOPER</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/en/">Home</a></li><li class="footer__item"><a class="footer__link-item" href="/en/blog">Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/docs">Documentation</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/category/order-api">API</a></li></ul></div><div class="col footer__col"><div class="footer__title">CAREERS</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/v3-tecnologia/join-our-team" target="_blank" rel="noopener noreferrer" class="footer__link-item">Open Positions</a></li><li class="footer__item"><a href="https://github.com/v3-tecnologia/job-descriptions" target="_blank" rel="noopener noreferrer" class="footer__link-item">Job Descriptions</a></li><li class="footer__item"><a href="https://github.com/v3-tecnologia/challenge" target="_blank" rel="noopener noreferrer" class="footer__link-item">V3 Technical Challenge</a></li></ul></div><div class="col footer__col"><div class="footer__title">LINKS</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.v3.com.br" target="_blank" rel="noopener noreferrer" class="footer__link-item">Site<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/v3-tecnologia" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/company/v3-tecnologia" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discord.gg/e69avYVnzG" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2026 V3 Tecnologia.</div></div></div></footer></div>
+</body>
+</html>

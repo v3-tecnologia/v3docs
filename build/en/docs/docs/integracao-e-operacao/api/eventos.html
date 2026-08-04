@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-docs/integracao-e-operacao/api/eventos" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Events | Portal do Desenvolvedor V3</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.v3control.com/en/docs/docs/integracao-e-operacao/api/eventos"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Events | Portal do Desenvolvedor V3"><meta data-rh="true" name="description" content="The events context is the heart of V3&#x27;s video telematics system. It is responsible for managing all events that occur with field devices, such as GPS position, accelerometer data, driver identification, and inappropriate behaviors."><meta data-rh="true" property="og:description" content="The events context is the heart of V3&#x27;s video telematics system. It is responsible for managing all events that occur with field devices, such as GPS position, accelerometer data, driver identification, and inappropriate behaviors."><link data-rh="true" rel="icon" href="/en/img/shared/favicon.png"><link data-rh="true" rel="canonical" href="https://developer.v3control.com/en/docs/docs/integracao-e-operacao/api/eventos"><link data-rh="true" rel="alternate" href="https://developer.v3control.com/docs/docs/integracao-e-operacao/api/eventos" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://developer.v3control.com/en/docs/docs/integracao-e-operacao/api/eventos" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.v3control.com/docs/docs/integracao-e-operacao/api/eventos" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/en/blog/rss.xml" title="Portal do Desenvolvedor V3 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/en/blog/atom.xml" title="Portal do Desenvolvedor V3 Atom Feed"><link rel="stylesheet" href="/en/assets/css/styles.e42332fc.css">
+<script src="/en/assets/js/runtime~main.ef26f246.js" defer="defer"></script>
+<script src="/en/assets/js/main.73eefdaf.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/en/img/shared/logo/logo-v3.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/en/"><div class="navbar__logo"><img src="/en/img/shared/logo/logo-v3.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/en/img/shared/logo/logo-v3.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Home</b></a><a class="navbar__item navbar__link" href="/en/blog">Blog</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/en/docs/docs">Documentation</a><a class="navbar__item navbar__link" href="/en/docs/category/order-api">API</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/v3-tecnologia" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>English</a><ul class="dropdown__menu"><li><a href="/docs/docs/integracao-e-operacao/api/eventos" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português</a></li><li><a href="/en/docs/docs/integracao-e-operacao/api/eventos" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="en">English</a></li></ul></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/docs/docs">Welcome to V3</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/en/docs/docs/category/conheca-a-v3">About V3</a><button aria-label="Expand sidebar category &#x27;About V3&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/en/docs/docs/category/visao-geral-da-plataforma">Platform Overview</a><button aria-label="Expand sidebar category &#x27;Platform Overview&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/en/docs/docs/category/implantacao-e-setup">Deployment and Setup</a><button aria-label="Expand sidebar category &#x27;Deployment and Setup&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/en/docs/docs/category/integracao-e-operacao">Integration and Operations</a><button aria-label="Collapse sidebar category &#x27;Integration and Operations&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/en/docs/docs/integracao-e-operacao/api/autenticacao">API</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/docs/integracao-e-operacao/api/autenticacao">Authentication</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/docs/integracao-e-operacao/api/permissionamento">Authorization</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/docs/integracao-e-operacao/api/gerenciamento">Management</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/docs/integracao-e-operacao/api/ordens">Orders</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/en/docs/docs/integracao-e-operacao/api/eventos">Events</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/docs/integracao-e-operacao/api/visoes">Vision</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/docs/integracao-e-operacao/api/notificacoes">Notifications</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/docs/integracao-e-operacao/sdks">Development kits</a></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_xLCN"><div class="docItemContainer_jfFK"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/en/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/en/docs/docs/category/integracao-e-operacao"><span itemprop="name">Integration and Operations</span></a><meta itemprop="position" content="1"></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">API</span><meta itemprop="position" content="2"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Events</span><meta itemprop="position" content="3"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><div class="row"><div class="col col--12 markdown"><header><h1>Events</h1></header>
+<p>The events context is the heart of V3&#x27;s video telematics system. It is responsible for managing all events that occur with field devices, such as GPS position, accelerometer data, driver identification, and inappropriate behaviors.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Looking for the API?</div><div class="admonitionContent_BuS1"><p>If you want to access the Events API documentation directly, <a href="/en/docs/category/event-api">click here</a>.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-are-events">What are Events?<a href="#what-are-events" class="hash-link" aria-label="Direct link to What are Events?" title="Direct link to What are Events?">​</a></h2>
+<p>Events are records of everything that happens with a field device. They can be classified into three main categories:</p>
+<ol>
+<li><strong>Hardware</strong>: Events related to the vehicle (e.g., Ignition On or Ignition Off)</li>
+<li><strong>Vision</strong>: Events captured by cameras</li>
+<li><strong>Telemetry</strong>: Events obtained via device sensors (e.g., Gyroscope or GPS)</li>
+</ol>
+<p>Events are the core of how your integration can obtain data from devices managed by V3.</p>
+<p>Through events, you can build another layer of functionality in the way that makes the most sense for your business.</p>
+<p>To do this, it is important to understand the structure of an event.</p>
+<p>Below, each piece of data that can be analyzed directly in <a href="/en/docs/openapi/event/obter-evento-por-ulid">this</a> payload is explained.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="event-structure">Event Structure<a href="#event-structure" class="hash-link" aria-label="Direct link to Event Structure" title="Direct link to Event Structure">​</a></h2>
+<p>Each event contains the following main information:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="basic-information">Basic Information<a href="#basic-information" class="hash-link" aria-label="Direct link to Basic Information" title="Direct link to Basic Information">​</a></h3>
+<ul>
+<li><strong>ULID</strong>: Unique event identifier</li>
+<li><strong>Device ID</strong>: ID of the device that generated the event</li>
+<li><strong>Event Type</strong>: Event type (Hardware, Vision, or Telemetry)</li>
+<li><strong>Hardware Event Type</strong>: Event subtype (when applicable)</li>
+<li><strong>Hardware Model</strong>: Device model</li>
+<li><strong>Correlation ID</strong>: ID to correlate related events</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="timestamps">Timestamps<a href="#timestamps" class="hash-link" aria-label="Direct link to Timestamps" title="Direct link to Timestamps">​</a></h3>
+<ul>
+<li><strong>Sourced Created At</strong>: Event creation date/time</li>
+<li><strong>Hook Delivered At</strong>: Date/time when the webhook was delivered</li>
+<li><strong>Tenant Delivered At</strong>: Date/time when the event was consumed by the client</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="payload">Payload<a href="#payload" class="hash-link" aria-label="Direct link to Payload" title="Direct link to Payload">​</a></h3>
+<p>The payload contains all event-specific information and is structured as follows:</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="message-info">Message Info<a href="#message-info" class="hash-link" aria-label="Direct link to Message Info" title="Direct link to Message Info">​</a></h4>
+<ul>
+<li><strong>Message Type</strong>: Message type</li>
+<li><strong>Sequence Number</strong>: Message sequence number</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="timestamps-1">Timestamps<a href="#timestamps-1" class="hash-link" aria-label="Direct link to Timestamps" title="Direct link to Timestamps">​</a></h4>
+<ul>
+<li><strong>Event Date</strong>: Event date (YYYY-MM-DD format)</li>
+<li><strong>Event Time</strong>: Event time (HH:mm<!-- -->:ss<!-- --> format)</li>
+<li><strong>Timestamp</strong>: Unix timestamp of the event</li>
+<li><strong>Last Timestamp of Fix</strong>: Last GPS fix timestamp</li>
+<li><strong>Received Timestamp</strong>: Reception timestamp</li>
+<li><strong>Process Timestamp</strong>: Processing timestamp</li>
+<li><strong>TTL Timestamp</strong>: Expiration timestamp</li>
+<li><strong>Time Since Boot</strong>: Time since the device&#x27;s last boot</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="gps-data">GPS Data<a href="#gps-data" class="hash-link" aria-label="Direct link to GPS Data" title="Direct link to GPS Data">​</a></h4>
+<ul>
+<li><strong>Latitude</strong>: Position latitude</li>
+<li><strong>Longitude</strong>: Position longitude</li>
+<li><strong>Altitude</strong>: Altitude in meters</li>
+<li><strong>GPS Heading</strong>: Direction in degrees</li>
+<li><strong>Speed</strong>: Speed in km/h</li>
+<li><strong>Satellites</strong>: Number of connected satellites</li>
+<li><strong>Is Fixed</strong>: Indicates whether GPS is fixed</li>
+<li><strong>HDOP</strong>: Horizontal Dilution of Precision</li>
+<li><strong>VDOP</strong>: Vertical Dilution of Precision</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="vehicle-data">Vehicle Data<a href="#vehicle-data" class="hash-link" aria-label="Direct link to Vehicle Data" title="Direct link to Vehicle Data">​</a></h4>
+<ul>
+<li><strong>Is Ignition On</strong>: Ignition state</li>
+<li><strong>Odometer</strong>: Current mileage</li>
+<li><strong>Vehicle Battery Voltage</strong>: Vehicle battery voltage</li>
+<li><strong>Backup Battery Voltage</strong>: Backup battery voltage</li>
+<li><strong>Is Vehicle Battery Connected</strong>: Indicates whether the vehicle battery is connected</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="connection-data">Connection Data<a href="#connection-data" class="hash-link" aria-label="Direct link to Connection Data" title="Direct link to Connection Data">​</a></h4>
+<ul>
+<li><strong>Connection Type</strong>: Connection type</li>
+<li><strong>Signal Strength</strong>: Signal strength in dBm</li>
+<li><strong>MCC</strong>: Mobile Country Code</li>
+<li><strong>MNC</strong>: Mobile Network Code</li>
+<li><strong>Cell ID</strong>: Cell ID</li>
+<li><strong>Location Area Code</strong>: Area code</li>
+<li><strong>Timing Advance</strong>: Timing advance</li>
+<li><strong>ICCID</strong>: SIM card number</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="media-data-when-applicable">Media Data (when applicable)<a href="#media-data-when-applicable" class="hash-link" aria-label="Direct link to Media Data (when applicable)" title="Direct link to Media Data (when applicable)">​</a></h4>
+<ul>
+<li><strong>ULID</strong>: Unique media identifier</li>
+<li><strong>Object Name</strong>: Object name in the bucket</li>
+<li><strong>Bucket Name</strong>: Storage bucket name</li>
+<li><strong>Content Type</strong>: Content type (e.g., image/jpeg)</li>
+<li><strong>File Size</strong>: File size in bytes</li>
+<li><strong>Media Type</strong>: Media type (RECORD, EVENT, INDEXED, THUMBNAIL)</li>
+<li><strong>Cam Channel</strong>: Camera channel (1 or 2)</li>
+<li><strong>Metadata</strong>: Additional media metadata<!-- -->
+<ul>
+<li>Width: Image width</li>
+<li>Height: Image height</li>
+<li>Compression: Compression type</li>
+<li>Quality: Compression quality</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="metadata">Metadata<a href="#metadata" class="hash-link" aria-label="Direct link to Metadata" title="Direct link to Metadata">​</a></h4>
+<ul>
+<li><strong>Firmware Version</strong>: Firmware version</li>
+<li><strong>PID</strong>: Process identifiers<!-- -->
+<ul>
+<li>Main: Main PID</li>
+<li>Sub: Secondary PID</li>
+</ul>
+</li>
+<li><strong>Version</strong>: Software version<!-- -->
+<ul>
+<li>Major: Major version</li>
+<li>Minor: Minor version</li>
+<li>Patch: Patch version</li>
+</ul>
+</li>
+<li><strong>Details</strong>: Additional event details</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-are-events-created">How are Events Created?<a href="#how-are-events-created" class="hash-link" aria-label="Direct link to How are Events Created?" title="Direct link to How are Events Created?">​</a></h2>
+<p>Events can be created in two ways:</p>
+<ol>
+<li>
+<p><strong>Automatically by the Firmware System</strong>:</p>
+<ul>
+<li>Via MQTT (for Hardware and Telemetry events)</li>
+<li>Via S3 (for Vision events)</li>
+</ul>
+</li>
+<li>
+<p><strong>Manually via API</strong>:</p>
+<ul>
+<li>Endpoint: <code>POST /devices/{deviceId}/events</code></li>
+<li>Requires <code>admin</code> or <code>tenant_admin</code> permission</li>
+</ul>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Why create manually?</div><div class="admonitionContent_BuS1"><p>Manual creation can be important if you want to integrate with other devices. This way, for example, you can create an event directly via HTTP.</p><p>It can also be useful during migration maneuvers or incident resolution.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-consume-events">How to Consume Events?<a href="#how-to-consume-events" class="hash-link" aria-label="Direct link to How to Consume Events?" title="Direct link to How to Consume Events?">​</a></h2>
+<p>There are two ways to consume events:</p>
+<ol>
+<li><strong>Via Webhook</strong>:<!-- -->
+<ul>
+<li>The system automatically notifies when a new event is created</li>
+<li>The client must implement an endpoint to receive these notifications</li>
+<li>The event is marked as consumed when the webhook returns success (2xx)</li>
+</ul>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>See how to configure and use the Webhook</div><div class="admonitionContent_BuS1"><p>If you want to understand how to configure and use the WebHook notification system, go <a href="/en/docs/docs/integracao-e-operacao/api/notificacoes">here</a>.</p></div></div>
+<ol start="2">
+<li><strong>Via API</strong>:<!-- -->
+<ul>
+<li>This is a polling-based consumption method</li>
+<li>You can use <a href="/en/docs/openapi/event/obter-evento-por-ulid">this</a> endpoint.</li>
+<li>Supports pagination</li>
+<li>Allows filtering events by period</li>
+<li>After consuming, the client must mark the event as processed using:<!-- -->
+<ul>
+<li><code>PATCH /devices/{deviceId}/events/{ulid}</code> (single event)</li>
+<li><code>PATCH /devices/{deviceId}/events</code> (multiple events)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="retrieving-event-media">Retrieving Event Media<a href="#retrieving-event-media" class="hash-link" aria-label="Direct link to Retrieving Event Media" title="Direct link to Retrieving Event Media">​</a></h2>
+<p>For events that have associated media (such as photos or videos):</p>
+<ol>
+<li>The event contains media information in the <code>media</code> field of the payload</li>
+<li>To obtain the media access URL, you need to access an endpoint directly in the vision context. See more details <a href="/en/docs/openapi/media/baixar-arquivo-com-chave-segura">here</a>.</li>
+</ol></div></div></div><div class="row"><div class="col col--12"></div></div></article><div class="row"><div class="col col--12"><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/en/docs/docs/integracao-e-operacao/api/ordens"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Orders</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/en/docs/docs/integracao-e-operacao/api/visoes"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Vision</div></a></nav></div></div></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#what-are-events" class="table-of-contents__link toc-highlight">What are Events?</a></li><li><a href="#event-structure" class="table-of-contents__link toc-highlight">Event Structure</a><ul><li><a href="#basic-information" class="table-of-contents__link toc-highlight">Basic Information</a></li><li><a href="#timestamps" class="table-of-contents__link toc-highlight">Timestamps</a></li><li><a href="#payload" class="table-of-contents__link toc-highlight">Payload</a></li></ul></li><li><a href="#how-are-events-created" class="table-of-contents__link toc-highlight">How are Events Created?</a></li><li><a href="#how-to-consume-events" class="table-of-contents__link toc-highlight">How to Consume Events?</a></li><li><a href="#retrieving-event-media" class="table-of-contents__link toc-highlight">Retrieving Event Media</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">DEVELOPER</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/en/">Home</a></li><li class="footer__item"><a class="footer__link-item" href="/en/blog">Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/docs">Documentation</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/category/order-api">API</a></li></ul></div><div class="col footer__col"><div class="footer__title">CAREERS</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/v3-tecnologia/join-our-team" target="_blank" rel="noopener noreferrer" class="footer__link-item">Open Positions</a></li><li class="footer__item"><a href="https://github.com/v3-tecnologia/job-descriptions" target="_blank" rel="noopener noreferrer" class="footer__link-item">Job Descriptions</a></li><li class="footer__item"><a href="https://github.com/v3-tecnologia/challenge" target="_blank" rel="noopener noreferrer" class="footer__link-item">V3 Technical Challenge</a></li></ul></div><div class="col footer__col"><div class="footer__title">LINKS</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.v3.com.br" target="_blank" rel="noopener noreferrer" class="footer__link-item">Site<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/v3-tecnologia" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/company/v3-tecnologia" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discord.gg/e69avYVnzG" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2026 V3 Tecnologia.</div></div></div></footer></div>
+</body>
+</html>

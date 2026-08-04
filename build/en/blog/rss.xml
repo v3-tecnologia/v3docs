@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Portal do Desenvolvedor V3 Blog</title>
+        <link>https://developer.v3control.com/en/blog</link>
+        <description>Portal do Desenvolvedor V3 Blog</description>
+        <lastBuildDate>Thu, 09 Jul 2026 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Videotelemetria e Análise de Dados: Aprimorando a Manutenção de Veículos Comerciais]]></title>
+            <link>https://developer.v3control.com/en/blog/videotelemetria-analise-dados-manutencao</link>
+            <guid>https://developer.v3control.com/en/blog/videotelemetria-analise-dados-manutencao</guid>
+            <pubDate>Thu, 09 Jul 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Série Part 2: Como a videotelemetria e análise de dados transformam a manutenção corretiva em preventiva e preditiva, reduzindo custos e aumentando a vida útil da frota.]]></description>
+            <content:encoded><![CDATA[<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Série: Videotelemetria e Inteligência de Dados</div><div class="admonitionContent_BuS1"><p>Você está lendo a <strong>Parte 2</strong> desta série. Comece pela <a href="https://developer.v3control.com/en/blog/videotelemetria-inteligencia-dados-evolucao">Parte 1 — A Evolução da Videotelemetria para a Inteligência de Dados</a> para entender a visão estratégica por trás da V3.</p><p>Nesta jornada, um pilar central é contar com uma <strong>API realtime e orientada a dados</strong>, como a da V3, para transformar eventos de campo em decisões rápidas, integrações confiáveis e ação operacional contínua.</p></div></div>
+<p>Manter uma frota de veículos comerciais em perfeito estado é fundamental para garantir a segurança e a continuidade das operações. A <strong>videotelemetria</strong>, aliada à <strong>análise de dados</strong>, tem se mostrado uma grande aliada nessa missão.</p>
+<p>Com o monitoramento constante, é possível identificar comportamentos que impactam diretamente a vida útil dos componentes do veículo, como <strong>frenagens bruscas</strong> e <strong>acelerações excessivas</strong>. Além disso, os dados coletados ajudam a prever necessidades de <strong>manutenção preventiva</strong>, reduzindo custos com reparos emergenciais e evitando paradas inesperadas.</p>
+<p>Na <strong>V3</strong>, oferecemos soluções que transformam a telemetria em informações estratégicas, ajudando gestores a tomar decisões rápidas, inteligentes e baseadas em fatos.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-o-que-é-videotelemetria-e-como-ela-funciona-na-v3">1. O que é Videotelemetria e Como Ela Funciona na V3?<a href="https://developer.v3control.com/en/blog/videotelemetria-analise-dados-manutencao#1-o-que-%C3%A9-videotelemetria-e-como-ela-funciona-na-v3" class="hash-link" aria-label="Direct link to 1. O que é Videotelemetria e Como Ela Funciona na V3?" title="Direct link to 1. O que é Videotelemetria e Como Ela Funciona na V3?">​</a></h2>
+<p>A <strong>telemetria tradicional</strong> mensura dados mecânicos e eletrônicos do veículo (como velocidade, RPM e consumo de combustível) via rede <strong>CAN</strong> (barramento do veículo). A <strong>videotelemetria</strong> eleva este patamar ao integrar <strong>câmeras inteligentes</strong> com tecnologia de <strong>IA</strong> (Inteligência Artificial) e <strong>visão computacional</strong> ao sistema de dados.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="fluxo-de-funcionamento">Fluxo de Funcionamento<a href="https://developer.v3control.com/en/blog/videotelemetria-analise-dados-manutencao#fluxo-de-funcionamento" class="hash-link" aria-label="Direct link to Fluxo de Funcionamento" title="Direct link to Fluxo de Funcionamento">​</a></h3>
+<p>O funcionamento básico segue estas etapas:</p>
+<ol>
+<li>
+<p><strong>Captação de Dados e Imagens</strong>: Sensores do veículo registram a telemetria padrão, enquanto câmeras (voltadas para a via e para o motorista) gravam o trajeto e o comportamento na cabine.</p>
+</li>
+<li>
+<p><strong>Processamento em Tempo Real (Edge Computing)</strong>: Algoritmos de IA detectam eventos de risco ou anomalias imediatamente.</p>
+</li>
+<li>
+<p><strong>Transmissão Nuvem com Inteligência Integrada</strong>: Eventos críticos (ex: uma frenagem violenta) são enviados para a nuvem, onde o sistema pós-processa os dados do Edge, <strong>enriquecendo, agregando</strong> e contextualizando as informações em inteligência acionável. Tudo isso fica disponível na plataforma web ou consumível via API em tempo real.</p>
+</li>
+<li>
+<p><strong>Análise de Dados (Business Intelligence)</strong>: Os dados brutos são transformados em <strong>relatórios preditivos</strong> e <strong>dashboards inteligentes</strong> que entregam ao gestor não apenas o "o que aconteceu", mas principalmente o "por quê" e "o que fazer". A V3 Cloud aprende continuamente com os padrões da frota, recomendando ações preventivas antes que problemas se materializem em custos.</p>
+</li>
+</ol>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-o-impacto-direto-na-manutenção-de-frotas">2. O Impacto Direto na Manutenção de Frotas<a href="https://developer.v3control.com/en/blog/videotelemetria-analise-dados-manutencao#2-o-impacto-direto-na-manuten%C3%A7%C3%A3o-de-frotas" class="hash-link" aria-label="Direct link to 2. O Impacto Direto na Manutenção de Frotas" title="Direct link to 2. O Impacto Direto na Manutenção de Frotas">​</a></h2>
+<p>A direção agressiva e a falta de previsibilidade são as maiores vilãs do <strong>desgaste prematuro de autopeças</strong>. Veja como a união de vídeo e dados transforma a <strong>manutenção corretiva</strong> (cara e inesperada) em <strong>manutenção preventiva</strong> e <strong>preditiva</strong>:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="redução-do-desgaste-de-componentes-críticos">Redução do Desgaste de Componentes Críticos<a href="https://developer.v3control.com/en/blog/videotelemetria-analise-dados-manutencao#redu%C3%A7%C3%A3o-do-desgaste-de-componentes-cr%C3%ADticos" class="hash-link" aria-label="Direct link to Redução do Desgaste de Componentes Críticos" title="Direct link to Redução do Desgaste de Componentes Críticos">​</a></h3>
+<p><strong>Frenagens Bruscas</strong></p>
+<ul>
+<li>Causam superaquecimento do sistema de freios, gerando desgaste acelerado de pastilhas e discos</li>
+<li>Provocam ovalização de tambores</li>
+<li>A videotelemetria ajuda a reeducar o motorista, estendendo a vida útil do sistema de frenagem</li>
+</ul>
+<p><strong>Acelerações Excessivas e Giro Alto</strong></p>
+<ul>
+<li>Forçam o motor e a transmissão além do necessário</li>
+<li>Degradam o óleo lubrificante mais rápido</li>
+<li>Aumentam o risco de quebras severas</li>
+</ul>
+<p><strong>Curvas Acentuadas em Velocidade</strong></p>
+<ul>
+<li>Sobrecarregam o sistema de suspensão e rolamentos</li>
+<li>Causam desgaste irregular e precoce dos pneus</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="correlação-de-eventos-o-porquê-dos-dados">Correlação de Eventos: O "Porquê" dos Dados<a href="https://developer.v3control.com/en/blog/videotelemetria-analise-dados-manutencao#correla%C3%A7%C3%A3o-de-eventos-o-porqu%C3%AA-dos-dados" class="hash-link" aria-label="Direct link to Correlação de Eventos: O &quot;Porquê&quot; dos Dados" title="Direct link to Correlação de Eventos: O &quot;Porquê&quot; dos Dados">​</a></h3>
+<p>A telemetria comum avisa <strong>quando</strong> há um impacto ou frenagem. A videotelemetria mostra o <strong>porquê</strong>.</p>
+<p><strong>Exemplo prático</strong>: Se o sensor acusar uma frenagem brusca, o vídeo revelará se o motorista o fez para:</p>
+<ul>
+<li>Não cair em um burraco inevitável, ou</li>
+<li>Porque estava ao celular e não o viu</li>
+</ul>
+<p>Esta correlação transforma alertas genéricos em <strong>insights acionáveis</strong>, permitindo intervenções precisas na reeducação do condutor.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-benefícios-estratégicos-e-financeiros">3. Benefícios Estratégicos e Financeiros<a href="https://developer.v3control.com/en/blog/videotelemetria-analise-dados-manutencao#3-benef%C3%ADcios-estrat%C3%A9gicos-e-financeiros" class="hash-link" aria-label="Direct link to 3. Benefícios Estratégicos e Financeiros" title="Direct link to 3. Benefícios Estratégicos e Financeiros">​</a></h2>
+<p>A implementação da videotelemetria gera um <strong>ciclo virtuoso</strong> para a gestão de ativos da empresa:</p>
+<table><thead><tr><th>Área Impactada</th><th>Benefício Prático</th><th>Resultado Financeiro</th></tr></thead><tbody><tr><td><strong>Manutenção</strong></td><td>Menos paradas não planejadas e quebras na estrada</td><td>Redução do TCO (Total Cost of Ownership) dos veículos</td></tr><tr><td><strong>Pneus</strong></td><td>Condução suave preserva a banda de rodagem e carcaça</td><td>Aumento do índice de recapagem e menos trocas prematuras</td></tr><tr><td><strong>Combustível</strong></td><td>Moderação na condução diminui o consumo excessivo</td><td>Redução imediata no principal custo operacional da frota</td></tr><tr><td><strong>Sinistros</strong></td><td>Menos acidentes graves por imprudência ou fadiga</td><td>Redução de custos com franquias, seguros e processos</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-transformando-dados-em-decisão-com-a-v3">4. Transformando Dados em Decisão com a V3<a href="https://developer.v3control.com/en/blog/videotelemetria-analise-dados-manutencao#4-transformando-dados-em-decis%C3%A3o-com-a-v3" class="hash-link" aria-label="Direct link to 4. Transformando Dados em Decisão com a V3" title="Direct link to 4. Transformando Dados em Decisão com a V3">​</a></h2>
+<p>O grande desafio dos gestores modernos não é a falta de dados, mas sim o <strong>excesso deles sem o devido tratamento</strong>. Painéis poluídos geram <strong>fadiga de alertas</strong> e pouca ação prática.</p>
+<p>As soluções da V3 filtram o ruído e entregam a <strong>informação preventiva</strong>, identificando <strong>padrões de condução de risco</strong> que antecedem falhas mecânicas recorrentes.</p>
+<p>Com a V3, a frota de seus clientes roda de forma:</p>
+<ul>
+<li>✅ Mais <strong>segura</strong></li>
+<li>✅ Mais <strong>eficiente</strong></li>
+<li>✅ Mais <strong>previsível</strong></li>
+</ul>
+<p>Garantindo que a manutenção seja uma <strong>aliada da produtividade</strong>, e não uma fonte de surpresas financeiras.</p>
+<hr>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Próximos Tópicos da Série</div><div class="admonitionContent_BuS1"><p>A série continua explorando outros impactos estratégicos da videotelemetria e inteligência de dados. Acompanhe nosso blog para as próximas partes!</p></div></div>
+<p><strong>Pronto para otimizar a manutenção de sua frota? Conheça nossas soluções de videotelemetria e análise preditiva.</strong></p>]]></content:encoded>
+            <category>Videotelemetria</category>
+            <category>Manutenção</category>
+            <category>Frotas</category>
+            <category>Dados</category>
+            <category>IA</category>
+            <category>Telemática</category>
+            <category>Série</category>
+        </item>
+        <item>
+            <title><![CDATA[A Evolução da Videotelemetria para a Inteligência de Dados]]></title>
+            <link>https://developer.v3control.com/en/blog/videotelemetria-inteligencia-dados-evolucao</link>
+            <guid>https://developer.v3control.com/en/blog/videotelemetria-inteligencia-dados-evolucao</guid>
+            <pubDate>Wed, 08 Jul 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Entenda como a V3 transformou câmeras veiculares dispersas em um ecossistema integrado de Visão Computacional e IA, convertendo dados brutos em inteligência preditiva e acionável.]]></description>
+            <content:encoded><![CDATA[<p>Já há algum tempo vivemos <strong>duas realidades isoladas</strong> no mercado de rastreamento de frotas:</p>
+<ul>
+<li>De um lado, a <strong>telemetria tradicional</strong>, entregando números frios em planilhas.</li>
+<li>Do outro, as <strong>câmeras veiculares</strong>, gerando horas de gravações passivas que alguém precisaria auditar manualmente quando o pior já tivesse acontecido.</li>
+</ul>
+<p><strong>A V3 nasceu para romper esse modelo.</strong></p>
+<p>Nós não coletamos imagens; nós <strong>traduzimos o comportamento humano e a dinâmica veicular em dados preditivos</strong>.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="veículo-vídeo-e-visão-um-ecossistema-integrado">Veículo, Vídeo e Visão: Um Ecossistema Integrado<a href="https://developer.v3control.com/en/blog/videotelemetria-inteligencia-dados-evolucao#ve%C3%ADculo-v%C3%ADdeo-e-vis%C3%A3o-um-ecossistema-integrado" class="hash-link" aria-label="Direct link to Veículo, Vídeo e Visão: Um Ecossistema Integrado" title="Direct link to Veículo, Vídeo e Visão: Um Ecossistema Integrado">​</a></h2>
+<p>Nossa essência — <strong>Veículo, Vídeo e Visão</strong> — não é uma combinação linear de ferramentas, mas sim um <strong>ecossistema integrado</strong> através da <strong>Visão Computacional</strong> e da <strong>Inteligência Artificial</strong>.</p>
+<p>Quando o nosso firmware roda na borda ou quando nossos algoritmos processam mídias na nuvem, o que estamos fazendo é <strong>extrair inteligência pura de cada pixel</strong>.</p>
+<p>Estar orientado à inteligência de dados significa que, na V3, a informação deixa de ser um <strong>registro do passado</strong> e passa a ser uma <strong>ferramenta de transformação do presente</strong>.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="a-transformação-dos-dados">A Transformação dos Dados<a href="https://developer.v3control.com/en/blog/videotelemetria-inteligencia-dados-evolucao#a-transforma%C3%A7%C3%A3o-dos-dados" class="hash-link" aria-label="Direct link to A Transformação dos Dados" title="Direct link to A Transformação dos Dados">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="a-telemetria-ganha-contexto-visual">A Telemetria Ganha Contexto Visual<a href="https://developer.v3control.com/en/blog/videotelemetria-inteligencia-dados-evolucao#a-telemetria-ganha-contexto-visual" class="hash-link" aria-label="Direct link to A Telemetria Ganha Contexto Visual" title="Direct link to A Telemetria Ganha Contexto Visual">​</a></h3>
+<p>Ela deixa de ser apenas posição. Ganha <strong>contexto visual através do cruzamento de dados analíticos</strong>, permitindo entender não apenas <em>onde</em> o veículo está, mas <em>como</em> está sendo conduzido.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="o-vídeo-deixa-de-ser-passivo">O Vídeo Deixa de Ser Passivo<a href="https://developer.v3control.com/en/blog/videotelemetria-inteligencia-dados-evolucao#o-v%C3%ADdeo-deixa-de-ser-passivo" class="hash-link" aria-label="Direct link to O Vídeo Deixa de Ser Passivo" title="Direct link to O Vídeo Deixa de Ser Passivo">​</a></h3>
+<p>Com recursos como o <strong>Driver Coach</strong> e o <strong>DMS</strong> (Driver Monitoring System), a Inteligência Artificial:</p>
+<ul>
+<li>Entende o risco em <strong>tempo real</strong> — seja una fadiga, distração ou frenagem brusca</li>
+<li><strong>Age imediatamente</strong> na cabine para preservar vidas e reduzir custos operacionais</li>
+<li>Transforma gravações em <strong>alertas inteligentes</strong>, não em dados para análise manual</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="a-gestão-torna-se-previsível">A Gestão Torna-se Previsível<a href="https://developer.v3control.com/en/blog/videotelemetria-inteligencia-dados-evolucao#a-gest%C3%A3o-torna-se-previs%C3%ADvel" class="hash-link" aria-label="Direct link to A Gestão Torna-se Previsível" title="Direct link to A Gestão Torna-se Previsível">​</a></h3>
+<p>Através de <strong>relatórios profundos</strong> de violações e padrões de conduta, transformamos:</p>
+<ul>
+<li>Incidentes isolados → <strong>insights de negócio acionáveis</strong></li>
+<li>Reações às crises → <strong>previsão e prevenção</strong></li>
+<li>Dados dispersos → <strong>estratégia consolidada</strong></li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="o-ativo-mais-valioso-dados-lapidados">O Ativo Mais Valioso: Dados Lapidados<a href="https://developer.v3control.com/en/blog/videotelemetria-inteligencia-dados-evolucao#o-ativo-mais-valioso-dados-lapidados" class="hash-link" aria-label="Direct link to O Ativo Mais Valioso: Dados Lapidados" title="Direct link to O Ativo Mais Valioso: Dados Lapidados">​</a></h2>
+<p>Na V3, nós entendemos que <strong>o equipamento é apenas o meio</strong>, mas o <strong>dado lapidado e interpretado é o ativo mais valioso</strong> de uma operação eficiente.</p>
+<p>Nós não equipamos frotas com câmeras.</p>
+<p><strong>Nós habilitamos frotas com visão estratégica.</strong></p>
+<hr>
+<p><strong>Continue a leitura:</strong> <a href="https://developer.v3control.com/en/blog/videotelemetria-analise-dados-manutencao">Parte 2 — Videotelemetria e Análise de Dados: Aprimorando a Manutenção de Veículos Comerciais</a></p>]]></content:encoded>
+            <category>Videotelemetria</category>
+            <category>Inteligência de Dados</category>
+            <category>IA</category>
+            <category>Visão Computacional</category>
+            <category>Telemática</category>
+            <category>Frota</category>
+        </item>
+        <item>
+            <title><![CDATA[Conectividade IoT sem mistério (Parte 4): redes para dispositivos móveis em veículos]]></title>
+            <link>https://developer.v3control.com/en/blog/conectividade-iot-parte-4</link>
+            <guid>https://developer.v3control.com/en/blog/conectividade-iot-parte-4</guid>
+            <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Nos posts anteriores, cobrimos fundamentos de conectividade e comparação entre tecnologias. Para encerrar a série, vamos para um recorte prático: conectividade IoT em ativos móveis, com foco em veículos.]]></description>
+            <content:encoded><![CDATA[<p>Nos posts anteriores, cobrimos fundamentos de conectividade e comparação entre tecnologias. Para encerrar a série, vamos para um recorte prático: conectividade IoT em ativos móveis, com foco em veículos.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="o-que-muda-quando-o-ativo-está-em-movimento">O que muda quando o ativo está em movimento<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-4#o-que-muda-quando-o-ativo-est%C3%A1-em-movimento" class="hash-link" aria-label="Direct link to O que muda quando o ativo está em movimento" title="Direct link to O que muda quando o ativo está em movimento">​</a></h2>
+<p>Em veículos, o link de dados muda de célula constantemente. Isso cria desafios que não aparecem com a mesma intensidade em dispositivos fixos:</p>
+<ul>
+<li>Handover frequente entre torres, com risco de perda momentânea de sessão.</li>
+<li>Variação brusca de sinal em túneis, serras, áreas remotas e zonas urbanas densas.</li>
+<li>Oscilação de tecnologia (4G, 3G e eventualmente 2G em fallback).</li>
+<li>Congestionamento de rede em rodovias, centros urbanos e eventos de grande porte.</li>
+<li>Jitter e perda de pacote impactando fluxos de vídeo e áudio em tempo real.</li>
+</ul>
+<p>Por isso, telemetria veicular precisa ser projetada para intermitência, não para conectividade perfeita.</p>
+<p>Em outras palavras: ter "barra de sinal" não significa que o sistema consegue entregar dado útil com previsibilidade. Em mobilidade, a diferença entre "conectado" e "operando bem" aparece quando a rede oscila e o sistema precisa manter contexto, ordem temporal e prioridade de eventos.</p>
+<img src="https://developer.v3control.com/en/assets/images/sinal-em-redes-moveis-f1031a8488642c90a389dddee80af11a.png" alt="Exemplo de conectividade móvel em veículo com transição de sinal entre redes durante o deslocamento." style="max-width:780px;width:100%;height:auto">
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="videotelemetria-e-streaming-em-operações-móveis">Videotelemetria e streaming em operações móveis<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-4#videotelemetria-e-streaming-em-opera%C3%A7%C3%B5es-m%C3%B3veis" class="hash-link" aria-label="Direct link to Videotelemetria e streaming em operações móveis" title="Direct link to Videotelemetria e streaming em operações móveis">​</a></h2>
+<p>Quando o caso de uso inclui câmera embarcada, upload de clipes ou streaming ao vivo, o desenho de rede precisa considerar três fatores ao mesmo tempo:</p>
+<ul>
+<li>Vazão sustentada disponível no uplink, não apenas pico momentâneo.</li>
+<li>Latência e jitter durante handover e mudanças de cobertura.</li>
+<li>Perda de pacote em trechos com sombra de sinal ou célula congestionada.</li>
+</ul>
+<p>Na prática, o efeito da oscilação aparece assim:</p>
+<ul>
+<li>Streaming ao vivo: queda de bitrate, congelamento e interrupção de sessão.</li>
+<li>Upload de arquivos grandes (video/imagem): aumento forte de tempo total e risco de timeout.</li>
+<li>Telemetria de eventos: fila concorrendo com mídia e perdendo janela operacional.</li>
+</ul>
+<img src="https://developer.v3control.com/en/assets/images/videotelemetria-veicular-part4-e9e942fc426401f4d57996bf933bfd02.png" alt="Exemplo de videotelemetria veicular com variação de sinal em mobilidade." style="max-width:640px;width:100%;height:auto">
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="diretrizes-de-arquitetura-para-operações-móveis">Diretrizes de arquitetura para operações móveis<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-4#diretrizes-de-arquitetura-para-opera%C3%A7%C3%B5es-m%C3%B3veis" class="hash-link" aria-label="Direct link to Diretrizes de arquitetura para operações móveis" title="Direct link to Diretrizes de arquitetura para operações móveis">​</a></h2>
+<p>Mais do que publicar uma "receita pronta", vale reforçar os princípios que sustentam uma operação confiável em mobilidade:</p>
+<ul>
+<li>Continuidade operacional acima de throughput de pico.</li>
+<li>Governança de dados para preservar contexto e rastreabilidade.</li>
+<li>Segurança e disponibilidade tratadas como requisitos de negócio.</li>
+<li>Observabilidade ponta a ponta para decisão técnica e operacional.</li>
+</ul>
+<p>Em projetos de videotelemetria, esses princípios ajudam a equilibrar dois objetivos que frequentemente entram em conflito: responder rápido a eventos críticos e manter eficiência no transporte de dados ao longo do dia.</p>
+<p>Na V3, tratamos esse tema como engenharia de resiliência aplicada ao negócio por meio de software. Isso significa projetar o software, o firmware embarcado na dashcam e a operação de dados com essas variáveis em mente: oscilação de rede, variação de cobertura e mudanças de rota.</p>
+<p>Nosso produto não entrega conectividade móvel; ele entrega inteligência operacional sobre ela. Nesse contexto, a Cloud também é essencial para otimizar a operação de ponta a ponta e ampliar o monitoramento da solução como um todo.</p>
+<p>Em vez de depender de uma implementação única, priorizamos uma abordagem orientada por risco, contexto da operação e metas de serviço. É esse cuidado contínuo com arquitetura e operação que reduz impacto em campo e sustenta qualidade ao longo do ciclo de vida da solução.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="sim-m2m-multi-operadora-e-apn-no-cenário-móvel">SIM M2M, multi-operadora e APN no cenário móvel<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-4#sim-m2m-multi-operadora-e-apn-no-cen%C3%A1rio-m%C3%B3vel" class="hash-link" aria-label="Direct link to SIM M2M, multi-operadora e APN no cenário móvel" title="Direct link to SIM M2M, multi-operadora e APN no cenário móvel">​</a></h2>
+<p>Para veículos, a estratégia de conectividade geralmente ganha muito com:</p>
+<ul>
+<li>SIM M2M com gestão centralizada de linha e consumo.</li>
+<li>Perfil multi-operadora para melhorar cobertura em rotas variadas.</li>
+<li>APN com política adequada ao risco do negócio (pública com TLS forte ou privada com tráfego segregado).</li>
+</ul>
+<p>Quando o impacto de indisponibilidade é alto, redundância de operadora deixa de ser luxo e passa a ser requisito de continuidade.</p>
+<p>No cenário de videotelemetria, APN e política de roteamento também influenciam custo e desempenho:</p>
+<ul>
+<li>Separação de tráfego por perfil de aplicação (evento crítico vs mídia em lote).</li>
+<li>Definição de limites para evitar que upload de vídeo degrade dados operacionais.</li>
+<li>Política clara para roaming e fallback, evitando "buracos" em rotas longas.</li>
+</ul>
+<img src="https://developer.v3control.com/en/assets/images/videotelemetria-e-monitoramento-24a7993260d70d8457d019bbd303baba.png" alt="Exemplo de dashcams instaladas em para-brisa, representando carga de videodados em mobilidade." style="max-width:560px;width:100%;height:auto">
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="boas-práticas-operacionais-para-reduzir-falhas">Boas práticas operacionais para reduzir falhas<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-4#boas-pr%C3%A1ticas-operacionais-para-reduzir-falhas" class="hash-link" aria-label="Direct link to Boas práticas operacionais para reduzir falhas" title="Direct link to Boas práticas operacionais para reduzir falhas">​</a></h2>
+<p>Além de software e rede, a camada física faz diferença:</p>
+<ul>
+<li>Posicionamento correto de antena e chicote para reduzir atenuação.</li>
+<li>Validação de cobertura por corredor logístico real, não só por mapa teórico.</li>
+<li>Testes de drive test por rota crítica antes de escalar a operação.</li>
+<li>Monitoramento de KPIs como reconexões por hora, latência P95 e taxa de entrega.</li>
+<li>Medição de <a href="https://en.wikipedia.org/wiki/Goodput" target="_blank" rel="noopener noreferrer">goodput</a> por tipo de dado (telemetria, snapshot, clipe e stream).</li>
+<li>Taxa de sucesso de upload por tamanho de arquivo e por corredor logístico.</li>
+</ul>
+<p>Com isso, a operação deixa de olhar apenas "dispositivo online" e passa a medir a pergunta certa: o dado chegou a tempo de gerar ação?</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="monitoramento-em-tempo-real-da-operação">Monitoramento em tempo real da operação<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-4#monitoramento-em-tempo-real-da-opera%C3%A7%C3%A3o" class="hash-link" aria-label="Direct link to Monitoramento em tempo real da operação" title="Direct link to Monitoramento em tempo real da operação">​</a></h2>
+<p>Para que essas métricas façam sentido prático, é essencial ter visibilidade ponta a ponta da frota. Um painel de monitoramento bem desenhado expõe:</p>
+<ul>
+<li>Saúde geral de cada dispositivo (online, offline, sinal fraco, dados acumulados).</li>
+<li>Agregação por rota, corredor logístico ou zona geográfica.</li>
+<li>Distribuição de sinal (forte, bom, fraco) por localização.</li>
+<li>Consumo de dados acumulado e velocidade média.</li>
+<li>Padrões de bateria e eventos de ignição (para veículos).</li>
+<li>Alertas automáticos para anomalias (dispositivo offline prolongado, oscilação de rede, timeout de uplink).</li>
+</ul>
+<p>Com essas informações estruturadas e em tempo real, times de operação conseguem antecipar problemas, validar impacto de mudanças infraestruturais e comunicar com transparência o status da frota para stakeholders.</p>
+<img src="https://developer.v3control.com/en/assets/images/monitoramento-frota-dashboard-09a4c7c0282e916e5b4a7440c6f429e5.jpg" alt="Dashboard de monitoramento de frota com métricas de conectividade, distribuição de sinal, consumo de dados e localização de dispositivos em tempo real." style="max-width:100%;width:100%;height:auto;border-radius:8px;margin:20px 0">
+<p style="font-size:14px;color:#666;margin:12px 0 24px 0;font-style:italic">Figura: Dashboard da solução V3 de monitoramento para operações de frota. Visibilidade completa de saúde de dispositivos, distribuição de conectividade e métricas operacionais em tempo real da frota do cliente.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="normas-e-referências-úteis">Normas e referências úteis<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-4#normas-e-refer%C3%AAncias-%C3%BAteis" class="hash-link" aria-label="Direct link to Normas e referências úteis" title="Direct link to Normas e referências úteis">​</a></h2>
+<ul>
+<li>3GPP e GSMA para fundamentos de redes móveis e ecossistema SIM.</li>
+<li>Regulamentação local e homologação de equipamentos (Anatel no Brasil).</li>
+<li>Práticas de segurança para IoT conectada, como ETSI EN 303 645.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="aprendizados-para-projetos-em-campo">Aprendizados para projetos em campo<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-4#aprendizados-para-projetos-em-campo" class="hash-link" aria-label="Direct link to Aprendizados para projetos em campo" title="Direct link to Aprendizados para projetos em campo">​</a></h2>
+<p>Conectividade para veículos é, acima de tudo, engenharia de resiliência. O projeto vencedor não é o que funciona apenas com sinal ótimo, e sim o que mantém previsibilidade operacional em movimento, com oscilação real de rede.</p>
+<p>Em telemetria com vídeo, essa diferença fica explícita: conectividade por si só não garante dado útil. O que garante resultado é uma arquitetura que prioriza, bufferiza, retransmite com critério e adapta o fluxo de mídia ao estado real da rede.</p>]]></content:encoded>
+            <category>V3 Tecnologia</category>
+            <category>Engenharia de Software</category>
+        </item>
+        <item>
+            <title><![CDATA[Conectividade IoT sem mistério (Parte 3): Mesh, LoRa, LoRaWAN e Zigbee]]></title>
+            <link>https://developer.v3control.com/en/blog/conectividade-iot-parte-3</link>
+            <guid>https://developer.v3control.com/en/blog/conectividade-iot-parte-3</guid>
+            <pubDate>Mon, 06 Jul 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Na Parte 2, vimos como a conectividade celular se organiza no core da operadora e como APN, políticas de rede e roteamento impactam a operação. A partir desse ponto, a próxima decisão de arquitetura é entender quando o celular deixa de ser a melhor opção e quando redes não-celulares entregam mais eficiência técnica e econômica. Neste artigo, comparamos Mesh, LoRa, LoRaWAN e Zigbee com foco em critérios práticos de escolha.]]></description>
+            <content:encoded><![CDATA[<p>Na <a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-2">Parte 2</a>, vimos como a conectividade celular se organiza no core da operadora e como APN, políticas de rede e roteamento impactam a operação. A partir desse ponto, a próxima decisão de arquitetura é entender quando o celular deixa de ser a melhor opção e quando redes não-celulares entregam mais eficiência técnica e econômica. Neste artigo, comparamos Mesh, LoRa, LoRaWAN e Zigbee com foco em critérios práticos de escolha.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="mesh-resiliência-por-múltiplos-caminhos">Mesh: resiliência por múltiplos caminhos<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-3#mesh-resili%C3%AAncia-por-m%C3%BAltiplos-caminhos" class="hash-link" aria-label="Direct link to Mesh: resiliência por múltiplos caminhos" title="Direct link to Mesh: resiliência por múltiplos caminhos">​</a></h2>
+<p>Redes mesh permitem que nós encaminhem pacotes entre si, criando caminhos alternativos até o gateway.</p>
+<p>Pontos fortes:</p>
+<ul>
+<li>Boa cobertura em ambientes com obstáculos.</li>
+<li>Tolerância a falhas de nós individuais.</li>
+<li>Escalabilidade local em plantas, galpões e condomínios.</li>
+</ul>
+<p>Pontos de atenção:</p>
+<ul>
+<li>Planejamento de topologia e canal é essencial.</li>
+<li>Mais hops podem aumentar latência e consumo.</li>
+<li>Interferência em banda não licenciada pode degradar desempenho.</li>
+</ul>
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/97/NetworkTopology-Mesh.svg" alt="Topologia de rede mesh parcialmente conectada." style="max-width:560px;width:100%;height:auto">
+<p>Fonte: <a href="https://commons.wikimedia.org/wiki/File:NetworkTopology-Mesh.svg" target="_blank" rel="noopener noreferrer">Wikimedia Commons - File<!-- -->:NetworkTopology-Mesh<!-- -->.svg</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="lora-e-lorawan-longo-alcance-com-baixa-taxa">LoRa e LoRaWAN: longo alcance com baixa taxa<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-3#lora-e-lorawan-longo-alcance-com-baixa-taxa" class="hash-link" aria-label="Direct link to LoRa e LoRaWAN: longo alcance com baixa taxa" title="Direct link to LoRa e LoRaWAN: longo alcance com baixa taxa">​</a></h2>
+<p>LoRa é a camada física de rádio (modulação). LoRaWAN é o protocolo de rede sobre LoRa.</p>
+<p>Quando brilha:</p>
+<ul>
+<li>Telemetria pequena e periódica.</li>
+<li>Sensores alimentados por bateria por longos períodos.</li>
+<li>Cobertura de grandes áreas com poucos gateways.</li>
+</ul>
+<p>Limitações típicas:</p>
+<ul>
+<li>Throughput baixo para cargas grandes.</li>
+<li>Dever de transmissão (duty cycle) e regras de espectro impactam capacidade.</li>
+<li>Latência e downlink limitados dependendo da classe do dispositivo.</li>
+</ul>
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/94/LoRa-RF_Ananlyzer-12-7.8k.1.jpg" alt="Sinal LoRa observado em analisador de RF." style="max-width:420px;width:100%;height:auto">
+<p>Fonte: <a href="https://commons.wikimedia.org/wiki/File:LoRa-RF_Ananlyzer-12-7.8k.1.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons - File<!-- -->:LoRa-RF_Ananlyzer-12-7<!-- -->.8k.1.jpg</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="zigbee-ecossistema-maduro-para-rede-local">Zigbee: ecossistema maduro para rede local<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-3#zigbee-ecossistema-maduro-para-rede-local" class="hash-link" aria-label="Direct link to Zigbee: ecossistema maduro para rede local" title="Direct link to Zigbee: ecossistema maduro para rede local">​</a></h2>
+<p>Zigbee roda sobre IEEE 802.15.4 e é forte em automação predial e industrial leve.</p>
+<p>Vantagens:</p>
+<ul>
+<li>Baixo consumo energético.</li>
+<li>Ecossistema amplo de módulos e sensores.</li>
+<li>Boa integração em redes locais de curta/média distância.</li>
+</ul>
+<p>Desafios:</p>
+<ul>
+<li>Alcance por salto depende da densidade de nós roteadores.</li>
+<li>Coexistência em 2,4 GHz exige planejamento para evitar interferência.</li>
+</ul>
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/ETRX357_ZigBee_module_with_size_ref.JPG" alt="Módulo Zigbee (ETRX357) com referência de tamanho." style="max-width:420px;width:100%;height:auto">
+<p>Fonte: <a href="https://commons.wikimedia.org/wiki/File:ETRX357_ZigBee_module_with_size_ref.JPG" target="_blank" rel="noopener noreferrer">Wikimedia Commons - File<!-- -->:ETRX357_ZigBee_module_with_size_ref<!-- -->.JPG</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="redes-satelitais-cobertura-ampla-com-trade-offs-de-latência-e-custo">Redes satelitais: cobertura ampla com trade-offs de latência e custo<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-3#redes-satelitais-cobertura-ampla-com-trade-offs-de-lat%C3%AAncia-e-custo" class="hash-link" aria-label="Direct link to Redes satelitais: cobertura ampla com trade-offs de latência e custo" title="Direct link to Redes satelitais: cobertura ampla com trade-offs de latência e custo">​</a></h2>
+<p>Quando o projeto opera fora da cobertura terrestre consistente (áreas remotas, oceânicas, mineração, agro em grande extensão), conectividade satelital deixa de ser exceção e passa a ser considerada parte da arquitetura.</p>
+<p>De forma prática, as órbitas mais comuns entram no desenho assim:</p>
+<ul>
+<li>LEO (Low Earth Orbit): menor latência e melhor experiência para aplicações mais interativas, com constelações de muitos satélites e handovers frequentes (ex.: Starlink e OneWeb).</li>
+<li>MEO (Medium Earth Orbit): equilíbrio entre cobertura e latência, menos comum em IoT generalista, mas relevante em alguns serviços especializados (ex.: SES O3b).</li>
+<li>GEO (Geostationary Earth Orbit): grande cobertura por satélite, arquitetura mais estável do ponto de vista orbital, porém com latência maior (ex.: Inmarsat, Intelsat e Viasat).</li>
+</ul>
+<p>Critérios de decisão para satélite:</p>
+<ul>
+<li>Cobertura real de campo, não apenas mapa de marketing do provedor.</li>
+<li>Orçamento de energia do terminal e perfil de transmissão (evento, lote, quase tempo real).</li>
+<li>Sensibilidade da aplicação à latência e à variação de throughput.</li>
+<li>Custo total: hardware, plano de dados, instalação e operação contínua.</li>
+<li>Estratégia híbrida com fallback terrestre (celular/LPWAN) quando disponível.</li>
+<li>Avaliar tráfego de mídia (imagens, clipes de vídeo e streaming): uplink sustentado, tempo de upload, risco de timeout, consumo de franquia e necessidade de priorização entre evento crítico e mídia.</li>
+<li>Quando o IoT é móvel, avaliar handover entre feixes/células, estabilidade de sessão em deslocamento e variação de desempenho por corredor logístico.</li>
+<li>Em mobilidade, considerar o impacto de velocidade e rota na perda de pacote, jitter e tempo de entrega de eventos críticos.</li>
+</ul>
+<p>Em muitos projetos IoT, satélite não substitui tudo: ele complementa a conectividade terrestre para garantir continuidade operacional onde a infraestrutura tradicional não chega com previsibilidade. Em cenários móveis, essa complementaridade precisa ser validada em rota real, porque o desempenho pode variar significativamente entre regiões e condições de deslocamento.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="como-escolher-entre-essas-redes">Como escolher entre essas redes<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-3#como-escolher-entre-essas-redes" class="hash-link" aria-label="Direct link to Como escolher entre essas redes" title="Direct link to Como escolher entre essas redes">​</a></h2>
+<p>Use uma matriz simples de decisão:</p>
+<ol>
+<li>Cobertura necessária: metros, quilômetros, indoor, outdoor.</li>
+<li>Perfil de carga: bytes por mensagem, frequência de envio, necessidade de downlink.</li>
+<li>Energia disponível: bateria, rede elétrica, ciclo de manutenção.</li>
+<li>Criticidade de latência: segundos, minutos, quase tempo real.</li>
+<li>Custos de implantação: gateways, manutenção, operação de rede.</li>
+<li>Requisitos regulatórios e de segurança.</li>
+</ol>
+<p>Uma regra prática:</p>
+<ul>
+<li>Se precisa mobilidade ampla e controle centralizado, celular tende a liderar.</li>
+<li>Se precisa autonomia energética e longas distâncias com pouca carga, LoRaWAN é forte.</li>
+<li>Se precisa rede local densa e baixa potência, Zigbee ou Mesh podem ser melhores.</li>
+<li>Se precisa cobertura em áreas remotas sem infraestrutura terrestre confiável, satélite (LEO/MEO/GEO) entra como opção principal ou camada de contingência.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="normas-e-referências-técnicas">Normas e referências técnicas<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-3#normas-e-refer%C3%AAncias-t%C3%A9cnicas" class="hash-link" aria-label="Direct link to Normas e referências técnicas" title="Direct link to Normas e referências técnicas">​</a></h2>
+<ul>
+<li>LoRaWAN: especificações da <a href="https://lora-alliance.org/resource_hub/lorawan-specification-v1-1/" target="_blank" rel="noopener noreferrer">LoRa Alliance</a>.</li>
+<li>Zigbee: especificações da <a href="https://csa-iot.org/all-solutions/zigbee/" target="_blank" rel="noopener noreferrer">Connectivity Standards Alliance (Zigbee)</a> sobre <a href="https://standards.ieee.org/ieee/802.15.4/7028/" target="_blank" rel="noopener noreferrer">IEEE 802.15.4</a>.</li>
+<li>Redes mesh em geral: perfis e stacks variam por protocolo (<a href="https://www.threadgroup.org/What-is-Thread" target="_blank" rel="noopener noreferrer">Thread</a>, <a href="https://csa-iot.org/all-solutions/zigbee/" target="_blank" rel="noopener noreferrer">Zigbee</a>, <a href="https://www.bluetooth.com/mesh/" target="_blank" rel="noopener noreferrer">Bluetooth Mesh</a>).</li>
+<li>Segurança IoT: referências como <a href="https://www.etsi.org/deliver/etsi_en/303600_303699/303645/02.01.01_60/en_303645v020101p.pdf" target="_blank" rel="noopener noreferrer">ETSI EN 303 645</a> e boas práticas de gestão de chaves/credenciais.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="próximo-post-da-série">Próximo post da série<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-3#pr%C3%B3ximo-post-da-s%C3%A9rie" class="hash-link" aria-label="Direct link to Próximo post da série" title="Direct link to Próximo post da série">​</a></h2>
+<p>Na <a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-4">Parte 4</a>, fechamos a série com foco em conectividade para dispositivos móveis em veículos, cobrindo desafios de mobilidade, arquitetura de resiliência e boas práticas de campo.</p>
+<p>A melhor decisão de rede é aquela que atende ao contexto operacional real do projeto, e não apenas ao melhor benchmark de laboratório.</p>]]></content:encoded>
+            <category>V3 Tecnologia</category>
+            <category>Engenharia de Software</category>
+        </item>
+        <item>
+            <title><![CDATA[Conectividade IoT sem mistério (Parte 2): rede celular, SIM M2M e APN]]></title>
+            <link>https://developer.v3control.com/en/blog/conectividade-iot-parte-2</link>
+            <guid>https://developer.v3control.com/en/blog/conectividade-iot-parte-2</guid>
+            <pubDate>Sun, 05 Jul 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Na Parte 1, discutimos os fundamentos para decisões de conectividade e o desafio das áreas de sombra. Agora vamos aprofundar os aspectos técnicos da conectividade celular para IoT.]]></description>
+            <content:encoded><![CDATA[<p>Na <a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-1">Parte 1</a>, discutimos os fundamentos para decisões de conectividade e o desafio das áreas de sombra. Agora vamos aprofundar os aspectos técnicos da conectividade celular para IoT.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="como-a-rede-celular-funciona-para-um-dispositivo-iot">Como a rede celular funciona para um dispositivo IoT<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-2#como-a-rede-celular-funciona-para-um-dispositivo-iot" class="hash-link" aria-label="Direct link to Como a rede celular funciona para um dispositivo IoT" title="Direct link to Como a rede celular funciona para um dispositivo IoT">​</a></h2>
+<p>Quando um dispositivo IoT com modem celular envia dados, o caminho simplificado é:</p>
+<ol>
+<li>Dispositivo + SIM fazem autenticação na rede da operadora.</li>
+<li>O tráfego é encapsulado no core móvel (<a href="https://en.wikipedia.org/wiki/Evolved_Packet_Core" target="_blank" rel="noopener noreferrer">Evolved Packet Core (EPC)</a> no 4G ou <a href="https://en.wikipedia.org/wiki/5G#Core_network_architecture" target="_blank" rel="noopener noreferrer">5G Core (5GC)</a> no 5G).</li>
+<li>A operadora aplica políticas de roteamento, QoS e segurança.</li>
+<li>O dado sai para Internet pública ou para rede privada corporativa.</li>
+<li>A aplicação de IoT recebe, processa e responde.</li>
+</ol>
+<p>Em termos práticos, a operadora não oferece apenas cobertura de rádio. Ela oferece controle de sessão, autenticação, roteamento e políticas de tráfego.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/GSM_ArchitecturePL.svg" alt="Visão simplificada de arquitetura de rede celular." style="max-width:780px;width:100%;height:auto">
+<p>Fonte: <a href="https://commons.wikimedia.org/wiki/File:GSM_ArchitecturePL.svg" target="_blank" rel="noopener noreferrer">Wikimedia Commons - File<!-- -->:GSM_ArchitecturePL<!-- -->.svg</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="sim-tradicional-x-sim-m2miot">SIM tradicional x SIM M2M/IoT<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-2#sim-tradicional-x-sim-m2miot" class="hash-link" aria-label="Direct link to SIM tradicional x SIM M2M/IoT" title="Direct link to SIM tradicional x SIM M2M/IoT">​</a></h2>
+<p>Um chip M2M/IoT costuma trazer características importantes para operação em escala:</p>
+<ul>
+<li>Perfil tarifário orientado a baixo consumo de dados por dispositivo.</li>
+<li>Maior previsibilidade contratual para conexões permanentes.</li>
+<li>Recursos de gerenciamento em lote (ativação, bloqueio, diagnóstico).</li>
+<li>Opções multi-operadora ou roaming permanente em alguns modelos.</li>
+<li>Formatos industriais (2FF/3FF/4FF) e eSIM/eUICC para troca remota de perfil.</li>
+</ul>
+<p>Para operações massivas, gestão remota de SIM é tão importante quanto cobertura.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="apn-o-que-é-e-por-que-existe">APN: o que é e por que existe<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-2#apn-o-que-%C3%A9-e-por-que-existe" class="hash-link" aria-label="Direct link to APN: o que é e por que existe" title="Direct link to APN: o que é e por que existe">​</a></h2>
+<p>APN (Access Point Name) é o identificador lógico que diz ao core da operadora qual rede de dados o dispositivo quer alcançar e quais políticas devem ser aplicadas nessa sessão.</p>
+<p>Na prática, o APN influencia diretamente:</p>
+<ul>
+<li>Endereçamento IP do dispositivo (privado, público, estático ou dinâmico, conforme política).</li>
+<li>Perfil de roteamento (Internet pública, rede privada corporativa ou ambiente híbrido).</li>
+<li>Regras de segurança (ACL, portas permitidas, inspeção e segmentação).</li>
+<li>Política de QoS e charging (prioridade de tráfego, franquia e tarifação).</li>
+</ul>
+<p>Sem APN, todo tráfego cairia em uma política padrão da operadora. Com APN, você transforma conectividade em controle de serviço.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="como-uma-apn-funciona">Como uma APN funciona<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-2#como-uma-apn-funciona" class="hash-link" aria-label="Direct link to Como uma APN funciona" title="Direct link to Como uma APN funciona">​</a></h2>
+<p>Quando o dispositivo sobe sessão de dados, o APN participa do fluxo de ponta a ponta:</p>
+<ol>
+<li>O dispositivo solicita uma sessão de dados informando o APN.</li>
+<li>O core valida SIM, assinatura e permissões para aquele APN.</li>
+<li>A sessão é associada a funções de controle e encaminhamento (no 4G, tipicamente <a href="https://www.sharetechnote.com/html/Handbook_LTE_MME.html" target="_blank" rel="noopener noreferrer">MME</a>/<a href="https://www.sharetechnote.com/html/Handbook_LTE_SGW.html" target="_blank" rel="noopener noreferrer">SGW</a>/<a href="https://www.sharetechnote.com/html/Handbook_LTE_PGW.html" target="_blank" rel="noopener noreferrer">PGW</a>; no 5G, funções equivalentes no 5GC).</li>
+<li>O tráfego do usuário passa a seguir o caminho e as políticas do APN selecionado.</li>
+<li>O backend recebe esse tráfego conforme o modelo definido: Internet, VPN/IPsec, MPLS ou interconexão dedicada.</li>
+</ol>
+<p>Em termos de transporte, o plano de usuário em redes móveis usa encapsulamento em túneis (como GTP-U no contexto 3GPP), o que permite separar sessões por dispositivo e aplicar política por bearer/sessão.</p>
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Evolved_Packet_Core.svg" alt="Arquitetura EPC com principais funções de core usadas para sessão de dados e política de APN." style="max-width:780px;width:100%;height:auto">
+<p>Fonte: <a href="https://commons.wikimedia.org/wiki/File:Evolved_Packet_Core.svg" target="_blank" rel="noopener noreferrer">Wikimedia Commons - File<!-- -->:Evolved_Packet_Core<!-- -->.svg</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="apn-pública-x-apn-privada">APN pública x APN privada<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-2#apn-p%C3%BAblica-x-apn-privada" class="hash-link" aria-label="Direct link to APN pública x APN privada" title="Direct link to APN pública x APN privada">​</a></h2>
+<p>A diferença técnica mais importante está no domínio de roteamento e na exposição de rede.</p>
+<ul>
+<li>APN pública: geralmente usa saída compartilhada para Internet, com <a href="https://en.wikipedia.org/wiki/Network_address_translation" target="_blank" rel="noopener noreferrer">NAT</a> e controles padrão.</li>
+<li>APN privada: encaminha tráfego para domínios restritos do cliente, com isolamento de rota e maior governança.</li>
+<li>APN híbrida: combina fluxos por criticidade, separando telemetria comum e dados sensíveis.</li>
+</ul>
+<p>Em IoT, isso permite desenhar políticas diferentes para tipos de payload, classes de dispositivo e níveis de risco operacional.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="quando-usar-apn-pública-ou-privada">Quando usar APN pública ou privada<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-2#quando-usar-apn-p%C3%BAblica-ou-privada" class="hash-link" aria-label="Direct link to Quando usar APN pública ou privada" title="Direct link to Quando usar APN pública ou privada">​</a></h2>
+<p>APN pública costuma funcionar bem quando:</p>
+<ul>
+<li>O dado não é sensível a ponto de exigir rede segregada.</li>
+<li>O backend já está preparado para Internet pública com TLS forte.</li>
+<li>O projeto precisa de entrada rápida em produção e custo menor.</li>
+</ul>
+<p>APN privada tende a ser melhor quando:</p>
+<ul>
+<li>Existe exigência de isolamento de tráfego por compliance.</li>
+<li>O cliente demanda acesso restrito a endpoints internos.</li>
+<li>Há políticas corporativas rígidas de segurança de rede.</li>
+</ul>
+<p>Em muitos cenários, uma arquitetura híbrida resolve: APN pública para telemetria não crítica e APN privada para operações sensíveis.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="banda-larga-no-contexto-iot">Banda larga no contexto IoT<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-2#banda-larga-no-contexto-iot" class="hash-link" aria-label="Direct link to Banda larga no contexto IoT" title="Direct link to Banda larga no contexto IoT">​</a></h2>
+<p>Quando o dispositivo IoT fica instalado sempre no mesmo local (por exemplo, uma loja, fábrica, escola ou condomínio), ele pode usar banda larga fixa (fibra, cabo ou rádio) como conectividade principal:</p>
+<ul>
+<li>Vantagens: alta capacidade, estabilidade, menor custo por megabyte.</li>
+<li>Riscos: indisponibilidade local, dependência de energia e infraestrutura do site.</li>
+<li>Uso ideal: gateways locais, video analytics em borda e ambientes com tráfego elevado.</li>
+</ul>
+<p>Para ativos móveis, a banda larga fixa do local costuma ser usada como <a href="https://en.wikipedia.org/wiki/Backhaul_(telecommunications)" target="_blank" rel="noopener noreferrer">backhaul</a> (o "caminho de saída" que liga a rede interna do site à internet), enquanto a conectividade do dispositivo em movimento continua no celular.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="padrões-e-normas-relevantes">Padrões e normas relevantes<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-2#padr%C3%B5es-e-normas-relevantes" class="hash-link" aria-label="Direct link to Padrões e normas relevantes" title="Direct link to Padrões e normas relevantes">​</a></h2>
+<p>Se a ideia é escalar com previsibilidade, vale mapear cada decisão de arquitetura a uma referência técnica:</p>
+<ul>
+<li>3GPP: arquitetura de sistema, mobilidade, QoS, perfis IoT (incluindo evoluções de LTE-M/NB-IoT e 5G).</li>
+<li>GSMA: diretrizes operacionais para ciclo de vida de SIM/eSIM, roaming e gestão em escala.</li>
+<li>ETSI EN 303 645: baseline de segurança para dispositivos conectados e cadeia IoT.</li>
+<li>Regulação local: homologação, espectro e requisitos de operação (ex.: Anatel no Brasil).</li>
+</ul>
+<p>Esse alinhamento evita decisões ad hoc e melhora auditoria técnica, segurança e interoperabilidade entre operadoras e fornecedores.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="próximo-post-da-série">Próximo post da série<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-2#pr%C3%B3ximo-post-da-s%C3%A9rie" class="hash-link" aria-label="Direct link to Próximo post da série" title="Direct link to Próximo post da série">​</a></h2>
+<p>Na <a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-3">Parte 3</a>, vamos subir o nível técnico na comparação entre Mesh, LoRa, LoRaWAN e Zigbee, explorando topologia, capacidade, latência, consumo energético e limites práticos de cada tecnologia.</p>]]></content:encoded>
+            <category>V3 Tecnologia</category>
+            <category>Engenharia de Software</category>
+        </item>
+        <item>
+            <title><![CDATA[Conectividade IoT sem mistério (Parte 1): fundamentos para decisões de conectividade]]></title>
+            <link>https://developer.v3control.com/en/blog/conectividade-iot-parte-1</link>
+            <guid>https://developer.v3control.com/en/blog/conectividade-iot-parte-1</guid>
+            <pubDate>Sat, 04 Jul 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Escolher conectividade em IoT vai muito além de definir "qual rede usar". Em projetos reais, essa decisão afeta viabilidade financeira, velocidade de implantação, confiabilidade da operação e experiência do cliente no dia a dia.]]></description>
+            <content:encoded><![CDATA[<div style="margin:0 0 24px 0;border-radius:14px;overflow:hidden;border:1px solid #d9e2f2;box-shadow:0 10px 28px rgba(9, 30, 66, 0.12)"><img src="https://developer.v3control.com/en/assets/images/conectividade-iot-parte-1-header-716dc1313af835cc6d6954eb5277409b.png" alt="Ilustração de cobertura celular em diferentes distâncias e terrenos." style="display:block;width:100%;max-height:420px;object-fit:cover"></div>
+<p>Escolher conectividade em IoT vai muito além de definir "qual rede usar". Em projetos reais, essa decisão afeta viabilidade financeira, velocidade de implantação, confiabilidade da operação e experiência do cliente no dia a dia.</p>
+<p>Esta série foi criada para organizar esse tema de forma progressiva, conectando visão de negócio e fundamentos técnicos sem perder foco prático. A ideia é ajudar times de produto, engenharia e operações a tomarem decisões melhores antes que os problemas apareçam em campo.</p>
+<p>Ao longo de 4 partes, vamos cobrir:</p>
+<ol>
+<li>Fundamentos para decisões de conectividade em cenários reais de operação.</li>
+<li>Rede celular para IoT e APN: funcionamento, modelos e critérios de escolha.</li>
+<li>Redes não-celulares e padrões: Mesh, LoRa, LoRaWAN e Zigbee na prática.</li>
+<li>Conectividade para dispositivos móveis em veículos, com foco em resiliência operacional.</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="o-que-muda-quando-o-dispositivo-vai-para-a-rua">O que muda quando o dispositivo vai para a rua<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-1#o-que-muda-quando-o-dispositivo-vai-para-a-rua" class="hash-link" aria-label="Direct link to O que muda quando o dispositivo vai para a rua" title="Direct link to O que muda quando o dispositivo vai para a rua">​</a></h2>
+<p>Em laboratório, quase toda conectividade parece funcionar. Em produção, surgem as variáveis difíceis:</p>
+<ul>
+<li>Cobertura irregular em rodovias, subsolos, pátios industriais e áreas rurais.</li>
+<li>Congestionamento em horários de pico e eventos de massa.</li>
+<li>Troca de operadora por geografia, custo ou qualidade de sinal.</li>
+<li>Dependência de roaming nacional e internacional.</li>
+<li>Restrições de energia para equipamentos a bateria.</li>
+</ul>
+<p>Essas zonas de baixa disponibilidade ou baixa qualidade de sinal são as chamadas áreas de sombra. Na prática, elas não são apenas pontos sem sinal: podem ser regiões com latência imprevisível, perda de pacotes ou oscilação de tecnologia (4G para 3G, por exemplo).</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/18/CellTowerRichmondHill.jpg" alt="Torre de rede celular usada para cobertura em campo." style="max-width:780px;width:100%;height:auto">
+<p>Fonte: <a href="https://commons.wikimedia.org/wiki/File:CellTowerRichmondHill.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons - File<!-- -->:CellTowerRichmondHill<!-- -->.jpg</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="os-três-pilares-da-decisão-de-conectividade">Os três pilares da decisão de conectividade<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-1#os-tr%C3%AAs-pilares-da-decis%C3%A3o-de-conectividade" class="hash-link" aria-label="Direct link to Os três pilares da decisão de conectividade" title="Direct link to Os três pilares da decisão de conectividade">​</a></h2>
+<p>Uma boa arquitetura IoT costuma equilibrar três eixos:</p>
+<ul>
+<li>Cobertura efetiva: não é só o mapa da operadora, é o desempenho no local de operação.</li>
+<li>Custo total: módulo, chip, dados, operação, suporte e retrabalho de campo.</li>
+<li>Confiabilidade operacional: capacidade de transmitir quando importa, mesmo em ambiente hostil.</li>
+</ul>
+<p>Se um desses pilares falha, o projeto paga a conta depois em tickets, manutenção e perda de confiança do cliente.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tecnologias-de-forma-simples">Tecnologias de forma simples<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-1#tecnologias-de-forma-simples" class="hash-link" aria-label="Direct link to Tecnologias de forma simples" title="Direct link to Tecnologias de forma simples">​</a></h2>
+<p>Antes de aprofundar a parte técnica, vale um resumo de alto nível:</p>
+<ul>
+<li>Celular (2G/3G/4G/5G, NB-IoT, LTE-M): cobertura ampla, boa para ativos móveis e cenários distribuídos.</li>
+<li>Banda larga fixa (fibra/cabo/rádio): ótima capacidade onde há infraestrutura local estável.</li>
+<li>Redes de baixa potência e longo alcance (LoRa/LoRaWAN): ideais para telemetria leve, grande autonomia energética e longas distâncias.</li>
+<li>Redes de curto alcance e baixa potência (Zigbee, Bluetooth Mesh): fortes em ambientes locais com muitos nós próximos.</li>
+</ul>
+<p>Não existe tecnologia universalmente melhor. Existe a tecnologia adequada para o perfil de tráfego, mobilidade, energia e criticidade de cada caso.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="onde-o-técnico-encontra-o-comercial">Onde o técnico encontra o comercial<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-1#onde-o-t%C3%A9cnico-encontra-o-comercial" class="hash-link" aria-label="Direct link to Onde o técnico encontra o comercial" title="Direct link to Onde o técnico encontra o comercial">​</a></h2>
+<p>Do lado comercial, a conectividade entra em quatro perguntas:</p>
+<ol>
+<li>Qual o custo mensal por ativo e como ele evolui com escala?</li>
+<li>Qual o risco de indisponibilidade em regiões críticas da operação?</li>
+<li>Qual o impacto de falha de comunicação no negócio do cliente?</li>
+<li>Qual o modelo de suporte quando houver perda de conectividade em campo?</li>
+</ol>
+<p>Do lado técnico, as respostas passam por escolha de rede, fallback, buffering local, políticas de retransmissão e observabilidade.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="estratégias-para-reduzir-impacto-de-áreas-de-sombra">Estratégias para reduzir impacto de áreas de sombra<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-1#estrat%C3%A9gias-para-reduzir-impacto-de-%C3%A1reas-de-sombra" class="hash-link" aria-label="Direct link to Estratégias para reduzir impacto de áreas de sombra" title="Direct link to Estratégias para reduzir impacto de áreas de sombra">​</a></h2>
+<p>Mesmo antes de escolher protocolos detalhados, já é possível desenhar resiliência:</p>
+<ul>
+<li>Store-and-forward: o dispositivo guarda dados localmente e retransmite quando o link retorna.</li>
+<li>Dual-SIM ou multi-operadora: aumenta chance de cobertura em campo.</li>
+<li>Telemetria adaptativa: reduz taxa de envio quando a qualidade de link cai.</li>
+<li>Alertas de saúde de conectividade: mede perda, latência e reconexões por dispositivo.</li>
+<li>Priorização de payload: envia primeiro o que é crítico para operação.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="normas-e-governança-por-que-importam">Normas e governança: por que importam<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-1#normas-e-governan%C3%A7a-por-que-importam" class="hash-link" aria-label="Direct link to Normas e governança: por que importam" title="Direct link to Normas e governança: por que importam">​</a></h2>
+<p>Projetos IoT maduros alinham tecnologia com normas e diretrizes de mercado:</p>
+<ul>
+<li>3GPP para padrões de redes móveis.</li>
+<li>GSMA para práticas de ecossistema móvel e SIM.</li>
+<li>Regulamentação local (como Anatel no Brasil) para homologação e operação.</li>
+</ul>
+<p>Seguir padrões reduz risco de lock-in, melhora interoperabilidade e facilita auditoria técnica/comercial.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Cellular_network_standards_and_generation_timeline.svg" alt="Linha do tempo de padrões e gerações de redes celulares." style="max-width:780px;width:100%;height:auto">
+<p>Fonte: <a href="https://commons.wikimedia.org/wiki/File:Cellular_network_standards_and_generation_timeline.svg" target="_blank" rel="noopener noreferrer">Wikimedia Commons - File<!-- -->:Cellular_network_standards_and_generation_timeline<!-- -->.svg</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="próximo-post-da-série">Próximo post da série<a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-1#pr%C3%B3ximo-post-da-s%C3%A9rie" class="hash-link" aria-label="Direct link to Próximo post da série" title="Direct link to Próximo post da série">​</a></h2>
+<p>Na <a href="https://developer.v3control.com/en/blog/conectividade-iot-parte-2">Parte 2</a>, vamos entrar na mecânica da rede celular para IoT: como o tráfego passa pela operadora, o papel do SIM M2M, APN pública x APN privada e quando cada modelo faz sentido.</p>]]></content:encoded>
+            <category>V3 Tecnologia</category>
+            <category>Engenharia de Software</category>
+        </item>
+        <item>
+            <title><![CDATA[Atualizações da Versão 1.18.4]]></title>
+            <link>https://developer.v3control.com/en/blog/changelog-1.18.4</link>
+            <guid>https://developer.v3control.com/en/blog/changelog-1.18.4</guid>
+            <pubDate>Tue, 22 Jul 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Olá, desenvolvedores e entusiastas da tecnologia!]]></description>
+            <content:encoded><![CDATA[<p>Olá, desenvolvedores e entusiastas da tecnologia!</p>
+<p>Nesta atualização, reunimos as principais melhorias, correções e novidades implementadas entre as versões 1.18.1 e 1.18.4 do nosso firmware, com foco em estabilidade, performance e evolução contínua do DMS e dos sistemas embarcados.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="destaques-das-atualizações">Destaques das Atualizações<a href="https://developer.v3control.com/en/blog/changelog-1.18.4#destaques-das-atualiza%C3%A7%C3%B5es" class="hash-link" aria-label="Direct link to Destaques das Atualizações" title="Direct link to Destaques das Atualizações">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="otimizações-e-novas-funcionalidades-no-dms">Otimizações e Novas Funcionalidades no DMS<a href="https://developer.v3control.com/en/blog/changelog-1.18.4#otimiza%C3%A7%C3%B5es-e-novas-funcionalidades-no-dms" class="hash-link" aria-label="Direct link to Otimizações e Novas Funcionalidades no DMS" title="Direct link to Otimizações e Novas Funcionalidades no DMS">​</a></h3>
+<ul>
+<li>Ajustamos a prioridade do evento de sonolência (drowsiness), tornando o sistema mais sensível e responsivo a situações críticas de fadiga do condutor.</li>
+<li>Implementamos <strong>vozes no DMS</strong>, trazendo feedbacks sonoros para eventos relevantes e aumentando a interação e segurança do usuário.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="melhorias-de-performance-e-robustez">Melhorias de Performance e Robustez<a href="https://developer.v3control.com/en/blog/changelog-1.18.4#melhorias-de-performance-e-robustez" class="hash-link" aria-label="Direct link to Melhorias de Performance e Robustez" title="Direct link to Melhorias de Performance e Robustez">​</a></h3>
+<ul>
+<li>Realizamos diversas correções de concorrência no processamento do DMS, tornando o sistema mais estável, especialmente em ambientes multi-thread.</li>
+<li>Refatoramos a implementação de vozes, tornando-a mais eficiente e modular.</li>
+<li>Migramos a versão do banco de dados de configuração de eventos, garantindo compatibilidade e melhor desempenho.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ajustes-de-precisão-e-parâmetros">Ajustes de Precisão e Parâmetros<a href="https://developer.v3control.com/en/blog/changelog-1.18.4#ajustes-de-precis%C3%A3o-e-par%C3%A2metros" class="hash-link" aria-label="Direct link to Ajustes de Precisão e Parâmetros" title="Direct link to Ajustes de Precisão e Parâmetros">​</a></h3>
+<ul>
+<li>Atualizamos o threshold de reconhecimento facial (faceid), aprimorando a precisão na detecção e reduzindo falsos positivos/negativos.</li>
+<li>Ajustamos parâmetros internos para garantir maior confiabilidade nas detecções e respostas do sistema.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="qualidade-testes-e-manutenção">Qualidade, Testes e Manutenção<a href="https://developer.v3control.com/en/blog/changelog-1.18.4#qualidade-testes-e-manuten%C3%A7%C3%A3o" class="hash-link" aria-label="Direct link to Qualidade, Testes e Manutenção" title="Direct link to Qualidade, Testes e Manutenção">​</a></h3>
+<ul>
+<li>Corrigimos e aprimoramos testes automatizados, garantindo maior cobertura e confiabilidade nas validações do sistema.</li>
+<li>Realizamos atualizações de versão e pequenas melhorias de manutenção para manter o firmware sempre atualizado e seguro.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="o-que-isso-significa-para-você">O que isso significa para você?<a href="https://developer.v3control.com/en/blog/changelog-1.18.4#o-que-isso-significa-para-voc%C3%AA" class="hash-link" aria-label="Direct link to O que isso significa para você?" title="Direct link to O que isso significa para você?">​</a></h2>
+<p>Essas atualizações trazem um sistema mais inteligente, seguro e confiável para todos os usuários:</p>
+<ul>
+<li><strong>DMS mais preciso e interativo</strong>: Com vozes, novas regras e ajustes de prioridade, o sistema responde melhor a situações críticas e oferece feedbacks mais claros.</li>
+<li><strong>Maior estabilidade</strong>: Correções de concorrência e melhorias de performance reduzem falhas e aumentam a robustez em cenários de uso intenso.</li>
+<li><strong>Reconhecimento facial aprimorado</strong>: Ajustes finos nos parâmetros garantem detecções mais confiáveis e seguras.</li>
+<li><strong>Evolução contínua</strong>: Testes e manutenções constantes asseguram que o sistema acompanhe as necessidades do mercado e dos usuários.</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Contato</div><div class="admonitionContent_BuS1"><p>Ficou com alguma dúvida? Entre em contato com nossa equipe de desenvolvimento!</p><p>Envie um <a href="mailto:dev@v3.com.br" target="_blank" rel="noopener noreferrer">e-mail</a> para os nossos Devs ou entre na nossa comunidade do <a href="https://discord.gg/e69avYVnzG" target="_blank" rel="noopener noreferrer">Discord</a>.</p></div></div>
+<p>Até a próxima atualização!</p>]]></content:encoded>
+            <category>Changelog</category>
+        </item>
+        <item>
+            <title><![CDATA[Atualizações da Versão 1.18.0]]></title>
+            <link>https://developer.v3control.com/en/blog/changelog-1.18.0</link>
+            <guid>https://developer.v3control.com/en/blog/changelog-1.18.0</guid>
+            <pubDate>Mon, 16 Jun 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Olá, desenvolvedores e entusiastas da tecnologia!]]></description>
+            <content:encoded><![CDATA[<p>Olá, desenvolvedores e entusiastas da tecnologia!</p>
+<p>Estamos empolgados em anunciar nossa primeira entrada no blog de changelogs! A partir de agora, você encontrará aqui todas as novidades e melhorias que estamos implementando no nosso firmware. E para começar com o pé direito, trouxemos uma versão com foco especial em otimizações do DMS, GPS e sistema de reboot.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="destaque-da-versão">Destaque da Versão<a href="https://developer.v3control.com/en/blog/changelog-1.18.0#destaque-da-vers%C3%A3o" class="hash-link" aria-label="Direct link to Destaque da Versão" title="Direct link to Destaque da Versão">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="processamento-inteligente-de-eventos-dms">Processamento Inteligente de Eventos DMS<a href="https://developer.v3control.com/en/blog/changelog-1.18.0#processamento-inteligente-de-eventos-dms" class="hash-link" aria-label="Direct link to Processamento Inteligente de Eventos DMS" title="Direct link to Processamento Inteligente de Eventos DMS">​</a></h3>
+<ul>
+<li>Implementamos um novo sistema de <a href="https://developer.v3control.com/en/docs/docs/visao-geral-da-plataforma/solucao-v3/03.02-core/03.02.01-v3fw/03.02.01.05-dms/03.02.01.05.02-deteccao-inteligente"><strong>agrupamento de eventos DMS</strong></a>, que:<!-- -->
+<ul>
+<li>Reduz significativamente a quantidade de eventos gerados</li>
+<li>Otimiza o processamento e consumo de recursos</li>
+<li>Melhora a precisão na detecção de eventos</li>
+</ul>
+</li>
+<li>Criamos novos testes automatizados específicos para validar as regras de negócio do DMS</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="sistema-de-reboot-inteligente">Sistema de Reboot Inteligente<a href="https://developer.v3control.com/en/blog/changelog-1.18.0#sistema-de-reboot-inteligente" class="hash-link" aria-label="Direct link to Sistema de Reboot Inteligente" title="Direct link to Sistema de Reboot Inteligente">​</a></h3>
+<p>Melhoramos o sistema de reboot recorrento do dispositivo para incorporar novas regras que viram melhorar de forma geral o funcionamento do dispositivo.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="melhorias-no-gps">Melhorias no GPS<a href="https://developer.v3control.com/en/blog/changelog-1.18.0#melhorias-no-gps" class="hash-link" aria-label="Direct link to Melhorias no GPS" title="Direct link to Melhorias no GPS">​</a></h3>
+<ul>
+<li>Implementamos um novo sistema de tratamento de coordenadas inválidas:<!-- -->
+<ul>
+<li>Mescla dados da localização atual com a última posição válida quando coordenadas são (0.0, 0.0)</li>
+<li>Servidores recebem atualizações contínuas mesmo com falhas pontuais no GPS</li>
+</ul>
+</li>
+<li>Correção na lógica de precisão:<!-- -->
+<ul>
+<li>Ignora atualizações se accuracy &gt; 10m ou se a precisão não estiver disponível</li>
+<li>Uso de valores atualizados de satélites e HDOP do parser NMEA para decisões em tempo real</li>
+</ul>
+</li>
+<li>Implementação de uso estratégico da FusedLocation API:<!-- -->
+<ul>
+<li>Ativação automática quando GPS está degradado</li>
+<li>Combinação de sinais de GPS, rede e Wi-Fi para maior confiabilidade</li>
+</ul>
+</li>
+<li>Melhorias na persistência de dados:<!-- -->
+<ul>
+<li>Validação de coordenadas durante a recuperação</li>
+<li>Correção de perda de precisão devido a tipo de dados incorreto</li>
+</ul>
+</li>
+<li>Implementação de logs detalhados para debug</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="geração-de-eventos-de-identificação-facial">Geração de Eventos de Identificação Facial<a href="https://developer.v3control.com/en/blog/changelog-1.18.0#gera%C3%A7%C3%A3o-de-eventos-de-identifica%C3%A7%C3%A3o-facial" class="hash-link" aria-label="Direct link to Geração de Eventos de Identificação Facial" title="Direct link to Geração de Eventos de Identificação Facial">​</a></h3>
+<p>Agora garantimos que um evento sempre seja emitido, seja ele face detectada ou face não detectada</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="outras-melhorias-importantes">Outras Melhorias Importantes<a href="https://developer.v3control.com/en/blog/changelog-1.18.0#outras-melhorias-importantes" class="hash-link" aria-label="Direct link to Outras Melhorias Importantes" title="Direct link to Outras Melhorias Importantes">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="estabilidade-e-manutenção">Estabilidade e Manutenção<a href="https://developer.v3control.com/en/blog/changelog-1.18.0#estabilidade-e-manuten%C3%A7%C3%A3o" class="hash-link" aria-label="Direct link to Estabilidade e Manutenção" title="Direct link to Estabilidade e Manutenção">​</a></h3>
+<ul>
+<li>Corrigimos a dependência do <strong>ffmpeg-kit</strong> que estava causando problemas na build</li>
+<li>Adicionamos logs mais descritivos e melhoramos a documentação interna</li>
+<li>Corrigimos pequenos bugs que afetavam a estabilidade do aplicativo em produção</li>
+<li>Melhoramos o desempenho do sistema ao otimizar o armazenamento temporário de dados</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="qualidade-e-testes">Qualidade e Testes<a href="https://developer.v3control.com/en/blog/changelog-1.18.0#qualidade-e-testes" class="hash-link" aria-label="Direct link to Qualidade e Testes" title="Direct link to Qualidade e Testes">​</a></h3>
+<ul>
+<li>Implementamos testes unitários e de integração para o DMS</li>
+<li>Adicionamos testes NMEA para validação de dados de GPS</li>
+<li>Realizamos uma limpeza geral no código, removendo atributos não utilizados</li>
+<li>Melhoramos a nomenclatura e organização do código</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="processamento-de-imagens">Processamento de Imagens<a href="https://developer.v3control.com/en/blog/changelog-1.18.0#processamento-de-imagens" class="hash-link" aria-label="Direct link to Processamento de Imagens" title="Direct link to Processamento de Imagens">​</a></h3>
+<ul>
+<li>Realizamos correções no módulo de reconhecimento de faces:<!-- -->
+<ul>
+<li>Ajustes de lógica no processamento de faces</li>
+<li>Correção de erros de concorrência em ambientes multi-thread</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="o-que-isso-significa-para-você">O que isso significa para você?<a href="https://developer.v3control.com/en/blog/changelog-1.18.0#o-que-isso-significa-para-voc%C3%AA" class="hash-link" aria-label="Direct link to O que isso significa para você?" title="Direct link to O que isso significa para você?">​</a></h2>
+<p>Esta versão traz melhorias significativas em quatro áreas principais:</p>
+<ol>
+<li>
+<p><strong>Processamento de Eventos DMS</strong>: Com o novo sistema de agrupamento, reduzimos significativamente a quantidade de eventos gerados, otimizando o processamento e melhorando a precisão na detecção.</p>
+</li>
+<li>
+<p><strong>Sistema de Reboot Inteligente</strong>: As novas regras de reboot melhoram o funcionamento geral do dispositivo, garantindo que ele permaneça operacional quando necessário e reinicie apenas em situações apropriadas.</p>
+</li>
+<li>
+<p><strong>Melhorias no GPS</strong>: Implementamos um sistema mais robusto de tratamento de coordenadas, com fallback automático para FusedLocation quando necessário. Isso resulta em maior confiabilidade na localização e melhor tratamento de falhas pontuais.</p>
+</li>
+<li>
+<p><strong>Identificação Facial</strong>: A geração sistemática de eventos de identificação facial, independentemente do resultado da detecção, melhora a rastreabilidade e análise dos condutores.</p>
+</li>
+</ol>
+<p>Estas melhorias trabalham em conjunto para proporcionar um sistema mais estável, confiável e eficiente, com melhor uso de recursos e maior precisão nas operações.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Contato</div><div class="admonitionContent_BuS1"><p>Ficou com alguma dúvida? Entre em contato com nossa equipe de desenvolvimento!</p><p>Envie um <a href="mailto:dev@v3.com.br" target="_blank" rel="noopener noreferrer">e-mail</a> para os nossos Devs ou entre na nossa comunidade do <a href="https://discord.gg/e69avYVnzG" target="_blank" rel="noopener noreferrer">Discord</a>.</p></div></div>
+<p>Até a próxima atualização!</p>]]></content:encoded>
+            <category>Changelog</category>
+        </item>
+        <item>
+            <title><![CDATA[Por dentro da arquitetura da V3]]></title>
+            <link>https://developer.v3control.com/en/blog/arquitetura-v3</link>
+            <guid>https://developer.v3control.com/en/blog/arquitetura-v3</guid>
+            <pubDate>Fri, 02 May 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Construindo uma Plataforma moderna, escalável e segura]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="construindo-uma-plataforma-moderna-escalável-e-segura">Construindo uma Plataforma moderna, escalável e segura<a href="https://developer.v3control.com/en/blog/arquitetura-v3#construindo-uma-plataforma-moderna-escal%C3%A1vel-e-segura" class="hash-link" aria-label="Direct link to Construindo uma Plataforma moderna, escalável e segura" title="Direct link to Construindo uma Plataforma moderna, escalável e segura">​</a></h2>
+<p>Quando projetamos a V3, tínhamos um objetivo claro: entregar uma plataforma de visão computacional robusta, segura e escalável — não apenas uma API funcional. Para isso, investimos em uma arquitetura moderna, desenhada para evoluir junto com nossos clientes, com foco em isolamento, performance e conformidade legal.</p>
+<p>Neste post, queremos compartilhar com você — desenvolvedor, integrador ou arquiteto de sistemas — como estruturamos os fundamentos da V3 sob uma ótica técnica.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="multi-tenant-de-verdade">Multi-tenant de verdade<a href="https://developer.v3control.com/en/blog/arquitetura-v3#multi-tenant-de-verdade" class="hash-link" aria-label="Direct link to Multi-tenant de verdade" title="Direct link to Multi-tenant de verdade">​</a></h2>
+<p>Cada cliente da V3 é provisionado em seu próprio <strong>tenant isolado</strong>, o que significa:</p>
+<ul>
+<li>Ambientes segregados lógica e computacionalmente.</li>
+<li>Tokens, dados, métricas e até filas de mensagens totalmente independentes.</li>
+<li>Possibilidade de aplicar políticas de segurança, escalabilidade e retenção de forma granular.</li>
+</ul>
+<p>Essa abordagem evita o acoplamento excessivo entre contas e nos permite garantir níveis de segurança e privacidade superiores, especialmente em conformidade com a <strong>LGPD</strong>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="escalabilidade-nativa-com-kubernetes">Escalabilidade nativa com Kubernetes<a href="https://developer.v3control.com/en/blog/arquitetura-v3#escalabilidade-nativa-com-kubernetes" class="hash-link" aria-label="Direct link to Escalabilidade nativa com Kubernetes" title="Direct link to Escalabilidade nativa com Kubernetes">​</a></h2>
+<p>Toda a plataforma roda em uma infraestrutura orquestrada com <strong>Kubernetes</strong>, que nos permite:</p>
+<ul>
+<li>Autoescalar componentes críticos com base em carga e volume de eventos.</li>
+<li>Distribuir horizontalmente processamentos intensivos como análise de vídeo e eventos de comportamento.</li>
+<li>Facilitar rollouts canary e blue/green com segurança.</li>
+<li>Executar rotinas de manutenção e upgrades com zero downtime.</li>
+</ul>
+<p>A combinação de tenants isolados com Kubernetes resulta em uma operação previsível, onde cada cliente pode escalar sem afetar o desempenho do outro.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="go-para-o-núcleo-da-performance">Go para o núcleo da performance<a href="https://developer.v3control.com/en/blog/arquitetura-v3#go-para-o-n%C3%BAcleo-da-performance" class="hash-link" aria-label="Direct link to Go para o núcleo da performance" title="Direct link to Go para o núcleo da performance">​</a></h2>
+<p>Grande parte dos nossos microserviços — especialmente aqueles responsáveis por ingestão de eventos e gestão de dispositivos — é escrita em <strong>Go</strong>. A escolha se deu por:</p>
+<ul>
+<li>Baixa latência e ótimo gerenciamento de concorrência.</li>
+<li>Tempo de execução enxuto, ideal para containers.</li>
+<li>Compilação estática, que facilita distribuições confiáveis em múltiplos clusters.</li>
+</ul>
+<p>Go é a espinha dorsal das partes que precisam de eficiência máxima em I/O e rede.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conformidade-com-lgpd-desde-a-fundação">Conformidade com LGPD desde a fundação<a href="https://developer.v3control.com/en/blog/arquitetura-v3#conformidade-com-lgpd-desde-a-funda%C3%A7%C3%A3o" class="hash-link" aria-label="Direct link to Conformidade com LGPD desde a fundação" title="Direct link to Conformidade com LGPD desde a fundação">​</a></h2>
+<p>Desde o início, a V3 foi projetada com <strong>privacy-by-design</strong>. Isso inclui:</p>
+<ul>
+<li>Dados anonimizados quando não essenciais.</li>
+<li>Logs de acesso e rastreabilidade por tenant.</li>
+<li>Política de retenção configurável por cliente.</li>
+<li>Auditoria de acessos sensíveis e APIs que expõem metadados de compliance.</li>
+</ul>
+<p>Não é apenas uma questão de estar em conformidade — tratamos a LGPD como um princípio de engenharia.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="observabilidade-e-automação-contínua">Observabilidade e automação contínua<a href="https://developer.v3control.com/en/blog/arquitetura-v3#observabilidade-e-automa%C3%A7%C3%A3o-cont%C3%ADnua" class="hash-link" aria-label="Direct link to Observabilidade e automação contínua" title="Direct link to Observabilidade e automação contínua">​</a></h2>
+<p>Nossa arquitetura foi desenhada para oferecer visibilidade de ponta a ponta em cada tenant, serviço e fluxo de dados. Adotamos padrões modernos de observabilidade distribuída, com rastreamento de requisições, coleta de métricas e logs estruturados desde o início — tudo com base em OpenTelemetry.</p>
+<p>Cada evento gerado, erro capturado ou requisição processada carrega contexto rico que facilita tanto o diagnóstico em tempo real quanto auditorias retroativas. Esse nível de rastreabilidade é essencial para garantir confiabilidade em ambientes multi-tenant.</p>
+<p>Do ponto de vista de engenharia, seguimos práticas modernas como GitOps para automação de infraestrutura e controle de versionamento, além de pipelines de integração e deploy contínuos que garantem entregas seguras e frequentes, com validações automatizadas, testes em múltiplos ambientes e rollback simplificado.</p>
+<p>Essa combinação entre observabilidade padronizada e automação robusta nos permite operar com agilidade, mantendo altos padrões de qualidade e segurança.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusão">Conclusão<a href="https://developer.v3control.com/en/blog/arquitetura-v3#conclus%C3%A3o" class="hash-link" aria-label="Direct link to Conclusão" title="Direct link to Conclusão">​</a></h2>
+<p>A API V3 não é apenas uma interface. É o ponto de entrada para uma plataforma pensada com cuidado, desde a escolha da linguagem até o provisionamento automatizado e compliance legal.</p>
+<p>Nosso objetivo não é apenas facilitar a integração de visão computacional e telemetria, mas fornecer um ecossistema de dados confiável, elástico e seguro para qualquer escala de operação.</p>
+<p>Se você quer conhecer mais detalhes ou está considerando uma integração mais profunda, <a href="http://developer.v3control.com/" target="_blank" rel="noopener noreferrer">visite nossa documentação</a>.</p>
+<p>Em posts futuros, entraremos a fundo nos desafios que enfrentamos ao construir e operar essa arquitetura — desde o controle fino de recursos por tenant até os aprendizados em observabilidade distribuída em larga escala.</p>
+<hr>
+<p><em>A tecnologia por trás da segurança veicular também pode ser bela.</em></p>]]></content:encoded>
+            <category>V3 Tecnologia</category>
+            <category>Engenharia de Software</category>
+        </item>
+        <item>
+            <title><![CDATA[Bem vindo ao Portal do Desenvolvedor V3]]></title>
+            <link>https://developer.v3control.com/en/blog/bem-vindo</link>
+            <guid>https://developer.v3control.com/en/blog/bem-vindo</guid>
+            <pubDate>Wed, 30 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[É com grande satisfação que apresentamos o novo Portal do Desenvolvedor V3! Este portal foi construído com carinho para proporcionar a melhor experiência possível aos desenvolvedores que querem fazer parte do ecossistema V3.]]></description>
+            <content:encoded><![CDATA[<p>É com grande satisfação que apresentamos o novo Portal do Desenvolvedor V3! Este portal foi construído com carinho para proporcionar a melhor experiência possível aos desenvolvedores que querem fazer parte do ecossistema V3.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tecnologias-utilizadas">Tecnologias Utilizadas<a href="https://developer.v3control.com/en/blog/bem-vindo#tecnologias-utilizadas" class="hash-link" aria-label="Direct link to Tecnologias Utilizadas" title="Direct link to Tecnologias Utilizadas">​</a></h2>
+<p>Nossa documentação foi desenvolvida utilizando:</p>
+<ul>
+<li>
+<p><strong><a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a></strong>: Um framework moderno para criar documentação estática, desenvolvido pelo Meta Open Source. O Docusaurus oferece:</p>
+<ul>
+<li><strong>MDX</strong>: Permite escrever documentação em Markdown com suporte a componentes React</li>
+<li><strong>Versionamento</strong>: Suporte nativo para múltiplas versões da documentação</li>
+<li><strong>Internacionalização</strong>: Preparado para traduções em diferentes idiomas</li>
+<li><strong>Busca Inteligente</strong>: Integração com mecanismos de busca para facilitar a navegação</li>
+<li><strong>Tema Escuro</strong>: Suporte automático para modo claro e escuro</li>
+<li><strong>Responsividade</strong>: Layout adaptável para todos os dispositivos</li>
+</ul>
+</li>
+<li>
+<p><strong>GitHub Pages</strong>: Hospedagem confiável e de alta performance para nossa documentação</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="propósito-da-documentação">Propósito da Documentação<a href="https://developer.v3control.com/en/blog/bem-vindo#prop%C3%B3sito-da-documenta%C3%A7%C3%A3o" class="hash-link" aria-label="Direct link to Propósito da Documentação" title="Direct link to Propósito da Documentação">​</a></h2>
+<p>Nossa documentação foi cuidadosamente estruturada para fornecer um guia completo sobre a V3. Ao navegar progressivamente pela aba Documentação você trilhará um caminho de entendimento sobre o que é a V3 e como seu time pode se integrar com a nossa solução.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="nossa-equipe">Nossa Equipe<a href="https://developer.v3control.com/en/blog/bem-vindo#nossa-equipe" class="hash-link" aria-label="Direct link to Nossa Equipe" title="Direct link to Nossa Equipe">​</a></h2>
+<p>Este portal é fruto do trabalho dedicado de nossa equipe:</p>
+<ul>
+<li><strong>Ana Novaes</strong> (<a href="https://github.com/anaclaudianovaes" target="_blank" rel="noopener noreferrer">@anaclaudianovaes</a>) - Responsável pelo comercial da V3</li>
+<li><strong>Enio Amarantes</strong> (<a href="https://github.com/EnioAmarantes" target="_blank" rel="noopener noreferrer">@EnioAmarantes</a>) - Desenvolvedor Cloud e FW</li>
+<li><strong>Keven Lucas</strong> (<a href="https://github.com/kevenmiano" target="_blank" rel="noopener noreferrer">@kevenmiano</a>) - Desenvolvedor Cloud e DevOps</li>
+<li><strong>Matheus Maroca</strong> (<a href="https://github.com/MatheusMaroca" target="_blank" rel="noopener noreferrer">@MatheusMaroca</a>) - Responsável pelo suporte</li>
+<li><strong>Renascienza</strong> (<a href="https://github.com/Renascienza" target="_blank" rel="noopener noreferrer">@Renascienza</a>) - Desenvolvedor FW</li>
+<li><strong>Ricardo Raposo</strong> (<a href="https://github.com/ricardoraposo" target="_blank" rel="noopener noreferrer">@ricardoraposo</a>) - Desenvolvedor Cloud</li>
+<li><strong>Sergio Imperatriz</strong> (<a href="https://github.com/sjimperatriz" target="_blank" rel="noopener noreferrer">@sjimperatriz</a>) - CTO</li>
+<li><strong>Sleipnir</strong> (<a href="https://github.com/sleipnir" target="_blank" rel="noopener noreferrer">@sleipnir</a>) - Tech Lead</li>
+</ul>
+<p>Agradecemos a todos que contribuíram para a construção deste portal, compartilhando seu conhecimento e expertise para criar uma documentação completa e acessível.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="faça-parte-do-nosso-time">Faça Parte do Nosso Time!<a href="https://developer.v3control.com/en/blog/bem-vindo#fa%C3%A7a-parte-do-nosso-time" class="hash-link" aria-label="Direct link to Faça Parte do Nosso Time!" title="Direct link to Faça Parte do Nosso Time!">​</a></h2>
+<p>Estamos sempre em busca de talentos para crescer junto conosco! Conheça nossas oportunidades:</p>
+<ul>
+<li><strong>Vagas Abertas</strong>: Confira nossas posições disponíveis em <a href="https://github.com/v3-tecnologia/join-our-team" target="_blank" rel="noopener noreferrer">join-our-team</a></li>
+<li><strong>Descrições das Posições</strong>: Entenda melhor cada papel em nossa equipe em <a href="https://github.com/v3-tecnologia/job-descriptions" target="_blank" rel="noopener noreferrer">job-descriptions</a></li>
+<li><strong>Desafio Técnico</strong>: Conheça nosso processo seletivo em <a href="https://github.com/v3-tecnologia/challenge" target="_blank" rel="noopener noreferrer">challenge</a></li>
+</ul>
+<hr>
+<p>Estamos constantemente melhorando nossa documentação. Se você encontrar algo que possa ser melhorado ou tiver sugestões, por favor, entre em contato conosco.</p>
+<p>Bora V3! 🚀</p>]]></content:encoded>
+            <category>V3 Tecnologia</category>
+        </item>
+    </channel>
+</rss>

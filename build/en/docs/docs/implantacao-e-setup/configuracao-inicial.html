@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-docs/implantacao-e-setup/configuracao-inicial" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Initial Configuration | Portal do Desenvolvedor V3</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.v3control.com/en/docs/docs/implantacao-e-setup/configuracao-inicial"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Initial Configuration | Portal do Desenvolvedor V3"><meta data-rh="true" name="description" content="Welcome to the V3 platform initial configuration documentation. This guide will assist you in configuring your devices, regardless of how they were acquired."><meta data-rh="true" property="og:description" content="Welcome to the V3 platform initial configuration documentation. This guide will assist you in configuring your devices, regardless of how they were acquired."><link data-rh="true" rel="icon" href="/en/img/shared/favicon.png"><link data-rh="true" rel="canonical" href="https://developer.v3control.com/en/docs/docs/implantacao-e-setup/configuracao-inicial"><link data-rh="true" rel="alternate" href="https://developer.v3control.com/docs/docs/implantacao-e-setup/configuracao-inicial" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://developer.v3control.com/en/docs/docs/implantacao-e-setup/configuracao-inicial" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.v3control.com/docs/docs/implantacao-e-setup/configuracao-inicial" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/en/blog/rss.xml" title="Portal do Desenvolvedor V3 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/en/blog/atom.xml" title="Portal do Desenvolvedor V3 Atom Feed"><link rel="stylesheet" href="/en/assets/css/styles.e42332fc.css">
+<script src="/en/assets/js/runtime~main.ef26f246.js" defer="defer"></script>
+<script src="/en/assets/js/main.73eefdaf.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/en/img/shared/logo/logo-v3.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/en/"><div class="navbar__logo"><img src="/en/img/shared/logo/logo-v3.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/en/img/shared/logo/logo-v3.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Home</b></a><a class="navbar__item navbar__link" href="/en/blog">Blog</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/en/docs/docs">Documentation</a><a class="navbar__item navbar__link" href="/en/docs/category/order-api">API</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/v3-tecnologia" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>English</a><ul class="dropdown__menu"><li><a href="/docs/docs/implantacao-e-setup/configuracao-inicial" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português</a></li><li><a href="/en/docs/docs/implantacao-e-setup/configuracao-inicial" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="en">English</a></li></ul></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/docs/docs">Welcome to V3</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/en/docs/docs/category/conheca-a-v3">About V3</a><button aria-label="Expand sidebar category &#x27;About V3&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/en/docs/docs/category/visao-geral-da-plataforma">Platform Overview</a><button aria-label="Expand sidebar category &#x27;Platform Overview&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/en/docs/docs/category/implantacao-e-setup">Deployment and Setup</a><button aria-label="Collapse sidebar category &#x27;Deployment and Setup&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/en/docs/docs/implantacao-e-setup/configuracao-inicial">Initial Configuration</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/docs/implantacao-e-setup/manual-de-instalacao/06.01-JC400P">JC400P</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/docs/implantacao-e-setup/ferramenta-de-configuracao">Configuration Tool</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/en/docs/docs/category/integracao-e-operacao">Integration and Operations</a><button aria-label="Expand sidebar category &#x27;Integration and Operations&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_xLCN"><div class="docItemContainer_jfFK"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/en/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/en/docs/docs/category/implantacao-e-setup"><span itemprop="name">Deployment and Setup</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Initial Configuration</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><div class="row"><div class="col col--12 markdown"><header><h1>Initial Configuration</h1></header>
+<p>Welcome to the V3 platform initial configuration documentation. This guide will assist you in configuring your devices, regardless of how they were acquired.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="acquisition-options">Acquisition Options<a href="#acquisition-options" class="hash-link" aria-label="Direct link to Acquisition Options" title="Direct link to Acquisition Options">​</a></h2>
+<p>There are two ways to acquire devices for use on the V3 platform:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="acquisition-through-v3">Acquisition through V3<a href="#acquisition-through-v3" class="hash-link" aria-label="Direct link to Acquisition through V3" title="Direct link to Acquisition through V3">​</a></h3>
+<p>When acquiring devices directly from V3, you will receive pre-configured devices ready for use.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Acquire Now</div><div class="admonitionContent_BuS1"><p>If you would like to acquire your device with us, contact: <a href="mailto:comercial@v3.com.br" target="_blank" rel="noopener noreferrer">comercial@v3.com.br</a></p></div></div>
+<p>In this case, you can proceed directly to the <a href="#registration-data">Registration Data</a> step.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="acquisition-from-another-supplier">Acquisition from Another Supplier<a href="#acquisition-from-another-supplier" class="hash-link" aria-label="Direct link to Acquisition from Another Supplier" title="Direct link to Acquisition from Another Supplier">​</a></h3>
+<p>If you choose to acquire devices from another supplier, you will need to:</p>
+<ol>
+<li>Complete the <a href="#registration-data">Registration Data</a>.</li>
+<li>Use our <a href="#configuration-tool">Configuration Tool</a> for setup.</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="registration-data">Registration Data<a href="#registration-data" class="hash-link" aria-label="Direct link to Registration Data" title="Direct link to Registration Data">​</a></h2>
+<p>To begin the configuration process, you must provide detailed information about your company, devices, and users.</p>
+<p>This information is essential for:</p>
+<ul>
+<li>Correct device configuration</li>
+<li>Access profile creation</li>
+<li>Permission definition</li>
+<li>WiFi network and APN configuration</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tenant-information">Tenant Information<a href="#tenant-information" class="hash-link" aria-label="Direct link to Tenant Information" title="Direct link to Tenant Information">​</a></h3>
+<ul>
+<li><strong>Tenant Name</strong> (<code>tenant_name</code>): Your tenant name on the V3 platform</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="company-information">Company Information<a href="#company-information" class="hash-link" aria-label="Direct link to Company Information" title="Direct link to Company Information">​</a></h3>
+<ul>
+<li><strong>Company Name</strong> (<code>company_name</code>): Full company name</li>
+<li><strong>Document Number</strong> (<code>document_number</code>): Company CNPJ</li>
+<li><strong>Document Type</strong> (<code>document_type</code>): CNPJ</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="contact-information">Contact Information<a href="#contact-information" class="hash-link" aria-label="Direct link to Contact Information" title="Direct link to Contact Information">​</a></h4>
+<ul>
+<li><strong>Department Name</strong> (<code>name</code>): Department name</li>
+<li><strong>Email</strong> (<code>email</code>): Contact email</li>
+<li><strong>Phone</strong> (<code>phone</code>): Contact phone</li>
+<li><strong>Website</strong> (<code>website</code>): Company website</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="addresses">Addresses<a href="#addresses" class="hash-link" aria-label="Direct link to Addresses" title="Direct link to Addresses">​</a></h4>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="billing-address">Billing Address<a href="#billing-address" class="hash-link" aria-label="Direct link to Billing Address" title="Direct link to Billing Address">​</a></h5>
+<ul>
+<li><strong>Type</strong> (<code>type</code>): billing</li>
+<li><strong>Address</strong> (<code>address</code>): Full address</li>
+<li><strong>City</strong> (<code>city</code>): City</li>
+<li><strong>State</strong> (<code>state</code>): State</li>
+<li><strong>Country</strong> (<code>country</code>): Country</li>
+<li><strong>Postal Code</strong> (<code>postal_code</code>): Postal code</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="shipping-address">Shipping Address<a href="#shipping-address" class="hash-link" aria-label="Direct link to Shipping Address" title="Direct link to Shipping Address">​</a></h5>
+<ul>
+<li><strong>Type</strong> (<code>type</code>): shipping</li>
+<li><strong>Address</strong> (<code>address</code>): Full address</li>
+<li><strong>City</strong> (<code>city</code>): City</li>
+<li><strong>State</strong> (<code>state</code>): State</li>
+<li><strong>Country</strong> (<code>country</code>): Country</li>
+<li><strong>Postal Code</strong> (<code>postal_code</code>): Postal code</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="users">Users<a href="#users" class="hash-link" aria-label="Direct link to Users" title="Direct link to Users">​</a></h4>
+<ul>
+<li><strong>Name</strong> (<code>name</code>): User name</li>
+<li><strong>Email</strong> (<code>email</code>): User email</li>
+<li><strong>Password</strong> (<code>password</code>): Initial password</li>
+<li><strong>Role</strong> (<code>role</code>): TENANT or TENANT_ADMIN</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="devices">Devices<a href="#devices" class="hash-link" aria-label="Direct link to Devices" title="Direct link to Devices">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="profiles">Profiles<a href="#profiles" class="hash-link" aria-label="Direct link to Profiles" title="Direct link to Profiles">​</a></h4>
+<ul>
+<li><strong>Profile Name</strong> (<code>name</code>): Profile name</li>
+<li><strong>Default Profile</strong> (<code>default</code>): true/false</li>
+<li><strong>Firmware Version</strong> (<code>firmware_version</code>): Firmware version</li>
+<li><strong>Firmware Provider</strong> (<code>firmware_provider</code>): Firmware provider</li>
+<li><strong>Hardware Model</strong> (<code>hardware_model</code>): Hardware model</li>
+<li><strong>Hardware Version</strong> (<code>hardware_version</code>): Hardware version</li>
+<li><strong>Hardware Provider</strong> (<code>hardware_provider</code>): Hardware provider</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="features">Features<a href="#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features">​</a></h5>
+<ul>
+<li><strong>Feature Name</strong> (<code>name</code>): Feature name</li>
+<li><strong>Enabled</strong> (<code>enabled</code>): true/false</li>
+<li><strong>Parameters</strong> (<code>params</code>): Feature-specific parameters</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="default-apns">Default APNs<a href="#default-apns" class="hash-link" aria-label="Direct link to Default APNs" title="Direct link to Default APNs">​</a></h5>
+<ul>
+<li><strong>APN Name</strong> (<code>name</code>): APN name</li>
+<li><strong>Numeric Code</strong> (<code>numeric</code>): Numeric code</li>
+<li><strong>APN Type</strong> (<code>type</code>): APN type</li>
+<li><strong>MCC Code</strong> (<code>mcc</code>): MCC code</li>
+<li><strong>MNC Code</strong> (<code>mnc</code>): MNC code</li>
+<li><strong>APN Name</strong> (<code>apn</code>): APN name</li>
+<li><strong>User</strong> (<code>user</code>): User</li>
+<li><strong>Password</strong> (<code>password</code>): Password</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="default-networks">Default Networks<a href="#default-networks" class="hash-link" aria-label="Direct link to Default Networks" title="Direct link to Default Networks">​</a></h5>
+<ul>
+<li><strong>Network Type</strong> (<code>type</code>): Network type</li>
+<li><strong>Network Name</strong> (<code>ssid</code>): Network name</li>
+<li><strong>Network Password</strong> (<code>pre_shared_key</code>): Network password</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="equipment">Equipment<a href="#equipment" class="hash-link" aria-label="Direct link to Equipment" title="Direct link to Equipment">​</a></h4>
+<ul>
+<li><strong>IMEI</strong> (<code>imei</code>): Device IMEI number</li>
+<li><strong>Profile</strong> (<code>profile</code>): Profile name</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="vehicle-information">Vehicle Information<a href="#vehicle-information" class="hash-link" aria-label="Direct link to Vehicle Information" title="Direct link to Vehicle Information">​</a></h5>
+<ul>
+<li><strong>License Plate</strong> (<code>license_plate</code>): Vehicle license plate</li>
+<li><strong>Serial Number</strong> (<code>serial_number</code>): Serial number</li>
+<li><strong>Chassis</strong> (<code>chassis</code>): Chassis number</li>
+<li><strong>Odometer</strong> (<code>odometer</code>): Odometer reading</li>
+<li><strong>FIPE Code</strong> (<code>fipe_code</code>): FIPE code</li>
+<li><strong>Fuel Type</strong> (<code>fuel_type</code>): Fuel type</li>
+<li><strong>Manufacture Year</strong> (<code>manufacture_year</code>): Manufacture year</li>
+<li><strong>Model Year</strong> (<code>model_year</code>): Model year</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="custom-apns">Custom APNs<a href="#custom-apns" class="hash-link" aria-label="Direct link to Custom APNs" title="Direct link to Custom APNs">​</a></h5>
+<ul>
+<li><strong>APN Name</strong> (<code>name</code>): Custom APN name</li>
+<li><strong>Numeric Code</strong> (<code>numeric</code>): Numeric code</li>
+<li><strong>APN Type</strong> (<code>type</code>): APN type</li>
+<li><strong>MCC Code</strong> (<code>mcc</code>): MCC code</li>
+<li><strong>MNC Code</strong> (<code>mnc</code>): MNC code</li>
+<li><strong>APN Name</strong> (<code>apn</code>): APN name</li>
+<li><strong>User</strong> (<code>user</code>): User</li>
+<li><strong>Password</strong> (<code>password</code>): Password</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="custom-networks">Custom Networks<a href="#custom-networks" class="hash-link" aria-label="Direct link to Custom Networks" title="Direct link to Custom Networks">​</a></h5>
+<ul>
+<li><strong>Network Type</strong> (<code>type</code>): Network type</li>
+<li><strong>Network Name</strong> (<code>ssid</code>): Network name</li>
+<li><strong>Network Password</strong> (<code>pre_shared_key</code>): Network password</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Don&#x27;t worry — our support team will assist with collecting and entering this data!</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="configuration-tool">Configuration Tool<a href="#configuration-tool" class="hash-link" aria-label="Direct link to Configuration Tool" title="Direct link to Configuration Tool">​</a></h2>
+<p>V3 provides a <strong>Configuration Tool</strong> for devices acquired from other suppliers. This tool:</p>
+<ul>
+<li>Is available for Windows and Linux</li>
+<li>Requires a USB connection between the device and the computer</li>
+<li>Performs complete automatic configuration</li>
+<li>Prepares the device for installation</li>
+</ul>
+<p>You will receive this tool during the onboarding process, sent by our support team.</p>
+<p>For a step-by-step guide on how to use this tool, see <a href="/en/docs/docs/implantacao-e-setup/ferramenta-de-configuracao">Configuration Tool</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="initial-setup">Initial Setup<a href="#initial-setup" class="hash-link" aria-label="Direct link to Initial Setup" title="Direct link to Initial Setup">​</a></h2>
+<p>After completing the registration data, you will receive:</p>
+<ol>
+<li><strong>Access Credentials</strong></li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="tenant-id">Tenant ID<a href="#tenant-id" class="hash-link" aria-label="Direct link to Tenant ID" title="Direct link to Tenant ID">​</a></h4>
+<ul>
+<li>Unique numeric identifier for your organization on the V3 platform</li>
+<li>Used internally to identify your tenant</li>
+<li>Required for all API operations</li>
+<li>Example: <code>123456</code></li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="tenant-name">Tenant Name<a href="#tenant-name" class="hash-link" aria-label="Direct link to Tenant Name" title="Direct link to Tenant Name">​</a></h4>
+<ul>
+<li>Name that will identify your company on the V3 platform</li>
+<li>Created by the V3 team based on your company name</li>
+<li>Used to access platform environments</li>
+<li>Example: If your company is called <code>yourcompany</code>, your <code>Tenant Name</code> will be <code>yourcompany</code> and your staging environment URL will be <code>yourcompany.v3sandbox.com</code></li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="client-id">Client ID<a href="#client-id" class="hash-link" aria-label="Direct link to Client ID" title="Direct link to Client ID">​</a></h4>
+<ul>
+<li>Unique identifier for your application on the platform</li>
+<li>Used for OAuth2 authentication</li>
+<li>Required to obtain access tokens</li>
+<li>Example: <code>client_123456789</code></li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="client-secret">Client Secret<a href="#client-secret" class="hash-link" aria-label="Direct link to Client Secret" title="Direct link to Client Secret">​</a></h4>
+<ul>
+<li>Secret key for your application authentication</li>
+<li>Used together with the Client ID</li>
+<li>Must be kept secure</li>
+<li>Must not be shared with third parties</li>
+<li>Example: <code>secret_987654321</code></li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="webhook-secret">Webhook Secret<a href="#webhook-secret" class="hash-link" aria-label="Direct link to Webhook Secret" title="Direct link to Webhook Secret">​</a></h4>
+<ul>
+<li>Secret key for validating Webhook integrations</li>
+<li>Used to ensure the authenticity of requests</li>
+<li>Must be configured in your integration systems</li>
+<li>Keep secure to prevent unauthorized access</li>
+<li>Example: <code>webhook_456789123</code></li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="important">Important<a href="#important" class="hash-link" aria-label="Direct link to Important" title="Direct link to Important">​</a></h3>
+<ul>
+<li>Keep all credentials in a secure location</li>
+<li>Do not share credentials with third parties</li>
+<li>In case of loss or compromise, contact support immediately</li>
+<li>Back up the information you receive</li>
+<li>Follow all security instructions provided</li>
+</ul>
+<p>These credentials are essential for:</p>
+<ul>
+<li>Platform integration</li>
+<li>Webhook configuration</li>
+<li>Device authentication</li>
+<li>API access</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Have questions?</div><div class="admonitionContent_BuS1"><p>Contact our support team to obtain your access credentials at <a href="mailto:suporte@v3.com.br" target="_blank" rel="noopener noreferrer">suporte@v3.com.br</a></p></div></div></div></div></div><div class="row"><div class="col col--12"></div></div></article><div class="row"><div class="col col--12"><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/en/docs/docs/category/implantacao-e-setup"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Implantação e Configuração</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/en/docs/docs/implantacao-e-setup/manual-de-instalacao/06.01-JC400P"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">JC400P</div></a></nav></div></div></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#acquisition-options" class="table-of-contents__link toc-highlight">Acquisition Options</a><ul><li><a href="#acquisition-through-v3" class="table-of-contents__link toc-highlight">Acquisition through V3</a></li><li><a href="#acquisition-from-another-supplier" class="table-of-contents__link toc-highlight">Acquisition from Another Supplier</a></li></ul></li><li><a href="#registration-data" class="table-of-contents__link toc-highlight">Registration Data</a><ul><li><a href="#tenant-information" class="table-of-contents__link toc-highlight">Tenant Information</a></li><li><a href="#company-information" class="table-of-contents__link toc-highlight">Company Information</a></li><li><a href="#devices" class="table-of-contents__link toc-highlight">Devices</a></li></ul></li><li><a href="#configuration-tool" class="table-of-contents__link toc-highlight">Configuration Tool</a></li><li><a href="#initial-setup" class="table-of-contents__link toc-highlight">Initial Setup</a><ul><li><a href="#important" class="table-of-contents__link toc-highlight">Important</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">DEVELOPER</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/en/">Home</a></li><li class="footer__item"><a class="footer__link-item" href="/en/blog">Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/docs">Documentation</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/category/order-api">API</a></li></ul></div><div class="col footer__col"><div class="footer__title">CAREERS</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/v3-tecnologia/join-our-team" target="_blank" rel="noopener noreferrer" class="footer__link-item">Open Positions</a></li><li class="footer__item"><a href="https://github.com/v3-tecnologia/job-descriptions" target="_blank" rel="noopener noreferrer" class="footer__link-item">Job Descriptions</a></li><li class="footer__item"><a href="https://github.com/v3-tecnologia/challenge" target="_blank" rel="noopener noreferrer" class="footer__link-item">V3 Technical Challenge</a></li></ul></div><div class="col footer__col"><div class="footer__title">LINKS</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.v3.com.br" target="_blank" rel="noopener noreferrer" class="footer__link-item">Site<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/v3-tecnologia" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/company/v3-tecnologia" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discord.gg/e69avYVnzG" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2026 V3 Tecnologia.</div></div></div></footer></div>
+</body>
+</html>
