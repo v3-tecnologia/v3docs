@@ -5,7 +5,7 @@ description: "Retorna os dados de um motorista específico pelo ID informado."
 sidebar_label: "Obter motorista por ID"
 hide_title: true
 hide_table_of_contents: true
-api: eJytVMtuE0EQ/JVRn0Da2A7ktDckI+RDBApwiqKoPdOxJ+zOTHp6Vwmr/RcQh5z4Cv8Y6l0T5+FEQuLiR7+muqpmOnCULfskPgYo4YQkckATs3Ho9JNMU5s6SmSfBQ3lRHbz+8LbaBJV0SzmxoeLyDW6OIECEjLWJMQZytPu0fjF3Li4mwYFeA0nlDUUELAmKME7KIDpqvFMDkrhhgrIdk01QtmB3CStysI+rKDvz7Q4pxgyZc2/mc306+HBx3cLMNkmEaOLxsba5MZSzhEKsDEIBdFeTKnyFrV3epl1QHcPQOKYiMWPx9nITNVQe+7dHoAFWCYUcucoe9OOKnoh/czQkaw9CSGsn0PSJPc8Eu0dI3F5SVag7zV2NDt6ic+w+RUNBWVPSf0HIvtxvpI5VCzccLQQH9w55CBFPhgMIbhSR8GcfUsMZwXUJOuoPSuSwXiyhhKmNQZcUU1Bpm6ozdPOux4KyMTtX182XEEJa5GUy+lUKGCQSfs2Y3DLeD2xsZ62h6DmUnePQgdBq2sNmt1n4zNx6ze30WyNuPnZUmVSZBN5hcF/RzZkagxCvHN/Loz4mnJhLjgKZkPG+Zxi9uLbmE3rg22q4RZufpiBps2tsq3WrTwFIb1w4qVS0Y7v9jbvPi2gAN11xDebzCaHqn+KWWocZNheto/LB5gG0Is5PNqw24n6H56IrcuErmWaKvRhsKYK0m1VPIWdiopl1BEKKL1T6dcxi1Z13RIzfeWq7zV81RDfQHl6VkCL7HGpxOgj5LP+dlBeYJXpheVenWzfndfm6Vu1F/c2iOFGKceq0X9QwDe6Gd+y/qwvYE3oiAcwY+KdtZTkXsuTq9Lft/iH91+g7/8A3yj+rQ==
+api: eJytVM1u2zAMfhVBpw1o43TrybcBHYYcig3ddiqKgpGYRJ0tqRJtNDP8Lht26GlPkRcbaWdN+gsM2MWWqI/UR/KjOm0xm+QiueB1qc+QQvKgQlYWrHxRNbWqA5tdJlCYI5rN74UzQUWsgpqdKOcXIdUMn+gDHSFBjYQp6/K8exCewTbsojHciTkCrXjt2ZF3zvI64XXjElpdUmrwQGezwhp02WlaR0FlSs4vdd9fCDjH4DNmOX8zncrv/sWndwkkNE3ExGyVCbXKjcGcA99ogif0JL4QY+UMiG9xlSVAt0cgpsAByI3XmZASVgP2kpk/JsiREwKhvQR68thihS8cPxN0LNYTB4RQP8ekifZ5JuI7WsL8Cg2xRWzH0+OX6uk3v4JCL9WTov5DIfsxvhRzQMzscDVL5/BOIYcxpMNBEARLUZQ+Sa7FpLnrrLJVEJ8l0iA8FlGpixo8LLFmBoUdsLnonO0ZkTG1f3XZpIrBK6KYy6JgvuBp0r7N4O083ExYGkV7pEVcou6x0Z7ASFpDz/ar8ZkDu81tUFshbn62WCmmrkJagnffISlUTIxz26k/HyhyNfJvkQJvGWId+2dHruXRa503TTVM4eaHGsq0uZVqi3QrxwmiDBw5qqRpp3d5q3efZnwguY78ppPp5Ej6z8GJaUg622H7OL/HaSA9O9EPMux2Tf0PT8RWZYQ3VMQK+AkQaUpDum0Xz/Wui8Jl7COvStYC92TFeQiq6+aQ8Wuq+l7M1w2mNdt52UJyMJfCyCPksqxZKwuoMr6Q3Kuz7bvzWj1+q57kvTWCX0vJoWpkx8tvuB7fsv6CUSsEy6oVMuPBO2Mw0p7Lo1Hp9yX+4f0XHsc/3yj+rQ==
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/management/management-api
 custom_edit_url: null
@@ -42,7 +42,7 @@ Retorna os dados de um motorista específico pelo ID informado.
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Requisição"}
+  children={"Request"}
 >
 </Heading>
 
@@ -53,7 +53,7 @@ Retorna os dados de um motorista específico pelo ID informado.
 </ParamsDetails>
 
 <RequestSchema
-  title={"Corpo"}
+  title={"Body"}
   body={undefined}
 >
   
@@ -61,7 +61,7 @@ Retorna os dados de um motorista específico pelo ID informado.
 
 <StatusCodes
   id={undefined}
-  label={"Respostas"}
+  label={undefined}
   responses={{"200":{"description":"Motorista recuperado com sucesso","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"team_id":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Motorista não encontrado","content":{"application/json":{"schema":{}}}}}}
 >
   

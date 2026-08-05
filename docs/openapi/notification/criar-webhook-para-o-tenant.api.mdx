@@ -5,7 +5,7 @@ description: "Cria um webhook associado ao tenant informado"
 sidebar_label: "Criar webhook para o tenant"
 hide_title: true
 hide_table_of_contents: true
-api: eJy9Vc1u2zAMfhWDZ+en+7n4lm49FAO2ou2wQxAUjMUmam1JpeS0geGHKXbog+TFBkZ2mzRp0Q7DcrHEkNTHj5+oGhT5nLUL2hrI4AtrTKoyuaXp3NrrBL23uUZlE7RJIIMmJNpcWi5RWUiB6aYiHw6tWkJWQ25NIBNkic4VOkfJO7jykrwGn8+pRFk5to44aPKyowWZcGGwjFsdqFwvwtIRZOADazODJu0MyIxL2UvIXseKiz32pwx2ekV5gEZM2wx8RWV9omxHQVukZlKQBa6oEYN31viI9sPwQD67PK4J+ktGciYMpC4w7C3vJcKeJcFAM8vLV1x8NX0n5XH/Bmr/aahWe8G93H+nXuPv7fJoUvg0HO42+FQ04fXqYfXbJtosVveFVviehqNSWv7C4mSrJS91YAvT532YjpgFSyA2VhTsiRdaWf5PqJoUJGKd+VhBBjlr5F57j3oOGXu2F4cIpBBw5iEbw6/2nk1SKCnMrUQ668XFYZhDBgNjg75sMftBm9BDClIhsaSpY09hHoLz2WAQj+kvPno0amrv+rktB4sDaCYSlVesw/JMqo7ljZz+RstRJefVoIXNOaEi4S6KDA4JmTg5t9dk4Emh68C1doTM06d5eHSHpStoZ76NOxInj6lbQ6vLDZJl1HZzFXNp3868OpMmrx5s0g6l1f2CisRZTmbEZHKN3I0yn0gPkrzQZAL5vlShg0CE75sMJ6OTY0hBmI1nDPvD/oHgkb6UuJZMC10G3eMBMX/3UMAzqBvPw7vfmZbtQHdh4ArUZuMWR5WMYUslkMKjTiYpzEVQ2RjqeoqefnLRNGK+qUjG43iSwgJZ41TIGE+atOu+COualoI4Yu+dCxJxL6rY/2e3qUm7iFGekwuv+m5q/uTH2TmkMG2f0tIqiWG8lRcIbyEDkAsWq8vqaKuhQDOrcCa+Maf8/gAjkb6m
+api: eJy9Vc1u2zAMfhVD5/x1P5fc0q2HYsBWtB12CIKCttlYq21plOw2MPIwxQ59kLzYSMtpkiYt2mFYDonEkNTH76OoRqXoEtLWa1OqsfpEGqKqiG4xzoy5icA5k2hITQQm8lhC6SNdXhsq2KZ6ivBXhc4fm3Shxo1KTMlOXpZgba4TkLzDn06SN8olGRYgK0vGInmNTnZYc9BVCUXYao9Fu/ALiwzKedLlXC17awMQwUL2EnLQsaL8gH2TwcQ/MfFsYdMuA5+5MBdxwR0FXZGaMFVjTxUuxeCsKV1A+250JD/7PLYE/SUjCSF4TK/AHyzvOcKeJOEUc0OLF1xcFb+R8rB/BbX/NFSnB8E9r79NX+Lv9e3Btg+j0b7A59ITTq8eVr8N34h6dZ/rFN4iOKSplr8gP9uR5DkFdjB9PITphEiweKTSSAc7pFqnhv4TKjZKRJv5lPXiJtZA/e4e9S0Q9E0/DBGG5GHOmafqR3fPZj1VoM+MRFrjxMWCz3g3LI3X1x1mN+wSOnaQCpEkTRM0VZn31o2Hw3DMoH7voExjczdITDGsj9RyJlFJRdovLqTqUN7E6i+4mFRyHt8GYTNDSFG4C02mjhEIKbo0N1iqTYe2gW3vCJnnm3l4cgeFzXFvvk3XJM4eU3eGri+3SJZRu56rkIh8e/PqQkRePZioG0qr+xrzyBqK5khY8vCm9ShzkWgQJblmOOgGUoX2AlF93WY4mpyd8n/CbDhjNBgNjgSP6FJA2zIddBl0jweE/OuHQj2BuvU8vPmd6dj2eOeHNgcWaHOLQ5dM1U6XcMxjnzDRmTQU+zRNDA6/U75cipnFkvE45WUNDCkWMqYzzt2pL411w/oy4oC9fylIxD2vgv5PbtOyt46YJAla/6Lvds+ffbu4ZOe4e0oLk0oMwa28QPw9VkouWKiOHVpbo3Io5xXMxTfklM8fI5G+pg==
 sidebar_class_name: "post api-method"
 info_path: docs/openapi/notification/notifications-api
 custom_edit_url: null
@@ -42,7 +42,7 @@ Cria um webhook associado ao tenant informado
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Requisição"}
+  children={"Request"}
 >
 </Heading>
 
@@ -53,7 +53,7 @@ Cria um webhook associado ao tenant informado
 </ParamsDetails>
 
 <RequestSchema
-  title={"Corpo"}
+  title={"Body"}
   body={{"content":{"application/json":{"schema":{"properties":{"event_names":{"items":{"type":"string"},"type":"array"},"name":{"type":"string"},"url":{"type":"string"}},"type":"object"}}},"description":"Dados do webhook","required":true}}
 >
   
@@ -61,7 +61,7 @@ Cria um webhook associado ao tenant informado
 
 <StatusCodes
   id={undefined}
-  label={"Respostas"}
+  label={undefined}
   responses={{"201":{"description":"Criado","content":{"application/json":{"schema":{"properties":{"created_at":{"type":"string"},"event_names":{"items":{"properties":{"category":{"items":{"properties":{"subs":{"items":{"type":"string"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"},"url":{"type":"string"}},"type":"object"}}}},"400":{"description":"Requisição inválida","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
 >
   

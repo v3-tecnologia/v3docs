@@ -4,10 +4,84 @@
         <title>Portal do Desenvolvedor V3 Blog</title>
         <link>https://developer.v3control.com/blog</link>
         <description>Portal do Desenvolvedor V3 Blog</description>
-        <lastBuildDate>Thu, 09 Jul 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 05 Aug 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>pt</language>
+        <item>
+            <title><![CDATA[A obsessão pelo registro perfeito pode estar nos fazendo perder o risco real]]></title>
+            <link>https://developer.v3control.com/blog/registro-perfeito-risco-real</link>
+            <guid>https://developer.v3control.com/blog/registro-perfeito-risco-real</guid>
+            <pubDate>Wed, 05 Aug 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Quando a classificação do evento vira prioridade, a gestão de risco perde contexto. Um olhar prático sobre DMS, falsos positivos e segurança contínua.]]></description>
+            <content:encoded><![CDATA[<p>Nos últimos anos, os sistemas de Driver Monitoring System (DMS) e as Dash Cams evoluíram de forma impressionante. Alcançamos a capacidade técnica de identificar dezenas de comportamentos do motorista: uso de celular, distração, fadiga, bocejos, olhos fechados, ausência do cinto, cigarro, entre muitos outros.</p>
+<p>Contudo, essa evolução traz uma provocação crítica para a nossa indústria:</p>
+<p><strong>Estamos tentando identificar eventos... ou estamos tentando evitar acidentes?</strong></p>
+<p>Pode parecer uma diferença sutil, mas ela altera radicalmente a gestão da frota e a forma como interpretamos os dados.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="o-paradoxo-da-classificação-vs-a-realidade-do-risco">O paradoxo da classificação vs. a realidade do risco<a href="https://developer.v3control.com/blog/registro-perfeito-risco-real#o-paradoxo-da-classifica%C3%A7%C3%A3o-vs-a-realidade-do-risco" class="hash-link" aria-label="Link direto para O paradoxo da classificação vs. a realidade do risco" title="Link direto para O paradoxo da classificação vs. a realidade do risco">​</a></h2>
+<p>O problema começa quando o evento passa a ser mais importante do que o comportamento.</p>
+<p>Na rotina da videotelemetria, discussões sobre a rotulagem de um alerta tornaram-se comuns:</p>
+<blockquote>
+<p>"Isso não foi um evento de distração genérico, foi uso de celular."</p>
+</blockquote>
+<blockquote>
+<p>"Esse alerta foi classificado de forma incorreta."</p>
+</blockquote>
+<p>Quando auditamos a gravação, porém, encontramos um motorista olhando repetidamente para baixo, retirando os olhos da via para manipular um aparelho.</p>
+<p>Nesse contexto, cabe questionar:</p>
+<ul>
+<li>O que realmente colocava aquele motorista em risco?</li>
+<li>O nome do evento?</li>
+<li>Ou o fato de ele estar dirigindo distraído?</li>
+</ul>
+<p>Do ponto de vista da gestão de risco, pouco importa se o algoritmo classificou aquele instante como "Uso de Celular", "Distração Visual" ou outra categoria semelhante. O risco continua exatamente o mesmo, pois o nível de exposição ao perigo e o potencial de severidade do acidente permanecem inalterados.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="segurança-é-um-fluxo-contínuo-nunca-acontece-em-um-único-frame">Segurança é um fluxo contínuo, nunca acontece em um único frame<a href="https://developer.v3control.com/blog/registro-perfeito-risco-real#seguran%C3%A7a-%C3%A9-um-fluxo-cont%C3%ADnuo-nunca-acontece-em-um-%C3%BAnico-frame" class="hash-link" aria-label="Link direto para Segurança é um fluxo contínuo, nunca acontece em um único frame" title="Link direto para Segurança é um fluxo contínuo, nunca acontece em um único frame">​</a></h2>
+<p>Existe uma tendência natural de fragmentar a análise em eventos estáticos, como se um único recorte representasse toda a verdade sobre aquele momento.</p>
+<p>Entretanto, a condução é um processo contínuo e dinâmico. Um desvio pontual de olhar em um segundo isolado não define, por si só, o perfil de risco do condutor. O risco real reside na frequência, na duração e na combinação desses padrões ao longo do tempo.</p>
+<p>O problema aparece quando começamos a conectar os pontos. Imagine um motorista que, nos últimos quinze minutos:</p>
+<ul>
+<li>apresentou diversos episódios de distração;</li>
+<li>realizou duas frenagens bruscas;</li>
+<li>fez mudanças de faixa agressivas;</li>
+<li>dirigia às duas horas da manhã;</li>
+<li>estava acima da velocidade média da frota.</li>
+</ul>
+<p>Separadamente, talvez nenhum desses eventos justificasse uma intervenção.</p>
+<p>Juntos, eles contam uma história completamente diferente.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="o-falso-positivo-também-precisa-ser-colocado-em-perspectiva">O falso positivo também precisa ser colocado em perspectiva<a href="https://developer.v3control.com/blog/registro-perfeito-risco-real#o-falso-positivo-tamb%C3%A9m-precisa-ser-colocado-em-perspectiva" class="hash-link" aria-label="Link direto para O falso positivo também precisa ser colocado em perspectiva" title="Link direto para O falso positivo também precisa ser colocado em perspectiva">​</a></h2>
+<p>Falsos positivos em sistemas de fadiga são um tema recorrente na operação.</p>
+<p>Um cenário frequente é o motorista perceber excesso de alertas, perder confiança no sistema e, em casos extremos, chegar a cobrir a câmera.</p>
+<p>Essa discussão é extremamente válida.</p>
+<p>Um sistema de IA, isoladamente, ainda não é perfeito.</p>
+<p>Todo algoritmo possui falsos positivos e falsos negativos.</p>
+<p>Mas existe um aspecto que recebe pouca atenção:</p>
+<p><strong>O ser humano também não é um excelente avaliador do próprio comportamento</strong> [1][2][3][4][5].</p>
+<p>É muito comum um motorista afirmar categoricamente:</p>
+<blockquote>
+<p>"Eu não estava distraído."</p>
+</blockquote>
+<p>Enquanto a gravação mostra diversos segundos consecutivos com os olhos fora da via.</p>
+<p>Isso acontece porque distração não é apenas uma decisão consciente.</p>
+<p>Ela pode ocorrer sem que o próprio condutor perceba.</p>
+<p>Por isso, nem todo alerta contestado deve ser automaticamente considerado um falso positivo.</p>
+<p>Assim como nem todo alerta emitido deve ser considerado uma verdade absoluta.</p>
+<p>A resposta normalmente está no equilíbrio entre tecnologia, contexto operacional e análise humana.</p>
+<p>Ao priorizar a busca pelo "registro perfeito", corremos o risco de transformar a videotelemetria em um exercício meramente burocrático de auditoria de dados, distanciando-nos do seu propósito primário: a preservação de vidas e do patrimônio.</p>
+<p><strong>Estamos utilizando o DMS para gerenciar métricas ou para transformar a cultura de condução?</strong></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="referências">Referências<a href="https://developer.v3control.com/blog/registro-perfeito-risco-real#refer%C3%AAncias" class="hash-link" aria-label="Link direto para Referências" title="Link direto para Referências">​</a></h2>
+<p>[1] Kruger, J., &amp; Dunning, D. (1999). <em>Unskilled and unaware of it: How difficulties in recognizing one's own incompetence lead to inflated self-assessments.</em> Journal of Personality and Social Psychology, 77(6), 1121-1134. <a href="https://doi.org/10.1037/0022-3514.77.6.1121" target="_blank" rel="noopener noreferrer">https://doi.org/10.1037/0022-3514.77.6.1121</a></p>
+<p>[2] Nisbett, R. E., &amp; Wilson, T. D. (1977). <em>Telling more than we can know: Verbal reports on mental processes.</em> Psychological Review, 84(3), 231-259. <a href="https://doi.org/10.1037/0033-295X.84.3.231" target="_blank" rel="noopener noreferrer">https://doi.org/10.1037/0033-295X.84.3.231</a></p>
+<p>[3] Timothy D. Wilson, (2002). <em>Strangers to Ourselves: Discovering the Adaptive Unconscious</em> <a href="https://www.amazon.com.br/Strangers-Ourselves-Discovering-Adaptive-Unconscious/dp/0674013824" target="_blank" rel="noopener noreferrer">https://www.amazon.com.br/Strangers-Ourselves-Discovering-Adaptive-Unconscious/dp/0674013824</a></p>
+<p>[4] Mynttinen, S., Sundstrom, A., Vissers, J., Koivukoski, M., Hakuli, K., &amp; Keskinen, E. (2009). <em>Self-assessed driver competence among novice drivers - a comparison of driving test candidate assessments and examiner assessments in a Dutch and Finnish sample.</em> Journal of Safety Research, 40(4), 301-309. <a href="https://doi.org/10.1016/j.jsr.2009.04.006" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.jsr.2009.04.006</a></p>
+<p>[5] Dang, King, &amp; Inzlicht, (2020). <em>Why Are Self-Report and Behavioral Measures Weakly Correlated?</em>. <a href="https://pubmed.ncbi.nlm.nih.gov/32160564/" target="_blank" rel="noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/32160564/</a></p>]]></content:encoded>
+            <category>Videotelemetria</category>
+            <category>IA</category>
+            <category>Inteligência de Dados</category>
+            <category>Visão Computacional</category>
+            <category>Telemática</category>
+            <category>Frotas</category>
+        </item>
         <item>
             <title><![CDATA[Videotelemetria e Análise de Dados: Aprimorando a Manutenção de Veículos Comerciais]]></title>
             <link>https://developer.v3control.com/blog/videotelemetria-analise-dados-manutencao</link>

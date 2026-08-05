@@ -5,7 +5,7 @@ description: "Retorna a lista paginada de frotas associadas a um time específic
 sidebar_label: "Obter frotas por time"
 hide_title: true
 hide_table_of_contents: true
-api: eJytVM2O20YMfpUBTy2gtTbbnnQL0CTYQ9EibU8LY8Gdoe1JpZkJSRlxBL1Lix5y6lP4xQJKdtZbewME6EkSf0Ty+/hxgEDiORaNOUEDb0kzJ3To2iiKruA6JgzoArkVZ0VxKJJ9xGCvru+cxo4cSSG//3cVfV5ABQUZO1JigeZu+E+N259cyFMaVBDNUlA3UEHCjqABJezuY4AKmN73kSlAo9xTBeI31CE0A+iuWKgox7SGcVxasJSchMT8N9fX9nha+PU8AJPvC/E0gc+dk96TSIYKfE5KSS0TS2mjR8us34mlDyflC+dCrHEuFlAna1Tq5NztMzO1069srPPuK/BMqBTuUS+6A7X0FfczP53hvOA4AnzJ15fwfCeWO1vywzvyCo8GZMadfRdcn1aNSWlNfPTcS/z4jFuzYnv/BcPnAuwvFwPOmxvN9uPNzfkmvEoaAwZyaf9PdoWzbcD+7y2137AF41zAqJ4ibsNUW4mvZqlclcxXhz1XXJsW4HVLpLCsoCPdZMtYk06K0Q00UHeYcE0dJa1XFiq1sSX1cCBthAqEeHuUVs8tNLBRLdLUtVLCpIvtD4IpPOQPC5+7evsCTB8xrfK8jknR23jTZp3C8hvxNu4/ZXfQ0oSIK5ld5jWm+BHZkeswKbHrsma2IyHVJGapjheCXIhSskSN2yxuG5PvWwxZ3P4vN8G1/2S4h+x8Gykp2c3QqK2x9/MXBNzLX2+hApt17u96cb14Ma1SFu1wouNwNH4x3I8NWMcH3J8MODxy+39dusPKKX3QurQY0yQiI2U4cHoHj5xCBTOrMKvQns1RjssKNlnUMobhAYX+4HYczfy+J95Bc7esYIsc8cGAsrsaxd4DNCtshb4y7XdvD6f0e/fk/F5s/yjptDP0se3tCyr4k3Yn53lcjhVsCAPx1Mzsfek9FT3JO5PQeLr8b179DuP4GUB8Sdc=
+api: eJytVM1uEzEQfhXLJ5DSbFo45VaJFvWAQAVOVRVNvJPEZdd27dmo6WrfBcShJ54iL9aZ3U2bkqQSEifb8+P5+76pdY7JRBvIeqfH+hLJRwcKVGETgQowtw5yUDmqWfQESUFK3liW8VVVpSJbosIU0Kz/zKzxQz3QASKUSBiTHl/Vf8W4+KBy37qxpRVJAFrw3bEPvwihnNicBRFvKxsx12OKFQ50MgssQY9rTasgpomidXPdNNdinIJ3CZPoT0YjOV4GPu8KiGiqgLGtwPhSpcog18TxjHeEjsQTQiisAfHMbpK411vhQ/T8A9kuWA7USi1hmXbVxseIRfuVlLWbPQeOCIT5BGivOscCX1Ef+LRr5x7FpsH7dFXID2civp3ET2/QkH4WQIywkjcjZjuq5Y7OMW40k2TvD6iJh1NMnnp4yEB+2Wuwm1wjsvcnJ7tIOHNkc2BMu/Vvr3hcgoD1ryUW/4CCpgsgo24tLvI2NqP+qKPKUfDxqMc5wVy4oM8LRNIMV6bHwovHnN+DjgJjnZXguMCS42czMU2ZTCtldT+0hm0TxuWGWlUs2G1BFNI4Y1sHjobLdwlcPvV3Q8Z3tjzWwg/rZr6DoyMwUl6LrO22fOWP7frBq55LbUcUV6F8nIOz9xAVKk6Ra1Sl51UhSyINWjLz0W8IVLll/2TJLn1SS+tMVUDO1/VP1bZr/SB95y1gCsulouwMslTI9D49dUCdfrlghdTa5TcajobHLZR8Ik5DyumXxmfp+yYBybjv+4sC6+fZ/q9N10OO8I6yUACvMyGRDKXuZ3qln2fKDt1UdcdCOccbOvKMFlyXeNT1FBJ+j0XTiPi2wrhiOV+XEC1MpVGyV22SO6NoBkXCV6p9c9mv0rfqxfrdm/6G0m4l3Yeikhdff+Bqaz0312y6QGZRbJPptKfGYKAtvx0KNdvg/3j2jXn6CEB8Sdc=
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/management/management-api
 custom_edit_url: null
@@ -42,7 +42,7 @@ Retorna a lista paginada de frotas associadas a um time específico.
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Requisição"}
+  children={"Request"}
 >
 </Heading>
 
@@ -53,7 +53,7 @@ Retorna a lista paginada de frotas associadas a um time específico.
 </ParamsDetails>
 
 <RequestSchema
-  title={"Corpo"}
+  title={"Body"}
   body={undefined}
 >
   
@@ -61,7 +61,7 @@ Retorna a lista paginada de frotas associadas a um time específico.
 
 <StatusCodes
   id={undefined}
-  label={"Respostas"}
+  label={undefined}
   responses={{"200":{"description":"Frotas recuperadas com sucesso","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"team_id":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"422":{"description":"Entidade não processável","content":{"application/json":{"schema":{}}}}}}
 >
   

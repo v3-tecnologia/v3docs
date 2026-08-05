@@ -5,7 +5,7 @@ description: "Retorna os dados de um time específico pelo ID informado."
 sidebar_label: "Obter time por ID"
 hide_title: true
 hide_table_of_contents: true
-api: eJylVM1uE0EMfpWRTyBNsyn0tLdKRSgHBCrlVEWVO+MkU3Z+OuONGlb7LiAOPfEUeTHkTUrTklRCXPbH//782R1YKia7xC4GqOGcOOaAKhZl0cqTVOsVO0+KSiKz/jVzJqpETVSTM+XCLGaPNo5AQ8KMnphygfqyexZ5cqZsHAKBBieShLwADQE9QQ3OgoZMt63LZKHm3JKGYhbkEeoOeJXEqnB2YQ59PxXjkmIoVET/ZjyW19OcF1J2JtMmymijMtGr0hoqJYIGEwNTYHHDlBpnUNyqmyK+3U7ulGOizG6TCY2JbeArZ/fUJVFzpmYIddAkEzLZK+S9aksNvaA+EHQD4x5Fm+zhbL1+kMTrGzIMfS+yk/HJATTD+mdUFAQ7gfQfYOw3oQXKwWJih6xM+UhYcZRiPhpIwDgXAsEFoYepBk+8iGI8Jx5YxguoofIYcE6eAldM6EvVOduDhkJ5+UDBNjdQw4I5lbqqmAIGHi3fFgz2Ot6NTPTV8hiETEJkKVe6QSPdDJPY7f8z5aVb30e1Jd76x5IalWJWMc8xuG+YFSmPgSkrHzlmVxiLHkhftJrlyFgUKetKisWxW8aili6Ythl2bf1dDeis7wVk4WvjKDDJbrHjRsb04U/X6vTTBDRIr5v6xqPx6FgmnmJhjwP62+X6KDBvtljqnZzBs+a6xzH+3w3YsonpjqvUoAsDBWUM3XZyl/A4OXGQ2YGG2lkZ9iIWFpuuu8ZCX3LT9yK+bSmvoL6calhidngtYMiNcUW+LdQzbAq90NWr8+1tea2enKK9BW+FGFaCMDat/IGGr7TanKp+2mtYEFrKQx0bxakxlHjH5a+F6Hf5/P7dBfT9b55E66w=
+api: eJylVM1u1DAQfhXLJ5DazRZ6yq1SEdoDApVyqqpq1p7ddUls155EXaK8C4hDTzzFvhgzyUK3P1sJcUnsmW/+v3GnLWaTXCQXvC71GVJIHlTIyoKVL6qmVuRqVJgjms2vhTNBRayCmp0q5xch1Yyc6AMdIUGNhCnr8qJ75JnBNgyOGOlEEoFWfPZswzdn+ZzwpnEJrS4pNXigs1lhDbrsNK2joDIl55e67y8FnGPwGbPo30yn8nsY81zSTmiaiIlzVCbUKjcGcw4czARP6EnMIMbKGRCz4jqLbbcTO6bADsiNkcCY0Hi64oSf5iVeU8JqcLUXkhAI7RXQs2qLFb6g3uN0bOMziiba/dFYv5WE+TUaYonIjqfHe7rpNz+DQi+9k5b+Qxv70bW0ckDM7BCV6XIorDiMIR0OJCBYCoH0OUKtec5MqVUQ8BJpYBnTptRFDR6WWHPoghiZi87ZnvUZU/uHgk2qGLoiirksGObB06R9m8HbebidMB+K9kgLmYTIkq5UA0aqGSaxW/9nduw2d0Ftibf50WKlOG0V0hK8+wZJoeK0uCRVB14klwnywUB6/i1S4CtDrGP77Mi1vGCt86aphl3bfFdDdzZ30mTha+W4PJTdIkeVjOnD36rVyacZK6TWMb/pZDo5komzc+I0pJztcn2UNo9bLPnOTvWj4rr7Mf7fG7BlE+EtFbECXnShoIyh207uQt9PTgxkdvwvefY8hxXnLpium0PGL6nqexHfNJjWLOdjC8nBXJohb4zLcmZ2LKDK+EJVr862b8tr9eApejbhrRD8WjoMVSM3Pn7F9fhU9ZeMWiFYTEMeo+LEGIy0Y/JkIfpdPr9/d8779hueROus
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/management/management-api
 custom_edit_url: null
@@ -42,7 +42,7 @@ Retorna os dados de um time específico pelo ID informado.
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Requisição"}
+  children={"Request"}
 >
 </Heading>
 
@@ -53,7 +53,7 @@ Retorna os dados de um time específico pelo ID informado.
 </ParamsDetails>
 
 <RequestSchema
-  title={"Corpo"}
+  title={"Body"}
   body={undefined}
 >
   
@@ -61,7 +61,7 @@ Retorna os dados de um time específico pelo ID informado.
 
 <StatusCodes
   id={undefined}
-  label={"Respostas"}
+  label={undefined}
   responses={{"200":{"description":"Time recuperado com sucesso","content":{"application/json":{"schema":{"properties":{"account_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Time não encontrado","content":{"application/json":{"schema":{}}}}}}
 >
   

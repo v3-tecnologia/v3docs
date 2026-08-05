@@ -5,7 +5,7 @@ description: "Retorna todos os webhooks registrados para o tenant"
 sidebar_label: "Listar webhooks do tenant"
 hide_title: true
 hide_table_of_contents: true
-api: eJytVMFq20AQ/RUxZ8V2WnrRzYVQQksJTUoPxoSxNLE2kXe2syM1RuhjeuqH5MfKSHZsJ06goSfLu2/ezL73dlsoKObigjr2kME3UhaPiXLBMeGY/KJFyXwXE6Gliypo6wEFE06UPHqFFIRiYB8pQtbCu8nEfg55L+ucYmRIIWev5NUgGELlcjTI+DYaroWYl7RC+3JKq54wCAcSdQN9LoRKxTX2FLoOBBlEFeeX0KVADXm99rga0C+RoNKSZf0KJNaLQ4ZnrTYLKILr3f9nwB2SF7eU638udcXR4UyBoxt1KF7Tr5bqTYN0hvlwzPozEU6cVxLPScFJJGlcwfIvWcCicLaF1cWBSS95sp1yGMsqeubzAjKoXFSUk22wTwo+eQyy4jJCNoMfwybMU1iRlmx1SzJEQC0hg7FndTebgeN4SwYp2PFIjKUdxIRSNcRsPB66jJr3EX2x4PtRzqtxcwrd3KryWpyuL+3Iw9mmwX2m9bS2fi04k7IkLMiEG9yFj4RCklzxHXnYOdIX9qY5f8N93tkr5iZ0lz69mWbHwx9ONpf44XdDVRJYkiUJ+dyh7B6B/uLnlSOvFEfW0mllPb/uy5FML84hBZNh6DEZTUanZk/gqCvszd0c4Uvvxq5DsfesHAza7tLyxldqI4/SvY5Dhc7v5X2wdQYHtkIKj8bOUyg5qmHadoGRvkvVdbb8syZ7SGbzFBoUhwsTZDbv0q1dloQ7WkMG0zynYKM0WNWDVU9S3+0n7tPZFXTdXy7H+Hg=
+api: eJytVNtqGzEQ/RWh58TrtPTFby6EElpKaFL6YEwYSxOvkrVGHWm3MYs/pk/9kPxYNbt21s4NGgoG70pnzozOOatWW4yGXUiOvJ7ob5iIPahElqLKv1+4KIluo2JcupgYZD0AgyKV0INP+kgzxkA+YtSTVr8bj+XvkPeiNhgjZawhn+uSQCCEyhkQSHETBdfqaEpcgTy5hKuOMDAF5OR6esMICe0VdBRpHTDT58GcX+rNkcYmk195WPXol0gyxZJ4/Qok1otDhiettgvADOvh/QlwQNLiBk36z6XOPjucKPDsRh3sa/rVXL1pkI1gPjxn/SkzKZdNZ0/KkorIjbPE/5IFsNbJFlTnBya95Mluyn4sqeiYz7JWusoxBj7eBfvY0vFDkBMsM+9M/+g39fxIrzCVJHVLFESAVOaXwlNy19uBY7EjywA5HrKwtL2YukwpxElR9F1GzfsI3i7obmRoVTQnejOXKlOzS+sLOXJ/tmlwn3E9raVfjqFIWSJYFOF6d/VHBEZWl3SLXg+OdIWdac5fU5f3LDQYETovPvoyxY77P6S2H/H97wYrFYjVEhm9ccDDJdB9+KZy2TSMI2npUiU9v+7LoabnZ3lPZOh7jEfj0YnYEyimFXTmbo/wpXNj6GD3rpWDQdshLW+8pbbyJLxLRaggKzrkvbd1pg9szTUPxmaPyjy8YNp2ARG/c7XZyPLPGuUimeXHBtjBQgSZzTP31i5Jwm02ZKKnxmCQURqo6t6qR6nf7Cfu0+lldvEvLsf4eA==
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/notification/notifications-api
 custom_edit_url: null
@@ -45,7 +45,7 @@ Retorna todos os webhooks registrados para o tenant
 </ParamsDetails>
 
 <RequestSchema
-  title={"Corpo"}
+  title={"Body"}
   body={undefined}
 >
   
@@ -53,7 +53,7 @@ Retorna todos os webhooks registrados para o tenant
 
 <StatusCodes
   id={undefined}
-  label={"Respostas"}
+  label={undefined}
   responses={{"200":{"description":"Sucesso","content":{"application/json":{"schema":{"items":{"properties":{"created_at":{"type":"string"},"event_names":{"items":{"properties":{"category":{"items":{"properties":{"subs":{"items":{"type":"string"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"},"url":{"type":"string"}},"type":"object"},"type":"array"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
 >
   

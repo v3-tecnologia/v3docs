@@ -5,7 +5,7 @@ description: "Retorna os dados de um webhook específico do tenant"
 sidebar_label: "Obter webhook por ID"
 hide_title: true
 hide_table_of_contents: true
-api: eJytVUtu2zAQvYowqxZgLKfNSjsXKQqjQBokKboIjIAWxxYTiWTIkRpD0GGCLrLqKXyxYiQ5/jZo2m4si5zPm3kzTzUoDKnXjrQ1kMAFkvVGRjZESir+xagsou84zay9izA4TJc/Zzq1kbIRoZGGQICTXhZI6AMk1/VOzPEp2/YhQIDmQycpAwFGFggJaAUCPN6X2qOChHyJAkKaYSEhqYEWjq0CeW3m0DQTNg7OmoCB798Nh/zYTntZphiCBQGpNYSG2EQ6l+tUskl8G9iu3sjjvHXoSXdRU4+SUN1IOoBBAFZo6IYLaK01YREOBJGEc+sXL5iEcrodYS9VfyC9l4v1+35fni3t9BZT+s+uWh0E11F44KJ06qX+lT7/IyANn50cYviCBybo5dPyh420qZaPuVbyNYRLpTRfyfx8i5LfMbCD6WQf0xljQcMIvFSvmr5/ANMIYI828li1d4T+qN+5I2f9UbtiJOe8ofCtX8aJgAIps+wyx26TKYMEYmNJz3qsIe4DhbjWqgEBAX21WvaWR8iIXEjiuJOEQfU+SKOm9mGQ2iKujoF3NmBaek2LSy65q23k9GdcjEpOWnfKkKFU6Nfa8AGlRx9d2Ts0sJ7K1rGdF21mtl01a0im3OhG7GoB+kovn2zUy8byscI8ctZHc/RoUi39SqBCxGIWpblGQxgGnFJTzjnPNnsSjc7HIIDb0OUYDoaDY6bH2UCFbMntS/jCbDyLKKcdn8IOxno9KH+rwn1rCB8odrnUZmPNOl6vYYtXELCqGgQkWvFAZDYQW9b1VAb86vOm4eP7ElnFricCKum1nHJLWOt14P8KkpnMA75Q1ZuLXuDfRrufhIPIV0ybBfdZ5iW/gYA7XHSfjGbSiNW4MJTuYpSm6GjDZW/rms2x//TxCprmF0Doc8c=
+api: eJy9Vc1uEzEQfhXLJ5DabAo95RZUhCKkUrVFHKqqmtiTxO3Gdm1vaLTah6k4cOIp8mLM7G6aXyJAiEvin/n5PN98s6XUGFUwPhlnZU9eYnLBgnBRaND8i6KYiq84nDj3IDB6VIsfI6Oc0E4ktGCTPJIeAkwxYYiyd1NuxRycsW0bgowNH3pIE1pbcqOd0bQO+FiYgFr2UijwSEY1wSnIXinT3LNVTMHYsayqWzaO3tmIke/fdLv8t5n2qlAYo6PAyllCmtgEvM+NAjbJ7iPblWt5fHAeQzJNVBUQEuo7SHswHEmcUcw7fkBtbRJO454gFGLswvyASSyGmxF2UrUHEALMV/vdurxYuuE9qvSPXYmkfeAaCvdcFF4fql8R8t8CUvHZ6T6GL7lholl8X3xzwtjZ4jk3Gv6EcNDa8BXkFxuU/IqBLUynu5jOGQtaRhBIQP8JDB2yRx15oOs7EuNxq7lj78JxLbEEY1ao/NKKkYREsp04dhljo2TSZU9m1iUzarHGrA0Us9LoiqwihtlS7DWPcpKSj70sa0ZCZ/Y2gtVD99RRbprNTiRrNqIqgknzK35y87a+Nx9x3i84adlMhgmCxrCaDe8QAgZx7R7QylVX1o51vxg7crXUqNCguNB0uDULCC/1iRPt2Fg8zzAXVBYxxkBsGQjLARUFDzOhckOkYexwSpNyznm+XhPRvxjQHZehydHtdDsnTI93MU2hJrd9widm42WIctrBmdzCWK4a5W+ncFuahE8p8zlQNVcya3i9kRu8ks/y1bTsUYsQSxOCz5ZlOYSIn0NeVXz8WCBPsRtaziAYGHJJeNabyGvqoBHkEQ+86tVlO+Bfi+1Pwl7kS6btnOsMecE7Wj4Q7/Uno7olq7ZdGEpz0VcKfVpz2VFdtd72H95fUxf9BEDoc8c=
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/notification/notifications-api
 custom_edit_url: null
@@ -42,7 +42,7 @@ Retorna os dados de um webhook específico do tenant
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Requisição"}
+  children={"Request"}
 >
 </Heading>
 
@@ -53,7 +53,7 @@ Retorna os dados de um webhook específico do tenant
 </ParamsDetails>
 
 <RequestSchema
-  title={"Corpo"}
+  title={"Body"}
   body={undefined}
 >
   
@@ -61,7 +61,7 @@ Retorna os dados de um webhook específico do tenant
 
 <StatusCodes
   id={undefined}
-  label={"Respostas"}
+  label={undefined}
   responses={{"200":{"description":"Sucesso","content":{"application/json":{"schema":{"properties":{"created_at":{"type":"string"},"event_names":{"items":{"properties":{"category":{"items":{"properties":{"subs":{"items":{"type":"string"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"},"url":{"type":"string"}},"type":"object"}}}},"400":{"description":"Requisição inválida","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}},"404":{"description":"Não encontrado","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
 >
   
