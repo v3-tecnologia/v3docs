@@ -44,7 +44,7 @@ Recupera a lista de todas as transmissões HLS ativas com status e metadados atu
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  title={"Corpo"}
   body={undefined}
 >
   
@@ -52,7 +52,7 @@ Recupera a lista de todas as transmissões HLS ativas com status e metadados atu
 
 <StatusCodes
   id={undefined}
-  label={undefined}
+  label={"Respostas"}
   responses={{"200":{"description":"Lista de transmissões ativas recuperada com sucesso","content":{"application/json":{"schema":{"items":{"properties":{"app":{"type":"string","description":"Identificador da aplicação"},"created_at":{"type":"string","description":"Data/hora de criação da transmissão"},"stream_key":{"type":"string","description":"Identificador da chave da transmissão"},"status":{"type":"string","description":"Status atual da transmissão (active, inactive, etc.)"}}},"type":"array"}}}},"401":{"description":"Não autorizado","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro","type":"string"},"detail":{"description":"Descrição legível do erro","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro"},"status":{"description":"Código de status HTTP","type":"integer"},"title":{"description":"Título legível do erro","type":"string"}},"type":"object"}}}}}}
 >
   

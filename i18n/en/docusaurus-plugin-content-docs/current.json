@@ -406,5 +406,65 @@
   "sidebar.apiSidebar.doc.Obter página do player de transmissão": {
     "message": "Get stream player page",
     "description": "The label for the doc item Obter página do player de transmissão in sidebar apiSidebar, linking to the doc openapi/media-stream/obter-pagina-do-player-de-transmissao"
+  },
+  "sidebar.apiSidebar.category.Criar nova ordem": {
+    "message": "Create new order",
+    "description": "The label for category Criar nova ordem in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.doc.Adicionar Wi-Fi": {
+    "message": "Add Wi-Fi",
+    "description": "The label for the doc item Adicionar Wi-Fi in sidebar apiSidebar, linking to the doc openapi/order/contracts/add-wifi"
+  },
+  "sidebar.apiSidebar.doc.Excluir Wi-Fi": {
+    "message": "Delete Wi-Fi",
+    "description": "The label for the doc item Excluir Wi-Fi in sidebar apiSidebar, linking to the doc openapi/order/contracts/delete-wifi"
+  },
+  "sidebar.apiSidebar.doc.Estado do dispositivo": {
+    "message": "Device state",
+    "description": "The label for the doc item Estado do dispositivo in sidebar apiSidebar, linking to the doc openapi/order/contracts/device-state"
+  },
+  "sidebar.apiSidebar.doc.Solicitar imagem": {
+    "message": "Request image",
+    "description": "The label for the doc item Solicitar imagem in sidebar apiSidebar, linking to the doc openapi/order/contracts/request-image"
+  },
+  "sidebar.apiSidebar.doc.Solicitar vídeo": {
+    "message": "Request video",
+    "description": "The label for the doc item Solicitar vídeo in sidebar apiSidebar, linking to the doc openapi/order/contracts/request-video"
+  },
+  "sidebar.apiSidebar.doc.Reiniciar": {
+    "message": "Reboot",
+    "description": "The label for the doc item Reiniciar in sidebar apiSidebar, linking to the doc openapi/order/contracts/reboot"
+  },
+  "sidebar.apiSidebar.doc.Periódico": {
+    "message": "Periodic",
+    "description": "The label for the doc item Periódico in sidebar apiSidebar, linking to the doc openapi/order/contracts/periodic"
+  },
+  "sidebar.apiSidebar.doc.Configuração de visão": {
+    "message": "Vision configuration",
+    "description": "The label for the doc item Configuração de visão in sidebar apiSidebar, linking to the doc openapi/order/contracts/vision-config"
+  },
+  "sidebar.apiSidebar.doc.Configuração de plano de dados": {
+    "message": "Data plan configuration",
+    "description": "The label for the doc item Configuração de plano de dados in sidebar apiSidebar, linking to the doc openapi/order/contracts/dataplan-config"
+  },
+  "sidebar.apiSidebar.doc.Configurar áudio": {
+    "message": "Configure audio",
+    "description": "The label for the doc item Configurar áudio in sidebar apiSidebar, linking to the doc openapi/order/contracts/config-audio"
+  },
+  "sidebar.apiSidebar.doc.Configurar evento de áudio": {
+    "message": "Configure audio event",
+    "description": "The label for the doc item Configurar evento de áudio in sidebar apiSidebar, linking to the doc openapi/order/contracts/config-audio-event"
+  },
+  "sidebar.apiSidebar.doc.Abrir transmissão": {
+    "message": "Open stream",
+    "description": "The label for the doc item Abrir transmissão in sidebar apiSidebar, linking to the doc openapi/order/contracts/open-stream"
+  },
+  "sidebar.apiSidebar.doc.Fechar transmissão": {
+    "message": "Close stream",
+    "description": "The label for the doc item Fechar transmissão in sidebar apiSidebar, linking to the doc openapi/order/contracts/close-stream"
+  },
+  "sidebar.apiSidebar.doc.Configuração avançada": {
+    "message": "Advanced configuration",
+    "description": "The label for the doc item Configuração avançada in sidebar apiSidebar, linking to the doc openapi/order/contracts/config"
   }
 }

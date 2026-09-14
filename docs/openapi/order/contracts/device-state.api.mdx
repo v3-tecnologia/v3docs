@@ -1,0 +1,66 @@
+---
+id: device-state
+title: "Estado do dispositivo"
+description: "Solicita o estado atual do dispositivo. Não exige campos em parameters."
+sidebar_label: "Estado do dispositivo"
+hide_title: true
+hide_table_of_contents: true
+api: H4sIAAAAAAAAA+1XwW7jNhD9FUKnFnBsZ7d78S2bGGjQRRPEbi+2saClsc2NRKok5doV9DFBD4secir6BfqxzlCSLUuK2+32tpuDQ1Lk8M3Mm+FM6gVgfC1iK5T0Rt5EhcIXljPFwFgeKMZtwkOGg0CYWBlhxVb12Y/577hjJ9bAfB7hOoOIxVzzCCxo0/d63nHmjWZp457bm4ZIPCDoQ8ztBscSj+IsgK3w4b0IcEnDL4nQEHgjqxPoecbfQMS9UerZfUybjdVCrr0sWxSbUYG3KtjTjtPL7/k+VDxweBmu8/wjqRMAUzoAaTou85W0IC3J4nGMNuIka/DBkMC0jUUtP4BvTwTNPJKO1kB4sVYxaCvA0JlyvYXznUAXHGExIQOxFUHChWGcGdBoc4IfcNOfy2v873ZGZFquNd+z/A+GV/lgDH1ESSulI06CIAb8QaXIVSVod4YcYSEy/6RMzb2lgJZevtIaQmcpcmFLv1sCIFZozEBppmIfl5Frzi2aozsBb5AWPYNzutoI5ylUdgJMks+EdBoFqkf2yJ/YGrRjbWJVhDf7ToJTMuK7dyDXSK/RmyFOhaymr3tNCp2yt4n7Bm9AwpsY/PwZ4eNEAhk5f9ICJ04BxayID6SKPsXMVtiQFsZFBDYCBcHBDmOOtszSbJFVgpswp/X7mSkjO+A1KKW+KFEmEXn1Zvzz7fX4/WR6NR17i4z+atcdqTo7oD450Yx6RFcJ0WgvJU3BjFfDV228dw4nyC0xuhGc3ieE4EvBdbD357AU7VkeKJNGGXMtm6LKGw2rrqiWjxVFNPiJNueldGK6OXsEeWOTDuJO3PqZowcuVWTMGqzt2OG8+91w2L7uoRazGKnb/CkUAf/vrvRV0EHz6/zPQKxdmIDWqsseAVguwo5AdrMCXwjr/HkL4Tk5RiXadxB4GN6tXBicQoyVQNV016vUMtyi1woAfE+jCkCPxcg32AHGnkKuuHeW4bOGowSRsBLnGX8fTAOs2MK+n07vj5oRVkyYzstFzmnlkPzZJuG/sc6LxLhsS3XVA6VoLX7DqPrKiC+JEW+6UsUYJTBnKOn8ho85VjpKf6XGl0MNwkbvobB7Z6yrWPwA+6uESrTZgixAxnPevw0OzcEFgQW6gq+p5nBlhKZiFMuQjaKNWDpZV5qQJG9QnDOD9NBdZIOySiAEeltVOIlGGngba2MzGgyQhFza/va14TJYql3fV9Fge+lcU+GeEBkL59bRp0VvswFO0A7dzVvgGjSbqkeQtfLQHXQ2Io4/HDuZ8efVYdRhrVQRG9Jyn0Iqa9JqQoGXf6TSxNVr+RM5ksiFtQosEa6Q6MUE4+AvMLgYKctND8s2pJyQm/zpIuTYnmAZXCtaXXtYcBKKdSmWIsTsj3U/42jJmMtNVe0TabFGqSrWouav1cXOw4Zd3d/iInmrgD7sD/uXrnZHf0fcZYfS0t2VdEP39Jhq/s8+uPSPhZ0dxCFHJiBER620pOSspDLxb1RveY8N44YojBvTdMkN/KTDLKNlpIamYMHhlmOtvCyaAg8x0hjJv+KhgTOKfvNQ9nTfsq6evBN8RVRJXcyWhwnNcPiItK337I5zJekJVfH9urj7YkpSjudbuT3rVSeufB9ie3ZvPdzv7yZT3Lwse//IPQSe5r9SB4u/Iy+dS8bmpXnn3ojNaIGxtPhH30hH+jI/Cay51ztuObq5JsKJyarxohi4OY4z8qlzgksRDkzqhVyuE74mkIUyFPq8TBzHpEC26FWDWuCfuqGRUwoD0i+Zs/NEmhYZJ8sO+4tPL5445LFiN5GCury/AcxXrqlMEgAA
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/order/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Estado do dispositivo"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/devices/{device_id}/orders"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Solicita o estado atual do dispositivo. Não exige campos em parameters.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID do dispositivo","in":"path","name":"device_id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={{"description":"Payload para criação de ordens","required":true,"content":{"application/json":{"schema":{"type":"object","required":["orders"],"properties":{"orders":{"description":"Lista de ordens individuais a serem criadas.\nCada ordem do array é processada de forma independente.","type":"array","items":{"type":"object","required":["parameters","type"],"properties":{"correlation_id":{"description":"Identificador opcional para rastreamento da requisição.\nSe não informado, será gerado automaticamente.","maxLength":50,"minLength":3,"type":"string"},"parameters":{"description":"Dados específicos necessários para o tipo de ordem.","type":"array","items":{"type":"object","title":"Estado do dispositivo"},"example":[{}]},"type":{"description":"Tipo de ordem solicitada.","type":"string","enum":["DEVICE_STATE"]}}}}},"example":{"orders":[{"type":"DEVICE_STATE","parameters":[{}]}]}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"202":{"description":"Ordem enviada para criação","content":{"application/json":{"schema":{"properties":{"orders":{"items":{"properties":{"correlation_id":{"description":"Identificador de correlação da ordem","type":"string"},"href":{"description":"Link para o recurso da ordem","type":"string"},"id":{"description":"ID da ordem","type":"string"},"status":{"description":"Status da ordem","type":"string"}},"type":"object"},"type":"array"}},"type":"object"}}}},"400":{"description":"Requisição inválida","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro","type":"string"},"detail":{"description":"Descrição legível do erro","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo o campo que causou o erro"},"status":{"description":"Código de status HTTP","type":"integer"},"title":{"description":"Título legível do erro","type":"string"}},"type":"object"}}}},"401":{"description":"Não autorizado","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro","type":"string"},"detail":{"description":"Descrição legível do erro","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo o campo que causou o erro"},"status":{"description":"Código de status HTTP","type":"integer"},"title":{"description":"Título legível do erro","type":"string"}},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro","type":"string"},"detail":{"description":"Descrição legível do erro","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo o campo que causou o erro"},"status":{"description":"Código de status HTTP","type":"integer"},"title":{"description":"Título legível do erro","type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
