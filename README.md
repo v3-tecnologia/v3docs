@@ -127,6 +127,17 @@ O `docs-all` executa, nesta ordem:
 2. `scripts/localize-openapi-docs.mjs` — traduz labels de UI nos MDX **PT** (`Request` → `Requisição`, etc.)
 3. `scripts/validate-openapi-en-docs.mjs` — falha se detectar texto em português nos MDX **EN**
 
+### Contratos de ordem
+
+Os contratos de cada tipo de ordem ficam em páginas manuais (não geradas pelo OpenAPI):
+
+| Locale | Páginas |
+|---|---|
+| PT | `docs/openapi/order/contracts/*.api.mdx` |
+| EN | `i18n/en/docusaurus-plugin-content-docs/current/openapi/order/contracts/*.api.mdx` |
+
+A sidebar de Order (incluindo o submenu de **Criar nova ordem**) é mantida em `sidebars/order.ts`.
+
 ### Adicionar ou alterar endpoints
 
 1. Edite a spec PT em `examples/{api}.yaml`
@@ -228,6 +239,8 @@ npm run clean && npm run docs-all && npm run clear && npm run build
 ├── static/                        # Arquivos estáticos (imagens, etc.)
 ├── docusaurus.config.ts           # Configuração principal + plugins OpenAPI i18n
 ├── sidebars.ts                    # Configuração da barra lateral
+├── sidebars/
+│   └── order.ts                   # Sidebar manual da Order API (contratos)
 └── Makefile                       # Targets legados por API (build parcial)
 ```
 
@@ -256,7 +269,7 @@ Para adicionar uma nova API:
 
 1. Crie `examples/{api}.yaml` (PT) e `examples/en/{api}.yaml` (EN)
 2. Registre o plugin em `docusaurus.config.ts` usando `openapiLocaleConfigs("{api}", "{api}.yaml")`
-3. Adicione a seção em `sidebars.ts` (`require("./docs/openapi/{api}/sidebar")`)
+3. Adicione a seção em `sidebars.ts` (`require("./docs/openapi/{api}/sidebar")`). Para Order, edite `sidebars/order.ts`
 4. Adicione traduções de sidebar EN em `i18n/en/docusaurus-plugin-content-docs/current.json`
 5. Regenere: `npm run clean && npm run docs-all && npm run clear && npm run build`
 

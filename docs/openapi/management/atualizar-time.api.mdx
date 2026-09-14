@@ -42,7 +42,7 @@ Atualiza os dados de um time existente com as informações informadas no corpo 
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
+  children={"Requisição"}
 >
 </Heading>
 
@@ -53,7 +53,7 @@ Atualiza os dados de um time existente com as informações informadas no corpo 
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  title={"Corpo"}
   body={{"content":{"application/json":{"schema":{"properties":{"correlation_id":{"description":"Identificador único para rastreamento da requisição (opcional, gerado automaticamente se não informado) **Ex.:**: \"123e4567-e89b-12d3-a456-426614174000\"","maxLength":50,"minLength":3,"type":"string"},"name":{"description":"Nome do time **Ex.:**: \"Time de Desenvolvimento Atualizado\"","maxLength":100,"minLength":3,"type":"string"}},"required":["name"],"type":"object"}}},"description":"Dados do time","required":true}}
 >
   
@@ -61,7 +61,7 @@ Atualiza os dados de um time existente com as informações informadas no corpo 
 
 <StatusCodes
   id={undefined}
-  label={undefined}
+  label={"Respostas"}
   responses={{"200":{"description":"Time atualizado com sucesso","content":{"application/json":{"schema":{"properties":{"account_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Time não encontrado","content":{"application/json":{"schema":{}}}},"422":{"description":"Entidade não processável","content":{"application/json":{"schema":{}}}}}}
 >
   

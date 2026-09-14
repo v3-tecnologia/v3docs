@@ -17,6 +17,21 @@ definitions:
     required:
     - cam
     type: object
+  dto.ConfigDTO:
+    properties:
+      key:
+        description: Chave de configuração
+        type: string
+      module:
+        description: Módulo alvo da configuração
+        type: string
+      type:
+        description: "Tipo do valor (ex.: string)"
+        type: string
+      value:
+        description: Valor a aplicar
+        type: string
+    type: object
   dto.ConfigAudioDTO:
     properties:
       enabled:
@@ -133,12 +148,6 @@ definitions:
           key: S3_REGION
           value: us-east-1
           type: string
-      - type: INTERNAL
-        parameters:
-        - module: system
-          key: timezone
-          value: America/Sao_Paulo
-          type: string
   dto.DataPlanConfigDTO:
     properties:
       block_reason:
@@ -233,6 +242,8 @@ definitions:
               title: Configurar áudio
             - $ref: '#/definitions/dto.ConfigAudioEventDTO'
               title: Configurar evento de áudio
+            - $ref: '#/definitions/dto.ConfigDTO'
+              title: Configuração avançada
         type: array
       type:
         allOf:
@@ -361,7 +372,6 @@ definitions:
     - REQUEST_VIDEO
     - CONFIG
     - REBOOT
-    - INTERNAL
     - VISION_CONFIG
     - PERIODIC
     - DATAPLAN_CONFIG
@@ -378,7 +388,6 @@ definitions:
     - REQUEST_VIDEO
     - ORDER_CONFIG
     - REBOOT
-    - INTERNAL
     - VISION_CONFIG
     - PERIODIC
     - DATAPLAN_CONFIG

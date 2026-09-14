@@ -1,0 +1,66 @@
+---
+id: reboot
+title: "Reiniciar"
+description: "Solicita o reinício do dispositivo. Não exige campos em parameters."
+sidebar_label: "Reiniciar"
+hide_title: true
+hide_table_of_contents: true
+api: H4sIAAAAAAAAA+1XzY7bNhB+FUKnFnBsb9JcfNs/oIsG3cXaPdlGQEtjm1mJVEnKtSvoYRY9BD3sqegT6MUyQ0q21tK6TdpbEgRekiKH38x8M5zJgwhMqEVqhZLBKBirWITCcqaYBiHLp1AoFuF/YVJlhBUb1Wc/l38oBluxAhbyBNcZJCzlmidgQZt+0AsOs2A0zY8uubk6EokHBH1IuV3jWOJRnEWwESG8FxEuafg1ExqiYGR1Br3AhGtIeDDKA7tLabOxWshVUBRzvxmMvVDRjnY8v/yO72LFI4eX4TovP5I6ETClI5Cm47JQSQvSkiyepmggTrIGHwwJzNtY1OIDhPaZoGlA0tEaCC/VKgVtBRg6U623cL4TBt2wh8WEjMRGRBkXhnFmQKPNCX7ETX8mL/Gv25mQabnWfMfKPxleFYIx9BElLZVOOAmCFPAHlSJXVaDdGXKEhcT8kzIN91YCWnqFSmuInaXIhS39bgiAWKIxI6WZSpFoksfeLZqjOwFvkBY9g3O62gjnKVR2DEySz4R0GkWqR/YoH9kKNCf1M6sSvDl0EpySCd++A7lCeo3eDnEqZD190zum0HP2HuO+whuQ8CaFsHxC+DiRQEYuH7XAiVNAMSvSPamSzzGzFTamhXsMPwxFrgkQbDHOaHmaF/OiFnYMbdK8k5kqlCPeuL7SESXKLCFP3l9f3N5OgnlB/xoXHYg53WOs9h5HNyKqj2u0i5LGM+D18HUb463DBnJDzD0KwuAzQu2lINrb9b+wEW1YHaiSQxVbLTuiymsNy67olQ81FTSEmTanpXRiujp5BNODzToIOnbrJ47u+VOTrjhiZ8cO590fhsP2dfeN2MSI3JSPsYj4l7syVFEHtS/LvyKxck8RaK267BGB5SLuCFg38/hiWJVPG4hPyTEq06GDwOP4dukC4DnEVAlUTXe9Pi3DzXutAMB3M6kB9FiKfIMtYNQp5Ip7Txk+XzjKEAmrcJ7w9940wPwW9uNkcnfQjLBiYnRe9rmllTfKJ5vF/8Y6LxLjrC3VVQmUirX4HaPqGyO+Jka87UoV1yiBOUNJ5zd8tLGiUfobNb4eahA2eg+F3TljnafiJ9idZ1SKTedkATKe8/4NvolYUSyUcnURX1G14QoITeUmFiBrRVuwi7CuKCEZwcC3DWaQ7/uHYlDVB3S33tRVTaaRAMHa2tSMBgOkH5e2v3ljuIwWatsPVTLYnDmn1IjHREPv1ibu3Hcva+AEbd+/XADXoNlEPYBsFIDuoLMOsfv+0Ktcf2ntRd3TUvl4kJaHFEbFMZXGFGzlRypHXI1WPpLziFBYn8ACgQqJnsuQ+3+DwcVEWW56WKohzYRcl4+vYo6tB5a4jc7NtX6eh+DXpViIGDM+1vSMow1TLtd1JU9Exbqkrkx9Pd+oeZ1vDTu/u8FF8pOHPuwP+2euLkdPJ9xlhMrGhyr5SN/8kFL+t6a2coWFrR2kMUenIybHorxi37RqWolqo2b/euj+1sRW3JjnC27gFx0XBS0jCzRFBA43HAviha/2A8RIY+T5kscGTmj53X3VoH3PuhrsTvA1JyW1JBseZzTD4QMytNmAO5JV/CZU/vulv/vVhKQczrcSeNGrT5yHIaT25N5mZN/djonyi6qRT1y2DzT/jdpR/B0F+UwyNqvMOwtGbEoLjOX+D30jHenLrIqhWdA7fDw4uHHYCSjq8dwP3BzHBXnTmd/lAQcjD2IuVxlfETyvBsU3r7LDIfLJCr160Iju5w44ShzedPRLhuw8kec+rRTFfr//9OKJfbLyu4kO1MR9Av5gO34QEgAA
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/order/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Reiniciar"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/devices/{device_id}/orders"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Solicita o reinício do dispositivo. Não exige campos em parameters.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID do dispositivo","in":"path","name":"device_id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={{"description":"Payload para criação de ordens","required":true,"content":{"application/json":{"schema":{"type":"object","required":["orders"],"properties":{"orders":{"description":"Lista de ordens individuais a serem criadas.\nCada ordem do array é processada de forma independente.","type":"array","items":{"type":"object","required":["parameters","type"],"properties":{"correlation_id":{"description":"Identificador opcional para rastreamento da requisição.\nSe não informado, será gerado automaticamente.","maxLength":50,"minLength":3,"type":"string"},"parameters":{"description":"Dados específicos necessários para o tipo de ordem.","type":"array","items":{"type":"object","title":"Reiniciar"},"example":[{}]},"type":{"description":"Tipo de ordem solicitada.","type":"string","enum":["REBOOT"]}}}}},"example":{"orders":[{"type":"REBOOT","parameters":[{}]}]}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"202":{"description":"Ordem enviada para criação","content":{"application/json":{"schema":{"properties":{"orders":{"items":{"properties":{"correlation_id":{"description":"Identificador de correlação da ordem","type":"string"},"href":{"description":"Link para o recurso da ordem","type":"string"},"id":{"description":"ID da ordem","type":"string"},"status":{"description":"Status da ordem","type":"string"}},"type":"object"},"type":"array"}},"type":"object"}}}},"400":{"description":"Requisição inválida","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro","type":"string"},"detail":{"description":"Descrição legível do erro","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo o campo que causou o erro"},"status":{"description":"Código de status HTTP","type":"integer"},"title":{"description":"Título legível do erro","type":"string"}},"type":"object"}}}},"401":{"description":"Não autorizado","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro","type":"string"},"detail":{"description":"Descrição legível do erro","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo o campo que causou o erro"},"status":{"description":"Código de status HTTP","type":"integer"},"title":{"description":"Título legível do erro","type":"string"}},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro","type":"string"},"detail":{"description":"Descrição legível do erro","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo o campo que causou o erro"},"status":{"description":"Código de status HTTP","type":"integer"},"title":{"description":"Título legível do erro","type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>

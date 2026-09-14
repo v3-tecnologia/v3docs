@@ -111,7 +111,7 @@ const sidebars: SidebarsConfig = {
           "Referência das operações para enviar instruções a dispositivos e acompanhar o andamento de cada solicitação.",
         slug: "/category/order-api",
       },
-      items: require("./docs/openapi/order/sidebar"),
+      items: require("./sidebars/order"),
     },
     {
       type: "category",
