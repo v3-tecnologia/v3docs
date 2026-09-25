@@ -1,0 +1,72 @@
+---
+id: delete-a-specific-order
+title: "Delete a specific order"
+description: "Deletes a single order identified by its ID for a given device."
+sidebar_label: "Delete a specific order"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV8Fy2zYQ/ZUdnJIZWrLT9sKbEqmJphnbEysnx9NZEUsRMQQwwJKNouHHdHroh/jHOgBoWbbYxE0u7TQnksAudvH2AXy7FZJ84VTNyhqRiylpYvKA4JVZaQLrJDlQkgyrUpGE5QYUe5hPobQOEFaqJQOSWlXQ6J1ZVMqDrclhWBGUB+UcteS8WmoCNBJ+U1pDTW6NhgzrDTha25aAqz7cSGSiRodrYnJe5JfbgyxDNJhPRSZUGKiRK5EJg2sSuUjJ/KqkyISjD41yJEXOrqFM+KKiNYp8K3hTB2PPTpmV6LrsYZSzuPW/C/IPV78Kxr62xpMP88+On4XHUERPRpIEtiBjNUKgwhomw8EF61qrIsI7fu+D33Yvbu0C+KxSlAhnfFNMa39oUFjnSMfFAl4HGb24m59PwZZ3RRLZwz1mYmiFR7hpZa79oecrR2VAYecLjrxtXEGALSoMfGILSwIsCvKeJNBoNYKKufb5eLyyutREPGp/8Gjk0n4cFXY9bk/GiSB+vN0xpRsnqMbb+AwjoezDoFWOyoEahwrrQWbdjtjleypY3A2gc7gJ356RmwEMLuL4PQThyfnsdDo/fZnBdPZ6tphNM/h5Mn8dnhez00UG52/OXswuLmbT2fTpId5fTufQogtjPx4fD5TXtKiVhHASyDPUuNEWv4GyhZV0GGbmnHUQ5wYIJIlR6QEGNWs0R45QRrJQXGTfZGCtxLCYtdZnZbx97mdYW2WY3KMqfZU9LGgicF/QmFGWaBu+S0VaAlfIUGATGL2z+hxLXi0W55AmH2AUMl1RdGbFegDZQYyS7SOo0xPj5HDdtwYbrqxTn77lAvvOhv8cG34aviaYnEENnlxLrt/Ed1r8X2jRZWInCucyarQgbY7wyNdUqFIVRzt5gKug+ZIYEleZWBNX9s4nikOuRC6+9CtPP/HEuCQjG6dFLm4FApNBcygPYkE8FY1TvLkIDEwlndTqF9pMmhB7myRhRZiS7kXhc0JHDhb2mvZ4g9ExIqNMaROBDWMReN89LP4kHoObP2/+sEBreHkGvXC8+b0lDbUNOgi1+oRRfpPnYCmTOjAegnIG60EqX1uvWLXWB0Xdlzbh6mFyPheZiMI8hj0eHY9OAgVq63mN8fj1u0pNQegJ+lrtpNy9zLd3p/nf00f0JWD6yONaozJhi5EG255Gl6I9iVuJRBKZyPf7h15BZyJXMpCxsp6Dz3a7RE9vne66MPyhIbcR+eVVJlp0UZumvkX58C5FXqL29BnEnrzpe4mnsN/eDOZ/yyuzCSVE3YQvkYlr2txrf2JP8zUZ7LU+X5FAiHzVZbenI+CQJiZFQTXvuRzc+d3+eU/yVnTdX+NlFew=
+sidebar_class_name: "delete api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/order/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a specific order"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/devices/{device_id}/orders/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes a single order identified by its ID for a given device.
+This operation is irreversible and will permanently remove the order.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"device_id","required":true,"schema":{"type":"string"}},{"description":"Order ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"202":{"description":"Order sended to deleted","content":{"application/json":{"schema":{"properties":{"orders":{"items":{"properties":{"correlation_id":{"description":"CorrelationID of the order","type":"string"},"id":{"description":"ID of the order","type":"string"},"links":{"description":"Href to the order resource avaiable to be accessed e.g. https://golfleet.v3sandbox.com/v1/devices/{device_id}/orders/{order_id}","items":{"properties":{"href":{"type":"string"},"rel":{"type":"string"}},"type":"object"},"type":"array"},"status":{"description":"Status of the order (PENDING, DELETED, FAILED, SENT, PROCESSEDED)","type":"string"}},"type":"object"},"type":"array"}},"type":"object"}}}},"400":{"description":"Invalid request payload","content":{"application/json":{"schema":{"properties":{"code":{"description":"Error code","type":"string"},"detail":{"description":"Human-readable error description","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Source of the error, e.g. the field that caused the error"},"status":{"description":"HTTP status code","type":"integer"},"title":{"description":"Human-readable error title","type":"string"}},"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"properties":{"code":{"description":"Error code","type":"string"},"detail":{"description":"Human-readable error description","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Source of the error, e.g. the field that caused the error"},"status":{"description":"HTTP status code","type":"integer"},"title":{"description":"Human-readable error title","type":"string"}},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"properties":{"code":{"description":"Error code","type":"string"},"detail":{"description":"Human-readable error description","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Source of the error, e.g. the field that caused the error"},"status":{"description":"HTTP status code","type":"integer"},"title":{"description":"Human-readable error title","type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

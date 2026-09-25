@@ -1,0 +1,73 @@
+---
+id: delete-multiple-orders
+title: "Excluir múltiplas ordens"
+description: "Exclui várias ordens de um dispositivo específico."
+sidebar_label: "Excluir múltiplas ordens"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV8Fy2zYQ/RUMTrGHkeykvejmxmrqacb2RO4p9TQwsZI2AQFmF+RY0ehjkhxy8qm3XPljnQUpS7JU151OT/GJJLhYPLz3QO7OtQXOCcuIweuBHl7nrkJVN58IDatAFjwrC6oqlEUuA2PEOijgEvLmZox56P3uR6CCKg01nwuIFCQ+D54rF416i5bfqnEghX4cqDA2ZIpDAT6CWi2B3mJurGHFQM2XoECQNDfWcLdAgRFlbgwStZppmEOOaaoJGyDLYNtcDKQIilCjNZwJNkGSlieYkGFljcKidCCwTPO1+RJ6OtOlIVNABGI9eDO/Q9WJBR9xLKgDqeabxzwou4FAcqDEliZOdaa9KUAPtIUac/gDrc40wYcKCaweRKog05xPoTB6MNdxVkowR0I/0YtFdhfAK+RohGtcRwJJriU3LY1ImWKQ3djAqgyk6uaGJpUzan//CVz3BgrtYYb2WYb2+d7+/i3wDxXQbIUcLev7MF7KhrgMnoHl/bODZ3LZxD0KDnPsaBawCSOnB5OQF8rkgNEIjDz4CD5KGlOWDnMjafrvWHLN17CUFEqgiO3KkobSHUYoeDsgD0TgUjJRYgvlprzJ0WlCh7oDKgjvkJDpB6S7b7pD/563Mwy9BYLmazIZQV4Rr3BkSVW4hqJ0QU1jLHnQ70+CGzuA2Kufs/H2Klz38lD068N+a0Huz2+9uOi3lPXn6SojyQW72ZsSjHcYQOR3O827HAlX7yCPejVgiMxMnjmaWO3Y9yiNr6zx5Hx4enxy+jJTx8NXw4vhcaZ+Pjp5JdfR8PQiU+evz14MR6Ph8fB4bwfB/4xlO2IhYz8cHGyjeyH2bL7ZJAVvOBt93XxyaMN/sHEeLOxYtPnT4iQZAYjCThdZiAbd9tzj9NQidDBpbmpw9ybiUFGeQBjnzsbpS7gJsgzoI9CDdL/M7uA5I5xAsUSw4eNMBZWbogzqQwXpvuJQ9e4zyy0zoNoQ9cvFxfnavgTpBCiJjtHtIPeiuYmVexA5f2uUw+20p0K4qWIg/GgePfG9eeLHXR+PIZF8JiKQT8IxUI020KM5vidzLDIt5CR9T2yqDx1EeFpULmLp4GlXy2Q6molUovosVXf6MtMFxGlYzUk1a5zqgb7/Jy9FHFC9LGwrcnqgl1VDBG/8ds2QpGCpOzDORmK/VsyjEn+F2VEly87bqnEKxgKtysafwBCQugjvwa9IMWliIkVag9a9PppcTL+4K/tROgOtDaFQL89UV2k2n4RzcQGBcfjRkDJqAhy76rIrhaX6VYHXy3NOCrWiJk6J1dH5ic60MNMue9A76B2K+GXgWJh09rpdtb0SqaL5loS6bUn0Hezz1WF+bLA2GqzOCRGuY790Br0wndw474z8RteHic9kZZ3pwXr31Ln5MtPTwFGi5/Mrw/AbucVChtv+JTVvyObKSaM1No7hHon+575q557fw+y2vaqNqyQiHbjaEAruf7mHJ6+7vnJPPbBP3QlreVL9bB3XEu5KicXlIlueegHavj/Kcyjj2sytH9li/RPWlvN6sfgLjV7teQ==
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/order/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Excluir múltiplas ordens"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/devices/{device_id}/orders"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Exclui várias ordens de um dispositivo específico.
+Se o parâmetro de consulta `ids` for informado, somente as ordens indicadas serão excluídas.
+Se omitido, todas as ordens associadas ao dispositivo poderão ser removidas, conforme as regras da implementação.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Identificador único do dispositivo.","in":"path","name":"device_id","required":true,"schema":{"type":"string"}},{"description":"Lista de identificadores de ordens a excluir, separados por vírgula **(ex.: id1,id2,id3)**.","in":"query","name":"ids","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"202":{"description":"Solicitação de exclusão da ordem aceita.","content":{"application/json":{"schema":{"properties":{"orders":{"items":{"properties":{"correlation_id":{"description":"Identificador de correlação da ordem.","type":"string"},"id":{"description":"Identificador da ordem.","type":"string"},"links":{"description":"Endereço do recurso da ordem, por exemplo https://golfleet.v3sandbox.com/v1/devices/{device_id}/orders/{order_id}.","items":{"properties":{"href":{"type":"string"},"rel":{"type":"string"}},"type":"object"},"type":"array"},"status":{"description":"Status da ordem (PENDING, DELETED, FAILED, SENT, PROCESSEDED).","type":"string"}},"type":"object"},"type":"array"}},"type":"object"}}}},"400":{"description":"Conteúdo da solicitação inválido.","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro.","type":"string"},"detail":{"description":"Descrição legível do erro.","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo, o campo que o causou."},"status":{"description":"Código de status HTTP.","type":"integer"},"title":{"description":"Título legível do erro.","type":"string"}},"type":"object"}}}},"401":{"description":"Não autorizado.","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro.","type":"string"},"detail":{"description":"Descrição legível do erro.","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo, o campo que o causou."},"status":{"description":"Código de status HTTP.","type":"integer"},"title":{"description":"Título legível do erro.","type":"string"}},"type":"object"}}}},"500":{"description":"Erro interno do servidor.","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro.","type":"string"},"detail":{"description":"Descrição legível do erro.","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo, o campo que o causou."},"status":{"description":"Código de status HTTP.","type":"integer"},"title":{"description":"Título legível do erro.","type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

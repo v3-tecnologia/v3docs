@@ -1,0 +1,30 @@
+---
+id: firmware-update
+title: "Atualização de firmware"
+description: "Contrato da ordem FIRMWARE_UPDATE para solicitar a atualização de firmware de um dispositivo."
+sidebar_label: "Atualização de firmware"
+---
+
+A ordem `FIRMWARE_UPDATE` solicita a atualização de firmware do dispositivo.
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `version` | string | Não | Versão do firmware solicitada. |
+| `is_debug` | boolean | Não | Indica se a versão do firmware é de depuração. O padrão é `false`. |
+
+```json
+{
+  "orders": [
+    {
+      "type": "FIRMWARE_UPDATE",
+      "correlation_id": "CMD_FIRMWARE_UPDATE_001",
+      "parameters": [
+        {
+          "version": "2.4.0",
+          "is_debug": false
+        }
+      ]
+    }
+  ]
+}
+```

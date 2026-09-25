@@ -3,34 +3,79 @@ definitions:
   dto.AddWifiDTO:
     properties:
       password:
-        description: Senha da rede Wi-Fi
+        description: Senha da rede Wi-Fi.
         type: string
       ssid:
-        description: SSID da rede Wi-Fi
+        description: SSID da rede Wi-Fi.
         type: string
+    type: object
+  dto.CamBehaviorDTO:
+    properties:
+      cam_behavior:
+        allOf:
+        - $ref: '#/definitions/dto.CamBehaviorType'
+        description: Tipo da transmissão (por exemplo, vídeo ou áudio).
+    type: object
+  dto.CamBehaviorType:
+    enum:
+    - recording_and_stream
+    - stream_only
+    - recording_only
+    - normal
+    type: string
+    x-enum-varnames:
+    - StreamAndRecord
+    - StreamOnly
+    - RecordingOnly
+    - Normal
+  dto.CardDriverDTO:
+    properties:
+      action:
+        description: |-
+          Ação a executar: enable_matching, enable_identification, configure_matching,
+          register_driver ou remove_driver.
+        type: string
+      card_number:
+        description: Número do cartão.
+        type: string
+      cloud_match_enabled:
+        description: Ativa ou desativa a correspondência na nuvem.
+        type: boolean
+      driver_id:
+        description: Identificador único do motorista associado ao cartão (obrigatório
+          para a ação register_driver).
+        type: string
+      driver_name:
+        description: Nome de exibição do motorista associado ao cartão.
+        type: string
+      edge_match_enabled:
+        description: Ativa ou desativa a correspondência na borda.
+        type: boolean
+      enabled:
+        description: Ativa ou desativa o módulo de correspondência de motoristas.
+        type: boolean
+      identification_enabled:
+        description: Ativa ou desativa a identificação do motorista.
+        type: boolean
+      identification_timeout_enabled:
+        description: Ativa ou desativa o tempo limite de identificação.
+        type: boolean
+      identification_timeout_seconds:
+        description: Tempo limite para identificação do motorista, em segundos.
+        type: integer
+      match_enabled:
+        description: Ativa ou desativa a correspondência de cartões.
+        type: boolean
+    required:
+    - action
+    - card_number
     type: object
   dto.CloseStreamDTO:
     properties:
       cam:
-        description: Identificador da câmera
         type: string
     required:
     - cam
-    type: object
-  dto.ConfigDTO:
-    properties:
-      key:
-        description: Chave de configuração
-        type: string
-      module:
-        description: Módulo alvo da configuração
-        type: string
-      type:
-        description: "Tipo do valor (ex.: string)"
-        type: string
-      value:
-        description: Valor a aplicar
-        type: string
     type: object
   dto.ConfigAudioDTO:
     properties:
@@ -72,124 +117,57 @@ definitions:
     properties:
       orders:
         description: |-
-          Lista de ordens individuais a serem criadas.
-          Cada ordem do array é processada de forma independente.
+          Lista de solicitações de ordens a serem criadas.
+          Cada ordem da lista será processada de forma independente.
         items:
           $ref: '#/definitions/dto.OrderDTO'
         type: array
     required:
     - orders
     type: object
-    example:
-      orders:
-      - type: ADD_WIFI
-        correlation_id: CMD_ADD_WIFI_001
-        parameters:
-        - ssid: OfficeWiFi
-          password: secret123
-      - type: DELETE_WIFI
-        parameters:
-        - ssid: GuestNetwork
-      - type: DEVICE_STATE
-        parameters:
-        - {}
-      - type: REQUEST_IMAGE
-        parameters:
-        - cam: "0"
-          start: "2026-01-15T12:00:00Z"
-      - type: REQUEST_VIDEO
-        parameters:
-        - cam: "1"
-          start: "2026-01-15T12:00:00Z"
-          end: "2026-01-15T12:02:00Z"
-      - type: REBOOT
-        parameters:
-        - {}
-      - type: PERIODIC
-        parameters:
-        - on_message_period_seconds: 60
-          on_message_first_seconds: 10
-          off_message_periodic_seconds: 300
-      - type: VISION_CONFIG
-        parameters:
-        - active_face_detect: true
-      - type: DATAPLAN_CONFIG
-        parameters:
-        - total_mb: 1024
-          cycle_day: 1
-          is_blocked: false
-          block_reason: ""
-      - type: CONFIG_AUDIO
-        parameters:
-        - enabled: true
-          globalVolume: 80
-      - type: CONFIG_AUDIO_EVENT
-        parameters:
-        - eventName: HarshBraking
-          eventEnabled: true
-          soundEnabled: true
-          voiceEnabled: false
-          volume: 70
-          isPriority: false
-      - type: OPEN_STREAM
-        correlation_id: CMD_OPEN_STREAM_001
-        parameters:
-        - cam: "0"
-          protocol: rtmp
-          port: "1935"
-          domain_endpoint: stream.example.com
-          timeout_seconds: "30"
-      - type: CLOSE_STREAM
-        parameters:
-        - cam: "0"
-      - type: CONFIG
-        parameters:
-        - module: downloaderd
-          key: S3_REGION
-          value: us-east-1
-          type: string
   dto.DataPlanConfigDTO:
     properties:
       block_reason:
-        description: Motivo do bloqueio do plano de dados. Obrigatório se is_blocked
-          for true; deve ficar vazio se is_blocked for false.
+        description: Motivo do bloqueio do plano de dados. Obrigatório quando is_blocked
+          for true e deve ficar vazio quando is_blocked for false.
         type: string
       cycle_day:
-        description: Dia do ciclo no mês em que o plano de dados é reiniciado (1-31).
-          Opcional; padrão 0 (sem ciclo).
+        description: Dia do mês em que o plano de dados é renovado (1-31). Opcional;
+          o padrão é 0 (sem ciclo).
         type: integer
       is_blocked:
-        description: Indica se o plano de dados está bloqueado. Opcional; padrão
-          false.
+        description: Indica se o plano de dados está bloqueado. Opcional; o padrão é false.
         type: boolean
       total_mb:
-        description: Total do plano de dados em megabytes a ser aplicado ao dispositivo
+        description: Franquia total do plano de dados, em megabytes, aplicada ao dispositivo.
         type: integer
     type: object
   dto.DeleteWifiDTO:
     properties:
       ssid:
-        description: SSID da rede Wi-Fi a ser excluída
+        description: SSID da rede Wi-Fi a ser removida.
         type: string
     type: object
   dto.DeviceStateDTO:
     type: object
+  dto.FirmwareUpdateDTO:
+    properties:
+      is_debug:
+        description: Indica se a versão do firmware é uma versão de depuração.
+        type: boolean
+      version:
+        description: Versão do firmware a ser instalada.
+        type: string
+    type: object
   dto.OpenStreamDTO:
     properties:
       cam:
-        description: Identificador da câmera (0 = DriverCam, 1 = RoadCam)
         type: string
       domain_endpoint:
-        description: Endpoint de domínio do servidor de transmissão
         type: string
       port:
-        description: Porta do servidor de transmissão
         type: string
       protocol:
-        description: Protocolo de transmissão
-        type: string
-      rtmp_url:
-        description: URL completa de publicação RTMP incluindo a chave de transmissão
         type: string
       timeout_seconds:
         type: string
@@ -201,7 +179,7 @@ definitions:
     properties:
       correlation_id:
         description: |-
-          Identificador opcional para rastreamento da requisição.
+          Identificador opcional para rastrear a solicitação.
           Se não informado, será gerado automaticamente.
         maxLength: 50
         minLength: 3
@@ -209,17 +187,14 @@ definitions:
       parameters:
         description: |-
           Dados específicos necessários para o tipo de ordem.
-          A estrutura de cada parâmetro depende do tipo de ordem.
-          Por exemplo, ADD_WIFI inclui ssid e password.
-        example:
-        - ssid: OfficeWiFi
-          password: secret123
+          A estrutura dos parâmetros varia conforme o tipo; por exemplo,
+          ADD_WIFI recebe ssid e password.
         items:
           oneOf:
             - $ref: '#/definitions/dto.AddWifiDTO'
               title: Adicionar Wi-Fi
             - $ref: '#/definitions/dto.DeleteWifiDTO'
-              title: Excluir Wi-Fi
+              title: Remover Wi-Fi
             - $ref: '#/definitions/dto.DeviceStateDTO'
               title: Estado do dispositivo
             - $ref: '#/definitions/dto.RequestImageDTO'
@@ -229,26 +204,28 @@ definitions:
             - $ref: '#/definitions/dto.RebootDTO'
               title: Reiniciar
             - $ref: '#/definitions/dto.PeriodicDTO'
-              title: Periódico
+              title: Configuração periódica
             - $ref: '#/definitions/dto.VisionConfigDTO'
               title: Configuração de visão
             - $ref: '#/definitions/dto.DataPlanConfigDTO'
-              title: Configuração de plano de dados
+              title: Configuração do plano de dados
             - $ref: '#/definitions/dto.OpenStreamDTO'
               title: Abrir transmissão
             - $ref: '#/definitions/dto.CloseStreamDTO'
               title: Fechar transmissão
             - $ref: '#/definitions/dto.ConfigAudioDTO'
-              title: Configurar áudio
+              title: Configuração de áudio
             - $ref: '#/definitions/dto.ConfigAudioEventDTO'
-              title: Configurar evento de áudio
-            - $ref: '#/definitions/dto.ConfigDTO'
-              title: Configuração avançada
+              title: Configuração de evento de áudio
+            - $ref: '#/definitions/dto.CardDriverDTO'
+              title: Cartão de motorista
+            - $ref: '#/definitions/dto.FirmwareUpdateDTO'
+              title: Atualização de firmware
         type: array
       type:
         allOf:
         - $ref: '#/definitions/model.OrderType'
-        description: Tipo de ordem solicitada.
+        description: Tipo da ordem solicitada.
     required:
     - parameters
     - type
@@ -256,13 +233,13 @@ definitions:
   dto.PeriodicDTO:
     properties:
       off_message_periodic_seconds:
-        description: Desativa mensagens periódicas por **segundos**
+        description: Desativa as mensagens periódicas por **segundos**.
         type: integer
       on_message_first_seconds:
-        description: Envia a primeira mensagem após **segundos**
+        description: Envia a primeira mensagem após **segundos**.
         type: integer
       on_message_period_seconds:
-        description: Envia mensagens a cada **segundos**
+        description: Envia mensagens a cada **segundos**.
         type: integer
     type: object
   dto.RebootDTO:
@@ -270,11 +247,12 @@ definitions:
   dto.RequestImageDTO:
     properties:
       cam:
-        description: 'Câmera usada para captura de imagem. Ex.: (0 = DriverCam, 1
-          = RoadCam)'
+        description: 'Câmera usada para capturar a imagem **Ex.: (0 = DriverCam, 1
+          = RoadCam)**'
         type: string
       start:
-        description: 'Início do intervalo de captura no formato RFC3339. Ex.: "2006-01-02T15:04:05Z07:00"'
+        description: 'Início do intervalo da captura de imagem no **formato RFC3339
+          Ex.: "2006-01-02T15:04:05Z07:00"**'
         type: string
     required:
     - cam
@@ -282,14 +260,16 @@ definitions:
   dto.RequestVideoDTO:
     properties:
       cam:
-        description: 'Câmera usada para captura de vídeo. Ex.: (0 = DriverCam, 1
-          = RoadCam)'
+        description: 'Câmera usada para capturar o vídeo **Ex.: (0 = DriverCam, 1
+          = RoadCam)**'
         type: string
       end:
-        description: 'Fim do intervalo de captura no formato RFC3339. Ex.: "2006-01-02T15:04:05Z07:00"'
+        description: 'Fim do intervalo da captura de vídeo no **formato RFC3339
+          Ex.: "2006-01-02T15:04:05Z07:00"**'
         type: string
       start:
-        description: 'Início do intervalo de captura no formato RFC3339. Ex.: "2006-01-02T15:04:05Z07:00"'
+        description: 'Início do intervalo da captura de vídeo no **formato RFC3339
+          Ex.: "2006-01-02T15:04:05Z07:00"**'
         type: string
     required:
     - cam
@@ -297,12 +277,14 @@ definitions:
   dto.VisionConfigDTO:
     properties:
       active_face_detect:
-        description: Habilita ou desabilita a detecção facial
+        description: Ativa ou desativa a detecção facial.
         type: boolean
     type: object
-  health.HealthCheckResponse:
+  mapper.OrderRefLink:
     properties:
-      status:
+      href:
+        type: string
+      rel:
         type: string
     type: object
   mapper.OrderResponse:
@@ -338,29 +320,20 @@ definitions:
   mapper.SuccessAccepted:
     properties:
       correlation_id:
-        description: Identificador de correlação da ordem
-        type: string
-      href:
-        description: Link para o recurso da ordem
+        description: Identificador de correlação da ordem.
         type: string
       id:
-        description: ID da ordem
+        description: Identificador da ordem.
         type: string
+      links:
+        description: Endereço do recurso da ordem, por exemplo https://golfleet.v3sandbox.com/v1/devices/{device_id}/orders/{order_id}.
+        items:
+          $ref: '#/definitions/mapper.OrderRefLink'
+        type: array
       status:
-        description: Status da ordem
+        description: Status da ordem (PENDING, DELETED, FAILED, SENT, PROCESSEDED).
         type: string
     type: object
-  model.OrderStatus:
-    enum:
-    - PENDING
-    - SENT
-    - PROCESSING
-    - PROCESSED
-    - ACK
-    - NACK
-    - FAILED
-    - DELETED
-    type: string
   model.OrderType:
     enum:
     - ADD_WIFI
@@ -372,11 +345,15 @@ definitions:
     - REQUEST_VIDEO
     - CONFIG
     - REBOOT
+    - INTERNAL
     - VISION_CONFIG
     - PERIODIC
     - DATAPLAN_CONFIG
     - OPEN_STREAM
     - CLOSE_STREAM
+    - CAM_BEHAVIOR
+    - CARD_DRIVER
+    - FIRMWARE_UPDATE
     type: string
     x-enum-varnames:
     - ADD_WIFI
@@ -388,11 +365,15 @@ definitions:
     - REQUEST_VIDEO
     - ORDER_CONFIG
     - REBOOT
+    - INTERNAL
     - VISION_CONFIG
     - PERIODIC
     - DATAPLAN_CONFIG
     - OPEN_STREAM
     - CLOSE_STREAM
+    - CAM_BEHAVIOR
+    - CARD_DRIVER
+    - FIRMWARE_UPDATE
   types.Source:
     properties:
       pointer:
@@ -401,27 +382,27 @@ definitions:
   types.ValidationError:
     properties:
       code:
-        description: Código do erro
+        description: Código do erro.
         type: string
       detail:
-        description: Descrição legível do erro
+        description: Descrição legível do erro.
         type: string
       source:
         allOf:
         - $ref: '#/definitions/types.Source'
-        description: Origem do erro, por exemplo o campo que causou o erro
+        description: Origem do erro, por exemplo, o campo que o causou.
       status:
-        description: Código de status HTTP
+        description: Código de status HTTP.
         type: integer
       title:
-        description: Título legível do erro
+        description: Título legível do erro.
         type: string
     type: object
 host: tenant.v3sandbox.com
 info:
   contact: {}
-  description: Serviço responsável por receber instruções remotas, encaminhá-las aos
-    dispositivos em campo e disponibilizar o acompanhamento de cada solicitação.
+  description: Aplicação em GO responsável por realizar a gestão de ordens para os
+    dispositivos.
   title: Orders API
   version: 0.0.1
 paths:
@@ -429,23 +410,23 @@ paths:
     get:
       consumes:
       - application/json
-      description: Retorna a lista de ordens com filtros opcionais por dispositivo
-        e identificador de correlação. Suporta paginação.
+      description: Retorna a lista de ordens com filtros opcionais por device_id e
+        correlation_id. A resposta oferece paginação.
       parameters:
-      - description: ID do dispositivo
+      - description: Identificador do dispositivo.
         in: path
         name: device_id
         required: true
         type: string
-      - description: 'Número da página (padrão: 1)'
+      - description: 'Número da página (padrão: 1).'
         in: query
         name: page
         type: integer
-      - description: 'Tamanho da página (padrão: 10, máximo: 100)'
+      - description: 'Quantidade de itens por página (padrão: 10, máximo: 100).'
         in: query
         name: page_size
         type: integer
-      - description: Filtrar por identificador de correlação
+      - description: Filtra pelo identificador de correlação.
         in: query
         name: correlation_id
         type: string
@@ -453,37 +434,38 @@ paths:
       - application/json
       responses:
         "200":
-          description: Ordens recuperadas com sucesso
+          description: Ordens recuperadas com sucesso.
           schema:
             items:
               $ref: '#/definitions/mapper.OrderResponse'
             type: array
         "400":
-          description: Requisição inválida
+          description: Conteúdo da solicitação inválido.
           schema:
             $ref: '#/definitions/types.ValidationError'
         "401":
-          description: Não autorizado
+          description: Não autorizado.
           schema:
             $ref: '#/definitions/types.ValidationError'
-      operationId: buscar-ordens-com-filtros-opcionais
-      summary: Buscar ordens com filtros opcionais
+      operationId: find-orders-with-optional-filtering
+      summary: Listar ordens com filtros opcionais
       tags:
-      - Order
+      - Ordens
+  /v1/devices/{device_id}/orders:
     delete:
       consumes:
       - application/json
       description: |-
-        Exclui múltiplas ordens de um dispositivo específico.
-        Se o parâmetro `ids` for informado, apenas as ordens indicadas serão excluídas.
-        Se omitido, todas as ordens associadas ao dispositivo podem ser removidas (conforme regras de implementação).
+        Exclui várias ordens de um dispositivo específico.
+        Se o parâmetro de consulta `ids` for informado, somente as ordens indicadas serão excluídas.
+        Se omitido, todas as ordens associadas ao dispositivo poderão ser removidas, conforme as regras da implementação.
       parameters:
-      - description: Identificador único do dispositivo
+      - description: Identificador único do dispositivo.
         in: path
         name: device_id
         required: true
         type: string
-      - description: "Lista de IDs de ordens separados por vírgula (ex.: id1,id2,id3)"
+      - description: 'Lista de identificadores de ordens a excluir, separados por vírgula **(ex.: id1,id2,id3)**.'
         in: query
         name: ids
         type: string
@@ -491,100 +473,186 @@ paths:
       - application/json
       responses:
         "202":
-          description: Ordem enviada para exclusão
+          description: Solicitação de exclusão da ordem aceita.
           schema:
             $ref: '#/definitions/mapper.OrderSuccessAccepted'
         "400":
-          description: Requisição inválida
+          description: Conteúdo da solicitação inválido.
           schema:
             $ref: '#/definitions/types.ValidationError'
         "401":
-          description: Não autorizado
+          description: Não autorizado.
           schema:
             $ref: '#/definitions/types.ValidationError'
         "500":
-          description: Erro interno do servidor
+          description: Erro interno do servidor.
           schema:
             $ref: '#/definitions/types.ValidationError'
-      operationId: excluir-multiplas-ordens
+      operationId: delete-multiple-orders
       summary: Excluir múltiplas ordens
       tags:
-      - Order
+      - Ordens
     post:
       consumes:
       - application/json
       description: |-
-        Envia uma lista de comandos para execução no dispositivo informado.
-        Cada comando pode ser de um dos tipos suportados, como:
-        (**Adicionar Wi-Fi**, **Excluir Wi-Fi**, **Estado do dispositivo**, **Solicitar imagem**, **Solicitar vídeo**, **Reiniciar**,
-        **Periódico**, **Configuração de visão**, **Configuração de plano de dados**, **Configurar áudio**, **Configurar evento de áudio**).
+        Envia uma lista de comandos para execução no dispositivo indicado.
+        Cada comando pode ser de um dos tipos compatíveis, como:
+        (**Adicionar Wi-Fi**, **Remover Wi-Fi**, **Estado do dispositivo**, **Solicitar imagem**, **Solicitar vídeo**, **Reiniciar**,
+        **Configuração periódica**, **Configuração de visão**, **Configuração do plano de dados**, **Configuração de áudio**, **Configuração de evento de áudio**, **Cartão de motorista**, **Atualização de firmware**).
       parameters:
-      - description: ID do dispositivo
+      - description: ULID do Device
         in: path
         name: device_id
         required: true
         type: string
-      - description: Payload para criação de ordens
+      - description: Conteúdo para criação de ordens.
         in: body
         name: payload
         required: true
         schema:
           $ref: '#/definitions/dto.CreateOrderDTO'
+      - description: Ordem.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.OrderDTO'
+      - description: Adicionar Wi-Fi.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.AddWifiDTO'
+      - description: Remover Wi-Fi.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.DeleteWifiDTO'
+      - description: Estado do dispositivo.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.DeviceStateDTO'
+      - description: Solicitar imagem.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.RequestImageDTO'
+      - description: Solicitar vídeo.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.RequestVideoDTO'
+      - description: Reiniciar.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.RebootDTO'
+      - description: Configuração periódica.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.PeriodicDTO'
+      - description: Configuração de visão.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.VisionConfigDTO'
+      - description: Configuração do plano de dados.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.DataPlanConfigDTO'
+      - description: Configuração de áudio.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.ConfigAudioDTO'
+      - description: Configuração de evento de áudio.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.ConfigAudioEventDTO'
+      - description: Abrir transmissão.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.OpenStreamDTO'
+      - description: Fechar transmissão.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CloseStreamDTO'
+      - description: Comportamento da câmera.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CamBehaviorDTO'
+      - description: Cartão de motorista.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CardDriverDTO'
+      - description: Atualização de firmware.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.FirmwareUpdateDTO'
       produces:
       - application/json
       responses:
         "202":
-          description: Ordem enviada para criação
+          description: Solicitação de criação da ordem aceita.
           schema:
             $ref: '#/definitions/mapper.OrderSuccessAccepted'
         "400":
-          description: Requisição inválida
+          description: Conteúdo da solicitação inválido.
           schema:
             $ref: '#/definitions/types.ValidationError'
         "401":
-          description: Não autorizado
+          description: Não autorizado.
           schema:
             $ref: '#/definitions/types.ValidationError'
         "500":
-          description: Erro interno do servidor
+          description: Erro interno do servidor.
           schema:
             $ref: '#/definitions/types.ValidationError'
       security:
       - ApiKeyAuth: []
-      operationId: criar-nova-ordem
+      operationId: create-new-order
       summary: Criar nova ordem
       tags:
-      - Order
-  /healthz/ready:
-    get:
-      description: Verifica se a aplicação está pronta
-      responses:
-        "200":
-          description: Aplicação pronta
-          schema:
-            $ref: '#/definitions/health.HealthCheckResponse'
-        "503":
-          description: Serviço indisponível
-          schema:
-            $ref: '#/definitions/health.HealthCheckResponse'
-      operationId: verificar-se-a-aplicacao-esta-pronta
-      summary: Verificar se a aplicação está pronta
-      tags:
-      - Health Check
-  /devices/{device_id}/orders/{id}:
+      - Ordens
+  /v1/devices/{device_id}/orders/{id}:
     delete:
       consumes:
       - application/json
       description: |-
-        Exclui uma ordem específica pelo ID para o dispositivo informado.
-        Esta operação é irreversível e remove permanentemente a ordem.
+        Exclui uma ordem pelo identificador em um dispositivo específico.
+        Esta operação é irreversível e remove a ordem permanentemente.
       parameters:
-      - description: ID do dispositivo
+      - description: Identificador do dispositivo.
         in: path
         name: device_id
         required: true
         type: string
-      - description: ID da ordem
+      - description: Identificador da ordem.
         in: path
         name: id
         required: true
@@ -593,36 +661,36 @@ paths:
       - application/json
       responses:
         "202":
-          description: Ordem enviada para exclusão
+          description: Solicitação de exclusão da ordem aceita.
           schema:
             $ref: '#/definitions/mapper.OrderSuccessAccepted'
         "400":
-          description: Requisição inválida
+          description: Conteúdo da solicitação inválido.
           schema:
             $ref: '#/definitions/types.ValidationError'
         "401":
-          description: Não autorizado
+          description: Não autorizado.
           schema:
             $ref: '#/definitions/types.ValidationError'
         "500":
-          description: Erro interno do servidor
+          description: Erro interno do servidor.
           schema:
             $ref: '#/definitions/types.ValidationError'
-      operationId: excluir-ordem-especifica
-      summary: Excluir ordem específica
+      operationId: delete-a-specific-order
+      summary: Excluir uma ordem específica
       tags:
-      - Order
+      - Ordens
     get:
       consumes:
       - application/json
-      description: Retorna uma ordem pelo ID para o dispositivo informado
+      description: Recupera uma ordem pelo identificador em um dispositivo específico.
       parameters:
-      - description: ID do dispositivo
+      - description: Identificador do dispositivo.
         in: path
         name: device_id
         required: true
         type: string
-      - description: ID da ordem
+      - description: Identificador da ordem.
         in: path
         name: id
         required: true
@@ -631,25 +699,173 @@ paths:
       - application/json
       responses:
         "200":
-          description: Ordem recuperada com sucesso
+          description: Ordem recuperada com sucesso.
           schema:
             $ref: '#/definitions/mapper.OrderResponse'
         "400":
-          description: Requisição inválida
+          description: Conteúdo da solicitação inválido.
           schema:
             $ref: '#/definitions/types.ValidationError'
         "401":
-          description: Não autorizado
+          description: Não autorizado.
           schema:
             $ref: '#/definitions/types.ValidationError'
         "404":
-          description: Ordem não encontrada
+          description: Ordem não encontrada.
           schema:
             $ref: '#/definitions/types.ValidationError'
-      operationId: obter-ordem-especifica
-      summary: Obter ordem específica
+      operationId: get-a-specific-order
+      summary: Obter uma ordem específica
       tags:
-      - Order
+      - Ordens
+  /v1/fleets/{fleet_id}/orders:
+    post:
+      consumes:
+      - application/json
+      description: |-
+        Envia uma lista de comandos para execução nos dispositivos da frota indicada.
+        Cada comando pode ser de um dos tipos compatíveis, como:
+        (**Adicionar Wi-Fi**, **Remover Wi-Fi**, **Estado do dispositivo**, **Solicitar imagem**, **Solicitar vídeo**, **Reiniciar**,
+        **Configuração periódica**, **Configuração de visão**, **Configuração do plano de dados**, **Configuração de áudio**, **Configuração de evento de áudio**, **Cartão de motorista**, **Atualização de firmware**).
+      parameters:
+      - description: ULID do Fleet
+        in: path
+        name: fleet_id
+        required: true
+        type: string
+      - description: Conteúdo para criação de ordens.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreateOrderDTO'
+      - description: Ordem.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.OrderDTO'
+      - description: Adicionar Wi-Fi.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.AddWifiDTO'
+      - description: Remover Wi-Fi.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.DeleteWifiDTO'
+      - description: Estado do dispositivo.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.DeviceStateDTO'
+      - description: Solicitar imagem.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.RequestImageDTO'
+      - description: Solicitar vídeo.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.RequestVideoDTO'
+      - description: Reiniciar.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.RebootDTO'
+      - description: Configuração periódica.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.PeriodicDTO'
+      - description: Configuração de visão.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.VisionConfigDTO'
+      - description: Configuração do plano de dados.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.DataPlanConfigDTO'
+      - description: Configuração de áudio.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.ConfigAudioDTO'
+      - description: Configuração de evento de áudio.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.ConfigAudioEventDTO'
+      - description: Abrir transmissão.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.OpenStreamDTO'
+      - description: Fechar transmissão.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CloseStreamDTO'
+      - description: Comportamento da câmera.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CamBehaviorDTO'
+      - description: Cartão de motorista.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CardDriverDTO'
+      - description: Atualização de firmware.
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.FirmwareUpdateDTO'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Solicitação de criação da ordem aceita.
+          schema:
+            $ref: '#/definitions/mapper.OrderSuccessAccepted'
+        "400":
+          description: Conteúdo da solicitação inválido.
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+        "401":
+          description: Não autorizado.
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+        "500":
+          description: Erro interno do servidor.
+          schema:
+            $ref: '#/definitions/types.ValidationError'
+      security:
+      - ApiKeyAuth: []
+      operationId: create-new-order-by-fleet
+      summary: Criar novas ordens para uma frota
+      tags:
+      - Ordens
 schemes:
 - https
 securityDefinitions:

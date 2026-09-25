@@ -1,0 +1,71 @@
+---
+id: find-orders-with-optional-filtering
+title: "Listar ordens com filtros opcionais"
+description: "Retorna a lista de ordens com filtros opcionais por device_id e correlation_id. A resposta oferece paginação."
+sidebar_label: "Listar ordens com filtros opcionais"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVz1zGzcQ/SsYVPbMiaSSVOwYJ3E8yViOo1QejmZ1WB7Xxh2gBY4Rxbkfo3GRylU6t/fHMovjl8QTLSVFiqQijwD2vXv7ADyutMGQM/lIrtJj/Raj4woUKEshgjKoHBusgspdqWZkI7ugnM/JVUBBecfK4IJyvCCjUOWOGS1ItQsyAzVRjME7KeVmyJij8lBQBe0f7Uc30Jn2wFBiRA56/G51j84rg1WkGeVgBMgpQ1KNIi3SYpJJHuJcZ7qCEvVYb9noTDNe1cRo9DhyjZkO+RxL0OOVjksvk0NkqgrdNNl95Nft5xLZKQPKt7fCWD3zYLj96Mbq9PkW/KpGXu7QPRSoe4Coilgg9yH9UkMVyYBBUZuiiC2y9sCOMlW2t9dUpofRURYXgW6eSuUH6S8oj9Ypuiv9trXbxvUB321/H/pW8am0J3hXBQwy/tVoJB93CZ113mPMa48MBjofhjrHEBKL3FURqyhLwXtLeQIfvg+yfrWHTxHLBOTZeeRIHewe41emh2emc0aIaCaxd9SgxWOjYsYHChfsat87Qv0Lgqs5xxdH+YQIsQ69Q90PPQO1Nw9W3K7T7vI95nFXSAMzLHXTyJxv+rr3QnrTfjZpFwVnKafY+UdRtWhvLZmn9fB+6wz2gLZ/GiqcHBbInOr3tCUC2cO136WnjqHFov20QHu0UNeRRNzas1k6we6S9E72Gz9K2Wl2YH8qsNwwyNKxgNdYeusy5VQOpXfqqsb0vQ6uHty1wAPKoOqmqB/Pz9/svdf2ZMh0pGh7xD1vP8XaPkqcw9dbG+X0sOxrERzq6Jhu4H9P/Lc80WRaxNkewXpGlTmR1MHh5HeK8xOXoMCeSP7AVCrTEQpJDOsrQk8zXWKcOylQYEzBIs71WA+7MzgMV9tk0Ay76nI/IS820aNmq8d6HqMP4+EwYgVVHCy+DlCZS3c9yF05XJymjgTMa6a4/FVc2PV04uknXE5qwVx1d+McwSDvLsdvERhZnbsPWO20gbQwaUPVzHUmriLk4v3mfvcnaSt0bsRSvTxT60u0vRXpxQyMYOkGWIEqMESZuUtxkraUC/s5KqRGdb1NanJQkzevdKZFmQ52NBgNTsUDEuVKSFtw/VY/S07koylR33uL1W53/wuBc617xOs49BaoSlcgp63feebd+t4W4uP9PLm2zTTTcxeiTFytLiHgb2ybRn7u4lDKsRTg0kr0nIENeESBRyTNXsofcLkLnAuwtUzRKdQ9GvsfZs8v8NpE0L9J7klp9AiVg1C64zOVByYh9MSuPXu7/m/xXH3pT0ovtc3ur5b7hDaUd6Zrpk22OUmEYTc+yXP0cW/lwR3Z7B+IL78/103zFxng7a0=
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/order/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Listar ordens com filtros opcionais"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/devices/{device_id}/orders"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retorna a lista de ordens com filtros opcionais por device_id e correlation_id. A resposta oferece paginação.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Identificador do dispositivo.","in":"path","name":"device_id","required":true,"schema":{"type":"string"}},{"description":"Número da página (padrão: 1).","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Quantidade de itens por página (padrão: 10, máximo: 100).","in":"query","name":"page_size","schema":{"type":"integer"}},{"description":"Filtra pelo identificador de correlação.","in":"query","name":"correlation_id","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"200":{"description":"Ordens recuperadas com sucesso.","content":{"application/json":{"schema":{"items":{"properties":{"correlationId":{"type":"string"},"createdAt":{"type":"string"},"deletedAt":{"type":"string"},"deviceId":{"type":"string"},"group":{"type":"string"},"id":{"type":"string"},"sourceCreatedAt":{"type":"string"},"status":{"type":"string"},"type":{"type":"string"},"updatedAt":{"type":"string"}},"type":"object"},"type":"array"}}}},"400":{"description":"Conteúdo da solicitação inválido.","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro.","type":"string"},"detail":{"description":"Descrição legível do erro.","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo, o campo que o causou."},"status":{"description":"Código de status HTTP.","type":"integer"},"title":{"description":"Título legível do erro.","type":"string"}},"type":"object"}}}},"401":{"description":"Não autorizado.","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro.","type":"string"},"detail":{"description":"Descrição legível do erro.","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo, o campo que o causou."},"status":{"description":"Código de status HTTP.","type":"integer"},"title":{"description":"Título legível do erro.","type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

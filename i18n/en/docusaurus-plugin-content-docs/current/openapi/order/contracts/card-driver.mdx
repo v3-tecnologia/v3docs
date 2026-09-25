@@ -1,0 +1,41 @@
+---
+id: card-driver
+title: "Driver card"
+description: "CARD_DRIVER order contract for configuring driver card matching or registering a driver card."
+sidebar_label: "Driver card"
+---
+
+The `CARD_DRIVER` order configures driver card matching, registers a card to a driver, or removes that association.
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `card_number` | string | Yes | Card number. |
+| `action` | string | Yes | Action: `enable_matching`, `enable_identification`, `configure_matching`, `register_driver`, or `remove_driver`. |
+| `driver_id` | string | No | Driver identifier. Required for `register_driver`. |
+| `driver_name` | string | No | Display name of the driver associated with the card. |
+| `enabled` | boolean | No | Enables or disables the driver matching module. |
+| `match_enabled` | boolean | No | Enables or disables card matching. |
+| `identification_enabled` | boolean | No | Enables or disables driver identification. |
+| `identification_timeout_seconds` | integer | No | Identification timeout in seconds. |
+| `identification_timeout_enabled` | boolean | No | Enables or disables the identification timeout. |
+| `edge_match_enabled` | boolean | No | Enables or disables edge matching. |
+| `cloud_match_enabled` | boolean | No | Enables or disables cloud matching. |
+
+```json
+{
+  "orders": [
+    {
+      "type": "CARD_DRIVER",
+      "correlation_id": "CMD_CARD_DRIVER_001",
+      "parameters": [
+        {
+          "card_number": "CARD-12345",
+          "action": "register_driver",
+          "driver_id": "driver-001",
+          "driver_name": "Alex Morgan"
+        }
+      ]
+    }
+  ]
+}
+```

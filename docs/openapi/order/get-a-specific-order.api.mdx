@@ -1,0 +1,71 @@
+---
+id: get-a-specific-order
+title: "Obter uma ordem específica"
+description: "Recupera uma ordem pelo identificador em um dispositivo específico."
+sidebar_label: "Obter uma ordem específica"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk2P2zYQ/SvEnFpAa63bnHRzkyBdFOgGqXtaGAVNjmUmFMnlh7COoB8T9NDTnnLr1X+sGMretXflTdrmlpwkcTgffPOGeh1IDMIrF5U1UMEbFMmh5yw1nFkvsWEOtWVKoolqpQSX1jNsWGqYVMHZoKJqLcPgUGxvV0rYCRTguOcNRvQBqqvuQY6Lo1jSHgYiZ0WbHI9rKMDwBqECia0S+IeSUIDH66Q8SqiiT1hAEGtsOFQdxI2jzSF6ZWro++ITmXcnPJHzXyZb0ObgrAkYyP7D+Tk9jgu4zIj6HciSM2EbFpLAEPLRhTURTSRH7pxWgpNj+TaQd3eQ3Xnr0Ec15BLWe9R574UcKa4A4ZFHlLM4apWo8SkrgX8icO1tcqMWNe4QbPICnz9ZT4g8pjBqGhZGDMnJkxHv/MAu36KI0Pe09mysRc+pBdu/iZacBauVUJFv/9r+aZky7faDVvL/tUriSNLtR6lqS8OA3uf4I22IXOnHvi/y11Chxnp726J+MtDQgVy41perPKHHRTqrTET/WUguikccVzU2+woK5ujCuMHGaVswywRvnGXXCfN7CjZNjlt+Ahlkwxb283z++uBcVGmNPnNDRT0C7nx7G5P+LHBOEmX6OOyvBDhP0Xr1nn/jxNfHiWen7ndDsKMhNtAl/40ZXxMz+gIInLufMdQYz/gZ6SNSHmckOTzF4jWJo0wZE2BRQINxbXceWUPFNVRQttNy+AOHsrvTQX2Z44SyU7KHAgL6dq+2ktdQwTpGF6qyjGi4iZP2x8CNXNqbibBN2U5zKwKK5FXc/Eb0G5o5c+oX3MwS5e4GWbRGPpS8E0Y/Iffo2dy+Q3MPCs+OGRRlVnZgr4lcEOn7h22f5RkYaIgNe3XJduJp+4EwJxZ45Fq9555xVmOItFNiVmwmMBKYzIZD6Rhyh4amZlR9YLPXF1AAITOkPZ+cT6bUfGdDbHievd2pLpcR/YHsvVe0HB5U392P85cSzDsQI97E0mmuTJY0Pg/wQIQraKewF2MBCqgORfHABlpVkri0tiGST9ctecDfve57Wr5O6DdQXS0KaLlXfElgkUBXgd4lVCuuAz5x3u/e7BTx9+xTOn70THu2mA01hutEX1DAO9wc6fws3r9AVQca/z/UQ4Us+mI/AgTVYJgJgS4euDy61fvDiX71cg59/w+9obya
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/order/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Obter uma ordem específica"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/devices/{device_id}/orders/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Recupera uma ordem pelo identificador em um dispositivo específico.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Requisição"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Identificador do dispositivo.","in":"path","name":"device_id","required":true,"schema":{"type":"string"}},{"description":"Identificador da ordem.","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Corpo"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={"Respostas"}
+  responses={{"200":{"description":"Ordem recuperada com sucesso.","content":{"application/json":{"schema":{"properties":{"correlationId":{"type":"string"},"createdAt":{"type":"string"},"deletedAt":{"type":"string"},"deviceId":{"type":"string"},"group":{"type":"string"},"id":{"type":"string"},"sourceCreatedAt":{"type":"string"},"status":{"type":"string"},"type":{"type":"string"},"updatedAt":{"type":"string"}},"type":"object"}}}},"400":{"description":"Conteúdo da solicitação inválido.","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro.","type":"string"},"detail":{"description":"Descrição legível do erro.","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo, o campo que o causou."},"status":{"description":"Código de status HTTP.","type":"integer"},"title":{"description":"Título legível do erro.","type":"string"}},"type":"object"}}}},"401":{"description":"Não autorizado.","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro.","type":"string"},"detail":{"description":"Descrição legível do erro.","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo, o campo que o causou."},"status":{"description":"Código de status HTTP.","type":"integer"},"title":{"description":"Título legível do erro.","type":"string"}},"type":"object"}}}},"404":{"description":"Ordem não encontrada.","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro.","type":"string"},"detail":{"description":"Descrição legível do erro.","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo, o campo que o causou."},"status":{"description":"Código de status HTTP.","type":"integer"},"title":{"description":"Título legível do erro.","type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

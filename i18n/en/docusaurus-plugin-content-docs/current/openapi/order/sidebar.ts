@@ -12,45 +12,39 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "current/openapi/order/buscar-ordens-com-filtros-opcionais",
+          id: "current/openapi/order/find-orders-with-optional-filtering",
           label: "Find orders with optional filtering",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "current/openapi/order/excluir-multiplas-ordens",
+          id: "current/openapi/order/delete-multiple-orders",
           label: "Delete multiple orders",
           className: "api-method delete",
         },
         {
           type: "doc",
-          id: "current/openapi/order/criar-nova-ordem",
+          id: "current/openapi/order/create-new-order",
           label: "Create new order",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "current/openapi/order/excluir-ordem-especifica",
+          id: "current/openapi/order/delete-a-specific-order",
           label: "Delete a specific order",
           className: "api-method delete",
         },
         {
           type: "doc",
-          id: "current/openapi/order/obter-ordem-especifica",
+          id: "current/openapi/order/get-a-specific-order",
           label: "Get a specific order",
           className: "api-method get",
         },
-      ],
-    },
-    {
-      type: "category",
-      label: "Health Check",
-      items: [
         {
           type: "doc",
-          id: "current/openapi/order/verificar-se-a-aplicacao-esta-pronta",
-          label: "Check if application is ready",
-          className: "api-method get",
+          id: "current/openapi/order/create-new-order-by-fleet",
+          label: "Create new order by fleet",
+          className: "api-method post",
         },
       ],
     },

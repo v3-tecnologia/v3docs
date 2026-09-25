@@ -1,0 +1,466 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docsSidebar.category.Conheça a V3": {
+    "message": "Conheça a V3",
+    "description": "The label for category Conheça a V3 in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Conheça a V3.link.generated-index.title": {
+    "message": "Conheça a V3",
+    "description": "The generated-index page title for category Conheça a V3 in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Conheça a V3.link.generated-index.description": {
+    "message": "Entenda quem somos, como usamos tecnologia e para quem construímos a plataforma.",
+    "description": "The generated-index page description for category Conheça a V3 in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Visão Geral da Plataforma": {
+    "message": "Visão Geral da Plataforma",
+    "description": "The label for category Visão Geral da Plataforma in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Visão Geral da Plataforma.link.generated-index.title": {
+    "message": "Visão Geral da Plataforma",
+    "description": "The generated-index page title for category Visão Geral da Plataforma in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Visão Geral da Plataforma.link.generated-index.description": {
+    "message": "Entenda a V3 e os componentes da solução antes de iniciar a implementação.",
+    "description": "The generated-index page description for category Visão Geral da Plataforma in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.V3HW": {
+    "message": "V3HW",
+    "description": "The label for category V3HW in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.V3CORE": {
+    "message": "V3CORE",
+    "description": "The label for category V3CORE in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.V3FW": {
+    "message": "V3FW",
+    "description": "The label for category V3FW in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.DMS": {
+    "message": "DMS",
+    "description": "The label for category DMS in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.V3CLOUD": {
+    "message": "V3CLOUD",
+    "description": "The label for category V3CLOUD in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.V3VIEW": {
+    "message": "V3VIEW",
+    "description": "The label for category V3VIEW in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Implantação e Configuração": {
+    "message": "Implantação e Configuração",
+    "description": "The label for category Implantação e Configuração in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Implantação e Configuração.link.generated-index.title": {
+    "message": "Implantação e Configuração",
+    "description": "The generated-index page title for category Implantação e Configuração in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Implantação e Configuração.link.generated-index.description": {
+    "message": "Prepare o ambiente e execute a implantação com os guias operacionais da V3.",
+    "description": "The generated-index page description for category Implantação e Configuração in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Integração e Operação": {
+    "message": "Integração e Operação",
+    "description": "The label for category Integração e Operação in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Integração e Operação.link.generated-index.title": {
+    "message": "Integração e Operação",
+    "description": "The generated-index page title for category Integração e Operação in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Integração e Operação.link.generated-index.description": {
+    "message": "Implemente autenticação, permissões e integrações operacionais com os módulos da plataforma.",
+    "description": "The generated-index page description for category Integração e Operação in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.API": {
+    "message": "API",
+    "description": "The label for category API in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Kits de desenvolvimento": {
+    "message": "Kits de desenvolvimento",
+    "description": "The label for category Kits de desenvolvimento in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.doc.Bem-vindo à V3": {
+    "message": "Bem-vindo à V3",
+    "description": "The label for the doc item Bem-vindo à V3 in sidebar docsSidebar, linking to the doc docs/index"
+  },
+  "sidebar.apiSidebar.category.Order": {
+    "message": "Order",
+    "description": "The label for category Order in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Order.link.generated-index.title": {
+    "message": "Order API",
+    "description": "The generated-index page title for category Order in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Order.link.generated-index.description": {
+    "message": "Referência das operações para enviar instruções a dispositivos e acompanhar o andamento de cada solicitação.",
+    "description": "The generated-index page description for category Order in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Criar nova ordem": {
+    "message": "Criar nova ordem",
+    "description": "The label for category Criar nova ordem in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Health Check": {
+    "message": "Health Check",
+    "description": "The label for category Health Check in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Management": {
+    "message": "Management",
+    "description": "The label for category Management in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Management.link.generated-index.title": {
+    "message": "Management API",
+    "description": "The generated-index page title for category Management in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Management.link.generated-index.description": {
+    "message": "Referência das operações para organizar motoristas, times, frotas e dispositivos da operação.",
+    "description": "The generated-index page description for category Management in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Device": {
+    "message": "Device",
+    "description": "The label for category Device in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Driver": {
+    "message": "Driver",
+    "description": "The label for category Driver in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Fleet": {
+    "message": "Fleet",
+    "description": "The label for category Fleet in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Team": {
+    "message": "Team",
+    "description": "The label for category Team in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Auth": {
+    "message": "Auth",
+    "description": "The label for category Auth in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Auth.link.generated-index.title": {
+    "message": "Auth API",
+    "description": "The generated-index page title for category Auth in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Auth.link.generated-index.description": {
+    "message": "Referência das operações para obter, validar e renovar tokens de acesso.",
+    "description": "The generated-index page description for category Auth in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Event": {
+    "message": "Event",
+    "description": "The label for category Event in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Event.link.generated-index.title": {
+    "message": "Event API",
+    "description": "The generated-index page title for category Event in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Event.link.generated-index.description": {
+    "message": "Referência das operações para consultar eventos gerados pelos dispositivos.",
+    "description": "The generated-index page description for category Event in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Notifications": {
+    "message": "Notifications",
+    "description": "The label for category Notifications in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Notifications.link.generated-index.title": {
+    "message": "Notifications Webhook",
+    "description": "The generated-index page title for category Notifications in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Notifications.link.generated-index.description": {
+    "message": "Referência para configurar notificações e recebê-las em tempo real na sua aplicação.",
+    "description": "The generated-index page description for category Notifications in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Webhook": {
+    "message": "Webhook",
+    "description": "The label for category Webhook in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Vision": {
+    "message": "Vision",
+    "description": "The label for category Vision in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Vision.link.generated-index.title": {
+    "message": "Vision API",
+    "description": "The generated-index page title for category Vision in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Vision.link.generated-index.description": {
+    "message": "Referência das operações relacionadas a análise de imagens e conjuntos de dados de visão.",
+    "description": "The generated-index page description for category Vision in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Datasets": {
+    "message": "Datasets",
+    "description": "The label for category Datasets in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Medias": {
+    "message": "Medias",
+    "description": "The label for category Medias in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Medias.link.generated-index.title": {
+    "message": "Media API",
+    "description": "The generated-index page title for category Medias in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Medias.link.generated-index.description": {
+    "message": "Referência das operações para download de arquivos e transmissão de mídia.",
+    "description": "The generated-index page description for category Medias in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Media-API": {
+    "message": "Media-API",
+    "description": "The label for category Media-API in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.category.Media-Stream": {
+    "message": "Media-Stream",
+    "description": "The label for category Media-Stream in sidebar apiSidebar"
+  },
+  "sidebar.apiSidebar.doc.Buscar ordens com filtros opcionais": {
+    "message": "Buscar ordens com filtros opcionais",
+    "description": "The label for the doc item Buscar ordens com filtros opcionais in sidebar apiSidebar, linking to the doc openapi/order/buscar-ordens-com-filtros-opcionais"
+  },
+  "sidebar.apiSidebar.doc.Excluir múltiplas ordens": {
+    "message": "Excluir múltiplas ordens",
+    "description": "The label for the doc item Excluir múltiplas ordens in sidebar apiSidebar, linking to the doc openapi/order/excluir-multiplas-ordens"
+  },
+  "sidebar.apiSidebar.doc.Adicionar Wi-Fi": {
+    "message": "Adicionar Wi-Fi",
+    "description": "The label for the doc item Adicionar Wi-Fi in sidebar apiSidebar, linking to the doc openapi/order/contracts/add-wifi"
+  },
+  "sidebar.apiSidebar.doc.Excluir Wi-Fi": {
+    "message": "Excluir Wi-Fi",
+    "description": "The label for the doc item Excluir Wi-Fi in sidebar apiSidebar, linking to the doc openapi/order/contracts/delete-wifi"
+  },
+  "sidebar.apiSidebar.doc.Estado do dispositivo": {
+    "message": "Estado do dispositivo",
+    "description": "The label for the doc item Estado do dispositivo in sidebar apiSidebar, linking to the doc openapi/order/contracts/device-state"
+  },
+  "sidebar.apiSidebar.doc.Solicitar imagem": {
+    "message": "Solicitar imagem",
+    "description": "The label for the doc item Solicitar imagem in sidebar apiSidebar, linking to the doc openapi/order/contracts/request-image"
+  },
+  "sidebar.apiSidebar.doc.Solicitar vídeo": {
+    "message": "Solicitar vídeo",
+    "description": "The label for the doc item Solicitar vídeo in sidebar apiSidebar, linking to the doc openapi/order/contracts/request-video"
+  },
+  "sidebar.apiSidebar.doc.Reiniciar": {
+    "message": "Reiniciar",
+    "description": "The label for the doc item Reiniciar in sidebar apiSidebar, linking to the doc openapi/order/contracts/reboot"
+  },
+  "sidebar.apiSidebar.doc.Periódico": {
+    "message": "Periódico",
+    "description": "The label for the doc item Periódico in sidebar apiSidebar, linking to the doc openapi/order/contracts/periodic"
+  },
+  "sidebar.apiSidebar.doc.Configuração de visão": {
+    "message": "Configuração de visão",
+    "description": "The label for the doc item Configuração de visão in sidebar apiSidebar, linking to the doc openapi/order/contracts/vision-config"
+  },
+  "sidebar.apiSidebar.doc.Configuração de plano de dados": {
+    "message": "Configuração de plano de dados",
+    "description": "The label for the doc item Configuração de plano de dados in sidebar apiSidebar, linking to the doc openapi/order/contracts/dataplan-config"
+  },
+  "sidebar.apiSidebar.doc.Configurar áudio": {
+    "message": "Configurar áudio",
+    "description": "The label for the doc item Configurar áudio in sidebar apiSidebar, linking to the doc openapi/order/contracts/config-audio"
+  },
+  "sidebar.apiSidebar.doc.Configurar evento de áudio": {
+    "message": "Configurar evento de áudio",
+    "description": "The label for the doc item Configurar evento de áudio in sidebar apiSidebar, linking to the doc openapi/order/contracts/config-audio-event"
+  },
+  "sidebar.apiSidebar.doc.Abrir transmissão": {
+    "message": "Abrir transmissão",
+    "description": "The label for the doc item Abrir transmissão in sidebar apiSidebar, linking to the doc openapi/order/contracts/open-stream"
+  },
+  "sidebar.apiSidebar.doc.Fechar transmissão": {
+    "message": "Fechar transmissão",
+    "description": "The label for the doc item Fechar transmissão in sidebar apiSidebar, linking to the doc openapi/order/contracts/close-stream"
+  },
+  "sidebar.apiSidebar.doc.Configuração avançada": {
+    "message": "Configuração avançada",
+    "description": "The label for the doc item Configuração avançada in sidebar apiSidebar, linking to the doc openapi/order/contracts/config"
+  },
+  "sidebar.apiSidebar.doc.Excluir ordem específica": {
+    "message": "Excluir ordem específica",
+    "description": "The label for the doc item Excluir ordem específica in sidebar apiSidebar, linking to the doc openapi/order/excluir-ordem-especifica"
+  },
+  "sidebar.apiSidebar.doc.Obter ordem específica": {
+    "message": "Obter ordem específica",
+    "description": "The label for the doc item Obter ordem específica in sidebar apiSidebar, linking to the doc openapi/order/obter-ordem-especifica"
+  },
+  "sidebar.apiSidebar.doc.Verificar se a aplicação está pronta": {
+    "message": "Verificar se a aplicação está pronta",
+    "description": "The label for the doc item Verificar se a aplicação está pronta in sidebar apiSidebar, linking to the doc openapi/management/verificar-se-a-aplicacao-esta-pronta"
+  },
+  "sidebar.apiSidebar.doc.Verificar se a aplicação está ativa": {
+    "message": "Verificar se a aplicação está ativa",
+    "description": "The label for the doc item Verificar se a aplicação está ativa in sidebar apiSidebar, linking to the doc openapi/management/verificar-se-a-aplicacao-esta-ativa"
+  },
+  "sidebar.apiSidebar.doc.Listar dispositivos com paginação": {
+    "message": "Listar dispositivos com paginação",
+    "description": "The label for the doc item Listar dispositivos com paginação in sidebar apiSidebar, linking to the doc openapi/management/listar-dispositivos-com-paginacao"
+  },
+  "sidebar.apiSidebar.doc.Criar novo dispositivo": {
+    "message": "Criar novo dispositivo",
+    "description": "The label for the doc item Criar novo dispositivo in sidebar apiSidebar, linking to the doc openapi/management/criar-novo-dispositivo"
+  },
+  "sidebar.apiSidebar.doc.Excluir dispositivo": {
+    "message": "Excluir dispositivo",
+    "description": "The label for the doc item Excluir dispositivo in sidebar apiSidebar, linking to the doc openapi/management/excluir-dispositivo"
+  },
+  "sidebar.apiSidebar.doc.Obter dispositivo por ID": {
+    "message": "Obter dispositivo por ID",
+    "description": "The label for the doc item Obter dispositivo por ID in sidebar apiSidebar, linking to the doc openapi/management/obter-dispositivo-por-id"
+  },
+  "sidebar.apiSidebar.doc.Atualizar status do dispositivo": {
+    "message": "Atualizar status do dispositivo",
+    "description": "The label for the doc item Atualizar status do dispositivo in sidebar apiSidebar, linking to the doc openapi/management/atualizar-status-do-dispositivo"
+  },
+  "sidebar.apiSidebar.doc.Atualizar dispositivo": {
+    "message": "Atualizar dispositivo",
+    "description": "The label for the doc item Atualizar dispositivo in sidebar apiSidebar, linking to the doc openapi/management/atualizar-dispositivo"
+  },
+  "sidebar.apiSidebar.doc.Listar motoristas com paginação": {
+    "message": "Listar motoristas com paginação",
+    "description": "The label for the doc item Listar motoristas com paginação in sidebar apiSidebar, linking to the doc openapi/management/listar-motoristas-com-paginacao"
+  },
+  "sidebar.apiSidebar.doc.Criar novo motorista": {
+    "message": "Criar novo motorista",
+    "description": "The label for the doc item Criar novo motorista in sidebar apiSidebar, linking to the doc openapi/management/criar-novo-motorista"
+  },
+  "sidebar.apiSidebar.doc.Excluir motorista": {
+    "message": "Excluir motorista",
+    "description": "The label for the doc item Excluir motorista in sidebar apiSidebar, linking to the doc openapi/management/excluir-motorista"
+  },
+  "sidebar.apiSidebar.doc.Obter motorista por ID": {
+    "message": "Obter motorista por ID",
+    "description": "The label for the doc item Obter motorista por ID in sidebar apiSidebar, linking to the doc openapi/management/obter-motorista-por-id"
+  },
+  "sidebar.apiSidebar.doc.Atualizar motorista": {
+    "message": "Atualizar motorista",
+    "description": "The label for the doc item Atualizar motorista in sidebar apiSidebar, linking to the doc openapi/management/atualizar-motorista"
+  },
+  "sidebar.apiSidebar.doc.Remover motorista do time": {
+    "message": "Remover motorista do time",
+    "description": "The label for the doc item Remover motorista do time in sidebar apiSidebar, linking to the doc openapi/management/remover-motorista-do-time"
+  },
+  "sidebar.apiSidebar.doc.Associar motorista ao time": {
+    "message": "Associar motorista ao time",
+    "description": "The label for the doc item Associar motorista ao time in sidebar apiSidebar, linking to the doc openapi/management/associar-motorista-ao-time"
+  },
+  "sidebar.apiSidebar.doc.Listar frotas com paginação": {
+    "message": "Listar frotas com paginação",
+    "description": "The label for the doc item Listar frotas com paginação in sidebar apiSidebar, linking to the doc openapi/management/listar-frotas-com-paginacao"
+  },
+  "sidebar.apiSidebar.doc.Criar nova frota": {
+    "message": "Criar nova frota",
+    "description": "The label for the doc item Criar nova frota in sidebar apiSidebar, linking to the doc openapi/management/criar-nova-frota"
+  },
+  "sidebar.apiSidebar.doc.Excluir frota": {
+    "message": "Excluir frota",
+    "description": "The label for the doc item Excluir frota in sidebar apiSidebar, linking to the doc openapi/management/excluir-frota"
+  },
+  "sidebar.apiSidebar.doc.Obter frota por ID": {
+    "message": "Obter frota por ID",
+    "description": "The label for the doc item Obter frota por ID in sidebar apiSidebar, linking to the doc openapi/management/obter-frota-por-id"
+  },
+  "sidebar.apiSidebar.doc.Atualizar frota": {
+    "message": "Atualizar frota",
+    "description": "The label for the doc item Atualizar frota in sidebar apiSidebar, linking to the doc openapi/management/atualizar-frota"
+  },
+  "sidebar.apiSidebar.doc.Obter frotas por time": {
+    "message": "Obter frotas por time",
+    "description": "The label for the doc item Obter frotas por time in sidebar apiSidebar, linking to the doc openapi/management/obter-frotas-por-time"
+  },
+  "sidebar.apiSidebar.doc.Listar times com paginação": {
+    "message": "Listar times com paginação",
+    "description": "The label for the doc item Listar times com paginação in sidebar apiSidebar, linking to the doc openapi/management/listar-times-com-paginacao"
+  },
+  "sidebar.apiSidebar.doc.Criar novo time": {
+    "message": "Criar novo time",
+    "description": "The label for the doc item Criar novo time in sidebar apiSidebar, linking to the doc openapi/management/criar-novo-time"
+  },
+  "sidebar.apiSidebar.doc.Excluir time": {
+    "message": "Excluir time",
+    "description": "The label for the doc item Excluir time in sidebar apiSidebar, linking to the doc openapi/management/excluir-time"
+  },
+  "sidebar.apiSidebar.doc.Obter time por ID": {
+    "message": "Obter time por ID",
+    "description": "The label for the doc item Obter time por ID in sidebar apiSidebar, linking to the doc openapi/management/obter-time-por-id"
+  },
+  "sidebar.apiSidebar.doc.Atualizar time": {
+    "message": "Atualizar time",
+    "description": "The label for the doc item Atualizar time in sidebar apiSidebar, linking to the doc openapi/management/atualizar-time"
+  },
+  "sidebar.apiSidebar.doc.Obter motoristas por time": {
+    "message": "Obter motoristas por time",
+    "description": "The label for the doc item Obter motoristas por time in sidebar apiSidebar, linking to the doc openapi/management/obter-motoristas-por-time"
+  },
+  "sidebar.apiSidebar.doc.Validar token de autenticação": {
+    "message": "Validar token de autenticação",
+    "description": "The label for the doc item Validar token de autenticação in sidebar apiSidebar, linking to the doc openapi/auth/validar-token-de-autenticacao"
+  },
+  "sidebar.apiSidebar.doc.Gerar token": {
+    "message": "Gerar token",
+    "description": "The label for the doc item Gerar token in sidebar apiSidebar, linking to the doc openapi/auth/gerar-token"
+  },
+  "sidebar.apiSidebar.doc.Renovar token de autenticação": {
+    "message": "Renovar token de autenticação",
+    "description": "The label for the doc item Renovar token de autenticação in sidebar apiSidebar, linking to the doc openapi/auth/renovar-token-de-autenticacao"
+  },
+  "sidebar.apiSidebar.doc.Listar eventos de um dispositivo": {
+    "message": "Listar eventos de um dispositivo",
+    "description": "The label for the doc item Listar eventos de um dispositivo in sidebar apiSidebar, linking to the doc openapi/event/listar-eventos-de-um-dispositivo"
+  },
+  "sidebar.apiSidebar.doc.Obter evento por ULID": {
+    "message": "Obter evento por ULID",
+    "description": "The label for the doc item Obter evento por ULID in sidebar apiSidebar, linking to the doc openapi/event/obter-evento-por-ulid"
+  },
+  "sidebar.apiSidebar.doc.Listar webhooks do tenant": {
+    "message": "Listar webhooks do tenant",
+    "description": "The label for the doc item Listar webhooks do tenant in sidebar apiSidebar, linking to the doc openapi/notification/listar-webhooks-do-tenant"
+  },
+  "sidebar.apiSidebar.doc.Criar webhook para o tenant": {
+    "message": "Criar webhook para o tenant",
+    "description": "The label for the doc item Criar webhook para o tenant in sidebar apiSidebar, linking to the doc openapi/notification/criar-webhook-para-o-tenant"
+  },
+  "sidebar.apiSidebar.doc.Remover webhook": {
+    "message": "Remover webhook",
+    "description": "The label for the doc item Remover webhook in sidebar apiSidebar, linking to the doc openapi/notification/remover-webhook"
+  },
+  "sidebar.apiSidebar.doc.Obter webhook por ID": {
+    "message": "Obter webhook por ID",
+    "description": "The label for the doc item Obter webhook por ID in sidebar apiSidebar, linking to the doc openapi/notification/obter-webhook-por-id"
+  },
+  "sidebar.apiSidebar.doc.Atualizar webhook": {
+    "message": "Atualizar webhook",
+    "description": "The label for the doc item Atualizar webhook in sidebar apiSidebar, linking to the doc openapi/notification/atualizar-webhook"
+  },
+  "sidebar.apiSidebar.doc.Criar novo conjunto de dados": {
+    "message": "Criar novo conjunto de dados",
+    "description": "The label for the doc item Criar novo conjunto de dados in sidebar apiSidebar, linking to the doc openapi/vision/criar-novo-conjunto-de-dados"
+  },
+  "sidebar.apiSidebar.doc.Excluir conjunto de dados por ID": {
+    "message": "Excluir conjunto de dados por ID",
+    "description": "The label for the doc item Excluir conjunto de dados por ID in sidebar apiSidebar, linking to the doc openapi/vision/excluir-conjunto-de-dados-por-id"
+  },
+  "sidebar.apiSidebar.doc.Obter conjunto de dados por ID": {
+    "message": "Obter conjunto de dados por ID",
+    "description": "The label for the doc item Obter conjunto de dados por ID in sidebar apiSidebar, linking to the doc openapi/vision/obter-conjunto-de-dados-por-id"
+  },
+  "sidebar.apiSidebar.doc.Atualizar conjunto de dados por ID": {
+    "message": "Atualizar conjunto de dados por ID",
+    "description": "The label for the doc item Atualizar conjunto de dados por ID in sidebar apiSidebar, linking to the doc openapi/vision/atualizar-conjunto-de-dados-por-id"
+  },
+  "sidebar.apiSidebar.doc.Baixar arquivo com chave segura": {
+    "message": "Baixar arquivo com chave segura",
+    "description": "The label for the doc item Baixar arquivo com chave segura in sidebar apiSidebar, linking to the doc openapi/media/baixar-arquivo-com-chave-segura"
+  },
+  "sidebar.apiSidebar.doc.Baixar segmento ou manifesto HLS": {
+    "message": "Baixar segmento ou manifesto HLS",
+    "description": "The label for the doc item Baixar segmento ou manifesto HLS in sidebar apiSidebar, linking to the doc openapi/media-stream/baixar-segmento-ou-manifesto-hls"
+  },
+  "sidebar.apiSidebar.doc.Listar transmissões ativas": {
+    "message": "Listar transmissões ativas",
+    "description": "The label for the doc item Listar transmissões ativas in sidebar apiSidebar, linking to the doc openapi/media-stream/listar-transmissoes-ativas"
+  },
+  "sidebar.apiSidebar.doc.Obter página do player de transmissão": {
+    "message": "Obter página do player de transmissão",
+    "description": "The label for the doc item Obter página do player de transmissão in sidebar apiSidebar, linking to the doc openapi/media-stream/obter-pagina-do-player-de-transmissao"
+  }
+}

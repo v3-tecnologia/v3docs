@@ -5,6 +5,8 @@ const root = new URL("..", import.meta.url).pathname;
 const openapiDir = join(root, "docs/openapi");
 
 const replacements = [
+  [/title: "Orders API"/g, 'title: "API de Ordens"'],
+  [/children=\{"Orders API"\}/g, 'children={"API de Ordens"}'],
   [/children=\{"Request"\}/g, 'children={"Requisição"}'],
   [/title=\{"Body"\}/g, 'title={"Corpo"}'],
   [/children=\{"Authentication"\}/g, 'children={"Autenticação"}'],

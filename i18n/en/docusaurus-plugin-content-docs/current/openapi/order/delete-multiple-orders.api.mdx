@@ -1,0 +1,73 @@
+---
+id: delete-multiple-orders
+title: "Delete multiple orders"
+description: "Deletes multiple orders for a specific device."
+sidebar_label: "Delete multiple orders"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV8Fy2zYQ/ZUdnGwPLdlOe9FNtdTE04ztie1T6mkgYiUhBgEaWDJRNPyYTg/9EP9YZwHKkiWO40566SQnSsBi8fD2gXy7FApD7nVJ2lkxECM0SBigqAzp0iA4r9AHmDoPEkKJuZ7qHBTWOsfe7/ZsCjRH+KBV+AD3FfoFlNLLAgk96ACld7VWqDJw1ixibJsE1Sr3J20MTBBU3FulrK7QRLxOGrMKlCG4XEtCBZ80zWO2hAQKueAUHgtXo4I9hSVape0MnAVdlAYLtCT5lOArg2G/JzLxCDWIwfvlFhU3Vt9XCFqhJcbrwU03thSZ0BxWSpqLTFhZoBiINPeHViITHu8r7VGJAfkKMxHyORZSDJaCFiUHB/LazkTTZNt7n7qikIcBGSAf1+hAvH0kAs5GAci1fMHBwR72Zj3Q6jjT6iTT6tX+wcEKXqzJGp9WQTyH5JZhh9LZgIHnT45O+PEU3UVEEdAqVGsgfOTcWUJLvESWpdF5ZLz/MfC65ca+pXcletJpl1Rf/qUJi7AbkDvv0cRkzO0OotP1/NloVaeYVWTbZ8xEV4YXLDPa3oXdlW88TpmFx7XgMbjK5wiyllpODPL0BEHmOYaACmK95kRlGPT7M2emBpF69asgrZq4z73cFf36uJ/EFPrLR1U1/URVfxmfPMKF7iZt7nHaUWOusOlU4WrETT5iTmI9IL2XC/4fSFLVwcFVHH/CIOxdjs9HZ+evMxiN346vx6MMfh2eveXn1fj8OoPLdxen46ur8Wg82t/l++twdiMaHvvp6KijvLaWRivgO4mBoJQL4+Q3SDZ3Cne3GXvvPMS5DgEpJKlNh4KqQtpDj1JFsWBMshnSkSspLKI25mIa319PEZZOW0L/okrfZtsFTQJuCxoRZUm2/H+q0SiguSTIZcWKfox6TiVvrq8vIU1uccRIZxgXkybTwWwnRyn2BdJphXG8m/fGyormzusv3/IC+6GG/50afu5+TRB6Kw0E9DX69hA/ZPG9yKLJBLOTjISKfo6tzeHKDh+2TiUTJGdsGpMXEreZKJDmbr0kukuai4F4/kvObixqLVnQyhsxECtrQGil3TUGsRQB88prWlyx9lIxh6X+DRfDirddJvs3R5ncTOv/fkHp0cO1u8MNxci4MHKi7dQl6VqSOSu+2S77MF6Ah78f/nKABby+gNYyPvxZo4HSsQOSRn+R3DPMMBBHquQLbIgNArgASofSBU26doHdeFvURGmA4eWZyAQzk7Y96h31jrn4pQtUyHjx2lOlrmW7aRFbwJfra/yd9TltmQk/U780UlumMUpt2ar0vaiPI19RpyITg81OpuXzNhNzF4ijl8uJDHjjTdPwcOoyYg+lA989JQZTaQI+U4L/pMfpPNkdLh5bnVqaiiPinamlj378XyLde9d2cvvw9aawE9HqntnFJqQV0jXVzW2Tre4sY0zzwzzHkjZW7nyDms0XULLbomn+AW6uhxw=
+sidebar_class_name: "delete api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/order/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete multiple orders"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/devices/{device_id}/orders"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes multiple orders for a specific device.
+If the `ids` query parameter is provided, only the specified orders will be deleted.
+If omitted, all orders associated with the device may be removed (depending on implementation rules).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Unique identifier of the device","in":"path","name":"device_id","required":true,"schema":{"type":"string"}},{"description":"Comma-separated list of order IDs to delete **(e.g. id1,id2,id3)**","in":"query","name":"ids","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"202":{"description":"Order sended to deleted","content":{"application/json":{"schema":{"properties":{"orders":{"items":{"properties":{"correlation_id":{"description":"CorrelationID of the order","type":"string"},"id":{"description":"ID of the order","type":"string"},"links":{"description":"Href to the order resource avaiable to be accessed e.g. https://golfleet.v3sandbox.com/v1/devices/{device_id}/orders/{order_id}","items":{"properties":{"href":{"type":"string"},"rel":{"type":"string"}},"type":"object"},"type":"array"},"status":{"description":"Status of the order (PENDING, DELETED, FAILED, SENT, PROCESSEDED)","type":"string"}},"type":"object"},"type":"array"}},"type":"object"}}}},"400":{"description":"Invalid request payload","content":{"application/json":{"schema":{"properties":{"code":{"description":"Error code","type":"string"},"detail":{"description":"Human-readable error description","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Source of the error, e.g. the field that caused the error"},"status":{"description":"HTTP status code","type":"integer"},"title":{"description":"Human-readable error title","type":"string"}},"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"properties":{"code":{"description":"Error code","type":"string"},"detail":{"description":"Human-readable error description","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Source of the error, e.g. the field that caused the error"},"status":{"description":"HTTP status code","type":"integer"},"title":{"description":"Human-readable error title","type":"string"}},"type":"object"}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{"properties":{"code":{"description":"Error code","type":"string"},"detail":{"description":"Human-readable error description","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Source of the error, e.g. the field that caused the error"},"status":{"description":"HTTP status code","type":"integer"},"title":{"description":"Human-readable error title","type":"string"}},"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

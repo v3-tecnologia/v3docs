@@ -8,17 +8,17 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Order",
+      label: "Ordens",
       items: [
         {
           type: "doc",
-          id: "openapi/order/buscar-ordens-com-filtros-opcionais",
+          id: "openapi/order/find-orders-with-optional-filtering",
           label: "Buscar ordens com filtros opcionais",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "openapi/order/excluir-multiplas-ordens",
+          id: "openapi/order/delete-multiple-orders",
           label: "Excluir múltiplas ordens",
           className: "api-method delete",
         },
@@ -27,7 +27,7 @@ const sidebar: SidebarsConfig = {
           label: "Criar nova ordem",
           link: {
             type: "doc",
-            id: "openapi/order/criar-nova-ordem",
+            id: "openapi/order/create-new-order",
           },
           className: "api-method post",
           collapsed: true,
@@ -116,33 +116,39 @@ const sidebar: SidebarsConfig = {
               label: "Configuração avançada",
               className: "api-method post",
             },
+            {
+              type: "doc",
+              id: "openapi/order/contracts/card-driver",
+              label: "Cartão de motorista",
+              className: "api-method post",
+            },
+            {
+              type: "doc",
+              id: "openapi/order/contracts/firmware-update",
+              label: "Atualização de firmware",
+              className: "api-method post",
+            },
           ],
         },
         {
           type: "doc",
-          id: "openapi/order/excluir-ordem-especifica",
+          id: "openapi/order/delete-a-specific-order",
           label: "Excluir ordem específica",
           className: "api-method delete",
         },
         {
           type: "doc",
-          id: "openapi/order/obter-ordem-especifica",
+          id: "openapi/order/get-a-specific-order",
           label: "Obter ordem específica",
           className: "api-method get",
         },
       ],
     },
     {
-      type: "category",
-      label: "Health Check",
-      items: [
-        {
-          type: "doc",
-          id: "openapi/order/verificar-se-a-aplicacao-esta-pronta",
-          label: "Verificar se a aplicação está pronta",
-          className: "api-method get",
-        },
-      ],
+      type: "doc",
+      id: "openapi/order/create-new-order-by-fleet",
+      label: "Criar ordem para frota",
+      className: "api-method post",
     },
   ],
 };
