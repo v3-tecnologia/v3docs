@@ -103,10 +103,10 @@ const sidebars: SidebarsConfig = {
   apiSidebar: [
     {
       type: "category",
-      label: "API de Ordens",
+      label: "Orders",
       link: {
         type: "generated-index",
-        title: "API de Ordens",
+        title: "Orders",
         description:
           "Referência das operações para enviar instruções a dispositivos e acompanhar o andamento de cada solicitação.",
         slug: "/category/order-api",

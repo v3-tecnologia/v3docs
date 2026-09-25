@@ -42,7 +42,7 @@ A transmissão deve estar ativa e disponível no registro.
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
+  children={"Requisição"}
 >
 </Heading>
 
@@ -53,7 +53,7 @@ A transmissão deve estar ativa e disponível no registro.
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  title={"Corpo"}
   body={undefined}
 >
   
@@ -61,7 +61,7 @@ A transmissão deve estar ativa e disponível no registro.
 
 <StatusCodes
   id={undefined}
-  label={undefined}
+  label={"Respostas"}
   responses={{"200":{"description":"Página do player da transmissão renderizada com sucesso","content":{"text/html":{"schema":{"type":"string"}}}},"302":{"description":"Transmissão não encontrada ou inativa, redirecionamento para a página inicial"},"401":{"description":"Não autorizado","content":{"text/html":{"schema":{"properties":{"code":{"description":"Código do erro","type":"string"},"detail":{"description":"Descrição legível do erro","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro"},"status":{"description":"Código de status HTTP","type":"integer"},"title":{"description":"Título legível do erro","type":"string"}},"type":"object"}}}}}}
 >
   

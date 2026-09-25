@@ -43,7 +43,7 @@ ou ID do time. Suporta paginação. Apenas um filtro pode ser utilizado por vez.
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
+  children={"Requisição"}
 >
 </Heading>
 
@@ -54,7 +54,7 @@ ou ID do time. Suporta paginação. Apenas um filtro pode ser utilizado por vez.
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  title={"Corpo"}
   body={undefined}
 >
   
@@ -62,7 +62,7 @@ ou ID do time. Suporta paginação. Apenas um filtro pode ser utilizado por vez.
 
 <StatusCodes
   id={undefined}
-  label={undefined}
+  label={"Respostas"}
   responses={{"200":{"description":"Motoristas recuperados com sucesso","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"team_id":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{}}}}}}
 >
   

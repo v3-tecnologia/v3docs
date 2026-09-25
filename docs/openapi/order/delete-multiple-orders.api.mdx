@@ -44,7 +44,7 @@ Se omitido, todas as ordens associadas ao dispositivo poderão ser removidas, co
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
+  children={"Requisição"}
 >
 </Heading>
 
@@ -55,7 +55,7 @@ Se omitido, todas as ordens associadas ao dispositivo poderão ser removidas, co
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  title={"Corpo"}
   body={undefined}
 >
   
@@ -63,7 +63,7 @@ Se omitido, todas as ordens associadas ao dispositivo poderão ser removidas, co
 
 <StatusCodes
   id={undefined}
-  label={undefined}
+  label={"Respostas"}
   responses={{"202":{"description":"Solicitação de exclusão da ordem aceita.","content":{"application/json":{"schema":{"properties":{"orders":{"items":{"properties":{"correlation_id":{"description":"Identificador de correlação da ordem.","type":"string"},"id":{"description":"Identificador da ordem.","type":"string"},"links":{"description":"Endereço do recurso da ordem, por exemplo https://golfleet.v3sandbox.com/v1/devices/{device_id}/orders/{order_id}.","items":{"properties":{"href":{"type":"string"},"rel":{"type":"string"}},"type":"object"},"type":"array"},"status":{"description":"Status da ordem (PENDING, DELETED, FAILED, SENT, PROCESSEDED).","type":"string"}},"type":"object"},"type":"array"}},"type":"object"}}}},"400":{"description":"Conteúdo da solicitação inválido.","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro.","type":"string"},"detail":{"description":"Descrição legível do erro.","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo, o campo que o causou."},"status":{"description":"Código de status HTTP.","type":"integer"},"title":{"description":"Título legível do erro.","type":"string"}},"type":"object"}}}},"401":{"description":"Não autorizado.","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro.","type":"string"},"detail":{"description":"Descrição legível do erro.","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo, o campo que o causou."},"status":{"description":"Código de status HTTP.","type":"integer"},"title":{"description":"Título legível do erro.","type":"string"}},"type":"object"}}}},"500":{"description":"Erro interno do servidor.","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro.","type":"string"},"detail":{"description":"Descrição legível do erro.","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo, o campo que o causou."},"status":{"description":"Código de status HTTP.","type":"integer"},"title":{"description":"Título legível do erro.","type":"string"}},"type":"object"}}}}}}
 >
   

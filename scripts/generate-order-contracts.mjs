@@ -15,10 +15,6 @@ const enTranslationsPath = join(
   "i18n/en/docusaurus-plugin-content-docs/current.json",
 );
 const generatedMarker = "generated: order-contract";
-const labels = {
-  pt: { field: "Campo", type: "Tipo", required: "Obrigatório", description: "Descrição", yes: "Sim", no: "Não", values: "Valores" },
-  en: { field: "Field", type: "Type", required: "Required", description: "Description", yes: "Yes", no: "No", values: "Values" },
-};
 const fallbackTitles = {
   CAM_BEHAVIOR: { pt: "Comportamento da câmera", en: "Camera behavior" },
 };
@@ -49,6 +45,24 @@ function readYaml(path) {
   return document;
 }
 
+function readOperationPageMetadata(locale) {
+  const operationPage = locale === "pt"
+    ? join(root, "docs/openapi/order/create-new-order.api.mdx")
+    : join(
+        root,
+        "i18n/en/docusaurus-plugin-content-docs/current/openapi/order/create-new-order.api.mdx",
+      );
+  const content = readFileSync(operationPage, "utf8");
+  const api = content.match(/^api: (.+)$/m)?.[1];
+  const infoPath = content.match(/^info_path: (.+)$/m)?.[1];
+  const sidebarClassName = content.match(/^sidebar_class_name: (.+)$/m)?.[1];
+
+  if (!api || !infoPath) {
+    throw new Error(`Missing OpenAPI page metadata in ${operationPage}`);
+  }
+  return { api, infoPath, sidebarClassName };
+}
+
 function refName(ref) {
   return ref?.split("/").at(-1);
 }
@@ -61,64 +75,191 @@ function slug(value) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
-function fieldType(schema = {}) {
-  if (schema.type === "array") {
-    return schema.items?.$ref
-      ? `array of ${refName(schema.items.$ref).replace(/^dto\./, "").replace(/DTO$/, "")}`
-      : "array";
-  }
-  if (schema.type) return schema.type;
-  if (schema.$ref) return refName(schema.$ref).replace(/^dto\./, "").replace(/DTO$/, "");
-  if (schema.allOf?.length) return fieldType(schema.allOf[0]);
-  return "object";
-}
-
-function cell(value) {
-  return String(value ?? "").replaceAll("|", "&#124;").replaceAll("\n", "<br />");
-}
-
 function quote(value) {
   return JSON.stringify(String(value));
 }
 
+function exampleValue(name, schema = {}) {
+  if (schema.enum?.length) return schema.enum[0];
+  if (schema.type === "boolean") return false;
+  if (schema.type === "integer" || schema.type === "number") return 1;
+  if (schema.type === "array") return [];
+  if (schema.type === "object") return {};
+  const examples = {
+    action: "register_driver",
+    cam_behavior: "recording_and_stream",
+    card_number: "CARD-12345",
+    driver_id: "driver-001",
+    driver_name: "Alex Morgan",
+    version: "2.4.0",
+  };
+  return examples[name] ?? "example";
+}
+
+function operationExample(type, definition) {
+  const parameters = Object.fromEntries(
+    Object.entries(definition.properties ?? {}).map(([name, schema]) => [
+      name,
+      exampleValue(name, schema),
+    ]),
+  );
+  if (type === "CARD_DRIVER") parameters.action = "register_driver";
+  return {
+    orders: [
+      {
+        type,
+        correlation_id: `CMD_${type}_001`,
+        parameters: [parameters],
+      },
+    ],
+  };
+}
+
+function requestSchema(type, title, definition, locale) {
+  const pt = locale === "pt";
+  return {
+    type: "object",
+    required: ["orders"],
+    properties: {
+      orders: {
+        type: "array",
+        description: pt ? "Lista de ordens a serem processadas." : "List of orders to be processed.",
+        items: {
+          type: "object",
+          required: ["type", "parameters"],
+          properties: {
+            type: {
+              type: "string",
+              description: pt ? "Tipo da ordem solicitada." : "Requested order type.",
+              enum: [type],
+            },
+            correlation_id: {
+              type: "string",
+              description: pt
+                ? "Identificador opcional para rastrear a ordem."
+                : "Optional identifier used to track the order.",
+            },
+            parameters: {
+              type: "array",
+              description: pt
+                ? "Parâmetros específicos deste tipo de ordem."
+                : "Parameters specific to this order type.",
+              items: {
+                type: "object",
+                title,
+                required: definition.required ?? [],
+                properties: definition.properties ?? {},
+              },
+              example: [operationExample(type, definition).orders[0].parameters[0]],
+            },
+          },
+        },
+      },
+    },
+  };
+}
+
 function generatedPage({ locale, type, title, definition }) {
-  const language = labels[locale];
-  const required = new Set(definition.required ?? []);
-  const rows = Object.entries(definition.properties ?? {}).map(([name, schema]) => {
-    const description = [
-      schema.description ?? "",
-      schema.enum?.length
-        ? `${language.values}: ${schema.enum.map((value) => `\`${value}\``).join(", ")}`
-        : "",
-    ]
-      .filter(Boolean)
-      .join(" ");
-    return `| \`${name}\` | \`${fieldType(schema)}\` | ${required.has(name) ? language.yes : language.no} | ${cell(description)} |`;
-  });
+  const pt = locale === "pt";
+  const operationMetadata = readOperationPageMetadata(locale);
   const intro = locale === "pt"
     ? `Contrato do tipo de ordem \`${type}\`.`
     : `Contract for the \`${type}\` order type.`;
-  const table = rows.length
-    ? [
-        `| ${language.field} | ${language.type} | ${language.required} | ${language.description} |`,
-        "| --- | --- | --- | --- |",
-        ...rows,
-      ].join("\n")
-    : locale === "pt"
-      ? "Este tipo de ordem não possui campos de parâmetros documentados."
-      : "This order type has no documented parameter fields.";
+  const requestHeading = pt ? "Requisição" : "Request";
+  const requestBodyTitle = pt ? "Corpo" : "Body";
+  const responseLabel = pt ? "Respostas" : "Responses";
+  const responseDescriptions = pt
+    ? {
+        "202": "Ordem enviada para criação",
+        "400": "Requisição inválida",
+        "401": "Não autorizado",
+        "500": "Erro interno do servidor",
+      }
+    : {
+        "202": "Order sent for creation",
+        "400": "Invalid request",
+        "401": "Unauthorized",
+        "500": "Internal server error",
+      };
+  const body = {
+    description: pt ? "Payload para criação de ordens" : "Payload for order creation",
+    required: true,
+    content: {
+      "application/json": {
+        schema: requestSchema(type, title, definition, locale),
+        example: operationExample(type, definition),
+      },
+    },
+  };
+  const responses = Object.fromEntries(
+    Object.entries(responseDescriptions).map(([status, description]) => [
+      status,
+      { description, content: { "application/json": { schema: { type: "object" } } } },
+    ]),
+  );
 
   return [
     "---",
+    `id: ${slug(type)}`,
     `title: ${quote(title)}`,
     `description: ${quote(intro)}`,
     `sidebar_label: ${quote(title)}`,
+    "hide_title: true",
+    "hide_table_of_contents: true",
+    `api: ${operationMetadata.api}`,
+    `sidebar_class_name: ${operationMetadata.sidebarClassName ?? '"post api-method"'}`,
+    `info_path: ${operationMetadata.infoPath}`,
+    "custom_edit_url: null",
     generatedMarker,
     "---",
     "",
+    'import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";',
+    'import ParamsDetails from "@theme/ParamsDetails";',
+    'import RequestSchema from "@theme/RequestSchema";',
+    'import StatusCodes from "@theme/StatusCodes";',
+    'import Heading from "@theme/Heading";',
+    "",
+    "<Heading",
+    '  as={"h1"}',
+    '  className={"openapi__heading"}',
+    `  children={${quote(title)}}`,
+    ">",
+    "</Heading>",
+    "",
+    "<MethodEndpoint",
+    '  method={"post"}',
+    '  path={"/devices/{device_id}/orders"}',
+    '  context={"endpoint"}',
+    ">",
+    "</MethodEndpoint>",
+    "",
     intro,
     "",
-    table,
+    "<Heading",
+    '  id={"request"}',
+    '  as={"h2"}',
+    '  className={"openapi-tabs__heading"}',
+    `  children={${quote(requestHeading)}}`,
+    ">",
+    "</Heading>",
+    "",
+    "<ParamsDetails",
+    `  parameters={[${JSON.stringify({ description: pt ? "ID do dispositivo" : "Device ID", in: "path", name: "device_id", required: true, schema: { type: "string" } })}]}`,
+    ">",
+    "</ParamsDetails>",
+    "",
+    "<RequestSchema",
+    `  title={${quote(requestBodyTitle)}}`,
+    `  body={${JSON.stringify(body)}}`,
+    ">",
+    "</RequestSchema>",
+    "",
+    "<StatusCodes",
+    "  id={undefined}",
+    `  label={${quote(responseLabel)}}`,
+    `  responses={${JSON.stringify(responses)}}`,
+    ">",
+    "</StatusCodes>",
     "",
   ].join("\n");
 }
