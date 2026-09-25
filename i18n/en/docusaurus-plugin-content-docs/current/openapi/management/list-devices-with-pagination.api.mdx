@@ -1,0 +1,75 @@
+---
+id: list-devices-with-pagination
+title: "List devices with pagination"
+description: "FindAll handles HTTP GET requests to retrieve device records with optional filtering and pagination."
+sidebar_label: "List devices with pagination"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV82OGzcMfhVCpxYY2E5/Lr5tm026bdMsks1pvRjQI3qsVCMpEseJY8zDBD30QfJiheTx31p2sJsec/JYpPhR/JE+roSkUHnlWFkjxuKZMvJCa5ijkZoC/HZzcw3PL2/A07uWAgdgC57YK1oQSFqoisBTZb0M8F7xHGwyhRpmSjN5ZWpAI8FhrQxG0WBirhhC65z1HPbUpksgxXPyMBGV9Z500i+VnIgCJmKmiXj7r7KNQ7Msa29bt11VDan4ZaMRrSoygUqnkWki4F1LfgkOPTbE5EMB05bBGr0EawiQAYFVQ9HDGTStZuU09R4GQE/gvF0oSbIAxTEOrTcBEH4ajeAXlPBqHSUg760fTMz19tSgAlTWsLdak4SFQpgIh3X0K8Zn/acM6mPe0xRbSTNsNYe0Q6tGxU/ntCI5mJhXW3d+f/3yL/AUnDWBEiwqE0PMc9pkgmSfvhCDhWbtMzQUAtY0EIXYwYvx7epeoVxjTWDaZkoevuv9GsOT70UhVJSnE4hCGGxIjNPhRCFCNacGxXgleOniujJMNXnRdUUWIcZj3/6ogAY/xI/ROagUxwfiPUtpjlW4V3xw9fQEzGGF5rACx7I+D5Vq+jTIpuQfa75vEkhNcu4sh730WLirF5dXJyBiYz7WbN/HkPr4hP2DXj8LdFeITWuEKP9hNIo/h+Av/xCFiI1DhqM0dVmVsj18G6LKag/CeevIs1oblMhpVTE14ViMLdsGWVVlvDdro9aQW0en1mpCI7pCVHHXLOJSzMrxYYrj1OWVDmo1q+Ip3gklclY8U755j57KBflw6O+e0qZac0JVVackJ5ZjxeQEh6nOaTRWks5K3NwaKtf3VlYhMHKby5pmxa3cx+utdIVAT9lLphAVeq/Il5WVeVc3CusyzimQ1ocx3TdvjaEq5XUtfHhmlStRSk8h5IONgUtakOFTBmJdnYyMtqY+LW2qKp8/k18Pqjaoy8CeTM3zfEyCI5JZuNbJ05Hois2Knb6lih+1oV9A73GZyi0+e1kvd69UVsyWUZfbG+SUQrSSVTh2rotrP+fuuivD5CNje01+QR4uIxF4wPXXrW0z1pEoiKeJVYi7QjTEcyvFWNTEiU/ElIlhgwZrasjwsGcg8b5O2Gum0XotxmLO7MJ4OGQyaHiw+DGgkVP7YVDZZrh4IuJFrszMRl8Sxamiq11x73QXyfPP/37+xwI18Pzlhhh9/rQgDc568IRafUQPFn599eYpSAxAgX3LrccAUwyJD7FiHSP6Yus/XFzH9257J4rRYDR4ktJrAzeY4tQ/UH+qwFvGldjcjhKLe06vdrH/xsi/MfItI+9bmukDD51GlUhC6pZV3123YtddqarW/XVXiLkNHOWrVaznN153XVxe06jE71XAqY5X5wx1oDMleYb7Zz38m5a7EWCBuo0qIjG+h2F+YRr4AvhmKHikB2fmgzPAR2PCV6PvjQxncPcmh//hvEdTxNkTHw0TX+1BP1icQe3ni69Guj9rnIG8P3LssO/iH68iuBjf3nWFmBPKyDhvV/3mi6oix3u7jp7Ybv8FfX55I7ruPwyOJO8=
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List devices with pagination"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/management/devices"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindAll handles HTTP GET requests to retrieve device records with optional filtering and pagination.
+It supports filtering by either "correlation_id", "fleet_id", "company_group_id", "imei", or "license_plate" query parameters, but only one at a time.
+If multiple filters are provided, it returns a 400 Bad Request error.
+Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
+Returns a JSON response containing the paginated devices or an error message.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}},{"description":"Filter by correlation ID","in":"query","name":"correlation_id","schema":{"type":"string"}},{"description":"Filter by fleet ID","in":"query","name":"fleet_id","schema":{"type":"string"}},{"description":"Filter by company group ID","in":"query","name":"company_group_id","schema":{"type":"string"}},{"description":"Filter by IMEI","in":"query","name":"imei","schema":{"type":"string"}},{"description":"Filter by license plate","in":"query","name":"license_plate","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"company_group_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"firmware_version":{"type":"string"},"fleet_id":{"type":"string"},"iccid":{"type":"string"},"id":{"type":"string"},"imei":{"type":"string"},"license_plate":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"status":{"properties":{"altitude":{"type":"number"},"area":{"type":"integer"},"carrier_code":{"type":"string"},"carrier_name":{"type":"string"},"cell_id":{"type":"integer"},"connection_type":{"type":"string"},"created_at":{"type":"string"},"ip_address":{"type":"string"},"last_event_at":{"type":"string"},"latitude":{"type":"number"},"longitude":{"type":"number"},"mcc":{"type":"string"},"mnc":{"type":"string"},"signal_strength":{"type":"integer"},"speed":{"type":"number"},"updated_at":{"type":"string"}},"type":"object"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

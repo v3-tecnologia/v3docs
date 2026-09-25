@@ -26,7 +26,61 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Device",
+      label: "Times",
+      items: [
+        {
+          type: "doc",
+          id: "openapi/management/find-teams-by-card-number",
+          label: "Buscar times pelo número do cartão",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "openapi/management/find-teams-by-device-imei",
+          label: "Buscar times pelo IMEI do dispositivo",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "openapi/management/listar-times-com-paginacao",
+          label: "Listar times com paginação",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "openapi/management/criar-novo-time",
+          label: "Criar novo time",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "openapi/management/excluir-time",
+          label: "Excluir time",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "openapi/management/obter-time-por-id",
+          label: "Obter time por ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "openapi/management/atualizar-time",
+          label: "Atualizar time",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "openapi/management/obter-motoristas-por-time",
+          label: "Obter motoristas por time",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Dispositivos",
       items: [
         {
           type: "doc",
@@ -68,7 +122,7 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Driver",
+      label: "Motorista",
       items: [
         {
           type: "doc",
@@ -116,7 +170,43 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Fleet",
+      label: "Cartões",
+      items: [
+        {
+          type: "doc",
+          id: "openapi/management/list-cards-from-a-driver",
+          label: "Listar cartões de um motorista",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "openapi/management/create-a-card-for-a-driver",
+          label: "Cadastrar cartão para um motorista",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "openapi/management/delete-a-card-from-a-driver",
+          label: "Remover cartão de um motorista",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "openapi/management/get-a-card-from-a-driver",
+          label: "Obter cartão de um motorista",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "openapi/management/update-a-card-from-a-driver",
+          label: "Atualizar cartão de um motorista",
+          className: "api-method put",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Frotas",
       items: [
         {
           type: "doc",
@@ -152,48 +242,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "openapi/management/obter-frotas-por-time",
           label: "Obter frotas por time",
-          className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Team",
-      items: [
-        {
-          type: "doc",
-          id: "openapi/management/listar-times-com-paginacao",
-          label: "Listar times com paginação",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "openapi/management/criar-novo-time",
-          label: "Criar novo time",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "openapi/management/excluir-time",
-          label: "Excluir time",
-          className: "api-method delete",
-        },
-        {
-          type: "doc",
-          id: "openapi/management/obter-time-por-id",
-          label: "Obter time por ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "openapi/management/atualizar-time",
-          label: "Atualizar time",
-          className: "api-method put",
-        },
-        {
-          type: "doc",
-          id: "openapi/management/obter-motoristas-por-time",
-          label: "Obter motoristas por time",
           className: "api-method get",
         },
       ],

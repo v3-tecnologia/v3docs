@@ -1,0 +1,71 @@
+---
+id: delete-a-card-from-a-driver
+title: "Remover cartão de um motorista"
+description: "Remove o cartão de um motorista e o desregistra dos dispositivos selecionados ou das frotas do motorista."
+sidebar_label: "Remover cartão de um motorista"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vc1u4zYQfhViTq1BW066J922Gx8CbIsi3Z4cIxiLE5tbiVTIkTauoHdp0cM+QZ/AL1aMfmo7drroHuqTOSLn55tvvmnAUMyCLdl6ByncUeFrUl5lGHj/p1eGVFWowrMPNjIq+WYoBtrYyAGV8VEZG0sfLdvaRxUpp8x6h/LFV8pgVI/BM0Zl/MHRDDSUGLAgphAhXTYvMrm9ObkPGqyYS+QtaHBYEKRgDWgI9FTZQAZSDhVpiNmWCoS0Ad6VcitysG4DbasvBxlqvRwiw2Ae/mOcVX+ZIn/vzU5uZN4xOZa/WJa5zVAySD5GSaM5clUGX1JgS1FOoWvHg6HaZvRgTWc8LeF91xZD6vYmnndDDE8V2qh6V+GotZPJ4pmKMveTSaqW99BHuboHrcbD9T2sBBamIl4oVI8GDAF3AvBo8OuPlDG0YnoJ+YU06ZQmr+YsIQPF0rvYA3Q9n59D8m4osHtujTT2CP9JMjmF/GX3JOc38zfnfn8Up+TEV8AvuR38XF+f+1k4tgYNKScOy+AzinH/R035l122GoQgHX1uDaRgKCemKU6FqNPH4IspTk2wNQXQwLiR4eoh+YsirDQUxFt/eNoNIm8hhaRAhxsqyHHSe4hJY02biOuYNMMotKAhUqjHua1CDilsmcuYJgmTQ8ez+ruIzqz98yzzRVJfgQyF0P3uMBiLZyzKnF4h+nLsyKqVwXz04xxhJuicEetnCrXdf5a2dwTpAFWlD8qHDTr7GwZFqkDHFA66ErViW1DUI/volJm1dVmVd2K2/1110O8/d8LoVZZbckwiZWxZCoEf/kFQvf3pFjQISn1+89l8diUELn3kAru5HzTmbuD5K6ILL0o9kpP/V7CHSWF65qTM0Topp2t/M3BoCQcOSdo9i0BD2kloRyQ5jaq60rD1keVh06wx0i8hb1sxP1UUdpAuVxpqDBbXgq9sCRvlv4H0EfNI/wLNN3eDYH+rzpfJxVJGNXM76RzmlZxAw6+065dNt0G+PoHDovmK8CNkrczDltBQ6ADpv77ro04/iI/D67NlIxX0L95mGZV8dFfkpj3Wh5vF+8WHBWhYD1us8EYuBvwk6xA/9en5rvR+X4mtgRzdpsKN3O2Dyu9v+0XzyQ==
+sidebar_class_name: "delete api-method"
+info_path: docs/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Remover cartão de um motorista"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/management/drivers/{id}/cards/{card_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Remove o cartão de um motorista e o desregistra dos dispositivos selecionados ou das frotas do motorista.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID do motorista","in":"path","name":"id","required":true,"schema":{"type":"string"}},{"description":"ID do cartão","in":"path","name":"card_id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"remove_device_ids":{"description":"Lista de IDs dos dispositivos dos quais remover o cartão **Exemplo**: [\"device1\", \"device2\"]","items":{"type":"string"},"type":"array"}},"type":"object"}}},"description":"IDs dos dispositivos e das frotas dos quais remover o cartão"}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Cartão removido","content":{"*/*":{"schema":{"type":"string"}}}},"404":{"description":"Não encontrado","content":{"*/*":{"schema":{}}}},"422":{"description":"Entidade não processável","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

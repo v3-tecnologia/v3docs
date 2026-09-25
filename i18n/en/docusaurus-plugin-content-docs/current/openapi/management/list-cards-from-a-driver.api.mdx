@@ -1,0 +1,71 @@
+---
+id: list-cards-from-a-driver
+title: "List cards from a driver"
+description: "Lists all active cards assigned to a driver."
+sidebar_label: "List cards from a driver"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVlM1O20AQx19lNadWWsWBcvINFYpQP6hQOUURmniHZKm9u+yOLVLLD1P10AfhxaqxHZJCQOIUZf7j2fn4zbRgKBXRBrbeQQ5fbOKksCwVFmwbUgVGkxSmZJeOjGKvUJloG4oT0BAwYkVMMUE+a5/EOund1LkBDVYMAXkFGhxWBDlYsUe6q20kAznHmjSkYkUVQt4Cr4N4JY7WLaHr5uKcgneJkuiH06n8/P/kxWfQUHjH5FhUDKG0BYqa3SZxaXeesExVHytEHyiyHSIXkZDJXCPvyUODoZJek/uqr615TR1asEd/4TNXVwuKe6XEyHXaK9XBvFxIpzcWv7ilgmFrwBhxDV0nPkfTo+dt/uZZffK1M2/o9hju8PB5uCsXoi8oJVyUpE4dW16/MbIkj0uhcMQO5hoq4pU3kMOSuIeVV5BDVqHDJVXkOBvGkbLWmi7rUQcNiWKzIbqOJeSwYg4pzzImh44nzYeEziz8/aTwVdYcgMBp3Y3v6fGOsZCse1Z26zzui3j4+/DHK6rU2YUaiX743VCpgo8qEpb2F0bl1cfLqxNlMClKHGuuIya1wESyd2y5lEl9fSxFHX8/Bw2S+PDYdDKdHMhQg09cYd+ycfNkycfFvom+etxoeJJwux3BWw/DSBLTPWehROt6HqWZ7TiHGWznAJvFkPbn/WEYhjHXsPKJxbttpfirWHadmO9qimvIZ3MNDUYr5AwnyPYUGchvsEz0SkXvLsfb817tXqq9mW8WwwmXDZa1/AMNP2k9XLJu3mlYERrZ0lk7CsdFQYF3PnnGcbeL6dnpD+i6f8C463Y=
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List cards from a driver"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/management/drivers/{id}/cards"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lists all active cards assigned to a driver.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver Id","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"items":{"properties":{"created_at":{"type":"string"},"deleted_at":{"type":"string"},"driver_id":{"type":"string"},"driver_name":{"type":"string"},"id":{"type":"string"},"number":{"type":"string"},"status":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

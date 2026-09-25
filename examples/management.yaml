@@ -1,5 +1,19 @@
 basePath: /v1
 definitions:
+  dto.CardDTO:
+    properties:
+      embed_device_ids:
+        description: 'Lista de IDs de dispositivos associados ao cartão **Exemplo**: ["device1",
+          "device2"]'
+        items:
+          type: string
+        type: array
+      number:
+        description: 'Número do cartão **Exemplo**: "4111111111111111"'
+        type: string
+    required:
+    - number
+    type: object
   dto.CreateDeviceDTO:
     properties:
       automatic_recognition:
@@ -10,6 +24,9 @@ definitions:
         description: Identificador único do certificado associado ao dispositivo.
         maxLength: 50
         minLength: 3
+        type: string
+      company_group_id:
+        description: ID do grupo empresarial proprietário do dispositivo.
         type: string
       correlation_id:
         description: 'Identificador único para rastreamento da requisição (opcional,
@@ -29,6 +46,9 @@ definitions:
         description: 'Número IMEI do dispositivo **Ex.:**: "123456789012345"'
         maxLength: 15
         minLength: 15
+        type: string
+      license_plate:
+        description: 'Placa do veículo associado ao dispositivo **Ex.:**: "ABC1D23"'
         type: string
       model:
         description: 'Modelo do dispositivo **Ex.:**: "GPS Tracker Pro"'
@@ -86,6 +106,9 @@ definitions:
     type: object
   dto.CreateTeamDTO:
     properties:
+      company_group_id:
+        description: ID do grupo empresarial proprietário do time.
+        type: string
       correlation_id:
         description: 'Identificador único para rastreamento da requisição (opcional,
           gerado automaticamente se não informado) **Ex.:**: "123e4567-e89b-12d3-a456-426614174000"'
@@ -111,6 +134,9 @@ definitions:
         maxLength: 50
         minLength: 3
         type: string
+      company_group_id:
+        description: ID do grupo empresarial proprietário do dispositivo.
+        type: string
       correlation_id:
         description: 'Identificador único para rastreamento da requisição (opcional,
           gerado automaticamente se não informado) **Ex.:**: "123e4567-e89b-12d3-a456-426614174000"'
@@ -119,6 +145,11 @@ definitions:
         type: string
       fleet_id:
         description: 'ID da frota proprietária do dispositivo **Ex.:**: 1'
+        type: string
+      firmware_version:
+        description: 'Versão do firmware informada pelo dispositivo **Ex.:**: "1.2.3"'
+        maxLength: 100
+        minLength: 1
         type: string
       iccid:
         description: 'ICCID do cartão SIM **Ex.:**: "89550311000000000123"'
@@ -129,6 +160,9 @@ definitions:
         description: 'Número IMEI do dispositivo **Ex.:**: "123456789012345"'
         maxLength: 15
         minLength: 15
+        type: string
+      license_plate:
+        description: 'Placa do veículo associado ao dispositivo **Ex.:**: "ABC1D23"'
         type: string
       model:
         description: 'Modelo do dispositivo **Ex.:**: "GPS Tracker Pro X"'
@@ -186,6 +220,9 @@ definitions:
     type: object
   dto.UpdateTeamDTO:
     properties:
+      company_group_id:
+        description: ID do grupo empresarial proprietário do time.
+        type: string
       correlation_id:
         description: 'Identificador único para rastreamento da requisição (opcional,
           gerado automaticamente se não informado) **Ex.:**: "123e4567-e89b-12d3-a456-426614174000"'
@@ -200,11 +237,22 @@ definitions:
     required:
     - name
     type: object
+  dto.DeleteCardDTO:
+    properties:
+      remove_device_ids:
+        description: 'Lista de IDs dos dispositivos dos quais remover o cartão **Exemplo**: ["device1",
+          "device2"]'
+        items:
+          type: string
+        type: array
+    type: object
   dto.DeviceResponse:
     properties:
       automatic_recognition:
         type: boolean
       certificate_id:
+        type: string
+      company_group_id:
         type: string
       correlation_id:
         type: string
@@ -212,11 +260,15 @@ definitions:
         type: string
       fleet_id:
         type: string
+      firmware_version:
+        type: string
       iccid:
         type: string
       id:
         type: string
       imei:
+        type: string
+      license_plate:
         type: string
       model:
         type: string
@@ -299,7 +351,11 @@ definitions:
     type: object
   dto.PatchDeviceStatusDTO:
     properties:
+      firmware_version:
+        type: string
       iccid:
+        type: string
+      model:
         type: string
       status:
         $ref: '#/definitions/dto.DeviceStatusPatchDTO'
@@ -315,6 +371,8 @@ definitions:
         type: boolean
       certificate_id:
         type: string
+      company_group_id:
+        type: string
       correlation_id:
         type: string
       created_at:
@@ -323,16 +381,80 @@ definitions:
         type: string
       fleet_id:
         type: string
+      firmware_version:
+        type: string
       iccid:
         type: string
       id:
         type: string
       imei:
         type: string
+      license_plate:
+        type: string
       model:
         type: string
       phone_number:
         type: string
+      status:
+        $ref: '#/definitions/model.DeviceStatus'
+      updated_at:
+        type: string
+    type: object
+  model.Card:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      driver_id:
+        type: string
+      driver_name:
+        type: string
+      id:
+        type: string
+      number:
+        type: string
+      status:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  model.DeviceStatus:
+    properties:
+      altitude:
+        type: number
+      area:
+        type: integer
+      carrier_code:
+        type: string
+      carrier_name:
+        type: string
+      cell_id:
+        type: integer
+      connection_type:
+        type: string
+      created_at:
+        type: string
+      device_id:
+        type: string
+      imei:
+        type: string
+      ip_address:
+        type: string
+      last_event_at:
+        type: string
+      latitude:
+        type: number
+      longitude:
+        type: number
+      mcc:
+        type: string
+      mnc:
+        type: string
+      signal_strength:
+        type: integer
+      speed:
+        type: number
       updated_at:
         type: string
     type: object
@@ -373,6 +495,8 @@ definitions:
   model.Team:
     properties:
       account_id:
+        type: string
+      company_group_id:
         type: string
       correlation_id:
         type: string
@@ -486,6 +610,66 @@ paths:
       summary: Verificar se a aplicação está pronta
       tags:
       - Health Check
+  /internal/management/teams/cards:
+    get:
+      consumes:
+      - application/json
+      description: |-
+        Busca os times associados a um cartão pelo número, localizando primeiro o motorista vinculado.
+        Retorna 200 com uma lista vazia quando nenhum time é encontrado para o número do cartão.
+      parameters:
+      - description: Número do cartão
+        in: query
+        name: number
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Retorna os times paginados; a lista fica vazia quando nenhum resultado é encontrado.
+          schema:
+            $ref: '#/definitions/service.PaginatedTeams'
+        "422":
+          description: O número do cartão é obrigatório.
+          schema: {}
+        "500":
+          description: Erro interno do servidor
+          schema: {}
+      operationId: find-teams-by-card-number
+      summary: Buscar times pelo número do cartão
+      tags:
+      - Times
+  /internal/management/teams/devices:
+    get:
+      consumes:
+      - application/json
+      description: |-
+        Busca os times associados a um dispositivo pelo IMEI, localizando primeiro a frota vinculada.
+        Retorna 200 com uma lista vazia quando nenhum time é encontrado para o IMEI.
+      parameters:
+      - description: IMEI do dispositivo
+        in: query
+        name: imei
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Retorna os times paginados; a lista fica vazia quando nenhum resultado é encontrado.
+          schema:
+            $ref: '#/definitions/service.PaginatedTeams'
+        "422":
+          description: O IMEI é obrigatório.
+          schema: {}
+        "500":
+          description: Erro interno do servidor
+          schema: {}
+      operationId: find-teams-by-device-imei
+      summary: Buscar times pelo IMEI do dispositivo
+      tags:
+      - Times
   /management/devices:
     get:
       description: |-
@@ -508,9 +692,17 @@ paths:
         in: query
         name: fleet_id
         type: string
+      - description: Filtrar por ID do grupo empresarial
+        in: query
+        name: company_group_id
+        type: string
       - description: Filtrar por IMEI
         in: query
         name: imei
+        type: string
+      - description: Filtrar por placa do veículo
+        in: query
+        name: license_plate
         type: string
       produces:
       - application/json
@@ -525,7 +717,7 @@ paths:
       operationId: listar-dispositivos-com-paginacao
       summary: Listar dispositivos com paginação
       tags:
-      - Device
+      - Dispositivos
     post:
       consumes:
       - application/json
@@ -551,7 +743,7 @@ paths:
       operationId: criar-novo-dispositivo
       summary: Criar novo dispositivo
       tags:
-      - Device
+      - Dispositivos
   /management/devices/{id}:
     delete:
       description: Remove um dispositivo pelo ID informado.
@@ -572,7 +764,7 @@ paths:
       operationId: excluir-dispositivo
       summary: Excluir dispositivo
       tags:
-      - Device
+      - Dispositivos
     get:
       description: Retorna os dados de um dispositivo específico pelo ID informado.
       parameters:
@@ -594,11 +786,11 @@ paths:
       operationId: obter-dispositivo-por-id
       summary: Obter dispositivo por ID
       tags:
-      - Device
+      - Dispositivos
     patch:
       consumes:
       - application/json
-      description: Atualiza parcialmente o status de telemetria e o ICCID do dispositivo.
+      description: Atualiza parcialmente o status, o ICCID, o modelo e a versão do firmware do dispositivo.
       parameters:
       - description: ID do dispositivo
         in: path
@@ -627,7 +819,7 @@ paths:
       operationId: atualizar-status-do-dispositivo
       summary: Atualizar status do dispositivo
       tags:
-      - Device
+      - Dispositivos
     put:
       consumes:
       - application/json
@@ -661,7 +853,7 @@ paths:
       operationId: atualizar-dispositivo
       summary: Atualizar dispositivo
       tags:
-      - Device
+      - Dispositivos
   /management/drivers:
     get:
       description: |-
@@ -697,7 +889,7 @@ paths:
       operationId: listar-motoristas-com-paginacao
       summary: Listar motoristas com paginação
       tags:
-      - Driver
+      - Motorista
     post:
       consumes:
       - application/json
@@ -723,7 +915,7 @@ paths:
       operationId: criar-novo-motorista
       summary: Criar novo motorista
       tags:
-      - Driver
+      - Motorista
   /management/drivers/{id}:
     delete:
       description: Remove um motorista pelo ID informado.
@@ -744,7 +936,7 @@ paths:
       operationId: excluir-motorista
       summary: Excluir motorista
       tags:
-      - Driver
+      - Motorista
     get:
       description: Retorna os dados de um motorista específico pelo ID informado.
       parameters:
@@ -766,7 +958,7 @@ paths:
       operationId: obter-motorista-por-id
       summary: Obter motorista por ID
       tags:
-      - Driver
+      - Motorista
     put:
       consumes:
       - application/json
@@ -800,7 +992,172 @@ paths:
       operationId: atualizar-motorista
       summary: Atualizar motorista
       tags:
-      - Driver
+      - Motorista
+  /management/drivers/{id}/cards:
+    get:
+      description: Lista todos os cartões ativos associados a um motorista.
+      parameters:
+      - description: ID do motorista
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Sucesso
+          schema:
+            items:
+              $ref: '#/definitions/model.Card'
+            type: array
+        "404":
+          description: Não encontrado
+          schema: {}
+        "422":
+          description: Entidade não processável
+          schema: {}
+      operationId: list-cards-from-a-driver
+      summary: Listar cartões de um motorista
+      tags:
+      - Cartões
+    post:
+      consumes:
+      - application/json
+      description: Cadastra um cartão para o motorista e o registra nos dispositivos selecionados ou nas frotas do motorista.
+      parameters:
+      - description: ID do motorista
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Dados do cartão
+        in: body
+        name: card
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CardDTO'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Criado
+          schema:
+            $ref: '#/definitions/model.Card'
+        "404":
+          description: Não encontrado
+          schema: {}
+        "422":
+          description: Entidade não processável
+          schema: {}
+      operationId: create-a-card-for-a-driver
+      summary: Cadastrar cartão para um motorista
+      tags:
+      - Cartões
+  /management/drivers/{id}/cards/{card_id}:
+    delete:
+      consumes:
+      - application/json
+      description: Remove o cartão de um motorista e o desregistra dos dispositivos selecionados ou das frotas do motorista.
+      parameters:
+      - description: ID do motorista
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: ID do cartão
+        in: path
+        name: card_id
+        required: true
+        type: string
+      - description: IDs dos dispositivos e das frotas dos quais remover o cartão
+        in: body
+        name: delete
+        schema:
+          $ref: '#/definitions/dto.DeleteCardDTO'
+      responses:
+        "200":
+          description: Cartão removido
+          schema:
+            type: string
+        "404":
+          description: Não encontrado
+          schema: {}
+        "422":
+          description: Entidade não processável
+          schema: {}
+      operationId: delete-a-card-from-a-driver
+      summary: Remover cartão de um motorista
+      tags:
+      - Cartões
+    get:
+      description: Recupera um cartão ativo associado a um motorista.
+      parameters:
+      - description: ID do motorista
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: ID do cartão
+        in: path
+        name: card_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Sucesso
+          schema:
+            $ref: '#/definitions/model.Card'
+        "404":
+          description: Não encontrado
+          schema: {}
+        "422":
+          description: Entidade não processável
+          schema: {}
+      operationId: get-a-card-from-a-driver
+      summary: Obter cartão de um motorista
+      tags:
+      - Cartões
+    put:
+      consumes:
+      - application/json
+      description: Atualiza o cartão de um motorista e sincroniza os novos dados com os dispositivos selecionados ou com as frotas do motorista.
+      parameters:
+      - description: ID do motorista
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: ID do cartão
+        in: path
+        name: card_id
+        required: true
+        type: string
+      - description: Dados do cartão
+        in: body
+        name: card
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CardDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Sucesso
+          schema:
+            $ref: '#/definitions/model.Card'
+        "404":
+          description: Não encontrado
+          schema: {}
+        "422":
+          description: Entidade não processável
+          schema: {}
+      operationId: update-a-card-from-a-driver
+      summary: Atualizar cartão de um motorista
+      tags:
+      - Cartões
   /management/drivers/{id}/teams/{team_id}:
     delete:
       description: Remove a associação de um motorista com um time.
@@ -826,7 +1183,7 @@ paths:
       operationId: remover-motorista-do-time
       summary: Remover motorista do time
       tags:
-      - Driver
+      - Motorista
     post:
       consumes:
       - application/json
@@ -854,7 +1211,7 @@ paths:
       operationId: associar-motorista-ao-time
       summary: Associar motorista ao time
       tags:
-      - Driver
+      - Motorista
   /management/fleets:
     get:
       description: |-
@@ -890,7 +1247,7 @@ paths:
       operationId: listar-frotas-com-paginacao
       summary: Listar frotas com paginação
       tags:
-      - Fleet
+      - Frotas
     post:
       consumes:
       - application/json
@@ -915,7 +1272,7 @@ paths:
       operationId: criar-nova-frota
       summary: Criar nova frota
       tags:
-      - Fleet
+      - Frotas
   /management/fleets/{id}:
     delete:
       description: Remove uma frota pelo ID informado.
@@ -936,7 +1293,7 @@ paths:
       operationId: excluir-frota
       summary: Excluir frota
       tags:
-      - Fleet
+      - Frotas
     get:
       description: Retorna os dados de uma frota específica pelo ID informado.
       parameters:
@@ -958,7 +1315,7 @@ paths:
       operationId: obter-frota-por-id
       summary: Obter frota por ID
       tags:
-      - Fleet
+      - Frotas
     put:
       consumes:
       - application/json
@@ -992,7 +1349,7 @@ paths:
       operationId: atualizar-frota
       summary: Atualizar frota
       tags:
-      - Fleet
+      - Frotas
   /management/fleets/teams/{team_id}:
     get:
       description: Retorna a lista paginada de frotas associadas a um time específico.
@@ -1015,7 +1372,7 @@ paths:
       operationId: obter-frotas-por-time
       summary: Obter frotas por time
       tags:
-      - Fleet
+      - Frotas
   /management/teams:
     get:
       description: |-
@@ -1034,6 +1391,10 @@ paths:
         in: query
         name: correlation_id
         type: string
+      - description: Filtrar por ID do grupo empresarial
+        in: query
+        name: company_group_id
+        type: string
       produces:
       - application/json
       responses:
@@ -1047,7 +1408,7 @@ paths:
       operationId: listar-times-com-paginacao
       summary: Listar times com paginação
       tags:
-      - Team
+      - Times
     post:
       consumes:
       - application/json
@@ -1072,7 +1433,7 @@ paths:
       operationId: criar-novo-time
       summary: Criar novo time
       tags:
-      - Team
+      - Times
   /management/teams/{id}:
     delete:
       description: Remove um time pelo ID informado.
@@ -1093,7 +1454,7 @@ paths:
       operationId: excluir-time
       summary: Excluir time
       tags:
-      - Team
+      - Times
     get:
       description: Retorna os dados de um time específico pelo ID informado.
       parameters:
@@ -1115,7 +1476,7 @@ paths:
       operationId: obter-time-por-id
       summary: Obter time por ID
       tags:
-      - Team
+      - Times
     put:
       consumes:
       - application/json
@@ -1149,7 +1510,7 @@ paths:
       operationId: atualizar-time
       summary: Atualizar time
       tags:
-      - Team
+      - Times
   /management/teams/{team_id}/drivers:
     get:
       description: Retorna a lista paginada de motoristas associados a um time específico.
@@ -1172,7 +1533,7 @@ paths:
       operationId: obter-motoristas-por-time
       summary: Obter motoristas por time
       tags:
-      - Team
+      - Times
 schemes:
 - https
 swagger: "2.0"

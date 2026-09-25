@@ -1,0 +1,75 @@
+---
+id: get-a-team-by-id
+title: "Get a team by Id"
+description: "FindOne handles HTTP requests to retrieve a single team by its Id."
+sidebar_label: "Get a team by Id"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVMFu20YQ/ZXBnFqAkBTXJ96MJnGFpFXg2ifbMEbckbjJcnezO1SjEvyYoId+iH8sGFKW5NoO0FMvPRE7b/bN7OOb6dBwrpKNYoPHEt9abxaeoSZvHGf45fLyAyT+3HKWDBIgsSTLGwaCbP3aMQhTA8stWMkwN5MbPxeIlDJnkJrhBq25QY1Qw8IJVik0A7KjhauL9wVsyFlDwhmsFEDeQEXOjRRa4XdOG1uxtrBiqeo9oAVXw2luwGawfqAqwIo22yafgeD05ASufEyh4pxp6RjeeLGyhcQ5Bp/5QDO8x2bwQWAVWv+EanYKvwWBt4od3194yG2lBR7d2HMaEoI/rNRAcDKbweLd4TYWuFcoY3nd/eO/XCrB3GCBVo+RpMYCPTWMJVqNq5o2scFSUssF5qrmhrDsULZRs7Ik69fY97eaPNbNip/MZvp5XHDxDgusghf2oijF6GxFik4/Zk3pjkrEFCInsSMhVVVovdxZ80x5ZW0i+e3dOoU2vpyUEruh3ospiUnY3JE8Cxt2/B34BdJR0meANpqXq/XFQyQsP3Il2PcaO52dPlV2751/IXA/8gmt1RyDG/C2wIalDgZLXLMMDpIaS5w25GnNDXuZqvHytLOmxwIzp82DvdrksMRaJOZyOhX25GWy+SmTN8vwZVKFZrp5heoV61dBm9FeqdJeB3GPn3Q2tH7/9/1fAbiB88WDse+/bthBDAkSk7N/UoIAP19cvQZDGThLaqVNlGFJ4xCIFacy/rp/Apx9mGOB2vhYbDaZTV7pH4khS0ODULtBOGcB2i+kYVweNdodBP9/0/13m243KsJfZBodWT/Mlxqy23n4Gg8e1gvqYiywtEZtX4csmtN1apur5Ppew59bTlssr28L3FCy+vZxk9pBB4Plilzm73jih4vdEv0RDgv32W53QfJb9Sa5Vk9Y4Cfejgu5v+0LrJkMp6GJETirKo5ydOXJ1PfHY33+5hL7/huxHaL8
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a team by Id"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/management/teams/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindOne handles HTTP requests to retrieve a single team by its Id.
+It parses the "id" parameter from the request URL, validates it, and calls the teamService to fetch the team.
+If the Id is invalid, it returns a 422 Unprocessable Entity response.
+If the team is not found, it returns a 404 Not Found response.
+On success, it returns the team data with a 200 OK response.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Team Id","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"account_id":{"type":"string"},"company_group_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

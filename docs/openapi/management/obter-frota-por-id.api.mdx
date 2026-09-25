@@ -5,7 +5,7 @@ description: "Retorna os dados de uma frota específica pelo ID informado."
 sidebar_label: "Obter frota por ID"
 hide_title: true
 hide_table_of_contents: true
-api: eJylVM1uEzEQfhVrTiC52RR62lulUpQDAhU4VVE1sSeJy67t2rNRw2rfBcShJ54iL4Zmd6FpaSohLvszP/bM930zLVjKJrnILngo4YI4JI8qZGXRypNUU6NapsCoKEcyu59LZ1BFqoKanSnnlyHVaMMENERMWBNTylBeto/Onp0pO54EGpyYIvIaNHisCUpwFjQkumlcIgslp4Y0ZLOmGqFsgbdRojIn51fQdXMJzjH4TFn8r6ZTeT289LwvPJFpIiW0qEyoVW4M5RxAgwmeybPkYYyVMyh5xXWW5Hbv8phCpMRuuMqElKjqY6+cfaI4DSYRMtkr5Cfdlip6xn3g0AGoJxxMWB+qpIn2cCWSO1jC4poMQ9eJ7WR6cghLv/sRFHlBTgD9BxC74WwBso+Y2f5apnTUq+IohnTUi4BxJQqC84qIYa6hJl4HCV8R9zrjNZRQ1OhxRTV5LpYSmovW2Q40ZEqb3ypsUgUlrJljLouCyaPnyeZ1Rm8X4XZiQl1sjkHkJFoe6PWMRhrqmdrH4COljdvdBTVKb/d9Q5WKIamQVujdV0yKVI2eKak6cEguM2at2NWU9SD/rEhZl2PIjt0mZLVx3jRVP3C7b6oHaHcnONugTOXIM8l4seNKqHr3p211+mEGGqTXob7pZDo5FtZjyFxjT8A4Xu8F6XGSpeDZGTzqrr2n8n83wSgqplsuYoXO90oUJtqRvUu4Zw80DPyBhtJZYXwdMktQ2y4w0+dUdZ2YbxpKWygv5xo2mBwuBBBZNS7Lt4VyiVWmZxp7cTFumJfq4UZ6suTRiH4rMGPVyB9o+ELbYWN1807DmtBS6gsZHKfGUOS9lL8Go9tX9ds3n6DrfgGAM+93
+api: eJylVM1uEzEQfhVrTiC52RR62htSAeWAQAVOVVRN7Enismu79mzUsNp3AXHoiafIi6HZXWhakkqIS37mxzPzfd9MC5aySS6yCx5KuCAOyaMKWVm08kmqqVEtU2BUlCOZ3c+lM6giVUHNzpXzy5BqtGECGiImrIkpZSgv20dvz86VHV8CDU5MEXkNGjzWBCU4CxoS3TQukYWSU0MasllTjVC2wNsoUZmT8yvourkE5xh8piz+F9OpfD0s+qZvPJFpIiW0qEyoVW4M5RxAgwmeybPkYYyVMyh5xXWW5HaveEwhUmI3lDIhJar62CtnDzSnwSRCJnuFfNBtqaIn3EceHYA64GDC+lgnTbTHO5HcwRIW12QYuk5sZ9OzY1j63Y+gyAtyAug/gNgNbwuQfcTM9mWZ0kmvipMY0kkvAsaVKGiomGGuoSZeB4lfEfdC4zWUUNTocUU1eS6WFRHnonW2Aw2Z0ua3DJtUQQlr5pjLomDy6HmyeZnR20W4nZhQF5tTED2JmAd+PaORiXqq9kH4SGnjdndBjdrbfd9QpWJIKqQVevcVkyJVo2dKqg4cksuMWSt2NWU96D8rUtblGLJjtwlZbZw3TdVv3O6b6hHa3QnQNihTOfJMsl/suBKu3v0ZW736MAMNMuvQ33QynZwK7TFkrrFnYNyv9wL1uMrS8OwcHk3X3nP5v6dgVBXTLRexQud7KQoT7cjeJdyzBxoG/kBD6awwvg6ZJahtF5jpc6q6Tsw3DaUtlJdzDRtMDhcCiNwal+W3hXKJVaYnBnt2MZ6Y5+rhSTrY8mhEvxWYsWrkH2j4QtvhZHXzTsOa0FLqGxkcr4yhyHspf21Gt6/qt68/Qdf9At9T7/Y=
 sidebar_class_name: "get api-method"
 info_path: docs/openapi/management/management-api
 custom_edit_url: null
@@ -42,7 +42,7 @@ Retorna os dados de uma frota específica pelo ID informado.
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Requisição"}
+  children={"Request"}
 >
 </Heading>
 
@@ -53,7 +53,7 @@ Retorna os dados de uma frota específica pelo ID informado.
 </ParamsDetails>
 
 <RequestSchema
-  title={"Corpo"}
+  title={"Body"}
   body={undefined}
 >
   
@@ -61,7 +61,7 @@ Retorna os dados de uma frota específica pelo ID informado.
 
 <StatusCodes
   id={undefined}
-  label={"Respostas"}
+  label={undefined}
   responses={{"200":{"description":"Frota recuperada com sucesso","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"team_id":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Frota não encontrada","content":{"application/json":{"schema":{}}}}}}
 >
   

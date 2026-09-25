@@ -1,0 +1,72 @@
+---
+id: find-teams-by-card-number
+title: "Buscar times pelo número do cartão"
+description: "Busca os times associados a um cartão pelo número, localizando primeiro o motorista vinculado."
+sidebar_label: "Buscar times pelo número do cartão"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVb2OG0cMfpUBqwTYk+RL0mwqBzACF3YCx6kuB4HapVbjzAz3OFzBOmHfJUEKw7U7t3qxgKvfiyQDLlNpNfz7SH4k11BTrsS36jlBCT91uULH2amPlB3mzJXHmrND10VXoejmH3YtBXZp8zmScOECVxj8I6aaXSs+khd27CIri8+KbulT1QWsefRHekPKktDdTiau4ui6iC5stfDRo3voBj+J0qKLAwy3+egoVZxU0CKgoDtEdzXvUY2gABNGUpIM5d36P8m9PjOBArxJHjqSFRSQMBKUkLo4I4EChB46L1RDqdJRAblaUEQo16Cr1jSzik8N9P29KeeWU6Zs8tvJxH6eAtjnfqhvi41PVt4f3b4Kc19dLoVQ7oJaBZ7Uw7K2b0pqAbFtg6/QAo7fZYu6PkHdCrck6rcYa9Th1SvFfC7GquIu6dTXFxK2oLHFtJo2wl17XUmEwgDnqooQKtVT1IvimgJ9QXzF6baRFwRdW1+P1hf7F569o0rh+IAiuLL/LTannn1Sakj2kmn2j1fEyopheqj1NQXzclHhHFxvb9/f3p4T7ZcL42G04Zn4BnXzSfxXEWcb6odLnH4hws5AShqiZZKlr1m+0ntfgHFv0HhZQwlzn+obJYz5Zra6qVDqm8NYKjY23/DWhgjuC4ikCzarhnTYArqAEsZbWBjGERM2FCnpeHA5Nn8ZCjC0+2XRSYASFqptLsdjpYRJR8vvMqZ6xu9HFcfx8hnYpPs0Z8vAEsTKEhyIelqW36wMmw/sdlth8/eSgmtZHEuDyT+iOHIRDeFxU+ZiuxgKNxdWzI5c7XPL2atfcj4u0uw2f7mhYJsP1ltrc/CUlKyt6jUYUV4d0nbPf30JBViuW3yT0WT0bGAtZ404NGS3/YYbIPsNdbLpny7OJ/muj83+39+Q3ZQpvddxG9CnYW8YOdY7Zt3BnllQwJFbZmvsMuoP/LovYMFZzWC9nmGm3yX0vT1vD85wonzGWbATM8eQ6Qt1/ebN7hp96y5esou4/6TV6UFbYuhMaaDxEsVbbCjv7vsCFoQ1yQBqa/W8qqjVE6uzKe5PZ+/nF2+h7/8FDDX95Q==
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Buscar times pelo número do cartão"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/internal/management/teams/cards"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Busca os times associados a um cartão pelo número, localizando primeiro o motorista vinculado.
+Retorna 200 com uma lista vazia quando nenhum time é encontrado para o número do cartão.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Número do cartão","in":"query","name":"number","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Retorna os times paginados; a lista fica vazia quando nenhum resultado é encontrado.","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"account_id":{"type":"string"},"company_group_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"422":{"description":"O número do cartão é obrigatório.","content":{"application/json":{"schema":{}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

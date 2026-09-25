@@ -47,7 +47,7 @@ Para renovar um token, informe o refresh token via form data.
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Requisição"}
+  children={"Request"}
 >
 </Heading>
 
@@ -58,7 +58,7 @@ Para renovar um token, informe o refresh token via form data.
 </ParamsDetails>
 
 <RequestSchema
-  title={"Corpo"}
+  title={"Body"}
   body={{"content":{"application/x-www-form-urlencoded":{"schema":{"type":"object","properties":{"refresh_token":{"description":"Refresh token válido","type":"string"}},"required":["refresh_token"]}}},"required":true}}
 >
   
@@ -66,7 +66,7 @@ Para renovar um token, informe o refresh token via form data.
 
 <StatusCodes
   id={undefined}
-  label={"Respostas"}
+  label={undefined}
   responses={{"200":{"description":"Sucesso","content":{"application/json":{"schema":{"properties":{"access_token":{"type":"string"},"expires_in":{"type":"integer"},"not-before-policy":{"type":"integer"},"refresh_expires_in":{"type":"integer"},"refresh_token":{"type":"string"},"scope":{"type":"string"},"session_state":{"type":"string"},"token_type":{"type":"string"}},"type":"object"}}}},"400":{"description":"Requisição inválida: dados do formulário inválidos ou ausentes","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"401":{"description":"Não autorizado: refresh token inválido ou expirado","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}}}}
 >
   

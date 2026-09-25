@@ -1,0 +1,71 @@
+---
+id: create-a-card-for-a-driver
+title: "Cadastrar cartão para um motorista"
+description: "Cadastra um cartão para o motorista e o registra nos dispositivos selecionados ou nas frotas do motorista."
+sidebar_label: "Cadastrar cartão para um motorista"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vc1uGzcQfhViTq1BSZbr095S2wcD/QmS9CQJxmg5lpguyQ05u7G62HdpkUOeoJde9WLF7GotKVIMpIfuRSI5M+R88803DRhKebQl2+Ahgxs0mDiiqpzKMfL2U1AlRlRBucAh2sSoSAUVaWU7Qx+SMjaVIVm2dUgqUUG5DR5NSCpUymNSjzEwJmUOooxBg0R2xBQTZLPmi6fc3x7ZgwYr2yXyGjR4dAQZWAMaIn2obCQDGceKNKR8TQ4ha4A3pVgljtavoG0XvTEl/jGYjVjkwTN5lr9YloXNUa6fvE/yhuYgVBlDSZEtJVmRW5J5MFTbnB6s6faOn/9TB5UhdX+b5OcII0wp5LZDCMMz0BcXd0/kyiJcXGRqNoc+/HQOWg2LqzksBAkml84kqIcNjBE3svaVW1I8fd4v238cxSAQn71+DtfT428OoE8APQR/Nly2eLYLy/eUM7RieHz/bZf8/vaTMnahUxl86hG/upyeZnETBUTQ/7WMeSRkMg/IZ8E0VNBLx9HWFB+seem0J+qZ86+47Qt2cpQYuTpf9qo0X0+kPVOPVsP15fU5XnwKirzgGb8N2l3Qq6vToHeerUFDynd6EkNOKW3/qqn4xvitBilfZ3FvINsVcISjHKMZPYY4wlEPvJAVVyIscCMU+5uSENMRr4N4liFxJ0G8hgwmDj2uyJHnSe+fJo017UTiJtCQKNaDTlWxgAzWzGXKJhMmj57H9Q8JvVmGp3Ee3KSegoiNJPFmLzh3T+jKgs4LyGyo12JPgkO6+McwCBbmAtdJT72lWNvtZxHnrnE6hFUZogpxhd7+gVGRcuiZ4l5Yk1ZsHSU9qPQXWlVbn1dF167bP1UH//az1FGat7DkmUTL2bJkBj8/A6levb4HDQJb/77L8eV4KrkI9g678u50fJg78XjqVO5oAByle6Dd//PY2jUT0xNPygKt7zpQSNHs+DSDPZ9gkAKhUdYNrJ5UCw1rIWE2g6ZZYqLfYtG2sv2horiBbLbQUGO0uBRkZUDaJP8NZI9YJHoBkO/e7MT0e3U6R8++fxgcfiM1w6KSFWj4nTb9nG0XrYY1oRFizprdwU1/5eiduO8dTzq51YPHqzynkl+0PezT17++fQcalrt57YIRn4gfZWLgx/6RoYOgk8Zur4EC/arCldj2MeX7F++HJK8=
+sidebar_class_name: "post api-method"
+info_path: docs/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Cadastrar cartão para um motorista"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/management/drivers/{id}/cards"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Cadastra um cartão para o motorista e o registra nos dispositivos selecionados ou nas frotas do motorista.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID do motorista","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"embed_device_ids":{"description":"Lista de IDs de dispositivos associados ao cartão **Exemplo**: [\"device1\", \"device2\"]","items":{"type":"string"},"type":"array"},"number":{"description":"Número do cartão **Exemplo**: \"4111111111111111\"","type":"string"}},"required":["number"],"type":"object"}}},"description":"Dados do cartão","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Criado","content":{"application/json":{"schema":{"properties":{"created_at":{"type":"string"},"deleted_at":{"type":"string"},"driver_id":{"type":"string"},"driver_name":{"type":"string"},"id":{"type":"string"},"number":{"type":"string"},"status":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Não encontrado","content":{"application/json":{"schema":{}}}},"422":{"description":"Entidade não processável","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

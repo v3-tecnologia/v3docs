@@ -1,0 +1,75 @@
+---
+id: get-a-device-by-id
+title: "Get a device by ID"
+description: "FindOne handles HTTP requests to retrieve a single device by its ID."
+sidebar_label: "Get a device by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVsFu3EYM/RWCpwYQvBvXJ92MOnGNtHXg2ifbELgzXGnS0YwyQ22yXehjgh76If6xYqRdW66lAMmph54E8XEeOSSH5A41RxVMI8Y7zPGtcfrSMVTktOUIP19fv4fAH1uOEkE8BJZgeMNAEI0rLYPmjVEMqy0YiXBxdnTnLgQaCpEjSMVwh0bfYZJQzcIB1sHXPbInhpurXzLYkDWahCMYyYCcBkXWDhSDjd859KbEw5pFVSMoGV33/xdnYCIY19NlYCS53AYXgeDk+BhuXBO84hhpZRneODGyhcCx8S6OaPa3MhGcF1j71r0gW57Ab17gbcLGDJcOYquSiWcnRqyahOCTkQoIjpdLuHz3dB4zfIxUxPx2968MnQ0UF2eYoUmChqTCDB3VjDkajRmmuJrAGnMJLWcYVcU1Yb5D2TZJK0owrsSuu0/Kg+WY8OPlMn2em7x8hxkq74SdJJSaxhpFCV18iEllNzLRBN9wEDMQUiu+JjGqCKx86czA+ejJynvL5LDLUKVT60TMhdET3iYn6obctiiDb5t5pRDY9u7NqgQmYV2QTMKaLX8FXptQf6LAxYZDfH6dkZJlljn7Rqk5ZEZcs5kErFHsIheNJeFJjdprtpNIU3nHhWvrFYdJhSgkbZxIqhUjrR7b27N0GVLgcakZJ1wOiKIQDIdCeT3t6kFhqOUpBbb2eUzH9N45Vn3aB/B7Ep8e12zW5pJgmoK0DhzjdI4oSsEbdjJnN1XrbECtd+U8Wis1nXY3LY+mdGSLKIFdKdV0KGPDrCfNtY2eD2CXHSR+9YGVfMeBLslOlicvu9Bjr/2GZtQNfEJlaqX73on3GdYsldeYY8nSd9wUCVzU5Kjkmp0shlKIi53RHWYYOWwODbkNFnOsRJqYLxbCjpwcbX6M5PTKfz5Svl5sXmPqrcatfXIo+Usq+dsX2fhap737D38//OWBazi/PIyChy8bttD4AIHJmj8pgIefrm7OQFMEjhJaaQNFWNEwNsSITaH89fEScPr+AjN8bFO4PFoeve6fvo9SUx+s/eA4ZwEaDfN+wDxzdfcU9v/3hP/CnrB/OsKfZdFYMv0U7Ytzt6/oW3yqaDy0t4gZ5kanZ1D5KElrt0tFdBNs1yXxx5bDFvPb+ww3FEyKwLCJmD4aGvM12chfqY8frvYryCsYLyyTHu+F5LapVsm26Q8z/IO3w0LT3XcZVkw6janb3R44VYobGR150Qm68UM/f3ONXfcPqi3Kzg==
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a device by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/management/devices/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindOne handles HTTP requests to retrieve a single device by its ID.
+It parses the "id" parameter from the request URL, validates it, and calls the deviceService to fetch the device.
+If the ID is invalid, it returns a 422 Unprocessable Entity response.
+If the device is not found, it returns a 404 Not Found response.
+On success, it returns the device data with a 200 OK response.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"company_group_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"firmware_version":{"type":"string"},"fleet_id":{"type":"string"},"iccid":{"type":"string"},"id":{"type":"string"},"imei":{"type":"string"},"license_plate":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"status":{"properties":{"altitude":{"type":"number"},"area":{"type":"integer"},"carrier_code":{"type":"string"},"carrier_name":{"type":"string"},"cell_id":{"type":"integer"},"connection_type":{"type":"string"},"created_at":{"type":"string"},"device_id":{"type":"string"},"imei":{"type":"string"},"ip_address":{"type":"string"},"last_event_at":{"type":"string"},"latitude":{"type":"number"},"longitude":{"type":"number"},"mcc":{"type":"string"},"mnc":{"type":"string"},"signal_strength":{"type":"integer"},"speed":{"type":"number"},"updated_at":{"type":"string"}},"type":"object"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

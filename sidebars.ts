@@ -123,7 +123,7 @@ const sidebars: SidebarsConfig = {
           "Referência das operações para organizar motoristas, times, frotas e dispositivos da operação.",
         slug: "/category/management-api",
       },
-      items: require("./docs/openapi/management/sidebar"),
+      items: require("./sidebars/management"),
     },
     {
       type: "category",

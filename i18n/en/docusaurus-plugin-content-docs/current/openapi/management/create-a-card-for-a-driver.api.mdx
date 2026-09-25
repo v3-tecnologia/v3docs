@@ -1,0 +1,71 @@
+---
+id: create-a-card-for-a-driver
+title: "Create a card for a driver"
+description: "Creates a card for a driver and registers it on the selected devices or the driver's fleets."
+sidebar_label: "Create a card for a driver"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1Vc1u4zYQfhViLm0D1YrTnHRLk20RoO0u0s3JNoKxOLa4lUgtOXLiCnqYooc+SF6sGFFae2NtgC1QncQh54fffPOxBU0h96Zm4yxkcO0JmYJClaPXauO8QqW92ZFXaLXytDWByQdlWDmruCAVqKScSStNO5NTUM739uj2TVCbkojDDBKo0WNF4g/Zon2R+yamudWQgBFDjVxAAhYrggyM2D19bIwnDRn7hhIIeUEVQtYC72s5Fdgbu4WuW8XDFPhHp/dyIneWybL8Yl2XJkdJnH4Ikr09ClV7V5NnQ0FWVK1JP8S7PRjd2z4v/BcTWLnNcH91exMUhuByg4LKo+Gix6NH9OzszRNWdUlnZ5laLCH6zJeQqHFxsYSVQMBUhYmbJaMBvce9rG1Trcmf1vVbb5fKptMv4XL++bcESE6QPEZ9MSZbfTrn1h8oZ+jk4AsySUaNjCeN62OG2tkQMb44n5+WH7koXf+PnctjgAfkSRg1lfTadk/HB6Nf243cnNj/gtuhVSdbgZGb6YY3tf7yRbqJTnQJXJ5fTjDCsfrJNfZrQB3CXVychru3tXc5hYDrktQby4b3XxlZqsetyMEw/8KsirhwWhTABe5lgwvIIK3Q4pYqspxG/EPaGt2lQu0ACQTyu1FbGl9CBgVzHbI0ZbJoebb7IaDVa/c0y12V7uYgMiF13R2kYhiQ6dFfjLCvDr087rrduFFqMBcETobiqgfk+Z/nv52iSv38Vg2T8PzXjkpVO688YWn+RK+cur67v1Eag6LAvuHGY1BrDCRiyoalTPj1Eyrq6t0tJCAYxGTns/PZXAoTICvs4R/kNE7XlNDDi5KPlPP/fh8GIjM9cVqXaGzPfulkO5BgAQcSwDiG0vusfx8iE1YJFMKcbAFtK3Dd+7LrxPyxIb+HbLFKYIfeCG/jS2R6DmvINlgGegWBb+8GJftOHT9Yk5WPQm1lKnZYNrKCBP6gfXzQulWXQEGohUeLdti4jsm+fy/uB8eTWeqS0eMqz6nmV88ej9W7t7+/hwTWw8NYOS0+Hh9FqPExFun6y/eC1NtaKNFuG9zK2RhTvn8B60TXMg==
+sidebar_class_name: "post api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a card for a driver"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/management/drivers/{id}/cards"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Creates a card for a driver and registers it on the selected devices or the driver's fleets.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver Id","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"embed_device_ids":{"description":"List of device IDs associated with the card **Example**: [\"device1\", \"device2\"]","items":{"type":"string"},"type":"array"},"number":{"description":"Number of the card **Example**: \"4111111111111111\"","type":"string"}},"required":["number"],"type":"object"}}},"description":"Card data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"created_at":{"type":"string"},"deleted_at":{"type":"string"},"driver_id":{"type":"string"},"driver_name":{"type":"string"},"id":{"type":"string"},"number":{"type":"string"},"status":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

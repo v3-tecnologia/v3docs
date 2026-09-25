@@ -1,0 +1,75 @@
+---
+id: create-a-new-team
+title: "Create a new team"
+description: "Create handles the HTTP request to create a new team."
+sidebar_label: "Create a new team"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVc1y4zYMfhUMTm1G/o2TbXVLk502M22T2TqnOJOBRcTmrkQyJGTH69HDdHrog+TFOpTktWt7t92e65NMfgA+Ah+ANSoOmddOtDWY4qVnEoY5GZVzAJkz/DQe34Ln55KDgFjIGgiB4SUIU9GdmGsBRz60Fhvw1KoVaCMWCBrHY6bianyTwIJyrUhaA21cKcnEkFGQUZ43p9E3BPYLnfFO4M1VF24MhDLLOIQEtIBnKb0JExMRDVg1TpZa5s07hv0BBCEpQ23O3lu/awxkgJzz1nlNwhNTW9Ww1g4iyYJDoBl3McH2sT9YtcJ0jZk1wkbiJzmX64xiZnvvQ0zvGkM254LiV4zBXjSHxqxwZFaPM29L96hVPNurTIOAGgHXCmROAnZptsnCBGXlGFMM4rWZYZVgZr3nvCZx1O2d0c8lg1ZsRD9p9vBk/bbcnrIP2szgG1sbUJ4AlWI7Mzbs6wTrJzBWwHm70IrVt3By8vaFCpfzyUkKExwMT3l0dv6mw999P+0Mhuq0Q6Oz885oeH4+GA3ejPr9/gQxwYJefmYzkzmmZ/0EC202f0+PvMtQwYev+ZUKBvu0lc8emStecG5dwUYganE/8KD/T5GrpuLas8L0vqHx8Allp+85E6wi7O/MYjS4IiHcdSC+5NpjcNaERgrD/uBI9Rs5Y/JfBUZZZksjrQaOyORQf/9CS4eQhucjydFrxTl/4fozTje1Prgonfp8tOpIVaoER8PhsS5w3sZBQtOc4a0RLauvyHXVuBaahSiKWOsoioJlbhWm6GwQTNBR1BT2CjI04yjCXhRpwATjmGMfrddY+hxTnIu4kPZ6woaMdBengYya2pduZoveYoDVQ4KRyLvt/GmlfnyebPJyWMbtTZPo3YKYJ7uZapTFRBwI+6LOy+ufr39Y4AJ+vIFWza+/LzgHV08TyvVH8mDh8t3dFSgKwEF8KaWnAFMK9SQVLZE8/vIpPXBxe40Jxsw0wfrdfncQicWMFlRXoSV9ub+WcI/pzmz+f8199ZprW0n4RXouJ23q/otKXbe6vsetrqNBreyHBOdR/Ok9rtex0Hc+r6p4/FyyX2F6/5DggryOjRf/VQnOmRT7uhU+8KpefXXdOuPIIcLzMnI5aMkq2VhcZBk7+SJ2tz9vb34bY4LTdocXVkUbT8s4rGmJaVwTzQash2l9tsaczKykWcQ2PuPvLyyuPZc=
+sidebar_class_name: "post api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a new team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/management/teams"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create handles the HTTP request to create a new team.
+It parses the request body into a CreateTeamDTO, validates the input,
+and calls the team service to create the team. On success, it returns
+the created team with HTTP 201 status. On error, it returns an appropriate
+HTTP error status and message.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"company_group_id":{"description":"Company group Id that owns the team","type":"string"},"correlation_id":{"description":"Unique identifier for request tracking (optional, auto-generated if not provided) **Example**: \"123e4567-e89b-12d3-a456-426614174000\"","maxLength":50,"minLength":3,"type":"string"},"name":{"description":"Name of the team **Example**: \"Development Team\"","maxLength":100,"minLength":3,"type":"string"}},"required":["name"],"type":"object"}}},"description":"Team Data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"account_id":{"type":"string"},"company_group_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

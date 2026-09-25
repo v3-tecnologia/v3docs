@@ -1,0 +1,71 @@
+---
+id: update-a-card-from-a-driver
+title: "Update a card from a driver"
+description: "Updates a driver's card and synchronizes the new card data with the selected devices or the driver's fleets."
+sidebar_label: "Update a card from a driver"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vc1u40YMfpUBL20DreWkOemWTbZF0J9dBOuTbQS0hrFmK81oZygnXkEPU/TQB8mLFdSP7Y2VAMmhPnk4HPLTR/JjDZpC6k3JxllIYFZqZAoKlfZmQ/6HoFL0WqHVKmxtmnlnzTcKijNSlu67W42M6t5w1poD5ZQyaaVpY1IKyvnWvot4lxNxmEAEJXosiMkHSOb1EyxXrb+61hCBEUOJnEEEFguCBIzYPX2tjCcNCfuKIghpRgVCUgNvS/EK7I1dQ9NET8NfCvLngstn3b4yw7JzpsDvnd6KR+osk2X5i2WZmxQld/wlCID6IFTpXUmeDQU5UbEifduxd2t0a/se++8msHJ3PcPq+iooDMGlBoX3XSXa4pycfHjAoszp5CRR8wV0b04XEKnhcLaApfDAVISRL4sGA3qPWznbqliRP8b1Z2sXZOPpF3B++v1vARAd1+qA9fmQbLnzc6svlDI04jhSU+nGo8K1MUPpbOg4PptOj+F//A2itxYt9STk3yKPMqgpp5eu216XjnvhtuvNkftnnu2rdHQVGLkar3XVSsAzSJuRIjQRnE/PR5rBsfrFVVa/gtQ+3NnZcbiZLb1LKQRc5aQ+WDa8fWVkQY9r0ZpeXKSpCuLMaVGAiltJ4gwSiAu0uKaCLMcd/SGujW5iaeoQ171ANBBBIL8ZFKzyOSSQMZchiWMmi5Ynm58DWr1yD5PUFfHmFEQqBODNXi76IRkf//nA/3Jf1MPy2zs3yA2mQsXRYFy0zDz++/iPU1SoXz+qfhoe/95QrkrnlSfMzTf0yqnLm9mV0hgUBfYVVx6DWmEgkWw2LDDhjx0/6uLTNUQgHHTJppPp5FSAlS5wgW0del3t9ovCThvuvCt2qwaeYD6Qz/97LfUtzvTAcZmjse1cSGnrvj/msO8PGAY0QARJuzTaJpHTsEeWEWQusDysa6Fy5vOmEfPXivwWkvkygg16I83d7ULTNrqG5A7zQC+Q8+NNr3Q/qcOVOfoRg5BbGZ0N5pWcIIK/aNut1HZPviX1fp2+IfFAU7NsIsgItXT4vO5vL7t87z5LjP3ro3EX7N2LizSlkl/0PZz8T7PPEMGq39qF0/LE471sEbzvgLr281vJbG015GjXFa7Ftwspv/8AQhgy3Q==
+sidebar_class_name: "put api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update a card from a driver"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/management/drivers/{id}/cards/{card_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Updates a driver's card and synchronizes the new card data with the selected devices or the driver's fleets.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver Id","in":"path","name":"id","required":true,"schema":{"type":"string"}},{"description":"Card Id","in":"path","name":"card_id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"embed_device_ids":{"description":"List of device IDs associated with the card **Example**: [\"device1\", \"device2\"]","items":{"type":"string"},"type":"array"},"number":{"description":"Number of the card **Example**: \"4111111111111111\"","type":"string"}},"required":["number"],"type":"object"}}},"description":"Card data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"created_at":{"type":"string"},"deleted_at":{"type":"string"},"driver_id":{"type":"string"},"driver_name":{"type":"string"},"id":{"type":"string"},"number":{"type":"string"},"status":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: patch-device-status
+title: "Patch device status"
+description: "PatchStatus handles partial updates for device status, ICCID, model and firmware version coming from event processing."
+sidebar_label: "Patch device status"
+hide_title: true
+hide_table_of_contents: true
+api: eJzlV8Fu4zYQ/RViTi2gxt50T76lyW4bFO0G6eYUBMKYHEvcUiSXHDlxDX1M0UM/JD9WUJJjOZayTS89rC82h0POcPje8HkLiqIM2rN2FhZwhSzL3xi5jqJEqwxF4TGwRiNqr5ApipULQtFaSxKx9czE5fn55UUmKqfICLRKrHSo7jGQWFOI2lkhXaVtIVbBVYLWZFn44CTFqG1xAhl4DFgRU4iwuN0+y+qii3Z5ARnoZPDIJWRgsSJYgFaQQaDPtQ6kYMGhpgyiLKlCWGyBNz55RQ7aFtA0d50zRf7BqU3ykM4yWU4/0XujJabAs08xRd8OtvLBeQqsKabR7pB5f8iRYBloKbUanWmrNTrTlfU4IBrWXCsaLLJ1taSQFmGg4XG1ZSq6GYkhaAq5dAdL9/F2Dl09xxzImPzgGMPtnbUkU8XybnKsChXp8Qmfo1KBYhydNhg5b/GSI094vFAT42wxPVtJOX4xdtwedWHR5JED2YLL8WpET6RGwjXZzuKWn0jyqKXJxpHfAUJ43BiHx2hvkiF6Z2OHk9P5PH0dbvXhZ8j+K9KxZlcha5kHkq6wmg/hvnTOENoOKoH1Km1M+QTwpas82k1eBFf7aacQyLTpTboEQiY1hYx/Rc+VIeKpANPcnTJPwdxoSTZS7g3yOEOmu4EvnaW8x9HX0S6+cLNfTdPIoHt0Jypx3EFevaDtOW/nb4/7xa+OxXtXW/WKttFvd3p6vN2N7R98XBoS7yxr3rxy55Q9Fkkg9H0R7jKoiEunOk0gy1ZJpCrDrEKLBVVkedaplTjbatVABpHCeic06mBgASWzj4vZjMmi5ZP19xGtWrqHE+mq2foNJM2QUrre64Z3D1h5Q+M6YFfwpxayN/Q83xv27N3zdb7j5/w5HffrDlk4sO/INx/h2iCxtlUNxgNO7a3PqDScGOQ6YMy8Z8jgwPZgeMSH+RP85+mGtV25nSZDmYBx9CietTh5/PvxLyeoEj9+EP3r9/jnmozwLohAaPQfGIQT59c3F0JhFBQ51FwHjGKJkZLqZM3pCuGXJ6yIs6tLyGB/k/OT+cmbtg27yBW2qOxL3orlQykMz3IdaMv/T1v3V8/0wDNvULfvdAv8bc+WW9izpT1CyxfIYKFVIlnpIiev7TZV7iaYpknmzzWFDSxu7zJYY9CJ2Z161y3LFSxWaCK9UJNvrnsh860YivzRjHsj2tQ31mjqNIIMfqdN9yeguWsyKAlVeidvt/3EeRfsu49p+X7hUbdpst2KMynJ84u+w8Zzdfbx/CfIYNn/m6g6oga8T0IN77ssXXv6luetbQsGbVFjkXy7TdPnHzTfuHI=
+sidebar_class_name: "patch api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Patch device status"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/management/devices/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+PatchStatus handles partial updates for device status, ICCID, model and firmware version coming from event processing.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device ID","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"firmware_version":{"type":"string"},"iccid":{"type":"string"},"model":{"type":"string"},"status":{"properties":{"altitude":{"type":"number"},"area":{"type":"integer"},"carrier_code":{"type":"string"},"carrier_name":{"type":"string"},"cell_id":{"type":"integer"},"connection_type":{"type":"string"},"imei":{"type":"string"},"ip_address":{"type":"string"},"last_event_at":{"type":"string"},"latitude":{"type":"number"},"longitude":{"type":"number"},"mcc":{"type":"string"},"mnc":{"type":"string"},"signal_strength":{"type":"integer"},"speed":{"type":"number"}},"type":"object"}},"type":"object"}}},"description":"Device status payload","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"company_group_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"firmware_version":{"type":"string"},"fleet_id":{"type":"string"},"iccid":{"type":"string"},"id":{"type":"string"},"imei":{"type":"string"},"license_plate":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"status":{"properties":{"altitude":{"type":"number"},"area":{"type":"integer"},"carrier_code":{"type":"string"},"carrier_name":{"type":"string"},"cell_id":{"type":"integer"},"connection_type":{"type":"string"},"created_at":{"type":"string"},"ip_address":{"type":"string"},"last_event_at":{"type":"string"},"latitude":{"type":"number"},"longitude":{"type":"number"},"mcc":{"type":"string"},"mnc":{"type":"string"},"signal_strength":{"type":"integer"},"speed":{"type":"number"},"updated_at":{"type":"string"}},"type":"object"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

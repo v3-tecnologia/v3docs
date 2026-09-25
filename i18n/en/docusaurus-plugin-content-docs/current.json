@@ -123,6 +123,14 @@
     "message": "Driver",
     "description": "The label for category Driver in sidebar apiSidebar"
   },
+  "sidebar.apiSidebar.category.Motoristas": {
+    "message": "Drivers",
+    "description": "The label for category Motoristas in the Management API sidebar"
+  },
+  "sidebar.apiSidebar.category.Cartões": {
+    "message": "Cards",
+    "description": "The label for category Cartões in the Management API sidebar"
+  },
   "sidebar.apiSidebar.category.Fleet": {
     "message": "Fleet",
     "description": "The label for category Fleet in sidebar apiSidebar"

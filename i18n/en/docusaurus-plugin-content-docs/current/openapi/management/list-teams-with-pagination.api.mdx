@@ -1,0 +1,75 @@
+---
+id: list-teams-with-pagination
+title: "List teams with pagination"
+description: "FindAll handles HTTP GET requests to retrieve team records with optional filtering and pagination."
+sidebar_label: "List teams with pagination"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVs1u4zYQfpXBnFpAsJ3+XHRL22ya/iXIek+xYYzFscUtRWrJkRuvoYdZ9NAHyYsVpOzYWSsOUvRU9CRpZsjvm+HHGW1QcSi8rkU7izm+0VadGwMlWWU4wI/j8Q1cXozB84eGgwQQB57Fa14xCFMFngvnVYA/tJTg0kZkYKGNsNd2CWQV1LTUlqJrMLFXAqGpa+clHITN18BaSvYwwcJ5zybFz7SaILjOWtVk17Old03d2T807NdQk6eKhX3IYN4IOGvW4CwDCRCIrjiiLmDupNwiBiDPUHu30opVBlpiVo23AQi+GY3gO1Jw2+UM7L3zg4m9ecwCdIDCWfHOGFaw0gQTrGnJE0z5dh+zoD9yL8tUK8ULaoyEtMLoSsfXujaa1WBibx/p/PT2+jfwHGpnAydY0jaWTEreVZZVOowQK0W2YwwVh0BLHmCGe3DM7zafHfoNLRlsU83ZwxdbVjmcfYkZ6uhP/DFDSxVjnlLDDENRckWYb1DWdbRrK7xkj22b9SLEahzuP8qgovv4MjoFlar4Srw36ZCjpg6kBFfqGZineuvDChJF+hJU0ickfZ4Ceyrjk3DTDHcnH6L/q9EoPp5SuP4ZM4y6YCvRm0RUpHSG70MM2RxA1N7V7EV3GyqSZNXCVTh2U1G4xkqkecwuO86lP+hJdXtDPEcNz0h63YoNn3A/s2lX7x5HU6vn0dpsZ3Hz91wI7g3kPa3jd7oBPULMDgTb6xYnZGaPtX4uIO7SG3BMro22b/tUcWWFfWzFb9mv2MNF7AmvEErb7S20jD0Dx0wVTjOsWEqnMMclS2osUmKOw4osLbliK8PUiKKqE27XcBpvMMdSpA75cChsycpg9XUgq+buflC4arg6wyh3bRcu8kh9rog0kwAOMztPrB/+evjTAVdweb3rjg+fVmygdh48k9EfyYOD72/f/QCKAnAQ30jjKcCcQmqLosXEav76yB7Ob64ww0i8AxsNRoOzdLQuSEWpRtub/IsOsm27qaHvpxx+Rnmzr/r/I/Y/OmK3F1P4Xoa1IW1Tq4m632xvyR3ub0lckO7JNMPSBYnezSbq8p03bRvN3dxI41oHmhtWmC/IBD4hrhOjvJff77zeT/QVmSaGYJpyr8N8Ybi/AL6b8f+QwYlxfwL4aOr/C+hHfwAn8Y9+BPYMpvHD60gB87tpm2HJpNgnPXTrz4uCazlYddTO28N+fXkxxrb9GzHpK6w=
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List teams with pagination"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/management/teams"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindAll handles HTTP GET requests to retrieve team records with optional filtering and pagination.
+It supports filtering by either "correlation_id" or "company_group_id" query parameters, but only one at a time.
+If both filters are provided, it returns a 400 Bad Request error.
+Pagination is controlled via "page" and "page_size" query parameters, with defaults and limits applied.
+Returns a JSON response containing the paginated teams or an error message.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Page number (default: 1)","in":"query","name":"page","schema":{"type":"integer"}},{"description":"Page size (default: 10, max: 100)","in":"query","name":"page_size","schema":{"type":"integer"}},{"description":"Filter by correlation Id","in":"query","name":"correlation_id","schema":{"type":"string"}},{"description":"Filter by company group Id","in":"query","name":"company_group_id","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"account_id":{"type":"string"},"company_group_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

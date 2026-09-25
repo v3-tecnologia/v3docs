@@ -1,0 +1,71 @@
+---
+id: list-cards-from-a-driver
+title: "Listar cartões de um motorista"
+description: "Lista todos os cartões ativos associados a um motorista."
+sidebar_label: "Listar cartões de um motorista"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVM2O20YMfpUBTy0waznbnHQL2qBYoC2KNjktjIDWcO1JpZkJSQlxBL1LghzyBH0Cv1hA2Vvvj7NA0JOk4Y+G/H5GCCQNx6IxJ6jhtyiKTnPI4rK4Bln3/5I41DhkcSiSm4gWRdd3rsua2UoW4KEgY0dKLFBfjw8aX/3iQj7lg4doxwV1Cx4SdgQ1xAAemN71kSlArdyTB2m21CHUI+iuWJYox7SBaVpZspSchMTil8ulPe7/+O++IZEMHpqclJJaCpbSxgYtpXorljfe+U9U6uaGhXMh1nho3zChUniDeuYyHgK19FSY40D8Joanooc9nIl/oyz13Zr4bEgUtZezob6Ebw8y+duTvH5LjcLpAJlxB9NkOc+Xzx/v+o/95+wo2aIZw/fs/Nj08vJx05dJY8BALln3wtnw3H8aqP3O/pMHg3POuApQQxtFLxrkIBc3nLsLvDjAAB4UN8Zi+PkoAFh56Ei32eo2pDPddQs1VB0m3FBHSatDuVRjDFM1NwYPQjzcaqLnFmrYqhapq0opYdLF8JNgCuv8ftHkrhqegRE7pps8ky4nxcYGnCl2j9nEQ9x/ye4ognknrmR2mTeY4gdkR67DpMQn5Yl3GjsS7244K4ojF6KULPEg8SGmpm9nie8/unlh+y+2+ZBd00ZKSiZ2jdoaJ37/b3r34s8r8GCzHu63XCwXz4w+JYt2OANyFPpsM3yyl0D33AQejDqecP5fDnXksdJ7rUqLMc1qMEzGI5zXcIITbmVpKNazNx0wXXnYZlHLHsc1Cr3mdprs+F1PvIP6euVhQI64th2ZF0ax9wD1DbZCT4z3w19H+/vRPbbMs/e/FWfa2fax7e0LPPxDu4OlTqvJw5YwmFNcj8fAi6ahondKHulnusv5X1++gmn6CtRFLmg=
+sidebar_class_name: "get api-method"
+info_path: docs/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Listar cartões de um motorista"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/management/drivers/{id}/cards"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lista todos os cartões ativos associados a um motorista.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID do motorista","in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Sucesso","content":{"application/json":{"schema":{"items":{"properties":{"created_at":{"type":"string"},"deleted_at":{"type":"string"},"driver_id":{"type":"string"},"driver_name":{"type":"string"},"id":{"type":"string"},"number":{"type":"string"},"status":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"}}}},"404":{"description":"Não encontrado","content":{"application/json":{"schema":{}}}},"422":{"description":"Entidade não processável","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -12,15 +12,21 @@ const openapiSidebarOptions = {
   categoryLinkSource: "tag",
 } as const;
 
+type OpenApiSidebarOptions = {
+  groupPathsBy: "tag" | "tagGroup";
+  categoryLinkSource: "info" | "tag" | "auto";
+};
+
 function openapiLocaleConfigs(
   id: string,
   specFile: string,
+  sidebarOptions: OpenApiSidebarOptions = openapiSidebarOptions,
 ): Record<string, OpenApiPlugin.Options> {
   return {
     [id]: {
       specPath: `examples/${specFile}`,
       outputDir: `docs/openapi/${id}`,
-      sidebarOptions: openapiSidebarOptions,
+      sidebarOptions,
     },
     [`${id}En`]: {
       specPath: `examples/en/${specFile}`,

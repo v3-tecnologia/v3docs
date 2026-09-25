@@ -1,0 +1,71 @@
+---
+id: delete-a-card-from-a-driver
+title: "Delete a card from a driver"
+description: "Removes a card from a driver and unregisters it from the selected devices or the driver's fleets."
+sidebar_label: "Delete a card from a driver"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vc1u20YQfpXFXNoIrCi7OfHmWkpgIGkLIz7JgjHijqRNyF1md8hYJfgwRQ99EL9YMVwyUiSnQXOoT97R/H7zzccWNIXcm4qNs5DBLZWuoaBQ5ei12nhXKlTam4a8QqtVbT1tTWDyQRmODrwjFaignEkrTY3JKSjne3sM/SGoTUHEYQoJVOixJMkA2bI9aWAeS91oSMCIoULeQQIWS4IMjNg9fayNJw0Z+5oSCPmOSoSsBd5X4hXYG7uFrktO01/LVF9LLiM//McKq+hMgX9xei8eubNMluVfrKrC5Ci10/dBGmiPUlXeVeTZUJCX75F/iPA9GN0bv2z+jQms3GaAWN3Mg2KnYmAP9mFnk8niEcuqoMkkU8t7iCEX95Co8XF5DyvBgakMz0yWjAb0HveC5Whw6/eUM3RiOllebEx48krWfdLi5/Yku6dQORvi8Jez2fm4/a5iqOzkCNdJOvkSytOtSGsvZy/Pc/7qWL1ytf1GwiHD5eV5hjtbeZdTCLguSC0sG95/O5mgh1sh/MBwWCVQEu+chgw0FcTUnwbvIIO0RItbKslyGg8opK3RXSoIhrQdiNpBAoF8M15S7QvIYMdchSxNmSxanjY/B7R67R6nuSvT5gKEskLG2wNtB658hYbLEddVJ2ezcSPLMZd5z1hw1ZP+6e+nv5yiUr3+TQ27fvqzoUJVzitPWJg/0Cunrm/v5kpjUBTY11x7DGqNgUQp2LB0BW8/w6Gufr+BBGTkWGw2nU0vhE+VC1xif2LDOc97VJ+VMjjp+ehq/xcJHPjK9MhpVaCxMkG/vnbgwBIOHJBuIwsggawXqJ4I8ho1a5XAzgWWwLYV/O580XVi/liT30O2XCXQoDdC26i7pqewhmyDRaB/QeTH20EOX6hjeX52iFE0rBxFg0UtL0jgA+2jfPea/D2lD9L9HYVHmDrh8I5Qk+9BiL9ex3o/vZMch+gz+ZbeY8RVnlPFR75y9N3xTc8XbxbvFpDAevgulE6Lo8dP8oHBT7E91w8dvwBia6FAu61xK76xqPz9A1E2nWM=
+sidebar_class_name: "delete api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a card from a driver"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/management/drivers/{id}/cards/{card_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Removes a card from a driver and unregisters it from the selected devices or the driver's fleets.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Driver Id","in":"path","name":"id","required":true,"schema":{"type":"string"}},{"description":"Card Id","in":"path","name":"card_id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"remove_device_ids":{"description":"List of device IDs to remove the card from **Example**: [\"device1\", \"device2\"]","items":{"type":"string"},"type":"array"}},"type":"object"}}},"description":"Device and Fleet IDs to remove card from"}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Card removed","content":{"*/*":{"schema":{"type":"string"}}}},"404":{"description":"Not Found","content":{"*/*":{"schema":{}}}},"422":{"description":"Unprocessable Entity","content":{"*/*":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

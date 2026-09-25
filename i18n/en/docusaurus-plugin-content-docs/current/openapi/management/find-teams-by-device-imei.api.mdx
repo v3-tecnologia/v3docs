@@ -1,0 +1,73 @@
+---
+id: find-teams-by-device-imei
+title: "Find teams by device IMEI"
+description: "FindTeamsByDeviceIMEI retrieves teams information by searching for a device using its IMEI,"
+sidebar_label: "Find teams by device IMEI"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVc1u20YQfpXBnFqAEBWnufDmNmngQ9DCSE6OIYzIkbgJucvMDtUwAh+m6KEP4hcrZknZci0Z6bUngvP7zd+3e6w4luI6dcFjgb86X71nauPPw2veuZKv3r25AmEVxzuOoKYD5zdBWjIfWA8QmaSsnd/CJggQVMkT+mgipxEsSPbRa80eNs5XJteagWIMpSPlCjYNswL5ygyoaYZkkNItPvpr1l58hIvlEv5wWgO3nQ5QkRKQCA3gNuDDDI+EYRN6ixUkxTEAC8ywI6GWlSVicbP/V+1TwckWM3Qm+tKzDJihp5axQNeywwyFv/ROuMJCpecMY1lzS1jsUYfO7KKK81scx1szjl3wkaPpL5ZL+zzOeyiuo63zqRmpjOy5Sv1cIWZYBq/s1eJS1zWuTHPJP0ULvj8C10noWNRNUCyifZ1yG5+qqSxD73XlqhN1WdK2Iz+sthL67ryRCDcJzlkTYat4RXpSXXHDz6jPBJ2mdULRd9X5bGN2kIT1Jy4VHwSp8fbf0fY4svPKW5aDZhXdtzNqDUrN6r7X5wwsykmDp+BGk/10cfF0n9LJugj3a/r9OzJFfXVqS6+8snhqILLsWIBFgvzH0FYFbe320EgGbzNsWetQYYFb1nSgWmOBuZuz5S152nLLXvN0FflELhEznIBMl9xLgwXWql0s8lzZk9fF7mUkX63D10UZ2nz3Au0ejbsMmOGm0nCnPTsu9TKVcff33V8BuIW3v8F8xHd/7riBLggIU+O+kUCAX64/vIaKInBU6bUXirCmyMY36rSxob27rwIufzd2MeBTsuViuXiRNihEbSk1baYbI+OZ0tbDgVVnenqEeP8whf87g89XoPxV864h59Nd2/T38/Lc4GF5MMOH9TFfi516N63QbYZ1iGou+72N7IM042jiiffTE+EirRvj+g01kZ9p/A/X8739CI9fkpOQP/Pw8KDsqOnNJC3ojsRZSixubscMa6aKJWGZfC7Lkjs98npyduPxXb198x7H8R/gsMEk
+sidebar_class_name: "get api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Find teams by device IMEI"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/internal/management/teams/devices"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+FindTeamsByDeviceIMEI retrieves teams information by searching for a device using its IMEI,
+then finding the associated fleet and finally the teams.
+Returns 200 with empty data array if no teams are found for the IMEI.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Device IMEI","in":"query","name":"imei","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Returns paginated teams, with empty data array if none found","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"account_id":{"type":"string"},"company_group_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"},"type":"array"},"page":{"type":"integer"},"page_size":{"type":"integer"},"total_items":{"type":"integer"},"total_pages":{"type":"integer"}},"type":"object"}}}},"422":{"description":"IMEI is required","content":{"application/json":{"schema":{}}}},"500":{"description":"Internal server error","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

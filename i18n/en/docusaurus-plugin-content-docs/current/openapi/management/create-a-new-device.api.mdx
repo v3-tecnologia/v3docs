@@ -1,0 +1,75 @@
+---
+id: create-a-new-device
+title: "Create a new device"
+description: "Create handles the HTTP request to create a new device."
+sidebar_label: "Create a new device"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV1FzGjcQ/isaPbXuGThsnJg3x6SpZ+qxJ3Ge7AyzSMuhRCddJB02ZfgxnT70h+SPdSQd5uAO20n7WF4A7Wr1aT/tp9WScrTMiMIJreiQnhsEh2QGiku0xM2Q/HZzc00Mfi3ROuI0YdEFiMJ7wnEuGHbu1IUjBRhbzVm7TzRfEKGcJkBi6FGYMLq5SsgcpODgqilCFaVL7hQoThhIGUdjfGLRhO/N8htjh1wpYkvG0NqECEcMutIoe6e8T3Tn60D3ws3ijvq9lFgHrrQhABqjTX06AUWgKIwujACHdyrMCm7VPOKh5mgtZNihCa02/UbzBR0uKdPKoXL+JxSFFAx8jrufrU/0klo2wxz8L78GGifQBt/S6RycYGODTGdKRGaWO0T9KiEjQvEQVmVETOv5moElj4FILRBBBROJnBwcvH2AvJB4cDAkzpRIE+oWBdIhnWgtERRdJZR5XFO/Bo4Fb6I439gvRkREzkolvpZIBEfljWiIjuBq0QhYq5kI1AROanzShObw8DuqzM3ocNBLaC7U+u/RI0zrjFBZQKnzAtRinBldFq04L0aPGKIvCb7EzcARfa/qh422rmAMykBga/yPjS1PtdkUjQH2xZP0kw4TQCaBncMMFZqQAzElSjtSGD0XHPnP2/zc0bR/hMeDk1eH+Pp0cpj2+dEhHA9ODo/7JyfpcfrquNfr3dHvztxUIrpnMhZ8WjO1DTJtS5xgrDX6+flmgQ8Xl4SB4bt7fn06GPSO0rS3/qT9o9099rf3mJ62YchRtEC4fHtBVJlPNuezbVch9T7zr0974dcugnSwjWDQgkAKhsriuJDgsAnl92gmwbwGM8eZYPKpQtkFevbmPB1VKWpAyDVH2Vz60g8/vf931x/IjT/BaMi10T9wyoqZVjiOuW5CuPbWNRMv3+0vg0Ganq4/z7HSa8BaRcEWBjkd3sZD8unRS08+I3N05d224cYLjIzAAa2H8BoaYtpCKxu1vN9LWzQz3kg0+c9viJfo94vE8wX613SJ2xqDazVzlPiEeSpMfg8Gx3M0dns77Wq1X2malj3DlSw8X637i+nZo95wiK1DC6nSCVfy+npVlFVCwSDUDEI5zKKFgTECzZhp3g517aAg3+OAUm7ntB5eK4Us0B6NP0K8r5e9rO0jQRRj4Nygte0cgXVjnKNy+9b1p3VvQqVW2X5rzlg77ap93IpMgRxbZyq5aUulLRB563JlwfcncNWQpO+eEETsuN9va1sKo33f7HtC8lY54RbfoUurGNpBZr2ERmX0Ipqjm2lOh7TQ1tGEFuCzQrs5KMgwR+W68VhYmlDf26PxEZa0NJIO6cy5wg67XYcKlOvMjywoPtEPHabz7jylq08J9WDebxru6mp4Qh69PjcFcZ22Nh2s27blb2PZSNJmrFKi2kA45Jv/OwKzMVS6shnYlpN6eaipXj8ygHmqGhfVWWDu29/f/tIEc/LuilR307c/5yhJERpUkOIPMEST8/cfR4SDJWidKV1pwJIJ2NCNO+F8aunlI33k7PqCJvRRrGmv0+ukQQC1dTmEcxIlZ/2krL8X6Q7W2mPp/xfov3iBVoXv8MF1Cwki9AChppZVDd7STQ3StThbX7MzX6rDW7pceto/Grla+eGvJZoFHd5+SugcjPBC4f+tEjpD4P5U3i7pF1x45iKHhzcehXeXpUfTkJBVsp5xxhgW7knfuppcX324oQmdVA/sPNx51MC9b8Tgng59ExifWOHWCGNLKkFlJWTeN8b0n38AOlLbWQ==
+sidebar_class_name: "post api-method"
+info_path: i18n/en/docusaurus-plugin-content-docs/current/openapi/management/management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a new device"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/management/devices"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create handles the HTTP request to create a new device.
+It parses the request body into a CreateDeviceDTO, validates the input,
+and calls the device service to create the device. On success, it returns
+the created device with HTTP 201 status. On error, it returns an appropriate
+HTTP error status and message.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"description":"Flag indicating if the device has automatic recognition enabled **Example**: true","type":"boolean"},"certificate_id":{"description":"CertificateID is the unique identifier of the certificate associated with the device.","maxLength":50,"minLength":3,"type":"string"},"company_group_id":{"description":"ID of the company group that owns the device","type":"string"},"correlation_id":{"description":"Unique identifier for request tracking (optional, auto-generated if not provided) **Example**: \"123e4567-e89b-12d3-a456-426614174000\"","maxLength":50,"minLength":3,"type":"string"},"fleet_id":{"description":"ID of the fleet that owns the device **Example**: 1","type":"string"},"iccid":{"description":"ICCID of the SIM card **Example**: \"89550311000000000123\"","maxLength":20,"minLength":19,"type":"string"},"imei":{"description":"IMEI number of the device **Example**: \"123456789012345\"","maxLength":15,"minLength":15,"type":"string"},"license_plate":{"description":"License plate of the vehicle associated with the device **Example**: \"ABC1D23\"","type":"string"},"model":{"description":"Model of the device **Example**: \"GPS Tracker Pro\"","maxLength":50,"minLength":3,"type":"string"},"phone_number":{"description":"Phone number associated with the device **Example**: \"+5511999999999\"","maxLength":15,"minLength":10,"type":"string"}},"required":["imei"],"type":"object"}}},"description":"Device Data","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"properties":{"automatic_recognition":{"type":"boolean"},"certificate_id":{"type":"string"},"company_group_id":{"type":"string"},"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"firmware_version":{"type":"string"},"fleet_id":{"type":"string"},"iccid":{"type":"string"},"id":{"type":"string"},"imei":{"type":"string"},"license_plate":{"type":"string"},"model":{"type":"string"},"phone_number":{"type":"string"},"status":{"properties":{"altitude":{"type":"number"},"area":{"type":"integer"},"carrier_code":{"type":"string"},"carrier_name":{"type":"string"},"cell_id":{"type":"integer"},"connection_type":{"type":"string"},"created_at":{"type":"string"},"device_id":{"type":"string"},"imei":{"type":"string"},"ip_address":{"type":"string"},"last_event_at":{"type":"string"},"latitude":{"type":"number"},"longitude":{"type":"number"},"mcc":{"type":"string"},"mnc":{"type":"string"},"signal_strength":{"type":"integer"},"speed":{"type":"number"},"updated_at":{"type":"string"}},"type":"object"},"updated_at":{"type":"string"}},"type":"object"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
