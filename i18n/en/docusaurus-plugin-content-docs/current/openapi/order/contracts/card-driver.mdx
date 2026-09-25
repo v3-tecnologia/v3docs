@@ -1,41 +1,22 @@
 ---
-id: card-driver
 title: "Driver card"
-description: "CARD_DRIVER order contract for configuring driver card matching or registering a driver card."
+description: "Contract for the `CARD_DRIVER` order type."
 sidebar_label: "Driver card"
+generated: order-contract
 ---
 
-The `CARD_DRIVER` order configures driver card matching, registers a card to a driver, or removes that association.
+Contract for the `CARD_DRIVER` order type.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_number` | string | Yes | Card number. |
-| `action` | string | Yes | Action: `enable_matching`, `enable_identification`, `configure_matching`, `register_driver`, or `remove_driver`. |
-| `driver_id` | string | No | Driver identifier. Required for `register_driver`. |
-| `driver_name` | string | No | Display name of the driver associated with the card. |
-| `enabled` | boolean | No | Enables or disables the driver matching module. |
-| `match_enabled` | boolean | No | Enables or disables card matching. |
-| `identification_enabled` | boolean | No | Enables or disables driver identification. |
-| `identification_timeout_seconds` | integer | No | Identification timeout in seconds. |
-| `identification_timeout_enabled` | boolean | No | Enables or disables the identification timeout. |
-| `edge_match_enabled` | boolean | No | Enables or disables edge matching. |
-| `cloud_match_enabled` | boolean | No | Enables or disables cloud matching. |
-
-```json
-{
-  "orders": [
-    {
-      "type": "CARD_DRIVER",
-      "correlation_id": "CMD_CARD_DRIVER_001",
-      "parameters": [
-        {
-          "card_number": "CARD-12345",
-          "action": "register_driver",
-          "driver_id": "driver-001",
-          "driver_name": "Alex Morgan"
-        }
-      ]
-    }
-  ]
-}
-```
+| `action` | `string` | Yes | Action is the action to perform: enable_matching, enable_identification,<br />configure_matching, register_driver, or remove_driver. |
+| `card_number` | `string` | Yes | CardNumber is the card number |
+| `cloud_match_enabled` | `boolean` | No | CloudMatchEnabled enables or disables cloud matching. |
+| `driver_id` | `string` | No | DriverID is the unique identifier of the driver associated with the card (required for register_driver action) |
+| `driver_name` | `string` | No | DriverName is the driver's display name associated with the card. |
+| `edge_match_enabled` | `boolean` | No | EdgeMatchEnabled enables or disables edge matching. |
+| `enabled` | `boolean` | No | Enabled enables or disables the driver matching module. |
+| `identification_enabled` | `boolean` | No | IdentificationEnabled enables or disables driver identification. |
+| `identification_timeout_enabled` | `boolean` | No | IdentificationTimeoutEnabled enables or disables the identification timeout. |
+| `identification_timeout_seconds` | `integer` | No | IdentificationTimeoutSeconds is the timeout for driver identification. |
+| `match_enabled` | `boolean` | No | MatchEnabled enables or disables driver matching. |

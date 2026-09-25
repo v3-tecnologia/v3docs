@@ -1,30 +1,13 @@
 ---
-id: firmware-update
 title: "Firmware update"
-description: "FIRMWARE_UPDATE order contract for requesting a device firmware update."
+description: "Contract for the `FIRMWARE_UPDATE` order type."
 sidebar_label: "Firmware update"
+generated: order-contract
 ---
 
-The `FIRMWARE_UPDATE` order requests a firmware update for the device.
+Contract for the `FIRMWARE_UPDATE` order type.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `version` | string | No | Requested firmware version. |
-| `is_debug` | boolean | No | Indicates whether the firmware version is a debug build. Defaults to `false`. |
-
-```json
-{
-  "orders": [
-    {
-      "type": "FIRMWARE_UPDATE",
-      "correlation_id": "CMD_FIRMWARE_UPDATE_001",
-      "parameters": [
-        {
-          "version": "2.4.0",
-          "is_debug": false
-        }
-      ]
-    }
-  ]
-}
-```
+| `is_debug` | `boolean` | No | Indicates if the firmware update is a debug version |
+| `version` | `string` | No | Version of the firmware update |

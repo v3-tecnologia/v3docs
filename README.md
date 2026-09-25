@@ -99,55 +99,71 @@ npm run write-translations
 
 <h2 id="openapi-workflow">📘 Documentação OpenAPI (PT + EN)</h2>
 
-Cada API possui **duas specs OpenAPI** — uma por locale — geradas pelo plugin `docusaurus-plugin-openapi-docs`:
+Cada API gera e versiona seu Swagger no próprio repositório. O `v3docs` consome esses artefatos como fonte técnica e mantém specs localizados para alimentar o plugin `docusaurus-plugin-openapi-docs`:
 
 | Locale | Spec (fonte) | MDX gerado |
 |---|---|---|
-| PT | `examples/{api}.yaml` | `docs/openapi/{api}/` |
-| EN | `examples/en/{api}.yaml` | `i18n/en/docusaurus-plugin-content-docs/current/openapi/{api}/` |
+| Swagger canônico de Orders | `examples/source/order.yaml` (importado do repositório `order-api`) | Fonte técnica versionada |
+| PT | `examples/order.yaml` | `docs/openapi/order/` |
+| EN | `examples/en/order.yaml` | `i18n/en/docusaurus-plugin-content-docs/current/openapi/order/` |
 
 APIs disponíveis: `order`, `management`, `auth`, `event`, `notification`, `vision`, `media`, `media-stream`.
 
 ### Fluxo completo de geração
 
+Quando o Swagger de Orders mudar no repositório da API, importe e revise o artefato:
+
 ```bash
-npm run clean && npm run docs-all && npm run clear && npm run build
+npm run docs:import-order-swagger
+git diff -- examples/source/order.yaml
 ```
+
+Após versionar `examples/source/order.yaml`, o refresh e o build do portal não precisam acessar o repositório da API:
+
+```bash
+npm run docs-all
+npm run clear && npm run build
+```
+
+`npm run docs:refresh-order` pode ser usado isoladamente quando apenas Orders mudar.
 
 | Script | O que faz |
 |---|---|
 | `npm run clean` | Remove MDX/sidebars OpenAPI gerados (PT + EN) |
-| `npm run docs-all` | Regenera MDX a partir das specs, localiza labels PT e valida EN |
+| `npm run docs:import-order-swagger` | Copia o Swagger já gerado no repositório da API para a fonte versionada do portal |
+| `npm run docs:refresh-order` | Atualiza specs localizados PT/EN e gera páginas de operações e contratos de Orders |
+| `npm run docs-all` | Atualiza Orders, gera as outras APIs, localiza labels PT e valida EN |
 | `npm run clear` | Limpa cache interno do Docusaurus |
 | `npm run build` | Build final com os dois locales |
 
 O `docs-all` executa, nesta ordem:
 
-1. `gen-api-docs all` para cada plugin OpenAPI (gera PT **e** EN por plugin)
-2. `scripts/localize-openapi-docs.mjs` — traduz labels de UI nos MDX **PT** (`Request` → `Requisição`, etc.)
-3. `scripts/validate-openapi-en-docs.mjs` — falha se detectar texto em português nos MDX **EN**
+1. `docs:refresh-order` sincroniza os specs PT/EN com o Swagger canônico e regenera Orders
+2. `gen-api-docs all` para os demais plugins OpenAPI
+3. `scripts/localize-openapi-docs.mjs` — traduz labels de UI nos MDX **PT** (`Request` → `Requisição`, etc.)
+4. `scripts/validate-openapi-en-docs.mjs` — falha se detectar texto em português nos MDX **EN**
 
 ### Contratos de ordem
 
-Os contratos de cada tipo de ordem ficam em páginas manuais (não geradas pelo OpenAPI):
+Os contratos de Orders são descobertos pelo cruzamento de `dto.OrderDTO.parameters.oneOf` com `model.OrderType.enum` no Swagger. O gerador cria páginas PT/EN com propriedades, tipos, obrigatoriedade e descrições; páginas manuais existentes continuam preservadas. Páginas contendo `generated: order-contract` são atualizadas automaticamente.
 
 | Locale | Páginas |
 |---|---|
 | PT | `docs/openapi/order/contracts/*.api.mdx` |
 | EN | `i18n/en/docusaurus-plugin-content-docs/current/openapi/order/contracts/*.api.mdx` |
 
-A sidebar de Order (incluindo o submenu de **Criar nova ordem**) é mantida em `sidebars/order.ts`.
+A sidebar de endpoints é gerada pelo plugin. `scripts/generate-order-contracts.mjs` mantém a lista de páginas de contratos em `sidebars/order-contracts.generated.json`, consumida pela sidebar de Orders.
 
 ### Adicionar ou alterar endpoints
 
-1. Edite a spec PT em `examples/{api}.yaml`
-2. Edite a spec EN correspondente em `examples/en/{api}.yaml` com **descrições e summaries em inglês**
-3. Mantenha o mesmo `operationId` (slug kebab) nos dois arquivos para preservar URLs entre locales
-4. Se for um endpoint novo, adicione a tradução do summary na sidebar EN em `i18n/en/docusaurus-plugin-content-docs/current.json` (chave `sidebar.apiSidebar.doc.{summary PT}`)
-5. Sincronize `operationId` e summaries EN:
+1. Gere e versiona o Swagger no repositório da API
+2. Importe o artefato para `examples/source/{api}.yaml` no repositório `v3docs`
+3. Revise as traduções em `examples/{api}.yaml` e `examples/en/{api}.yaml`; textos existentes são preservados pela sincronização
+4. Mantenha os mesmos `operationId`s PT/EN; para Orders eles são criados a partir dos summaries canônicos em inglês
+5. Atualize a documentação:
 
 ```bash
-npm run sync-openapi-ids
+npm run docs:refresh-order
 ```
 
 6. Regenere a documentação:
@@ -158,8 +174,8 @@ npm run clean && npm run docs-all && npm run clear && npm run build
 
 ### Regras importantes
 
-- **`examples/en/*.yaml` é a fonte de verdade do conteúdo EN** — descrições de API, operações e parâmetros devem estar em inglês no YAML, não nos MDX gerados
-- **`operationId` define o slug da URL** — use o mesmo valor em PT e EN (ex: `criar-nova-ordem` → `/docs/openapi/order/criar-nova-ordem` e `/en/docs/openapi/order/criar-nova-ordem`)
+- **O Swagger versionado em `examples/source/` é a fonte dos dados técnicos**; os specs em `examples/` contêm as traduções e os MDX são saída gerada
+- **`operationId` define o slug da URL** — Orders deriva um ID canônico do summary inglês e o compartilha entre PT e EN
 - **Não edite MDX gerados manualmente** — alterações serão sobrescritas no próximo `docs-all`
 - **Após `docs-all`, rode `clear` + `build`** antes de validar EN em produção ou via `serve`
 

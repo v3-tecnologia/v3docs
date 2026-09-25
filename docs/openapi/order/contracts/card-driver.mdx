@@ -1,41 +1,22 @@
 ---
-id: card-driver
 title: "Cartão de motorista"
-description: "Contrato da ordem CARD_DRIVER para configurar o reconhecimento ou cadastro de cartões de motorista."
+description: "Contrato do tipo de ordem `CARD_DRIVER`."
 sidebar_label: "Cartão de motorista"
+generated: order-contract
 ---
 
-A ordem `CARD_DRIVER` configura o reconhecimento de cartões de motorista, cadastra ou remove a associação entre um cartão e um motorista.
+Contrato do tipo de ordem `CARD_DRIVER`.
 
 | Campo | Tipo | Obrigatório | Descrição |
 | --- | --- | --- | --- |
-| `card_number` | string | Sim | Número do cartão. |
-| `action` | string | Sim | Ação: `enable_matching`, `enable_identification`, `configure_matching`, `register_driver` ou `remove_driver`. |
-| `driver_id` | string | Não | Identificador do motorista. Obrigatório para `register_driver`. |
-| `driver_name` | string | Não | Nome do motorista associado ao cartão. |
-| `enabled` | boolean | Não | Ativa ou desativa o módulo de correspondência de motoristas. |
-| `match_enabled` | boolean | Não | Ativa ou desativa a correspondência de cartões. |
-| `identification_enabled` | boolean | Não | Ativa ou desativa a identificação do motorista. |
-| `identification_timeout_seconds` | integer | Não | Tempo limite para identificação, em segundos. |
-| `identification_timeout_enabled` | boolean | Não | Ativa ou desativa o tempo limite de identificação. |
-| `edge_match_enabled` | boolean | Não | Ativa ou desativa a correspondência na borda. |
-| `cloud_match_enabled` | boolean | Não | Ativa ou desativa a correspondência na nuvem. |
-
-```json
-{
-  "orders": [
-    {
-      "type": "CARD_DRIVER",
-      "correlation_id": "CMD_CARD_DRIVER_001",
-      "parameters": [
-        {
-          "card_number": "CARD-12345",
-          "action": "register_driver",
-          "driver_id": "driver-001",
-          "driver_name": "Alex Morgan"
-        }
-      ]
-    }
-  ]
-}
-```
+| `action` | `string` | Sim | Ação a executar: enable_matching, enable_identification, configure_matching,<br />register_driver ou remove_driver. |
+| `card_number` | `string` | Sim | Número do cartão. |
+| `cloud_match_enabled` | `boolean` | Não | Ativa ou desativa a correspondência na nuvem. |
+| `driver_id` | `string` | Não | Identificador único do motorista associado ao cartão (obrigatório para a ação register_driver). |
+| `driver_name` | `string` | Não | Nome de exibição do motorista associado ao cartão. |
+| `edge_match_enabled` | `boolean` | Não | Ativa ou desativa a correspondência na borda. |
+| `enabled` | `boolean` | Não | Ativa ou desativa o módulo de correspondência de motoristas. |
+| `identification_enabled` | `boolean` | Não | Ativa ou desativa a identificação do motorista. |
+| `identification_timeout_enabled` | `boolean` | Não | Ativa ou desativa o tempo limite de identificação. |
+| `identification_timeout_seconds` | `integer` | Não | Tempo limite para identificação do motorista, em segundos. |
+| `match_enabled` | `boolean` | Não | Ativa ou desativa a correspondência de cartões. |

@@ -27,50 +27,51 @@ function slugFromSummary(summary) {
 function processYaml(content, { translateSummary } = {}) {
   const lines = content.split("\n");
   const result = [];
-  let inOperation = false;
-  let hasOperationId = false;
+  const methodLine = /^    (get|post|put|patch|delete|head|options):$/;
+  const nextMethodLine = /^    (get|post|put|patch|delete|head|options):$/;
+  const nextPathLine = /^  \S.*:$/;
 
-  for (const line of lines) {
-    if (/^  \/|^  \w/.test(line) && !/^    /.test(line) && line.endsWith(":")) {
-      inOperation = false;
-      hasOperationId = false;
-    }
-
-    if (/^    (get|post|put|patch|delete|head|options):$/.test(line)) {
-      inOperation = true;
-      hasOperationId = false;
-      result.push(line);
+  for (let index = 0; index < lines.length; index += 1) {
+    const operationMatch = lines[index].match(methodLine);
+    if (!operationMatch) {
+      result.push(lines[index]);
       continue;
     }
 
-    if (/^      operationId:/.test(line)) {
-      hasOperationId = true;
-      result.push(line);
-      continue;
+    let end = index + 1;
+    while (
+      end < lines.length &&
+      !nextMethodLine.test(lines[end]) &&
+      !nextPathLine.test(lines[end])
+    ) {
+      end += 1;
     }
 
-    const summaryMatch = line.match(/^      summary: (.+)$/);
-    if (summaryMatch && inOperation) {
+    const operationLines = lines.slice(index + 1, end);
+    const hasOperationId = operationLines.some((line) => /^      operationId:/.test(line));
+    result.push(lines[index]);
+
+    for (const line of operationLines) {
+      const summaryMatch = line.match(/^      summary: (.+)$/);
+      if (!summaryMatch) {
+        result.push(line);
+        continue;
+      }
+
       const rawSummary = summaryMatch[1].trim();
       if (!hasOperationId) {
         result.push(`      operationId: ${slugFromSummary(rawSummary)}`);
-        hasOperationId = true;
       }
-      if (translateSummary) {
-        const enSummary = translateSummary.get(rawSummary);
-        if (enSummary) {
-          result.push(`      summary: ${enSummary}`);
-          continue;
-        }
-      }
-      result.push(line);
-      continue;
+      const translatedSummary = translateSummary?.get(rawSummary);
+      result.push(
+        translatedSummary ? `      summary: ${translatedSummary}` : line,
+      );
     }
 
-    result.push(line);
+    index = end - 1;
   }
 
-  return `${result.join("\n")}\n`;
+  return result.join("\n");
 }
 
 const enSummaries = loadEnSummaries();

@@ -413,7 +413,7 @@
   },
   "sidebar.apiSidebar.doc.Adicionar Wi-Fi": {
     "message": "Add Wi-Fi",
-    "description": "The label for the doc item Adicionar Wi-Fi in sidebar apiSidebar, linking to the doc openapi/order/contracts/add-wifi"
+    "description": "Generated sidebar label for openapi/order/contracts/add-wifi"
   },
   "sidebar.apiSidebar.doc.Excluir Wi-Fi": {
     "message": "Delete Wi-Fi",
@@ -421,19 +421,19 @@
   },
   "sidebar.apiSidebar.doc.Estado do dispositivo": {
     "message": "Device state",
-    "description": "The label for the doc item Estado do dispositivo in sidebar apiSidebar, linking to the doc openapi/order/contracts/device-state"
+    "description": "Generated sidebar label for openapi/order/contracts/device-state"
   },
   "sidebar.apiSidebar.doc.Solicitar imagem": {
     "message": "Request image",
-    "description": "The label for the doc item Solicitar imagem in sidebar apiSidebar, linking to the doc openapi/order/contracts/request-image"
+    "description": "Generated sidebar label for openapi/order/contracts/request-image"
   },
   "sidebar.apiSidebar.doc.Solicitar vídeo": {
     "message": "Request video",
-    "description": "The label for the doc item Solicitar vídeo in sidebar apiSidebar, linking to the doc openapi/order/contracts/request-video"
+    "description": "Generated sidebar label for openapi/order/contracts/request-video"
   },
   "sidebar.apiSidebar.doc.Reiniciar": {
     "message": "Reboot",
-    "description": "The label for the doc item Reiniciar in sidebar apiSidebar, linking to the doc openapi/order/contracts/reboot"
+    "description": "Generated sidebar label for openapi/order/contracts/reboot"
   },
   "sidebar.apiSidebar.doc.Periódico": {
     "message": "Periodic",
@@ -441,7 +441,7 @@
   },
   "sidebar.apiSidebar.doc.Configuração de visão": {
     "message": "Vision configuration",
-    "description": "The label for the doc item Configuração de visão in sidebar apiSidebar, linking to the doc openapi/order/contracts/vision-config"
+    "description": "Generated sidebar label for openapi/order/contracts/vision-config"
   },
   "sidebar.apiSidebar.doc.Configuração de plano de dados": {
     "message": "Data plan configuration",
@@ -457,14 +457,46 @@
   },
   "sidebar.apiSidebar.doc.Abrir transmissão": {
     "message": "Open stream",
-    "description": "The label for the doc item Abrir transmissão in sidebar apiSidebar, linking to the doc openapi/order/contracts/open-stream"
+    "description": "Generated sidebar label for openapi/order/contracts/open-stream"
   },
   "sidebar.apiSidebar.doc.Fechar transmissão": {
     "message": "Close stream",
-    "description": "The label for the doc item Fechar transmissão in sidebar apiSidebar, linking to the doc openapi/order/contracts/close-stream"
+    "description": "Generated sidebar label for openapi/order/contracts/close-stream"
   },
   "sidebar.apiSidebar.doc.Configuração avançada": {
     "message": "Advanced configuration",
     "description": "The label for the doc item Configuração avançada in sidebar apiSidebar, linking to the doc openapi/order/contracts/config"
+  },
+  "sidebar.apiSidebar.doc.Configuração de áudio": {
+    "message": "Configure audio",
+    "description": "Generated sidebar label for openapi/order/contracts/config-audio"
+  },
+  "sidebar.apiSidebar.doc.Configuração de evento de áudio": {
+    "message": "Configure audio event",
+    "description": "Generated sidebar label for openapi/order/contracts/config-audio-event"
+  },
+  "sidebar.apiSidebar.doc.Remover Wi-Fi": {
+    "message": "Delete Wi-Fi",
+    "description": "Generated sidebar label for openapi/order/contracts/delete-wifi"
+  },
+  "sidebar.apiSidebar.doc.Configuração periódica": {
+    "message": "Periodic",
+    "description": "Generated sidebar label for openapi/order/contracts/periodic"
+  },
+  "sidebar.apiSidebar.doc.Configuração do plano de dados": {
+    "message": "Data plan configuration",
+    "description": "Generated sidebar label for openapi/order/contracts/dataplan-config"
+  },
+  "sidebar.apiSidebar.doc.Comportamento da câmera": {
+    "message": "Camera behavior",
+    "description": "Generated sidebar label for openapi/order/contracts/cam-behavior"
+  },
+  "sidebar.apiSidebar.doc.Cartão de motorista": {
+    "message": "Driver card",
+    "description": "Generated sidebar label for openapi/order/contracts/card-driver"
+  },
+  "sidebar.apiSidebar.doc.Atualização de firmware": {
+    "message": "Firmware update",
+    "description": "Generated sidebar label for openapi/order/contracts/firmware-update"
   }
 }

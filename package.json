@@ -16,7 +16,11 @@
     "start:pt": "docusaurus start --locale pt",
     "build:en": "docusaurus build --locale en",
     "build:pt": "docusaurus build --locale pt",
-    "docs-all": "docusaurus gen-api-docs all --plugin-id order-open-api && docusaurus gen-api-docs all --plugin-id management-open-api && docusaurus gen-api-docs all --plugin-id auth-open-api && docusaurus gen-api-docs all --plugin-id event-open-api && docusaurus gen-api-docs all --plugin-id notification-open-api && docusaurus gen-api-docs all --plugin-id vision-open-api && docusaurus gen-api-docs all --plugin-id media-open-api && docusaurus gen-api-docs all --plugin-id media-stream-open-api && node scripts/localize-openapi-docs.mjs && node scripts/validate-openapi-en-docs.mjs",
+    "docs-all": "npm run docs:refresh-order && docusaurus gen-api-docs all --plugin-id management-open-api && docusaurus gen-api-docs all --plugin-id auth-open-api && docusaurus gen-api-docs all --plugin-id event-open-api && docusaurus gen-api-docs all --plugin-id notification-open-api && docusaurus gen-api-docs all --plugin-id vision-open-api && docusaurus gen-api-docs all --plugin-id media-open-api && docusaurus gen-api-docs all --plugin-id media-stream-open-api && node scripts/localize-openapi-docs.mjs && node scripts/validate-openapi-en-docs.mjs",
+    "docs:import-order-swagger": "node scripts/import-openapi-source.mjs",
+    "docs:sync-order-spec": "node scripts/sync-openapi-specs.mjs",
+    "docs:generate-order": "docusaurus clean-api-docs all --plugin-id order-open-api && docusaurus gen-api-docs all --plugin-id order-open-api && node scripts/generate-order-contracts.mjs && node scripts/localize-openapi-docs.mjs && node scripts/validate-openapi-en-docs.mjs",
+    "docs:refresh-order": "npm run docs:sync-order-spec && npm run docs:generate-order",
     "sync-openapi-ids": "node scripts/sync-openapi-operation-ids.mjs",
     "clean": "docusaurus clean-api-docs all --plugin-id order-open-api && docusaurus clean-api-docs all --plugin-id management-open-api && docusaurus clean-api-docs all --plugin-id auth-open-api && docusaurus clean-api-docs all --plugin-id event-open-api && docusaurus clean-api-docs all --plugin-id notification-open-api && docusaurus clean-api-docs all --plugin-id vision-open-api && docusaurus clean-api-docs all --plugin-id media-open-api && docusaurus clean-api-docs all --plugin-id media-stream-open-api",
     "typecheck": "tsc"
@@ -30,7 +34,8 @@
     "docusaurus-theme-openapi-docs": "^4.3.7",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "yaml": "^1.10.3"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.7.0",

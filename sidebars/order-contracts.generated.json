@@ -1,0 +1,98 @@
+[
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/add-wifi",
+    "label": "Adicionar Wi-Fi",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/config-audio",
+    "label": "Configuração de áudio",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/config-audio-event",
+    "label": "Configuração de evento de áudio",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/delete-wifi",
+    "label": "Remover Wi-Fi",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/device-state",
+    "label": "Estado do dispositivo",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/request-image",
+    "label": "Solicitar imagem",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/request-video",
+    "label": "Solicitar vídeo",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/reboot",
+    "label": "Reiniciar",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/vision-config",
+    "label": "Configuração de visão",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/periodic",
+    "label": "Configuração periódica",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/dataplan-config",
+    "label": "Configuração do plano de dados",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/open-stream",
+    "label": "Abrir transmissão",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/close-stream",
+    "label": "Fechar transmissão",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/cam-behavior",
+    "label": "Comportamento da câmera",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/card-driver",
+    "label": "Cartão de motorista",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/firmware-update",
+    "label": "Atualização de firmware",
+    "className": "api-method post"
+  }
+]
