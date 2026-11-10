@@ -47,7 +47,7 @@ https://developer.v3control.com/docs/docs/autenticacao
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
+  children={"Requisição"}
 >
 </Heading>
 
@@ -58,7 +58,7 @@ https://developer.v3control.com/docs/docs/autenticacao
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  title={"Corpo"}
   body={{"content":{"application/x-www-form-urlencoded":{"schema":{"type":"object","properties":{"grant_type":{"description":"Tipo de concessão","type":"string"},"scope":{"description":"Escopo","type":"string"},"client_id":{"description":"ID do cliente","type":"string"},"client_secret":{"description":"Segredo do cliente","type":"string"}},"required":["grant_type","scope","client_id","client_secret"]}}},"required":true}}
 >
   
@@ -66,7 +66,7 @@ https://developer.v3control.com/docs/docs/autenticacao
 
 <StatusCodes
   id={undefined}
-  label={undefined}
+  label={"Respostas"}
   responses={{"200":{"description":"Sucesso","content":{"application/json":{"schema":{"properties":{"access_token":{"type":"string"},"account_id":{"type":"string"},"active":{"type":"boolean"},"client_id":{"type":"string"},"expires_in":{"type":"integer"},"iat":{"type":"integer"},"jti":{"type":"string"},"realm_access":{"properties":{"roles":{"items":{"type":"string"},"type":"array"}},"type":"object"},"refresh_token":{"type":"string"},"scope":{"type":"string"},"session_state":{"type":"string"},"tenant_id":{"type":"string"},"token_type":{"type":"string"},"username":{"type":"string"}},"type":"object"}}}},"400":{"description":"Requisição inválida","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}}}}
 >
   

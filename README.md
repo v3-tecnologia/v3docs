@@ -111,6 +111,18 @@ APIs disponíveis: `order`, `management`, `auth`, `event`, `notification`, `visi
 
 ### Fluxo completo de geração
 
+Para atualizar tudo com um único comando, execute no repositório `v3docs`:
+
+```bash
+make update
+```
+
+O comando gera o Swagger público e privado no `order-api` (incluindo a injeção do `oneOf`), importa o Swagger público, sincroniza os specs PT/EN, gera operações e contratos de todas as APIs, valida os documentos EN, limpa o cache e faz o build PT/EN. Cada etapa só executa se a anterior terminar com sucesso.
+
+Requer as dependências do portal instaladas e as ferramentas `make`, Go e `swag` disponíveis. O repositório da API é localizado em `../Cloud/Orders/order-api`; para outro caminho, use `make update ORDER_API_DIR=/caminho/order-api`.
+
+As traduções existentes são preservadas. Se novos campos interromperem a geração por falta de tradução, traduza-os em `examples/order.yaml` e execute `make update` novamente.
+
 Quando o Swagger de Orders mudar no repositório da API, importe e revise o artefato:
 
 ```bash

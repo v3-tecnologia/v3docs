@@ -1,4 +1,7 @@
 # Vars
+ORDER_API_DIR ?= ../Cloud/Orders/order-api
+
+.PHONY: update
 
 # Tasks
 clean: clean-order clean-management clean-auth clean-event clean-notifications clean-vision clean-media
@@ -85,3 +88,10 @@ just-build:
 
 run:
 	npm run docusaurus serve
+
+update:
+	$(MAKE) -C "$(ORDER_API_DIR)" doc
+	ORDER_OPENAPI_SOURCE="$(abspath $(ORDER_API_DIR))/api/docs/public/swagger.yaml" npm run docs:import-order-swagger
+	npm run docs-all
+	npm run clear
+	npm run build

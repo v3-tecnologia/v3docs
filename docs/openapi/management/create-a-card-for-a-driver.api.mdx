@@ -42,7 +42,7 @@ Cadastra um cartão para o motorista e o registra nos dispositivos selecionados 
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
+  children={"Requisição"}
 >
 </Heading>
 
@@ -53,7 +53,7 @@ Cadastra um cartão para o motorista e o registra nos dispositivos selecionados 
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  title={"Corpo"}
   body={{"content":{"application/json":{"schema":{"properties":{"embed_device_ids":{"description":"Lista de IDs de dispositivos associados ao cartão **Exemplo**: [\"device1\", \"device2\"]","items":{"type":"string"},"type":"array"},"number":{"description":"Número do cartão **Exemplo**: \"4111111111111111\"","type":"string"}},"required":["number"],"type":"object"}}},"description":"Dados do cartão","required":true}}
 >
   
@@ -61,7 +61,7 @@ Cadastra um cartão para o motorista e o registra nos dispositivos selecionados 
 
 <StatusCodes
   id={undefined}
-  label={undefined}
+  label={"Respostas"}
   responses={{"201":{"description":"Criado","content":{"application/json":{"schema":{"properties":{"created_at":{"type":"string"},"deleted_at":{"type":"string"},"driver_id":{"type":"string"},"driver_name":{"type":"string"},"id":{"type":"string"},"number":{"type":"string"},"status":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"404":{"description":"Não encontrado","content":{"application/json":{"schema":{}}}},"422":{"description":"Entidade não processável","content":{"application/json":{"schema":{}}}}}}
 >
   
