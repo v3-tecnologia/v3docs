@@ -506,5 +506,13 @@
   "sidebar.apiSidebar.doc.Atualização de firmware": {
     "message": "Firmware update",
     "description": "Generated sidebar label for openapi/order/contracts/firmware-update"
+  },
+  "sidebar.apiSidebar.doc.Cerca virtual": {
+    "message": "Geofence",
+    "description": "Generated sidebar label for openapi/order/contracts/geofence"
+  },
+  "sidebar.apiSidebar.doc.Posição em curva": {
+    "message": "Cornering position",
+    "description": "Generated sidebar label for openapi/order/contracts/positioning-cornering"
   }
 }

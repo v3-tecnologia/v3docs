@@ -43,6 +43,18 @@
   },
   {
     "type": "doc",
+    "id": "openapi/order/contracts/geofence",
+    "label": "Cerca virtual",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
+    "id": "openapi/order/contracts/positioning-cornering",
+    "label": "Posição em curva",
+    "className": "api-method post"
+  },
+  {
+    "type": "doc",
     "id": "openapi/order/contracts/reboot",
     "label": "Reiniciar",
     "className": "api-method post"

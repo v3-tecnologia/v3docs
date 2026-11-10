@@ -42,7 +42,7 @@ Recupera um evento usando o ULID informado
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Requisição"}
+  children={"Request"}
 >
 </Heading>
 
@@ -53,7 +53,7 @@ Recupera um evento usando o ULID informado
 </ParamsDetails>
 
 <RequestSchema
-  title={"Corpo"}
+  title={"Body"}
   body={undefined}
 >
   
@@ -61,7 +61,7 @@ Recupera um evento usando o ULID informado
 
 <StatusCodes
   id={undefined}
-  label={"Respostas"}
+  label={undefined}
   responses={{"200":{"description":"Evento encontrado","content":{"application/json":{"schema":{"properties":{"correlation_id":{"type":"string"},"created_at":{"type":"string"},"deleted_at":{"type":"string"},"device_id":{"type":"string"},"event_type":{"type":"integer"},"firmware_version":{"type":"string"},"hardware_event_type":{"type":"integer"},"hardware_model":{"type":"string"},"hook_delivered_at":{"type":"string"},"id":{"type":"string"},"is_ignition_on":{"type":"boolean"},"media_id":{"type":"string"},"odometer":{"type":"number"},"sourced_created_at":{"type":"string"},"tenant_delivered_at":{"type":"string"},"ulid":{"type":"string"},"updated_at":{"type":"string"}},"type":"object"}}}},"204":{"description":"Sem conteúdo","content":{"application/json":{"schema":{"type":"string"}}}},"400":{"description":"Requisição inválida","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro","type":"string"},"detail":{"description":"Descrição legível do erro","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo o campo que causou o erro"},"status":{"description":"Código de status HTTP","type":"integer"},"title":{"description":"Título legível do erro","type":"string"}},"type":"object"}}}},"401":{"description":"Não autorizado","content":{"application/json":{"schema":{"properties":{"code":{"description":"Código do erro","type":"string"},"detail":{"description":"Descrição legível do erro","type":"string"},"source":{"allOf":[{"properties":{"pointer":{"type":"string"}},"type":"object"}],"description":"Origem do erro, por exemplo o campo que causou o erro"},"status":{"description":"Código de status HTTP","type":"integer"},"title":{"description":"Título legível do erro","type":"string"}},"type":"object"}}}}}}
 >
   

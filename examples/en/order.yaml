@@ -163,6 +163,54 @@ definitions:
         description: Version of the firmware update
         type: string
     type: object
+  dto.GeofenceCenterDTO:
+    properties:
+      latitude:
+        description: Latitude coordinate
+        type: number
+      longitude:
+        description: Longitude coordinate
+        type: number
+    type: object
+  dto.GeofenceDTO:
+    properties:
+      center:
+        allOf:
+          - $ref: "#/definitions/dto.GeofenceCenterDTO"
+        description: Center point of the geofence with latitude and longitude (optional)
+      enabled:
+        description: Whether the geofence is enabled (optional)
+        type: boolean
+      id:
+        description: Unique identifier of the geofence
+        type: string
+      max_speed_kmh:
+        description: Maximum speed in km/h allowed within the geofence (optional)
+        type: integer
+      name:
+        description: Name of the geofence (optional)
+        type: string
+      radius_meters:
+        description: Radius of the geofence in meters (optional)
+        type: number
+      type:
+        description: Type of the geofence, e.g., "CIRCLE", "POLYGON" (optional)
+        type: string
+      vertices:
+        description: Vertices for polygon-type geofences (optional)
+        items:
+          $ref: "#/definitions/dto.GeofenceVertexDTO"
+        type: array
+    type: object
+  dto.GeofenceVertexDTO:
+    properties:
+      latitude:
+        description: Latitude coordinate
+        type: number
+      longitude:
+        description: Longitude coordinate
+        type: number
+    type: object
   dto.OpenStreamDTO:
     properties:
       cam:
@@ -225,6 +273,10 @@ definitions:
               title: CardDriver
             - $ref: "#/definitions/dto.FirmwareUpdateDTO"
               title: FirmwareUpdate
+            - $ref: "#/definitions/dto.GeofenceDTO"
+              title: GeofenceConfig
+            - $ref: "#/definitions/dto.PositioningCorneringDTO"
+              title: PositionCornering
         type: array
       type:
         allOf:
@@ -245,6 +297,18 @@ definitions:
       on_message_period_seconds:
         description: Sends messages every **seconds**
         type: integer
+    type: object
+  dto.PositioningCorneringDTO:
+    properties:
+      enabled:
+        description: Enabled determines whether cornering detection is active
+        type: boolean
+      sensitivity:
+        description: >-
+          Sensitivity defines the cornering detection sensitivity level
+
+          Options: LOW (60° threshold - less sensitive), MEDIUM (45° - default), HIGH (30° - more sensitive)
+        type: string
     type: object
   dto.RebootDTO:
     type: object
@@ -349,6 +413,8 @@ definitions:
       - REQUEST_IMAGE
       - REQUEST_VIDEO
       - CONFIG
+      - GEOFENCE
+      - POSITIONING_CORNERING
       - REBOOT
       - INTERNAL
       - VISION_CONFIG
@@ -369,6 +435,8 @@ definitions:
       - REQUEST_IMAGE
       - REQUEST_VIDEO
       - ORDER_CONFIG
+      - GEOFENCE
+      - POSITIONING_CORNERING
       - REBOOT
       - INTERNAL
       - VISION_CONFIG
@@ -624,6 +692,18 @@ paths:
           required: true
           schema:
             $ref: "#/definitions/dto.FirmwareUpdateDTO"
+        - description: Create Order payload
+          in: body
+          name: payload
+          required: true
+          schema:
+            $ref: "#/definitions/dto.GeofenceDTO"
+        - description: Create Order payload
+          in: body
+          name: payload
+          required: true
+          schema:
+            $ref: "#/definitions/dto.PositioningCorneringDTO"
       produces:
         - application/json
       responses:

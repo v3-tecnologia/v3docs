@@ -147,6 +147,8 @@ O `docs-all` executa, nesta ordem:
 
 Os contratos de Orders são descobertos pelo cruzamento de `dto.OrderDTO.parameters.oneOf` com `model.OrderType.enum` no Swagger. O gerador cria páginas PT/EN com propriedades, tipos, obrigatoriedade e descrições; páginas manuais existentes continuam preservadas. Páginas contendo `generated: order-contract` são atualizadas automaticamente.
 
+Antes de gerar novos contratos, traduza os títulos do `oneOf` e as descrições dos DTOs em `examples/order.yaml`, incluindo os DTOs referenciados. A geração é interrompida quando encontra descrições de propriedades ainda iguais às da fonte canônica.
+
 | Locale | Páginas |
 |---|---|
 | PT | `docs/openapi/order/contracts/*.api.mdx` |

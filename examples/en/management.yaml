@@ -602,6 +602,7 @@ paths:
         "500":
           description: Internal server error
           schema: {}
+      operationId: find-teams-by-card-number
       summary: Find teams by card number
       tags:
       - Team
@@ -632,6 +633,7 @@ paths:
         "500":
           description: Internal server error
           schema: {}
+      operationId: find-teams-by-device-imei
       summary: Find teams by device IMEI
       tags:
       - Team
@@ -682,6 +684,7 @@ paths:
         "500":
           description: Internal Server Error
           schema: {}
+      operationId: list-devices-with-pagination
       summary: List devices with pagination
       tags:
       - Device
@@ -711,6 +714,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: create-a-new-device
       summary: Create a new device
       tags:
       - Device
@@ -735,6 +739,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: delete-a-device
       summary: Delete a device
       tags:
       - Device
@@ -761,6 +766,7 @@ paths:
         "404":
           description: Not Found
           schema: {}
+      operationId: get-a-device-by-id
       summary: Get a device by ID
       tags:
       - Device
@@ -794,6 +800,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: patch-device-status
       summary: Patch device status
       tags:
       - Device
@@ -831,6 +838,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: update-a-device
       summary: Update a device
       tags:
       - Device
@@ -869,6 +877,7 @@ paths:
         "500":
           description: Internal Server Error
           schema: {}
+      operationId: list-drivers-with-pagination
       summary: List drivers with pagination
       tags:
       - Driver
@@ -898,6 +907,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: create-a-new-driver
       summary: Create a new driver
       tags:
       - Driver
@@ -922,6 +932,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: delete-a-driver
       summary: Delete a driver
       tags:
       - Driver
@@ -948,6 +959,7 @@ paths:
         "404":
           description: Not Found
           schema: {}
+      operationId: get-a-driver-by-id
       summary: Get a driver by Id
       tags:
       - Driver
@@ -985,6 +997,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: update-a-driver
       summary: Update a driver
       tags:
       - Driver
@@ -1012,6 +1025,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: list-cards-from-a-driver
       summary: List cards from a driver
       tags:
       - Driver
@@ -1045,6 +1059,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: create-a-card-for-a-driver
       summary: Create a card for a driver
       tags:
       - Driver
@@ -1081,6 +1096,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: delete-a-card-from-a-driver
       summary: Delete a card from a driver
       tags:
       - Driver
@@ -1110,6 +1126,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: get-a-card-from-a-driver
       summary: Get a card from a driver
       tags:
       - Driver
@@ -1148,6 +1165,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: update-a-card-from-a-driver
       summary: Update a card from a driver
       tags:
       - Driver
@@ -1178,6 +1196,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: remove-driver-from-team
       summary: Remove driver from team
       tags:
       - Driver
@@ -1206,6 +1225,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: assign-driver-to-team
       summary: Assign driver to team
       tags:
       - Driver
@@ -1244,6 +1264,7 @@ paths:
         "500":
           description: Internal Server Error
           schema: {}
+      operationId: list-fleets-with-pagination
       summary: List fleets with pagination
       tags:
       - Fleet
@@ -1273,6 +1294,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: create-a-new-fleet
       summary: Create a new fleet
       tags:
       - Fleet
@@ -1297,6 +1319,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: delete-a-fleet
       summary: Delete a fleet
       tags:
       - Fleet
@@ -1323,6 +1346,7 @@ paths:
         "404":
           description: Not Found
           schema: {}
+      operationId: get-a-fleet-by-id
       summary: Get a fleet by ID
       tags:
       - Fleet
@@ -1360,6 +1384,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: update-a-fleet
       summary: Update a fleet
       tags:
       - Fleet
@@ -1386,6 +1411,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: get-fleets-by-team-id
       summary: Get fleets by team ID
       tags:
       - Fleet
@@ -1424,6 +1450,7 @@ paths:
         "500":
           description: Internal Server Error
           schema: {}
+      operationId: list-teams-with-pagination
       summary: List teams with pagination
       tags:
       - Team
@@ -1453,6 +1480,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: create-a-new-team
       summary: Create a new team
       tags:
       - Team
@@ -1477,6 +1505,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: delete-a-team
       summary: Delete a team
       tags:
       - Team
@@ -1503,6 +1532,7 @@ paths:
         "404":
           description: Not Found
           schema: {}
+      operationId: get-a-team-by-id
       summary: Get a team by Id
       tags:
       - Team
@@ -1540,6 +1570,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: update-a-team
       summary: Update a team
       tags:
       - Team
@@ -1566,6 +1597,7 @@ paths:
         "422":
           description: Unprocessable Entity
           schema: {}
+      operationId: get-drivers-by-team-id
       summary: Get drivers by team Id
       tags:
       - Team

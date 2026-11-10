@@ -17,6 +17,8 @@ const enTranslationsPath = join(
 const generatedMarker = "generated: order-contract";
 const fallbackTitles = {
   CAM_BEHAVIOR: { pt: "Comportamento da câmera", en: "Camera behavior" },
+  POSITIONING_CORNERING: { pt: "Posição em curva", en: "Cornering position" },
+  GEOFENCE: { pt: "Geofence", en: "Geofence" }
 };
 const englishTitles = {
   ADD_WIFI: "Add Wi-Fi",
@@ -35,6 +37,8 @@ const englishTitles = {
   CAM_BEHAVIOR: "Camera behavior",
   CARD_DRIVER: "Driver card",
   FIRMWARE_UPDATE: "Firmware update",
+  GEOFENCE: "Geofence",
+  POSITIONING_CORNERING: "Cornering position"
 };
 
 function readYaml(path) {
