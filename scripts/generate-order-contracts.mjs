@@ -96,15 +96,51 @@ function exampleValue(name, schema = {}) {
     driver_id: "driver-001",
     driver_name: "Alex Morgan",
     version: "2.4.0",
+    latitude: -23.5505,
+    longitude: -46.6333,
   };
   return examples[name] ?? "example";
 }
 
-function operationExample(type, definition) {
+function buildExampleObject(schema, definitions = {}) {
+  if (!schema || typeof schema !== "object") return "example";
+  
+  if (schema.enum?.length) return schema.enum[0];
+  if (schema.type === "boolean") return false;
+  if (schema.type === "integer" || schema.type === "number") return 0;
+  if (schema.type === "string") return "example";
+  if (schema.type === "array") return [];
+  if (schema.type === "object") {
+    const result = {};
+    for (const [propName, propSchema] of Object.entries(schema.properties ?? {})) {
+      result[propName] = buildExampleObject(propSchema, definitions);
+    }
+    return result;
+  }
+  
+  if (schema.allOf?.length) {
+    const refItem = schema.allOf.find(item => item.$ref);
+    if (refItem) {
+      const refName = refItem.$ref.split("/").pop();
+      const refSchema = definitions[refName];
+      return buildExampleObject(refSchema, definitions);
+    }
+  }
+  
+  if (schema.$ref) {
+    const refName = schema.$ref.split("/").pop();
+    const refSchema = definitions[refName];
+    return buildExampleObject(refSchema, definitions);
+  }
+  
+  return "example";
+}
+
+function operationExample(type, definition, sourceDefinitions = {}) {
   const parameters = Object.fromEntries(
     Object.entries(definition.properties ?? {}).map(([name, schema]) => [
       name,
-      exampleValue(name, schema),
+      buildExampleObject(schema, sourceDefinitions),
     ]),
   );
   if (type === "CARD_DRIVER") parameters.action = "register_driver";
@@ -119,7 +155,7 @@ function operationExample(type, definition) {
   };
 }
 
-function requestSchema(type, title, definition, locale) {
+function requestSchema(type, title, definition, sourceDefinitions, locale) {
   const pt = locale === "pt";
   return {
     type: "object",
@@ -154,7 +190,7 @@ function requestSchema(type, title, definition, locale) {
                 required: definition.required ?? [],
                 properties: definition.properties ?? {},
               },
-              example: [operationExample(type, definition).orders[0].parameters[0]],
+              example: [operationExample(type, definition, sourceDefinitions).orders[0].parameters[0]],
             },
           },
         },
@@ -163,7 +199,7 @@ function requestSchema(type, title, definition, locale) {
   };
 }
 
-function generatedPage({ locale, type, title, definition }) {
+function generatedPage({ locale, type, title, definition, sourceDefinitions }) {
   const pt = locale === "pt";
   const operationMetadata = readOperationPageMetadata(locale);
   const intro = locale === "pt"
@@ -190,8 +226,8 @@ function generatedPage({ locale, type, title, definition }) {
     required: true,
     content: {
       "application/json": {
-        schema: requestSchema(type, title, definition, locale),
-        example: operationExample(type, definition),
+        schema: requestSchema(type, title, definition, sourceDefinitions, locale),
+        example: operationExample(type, definition, sourceDefinitions),
       },
     },
   };
@@ -337,8 +373,8 @@ for (const orderType of orderTypes) {
 
     mkdirSync(dirname(ptFile), { recursive: true });
     mkdirSync(dirname(enFile), { recursive: true });
-    writeFileSync(ptFile, generatedPage({ locale: "pt", type: orderType, title: ptTitle, definition: ptDefinition }));
-    writeFileSync(enFile, generatedPage({ locale: "en", type: orderType, title: enTitle, definition: enDefinition }));
+    writeFileSync(ptFile, generatedPage({ locale: "pt", type: orderType, title: ptTitle, definition: ptDefinition, sourceDefinitions: source.definitions }));
+    writeFileSync(enFile, generatedPage({ locale: "en", type: orderType, title: enTitle, definition: enDefinition, sourceDefinitions: source.definitions }));
     console.log(`Generated PT/EN contract: ${orderType}`);
   }
 
