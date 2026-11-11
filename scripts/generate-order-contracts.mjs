@@ -2,6 +2,115 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import YAML from "yaml";
+import pako from "pako";
+
+let baseApiJsonCache = null;
+
+function getBaseApiJson() {
+  if (baseApiJsonCache) return baseApiJsonCache;
+  
+  const originalPage = readFileSync(
+    join(root, "docs/openapi/order/create-new-order.api.mdx"),
+    "utf8"
+  );
+  const apiMatch = originalPage.match(/^api: (.+)$/m);
+  if (!apiMatch) {
+    throw new Error("Could not find api field in create-new-order.api.mdx");
+  }
+  
+  const encoded = apiMatch[1];
+  const buffer = Buffer.from(encoded, "base64");
+  const uint8 = new Uint8Array(buffer);
+  const decompressed = pako.ungzip(uint8);
+  const str = new TextDecoder().decode(decompressed);
+  baseApiJsonCache = JSON.parse(str);
+  return baseApiJsonCache;
+}
+
+function generateCustomApiField(orderTypeName, orderTypeTitle, orderTypeProperties) {
+  const baseJson = getBaseApiJson();
+  
+  // Create a custom API JSON with only the specific order type
+  const customJson = {
+    ...baseJson,
+    description: baseJson.description,
+    parameters: baseJson.parameters,
+    requestBody: {
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            required: ["orders"],
+            properties: {
+              orders: {
+                type: "array",
+                minItems: 1,
+                maxItems: 100,
+                description: baseJson.requestBody?.content?.["application/json"]?.schema?.properties?.orders?.description,
+                items: {
+                  type: "object",
+                  required: ["type", "parameters"],
+                  properties: {
+                    type: {
+                      type: "string",
+                      enum: [orderTypeName],
+                      description: "Order type"
+                    },
+                    correlation_id: {
+                      type: "string",
+                      description: "Optional request identifier",
+                      minLength: 3,
+                      maxLength: 50
+                    },
+                    parameters: {
+                      type: "array",
+                      minItems: 1,
+                      maxItems: 100,
+                      description: "Order-specific parameters",
+                      items: {
+                        oneOf: [
+                          {
+                            title: orderTypeTitle,
+                            type: "object",
+                            properties: orderTypeProperties
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          examples: {
+            "application/json": {
+              orders: [
+                {
+                  type: orderTypeName,
+                  correlation_id: "CMD_001",
+                  parameters: [{}]
+                }
+              ]
+            }
+          }
+        }
+      },
+      required: true
+    },
+    security: baseJson.security,
+    tags: baseJson.tags,
+    operationId: baseJson.operationId,
+    method: "post",
+    path: "/devices/{device_id}/orders",
+    servers: baseJson.servers || []
+  };
+  
+  // Compress using pako gzip and encode to base64
+  const json = JSON.stringify(customJson);
+  const compressed = pako.gzip(json);
+  const encoded = Buffer.from(compressed).toString("base64");
+  return encoded;
+}
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const sourcePath = join(root, "examples/source/order.yaml");
@@ -237,7 +346,10 @@ function generatedPage({ locale, type, title, definition, sourceDefinitions }) {
       { description, content: { "application/json": { schema: { type: "object" } } } },
     ]),
   );
-
+  
+  // Generate custom API field with only this order type
+  const customApiField = generateCustomApiField(type, title, definition.properties || {});
+  
   return [
     "---",
     `id: ${slug(type)}`,
@@ -246,7 +358,7 @@ function generatedPage({ locale, type, title, definition, sourceDefinitions }) {
     `sidebar_label: ${quote(title)}`,
     "hide_title: true",
     "hide_table_of_contents: true",
-    `api: ${operationMetadata.api}`,
+    `api: ${customApiField}`,
     `sidebar_class_name: ${operationMetadata.sidebarClassName ?? '"post api-method"'}`,
     `info_path: ${operationMetadata.infoPath}`,
     "custom_edit_url: null",

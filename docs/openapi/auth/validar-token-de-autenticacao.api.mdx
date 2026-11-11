@@ -45,7 +45,7 @@ Se o token for inválido, expirado ou malformado, um erro estruturado é retorna
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
+  children={"Requisição"}
 >
 </Heading>
 
@@ -56,7 +56,7 @@ Se o token for inválido, expirado ou malformado, um erro estruturado é retorna
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  title={"Corpo"}
   body={undefined}
 >
   
@@ -64,7 +64,7 @@ Se o token for inválido, expirado ou malformado, um erro estruturado é retorna
 
 <StatusCodes
   id={undefined}
-  label={undefined}
+  label={"Respostas"}
   responses={{"200":{"description":"Sucesso","content":{"application/json":{"schema":{"properties":{"claims":{},"message":{"type":"string"},"valid":{"type":"boolean"}},"type":"object"}}}},"401":{"description":"Não autorizado","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"properties":{"error":{"type":"string"},"error_description":{"type":"string"}},"type":"object"}}}}}}
 >
   

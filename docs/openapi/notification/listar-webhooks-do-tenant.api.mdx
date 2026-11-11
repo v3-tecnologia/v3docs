@@ -45,7 +45,7 @@ Retorna todos os webhooks registrados para o tenant
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  title={"Corpo"}
   body={undefined}
 >
   
@@ -53,7 +53,7 @@ Retorna todos os webhooks registrados para o tenant
 
 <StatusCodes
   id={undefined}
-  label={undefined}
+  label={"Respostas"}
   responses={{"200":{"description":"Sucesso","content":{"application/json":{"schema":{"items":{"properties":{"created_at":{"type":"string"},"event_names":{"items":{"properties":{"category":{"items":{"properties":{"subs":{"items":{"type":"string"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"type":{"type":"string"}},"type":"object"},"type":"array"},"id":{"type":"string"},"name":{"type":"string"},"updated_at":{"type":"string"},"url":{"type":"string"}},"type":"object"},"type":"array"}}}},"500":{"description":"Erro interno do servidor","content":{"application/json":{"schema":{"additionalProperties":{"type":"string"},"type":"object"}}}}}}
 >
   
