@@ -344,14 +344,14 @@ for (const orderType of orderTypes) {
     throw new Error(`Missing localized definition for ${ref}`);
   }
 
-  const ptFile = join(ptOutputDir, `${identifier}.mdx`);
-  const enFile = join(enOutputDir, `${identifier}.mdx`);
-  const ptApiFile = join(ptOutputDir, `${identifier}.api.mdx`);
-  const enApiFile = join(enOutputDir, `${identifier}.api.mdx`);
-  const existingPage = existsSync(ptFile) ? readFileSync(ptFile, "utf8") : "";
+  const ptFile = join(ptOutputDir, `${identifier}.api.mdx`);
+  const enFile = join(enOutputDir, `${identifier}.api.mdx`);
+  const ptLegacyFile = join(ptOutputDir, `${identifier}.mdx`);
+  const enLegacyFile = join(enOutputDir, `${identifier}.mdx`);
+  const existingPage = existsSync(ptFile) ? readFileSync(ptFile, "utf8") : existsSync(ptLegacyFile) ? readFileSync(ptLegacyFile, "utf8") : "";
   const isManaged = existingPage.includes(generatedMarker);
 
-  if (isManaged || (!existsSync(ptFile) && !existsSync(ptApiFile))) {
+  if (isManaged || (!existsSync(ptFile) && !existsSync(ptLegacyFile))) {
     const sourceVariant = source.definitions?.["dto.OrderDTO"]?.properties?.parameters?.items?.oneOf?.find((item) => item.$ref === ref);
     if (
       !fallbackTitles[orderType]?.pt &&
@@ -378,8 +378,8 @@ for (const orderType of orderTypes) {
     console.log(`Generated PT/EN contract: ${orderType}`);
   }
 
-  const ptPageExists = existsSync(ptFile) || existsSync(ptApiFile);
-  const enPageExists = existsSync(enFile) || existsSync(enApiFile);
+  const ptPageExists = existsSync(ptFile) || existsSync(ptLegacyFile);
+  const enPageExists = existsSync(enFile) || existsSync(enLegacyFile);
   if (!ptPageExists || !enPageExists) {
     throw new Error(`Missing PT/EN contract page for ${orderType}`);
   }
